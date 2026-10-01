@@ -1,0 +1,214 @@
+// diplomacy_accepted.fli
+
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = 0.0
+	tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+	tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+	tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+	tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+	tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+	tri like_him_more(diplomatic_regard_delta, 5, 1.0)
+	tri love_him_more(diplomatic_regard_delta, 8, 2.0)
+	right worship_him_more(diplomatic_regard_delta, 12, 4)
+
+///////////////////////////////////
+////////// SET LOYALTY  ///////////
+///////////////////////////////////
+	// N: values changed	
+
+output loyalty_modifier [-20, 20] = 0
+	tri benedict_arnold(loyalty_modifier, -10.0, 1.0)
+	tri trust_much_less(loyalty_modifier, -2.0, 1.0)
+	tri trust_less(loyalty_modifier, 0, 0)
+	tri trust_more(loyalty_modifier, 2.0, 1.0)
+	tri trust_much_more(loyalty_modifier, 5.0, 1.0)
+
+input he_accepted_greetings
+right yes_he_accepted_greetings(he_accepted_greetings, 1.0, .5)
+
+
+//accepted greetings...N: changed
+	if(yes_he_accepted_greetings)
+	{
+		same_like_him
+	}
+
+//accepted advance demand
+input he_accepted_demand_advance
+right yes_he_accepted_demand_advance(he_accepted_demand_advance, 1.0, .5)
+
+	if(yes_he_accepted_demand_advance)
+	{
+		love_him_more
+	}
+
+//accepted gold demand
+input he_accepted_gold_demand
+right yes_he_accepted_gold_demand(he_accepted_gold_demand, 1.0, .5)
+
+	if(yes_he_accepted_gold_demand)
+	{
+		love_him_more
+	}
+
+//accepted map demand
+input he_accepted_demand_map
+right yes_he_accepted_demand_map(he_accepted_demand_map, 1.0, .5)
+
+	if(yes_he_accepted_demand_map)
+	{
+		like_him_more
+	}
+
+//accepted leave our lands demand..N: changed
+input he_accepted_demand_leave_our_lands
+right yes_he_accepted_demand_leave_our_lands(he_accepted_demand_leave_our_lands, 1.0, .5)
+
+	if(yes_he_accepted_demand_leave_our_lands)
+	{
+		like_him_more
+		trust_more
+	}
+
+//accepted reduce pollution demand..N: changed
+input he_accepted_demand_reduce_pollution
+right yes_he_accepted_demand_reduce_pollution(he_accepted_demand_reduce_pollution, 1.0, .5)
+
+	if(yes_he_accepted_demand_reduce_pollution)
+	{
+		like_him_more
+		trust_more
+	}
+
+//accepted stop piracy demand..N: changed
+input he_accepted_demand_no_piracy
+right yes_he_accepted_demand_no_piracy(he_accepted_demand_no_piracy, 1.0, .5)
+
+	if(yes_he_accepted_demand_no_piracy)
+	{
+		like_him_more
+		trust_more
+	}
+
+//accepted stop trade demand
+input he_accepted_demand_stop_trade
+right yes_he_accepted_demand_stop_trade(he_accepted_demand_stop_trade, 1.0, .5)
+
+	if(yes_he_accepted_demand_stop_trade)
+	{
+		like_him_more
+	}
+
+//accepted attack enemy..N: changed
+input he_accepted_demand_attack_enemy
+right accepted_attack(he_accepted_demand_attack_enemy, 1.0, 0.5)
+
+	if(accepted_attack)	
+	{
+		love_him_more
+		trust_more
+	}
+
+//accepted exchange advance 
+input he_accepted_exchange_advance
+right yes_he_accepted_exchange_advance(he_accepted_exchange_advance, 1.0, .5)
+
+	if(yes_he_accepted_exchange_advance)
+	{
+		love_him_more
+	}
+
+// N: added..accepted exchange advance at war 
+input war_with_him
+	left no_war (war_with_him, 0.0, .5)
+	right yes_war (war_with_him, 1.0, .5)
+
+	if(yes_he_accepted_exchange_advance
+		and yes_war)
+	{
+		same_like_him
+	}
+
+//accepted exchange map
+input he_accepted_exchange_map
+right yes_he_accepted_exchange_map(he_accepted_exchange_map, 1.0, .5)
+
+	if(yes_he_accepted_exchange_map)
+	{
+		like_him_more
+	}
+
+// N: added..accepted exchange map at war
+
+	if(yes_he_accepted_exchange_map
+		and yes_war)
+	{
+		same_like_him
+	}
+
+//accepted advance offer
+input he_accepted_offer_advance
+right yes_he_accepted_offer_advance(he_accepted_offer_advance, 1.0, .5)
+
+	if(yes_he_accepted_offer_advance)
+	{
+		love_him_more
+	}
+
+//accepted gold offer
+input he_accepted_offer_gold
+right yes_he_accepted_offer_gold(he_accepted_offer_gold, 1.0, .5)
+
+	if(yes_he_accepted_offer_gold)
+	{
+		like_him_more
+	}
+
+//accepted map offer..N: changed
+input he_accepted_offer_map
+right yes_he_accepted_offer_map(he_accepted_offer_map, 1.0, .5)
+
+	if(yes_he_accepted_offer_map)
+	{
+		same_like_him
+	}
+
+
+//accepted cease fire..N: changed
+input he_accepted_offer_cease_fire
+right yes_he_accepted_offer_cease_fire(he_accepted_offer_cease_fire, 1.0, .5)
+
+	if(yes_he_accepted_offer_cease_fire)
+	{
+		like_him_more
+	}
+
+// N: added..accepted cease fire not at war
+input he_accepted_offer_cease_fire
+right yes_he_accepted_offer_cease_fire(he_accepted_offer_cease_fire, 1.0, .5)
+
+	if(yes_he_accepted_offer_cease_fire
+		and not yes_war)
+	{
+		like_him_more
+	}
+
+
+//accepted permanent alliance
+input he_accepted_offer_alliance
+right yes_he_accepted_offer_alliance(he_accepted_offer_alliance, 1.0, .5)
+
+	if(yes_he_accepted_offer_alliance)
+	{
+		love_him_more
+	}
+
+//accepted ecopact
+input he_accepted_offer_pact_end_pollution 
+right he_accepted_ecopact(he_accepted_offer_pact_end_pollution, 1.0, 0.5)
+
+	if(he_accepted_ecopact)
+	{
+		like_him_more
+	}

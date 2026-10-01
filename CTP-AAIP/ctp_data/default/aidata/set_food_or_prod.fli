@@ -1,0 +1,95 @@
+// set_food_or_prod.fli
+
+//************ set the production tax and city growth *****
+
+// when the empire is small, make a lot of production	
+	if((no_num_cities or a1_num_cities) and one_total_pop and not yes_barbarian)
+	{ 
+		max_production_city_growth_ratio
+		very zero_production_tax
+		growth_prod_gold_deficit_set_wgf
+		low_pop_production_max
+		low_pop_production_min
+		high_pop_food_max
+		high_pop_food_min // this says in all cities get food
+		yes_opening_game_strategy
+	} 
+	if((no_num_cities or a1_num_cities) and two_total_pop and not yes_barbarian)
+	{ 
+		high_production_city_growth_ratio
+		very zero_production_tax
+		growth_prod_gold_deficit_set_wgf
+		high_production
+		high_pop_production_min
+		yes_opening_game_strategy
+	} 
+
+	if(a2_num_cities and not yes_barbarian)
+	{	
+		very zero_production_tax
+		growth_prod_gold_deficit_set_wgf
+		high_production
+		yes_opening_game_strategy
+	}
+
+	if(a3to5_num_cities and not yes_barbarian and yes_warrior) 
+	{
+		growth_prod_gold_set_wgf
+		very zero_production_tax
+		high_production
+		yes_opening_game_strategy
+	} 
+
+	if(a5to9_num_cities and not yes_barbarian and yes_warrior)
+	{
+		very med_production_tax
+		high_production
+		growth_prod_gold_set_wgf
+	}
+
+	if(a3to5_num_cities and not yes_barbarian and yes_scientist) 
+	{
+		growth_prod_gold_set_wgf
+		very zero_production_tax
+		yes_opening_game_strategy
+	} 
+
+	if(a5to9_num_cities and not yes_barbarian and yes_scientist) 
+	{  
+		growth_prod_gold_set_wgf
+		very med_production_tax
+	} 
+
+	if(a3to5_num_cities 
+	and not yes_barbarian 
+	and not yes_scientist
+	and not yes_warrior) 
+	{
+		growth_prod_gold_set_wgf
+		very zero_production_tax
+		yes_opening_game_strategy
+	} 
+
+	if(a5to9_num_cities 
+	and not yes_barbarian
+	and not yes_scientist
+	and not yes_warrior) 
+	{  
+		growth_prod_gold_set_wgf
+		very med_production_tax
+	} 
+
+
+
+// set_food_or_prod_barbar.fli
+
+//************ set the production tax and city growth *****
+
+// if barbarian then forget food
+if (yes_barbarian) 
+{ 
+	very zero_production_tax	
+	high_production		
+	yes_opening_game_strategy	
+}
+

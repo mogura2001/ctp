@@ -1,0 +1,3446 @@
+#######################################
+# File: controlpanel.ldl
+# Last Access: Mon Jun 01 13:01:31 1998
+#######################################
+template CP_UNIT_LOCKBUTTON {
+	int	xpix	160
+#	int	ypix	20
+	string	yanchor	"center"
+	int	widthpix	40
+	int	heightpix	40
+	string	imageblttype	"stretch"
+	string	image0	"upa001.tga"
+	string	image1	"upa001.tga"
+}
+template CP_TAB:T_FONT5_8 {
+	string	image0	"upba0523.tga"
+	string	image1	"upba3010.tga"
+	string	disabledimage0	"upba0524.tga"
+	string	imageblttype	"stretch"
+}
+
+template TILE_IMP_TAB:T_FONT5_8 {
+	int	xpix	6
+	int	ypix	0
+	int	widthpix	72
+	int	heightpix	14
+	string	parent	"ControlPanelWindow"
+	string	text	"str_ldl_CIV"
+	string	image0	"upba0523.tga"
+	string	image1	"upba3010.tga"
+	string	disabledimage0	"upba0524.tga"
+	string	imageblttype	"stretch"
+	pane {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	456
+		int	heightpix	129
+		string	parent	"ControlPanelWindow"
+	}
+}
+template PROD_SORT_BUTTON:T_FONT5_7 {
+	bool	shadowfont	true
+	int	ypix	5
+	int	widthpix	26
+	int	heightpix	19
+	int	bevelwidth	3
+}
+template PROD_BUTTON:T_FONT5_8 {
+	bool	shadowfont	true
+	int	xpix	23
+	int	widthpix	64
+	int	heightpix	21
+	int	bevelwidth	0
+	string	image0	"upba6100.tga"
+	string	image1	"upba6101.tga"
+	string	disabledimage0	"upba6144.tga"
+	string	imagebltflag	"chromakey"
+}
+
+
+template PROD_ARROW {
+	int	ypix	95
+	int	widthpix	46
+	int	heightpix	23
+	int	bevelwidth	0
+	string	imagebltflag	"chromakey"
+}
+
+
+template PROD_SELL_BUTTON:T_FONT5_8 {
+	bool	shadowfont	true
+	int	xpix	6
+	int	ypix	6
+	int	widthpix	49
+	int	heightpix	21
+	int	bevelwidth	0
+	string	image0	"upba6102.tga"
+	string	image1	"upba6103.tga"
+	string	imagebltflag	"chromakey"
+	string	text	"str_ldl_CAPS_SELL"
+}
+
+
+#####################
+# citytab templates
+#####################
+template CITYTAB_SWITCH:T_FONT5_8 {
+	bool shadowfont	true
+	int	xpix	6
+	int	widthpix	89
+	int	heightpix	21
+	string	image0	"upba5702.tga"
+	string	image1	"upba5703.tga"
+	string	disabledimage0	"upba5707.tga"
+	string	imagebltflag	"chromakey"
+	int	bevelwidth	0
+}
+
+
+template CITYTAB_LABEL:T_FONT5_8 {
+	bool	shadowfont	false
+	int	ypix	3
+	int	widthpix	125
+	int	heightpix	10
+	string	pattern	"upba0117.tga"
+	int	srcypix	3
+	int	srcwidthpix	125
+	int	srcheightpix	10
+	string	text	"str_ldl_"
+}
+
+template CITYTAB_LABEL3:T_FONT5_8 {
+	bool	shadowfont	false
+	int	ypix	3
+	int	widthpix	121
+	int	heightpix	10
+	string	pattern	"upba0117.tga"
+	int	srcypix	3
+	int	srcwidthpix	121
+	int	srcheightpix	10
+	string	text	"str_ldl_"
+}
+
+
+template CITYTAB_TOTAL_BOX:T_FONT5_8 {
+	bool	shadowfont	false
+	int	ypix	105
+	int	widthpix	25
+	int	heightpix	14
+	string	pattern	"upba0117.tga"
+	int	srcypix	105
+	int	srcwidthpix		25
+	int	srcheightpix	14
+	int	beveltype	2
+	int	bevelwidth	1
+}
+
+template CITYTAB_TOTAL_BOX2:T_FONT5_8 {
+	bool	shadowfont	false
+	int	ypix	105
+	int	widthpix	31
+	int	heightpix	14
+	string	pattern	"upba0117.tga"
+	int	srcypix	105
+	int	srcwidthpix		25
+	int	srcheightpix	14
+	int	beveltype	2
+	int	bevelwidth	1
+}
+
+template CITYTAB_BOX:T_FONT5_8 {
+	bool	shadowfont	false
+	int	xpix	198
+	int	widthpix	28
+	int	heightpix	19
+	string	pattern	"upba0117.tga"
+	int	srcxpix	237
+	int	srcwidthpix	28
+	int	srcheightpix	19
+	int	beveltype	2
+	int	bevelwidth	1
+}
+
+
+template CITYTAB_ARROW:T_FONT5_8 {
+	bool	shadowfont	false
+	int	xpix	10
+	int	widthpix	184
+	int	heightpix	15
+	int	bevelwidth	0	
+	string	just	"left"
+}
+
+
+template CITYTAB_LIST:T_FONT5_8 {
+	bool	shadowfont	true
+	int	xpix	10
+	int	ypix	15
+	int	widthpix	143
+	int	heightpix	87
+	int columns		2
+	int bevelwidth	1
+	int beveltype	2
+	string	pattern	"upba0117.tga"
+	int	srcxpix	9
+	int	srcypix	14
+	int	srcwidthpix	160
+	int	srcheightpix	89
+	header {
+		switch0 {
+			int	heightpix	0
+			int	widthpix	110
+		}
+		switch1 {
+			int	heightpix	0
+			int	widthpix	33
+		}
+	}
+	bool alwaysranger	true
+	rangery {
+		int	widthpix	15
+		int	heigthpix	15
+		string	type	"scroller"
+		string	orientation	"vertical"
+		string	pattern	"upba5605.tga"
+		incy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+		decy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+#			thumb {
+#				string	image0	"upba5613.tga"
+#				string	imagebltflag	"chromakey"
+#			}
+	}
+}
+
+
+##-------------##
+##  templates  ##
+##-------------##
+template CIV_TEXT:T_FONT5_8 {
+	int	widthpix	100
+	int	heightpix	20
+}
+
+
+template CIV_MARKER {
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	4
+	int	heightpix	4
+}
+
+
+template CIV_SLIDER {
+#	string	pattern	"upba3010.tga"
+	string	pattern	"upba0117.tga"
+	int	xpix	25
+	int	widthpix	87
+	int	heightpix	20
+	int	srcwidthpix	87
+	int	srcheightpix	20
+	bool	quantizedrag	true
+	int	maxxval	4
+	int	maxyval		0
+	int	pagexval	1
+	int	pageyval	1
+	bool	rigidthumb		true
+	int minthumbsize	9
+	string	orientation	"horizontal"
+	string	type	"slider"
+	thumb {
+		int	widthpix	9
+		int	heightpix	20
+#		string	pattern	"upba3010.tga"
+		string	image0	"upba2512.tga"
+		string	imagebltflag	"chromakey"
+#		string	imageblttype	"stretch"
+	}
+}
+
+
+template CIV_BOX:T_FONT5_8 {
+	int	widthpix	24
+	int	heightpix	14
+	string	pattern	"upba0117.tga"
+	int	srcwidthpix	24
+	int	srcheightpix	14
+	int	bevelwidth	1
+	int	beveltype	2
+}
+template CIV_BUTTON {
+	int	ypix	57
+	int	widthpix	25
+	int	heightpix	23
+}
+template CIV_BUTTON_PLUS {
+	int	xpix	392
+	int	widthpix	22
+	int	heightpix	18
+	int	bevelwidth	0
+	string	image0	"upba5258.tga"
+	string	image1	"upba5259.tga"
+	string	imagebltflag	"chromakey"
+}
+
+
+template CIV_BUTTON_MINUS {
+	int	xpix	336
+	int	widthpix	22
+	int	heightpix	18
+	int	bevelwidth	0
+	string	image0	"upba5260.tga"
+	string	image1	"upba5261.tga"
+	string	imagebltflag	"chromakey"
+}
+
+
+template MAX_BUTTON:T_FONT5_8 {
+	bool	shadowfont	true
+	int	widthpix	64
+	int	heightpix	21
+	int	bevelwidth	0
+	string	image0	"upba6100.tga"
+	string	image1	"upba6101.tga"
+	string	imagebltflag	"chromakey"
+}
+
+
+template MACRO_BOX:T_FONT5_8 {
+	int	widthpix	28
+	int	heightpix	19
+	string	pattern	"upba0117.tga"
+	int	srcwidthpix	28
+	int	srcheightpix	19
+	int	beveltype	2
+	int	bevelwidth	1
+}
+
+
+template MICRO_LABEL:T_FONT5_8 {
+#	int	xpix	6
+	string	xanchor	"center"
+	int	widthpix	252
+	int	heightpix	24
+	string	pattern	"upba0117.tga"
+	int	srcxpix	6
+	int	srcwidthpix		252
+	int	srcheightpix	24
+	int bevelwidth	1
+	int beveltype	2
+	string	disabledimage0	"upba0524.tga"
+	string	imageblttype	"stretch"
+}
+
+
+template MICRO_BUTTON_MINUS {
+	int	xpix	4
+#	int	ypix	3
+	string	yanchor	"center"
+	int	widthpix	19
+	int	heightpix	16
+	string	image0	"upba1106.tga"
+	string	image1	"upba1106.tga"
+	string	disabledimage0	"upba1108.tga"
+
+}
+
+
+template MICRO_BUTTON_PLUS {
+	int	xpix	57
+#	int	ypix	3
+	string	yanchor	"center"
+	int	widthpix	19
+	int	heightpix	16
+	string	image0	"upba1107.tga"
+	string	image1	"upba1107.tga"
+	string	disabledimage0	"upba1109.tga"
+
+}
+
+
+template MICRO_BOX_LEFT:T_FONT5_8 {
+	int	xpix	26
+#	int	ypix	3
+	string	yanchor	"center"
+	int	widthpix	28
+	int	heightpix	19
+	string	pattern	"upba0117.tga"
+	int	srcxpix	233
+	int	srcypix	8
+	int	srcwidthpix		28
+	int	srcheightpix	19
+	int	beveltype	2
+	int	bevelwidth	1
+	string	disabledimage0	"upba0524.tga"
+	string	imageblttype	"stretch"
+}
+
+
+template MICRO_BOX_RIGHT:T_FONT5_8 {
+	int	xpix	192
+#	int	ypix	3
+	string	yanchor	"center"
+	int	widthpix	28
+	int	heightpix	19
+	string	pattern	"upba0117.tga"
+	int	srcxpix	233
+	int	srcypix	8
+	int	srcwidthpix		28
+	int	srcheightpix	19
+	int	beveltype	2
+	int	bevelwidth	1
+	string	disabledimage0	"upba0524.tga"
+	string	imageblttype	"stretch"
+}
+
+
+template MICRO_BOX_ICON {
+	string	imagebltflag	"chromakey"
+}
+
+
+template PROD_RANGER:T_FONT5_8 {
+	bool alwaysranger	true
+	rangery {
+		int	widthpix	15
+		int	heigthpix	15
+		string	type	"scroller"
+		string	orientation	"vertical"
+		string	pattern	"upba5605.tga"
+		incy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+		decy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+#			thumb {
+#				string	image0	"upba5613.tga"
+#				string	imagebltflag	"chromakey"
+#			}
+	}
+}
+
+
+template IMP_BUTTON {
+	int	xpix	656
+	int	widthpix	41
+	int	heightpix	34
+	int	bevelwidth	0
+}
+
+
+template IMP_SWITCH {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	string	parent	"ControlPanelWindow.TileImpSwitch"
+	int	widthpix	64
+	int	heightpix	48
+#	string	pattern			"upba3010.tga"
+#	string	imageblttype	"stretch"
+
+
+	tipwindow {
+		int	widthpix	150
+		int	heightpix	30
+		tip:T_FONT5_8 {
+			bool	usedatabase	true
+			string	image0	"upba0117.tga"
+			string	imageblttype	"tile"
+			int	widthpix	150
+			int	heightpix	30
+			string	just	"left"
+		}
+	}
+}
+
+
+##----------------##
+##  templates 640 ##
+##----------------##
+template CIV_TEXT_640:T_FONT1_12 {
+	int	widthpix	50
+	int	heightpix	15
+}
+
+
+template CIV_MARKER_640 {
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	4
+	int	heightpix	4
+}
+
+
+template CIV_SLIDER_640 {
+	string	pattern	"upba3010.tga"
+	int	ypix	21
+	int	widthpix	67
+	int	heightpix	11
+	bool	quantizedrag	true
+	int	maxxval	4
+	int	pagexval	1
+#	bool	rigidthumb		true
+
+
+	thumb {
+		int	widthpix	10
+		string	pattern	"upba3010.tga"
+	}
+}
+
+
+template CIV_BOX_640:T_FONT1_12 {
+	string	pattern	"upba3010.tga"
+	int	widthpix	21
+	int	heightpix	14
+	int	bevelwidth	1
+	int	beveltype	1
+}
+
+
+template CIV_BUTTON_640 {
+	int	ypix	45
+	int	widthpix	16
+	int	heightpix	14
+}
+
+
+template MAX_BUTTON_640:T_FONT1_12 {
+	int	widthpix	55
+	int	heightpix	15
+	string	image0	"upbb0111.tga"
+}
+
+
+template MICRO_LABEL_640:T_FONT1_12 {
+	int	xpix	15
+	int	widthpix	144
+	int	heightpix	20
+	int	bevelwidth	1
+	int beveltype	1
+}
+
+
+template MICRO_RIGHT_640 {
+	int	xpix	20
+	int	ypix	3
+	int	widthpix	13
+	int	heightpix	14
+	string	image0 "upbb1107.tga"
+	string	image1 "upbb1107.tga"
+}
+
+
+template MICRO_LEFT_640 {
+	int	xpix	3
+	int	ypix	3
+	int	widthpix	13
+	int	heightpix	14
+	string	image0 "upbb1106.tga"
+	string	image1 "upbb1106.tga"
+}
+
+
+template MICRO_BOX_RIGHT_640:T_FONT1_12 {
+	int	xpix	121
+	int	ypix	2
+	int	widthpix	20
+	int	heightpix	16
+	int	bevelwidth	1
+	int	beveltype	1
+	string	text	"str_ldl_0"
+	string	pattern	"upba3010.tga"
+}
+
+
+
+##-----------------------------------##
+##              Data                 ##
+##-----------------------------------##
+ControlPanelWindow {
+#	string	xanchor	"left"
+#	string	yanchor	"bottom"
+	string	pattern	"upba3010.tga"
+	int	xpix	264
+	int	ypix	618
+	int	widthpix	709
+	int	heightpix	150
+	CityUnitSelectedTabGroup {
+		int	xpix	143
+		int	ypix	4
+		int	widthpix	456
+		int	heightpix	142
+		bool	autoarrange	FALSE
+		CivTab:CP_TAB {
+			int	xpix	6
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_CIV"
+			pane {
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+				CivTabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+
+
+					WorkdayText:CIV_TEXT{
+						int	xpix	20
+						int	ypix	-2
+						string	text	"str_ldl_CAPS_WORKDAY"
+					}
+					WagesText:CIV_TEXT{
+						int	xpix	20
+						int	ypix	35
+						string	text	"str_ldl_CAPS_WAGES"
+					}
+					RationsText:CIV_TEXT{
+						int	xpix	20
+						int	ypix	70
+						string	text	"str_ldl_CAPS_RATIONS"
+					}
+					WorkdayMarker:CIV_MARKER {
+					}
+					RationsMarker:CIV_MARKER {
+					}
+					WagesMarker:CIV_MARKER {
+					}
+					HappyMarker:CIV_MARKER {
+					}
+					PwText:CIV_TEXT{
+						int	xpix	325	
+						int	ypix	2
+						string	text	"str_ldl_PW"
+					}
+					ScienceText:CIV_TEXT{
+						int	xpix	325
+						int	ypix	70
+						string	text	"str_ldl_CAPS_SCIENCE"
+					}
+					HappinessText:CIV_TEXT{
+						int	xpix	164
+						int	ypix	2
+						int	widthpix	124
+						string	text	"str_ldl_CAPS_HAPPINESS"
+					}
+					RiotText:CIV_TEXT{
+						int	xpix	146
+						int	ypix	37
+						string	text	"str_ldl_RIOT"
+					}
+					RevolutionText:CIV_TEXT{
+						int	xpix	208
+						int	ypix	37
+						string	text	"str_ldl_REV"
+					}
+					NextAdvanceThermometer:T_FONT5_8 {
+						int	xpix	164
+						int	ypix	92
+						int	widthpix	124
+						int	heightpix	14
+						string	pattern	"upba0117.tga"
+						int	srcxpix	164
+						int	srcypix	92
+						int	srcwidthpix		124
+						int	srcheightpix	14
+						int	beveltype	2
+						int	bevelwidth	1
+					}
+					NextAdvanceText:CIV_TEXT {
+						int	xpix	164
+						int	ypix	73
+						int	widthpix	124
+						int	heightpix	16
+						string	pattern	"upba0117.tga"
+						int	srcxpix	164
+						int	srcypix	73
+						int	srcwidthpix		124
+						int	srcheightpix	16
+					}
+
+
+					WorkdaySlider:CIV_SLIDER {
+						int	ypix	18
+					}
+					WagesSlider:CIV_SLIDER {
+						int	ypix	54
+					}
+					RationsSlider:CIV_SLIDER {
+						int	ypix	90
+					}
+
+
+					WorkdayBox:CIV_BOX {
+						int	xpix	116
+						int	ypix	21
+						int widthpix	33
+						int	srcxpix	116
+						int	srcypix	21
+						int	srcwidthpix	33
+					}
+					WagesBox:CIV_BOX {
+						int	xpix	116
+						int	ypix	57
+						int widthpix	33
+						int	srcxpix	116
+						int	srcypix	57
+						int	srcwidthpix	33
+					}
+					RationsBox:CIV_BOX {
+						int	xpix	116
+						int	ypix	93
+						int widthpix	33
+						int	srcxpix	116
+						int	srcypix	93
+						int	srcwidthpix	33
+					}
+					PwBox:CIV_BOX {
+						int	xpix	363
+						int	ypix	20
+						int	srcxpix	363
+						int	srcypix	20
+					}
+					ScienceBox:CIV_BOX {
+						int	xpix	363
+						int	ypix	92
+						int	srcxpix	363
+						int	srcypix	92
+					}
+					RiotBox:CIV_BOX {
+						int	xpix	184
+						int	ypix	57
+						int	srcxpix	184
+						int	srcypix	57
+					}
+					RevolutionBox:CIV_BOX {
+						int	xpix	247
+						int	ypix	57
+						int	srcxpix	247
+						int	srcypix	57
+					}
+					HappinessBox:CIV_BOX {
+						int	xpix	293
+						int	ypix	20
+						int	srcxpix	293
+						int	srcypix	20
+					}
+					AdvanceBox:CIV_BOX {
+						int	xpix	  293
+						int	ypix	  92
+						int     widthpix  34
+						int	srcxpix	  293
+						int	srcypix	  92
+						int     srcwidthpix  34
+					}
+
+#XXX
+					PwPlusButton:CIV_BUTTON_PLUS {
+						int	ypix	19
+					}
+					PwMinusButton:CIV_BUTTON_MINUS {
+						int	ypix	19
+					}
+					SciencePlusButton:CIV_BUTTON_PLUS {
+						int	ypix	89
+					}
+					ScienceMinusButton:CIV_BUTTON_MINUS {
+						int	ypix	89
+					}
+
+
+					HappinessThermometer {
+						int	xpix	164
+						int	ypix	22
+						int	widthpix	124
+						int	heightpix	14
+						string	pattern	"upba0117.tga"
+						int	srcxpix	164
+						int	srcypix	20
+						int	srcwidthpix		124
+						int	srcheightpix	14
+					}
+				}
+			}
+		}
+		MacroTab:CP_TAB {
+#			string	xanchor	"left"
+#			string	yanchor	"top"
+			int	xpix	78
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_MAX"
+			pane {
+#				string	xanchor	"left"
+#				string	yanchor	"top"
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+				MacroTabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+#					string	pattern	"upba1105.tga"
+					string	pattern	"upba0117.tga"
+					int	bevelwidth	0
+					
+					SwitchHolder {
+						int	xpix	0
+						int	ypix	0
+						int	widthpix	177
+						int	heightpix	122
+						int	bevelwidth	2
+						int	beveltype	1
+						MacroMaxLabel:T_FONT5_8 {
+							int	xpix	0
+							int	ypix	0
+							int	widthpix	175
+							int	heightpix	20
+							string	text	"str_ldl_MAXIMIZE_CITY"
+						}
+						MacroSwitchGroup {
+							int	xpix	0
+							int	ypix	0
+							int	widthpix	176
+							int	heightpix	122
+
+
+
+
+							MacroProdButton:MAX_BUTTON {
+								int	xpix	8
+								int	ypix	24
+								string	text	"str_ldl_PROD"
+							}
+							MacroGrowthButton:MAX_BUTTON {
+								int	xpix	98
+								int	ypix	24
+								string	text	"str_ldl_CAPS_FOOD"
+							}
+							MacroKnowledgeButton:MAX_BUTTON {
+								int	xpix	98
+								int	ypix	59
+								string	text	"str_ldl_SCI"
+							}
+							MacroGoodsButton:MAX_BUTTON {
+								int	xpix	8
+								int	ypix	59
+								string	text	"str_ldl_CAPS_GOLD"
+							}
+							MacroHappinessButton:MAX_BUTTON{
+								int	xpix	55
+								int	ypix	91
+								string	text	"str_ldl_HAPP"
+							}
+						}
+					}
+					BoxHolder {
+						int	xpix	188
+						int	ypix	0
+						int	widthpix	260
+						int	heightpix	122
+						int	bevelwidth	2
+						int	beveltype	1
+						MacroFoodLabel:T_FONT5_8 {
+							int	xpix	0
+							int	ypix	40
+							int	widthpix	50
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_CAPS_FOOD2"
+						}
+						MacroProdLabel:T_FONT5_8 {
+							int	xpix	2
+							int	ypix	6
+							int	widthpix	45
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_PROD2"
+						}
+						MacroGoldLabel:T_FONT5_8 {
+							int	xpix	76
+							int	ypix	6
+							int	widthpix	50
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_CAPS_GOLD2"
+						}
+						MacroKnowLabel:T_FONT5_8 {
+							int	xpix	158
+							int	ypix	6
+							int	widthpix	60
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_CAPS_SCIENCE2"
+						}
+						MacroEatenLabel:T_FONT5_8 {
+							int	xpix	80
+							int	ypix	38
+							int	widthpix	45
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_EATEN"
+						}
+						MacroStoredLabel:T_FONT5_8 {
+							int	xpix	165
+							int	ypix	38
+							int	widthpix	50
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_STORED"
+						}
+						MacroNextPopLabel:T_FONT5_8 {
+							int	xpix	47
+							int	ypix	69
+							int	widthpix	80
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_NEXT_POP_IN"
+						}
+						MacroTurnsLabel:T_FONT5_8 {
+							int	xpix	155
+							int	ypix	69
+							int	widthpix	50
+							int	heightpix	19
+							int bevelwidth	0
+							string	text	"str_ldl_TURNS"
+						}
+
+
+						MacroKnowBox:MACRO_BOX {
+							int	xpix	220
+							int	ypix	5
+							int	srcxpix	408
+							int	srcypix	3
+						}
+						MacroFoodBox:MACRO_BOX {
+							int	xpix	44
+							int	ypix	38
+							int	srcxpix	232
+							int	srcypix	36
+						}
+						MacroProdBox:MACRO_BOX {
+							int	xpix	44
+							int	ypix	5
+							int	srcxpix	232
+							int	srcypix	3
+						}
+						MacroGoldBox:MACRO_BOX {
+							int	xpix	126
+							int	ypix	5
+							int	srcxpix	314
+							int	srcypix	3
+						}
+						MacroEatenBox:MACRO_BOX {
+							int	xpix	126
+							int	ypix	38
+							int	srcxpix	348
+							int	srcypix	36
+						}
+						MacroStoredBox:MACRO_BOX {
+							int	xpix	220
+							int	ypix	38
+							int	srcxpix	408
+							int	srcypix	36
+						}
+						MacroNextPopBox:MACRO_BOX {
+							int	xpix	126
+							int	ypix	69
+							int	srcxpix	314
+							int	srcypix	69
+						}
+						MacroHappyBox:MACRO_BOX {
+							int	xpix	198
+							int	ypix	95
+							int	srcxpix	386
+							int	srcypix	95
+						}
+		
+						MacroHappyLabel:T_FONT5_8 {
+							int xpix	21
+							int ypix	95
+							int widthpix	70
+							int heightpix	19
+							string text		"str_ldl_CAPS_HAPPINESS"
+						}
+						
+						MacroHappyThermometer {
+							int xpix	95
+							int ypix	98
+							int widthpix	95
+							int heightpix	13
+							string	pattern	"upba0117.tga"
+							int srcxpix	283
+							int srcypix	98
+							int srcwidthpix		95
+							int srcheightpix	13
+							int	percent		0
+						}
+					}
+				}
+			}
+		}
+		MicroTab:CP_TAB {
+#			string	xanchor	"left"
+#			string	yanchor	"top"
+			int	xpix	150
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_LABOR"
+			pane {
+#				string	xanchor	"left"
+#				string	yanchor	"top"
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	452
+				int	heightpix	126
+				string	parent	"ControlPanelWindow"
+				MicroTabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+
+
+					MicroButtonHolder {
+						int	xpix	188
+						int	ypix	0
+						int	widthpix	260
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+
+
+						MicroMusicianLabel:MICRO_LABEL {
+							int	ypix	5
+							string	text	"str_ldl_ENTERTAINERS"
+
+							MicroMusicianPlus:MICRO_BUTTON_PLUS {
+							}
+							MicroMusicianMinus:MICRO_BUTTON_MINUS {
+							}
+							MicroMusicianBox:MICRO_BOX_LEFT {
+							}
+							MicroMusicianTotalBox:MICRO_BOX_RIGHT {
+							}
+							MicroMusicianIcon:MICRO_BOX_ICON {
+								int	xpix	221
+								int	ypix	1
+								int	widthpix	24
+								int	heightpix	21
+								string	image0	"upd002.tga"
+								string tipwindow "str_ldl_Happ"
+}
+						}
+						MicroScientistLabel:MICRO_LABEL {
+							int	ypix	34
+							string	text	"str_ldl_SCIENTISTS"
+
+							MicroScientistPlus:MICRO_BUTTON_PLUS {
+							}
+							MicroScientistMinus:MICRO_BUTTON_MINUS {
+							}
+							MicroScientistBox:MICRO_BOX_LEFT {
+							}
+							MicroScientistTotalBox:MICRO_BOX_RIGHT {
+							}
+							MicroScientistIcon:MICRO_BOX_ICON {
+								int	xpix	221
+								int	ypix	1
+								int	widthpix	26
+								int	heightpix	21
+								string	image0	"upba5410.tga"
+								string tipwindow "str_ldl_Scien"
+	}
+						}
+						MicroBankerLabel:MICRO_LABEL {
+							int	ypix	63
+							string	text	"str_ldl_BANKERS"
+
+							MicroBankerPlus:MICRO_BUTTON_PLUS {
+							}
+							MicroBankerMinus:MICRO_BUTTON_MINUS {
+							}
+							MicroBankerBox:MICRO_BOX_LEFT {
+							}
+							MicroBankerTotalBox:MICRO_BOX_RIGHT {
+							}
+							MicroBankerIcon:MICRO_BOX_ICON {
+								int	xpix	221
+								int	ypix	1
+								int	widthpix	24
+								int	heightpix	24
+								string	image0	"upc022.tga"
+								string tipwindow "str_ldl_Goldy"
+}
+						}
+						MicroGruntLabel:MICRO_LABEL {
+							int	ypix	92
+							string	text	"str_ldl_LABORERS"
+
+							MicroGruntPlus:MICRO_BUTTON_PLUS {
+							}
+							MicroGruntMinus:MICRO_BUTTON_MINUS {
+							}
+							MicroGruntBox:MICRO_BOX_LEFT {
+							}
+							MicroGruntTotalBox:MICRO_BOX_RIGHT {
+							}
+							MicroGruntIcon:MICRO_BOX_ICON {
+								int	xpix	221
+								int	ypix	0
+								int	widthpix	24
+								int	heightpix	24
+								string	image0	"upc020.tga"
+								string tipwindow "str_ldl_Prod"
+}
+						}
+						MicroMusicianModifier:T_FONT1_14 {
+							int	xpix	397
+							int	ypix	31
+							int	widthpix	38
+							int	heightpix	22
+							int bevelwidth	1
+							int beveltype	1
+							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_0"
+						}
+						MicroScientistModifier:T_FONT1_14 {
+							int	xpix	397
+							int	ypix	61
+							int	widthpix	38
+							int	heightpix	22
+							int bevelwidth	1
+							int beveltype	1
+							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_0"
+						}
+						MicroGruntModifier:T_FONT1_14 {
+							int	xpix	397
+							int	ypix	91
+							int	widthpix	38
+							int	heightpix	22
+							int bevelwidth	1
+							int beveltype	1
+							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_0"
+						}
+
+
+					}
+
+
+					MicroPicHolder {
+						int	xpix	0
+						int	ypix	0
+						int	widthpix	178
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+						MicroWorkerLabel:T_FONT1_12 {
+							int	xpix	80
+							int	ypix	8
+							int	widthpix	63
+							int	heightpix	19
+							int bevelwidth	0
+#							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_CAPS_WORKERS"
+						}
+						MicroWorkerBox:T_FONT1_12 {
+							int	xpix	143
+							int	ypix	8
+							int	widthpix	28
+							int	heightpix	19
+							int bevelwidth	1
+							int beveltype	1
+							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_0"
+						}
+						MicroSlavesLabel:T_FONT1_12 {
+							int	xpix	2
+							int	ypix	8
+							int	widthpix	50
+							int	heightpix	19
+							int bevelwidth	0
+#							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_CAPS_SLAVES"
+						}
+						MicroSlavesBox:T_FONT1_12 {
+							int	xpix	52
+							int	ypix	8
+							int	widthpix	28
+							int	heightpix	19
+							int bevelwidth	1
+							int beveltype	1
+							string	pattern	"upba3010.tga"
+							string	text	"str_ldl_0"
+						}
+						MicroTabWorkerPic {
+							int	xpix	94
+							int	ypix	39
+							int	widthpix	76
+							int	heightpix	76
+							string	image0	"upua88.tga"
+							string	imageblttype	"stretch"
+							int	beveltype	1
+							int	bevelwidth	2
+						}
+						MicroTabSlavePic {
+							int	xpix	8
+							int	ypix	39
+							int	widthpix	76
+							int	heightpix	76
+							string	image0	"upua89.tga"
+							string	imageblttype	"stretch"
+							int	beveltype	1
+							int	bevelwidth	2
+						}
+					}		
+				}
+			}
+		}
+		ProductionTab:CP_TAB {
+#			string	xanchor	"left"
+#			string	yanchor	"top"
+			int	xpix	222
+			int	ypix	0
+			int	widthpix	84
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_CAPS_PRODUCTION"
+			pane {
+#				string	xanchor	"left"
+#				string	yanchor	"top"
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+
+				ProductionTabWallpaper { 
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+
+
+					ListHolder {
+						int	xpix	0
+						int	ypix	0
+						int	widthpix	227
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+
+
+						ListLabel:T_FONT5_8 {
+							int	xpix	57
+							int	ypix	6
+							int	widthpix	79
+							int	heightpix	21
+							string	text	"str_ldl_INVENTORY"
+							int	srcxpix	37
+							int	srcypix	6
+							int	srcwidthpix		79
+							int	srcheightpix	21
+						}
+						UpkeepLabel:T_FONT5_8 {
+							int	xpix	139
+							int	ypix	6
+							int	widthpix	50
+							int	heightpix	20
+							string	text	"str_ldl_UPKEEP"
+						}
+						GoldCoin {
+							int	xpix	189
+							int	ypix	6
+							int	widthpix	24
+							int	heightpix	24
+							string	image0	"upc022.tga"
+							string	imagebltflag	"chromakey"
+						}
+						StatsLabel:T_FONT5_8 {
+							int	xpix	2
+							int	ypix	6
+							int	widthpix	50
+							int	heightpix	20
+							string	text	"str_ldl_ARDM_nospace"
+						}
+
+						SellButton:PROD_SELL_BUTTON {
+						}
+
+
+						InventoryListBox:PROD_RANGER {
+							int	xpix	6
+							int	ypix	30
+							int	widthpix	197
+							int	heightpix	79
+							int columns		2
+							int bevelwidth	1
+							int beveltype	2
+							string	pattern	"upba0117.tga"
+							int	xpix	7
+							int	ypix	29
+							int	widthpix	199
+							int	heightpix	81
+							header {
+								switch0:T_FONT5_8 {
+									int	widthpix	162
+									int	heightpix	0
+									string	pattern	"upba5605.tga"
+								}
+								switch1:T_FONT5_8 {
+									int	widthpix	35
+									int	heightpix	0
+									string	pattern	"upba5605.tga"
+								}
+							}
+						}
+						PurchaseListBox:PROD_RANGER {
+							int	xpix	2
+							int	ypix	30
+							int	widthpix	204
+							int	heightpix	79
+							int columns		3
+							int bevelwidth	1
+							int beveltype	2
+							string	pattern	"upba0117.tga"
+							int	xpix	3
+							int	ypix	29
+							int	widthpix	206
+							int	heightpix	81
+							header {
+								switch0:T_FONT1_12 {
+									int	widthpix	56
+									int	heightpix	0
+#									string	text	"I"
+#									string	pattern	"upba3010.tga"
+									int	bevelwidth	1
+								}
+								switch1:T_FONT1_12 {
+									int	widthpix	130
+									int	heightpix	0
+#									string text "BUILD OPTIONS"
+#									string	pattern	"upba3010.tga"
+									int bevelwidth 	1
+								}
+								switch2:T_FONT1_12 {
+									int	widthpix	18
+									int	heightpix	0
+#									string	text	"COST"
+#									string	pattern	"upba3010.tga"
+									int	bevelwidth	1
+								}
+							}
+						}
+						UnitButton:PROD_SORT_BUTTON {
+							int	xpix	137
+							string	image0	"upc034.tga"
+							string	image1	"upc034.tga"
+							string tipwindow "str_ldl_Unis"
+}
+						ImprovementButton:PROD_SORT_BUTTON {
+							int	xpix	168
+							string	image0	"upc032.tga"
+							string	image1	"upc032.tga"
+							string tipwindow "str_ldl_Imps"
+	}
+						WonderButton:PROD_SORT_BUTTON {
+							int	xpix	199
+							string	image0	"upc033.tga"
+							string	image1	"upc033.tga"
+							string tipwindow "str_ldl_Wow"
+}
+
+
+					}
+
+
+					BuildButtonHolder {
+						int	xpix	341
+						int	ypix	0
+						int	widthpix	107
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+						ProdChangeButton:PROD_BUTTON {
+							int	ypix	5
+							string	text	"str_ldl_CAPS_BUILD"
+						}
+						ProdRushBuyButton:PROD_BUTTON {
+							int	ypix	61
+							string	text	"str_ldl_RUSH_BUY"
+						}
+						ProdQueueButton:PROD_BUTTON {
+							int	ypix	92
+							string	text	"str_ldl_CAPS_QUEUE"
+						}
+						ProdOvertimeCost:T_FONT1_12 {
+							int	xpix	29
+							int	ypix	34
+							int	widthpix	53
+							int	heightpix	20
+							int	bevelwidth	1
+							int	beveltype	2
+							string	pattern	"upba0117.tga"
+							int	srcxpix	365
+							int	srcypix	32
+							int	srcwidthpix		53
+							int	srcheightpix	20
+							string	text	"str_ldl_1000_G"
+						}
+					}		###### end ButtonHolder
+
+
+					ChangeButtonHolder {
+						int	xpix	341
+						int	ypix	0
+						int	widthpix	107
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+#						BuildButton:T_FONT5_8 {
+#							int	xpix	87
+#							int	ypix	5
+#							int	widthpix	15
+#							int	heightpix	15
+#							string	pattern	"upba3010.tga"
+#							string	text	"str_ldl_X"
+#						}
+						BuildButton:PROD_BUTTON {
+							int	ypix	5
+							string	text	"str_ldl_CAPS_BUILD"
+						}
+						StatsBox:T_FONT5_8 {
+							int	xpix	10
+							int	ypix	33
+							int	widthpix	92
+							int	heightpix	58
+							int columns		1
+							int bevelwidth	0
+							int beveltype	2
+							string	pattern	"upba0117.tga"
+							int	srcxpix	338
+							int	srcypix	27
+#							int	srcwidthpix	80
+							int	srcwidthpix	97
+#							int	srcheightpix	56
+							int	srcheightpix	68
+						}
+						BuildQueueButton:PROD_BUTTON {
+							int	ypix	97
+							string	text	"str_ldl_CAPS_QUEUE"
+						}
+					}
+
+
+					QueueButtonHolder {
+						int	xpix	226
+						int	ypix	0
+						int	widthpix	222
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+						ApplyButton:PROD_BUTTON {
+							int	xpix	140
+							int	ypix	4
+							string	text	"str_ldl_CAPS_BUILD"
+						}
+						MinusButton {
+							int	xpix	18
+							int	ypix	86
+							int	widthpix	19
+							int	heightpix	16
+							string	image0	"upba1106.tga"
+							string	image1	"upba1106.tga"
+							string	disabledimage0	"upba1108.tga"
+						}
+						PlusButton {
+							int	xpix	18
+							int	ypix	45
+							int	widthpix	19
+							int	heightpix	16
+							string	image0	"upba1107.tga"
+							string	image1	"upba1107.tga"
+							string	disabledimage0	"upba1109.tga"
+						}
+						AddLabel:T_FONT5_8 {
+							int	xpix	0
+							int	ypix	23
+							int	widthpix	54
+							int	heightpix	21
+							string	text	"str_ldl_ADD"
+						}
+						RemoveLabel:T_FONT5_8 {
+							int	xpix	0
+							int	ypix	67
+							int	widthpix	54
+							int	heightpix	21
+							string	text	"str_ldl_REMOVE"
+						}
+						QueueLabel:T_FONT5_8 {
+#							bool	shadowfont	true
+							int	xpix	55
+							int	ypix	6
+							int	widthpix	84
+							int	heightpix	21
+							string	text	"str_ldl_CITY_QUEUE"
+						}
+						QueueListBox:PROD_RANGER {
+							int	xpix	54
+							int	ypix	29
+							int	widthpix	135
+							int	heightpix	81
+							int columns		1
+							int bevelwidth	1
+							int beveltype	2
+							string	pattern	"upba0117.tga"
+							int	srcxpix	277
+							int	srcypix	27
+							int	srcwidthpix	137
+							int	srcheightpix	83
+							header {
+								switch0:T_FONT1_12 {
+									int	widthpix	135
+									int	heightpix	0
+#									string text "QUEUE"
+									string	pattern	"upba5605.tga"
+									int bevelwidth 	0
+									QueueExitButton:T_FONT1_14 {
+										int	xpix	2
+										int	ypix	2
+										int	widthpix	14
+										int	heightpix	14
+										string	pattern	"upba3010.tga"
+										string	text	"str_ldl_X"
+									}
+								}
+							}
+						}
+					}
+
+
+					InfoHolder {
+						int	xpix	226
+						int	ypix	0
+						int	widthpix	116
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+						BeingBuiltText:T_FONT5_8 {
+#							int xpix		8
+							string	xanchor	"center"
+							int ypix		3
+							int widthpix	108
+							int heightpix	16
+							string pattern "upba0117.tga"
+							int srcxpix		234
+							int srcypix		1
+							int srcwidthpix		98
+							int srcheightpix	16
+							int bevelwidth	1
+							int beveltype 	2
+							
+							string text "str_ldl_Nothing_Building"
+						}					
+						ProductionPicture {
+							int	xpix	8
+							int	ypix	20
+							int	widthpix	99
+							int	heightpix	74
+							string	imageblttype	"stretch"
+							string pattern "upba0117.tga"
+							int bevelwidth	1
+							int beveltype 	2
+							int	srcxpix	234
+							int	srcypix	20
+							int	srcwidthpix		99
+							int	srcheightpix	74
+						}
+						ProductionMeter:T_FONT5_7 {
+							int xpix 8
+							int ypix 101
+							int widthpix	76
+							int heightpix	13
+							string	pattern	"upba0117.tga"
+							int srcxpix 236
+							int srcypix 101
+							int srcwidthpix		76
+							int srcheightpix	13
+							int percent		50
+						}
+						TurnText:T_FONT5_8 {
+							int xpix		87
+							int ypix		98
+							int widthpix	21
+							int heightpix	16
+							string	pattern	"upba0117.tga"
+							int srcxpix		313
+							int srcypix		98
+							int srcwidthpix		21
+							int srcheightpix	16
+							string text "str_ldl_0"
+							int bevelwidth	1
+							int	beveltype	2
+						}						
+						LeftButton:PROD_ARROW {
+							int	xpix	8
+							string	image0	"upba6104.tga"
+							string	image1	"upba6105.tga"
+						}
+						RightButton:PROD_ARROW {
+							int	xpix	62
+							string	image0	"upba6106.tga"
+							string	image1	"upba6107.tga"
+						}
+					}
+				}
+			}
+		}
+
+
+		############################
+		# CityTab
+		############################
+		CityTab:CP_TAB {
+			int	xpix	306
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_CAPS_CITY"
+			pane {
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+				string	pattern	"upba3010.tga"
+
+
+				TabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+
+
+					######## real stuff begins here
+					SwitchHolder {
+						int	xpix	346
+						int	ypix	0
+						int	widthpix	102
+						int	heightpix	122	
+						int	beveltype	1
+						int	bevelwidth	2
+						Group {
+							int	xpix	0
+							int	ypix	0
+							int	widthpix	145
+							int	heightpix	122
+							TradeSwitch:CITYTAB_SWITCH {
+								int	ypix	7
+								string	text	"str_ldl_CAPS_TRADE"
+							}
+							HappinessSwitch:CITYTAB_SWITCH {
+								int	ypix	33
+								string	text	"str_ldl_CAPS_HAPPINESS"
+								int	state	1
+							}
+							PollutionSwitch:CITYTAB_SWITCH {
+								int	ypix	59
+								string	text	"str_ldl_CAPS_POLLUTION"
+							}
+							CrimeSwitch:CITYTAB_SWITCH {
+								int	ypix	85
+								string	text	"str_ldl_CRIME"
+							}
+						}
+					}
+					LeftBox {
+						int	xpix	0
+						int	ypix	0
+						int	widthpix	337
+						int	heightpix	122
+						int	beveltype	1
+						int	bevelwidth	2
+						string	pattern	"upba0117.tga"
+						int	srcxpix	0
+						int	srcypix	0
+						int	srcwidthpix		337
+						int	srcheightpix	122
+						ListHolder {
+							int	xpix	0
+							int	ypix	0
+							int	widthpix	337
+							int	heightpix	122
+							PositiveList:CITYTAB_LIST {
+							}
+							NegativeList:CITYTAB_LIST {
+								int	xpix	170
+								int	srcxpix	184
+							}
+							PositiveLabel:CITYTAB_LABEL {
+								int	xpix	10
+								int	srcxpix	10
+							}
+							NegativeLabel:CITYTAB_LABEL {
+								int	xpix	173
+								int	srcxpix	160
+							}
+							TotalPositiveLabel:CITYTAB_LABEL3 {
+								int	xpix	3
+								int	srcxpix	8
+								int	ypix	107
+								int	srcypix	107
+							}
+							TotalNegativeLabel:CITYTAB_LABEL3 {
+								int	xpix	160
+								int	srcxpix	158
+								int	ypix	107
+								int	srcypix	107
+							}
+							TotalPositiveBox:CITYTAB_TOTAL_BOX2 {
+								int	xpix	129
+								int	srcxpix	135
+							}
+							TotalNegativeBox:CITYTAB_TOTAL_BOX2 {
+								int xpix	285
+								int	srcxpix	285
+							}
+							TotalPollutionLabel:CITYTAB_LABEL {
+								int	xpix	10
+								int	srcxpix	10
+								int	ypix	107
+								int	srcypix	107
+								string	text	"str_ldl_Total_City_Pollution"
+							}
+							TotalPollutionBox:CITYTAB_TOTAL_BOX {
+								int	xpix	135
+								int	srcxpix	135
+							}
+							PollutionLevelLabel:CITYTAB_LABEL {
+								int	xpix	173
+								int	srcxpix	173
+								int	ypix	107
+								int	srcypix	107
+								int	widthpix	90
+								int	srcwidthpix	90
+								string	text	"str_ldl_Pollution_Level"
+							}
+							PollutionLevelBox:CITYTAB_TOTAL_BOX {
+								int xpix	274
+								int	srcxpix	285
+								int	widthpix	60
+								int	srcwidthpix	60
+								int	bevelwidth	0
+							}
+						}
+						CrimeHolder {
+							int	xpix	39
+							int	ypix	5
+							int	widthpix	276
+							int	heightpix	110
+							string	pattern	"upba0117.tga"
+							int	srcxpix	39
+							int	srcypix	5
+							int	srcwidthpix		276
+							int	srcheightpix	110
+							int	beveltype	2
+							int	bevelwidth	2
+							CrimeLabel:CITYTAB_ARROW {
+								int	ypix	9
+								string	text	"str_ldl_CRIME"
+							}
+							ProdLabel:CITYTAB_ARROW {
+								int	ypix	31
+								string	text	"str_ldl_PRODUCTION_LOST_TO_CRIME"
+							}
+							FoodLabel:CITYTAB_ARROW {
+								int	ypix	59
+								string	text	"str_ldl_CAPS_FOOD_LOST_TO_CRIME"
+							}
+							GoldLabel:CITYTAB_ARROW {
+								int	ypix	83
+								string	text	"str_ldl_GOLD_LOST_TO_CRIME"
+							}
+							CrimeBox:CITYTAB_BOX {
+								int	ypix	4
+								int	srcypix	4
+							}
+							ProdBox:CITYTAB_BOX {
+								int	ypix	29
+								int	srcypix	29
+							}
+							FoodBox:CITYTAB_BOX {
+								int	ypix	56
+								int	srcypix	56
+							}
+							GoldBox:CITYTAB_BOX {
+								int	ypix	82
+								int	srcypix	82
+							}
+						}
+						TradeHolder {
+							int	xpix	0
+							int	ypix	0
+							int	widthpix	337
+							int	heightpix	122
+							TradeList:T_FONT5_8 {
+								bool	shadowfont	true
+								int	xpix	7
+								int	ypix	46
+								int	widthpix	136
+								int	heightpix	69
+								int columns		3
+								int bevelwidth	1
+								int beveltype	2
+								string	pattern	"upba0117.tga"
+								int	srcxpix	6
+								int	srcypix	45
+								int	srcwidthpix	138
+								int	srcheightpix	71
+								header {
+									switch0 {
+										int	heightpix	0
+										int	widthpix	29
+									}
+									switch1 {
+										int	heightpix	0
+										int	widthpix	87
+									}
+									switch2 {
+										int	heightpix	0
+										int	widthpix	20
+									}
+								}
+								bool alwaysranger	true
+								rangery {
+									int	widthpix	15
+									int	heigthpix	15
+									string	type	"scroller"
+									string	orientation	"vertical"
+									string	pattern	"upba5605.tga"
+									incy {
+										int	widthpix	15
+										int	heightpix	15
+										string	pattern	"upba5605.tga"
+									}
+									decy {
+										int	widthpix	15
+										int	heightpix	15
+										string	pattern	"upba5605.tga"
+									}
+								}
+							}
+							ViewButton:CITYTAB_SWITCH {
+								int	xpix	55
+								int	ypix	5
+								string	text	"str_tbl_ldl_View_Exports"
+							}
+							SendButton:T_FONT5_8 {
+								bool	shadowfont	true
+								int	xpix	170
+								int	ypix	95
+								int	widthpix	64
+								int	heightpix	21
+								string	image0	"upba6100.tga"
+								string	image1	"upba6101.tga"
+								string	text	"str_ldl_SEND"
+								string	imagebltflag	"chromakey"
+								int	bevelwidth	0
+							}
+							BreakRouteButton:CITYTAB_SWITCH {
+								int	xpix	242
+								int	ypix	95
+								string	text	"str_ldl_BREAK_ROUTE"
+							}
+							GoodsLabel:T_FONT5_8 {
+								int	xpix	6
+								int	ypix	6
+								int	widthpix	42
+								int	heightpix	15
+								string	text	"str_ldl_Goods"
+								string	pattern	"upba0117.tga"
+								int	srcxpix	6
+								int	srcypix	6
+								int	srcwidthpix		42
+								int	srcheightpix	15
+							}
+							HeaderTypeLabel:T_FONT5_8 {
+								int	xpix	0
+								int	ypix	27
+								int	widthpix	40
+								int	heightpix	15
+								string	text	"str_ldl_Small_Type"
+							}
+							HeaderFromLabel:T_FONT5_8 {
+								int	xpix	44
+								int	ypix	27
+								int	widthpix	65
+								int	heightpix	15
+								string	text	"str_ldl_From"
+								string	pattern	"upba0117.tga"
+								int	srcxpix	44
+								int	srcypix	27
+								int	srcwidthpix		65
+								int	srcheightpix	15
+							}
+							HeaderGoldLabel:T_FONT5_8 {
+								int	xpix	113
+								int	ypix	27
+								int	widthpix	40
+								int	heightpix	15
+								string	text	"str_ldl_Gold"
+							}
+							CaravansLabel:T_FONT5_8 {
+								int	xpix	170
+								int	ypix	24
+								int	widthpix	67
+								int	heightpix	15
+								string	text	"str_ldl_Caravans_COLON"
+								string	just	"left"
+							}
+							CaravansImage {
+								int	xpix	268
+								int	ypix	8
+								int	widthpix	55
+								int	heightpix	45
+								string	image0	"upba6156.tga"
+								string	imagebltflag	"chromakey"
+								string	imageblttype	"stretch"
+								NumCaravansLabel:T_FONT4_8 {
+									string	xanchor	"center"
+									int	ypix	30
+									int	widthpix	37
+									int	heightpix	15
+									int	srcxpix	6
+									int	srcypix	7
+									int	srcwidthpix		20
+									int	srcheightpix	15
+								}
+							}
+							TradeGoldLabel:T_FONT5_8 {
+								int	xpix	170
+								int	ypix	60
+								int	widthpix	100
+								int	heightpix	15
+								string	text	"str_ldl_Gold_From_Trade_COLON"
+							}
+							TradeGoldBox:T_FONT5_8 {
+								int	xpix	268
+								int	ypix	63
+								int	widthpix	39
+								int	heightpix	12
+								int	srcxpix	192
+								int	srcypix	53
+								int	srcwidthpix		39
+								int	srcheightpix	12
+								int	beveltype	2
+								int	bevelwidth	1
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		############################
+		# TradeTab
+		############################
+		TradeTab:CP_TAB {
+			int	xpix	306
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_CAPS_TRADE"
+			pane {
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+				string	pattern	"upba3010.tga"
+
+
+				TabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+
+
+					TradeButton:T_FONT1_14 {
+						int	xpix	307
+						int	ypix	60
+						int	widthpix	102
+						int	heightpix	23
+						string	pattern	"upba3010.tga"
+						string	text	"str_ldl_CAPS_TRADE"
+					#	string image0 "tempbutton1.tga"
+					#	string image1 "tempbutton2.tga"
+					}
+					LockButton:T_FONT1_14 {
+						int	xpix	307
+						int	ypix	87
+						int	widthpix	102
+						int	heightpix	23
+						string	pattern	"upba3010.tga"
+						string tipwindow "str_ldl_Glock"
+						string	text	"str_ldl_CAPS_LOCK"
+					#	string image0 "tempbutton1.tga"
+					#	string image1 "tempbutton2.tga"
+					}
+					GoldLabel:T_FONT1_16 {
+						int	xpix	307
+						int	ypix	5
+						int	widthpix	102
+						int	heightpix	20
+						string	text	"str_ldl_CAPS_TOTAL_GOLD"
+					}
+					GoldBox:T_FONT1_16 {
+						int	xpix	307
+						int	ypix	36
+						int	widthpix	102
+						int	heightpix	23
+						string	text	"str_ldl_0"
+					}
+					
+					TradeList {
+						int	xpix	5
+						int	ypix	25
+						int	widthpix	260
+						int	heightpix	90
+						int	columns		4
+						int bevelwidth	1
+						int beveltype	1
+						bool alwaysranger	TRUE
+						string	pattern	"upba3010.tga"
+											
+						header {
+							switch0:T_FONT1_14 {
+								int	widthpix	80
+								int	heightpix	20
+								string text "str_ldl_CAPS_GOODS"
+								string	pattern	"upba3010.tga"
+								int bevelwidth 	1
+							}
+							switch1:T_FONT1_14 {
+								int	widthpix	70
+								int	heightpix	20
+								string text "str_ldl_CAPS_FROM"
+								string	pattern	"upba3010.tga"
+								int bevelwidth 	1
+							}
+							switch2:T_FONT1_14 {
+								int	widthpix	70
+								int	heightpix	20
+								string text "str_ldl_CAPS_TO"
+								string	pattern	"upba3010.tga"
+								int bevelwidth 	1
+							}
+							switch3:T_FONT1_14 {
+								int	widthpix	40
+								int	heightpix	20
+								string text "str_ldl_CAPS_VALUE"
+								string	pattern	"upba3010.tga"
+								int bevelwidth 	1
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		UnitsTab:CP_TAB {
+			int	xpix	378
+			int	ypix	0
+			int	widthpix	72
+			int	heightpix	14
+			string	parent	"ControlPanelWindow"
+			string	text	"str_ldl_CAPS_UNITS"
+			pane {
+				int	xpix	0
+				int	ypix	0
+				int	widthpix	456
+				int	heightpix	129
+				string	parent	"ControlPanelWindow"
+				string	pattern	"upba3010.tga"
+
+
+				TabWallpaper {
+					int	xpix	4
+					int	ypix	3
+					int	widthpix	448
+					int	heightpix	122
+					string	pattern	"upba0117.tga"
+					OrdersButtonBank {
+						int	xpix	206
+						int	ypix	0
+#						int	widthpct	54
+						int	widthpix	242
+						int	heightpix	122
+						string	pattern	"upba3010.tga"
+					}
+					LockButton:CP_UNIT_LOCKBUTTON {
+					string tipwindow "str_ldl_Glock"
+}
+					UnlockButton:CP_UNIT_LOCKBUTTON {
+						string	image0	"upa062.tga"
+						string	image1	"upa062.tga"
+						string tipwindow "str_ldl_Ulock"
+					}
+
+
+
+					BattleOrderBox {
+						int	xpix	0
+						int	ypix	0
+#						int	widthpct	35
+						int	widthpix	156
+						int	heightpix	122
+						string	pattern	"upba0117.tga"
+
+						UnitImageButton {
+#							int xpix		40
+							string	xanchor	"center"
+							int ypix		28
+							int widthpix	72
+							int	heightpix	54
+	#						string pattern "upba3010.tga"
+							string imageblttype "stretch"
+							string	picture	""
+							int bevelwidth 3
+							int beveltype 0
+							UnitF:T_FONT5_12 {
+								int	xpix	4
+								int	ypix	5
+								int	widthpix	20
+								int	heightpix	20
+							}
+							UnitV:T_FONT5_12 {
+								int	xpix	52
+								int	ypix	5
+								int	widthpix	20
+								int	heightpix	20
+							}
+							Cargo {
+								int	xpix	0
+								int	ypix	0
+								int	widthpix	8
+								int	heightpix	6
+							}
+						}
+						UnitHealthBar {
+#							int	xpix	40
+							string	xanchor	"center"
+							int	ypix	19
+							int	widthpix	72
+							int	heightpix	8
+						#	string	pattern	"upba3010.tga"
+						}
+						UnitName:T_FONT5_8 {
+#							int xpix		40
+							string	xanchor	"center"
+							int ypix		4
+							int widthpix	80
+							int	heightpix	14
+							string pattern "upba0117.tga"
+							int srcxpix		40
+							int srcypix		2
+							int srcwidthpix	80
+							int	srcheightpix	14
+						}
+						UnitARDText:T_FONT5_8 {
+							int xpix		3
+							int ypix		82
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_ARD"
+						}
+						UnitARD:T_FONT5_8 {
+							int xpix		3
+							int ypix		93
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_ARD"
+							string	pattern	"upba0117.tga"
+							int srcxpix		3
+							int srcypix		92
+							int srcwidthpix		80
+							int	srcheightpix	14
+						}
+						UnitMText:T_FONT5_8 {
+							int xpix		70
+							int ypix		82
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_M"
+						}
+						UnitMovement:T_FONT5_8 {
+							int xpix		81
+							int ypix		93
+							int widthpix	60
+							int	heightpix	14
+							int bevelwidth 	0
+							string	pattern	"upba0117.tga"
+							int srcxpix		81
+							int srcypix		92
+							int srcwidthpix		60
+							int	srcheightpix	14
+						}
+						UnitAttackText:T_FONT1_14 {
+							int xpix		3
+							int ypix		75
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_Attack_COLON"
+							string pattern "upba3010.tga"
+						}
+						UnitAttack:T_FONT1_14 {
+							int xpix		80
+							int ypix		75
+							int widthpix	60
+							int	heightpix	14
+							string pattern "upba3010.tga"
+							int bevelwidth 	1
+							int beveltype	1
+						}
+						UnitDefenseText:T_FONT1_14 {
+							int xpix		3
+							int ypix		90
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_Defense_COLON"
+							string pattern "upba3010.tga"
+						}
+						UnitDefense:T_FONT1_14 {
+							int xpix		80
+							int ypix		90
+							int widthpix	60
+							int	heightpix	14
+							string pattern "upba3010.tga"
+							int bevelwidth 	1
+							int beveltype	1
+						}
+						UnitMovementText:T_FONT1_14 {
+							int xpix		3
+							int ypix		105
+							int widthpix	80
+							int	heightpix	14
+							string text 	"str_ldl_Movement_COLON"
+							string pattern "upba3010.tga"
+						}
+						ActiveDefenseIcon {
+							string	image0	"upa059.tga"
+							int xpix		0
+							int ypix		0
+							int widthpix	26
+							int	heightpix	25
+							int bevelwidth	0
+							string tipwindow "str_ldl_Activ"
+}
+						VeteranIcon {
+							string	image0	"upa061.tga"
+							int xpix		0
+							int ypix		0
+							int widthpix	26
+							int	heightpix	25
+							int bevelwidth	0
+							string tipwindow "str_ldl_Veter"
+}
+						FuelLabel:T_FONT5_8 {
+							int	xpix	52
+							int	ypix	101
+							int	widthpix	30
+							int	heightpix	20
+							string	text	"str_ldl_Fuel_COLON"
+						}
+						FuelBox:T_FONT5_8 {
+							int	xpix	83
+							int	ypix	101
+							int	widthpix	20
+							int	heightpix	20
+						}
+					}
+					TransportHolder {
+						int	xpix	195
+						int	ypix	4
+						int	widthpix	242
+						int	heightpix	119
+						string	pattern	"upba3010.tga"
+						int	beveltype	1
+						int	bevelwidth	2
+
+
+						TransportLabel:T_FONT5_8 {
+							int	xpix	56
+							int	ypix	5
+							int	widthpix	130
+							int	heightpix	20
+							string	text	"str_ldl_UNITS_TO_TRANSPORT"
+						}
+						TransportIcon {
+							int	xpix	9
+							int	ypix	36
+							int	widthpix	46
+							int	heightpix	35
+							string	pattern	"upba3010.tga"
+							string	picture	""
+							string	imageblttype	"stretch"
+						}
+						UnloadButton:T_FONT5_8 {
+							int	xpix	38
+							int	ypix	86
+							int	widthpix	89
+							int	heightpix	21
+							int	bevelwidth	0
+							string	image0	"upba5702.tga"
+							string	image1	"upba5703.tga"
+							string	text	"str_ldl_UNLOAD_ALL"
+							string	imagebltflag	"chromakey"
+						}
+						OkButton:T_FONT5_8 {
+							int	xpix	158
+							int	ypix	86
+							int	widthpix	64
+							int	heightpix	21
+							int	bevelwidth	0
+							string	image0	"upba6100.tga"
+							string	image1	"upba6101.tga"
+							string	text	"str_ldl_CLOSE"
+							string	imagebltflag	"chromakey"
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	LandSwitches {
+		Mine:IMP_SWITCH {
+			string	image0	"UPT014.tga"
+			string	image1	"UPT014.tga"
+			string	disabledimage0	"UPT014D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_MINES"
+		}
+		Roads:IMP_SWITCH {
+			string	image0	"UPT016.tga"
+			string	image1	"UPT016.tga"
+			string	disabledimage0	"UPT016D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ROAD"
+		}
+		LPost:IMP_SWITCH {
+			string	image0	"UPT021.tga"
+			string	image1	"UPT021.tga"
+			string	disabledimage0	"UPT021D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_LISTENING_POSTS"
+		}
+		AdvMine:IMP_SWITCH {
+			string	image0	"UPT015.tga"
+			string	image1	"UPT015.tga"
+			string	disabledimage0	"UPT015D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ADVANCED_MINES"
+		}
+		SuperMine:IMP_SWITCH {
+			string image0	"UPT043.tga"
+			string image1 	"UPT043.tga"
+			string	disabledimage0	"UPT043D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_MEGA_MINES"
+		}
+		Railroads:IMP_SWITCH {
+			string	image0	"UPT017.tga"
+			string	image1	"UPT017.tga"
+			string	disabledimage0	"UPT017D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_RAILROAD"
+		}
+		MineField:IMP_SWITCH {
+			string	image0	"UPT020.tga"
+			string	image1	"UPT020.tga"
+			string	disabledimage0	"UPT020D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_LAND_MINES"
+		}
+		Maglevs:IMP_SWITCH {
+			string	image0	"UPT018.tga"
+			string	image1	"UPT018.tga"
+			string	disabledimage0	"UPT018D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_MAGLEV"
+		}
+		RadarSite:IMP_SWITCH {
+			string	image0	"UPT022.tga"
+			string	image1	"UPT022.tga"
+			string	disabledimage0	"UPT022D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_RADAR_STATIONS"
+		}
+		AirBase:IMP_SWITCH {
+			string	image0	"UPT024.tga"
+			string	image1	"UPT024.tga"
+			string	disabledimage0	"UPT024D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_AIR_BASES"
+		}
+		Forts:IMP_SWITCH {
+			string	image0	"UPT023.tga"
+			string	image1	"UPT023.tga"
+			string	disabledimage0	"UPT023D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_FORTIFICATIONS"
+		}
+		Farms:IMP_SWITCH {
+			int	state	1
+			string	image0	"UPT011.tga"
+			string	image1	"UPT011.tga"
+			string	disabledimage0	"UPT011D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_FARMS"
+		}
+		AdvFarms:IMP_SWITCH {
+			string	image0	"UPT012.tga"
+			string	image1	"UPT012.tga"
+			string	disabledimage0	"UPT012D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ADVANCED_FARMS"
+		}
+		HydFarms:IMP_SWITCH {
+			string	image0	"UPT013.tga"
+			string	image1	"UPT013.tga"
+			string	disabledimage0	"UPT013D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_HYDROPONIC_FARMS"
+		}
+	}
+	SeaSwitches {
+		UWMines:IMP_SWITCH {
+			string	image0	"UPT029.tga"
+			string	image1	"UPT029.tga"
+			string	disabledimage0	"UPT029D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_UNDERSEA_MINES"
+		}
+		Canals:IMP_SWITCH {
+			string	image0	"UPT019.tga"
+			string	image1	"UPT019.tga"
+			string	disabledimage0	"UPT019D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_UNDERSEA_TUNNEL"
+		}
+		SonarBuoys:IMP_SWITCH {
+			string	image0	"UPT032.tga"
+			string	image1	"UPT032.tga"
+			string	disabledimage0	"UPT032D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_SONAR_BUOYS"
+		}
+		UWAMines:IMP_SWITCH {
+			string	image0	"UPT030.tga"
+			string	image1	"UPT030.tga"
+			string	disabledimage0	"UPT030D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ADVANCED_UNDERSEA_MINES"
+		}
+		UWTunnels:IMP_SWITCH {
+			string	image0	"UPT028.tga"
+			string	image1	"UPT028.tga"
+			string	disabledimage0	"UPT028D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_UNDERSEA_TUNNEL"
+		}
+		MagMines:IMP_SWITCH {
+			string	image0	"UPT031.tga"
+			string	image1	"UPT031.tga"
+			string	disabledimage0	"UPT031D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_MAGNETIC_MINES"
+		}
+		UWSuperMines:IMP_SWITCH {
+			string image0	"UPT044.tga"
+			string image1	"UPT044.tga"
+			string	disabledimage0	"UPT044D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_LEVEL_MEGA_UNDERSEA_MINES"
+		}
+		DryDock:IMP_SWITCH {
+			string	image0	"UPT033.tga"
+			string	image1	"UPT033.tga"
+			string	disabledimage0	"UPT033D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_DRYDOCK"
+		}
+		Nets:IMP_SWITCH {
+			string	image0	"UPT025.tga"
+			string	image1	"UPT025.tga"
+			string	disabledimage0	"UPT025D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_NETS"
+		}
+		BigNets:IMP_SWITCH {
+			string	image0	"UPT026.tga"
+			string	image1	"UPT026.tga"
+			string	disabledimage0	"UPT026D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_FISHERIES"
+		}
+		AutoFish:IMP_SWITCH {
+			string	image0	"UPT027.tga"
+			string	image1	"UPT027.tga"
+			string	disabledimage0	"UPT027D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_AUTOMATED_FISHERIES"
+		}
+	}
+
+
+	SpaceSwitches {
+		RDocks:IMP_SWITCH {
+			string	image0	"upt034.tga"
+			string	image1	"upt034.tga"
+			string	disabledimage0	"upt034D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ROBOTIC_DOCKS"
+		}
+		XRMines:IMP_SWITCH {
+			string	image0	"upt041.tga"
+			string	image1	"upt041.tga"
+			string	disabledimage0	"upt041D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_X_RAY_MINES"
+		}
+		ARDocks:IMP_SWITCH {
+			string	image0	"upt035.tga"
+			string	image1	"upt035.tga"
+			string	disabledimage0	"upt035D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_ADVANCED_ROBOTIC_DOCKS"
+		}
+		SpaceDock:IMP_SWITCH {
+			string	image0	"UPT042.tga"
+			string	image1	"UPT042.tga"
+			string	disabledimage0	"UPT042D.tga"
+			string tipwindow "DESCRIPTION_INSTALLATION_SPACEDOCK"
+		}
+		SuperRDocks:IMP_SWITCH {
+			string image0	"UPT036.tga"
+			string image1	"UPT036.tga"
+			string	disabledimage0	"UPT036D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_MEGA_MANUFACTURING_BAY"
+		}
+		
+		FoodPods:IMP_SWITCH {
+			string	image0	"upt037.tga"
+			string	image1	"upt037.tga"
+			string	disabledimage0	"upt037D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_FOOD_PODS"
+		}
+		FoodMods:IMP_SWITCH {
+			string	image0	"UPT038.tga"
+			string	image1	"UPT038.tga"
+			string	disabledimage0	"UPT038D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_FOOD_MODULES"
+		}
+		FoodTanks:IMP_SWITCH {
+			string	image0	"UPT040.tga"
+			string	image1	"UPT040.tga"
+			string	disabledimage0	"UPT040D.tga"
+			string tipwindow "DESCRIPTION_TILEIMP_FOOD_TANKS"
+		}
+	}
+
+
+	TerraSwitches:IMP_SWITCH {
+		Deserts:IMP_SWITCH {
+			string	image0	"upt001.tga"
+			string	image1	"upt001.tga"
+			string	disabledimage0	"upt001d.tga"
+			string tipwindow "DESCRIPTION_DESERTS"
+		}
+		Forests:IMP_SWITCH {
+			string	image0	"upt002.tga"
+			string	image1	"upt002.tga"
+			string	disabledimage0	"upt002d.tga"
+			string tipwindow "DESCRIPTION_FORESTS"
+		}
+		Glaciers:IMP_SWITCH {
+			string	image0	"upt003.tga"
+			string	image1	"upt003.tga"
+			string	disabledimage0	"upt003d.tga"
+			string tipwindow "DESCRIPTION_GLACIERS"
+		}
+		Grassland:IMP_SWITCH {
+			string	image0	"upt004.tga"
+			string	image1	"upt004.tga"
+			string	disabledimage0	"upt004d.tga"
+			string tipwindow "DESCRIPTION_GRASSLAND"
+		}
+		Hills:IMP_SWITCH {
+			string	image0	"upt005.tga"
+			string	image1	"upt005.tga"
+			string	disabledimage0	"upt005d.tga"
+			string tipwindow "DESCRIPTION_HILLS"
+		}
+		RainForest:IMP_SWITCH {
+			string	image0	"upt006.tga"
+			string	image1	"upt006.tga"
+			string	disabledimage0	"upt006d.tga"
+			string tipwindow "DESCRIPTION_RAINFOREST"
+		}
+		Alpine:IMP_SWITCH {
+			string	image0	"upt007.tga"
+			string	image1	"upt007.tga"
+			string	disabledimage0	"upt007d.tga"
+			string tipwindow "DESCRIPTION_ALPINE"
+		}
+		Savannah:IMP_SWITCH {
+			string	image0	"upt008.tga"
+			string	image1	"upt008.tga"
+			string	disabledimage0	"upt008d.tga"
+			string tipwindow "DESCRIPTION_SAVANNAH"
+		}
+		Swamps:IMP_SWITCH {
+			string	image0	"upt009.tga"
+			string	image1	"upt009.tga"
+			string	disabledimage0	"upt009d.tga"
+			string tipwindow "DESCRIPTION_SWAMPS"
+		}
+		Tundra:IMP_SWITCH {
+			string	image0	"upt010.tga"
+			string	image1	"upt010.tga"
+			string	disabledimage0	"upt010d.tga"
+			string tipwindow "DESCRIPTION_TUNDRA"
+		}
+	}
+
+
+	TileImpSwitch {
+		int	widthpix	81
+		int	heightpix	54
+		string	pattern			"upba3010.tga"
+	}
+
+
+	CoverSheet {
+		int xpix	122
+		int	ypix	1
+		int	widthpix	484
+		int	heightpix	148
+	}
+	Sheet {
+#		int xpix	91
+		int xpix	0
+		int	ypix	0
+		int	widthpix	456
+		int	heightpix	129
+	}
+
+
+	ImpStatic {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	81
+		int	heightpix	54
+		int	bevelwidth	0
+	}
+
+
+	TileImpList {
+		bool	shadowfont	true
+		int	xpix	10
+		int	ypix	10
+		int	widthpix	406
+		int	heightpix	109
+
+
+		int columns		5
+		int bevelwidth	1
+		int beveltype	2
+		string	pattern	"upba0117.tga"
+		int	srcxpix	3
+		int	srcypix	8
+		int	srcwidthpix	410
+		int	srcheightpix	113
+		header {
+			switch0 {
+				int	heightpix	0
+				int	widthpix	81
+			}
+			switch1 {
+				int	heightpix	0
+				int	widthpix	81
+			}
+			switch2 {
+				int	heightpix	0
+				int	widthpix	81
+			}
+			switch3 {
+				int	heightpix	0
+				int	widthpix	81
+			}
+			switch4 {
+				int	heightpix	0
+				int	widthpix	81
+			}
+		}
+		bool alwaysranger	true
+		rangery {
+			int	widthpix	15
+			int	heigthpix	15
+			string	type	"scroller"
+			string	orientation	"vertical"
+			string	pattern	"upba5605.tga"
+			incy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba5605.tga"
+			}
+			decy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba5605.tga"
+			}
+#			thumb {
+#				string	image0	"upba5613.tga"
+#				string	imagebltflag	"chromakey"
+#			}
+		}
+	}
+
+
+	TileImpPanel {
+		Cover {
+			string	image0	"upba0403.tga"
+			int	xpix	0
+			int	ypix	0
+			int	widthpix	483
+			int	heightpix	148
+		}
+
+
+		LandButton:IMP_BUTTON {
+			int	ypix	4
+			string	image0	"upba0301.tga"
+			string	image1	"upba0301.tga"
+		}
+		SeaButton:IMP_BUTTON {
+			int	ypix	39
+			string	image0	"upba0302.tga"
+			string	image1	"upba0302.tga"
+		}
+		SpaceButton:IMP_BUTTON {
+			int	ypix	74
+			string	image0	"upba0303.tga"
+			string	image1	"upba0303.tga"
+		}
+		TerraButton:IMP_BUTTON {
+			int	ypix	109
+			string	image0	"upba0304.tga"
+			string	image1	"upba0304.tga"
+		}
+
+
+		TileImpButton {
+			int	xpix	632
+			int	ypix	34
+			int	widthpix	72
+			int	heightpix	52
+			int	bevelwidth	0
+			string	image0	"upba6114.tga"
+			string	image1	"upba6115.tga"
+			string	imagebltflag	"chromakey"
+			string tipwindow "str_ldl_Tile"
+	}
+		TileImpExitButton:T_FONT5_8 {
+			int	xpix	582
+			int	ypix	3
+			int	widthpix	15
+			int	heightpix	15
+			int	bevelwidth	2
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_X"
+			
+}
+		SpaceButton {
+			int	xpix	632
+			int	ypix	90
+			int	widthpix	75
+			int	heightpix	52
+			int	bevelwidth	0
+			string	image0	"upba6142.tga"
+			string	image1	"upba6143.tga"
+			string	imagebltflag	"chromakey"
+			string tipwindow "str_ldl_Space"
+}
+
+
+		TabGroup {
+			int	xpix	143
+			int	ypix	4
+#			int	widthpix	456
+			int	widthpix	441
+			int	heightpix	142
+			bool	autoarrange	FALSE
+			LandTab:TILE_IMP_TAB {
+				int	xpix	6
+				string	text	"str_ldl_CAPS_LAND"
+			}
+			SeaTab:TILE_IMP_TAB {
+				int	xpix	78
+				string	text	"str_ldl_CAPS_SEA"
+			}
+			SpaceTab:TILE_IMP_TAB {
+				int	xpix	150
+				string	text	"str_ldl_CAPS_SPACE"
+			}
+			TerraTab:TILE_IMP_TAB {
+				int	xpix	222
+				string	text	"str_ldl_TERRA"
+			}
+		}
+	}
+
+
+	ZoomPlusButton {
+		int	xpix	76
+		int	ypix	49
+		int	widthpix	35
+		int	heightpix	43
+		string	image0	"upba6112.tga"
+		string	image1	"upba6113.tga"
+		string tipwindow "str_ldl_Zoomin"
+		int	bevelwidth	0
+	}
+	ZoomMinusButton {
+		int	xpix	27
+		int	ypix	49
+		int	widthpix	35
+		int	heightpix	43
+		string	image0	"upba6110.tga"
+		string	image1	"upba6111.tga"
+		string tipwindow "str_ldl_Zoomout"
+		int	bevelwidth	0
+	}
+	PwBox:T_FONT5_8 {
+		bool	shadowfont	false
+		int	xpix	25
+		int	ypix	92
+		int	widthpix	83
+		int	heightpix	19
+		string	image0	"upba6109.tga"
+		string	imageblttype	"stretch"
+		string tipwindow "str_ldl_Public"
+		int bevelwidth 0
+	}
+	GoldBox:T_FONT5_8 {
+		bool	shadowfont	false
+		int	xpix	25
+		int	ypix	121
+		int	widthpix	83
+		int	heightpix	19
+		string	image0	"upba6109.tga"
+		string	imageblttype	"stretch"
+		string tipwindow "str_ldl_Savings"
+		int bevelwidth 0
+	}
+	YearBoxHolder {
+		int	xpix	25
+		int	ypix	27
+		int	widthpix	83
+		int	heightpix	19
+		string	image0	"upba6109.tga"
+		string	imageblttype	"stretch"
+		string tipwindow "str_ldl_Year"
+		int bevelwidth 0
+		ProgressBar {
+			int	xpix	2
+			int	ypix	2
+			int	widthpix	79
+			int	heightpix	15
+
+			string	orientation		"horizontal"		
+		}
+		YearBox:T_FONT3_9 {
+			int	xpix	2
+			int	ypix	2
+			int	widthpix	79
+			int	heightpix	15
+			string	text	"str_ldl_"
+			int bevelwidth 0
+		}
+	}
+	PopulationLabel:T_FONT5_8 {
+		int	xpix	25
+		int	ypix	1
+		int	widthpix	83
+		int	heightpix	12
+		string	text	"str_ldl_Population"
+	}
+	PopulationBox:T_FONT5_8 {
+		int	xpix	25
+		int	ypix	13
+		int	widthpix	83
+		int	heightpix	12
+		string	pattern	"upba3010.tga"
+	}
+
+}
+
+
+TileImpListItem {
+}
+
+
+###########################################################
+## Tile Improvement Mouse Tracker Window 
+###########################################################
+TrackerFont {
+	string fontname 			"arialbd.ttf"
+
+	bool shadowfont				true
+	int fontcolorred			255
+	int fontcolorgreen			255
+	int fontcolorblue			255
+	int fontshadowcolorred 		15			
+	int fontshadowcolorgreen 	15
+	int fontshadowcolorblue 	15
+	int fontsize				9
+
+}
+
+SpecialAttackWindow {
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	70
+	int	heightpix	30
+	
+	SpecialAttackCost:TrackerFont {
+		int	xpix	5
+		int	ypix	5
+		int	widthpix	60
+		int	heightpix	20
+		string text "str_ldl_Cost_"
+	}
+}
+
+cp_tileimp_tracker {
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	115
+	int	heightpix	60
+	TimeN:TrackerFont {
+			int	xpix	7
+			int	ypix	5
+			int	widthpix	60
+			int	heightpix	20
+			string text "str_ldl_Time_ "
+			string textblttype "fill"
+	}
+	TimeV:TrackerFont {
+			int	xpix	62
+			int	ypix	5
+			int	widthpix	20
+			int	heightpix	20
+			string textblttype "fill"
+	}
+	AdvN:TrackerFont {
+			int	xpix	7
+			int	ypix	40
+			int	widthpix	60
+			int	heightpix	20
+			string text "str_ldl_Advance_"
+			string textblttype "fill"
+	}
+	AdvV:TrackerFont {
+			int	xpix	62
+			int	ypix	40
+			int	widthpix	100
+			int	heightpix	20
+			string textblttype "fill"
+	}
+	
+	MatN:TrackerFont {
+			int	xpix	7
+			int	ypix	5
+			int	widthpix	60
+			int	heightpix	20
+			string text "str_ldl_Cost_"
+			string textblttype "fill"
+	}
+	MatV:TrackerFont {
+			int	xpix	80
+			int	ypix	5
+			int	widthpix	20
+			int	heightpix	20
+			string textblttype "fill"
+	}
+	FoodN:TrackerFont {
+			int	xpix	7
+			int	ypix	22
+			int	widthpix	70
+			int	heightpix	20
+			string text "str_ldl_Food_"
+			string textblttype "fill"
+	}
+	FoodV:TrackerFont {
+			int	xpix	80
+			int	ypix	22
+			int	widthpix	20
+			int	heightpix	20
+			string textblttype "fill"
+	}
+	ProductionN:TrackerFont {
+			int	xpix	7
+			int	ypix	40
+			int	widthpix	70
+			int	heightpix	20
+			string text "str_ldl_Production_"
+			string textblttype "fill"
+	}
+	ProductionV:TrackerFont {
+			int	xpix	80
+			int	ypix	40
+			int	widthpix	20
+			int	heightpix	20
+			string textblttype "fill"
+	}
+}
+
+
+
+###########################################################
+
+
+TradeListItem {
+	goodsName:T_FONT6_9 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		80
+		int		heightpix		20
+	}
+	cityFrom:T_FONT6_9 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		70
+		int		heightpix		20
+	}
+	cityTo:T_FONT6_9 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		70
+		int		heightpix		20
+	}
+	goodsValue:T_FONT6_9 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		40
+		int		heightpix		20
+	}
+
+
+}
+
+
+ProductionTabListItem {
+	ObjectName:T_FONT6_8 {
+		int		xpix			0
+#		int		ypix			0
+		int		widthpix		162
+		int		heightpix		20
+		string	just	"left"
+		bool	vertcenter	TRUE
+	}
+	UpkeepCost:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		35
+		int		heightpix		20
+	}
+}
+TotalListItem {
+	Name:T_FONT6_8 {
+		int		xpix			0
+#		int		ypix			0
+		int		widthpix		162
+		int		heightpix		20
+		string	just	"left"
+		bool	vertcenter	TRUE
+	}
+	TotalUpkeep:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		35
+		int		heightpix		20
+	}
+}
+
+
+prod_InventoryListItem {
+	Owned:T_FONT6_8 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		56
+		int		heightpix		20
+	}
+	ObjectName:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		130
+		int		heightpix		20
+	}
+	Cost:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		20
+		int		heightpix		18
+	}
+}
+
+
+prod_QueueListItem {
+	ObjectName:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		135
+		int		heightpix		20
+	}
+}
+
+
+template STRING_TEST:T_FONT6_8 {
+	bool	usedatabase	true
+}
+
+
+############################
+# String tables
+############################
+CivTabStrings:STRING_TEST {
+	int	numStrings	1
+	string	string0	"str_tbl_ldl_hrs"
+}
+
+
+ProdTabStrings {
+	int numStrings	12
+	string	string0 "str_tbl_ldl_NP"
+	string	string1 "str_tbl_ldl_G"
+	string	string2	"str_tbl_ldl_Pop"
+	string	string3	"str_tbl_ldl_Nothing_Building"
+	string	string4	"str_tbl_ldl_INVENTORY"
+	string	string5	"str_tbl_ldl_BUILD_OPTIONS"
+	string	string6 "str_tbl_ldl_You_will_receive"
+	string	string7	"str_tbl_ldl_gold_for_selling_the"
+	string	string8	"str_tbl_ldl_Are_you_sure"
+	string	string9	"str_tbl_ldl_Total_Upkeep"
+	string	string10	"str_tbl_ldl_NOT_BUILDING"
+	string	string11	"str_tbl_ldl_Ongoing"
+}
+
+
+MicroTabStrings {
+	int numStrings	2
+	string	string0	"str_tbl_ldl_no_required_Improvement"
+	string	string1	"str_tbl_ldl_No_workers_left_to_place"
+}
+
+
+CityTabStrings {
+	int	numStrings	14
+	string	string0	"str_tbl_ldl_POSITIVE_HAPPINESS"
+	string	string1	"str_tbl_ldl_NEGATIVE_HAPPINESS"
+	string	string2	"str_tbl_ldl_TOTAL_POSITIVE"
+	string	string3	"str_tbl_ldl_TOTAL_NEGATIVE"
+	string	string4	"str_tbl_ldl_CLEANERS"
+	string	string5	"str_tbl_ldl_POLLUTERS"
+	string	string6	"str_tbl_ldl_TOTAL_CLEANING"
+	string	string7	"str_tbl_ldl_TOTAL_POLLUTION"
+	string	string8	"str_tbl_ldl_Goods"
+	string	string9	"str_tbl_ldl_Exports"
+	string	string10	"str_tbl_ldl_View_Goods"
+	string	string11	"str_tbl_ldl_View_Exports"
+	string	string12	"str_tbl_ldl_From"
+	string	string13	"str_tbl_ldl_Destination"
+}
+UnitTabStrings {
+	int	numStrings	2
+	string	string0	"str_tbl_ldl_F"
+	string	string1	"str_tbl_ldl_S"
+}
+
+
+ThrowPartyPopup {
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int		widthpix	400
+	int		heightpix	200
+	string	pattern	"upba6417.tga"
+	TitleLabel:T_FONT_POPUP_TITLE {
+		int	xpix	0
+		string yanchor "top"
+		int widthpix 167
+		int heightpix 20
+		string	text	"str_ldl_Throw_Party"
+	}
+	TextField {
+		int	xpix	100
+		int	ypix	60
+		int	widthpix	200
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+	}
+}
+
+
+GotoCityPopup {
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int		widthpix	400
+	int		heightpix	400
+	string	pattern	"upba3010.tga"
+	TitleLabel:T_FONT1_18 {
+		string xanchor "center"
+		string yanchor "top"
+		int widthpct 50
+		int heightpix 20
+		string	text	"str_ldl_Send_Unit_to_City_COLON"
+		string	pattern	"upba3010.tga"
+	}
+	OkButton:T_FONT1_16 {
+		int	xpix	50
+		int	ypix	350
+		int	widthpix	100
+		int	heightpix	20
+		string	pattern	"upba3010.tga"
+		string	text	"str_ldl_Ok"
+	}
+	CancelButton:T_FONT1_16 {
+		int	xpix	250
+		int	ypix	350
+		int	widthpix	100
+		int	heightpix	20
+		string	pattern	"upba3010.tga"
+		string	text	"str_ldl_Cancel"
+	}
+	CityList {
+		int	xpix	90
+		int	ypix	80
+		int	widthpix	200
+		int	heightpix	260
+		int columns		1
+		int bevelwidth	1
+		int beveltype	1
+		bool alwaysranger	TRUE
+		string	pattern	"upba3010.tga"
+		header {
+			switch0:T_FONT1_16 {
+				int	widthpix	200
+				int	heightpix	20
+				string text "str_ldl_City"
+				string	pattern	"upba3010.tga"
+				int bevelwidth 	1
+			}
+		}
+	}
+}
+
+
+ForeignTradeBidPopup {
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int		widthpix	400
+	int		heightpix	200
+	string	pattern	"upba6417.tga"
+	TitleLabel:T_FONT_POPUP_TITLE {
+		int	xpix	32
+		int	ypix	2
+		int	widthpix	100
+		int heightpix 20
+		string	text	"str_ldl_Message"
+	}
+	TextMessage:T_FONT1_16 {
+		int	xpix	15
+		int	ypix	60
+		int	widthpix	372
+		int	heightpix	30
+		string	text	"str_ldl_How_much_for_good"
+		string	just	"center"
+		bool	wordwrap	TRUE
+	}
+	TextField {
+		int	xpix	100
+		int	ypix	90
+		int	widthpix	200
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+	}
+	OkButton:T_FONT1_16 {
+		int	xpix	50
+		int	ypix	160
+		int	widthpix	100
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Ok"
+	}
+	CancelButton:T_FONT1_16 {
+		int	xpix	250
+		int	ypix	160
+		int	widthpix	100
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Cancel"
+	}	
+}
+
+
+ct_PollutionListItem {
+	Name:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		110
+		int		heightpix		20
+	}
+	Value:T_FONT6_8{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		33
+		int		heightpix		20
+	}
+}
+
+
+ct_HappinessListItem {
+	Name:T_FONT6_8{
+		bool	shadowfont	true
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		110
+		int		heightpix		20
+	}
+	Value:T_FONT6_8{
+		bool	shadowfont	true
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		33
+		int		heightpix		20
+	}
+}
+
+
+UnitTabButton {
+	Arrow {
+		int	xpix	29
+		int	ypix	16
+		int	widthpix	8
+		int	heightpix	4
+#		string	pattern	"upba3010.tga"
+		string	image0	"upba6140.tga"
+	}
+	Fortify:T_FONT4_14 {
+		int	xpix	5
+		int	ypix	5
+		int	widthpix	10
+		int	heightpix	10
+		string	text	"str_ldl_F"
+	}
+	Veteran:T_FONT4_14 {
+		int	xpix	30
+		int	ypix	5
+		int	widthpix	10
+		int	heightpix	10
+		string	text	"str_ldl_V"
+	}
+	Cargo {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	4
+		int	heightpix	3
+	}
+}
+YearStrings {
+	int	numStrings	4
+	string	string0	"str_tbl_ldl_BC"
+	string	string1	"str_tbl_ldl_AD"
+	string	string2	"str_ldl_PW"
+	string	string3	"str_ldl_Goldy"
+}
+template ct_tradewindow_listitem : T_FONT6_8 {
+#	int		xpix			0
+#	int		ypix			0
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int		heightpix		23
+}
+
+ct_DomesticListItem {
+	Icon : ct_tradewindow_listitem {
+		int		widthpix		29
+	}
+	FromCity : ct_tradewindow_listitem {
+		int		widthpix		87
+	}
+	Value : ct_tradewindow_listitem {
+		int		widthpix		20
+	}
+}
+ct_ExportListItem {
+	Icon : ct_tradewindow_listitem {
+		int		widthpix		29
+	}
+	ToCity : ct_tradewindow_listitem {
+		int		widthpix		87
+	}
+	Price : ct_tradewindow_listitem {
+		int		widthpix		20
+	}
+}
+
+
+NameTheCityPopup {
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int		widthpix	400
+	int		heightpix	120
+	string	pattern	"upba6417.tga"
+	TitleLabel:T_FONT_POPUP_TITLE {
+		int	xpix	0
+		string yanchor "top"
+		int widthpix 167
+		int heightpix 20
+		string	text	"str_ldl_Name_City_Title"
+	}
+
+	TextMessage:T_FONT5_9 {
+		int	xpix	10
+		int ypix 	30
+		int widthpix 380
+		int heightpix 40
+		string	text	"str_ldl_Name_City_Message"
+	}
+
+	TextField {
+		int	xpix	100
+		int	ypix	80
+		int	widthpix	200
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		# Make sure that maxfieldlen same as used in:
+	    #    CityStatusWin:CityName 
+		#    CityPad:CityNameField 
+	    #    NameTheCityPop:TextField (640 and normal)
+		int	maxfieldlen	50
+	}
+}
+
+$

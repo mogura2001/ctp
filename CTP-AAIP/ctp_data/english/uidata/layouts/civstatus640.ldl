@@ -1,0 +1,3017 @@
+#######################################
+
+# File: civstatus.ldl
+
+# Last Access: Mon Jun 01 13:01:31 1998
+
+#######################################
+
+
+template CIV_STATUS_MARKER {
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	4
+	int	heightpix	4
+}
+
+template civstatus_button : T_FONT5_8 {
+
+	int bevelwidth	0
+
+	int beveltype	0
+
+	string imagebltflag	"chromakey"
+
+}
+
+
+
+template civstatus_textbox : T_FONT1_CIVSTAT {
+
+	int bevelwidth	1
+
+	int beveltype	2
+
+}
+
+
+
+template civstatus_header : T_FONT1_CIVSTAT {
+
+	int	heightpix	20
+
+	string	pattern	"upba5605.tga"
+
+	int	bevelwidth	1
+
+}
+
+
+
+template civstatus_slider {
+
+	int	widthpix	86
+
+	int	heightpix	20
+
+	int	srcwidthpix		86
+
+	int	srcheightpix	20	
+
+	int	maxxval		4
+
+	int	maxyval		0
+
+	int	pagexval	1
+
+	int	pageyval	1
+
+	int xval		0
+
+	string	type	"slider"
+
+	string	orientation	"horizontal"
+
+	bool	rigidthumb	TRUE
+
+	bool	quantizedrag	TRUE
+
+	int		minthumbsize	9
+
+	thumb {
+
+		int	widthpix	9
+
+		int heightpix	20
+
+		string	image0	"upba2512.tga"
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	string	pattern	"upba5100.tga"
+
+}
+
+
+
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+CivStatusMainWindow {
+
+	string	pattern	"upba5100.tga"
+
+	int	xpix	30
+
+	string	yanchor	"center"
+
+	int	widthpix	388
+
+	int	heightpix	395
+
+	CloseButton:CTP_CLOSE_BUTTON {
+		int	xpix	317
+		int	ypix	357
+	}
+
+
+	WorkdayMarker:CIV_MARKER {
+	}
+	RationsMarker:CIV_MARKER {
+	}
+	WagesMarker:CIV_MARKER {
+	}
+	HappyMarker:CIV_MARKER {
+	}
+	c3_FancyTop {
+
+		string	image0	"upba5117.tga"
+
+		int 	xpix		0
+
+		int 	ypix		-8
+
+		int	widthpix	399
+
+		int	heightpix	8
+
+	}
+
+
+
+	Title:T_FONT_SCREEN_TITLE {
+
+		int	xpix	115
+
+		int	ypix	1
+
+		int	widthpix	158
+
+		int	heightpix	13	
+
+		string	text	"str_ldl_CIV_STATUS"
+	}
+
+# prod button
+
+	button0 : civstatus_button {
+
+		int xpix		45
+
+		int ypix		60
+
+		int widthpix	57
+
+		int heightpix	25
+
+		string	image0			"upba5111.tga"
+
+		string	image1			"upba5112.tga"
+
+	}
+
+# gold button
+
+	button1 : civstatus_button {
+
+		int xpix		45
+
+		int ypix		159
+
+		int widthpix	57
+
+		int heightpix	25
+
+		string	image0			"upba5113.tga"
+
+		string	image1			"upba5114.tga"
+
+	}
+
+# food button
+
+	button2 : civstatus_button {
+
+		int xpix		46
+
+		int ypix		273
+
+		int widthpix	56
+
+		int heightpix	26
+
+		string	image0			"upba5115.tga"
+
+		string	image1			"upba5116.tga"
+
+	}
+
+# pw plus button
+
+	button3 : civstatus_button {
+
+		int xpix		337
+
+		int ypix		111
+
+		int widthpix	22
+
+		int heightpix	18
+
+		string	image0			"upba5258.tga"
+
+		string	image1			"upba5259.tga"
+
+	}
+
+# pw minus button
+
+	button4 : civstatus_button {
+
+		int xpix		279
+
+		int ypix		111
+
+		int widthpix	22
+
+		int heightpix	18
+
+		string	image0			"upba5260.tga"
+
+		string	image1			"upba5261.tga"
+
+	}
+
+# sci plus button
+
+	button5 : civstatus_button {
+
+		int xpix		337
+
+		int ypix		206
+
+		int widthpix	22
+
+		int heightpix	18
+
+		string	image0			"upba5258.tga"
+
+		string	image1			"upba5259.tga"
+
+	}
+
+# sci minus button
+
+	button6 : civstatus_button {
+
+		int xpix		279
+
+		int ypix		206
+
+		int widthpix	22
+
+		int heightpix	18
+
+		string	image0			"upba5260.tga"
+
+		string	image1			"upba5261.tga"
+
+	}
+
+# change gov button
+
+	button7 : civstatus_button {
+
+		int xpix		253
+
+		int ypix		290
+
+		int widthpix	92
+
+		int heightpix	27
+
+		string	image0			"upba5105.tga"
+
+		string	image1			"upba5106.tga"
+
+		string	text			"str_ldl_CAPS_CHANGE"
+	}
+
+# prod slider
+
+	slider0 : civstatus_slider {
+
+		int	xpix	64
+
+		int	ypix	110
+
+		int	percent	75
+
+
+
+		int	srcxpix	64
+
+		int	srcypix 110
+
+
+
+#		string pattern	"upba5605.tga"
+
+	}
+
+# gold slider
+
+	slider1 : civstatus_slider {
+
+		int	xpix	64
+
+		int	ypix	205
+
+		int	percent	75
+
+
+
+		int	srcxpix	64
+
+		int	srcypix 205
+
+
+
+#		string pattern	"upba5605.tga"
+
+
+
+	}
+
+# food slider
+
+	slider2 : civstatus_slider {
+
+		int	xpix	64
+
+		int	ypix	320
+
+		int	percent	75
+
+
+
+		int	srcxpix	64
+
+		int	srcypix 320
+
+
+
+#		string pattern	"upba5605.tga"
+
+
+
+	}
+
+
+
+# happiness thermometer
+
+	Therm {
+
+		int	xpix	120
+
+		int	ypix	47
+
+		int	widthpix	100
+
+		int	heightpix	13
+
+
+
+		int	srcxpix	120
+
+		int	srcypix 47
+
+		int	srcwidthpix		100
+
+		int	srcheightpix	13	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+
+
+# pop label
+
+	text0 : T_FONT1_CIVSTAT {
+
+		int	xpix	12
+
+		int	ypix	21
+
+		int	widthpix	40
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CITIES_COLON"
+	}
+
+# pop box
+
+	text1 : civstatus_textbox {
+
+		int	xpix	56
+
+		int	ypix	21
+
+		int	widthpix	36
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	55
+
+		int	srcypix 20
+
+		int	srcwidthpix		38
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# happy label
+
+	text2 : T_FONT1_CIVSTAT {
+
+		int	xpix	120
+
+		int	ypix	30
+
+		int	widthpix	100
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_HAPPINESS"
+	}
+
+# happy box
+
+	text3 : civstatus_textbox {
+
+		int	xpix	225
+
+		int	ypix	43
+
+		int	widthpix	32
+
+		int	heightpix	20
+
+
+
+		int	srcxpix	224
+
+		int	srcypix 42
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	22	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# riot label
+
+	text4 : T_FONT1_CIVSTAT {
+
+		int	xpix	298
+
+		int	ypix	21
+
+		int	widthpix	40
+
+		int	heightpix	15
+
+		string	text	"str_ldl_RIOT_COLON"
+	}
+
+# riot box
+
+	text5 : civstatus_textbox {
+
+		int	xpix	340
+
+		int	ypix	21
+
+		int	widthpix	30
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	334
+
+		int	srcypix 22
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# rev label
+
+	text6 : T_FONT1_CIVSTAT {
+
+		int	xpix	298
+
+		int	ypix	40
+
+		int	widthpix	40
+
+		int	heightpix	15
+
+		string	text	"str_ldl_REV_COLON"
+	}
+
+# rev box
+
+	text7 : civstatus_textbox {
+
+		int	xpix	340
+
+		int	ypix	40
+
+		int	widthpix	30
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	334
+
+		int	srcypix 43
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# celeb label
+
+	text8 : T_FONT1_CIVSTAT {
+
+		int	xpix	298
+
+		int	ypix	59
+
+		int	widthpix	40
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CELEB_COLON"
+	}
+
+# celeb box
+
+	text9 : civstatus_textbox {
+
+		int	xpix	340
+
+		int	ypix	59
+
+		int	widthpix	30
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	334
+
+		int	srcypix 62
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# prod box
+
+	text10 : civstatus_textbox {
+
+		int	xpix	105
+
+		int	ypix	68
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	104
+
+		int	srcypix 67
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# workday label
+
+	text11 : T_FONT1_CIVSTAT {
+
+		int	xpix	64
+
+		int	ypix	85
+
+		int	widthpix	86
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_WORKDAY"
+	}
+
+# workday box
+
+	text12 : civstatus_textbox {
+
+		int	xpix	158
+
+		int	ypix	112
+
+		int	widthpix	35
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	158
+
+		int	srcypix 112
+
+		int	srcwidthpix		35
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# pw label
+
+	text13 : T_FONT1_CIVSTAT {
+
+		int	xpix	303
+
+		int	ypix	87
+
+		int	widthpix	32
+
+		int	heightpix	20
+
+		string	text	"str_ldl_PW"
+	}
+
+# pw box
+
+	text14 : civstatus_textbox {
+
+		int	xpix	303
+
+		int	ypix	112
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	303
+
+		int	srcypix 112
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# pw cost label
+
+	text15 : T_FONT1_CIVSTAT {
+
+		int	xpix	258
+
+		int	ypix	131
+
+		int	widthpix	40
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_COST"
+	}
+
+# pw cost box
+
+	text16 : civstatus_textbox {
+
+		int	xpix	303
+
+		int	ypix	130
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	303
+
+		int	srcypix 130
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# gold box
+
+	text17 : civstatus_textbox {
+
+		int	xpix	105
+
+		int	ypix	163
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+	
+
+		int	srcxpix	104
+
+		int	srcypix 162
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# wages label
+
+	text18 : T_FONT1_CIVSTAT {
+
+		int	xpix	64
+
+		int	ypix	180
+
+		int	widthpix	86
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_WAGES"
+	}
+
+# wages box
+
+	text19 : civstatus_textbox {
+
+		int	xpix	158
+
+		int	ypix	206
+
+		int	widthpix	35
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	158
+
+		int	srcypix 206
+
+		int	srcwidthpix		35
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# science label
+
+	text20 : T_FONT1_CIVSTAT {
+
+		int	xpix	303
+
+		int	ypix	185
+
+		int	widthpix	32
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_SCIENCE"
+	}
+
+# science box
+
+	text21 : civstatus_textbox {
+
+		int	xpix	303
+
+		int	ypix	206
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+	
+
+		int	srcxpix	303
+
+		int	srcypix 206
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+	}
+
+# science cost label
+
+	text22 : T_FONT1_CIVSTAT {
+
+		int	xpix	261
+
+		int	ypix	223
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_COST"
+	}
+
+# science cost box
+
+	text23 : civstatus_textbox {
+
+		int	xpix	303
+
+		int	ypix	225
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	270
+
+		int	srcypix 225
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# paid label
+
+	text24 : T_FONT1_CIVSTAT {
+
+		int	xpix	49
+
+		int	ypix	234
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+		string	text	"str_ldl_SURPLUS"
+	}
+
+# paid box
+
+	text25 : civstatus_textbox {
+
+		int	xpix	109
+
+		int	ypix	234
+
+		int	widthpix	42
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	108
+
+		int	srcypix 233
+
+		int	srcwidthpix		44
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# food box
+
+	text26 : civstatus_textbox {
+
+		int	xpix	105
+
+		int	ypix	278
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	104
+
+		int	srcypix 277
+
+		int	srcwidthpix		34
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# rations label
+
+	text27 : T_FONT1_CIVSTAT {
+
+		int	xpix	64
+
+		int	ypix	295
+
+		int	widthpix	86
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_RATIONS"
+	}
+
+# rations box
+
+	text28 : civstatus_textbox {
+
+		int	xpix	158
+
+		int	ypix	322
+
+		int	widthpix	35
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	158
+
+		int	srcypix 322
+
+		int	srcwidthpix		35
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# eaten label
+
+	text29 : T_FONT1_CIVSTAT {
+
+		int	xpix	49
+
+		int	ypix	348
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+		string	text	"str_ldl_STORED"
+	}
+
+# eaten box
+
+	text30 : civstatus_textbox {
+
+		int	xpix	109
+
+		int	ypix	348
+
+		int	widthpix	42
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	108
+
+		int	srcypix 347
+
+		int	srcwidthpix		44
+
+		int	srcheightpix	17	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+# gov box
+
+	text31 : T_FONT1_CIVSTAT {
+
+		int	xpix	236
+
+		int	ypix	271
+
+		int	widthpix	119
+
+		int	heightpix	17
+
+		int bevelwidth	1
+
+		int beveltype	2
+
+	}
+
+# gov label
+
+	text32 : T_FONT1_CIVSTAT {
+
+		int	xpix	220
+
+		int	ypix	253
+
+		int	widthpix	152
+
+		int	heightpix	20
+
+		int bevelwidth	0
+
+		string	text	"str_ldl_CAPS_GOVERNMENT"
+
+
+	}
+
+# per turn food label
+
+	text33 : T_FONT1_CIVSTAT {
+
+		int	xpix	195
+
+		int	ypix	322
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		int bevelwidth	0
+
+		string	text	"str_ldl_CAPS_PER_TURN"
+
+
+	}
+
+# per turn gold label
+
+	text34 : T_FONT1_CIVSTAT {
+
+		int	xpix	195
+
+		int	ypix	206
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		int bevelwidth	0
+
+		string	text	"str_ldl_CAPS_PER_TURN"
+
+
+	}
+
+# per turn workday label
+
+	text35 : T_FONT1_CIVSTAT {
+
+		int	xpix	195
+
+		int	ypix	112
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		int bevelwidth	0
+
+		string	text	"str_ldl_CAPS_PER_TURN"
+
+
+	}
+
+# for building label
+
+	text36 : T_FONT1_CIVSTAT {
+
+		int	xpix	49
+
+		int	ypix	134
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+		string	text	"str_ldl_FOR_BUILDING"
+	}
+
+# for building box
+
+	text37 : civstatus_textbox {
+
+		int	xpix	109
+
+		int	ypix	137
+
+		int	widthpix	42
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	109
+
+		int	srcypix 137
+
+		int	srcwidthpix		42
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5100.tga"
+
+
+
+	}
+
+}
+
+
+
+CivStatusEnactWindow {
+
+	string	pattern	"upba5121.tga"
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	449
+
+	int	heightpix	308
+
+	
+
+	Title:T_FONT_POPUP_TITLE {
+
+		int	xpix	145
+
+		int	ypix	5
+
+		int	widthpix	158
+
+		int	heightpix	13	
+
+		string	text	"str_ldl_GOVERNMENTS"
+	}
+
+# current gov label
+
+	text0 : T_FONT1_CIVSTAT {
+
+		int	xpix	188
+
+		int	ypix	51
+
+		int	widthpix	145
+
+		int	heightpix	14
+
+		string	text	"str_ldl_CURRENT_GOVERNMENT_COLON"
+	}
+
+# current gov box
+
+	text1 : civstatus_textbox {
+
+		int	xpix	210
+
+		int	ypix	67
+
+		int	widthpix	110
+
+		int	heightpix	22
+
+
+
+		int	srcxpix	204
+
+		int	srcypix 67
+
+		int	srcwidthpix		110
+
+		int	srcheightpix	22	
+
+
+
+		string pattern	"upba5121.tga"
+
+	}
+
+# change gov label
+
+	text2 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	51
+
+		int	widthpix	73
+
+		int	heightpix	14
+
+		string	text	"str_ldl_CHANGE_TO_COLON"
+	}
+
+# change gov box
+
+	text3 : civstatus_textbox {
+
+		int	xpix	324
+
+		int	ypix	67
+
+		int	widthpix	110
+
+		int	heightpix	22
+
+
+
+		int	srcxpix	324
+
+		int	srcypix 67
+
+		int	srcwidthpix		110
+
+		int	srcheightpix	22	
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# current gov grow label
+
+	text4 : T_FONT1_CIVSTAT {
+
+		int	xpix	150
+
+		int	ypix	101
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_GROWTH_COLON"
+	}
+
+# current gov grow box
+
+	text5 : T_FONT1_CIVSTAT {
+
+		int	xpix	228
+
+		int	ypix	101
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	234
+
+		int	srcypix 101
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5121.tga"
+
+	}
+
+# current gov prod label
+
+	text6 : T_FONT1_CIVSTAT {
+
+		int	xpix	150
+
+		int	ypix	129
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_PRODUCTION_COLON"
+	}
+
+# current gov prod box
+
+	text7 : T_FONT1_CIVSTAT {
+
+		int	xpix	228
+
+		int	ypix	129
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	234
+
+		int	srcypix 129
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5121.tga"
+
+	}
+
+# current gov sci label
+
+	text8 : T_FONT1_CIVSTAT {
+
+		int	xpix	150
+
+		int	ypix	152
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_SCIENCE_COLON"
+	}
+
+# current gov sci box
+
+	text9 : T_FONT1_CIVSTAT {
+
+		int	xpix	228
+
+		int	ypix	152
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	234
+
+		int	srcypix 152
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# current gov gold label
+
+	text10 : T_FONT1_CIVSTAT {
+
+		int	xpix	150
+
+		int	ypix	178
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_GOLD_COLON"
+	}
+
+# current gov gold box
+
+	text11 : T_FONT1_CIVSTAT {
+
+		int	xpix	228
+
+		int	ypix	178
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	234
+
+		int	srcypix 178
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# current gov military label
+
+	text12 : T_FONT1_CIVSTAT {
+
+		int	xpix	150
+
+		int	ypix	204
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_MILITARY_COLON"
+	}
+
+# current gov military box
+
+	text13 : T_FONT1_CIVSTAT {
+
+		int	xpix	228
+
+		int	ypix	204
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	234
+
+		int	srcypix 204
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# change gov grow box
+
+	text14 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	101
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	351
+
+		int	srcypix 101
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# change gov prod box
+
+	text15 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	129
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	351
+
+		int	srcypix 129
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# change gov sci box
+
+	text16 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	152
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	351
+
+		int	srcypix 152
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15
+
+
+
+		string pattern	"upba5121.tga"
+
+	
+
+	}
+
+# change gov gold box
+
+	text17 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	178
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	351
+
+		int	srcypix 178
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# change gov military box
+
+	text18 : T_FONT1_CIVSTAT {
+
+		int	xpix	341
+
+		int	ypix	204
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	351
+
+		int	srcypix 204
+
+		int	srcwidthpix		80
+
+		int	srcheightpix	15
+
+
+
+		string pattern	"upba5121.tga"
+
+
+
+	}
+
+# change gov button
+
+	ChangeButton : civstatus_button {
+		bool	shadowfont	false
+
+		int xpix		33
+
+		int ypix		235
+
+		int widthpix	89
+
+		int heightpix	21
+
+		string	image0			"upba5702.tga"
+
+		string	image1			"upba5703.tga"
+
+		string	text			"str_ldl_ENACT"
+		string	imagebltflag	"chromakey"
+	}
+
+	OkButton : CTP_CLOSE_BUTTON {
+
+		int xpix		378
+
+		int ypix		270
+	}
+
+
+# text box
+
+	InfoText : T_FONT1_CIVSTAT {
+
+		int xpix		254
+
+		int ypix		44
+
+		int widthpix	146
+
+		int heightpix	124
+
+		int bevelwidth	1
+
+		int beveltype	2
+
+
+
+		int	srcxpix	253
+
+		int	srcypix 43
+
+		int	srcwidthpix		148
+
+		int	srcheightpix	126	
+
+
+
+		string pattern	"upba5121.tga"
+
+		bool alwaysranger	TRUE
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+		}
+
+	}
+
+# list box
+
+	ListBox {
+
+		int	xpix	19
+
+		int	ypix	69
+
+		int	widthpix	116
+
+		int	heightpix	155
+
+		int columns		1
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		bool alwaysranger	TRUE
+
+		string	pattern	"upba5121.tga"
+
+		int	srcxpix	17
+
+		int	srcypix 67
+
+		int	srcwidthpix		120
+
+		int	srcheightpix	179	
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+		}
+
+		header {
+
+			switch0 : civstatus_header {
+
+				int	widthpix	116
+
+				string	text	"str_ldl_GOVERMENTS"
+			}
+
+		}
+
+	}
+
+}
+
+
+
+
+
+CivStatusProdWindow {
+
+#	int 	xpix		515
+
+#	int 	ypix		187
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int		endPosX		706
+
+	int		endPosY		187
+
+	int		widthpix	191
+
+	int		heightpix	129
+
+	string	pattern	"upba5118.tga"
+
+# title
+
+	Title:T_FONT_SCREEN_TITLE {
+
+		int	xpix	25
+
+		int	ypix	4
+
+		int	widthpix	159
+
+		int	heightpix	16	
+
+		string	text	"str_ldl_CAPS_PRODUCTION"
+	}
+
+
+
+# per turn label
+
+	text0 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	25
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_PER_TURN"
+	}
+
+# per turn box
+
+	text1 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	25
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 25
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+	}
+
+# gov bonus label
+
+	text2 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	73
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_GOV_nBONUS"
+	}
+
+#XXX
+
+# gov bonus box
+
+	text3 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	74
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 74
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# crime label
+
+	text4 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	24
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CRIME"
+	}
+
+# crime box
+
+	text5 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	24
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 24
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# support label
+
+	text6 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	41
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_SUPPORT"
+	}
+
+# support box
+
+	text7 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	41
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 41
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# enemy label
+
+	text8 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	58
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_ENEMY"
+	}
+
+# enemy box
+
+	text9 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	58
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 58
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# pw label
+
+	text10 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	75
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_PW"
+	}
+
+# pw box
+
+	text11 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	75
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 75
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# building label
+
+	text12 : T_FONT1_CIVSTAT {
+
+		int	xpix	7
+
+		int	ypix	104
+
+		int	widthpix	90
+
+		int	heightpix	15
+
+		string	text	"str_ldl_FOR_BUILDING"
+	}
+
+# building box
+
+	text13 : T_FONT1_CIVSTAT {
+
+		int	xpix	98
+
+		int	ypix	104
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	98
+
+		int	srcypix 104
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+# workday bonus label
+
+	text14 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	47
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_WORKDAY"
+	}
+
+# workday bonus box
+
+	text15 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	49                                      
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 49
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5118.tga"
+
+
+
+	}
+
+
+
+
+}
+
+
+
+CivStatusGoldWindow {
+
+#	int 	xpix		515
+
+#	int 	ypix		316
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int		endPosX		706
+
+	int		endPosY		316
+
+	int		widthpix	191
+
+	int		heightpix	129
+
+	string	pattern	"upba5119.tga"
+
+# title
+
+	Title:T_FONT_SCREEN_TITLE {
+
+		int	xpix	25
+
+		int	ypix	4
+
+		int	widthpix	159
+
+		int	heightpix	16	
+
+		string	text	"str_ldl_CAPS_GOLD"
+	}
+
+# per turn label
+
+	text0 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	32
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_PER_nTURN"
+	}
+
+# per turn box
+
+	text1 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	32
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 32
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+
+
+	}
+
+# gov bonus label
+
+	text2 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	65
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_GOV_nBONUS"
+	}
+
+# gov bonus box
+
+	text3 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	65
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 65
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+
+
+	}
+
+# crime label
+
+	text4 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	24
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CRIME"
+	}
+
+# crime box
+
+	text5 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	24
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 24
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+
+
+	}
+
+# maint label
+
+	text6 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	58
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_MAINT"
+	}
+
+# maint box
+
+	text7 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	58
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 41
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+
+
+	}
+
+# enemy label
+
+	text8 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	75
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_ENEMY"
+	}
+
+# enemy box
+
+	text9 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	75
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 58
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+	}
+
+# paid label
+
+	text10 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	41
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_PAID"
+	}
+
+# paid box
+
+	text11 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	41
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 75
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5119.tga"
+
+
+
+	}
+
+# savings label
+
+	text12 : T_FONT1_CIVSTAT {
+
+		int	xpix	132
+
+		int	ypix	94
+
+		int	widthpix	80
+
+		int	heightpix	15
+
+		string	text	"str_ldl_SAVINGS"
+	}
+
+# savings box
+
+	text13 : T_FONT1_CIVSTAT {
+
+		int	xpix	140
+
+		int	ypix	109
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+		int	srcxpix	59
+
+		int	srcypix 32
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+		string pattern	"upba5119.tga"
+
+	}
+
+# science label
+
+	text14 : T_FONT1_CIVSTAT {
+
+		int	xpix	74
+
+		int	ypix	94
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CAPS_SCIENCE"
+	}
+
+# science box
+
+	text15 : T_FONT1_CIVSTAT {
+
+		int	xpix	82
+
+		int	ypix	109
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+		int	srcxpix	59
+
+		int	srcypix 32
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+		string pattern	"upba5119.tga"
+
+	}
+
+# surplus label
+
+	text16 : T_FONT1_CIVSTAT {
+
+		int	xpix	3
+
+		int	ypix	94
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_SURPLUS"
+	}
+
+# surplus box
+
+	text17 : T_FONT1_CIVSTAT {
+
+		int	xpix	21
+
+		int	ypix	109
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+		int	srcxpix	59
+
+		int	srcypix 32
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+		string pattern	"upba5119.tga"
+
+	}
+
+# plus box
+
+	text18 : T_FONT1_CIVSTAT {
+
+		int	xpix	53
+
+		int	ypix	109
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+		string	text	"str_ldl_PLUS"
+	}
+
+# equal box
+
+	text19 : T_FONT1_CIVSTAT {
+
+		int	xpix	109
+
+		int	ypix	109
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+		string	text	"str_ldl_EQUAL"
+
+	}
+
+
+
+}
+
+
+
+CivStatusFoodWindow {
+
+#	int 	xpix		515
+
+#	int 	ypix		445
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int		endPosX		706
+
+	int		endPosY		445
+
+	int		widthpix	191
+
+	int		heightpix	108
+
+	string	pattern	"upba5120.tga"
+
+# title
+
+	Title:T_FONT_SCREEN_TITLE {
+
+		int	xpix	25
+
+		int	ypix	4
+
+		int	widthpix	159
+
+		int	heightpix	16	
+
+		string	text	"str_ldl_CAPS_FOOD"
+	}
+
+# per turn label
+
+	text0 : T_FONT1_CIVSTAT {
+
+		int	xpix	2
+
+		int	ypix	24
+
+		int	widthpix	60
+
+		int	heightpix	15
+
+		string	text	"str_ldl_PER_nTURN"
+	}
+
+# per turn box
+
+	text1 : T_FONT1_CIVSTAT {
+
+		int	xpix	59
+
+		int	ypix	24
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	59
+
+		int	srcypix 24
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5120.tga"
+
+
+
+	}
+
+# crime label
+
+	text2 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	24
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_CRIME"
+	}
+
+# crime box
+
+	text3 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	24
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 24
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5120.tga"
+
+	}
+
+# eaten label
+
+	text4 : T_FONT1_CIVSTAT {
+
+		int	xpix	100
+
+		int	ypix	41
+
+		int	widthpix	50
+
+		int	heightpix	15
+
+		string	text	"str_ldl_EATEN"
+	}
+
+# eaten box
+
+	text5 : T_FONT1_CIVSTAT {
+
+		int	xpix	151
+
+		int	ypix	41
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	151
+
+		int	srcypix 41
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5120.tga"
+
+	}
+
+# store label
+
+	text6 : T_FONT1_CIVSTAT {
+
+		int	xpix	4
+
+		int	ypix	83
+
+		int	widthpix	90
+
+		int	heightpix	15
+
+		string	text	"str_ldl_STORED"
+	}
+
+# store box
+
+	text7 : T_FONT1_CIVSTAT {
+
+		int	xpix	95
+
+		int	ypix	83
+
+		int	widthpix	32
+
+		int	heightpix	15
+
+
+
+		int	srcxpix	95
+
+		int	srcypix 83
+
+		int	srcwidthpix		32
+
+		int	srcheightpix	15	
+
+
+
+		string pattern	"upba5120.tga"
+
+	}
+
+}
+
+
+
+
+
+
+
+CivStatusEnactListItem {
+
+	Name:T_FONT1_CIVSTAT{
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		116
+
+		int		heightpix		20
+
+	}
+
+}
+
+GovStrings {
+	int	numStrings	6
+
+	string	string0	"str_tbl_ldl_POOR"
+	string	string1	"str_tbl_ldl_POOR"
+	string	string2	"str_tbl_ldl_FAIR"
+	string	string3	"str_tbl_ldl_AVERAGE"
+	string	string4	"str_tbl_ldl_GOOD"
+	string	string5	"str_tbl_ldl_EXCELLENT"
+}
+
+$

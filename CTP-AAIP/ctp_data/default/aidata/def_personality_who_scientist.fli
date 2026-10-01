@@ -1,0 +1,17 @@
+// def_personality_scientist.fli
+
+output scientist[0.0, 2.0] = 1.0
+	tri yes_scientist(scientist, 1.0, 0.1)
+
+output warrior[0.0, 2.0] = 0.0
+	tri yes_warrior(warrior, 1.0, 0.1)
+
+output slaver[0.0, 2.0] =0.0
+	tri yes_slaver(slaver, 1.0, 0.1)
+
+output cleric[0.0, 2.0] =0.0
+	tri yes_cleric(cleric, 1.0, 0.1)
+
+output barbarian[0.0, 2.0] = 0.0
+	tri yes_barbarian(barbarian, 1.0, 0.1)
+

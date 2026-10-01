@@ -1,0 +1,150 @@
+#######################################
+# File: scenario.ldl
+# Last Access: Fri Jul 09 11:14:18 1999
+#######################################
+
+##-----------------------------------##
+##                Data               ##
+##-----------------------------------##
+ScenarioListItem {
+	string	pattern	"upba3010.tga"
+	int	widthpix	596
+	int	heightpix	96
+	Item:T_FONT1_14 {
+		int	widthpix	596
+		int	heightpix	96
+		string	text	"str_ldl_"
+		int	bevelwidth	1
+		int	beveltype	1
+		Name:T_FONT1_14 {
+			int	xpix	120
+			int	ypix	3
+			int	widthpix	470
+			int	heightpix	20
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_"
+			string	textblttype	"fill"
+#			int	bevelwidth	1
+#			int	beveltype	1
+		}
+		Description:T_FONT1_14 {
+			int	xpix	120
+			int	ypix	25
+			int	widthpix	470
+			int	heightpix	60
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_"
+			string	textblttype	"fill"
+#			int	bevelwidth	1
+#			int	beveltype	1
+		}
+		Image {
+			int	xpix	3
+			int	ypix	3
+			int	widthpix	115
+			int	heightpix	90
+			int	bevelwidth	1
+			int	beveltype	1
+			string	image0	"upba2621.tga"
+		}
+	}
+}
+
+ScenarioWindow {
+	string	pattern	"upba3010.tga"
+#	int	xpix	479
+#	int	ypix	372
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	640
+	int	heightpix	420
+	AvailableListBox {
+		int	widthpix	593
+		int	heightpix	290
+		int	xpix	13
+		int	ypix	90
+		string	pattern	"upba3010.tga"
+		int	bevelwidth	2
+		int	beveltype	0
+		header {
+			switch0:T_FONT1_14 {
+				int	widthpix	154
+				int	heightpix	20
+				string	text	"str_ldl_Available_Scenarios"
+				string	pattern	"upba3010.tga"
+			}
+		}
+	}
+	Title:T_FONT4_POPTITLE {
+		int	widthpix	150
+		int	heightpix	15
+		string	text	"str_ldl_SCENARIO_PICKER_TITLE"
+		int	xpix	8
+		int	ypix	4
+	}
+	PackInstructions:T_FONT1_16 {
+		int	xpix	15
+		int	ypix	33
+		int	widthpix	600
+		int	heightpix	40
+		string	text	"str_ldl_PACK_INSTRUCTIONS"
+		string	textblttype	"fill"
+	}
+	ScenInstructions:T_FONT1_16 {
+		int	xpix	15
+		int	ypix	33
+		int	widthpix	600
+		int	heightpix	40
+		string	text	"str_ldl_SCEN_INSTRUCTIONS"
+		string	textblttype	"fill"
+	}
+}
+
+ScenarioPackListItem {
+	string	pattern	"upba3010.tga"
+	int	widthpix	596
+	int	heightpix	96
+	int	bevelwidth	1
+	int	beveltype	1
+	Item:T_FONT1_14 {
+		int	widthpix	596
+		int	heightpix	96
+		int	bevelwidth	1
+		int	beveltype	1
+		string	text	"str_ldl_"
+		Name:T_FONT1_14 {
+			int	xpix	120
+			int	ypix	3
+			int	widthpix	470
+			int	heightpix	20
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_"
+			string	textblttype	"fill"
+#			int	bevelwidth	1
+#			int	beveltype	1
+		}
+		Description:T_FONT1_14 {
+			int	xpix	120
+			int	ypix	25
+			int	widthpix	470
+			int	heightpix	60
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_"
+			string	textblttype	"fill"
+#			int	bevelwidth	1
+#			int	beveltype	1
+		}
+		Image {
+			int	xpix	3
+			int	ypix	3
+			int	widthpix	115
+			int	heightpix	90
+			int	bevelwidth	1
+			int	beveltype	1
+			string	image0	"upba2620.tga"
+		}
+	}
+}
+
+
+$

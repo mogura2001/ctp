@@ -1,0 +1,556 @@
+# template for our font settings
+template T_FONT5_12 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				10
+}
+
+template T_FONT5_10 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				7
+}
+
+template T_FONT5_MODED {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				8
+}
+
+
+template T_FONT5_9 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				7
+}
+
+template T_FONT5_POLLUTER {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				6
+}
+
+template T_FONT5_TEST {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				8
+}
+
+template T_FONT5_VARIES {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				8
+}
+
+
+
+template T_FONT5_READY {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				8
+}
+
+
+
+template T_FONT5_8 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_CHEAT {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				9
+}
+
+template T_FONT5_DIPLOMACY {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+	bool shadowfont				false
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_DIPLOMACY2 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+	bool shadowfont				false
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+
+template T_FONT5_STATS {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+template T_FONT5_CARGO {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_CARGO2 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+template T_FONT5_CITYBUTTON {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+	bool shadowfont				false
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+template T_FONT5_DISBAND {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+	bool shadowfont				false
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_DELETE {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+	bool	shadowfont			false
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+template T_FONT5_TRADE {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_TRADE2 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+template T_FONT5_INFOBUTTON {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+
+template T_FONT5_63 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+template T_FONT5_CITYNAME {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				9
+}
+
+template T_FONT5_50 {
+#	string fontname				"arial"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				6
+}
+
+template T_FONT5_51 {
+#	string fontname				"arial"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+
+template T_FONT5_7 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				4
+}
+
+template T_FONT5_UNITLABEL {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				8
+}
+
+template T_FONT5_6 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				3
+}
+
+template T_FONT5_3 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			2
+	int fontcolorgreen			255
+	int fontcolorblue			2
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				6
+}
+
+
+template T_FONT5_2 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+template T_FONT5_1 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				7
+
+}
+
+template T_FONT5_44 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				8
+
+}
+
+template T_FONT5_11 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+template T_FONT5_SLAVEWORKER {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				6
+}
+
+template T_FONT5_OVERTIME {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	200
+	int fontsize				7
+}
+
+
+
+
+template T_FONT5_NOTHING {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			0
+	int fontcolorgreen			0
+	int fontcolorblue			0
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+template T_FONT5_55 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+#	bool shadowfont				true
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+	int fontshadowcolorred 		255			
+	int fontshadowcolorgreen 	255
+	int fontshadowcolorblue 	255
+	int fontsize				7
+}
+
+
+template T_FONT5_66 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arial.ttf"
+
+	int fontcolorred			24
+	int fontcolorgreen			2
+	int fontcolorblue			2
+#	int fontshadowcolorred 		0
+#	int fontshadowcolorgreen 	0
+#	int fontshadowcolorblue 	0
+	int fontsize				7
+}
+
+template T_FONT5_88 {
+#	string fontname				"Times New Roman Bold"
+	string fontname 			"arialbd.ttf"
+
+	bool shadowfont				false
+	int fontcolorred			255
+	int fontcolorgreen			255
+	int fontcolorblue			255
+	int fontshadowcolorred 		0			
+	int fontshadowcolorgreen 	0
+	int fontshadowcolorblue 	0
+	int fontsize				8
+}
+
+
+
+
+
+
+
+$

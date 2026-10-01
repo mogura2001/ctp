@@ -1,0 +1,116 @@
+#
+# Hotseat player list layout
+#
+template HOTSEAT_RANGER {
+	rangery {
+		int	widthpix	15
+		int	heigthpix	15
+		string	type	"scroller"
+		string	orientation	"vertical"
+		string	pattern	"upba5605.tga"
+		incy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+		decy {
+			int	widthpix	15
+			int	heightpix	15
+			string	pattern	"upba5605.tga"
+		}
+#			thumb {
+#				string	image0	"upba5613.tga"
+#				string	imagebltflag	"chromakey"
+#			}
+	}
+}
+HotseatListPopup {
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int		widthpix	640
+	int		heightpix	250
+	string	pattern	"upba6417.tga"
+#	OkButton:ABORT_BUTTON {
+#		int	xpix	560
+#		int	ypix	210
+#		string	text	"str_ldl_Ok"
+#	}
+	PlayerList:HOTSEAT_RANGER {
+		bool	shadowfont	true
+		int	xpix	15
+		int	ypix	60
+		int	widthpix	610
+		int	heightpix	160
+		int columns		4
+		int bevelwidth	1
+		int beveltype	2
+		string	pattern	"upba6417.tga"
+		int	srcxpix	88
+		int	srcypix	78
+		int	srcwidthpix	204
+		int	srcheightpix	204
+		header {
+			switch0:T_FONT1_16 {
+				int	widthpix	100
+				int	heightpix	20
+				string text "str_ldl_Civilization"
+				string	pattern	"upba5605.tga"
+				int bevelwidth 	1
+			}
+			switch1:T_FONT1_16 {
+				int	widthpix	100
+				int	heightpix	20
+				string text "str_ldl_Player_Type"
+				string	pattern	"upba5605.tga"
+				int bevelwidth 	1
+			}
+			switch2:T_FONT1_16 {
+				int widthpix 150
+				int heightpix 20
+				string text "str_ldl_Player_Name"
+				string pattern "upba5605.tga"
+				int bevelwidth 1
+			}
+			switch3:T_FONT1_16 {
+				int widthpix 260
+				int heightpix 20
+				string text "str_ldl_Email_Address"
+				string pattern "upba5605.tga"
+				int bevelwidth 1
+			}
+		}
+	}
+}
+
+HotseatListItem {
+	Civ:T_FONT1_14{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		100
+		int		heightpix		20
+		string	pattern	"upba6417.tga"
+	}
+	AIOrHuman:T_FONT1_14{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		100
+		int		heightpix		20
+		string	pattern	"upba6417.tga"
+	}
+	Name:T_FONT1_14 {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		150
+		int		heightpix		20
+		string	pattern	"upba6417.tga"
+	}
+
+	Email:T_FONT1_14{
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		260
+		int		heightpix		20
+		string	pattern	"upba6417.tga"
+	}
+}
+$

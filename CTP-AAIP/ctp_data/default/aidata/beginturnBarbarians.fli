@@ -1,0 +1,23 @@
+fuzzy_beginturn beginturn {
+// barbarian strategy
+#include "def_personality_who_barbarian.fli"
+#include "def_personality_science_slow.fli"
+#include "def_personality_settle_dense.fli"
+
+#include "inputs.fli"
+#include "outputs.fli"
+#include "output_aipnames.fli"
+
+#include "set_settle_density.fli"
+#include "set_science_speed.fli"
+#include "set_resource_desire.fli"
+#include "set_food_or_prod.fli"
+#include "set_budget.fli"
+#include "set_govern.fli"
+#include "set_wgf.fli"
+#include "set_military_readiness.fli"
+#include "set_inst_priority.fli"
+
+action load("barbarian.aip") when (num_cities < 50.0)
+
+}

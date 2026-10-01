@@ -1,0 +1,492 @@
+// outputs.fli
+
+output rushbuy_max_utility [ -100000, 10000.0 ] = 150.0
+	tri buy_anything_rushbuy_max_utility (rushbuy_max_utility, -100000.0, 0.5)
+
+output no_settling[0.0, 2.0] = 0.0
+	tri build_no_settlers(no_settling, 1.0, 0.25)
+
+output focus_on_units [ 0.0, 2.0 ] = 0.0
+	tri yes_focus_on_units ( focus_on_units, 1.0 , 0.5)
+
+// This is the multiplier that tells the ai how much
+// food it will probably have after it changes the wgf.
+output likely_food_multiplier[0.0, 5.0] = 5.0
+
+// This is the max setting for food.
+output work_min[-3.0, 3.0] = 0.0
+	tri lowest_work_min(work_min, -2.0, 0.5)
+	tri low_work_min(work_min, -1.0, 0.5)
+	tri average_work_min(work_min, 0.0, 0.5)
+	tri high_work_min(work_min, 1.0, 0.5)
+	tri highest_work_min(work_min, 2.0, 0.5)
+
+output food_max[-3.0, 3.0] = -2.0
+	tri lowest_food_max(food_max, -2.0, 0.5)
+	tri low_food_max(food_max, -1.0, 0.5)
+	tri average_food_max(food_max, 0.0, 0.5)
+	tri high_food_max(food_max, 1.0, 0.5)
+	tri highest_food_max(food_max, 2.0, 0.5)
+
+output food_min[-3.0, 3.0] = -2.0
+	tri lowest_food_min(food_min, -2.0, 0.5)
+	tri low_food_min(food_min, -1.0, 0.5)
+	tri average_food_min(food_min, 0.0, 0.5)
+	tri high_food_min(food_min, 1.0, 0.5)
+	tri highest_food_min(food_min, 2.0, 0.5)
+
+// pick my aip
+output settle_aip[0.0, 5.0] = 5.0
+	tri mass_settle(settle_aip, 1.0, 0.5)
+	tri heavy_settle(settle_aip, 2.0, 0.5)
+
+// pick my military aip	
+output military_aip[0.0, 5.0] = 5.0
+	tri war_aip(military_aip, 1.0, 0.5)
+	tri defend_aip(military_aip, 2.0, 0.5)
+
+// pick my % Food over base
+// 10% excess Food
+output min_food_factor[0.0, 3.0] = 1.5
+	tri no_growth_min_food_factor(min_food_factor, 1.0, 0.1)
+	tri average_growth_min_food_factor(min_food_factor, 1.5, 0.1) 
+	tri high_growth_min_food_factor(min_food_factor, 1.7, 0.1) //WW from 2.0
+
+// force the ai to use expectations
+output use_expectations[0.0, 3.0] = 0.0
+	tri yes_use_expectations(use_expectations, 0.0, 0.25)
+
+// pick roads or no roads
+output inst_road_coef[0.0, 100.0] = 0.0
+	tri zero_roads(inst_road_coef, 0.0, 0.001)
+	tri no_roads(inst_road_coef, 0.05, 0.001) // TTL from 0.0, WW from .01
+	tri yes_roads(inst_road_coef, 1.0, 0.001)
+
+// weight the choice of wgf // WW minimized deviation of settings 
+output wgf_production[0.0, 20.0]= 5.0 // WW from 7.5
+	tri work_forgetit_wgf_production(wgf_production, 3.0, 0.5)
+	tri work_little_wgf_production(wgf_production, 4.0, 0.5)
+	tri work_ave_wgf_production(wgf_production, 5.0, 0.5)
+	tri work_hard_wgf_production(wgf_production, 6.0, 0.5) // from 12
+
+output wgf_food[0.0, 45.0]= 0.5 // WW from 0.2 
+	tri feed_lots_wgf_food(wgf_food, 3.0, 0.5)
+	tri feed_well_wgf_food(wgf_food, 4.0, 0.5)
+	tri feed_ave_wgf_food(wgf_food, 5.0, 0.5)
+	tri feed_nothing_wgf_food(wgf_food, 6.0, 0.5)
+// increased feed nothing to 25 to keep food as low as possible
+
+output wgf_gold[0.0,20.0]= 3.0
+	tri care_not_wgf_gold(wgf_gold, 3.0 , 0.1)
+	tri pay_lots_wgf_gold(wgf_gold, 4.0, 0.1)
+	tri pay_ave_wgf_gold(wgf_gold, 5.0, 0.1)
+	tri pay_little_wgf_gold(wgf_gold, 6.0, 0.1)
+	tri pay_nothing_wgf_gold(wgf_gold, 6.0, 0.1)
+
+output set_wgf[0.0, 9.0] = 5.0
+	tri growth_prod_gold_deficit_set_wgf(set_wgf, 1.0, 0.5)
+	tri prod_growth_gold_deficit_set_wgf(set_wgf, 2.0, 0.5)
+	tri growth_prod_gold_set_wgf(set_wgf, 3.0, 0.5)
+	tri prod_growth_gold_set_wgf(set_wgf, 4.0, 0.5)
+	tri prod_gold_growth_set_wgf(set_wgf, 5.0, 0.5)
+	tri growth_gold_prod_set_wgf(set_wgf, 6.0, 0.5)
+	tri gold_prod_growth_set_wgf(set_wgf, 7.0, 0.5)
+	tri gold_growth_prod_set_wgf(set_wgf, 8.0, 0.5)
+
+output budget_income_wages[0.0, 1.0] = .5
+	tri zero_budget_income_wages(budget_income_wages, 0.05, 0.05)
+	tri ten_budget_income_wages(budget_income_wages, 0.15, 0.05)
+	tri twenty_budget_income_wages(budget_income_wages, 0.25, 0.05)
+	tri thirty_budget_income_wages(budget_income_wages, 0.35, 0.05)
+	tri fourty_budget_income_wages(budget_income_wages, 0.45, 0.05)
+	tri fifty_budget_income_wages(budget_income_wages, 0.55, 0.05)
+	tri sixty_budget_income_wages(budget_income_wages, 0.65, 0.05)
+	tri seventy_budget_income_wages(budget_income_wages, 0.75, 0.05)
+	tri eighty_budget_income_wages(budget_income_wages, 0.85, 0.05)
+	tri ninety_budget_income_wages(budget_income_wages, 0.95, 0.05)
+	tri max_budget_income_wages	(budget_income_wages, 1.0, 0.05)
+
+output desired_military_readiness[0.0, 2.0] = 1.0 // WW from 0.0
+	tri peace_military_readiness(desired_military_readiness, 0.0, 0.25)
+	tri ready_military_readiness(desired_military_readiness, 1.0, 0.25)
+	tri war_military_readiness(desired_military_readiness, 2.0, 0.25)
+
+output production[0.0, 1.3] = 0.50 // WW from .99
+	tri low_production(production, 0.50, 0.2) //WW from .33
+	tri med_production(production, 0.50, 0.2) //WW from .66
+	tri high_production(production, 0.50, 0.2) //WW from .99 for all sections
+
+output food[0.0, 1.3] = 0.50 // WW from .33
+	tri low_food(food, 0.50, 0.2)
+	tri med_food(food, 0.50, 0.2)
+	tri high_food(food, 0.50, 0.2)
+
+output science[0.0, 1.3] = 0.50 // WW from .33
+	tri low_science(science, 0.50, 0.2)
+	tri med_science(science, 0.50, 0.2)
+	tri high_science(science, 0.50, 0.2)
+
+output happiness[0.0, 1.3] =0.50 // WW from .10
+	tri low_happiness(happiness, 0.50, 0.2)
+	tri med_happiness(happiness, 0.50, 0.2)
+	tri high_happiness(happiness, 0.50, 0.2)
+
+output defense[0.0, 1.3]=0.33
+	tri low_defense(defense, 0.50, 0.2)
+	tri med_defense(defense, 0.50, 0.2)
+	tri high_defense(defense, 0.50, 0.2)
+
+output offense[0.0, 1.3]=0.33
+	tri low_offense(offense, 0.50, 0.2)
+	tri med_offense(offense, 0.50, 0.2)
+	tri high_offense(offense, 0.50, 0.2)
+
+//priorities of population placement
+// 100 is 1x in principle
+// 
+output pop_gold[0,2000] = 100 // WW from 150
+	tri zero_pop_gold (pop_gold, 0.0, 10.0)
+	tri low_pop_gold (pop_gold, 10, 10.0)
+	tri med_pop_gold (pop_gold, 100, 100.0) // used WW from 150
+	tri high_pop_gold (pop_gold, 300, 100.0)
+	tri super_high_pop_gold(pop_gold, 1000.0, 100.0)
+
+output pop_production_max[-1000,10000] = 110.0 // was 100, 450, 900 -- trying 100, 650, 1200 --WW set to these below
+	tri low_pop_production_max (pop_production_max, 200, 100.0)
+	tri med_pop_production_max (pop_production_max, 100, 100.0) // used
+	tri high_pop_production_max (pop_production_max, 1500, 100.0)
+
+output pop_production_min[0,2000] = 110.0
+	tri super_low_pop_production_min (pop_production_min, 10, 100.0)
+	tri low_pop_production_min (pop_production_min, 100, 10.0) //used WWfrom50
+	tri med_pop_production_min (pop_production_min, 150, 10.0) // WW from 110
+	tri high_pop_production_min (pop_production_min, 200, 10.0)
+
+output pop_food_max[0,1000] = 100.0 // WW minimized deviation of settings
+	tri super_low_pop_food_max (pop_food_max, 10.0, 10.0)
+	tri low_pop_food_max (pop_food_max, 75.0, 10.0)
+	tri med_pop_food_max (pop_food_max, 100.0, 10.0)
+	tri high_pop_food_max (pop_food_max, 150.0, 10.0)
+	tri odd_pop_food_max (pop_food_max, 113.0, 100.0) // force people to move
+
+output pop_food_min[0,1000] = 100.0 // WW from 10, min deviation of settings 
+	tri low_pop_food_min (pop_food_min, 50.0, 10.0)
+	tri med_pop_food_min (pop_food_min, 75.0, 10.0)
+	tri high_pop_food_min (pop_food_min, 125.0, 10.0)
+	tri odd_pop_food_min (pop_food_min, 113.0, 10.0) // force people to move
+
+output pop_science[0, 25000] = 100.0 // WW from 150, min deviation of settings 
+	tri zero_pop_science (pop_science, 0.0, 10.0)
+	tri low_pop_science (pop_science, 75, 10.0)
+	tri med_pop_science (pop_science, 100, 10.0)
+	tri high_pop_science (pop_science, 125, 10.0)
+	tri super_pop_science (pop_science, 400, 10.0)
+
+output pop_happiness[0, 1000] = 0.0
+	tri low_pop_happiness(pop_happiness, 0, 10.0) 
+	tri med_pop_happiness(pop_happiness, 0, 10.0) 
+	tri high_pop_happiness(pop_happiness, 0, 10.0)
+
+output opening_game_strategy[0.0, 2.0] = 0.0
+	tri yes_opening_game_strategy(opening_game_strategy, 1.0, 0.5)
+
+//the system will turn population into entertainers to satisfy min_happiness and max_crime 
+output min_happiness[0.0,150.0]=50.0
+output max_crime[0.0,100.0]=15.0
+
+// percent of city production that goes into the terrain improment pool 
+// actual range is between 0 and 1.0
+output production_tax[0.0, 1.0]=0.20 // WW from .99
+	tri super_zero_production_tax(production_tax, 0.001, 0.1) 
+	tri zero_production_tax(production_tax, 0.0, 0.00025) 
+	tri low_production_tax(production_tax, 0.10, 0.00025) 
+	tri med_production_tax(production_tax, 0.20, 0.00025) //TLL 13/6/99
+	tri high_production_tax(production_tax, 0.50, 0.00025)
+	tri super_high_production_tax(production_tax, 0.80, 0.00025)
+	tri max_production_tax(production_tax, 1.0, 0.00025)
+
+// compute number to turns to grow a pop
+// compute the ratio of each cities growth over slowest growing city. 
+// cities below city_growth_ratio are growing quickly
+// maximize growth there
+// cities with unhappiness do not count
+
+output city_growth_ratio[0.0, 1.0] = 0.5
+	tri max_production_city_growth_ratio(city_growth_ratio, 0.1, 0.1)
+	tri high_production_city_growth_ratio(city_growth_ratio, 0.33, 0.1)
+	tri	even_city_growth_ratio(city_growth_ratio, 0.5, 0.1)
+	tri high_food_city_growth_ratio(city_growth_ratio, 0.66, 0.1)
+	right max_food_city_growth_ratio(city_growth_ratio, 0.9, 0.1)
+
+// the minimum percent of cities that are maximizing growth
+// this addresses odd city growth distributions
+
+output city_growth_min_percent[0.0, 1.0] = 0.15
+
+//  exploration
+
+output explore_priority[0.0, 100.0] = 0.01 // how much do we want to explore?
+
+// settling
+
+output settler_packing[0.0, 10.0] = 4 //target average distance between cities
+	tri truly_dense_settler_packing(settler_packing, 3.7, 0.5) // WW from 3.0
+	tri dense_settler_packing(settler_packing, 3.7, 0.5)
+	tri loose_settler_packing(settler_packing, 3.7, 0.5)
+	tri very_loose_settler_packing(settler_packing, 3.7, 0.5) // WW from 4.5
+
+// modulate the net utility functions
+output wonder_uscale[0.0, 10000] = 1.0
+output bid_recruit_uscale[0,10000] = 1.0
+output bid_recruit_attackers_uscale[0,10000]=1.0
+output bid_attack_uscale[0,10000]=1.0
+output bid_defend_uscale[0,10000]=1.0
+output bid_settle_uscale[0,10000]=1.0
+output bid_explore_uscale[0,10000]= 1.0
+output bid_enslave_uscale[0,10000]= 1.0
+output bid_build_list_uscale[0,10000]= 1.0
+output bid_patrol_uscale[0,10000]=1.0
+output bid_harass_uscale[0,10000]= 1.0
+output bid_bombard_uscale[0,10000]= 1.0
+output bid_convert_city_uscale[0,10000]= 1.0
+output bid_pillage_uscale[0,10000]= 1.0
+output bid_pirate_uscale[0,10000]= 1.0
+output bid_counter_stealth_uscale[0,10000]= 1.0
+output bid_defuse_mines_uscale[0,10000]= 1.0
+output bid_bonus_food_uscale[0,10000]= 1.0
+
+output blg_uscale[-1.0, 10] = 0.1
+	tri low_blg_uscale(blg_uscale, 0.001, 1.0)
+	tri high_blg_uscale(blg_uscale, 10.0, 1.0)
+
+output blg_effect_space_launch[0.0, 10000]
+	tri low_blg_effect_space_launch(blg_effect_space_launch, 0.01, 1.0)
+	tri high_blg_effect_space_launch(blg_effect_space_launch, 1.0, 1.0)
+
+// science is calculated as what is left AFTER deducting wages
+// savings goes directly into savings 
+// science and savings are summed and normalized
+output budget_income_science[0.0, 1.0]=1.0
+output budget_income_savings[0.0, 1.0]=0.0
+
+// new buildings are build only if we can pay for them with maintainance
+// this is taken from total net income ( wages + science + savings)
+output budget_income_new_blg[0.0, 1.0]=0.5
+
+// set the rank of the government we want (-1 == never, 1 highest, 10 lowest)
+output i_want_this_gov_TYRANNY[-2.0, 12.0]=-1.0
+	tri gov_tyranny_1 (I_want_this_gov_TYRANNY, 1.0, 0.1)
+	tri gov_tyranny_2 (I_want_this_gov_TYRANNY, 2.0, 0.1)
+	tri gov_tyranny_3 (I_want_this_gov_TYRANNY, 3.0, 0.1)
+	tri gov_tyranny_4 (I_want_this_gov_TYRANNY, 4.0, 0.1)
+	tri gov_tyranny_5 (I_want_this_gov_TYRANNY, 5.0, 0.1)
+	tri gov_tyranny_6 (I_want_this_gov_TYRANNY, 6.0, 0.1)
+	tri gov_tyranny_7 (I_want_this_gov_TYRANNY, 7.0, 0.1)
+	tri gov_tyranny_8 (I_want_this_gov_TYRANNY, 8.0, 0.1)
+	tri gov_tyranny_9 (I_want_this_gov_TYRANNY, 9.0, 0.1)
+	tri gov_tyranny_10 (I_want_this_gov_TYRANNY,10.0, 0.1)
+
+output i_want_this_gov_THEOCRACY[-2.0, 12.0]=-1.0
+	tri gov_theocracy_1 (I_want_this_gov_THEOCRACY, 1.0, 0.1)
+	tri gov_theocracy_2 (I_want_this_gov_THEOCRACY, 2.0, 0.1)
+	tri gov_theocracy_3 (I_want_this_gov_THEOCRACY, 3.0, 0.1)
+	tri gov_theocracy_4 (I_want_this_gov_THEOCRACY, 4.0, 0.1)
+	tri gov_theocracy_5 (I_want_this_gov_THEOCRACY, 5.0, 0.1)
+	tri gov_theocracy_6 (I_want_this_gov_THEOCRACY, 6.0, 0.1)
+	tri gov_theocracy_7 (I_want_this_gov_THEOCRACY, 7.0, 0.1)
+	tri gov_theocracy_8 (I_want_this_gov_THEOCRACY, 8.0, 0.1)
+	tri gov_theocracy_9 (I_want_this_gov_THEOCRACY, 9.0, 0.1)
+	tri gov_theocracy_10 (I_want_this_gov_THEOCRACY,10.0, 0.1)
+
+output i_want_this_gov_ECOTOPIA[-2.0, 12.0]=-1.0
+	tri gov_ecotopia_1 (I_want_this_gov_ECOTOPIA, 1.0, 0.1)
+	tri gov_ecotopia_2 (I_want_this_gov_ECOTOPIA, 2.0, 0.1)
+	tri gov_ecotopia_3 (I_want_this_gov_ECOTOPIA, 3.0, 0.1)
+	tri gov_ecotopia_4 (I_want_this_gov_ECOTOPIA, 4.0, 0.1)
+	tri gov_ecotopia_5 (I_want_this_gov_ECOTOPIA, 5.0, 0.1)
+	tri gov_ecotopia_6 (I_want_this_gov_ECOTOPIA, 6.0, 0.1)
+	tri gov_ecotopia_7 (I_want_this_gov_ECOTOPIA, 7.0, 0.1)
+	tri gov_ecotopia_8 (I_want_this_gov_ECOTOPIA, 8.0, 0.1)
+	tri gov_ecotopia_9 (I_want_this_gov_ECOTOPIA, 9.0, 0.1)
+	tri gov_ecotopia_10 (I_want_this_gov_ECOTOPIA,10.0, 0.1)
+
+output i_want_this_gov_MONARCHY[-2.0, 12.0]=-1.0
+	tri gov_monarchy_1 (I_want_this_gov_MONARCHY, 1.0, 0.1)
+	tri gov_monarchy_2 (I_want_this_gov_MONARCHY, 2.0, 0.1)
+	tri gov_monarchy_3 (I_want_this_gov_MONARCHY, 3.0, 0.1)
+	tri gov_monarchy_4 (I_want_this_gov_MONARCHY, 4.0, 0.1)
+	tri gov_monarchy_5 (I_want_this_gov_MONARCHY, 5.0, 0.1)
+	tri gov_monarchy_6 (I_want_this_gov_MONARCHY, 6.0, 0.1)
+	tri gov_monarchy_7 (I_want_this_gov_MONARCHY, 7.0, 0.1)
+	tri gov_monarchy_8 (I_want_this_gov_MONARCHY, 8.0, 0.1)
+	tri gov_monarchy_9 (I_want_this_gov_MONARCHY, 9.0, 0.1)
+	tri gov_monarchy_10 (I_want_this_gov_MONARCHY,10.0, 0.1)
+
+output i_want_this_gov_REPUBLIC[-2.0, 12.0]=-1.0
+	tri gov_republic_1 (I_want_this_gov_REPUBLIC, 1.0, 0.1)
+	tri gov_republic_2 (I_want_this_gov_REPUBLIC, 2.0, 0.1)
+	tri gov_republic_3 (I_want_this_gov_REPUBLIC, 3.0, 0.1)
+	tri gov_republic_4 (I_want_this_gov_REPUBLIC, 4.0, 0.1)
+	tri gov_republic_5 (I_want_this_gov_REPUBLIC, 5.0, 0.1)
+	tri gov_republic_6 (I_want_this_gov_REPUBLIC, 6.0, 0.1)
+	tri gov_republic_7 (I_want_this_gov_REPUBLIC, 7.0, 0.1)
+	tri gov_republic_8 (I_want_this_gov_REPUBLIC, 8.0, 0.1)
+	tri gov_republic_9 (I_want_this_gov_REPUBLIC, 9.0, 0.1)
+	tri gov_republic_10 (I_want_this_gov_REPUBLIC,10.0, 0.1)
+
+output i_want_this_gov_DEMOCRACY[-2.0, 12.0]=-1.0
+	tri gov_democracy_1 (I_want_this_gov_DEMOCRACY, 1.0, 0.1)
+	tri gov_democracy_2 (I_want_this_gov_DEMOCRACY, 2.0, 0.1)
+	tri gov_democracy_3 (I_want_this_gov_DEMOCRACY, 3.0, 0.1)
+	tri gov_democracy_4 (I_want_this_gov_DEMOCRACY, 4.0, 0.1)
+	tri gov_democracy_5 (I_want_this_gov_DEMOCRACY, 5.0, 0.1)
+	tri gov_democracy_6 (I_want_this_gov_DEMOCRACY, 6.0, 0.1)
+	tri gov_democracy_7 (I_want_this_gov_DEMOCRACY, 7.0, 0.1)
+	tri gov_democracy_8 (I_want_this_gov_DEMOCRACY, 8.0, 0.1)
+	tri gov_democracy_9 (I_want_this_gov_DEMOCRACY, 9.0, 0.1)
+	tri gov_democracy_10 (I_want_this_gov_DEMOCRACY,10.0, 0.1)
+
+output i_want_this_gov_FASCISM[-2.0, 12.0]=-1.0
+	tri gov_fascism_1 (I_want_this_gov_FASCISM, 1.0, 0.1)
+	tri gov_fascism_2 (I_want_this_gov_FASCISM, 2.0, 0.1)
+	tri gov_fascism_3 (I_want_this_gov_FASCISM, 3.0, 0.1)
+	tri gov_fascism_4 (I_want_this_gov_FASCISM, 4.0, 0.1)
+	tri gov_fascism_5 (I_want_this_gov_FASCISM, 5.0, 0.1)
+	tri gov_fascism_6 (I_want_this_gov_FASCISM, 6.0, 0.1)
+	tri gov_fascism_7 (I_want_this_gov_FASCISM, 7.0, 0.1)
+	tri gov_fascism_8 (I_want_this_gov_FASCISM, 8.0, 0.1)
+	tri gov_fascism_9 (I_want_this_gov_FASCISM, 9.0, 0.1)
+	tri gov_fascism_10 (I_want_this_gov_FASCISM,10.0, 0.1)
+
+output i_want_this_gov_COMMUNISM[-2.0, 12.0]=-1.0
+	tri gov_communism_1 (I_want_this_gov_COMMUNISM, 1.0, 0.1)
+	tri gov_communism_2 (I_want_this_gov_COMMUNISM, 2.0, 0.1)
+	tri gov_communism_3 (I_want_this_gov_COMMUNISM, 3.0, 0.1)
+	tri gov_communism_4 (I_want_this_gov_COMMUNISM, 4.0, 0.1)
+	tri gov_communism_5 (I_want_this_gov_COMMUNISM, 5.0, 0.1)
+	tri gov_communism_6 (I_want_this_gov_COMMUNISM, 6.0, 0.1)
+	tri gov_communism_7 (I_want_this_gov_COMMUNISM, 7.0, 0.1)
+	tri gov_communism_8 (I_want_this_gov_COMMUNISM, 8.0, 0.1)
+	tri gov_communism_9 (I_want_this_gov_COMMUNISM, 9.0, 0.1)
+	tri gov_communism_10 (I_want_this_gov_COMMUNISM,10.0, 0.1)
+
+output i_want_this_gov_MULTICORP[-2.0, 12.0]=-1.0
+	tri gov_multicorp_1 (I_want_this_gov_MULTICORP, 1.0, 0.1)
+	tri gov_multicorp_2 (I_want_this_gov_MULTICORP, 2.0, 0.1)
+	tri gov_multicorp_3 (I_want_this_gov_MULTICORP, 3.0, 0.1)
+	tri gov_multicorp_4 (I_want_this_gov_MULTICORP, 4.0, 0.1)
+	tri gov_multicorp_5 (I_want_this_gov_MULTICORP, 5.0, 0.1)
+	tri gov_multicorp_6 (I_want_this_gov_MULTICORP, 6.0, 0.1)
+	tri gov_multicorp_7 (I_want_this_gov_MULTICORP, 7.0, 0.1)
+	tri gov_multicorp_8 (I_want_this_gov_MULTICORP, 8.0, 0.1)
+	tri gov_multicorp_9 (I_want_this_gov_MULTICORP, 9.0, 0.1)
+	tri gov_multicorp_10 (I_want_this_gov_MULTICORP,10.0, 0.1)
+
+output i_want_this_gov_TECHNOCRACY[-2.0, 12.0]=-1.0
+	tri gov_technocracy_1 (I_want_this_gov_TECHNOCRACY, 1.0, 0.1)
+	tri gov_technocracy_2 (I_want_this_gov_TECHNOCRACY, 2.0, 0.1)
+	tri gov_technocracy_3 (I_want_this_gov_TECHNOCRACY, 3.0, 0.1)
+	tri gov_technocracy_4 (I_want_this_gov_TECHNOCRACY, 4.0, 0.1)
+	tri gov_technocracy_5 (I_want_this_gov_TECHNOCRACY, 5.0, 0.1)
+	tri gov_technocracy_6 (I_want_this_gov_TECHNOCRACY, 6.0, 0.1)
+	tri gov_technocracy_7 (I_want_this_gov_TECHNOCRACY, 7.0, 0.1)
+	tri gov_technocracy_8 (I_want_this_gov_TECHNOCRACY, 8.0, 0.1)
+	tri gov_technocracy_9 (I_want_this_gov_TECHNOCRACY, 9.0, 0.1)
+	tri gov_technocracy_10 (I_want_this_gov_TECHNOCRACY,10.0, 0.1)
+
+output i_want_this_gov_VIRTUAL_D[-2.0, 12.0]=-1.0
+	tri gov_virtual_d_1 (I_want_this_gov_VIRTUAL_D, 1.0, 0.1)
+	tri gov_virtual_d_2 (I_want_this_gov_VIRTUAL_D, 2.0, 0.1)
+	tri gov_virtual_d_3 (I_want_this_gov_VIRTUAL_D, 3.0, 0.1)
+	tri gov_virtual_d_4 (I_want_this_gov_VIRTUAL_D, 4.0, 0.1)
+	tri gov_virtual_d_5 (I_want_this_gov_VIRTUAL_D, 5.0, 0.1)
+	tri gov_virtual_d_6 (I_want_this_gov_VIRTUAL_D, 6.0, 0.1)
+	tri gov_virtual_d_7 (I_want_this_gov_VIRTUAL_D, 7.0, 0.1)
+	tri gov_virtual_d_8 (I_want_this_gov_VIRTUAL_D, 8.0, 0.1)
+	tri gov_virtual_d_9 (I_want_this_gov_VIRTUAL_D, 9.0, 0.1)
+	tri gov_virtual_d_10 (I_want_this_gov_VIRTUAL_D,10.0, 0.1)
+
+//Added by TLL 5/5/99
+output i_want_this_gov_FUNDAMENTALISM[-2.0, 12.0]=-1.0
+	tri gov_fundamentalism_1 (I_want_this_gov_FUNDAMENTALISM, 1.0, 0.1)
+	tri gov_fundamentalism_2 (I_want_this_gov_FUNDAMENTALISM, 2.0, 0.1)
+	tri gov_fundamentalism_3 (I_want_this_gov_FUNDAMENTALISM, 3.0, 0.1)
+	tri gov_fundamentalism_4 (I_want_this_gov_FUNDAMENTALISM, 4.0, 0.1)
+	tri gov_fundamentalism_5 (I_want_this_gov_FUNDAMENTALISM, 5.0, 0.1)
+	tri gov_fundamentalism_6 (I_want_this_gov_FUNDAMENTALISM, 6.0, 0.1)
+	tri gov_fundamentalism_7 (I_want_this_gov_FUNDAMENTALISM, 7.0, 0.1)
+	tri gov_fundamentalism_8 (I_want_this_gov_FUNDAMENTALISM, 8.0, 0.1)
+	tri gov_fundamentalism_9 (I_want_this_gov_FUNDAMENTALISM, 9.0, 0.1)
+	tri gov_fundamentalism_10 (I_want_this_gov_FUNDAMENTALISM,10.0, 0.1)
+
+// set the government that I want -- counts from one
+//output I_want_this_gov[0,14] = 12.0
+//	tri gov_tyranny (I_want_this_gov, 1.0, 0.5)
+//	tri gov_monarchy (I_want_this_gov, 2.0, 0.5)
+//	tri gov_theocracy (I_want_this_gov, 3.0, 0.5)
+//	tri gov_republic (I_want_this_gov, 4.0, 0.5)
+//	tri gov_democracy (I_want_this_gov, 5.0, 0.5)
+//	tri gov_communism (I_want_this_gov, 6.0, 0.5)
+//	tri gov_fascism (I_want_this_gov, 7.0, 0.5)
+//	tri gov_fundamentalism (I_want_this_gov, 8.0, 0.5)
+//	tri gov_ecotopia (I_want_this_gov, 9.0, 0.5)
+//	tri gov_multicorp (I_want_this_gov, 10.0, 0.5)
+//	tri gov_technocracy (I_want_this_gov, 11.0, 0.5)
+//	tri gov_virtual_d (I_want_this_gov, 12.0, 0.5)
+
+output i_want_this_gov_uscale[0,10000] = 10000
+	tri gov_dont_care_uscale (i_want_this_gov_uscale, 0.1, 0.1)
+	tri gov_give_me_uscale (i_want_this_gov_uscale, 10000.0, 0.1)
+
+// was 1, 8, 30, trying 8, 50 ---WW to current
+output inst_prod[0,100] = 10.0 // WW from 1.0
+	tri few_mines(inst_prod, 5.0, 0.5)
+	tri default_mines(inst_prod, 10.0, 0.5)
+	tri tons_mines(inst_prod, 15.0, 0.5) 
+	
+// was 5, 10, 15
+output inst_food[0, 100] = 10.0 
+	tri few_farms(inst_food, 5.0, 0.5)
+	tri default_farms(inst_food, 10.0, 0.5)
+	tri tons_farms(inst_food, 15.0, 0.5)
+
+output make_farm[0.0, 5.0] = 0
+	tri default_make_farm(make_farm, 0.0, 0.5)
+	tri favor_farms(make_farm, 1.0,0.5)
+	tri only_farms(make_farm, 2.0, 0.5)
+
+output make_mine[0.0, 5.0] = 0
+	tri default_make_mines(make_mine, 1.0, 0.5)
+	tri favor_mines(make_mine, 1.0, 0.5)
+	tri only_mines(make_mine, 2.0, 0.5)
+
+output base_gold_reserve_multiple[-5.0, 5.0] = 1.0
+	tri default_base_gold_reserve(base_gold_reserve_multiple, 1.0, 0.3)
+	tri large_base_gold_reserve(base_gold_reserve_multiple, 2.0, 0.1)
+	tri small_base_gold_reserve(base_gold_reserve_multiple, 0.5, 0.1)
+	tri no_base_gold_reserve(base_gold_reserve_multiple, 0.0, 0.1)
+
+output special_action_gold_reserve_multiple[-5.0, 5.0] = 0.1
+	tri default_special_action_gold_reserve(special_action_gold_reserve_multiple, 1.0, 0.3)
+	tri large_special_action_gold_reserve(special_action_gold_reserve_multiple, 2.0, 0.1)
+	tri small_special_action_gold_reserve(special_action_gold_reserve_multiple, 0.1, 0.1)
+	tri no_special_action_gold_reserve(special_action_gold_reserve_multiple, 0.1, 0.1)
+
+// how much randomly over and under should it set 
+// the computed force matching ratios
+output min_force_matching_percent[0.0, 1.0] = 0.8
+output max_force_matching_percent[1.0, 2.0] = 1.2
+
+output enough_pw[0.0, 2.0] =0.0
+	tri yes_enough_pw(enough_pw, 1.0, 0.1)
+
+output too_much_renaissance_pw[0.0, 2.0] =0.0
+	tri yes_too_much_renaissance_pw(too_much_renaissance_pw, 1.0, 0.1)
+
+output too_much_modern_pw[0.0, 2.0] =0.0
+	tri yes_too_much_modern_pw(too_much_modern_pw, 1.0, 0.1)
+
+output too_much_genetic_pw[0.0, 2.0] =0.0
+	tri yes_too_much_genetic_pw(too_much_genetic_pw, 1.0, 0.1)
+
+

@@ -1,0 +1,157 @@
+
+// set the inital values at load time
+fuzzy_init init_label { 
+    
+//***** default personality varialbes - should be overidden by selector	*** 
+	input personality_aggression = 0.5
+	input personality_loyalty = 0.5
+	input personality_caution = 0.2
+	input personality_expansion = 0.5
+	input personality_green = 0.5
+	input personality_smart = 0.5
+
+	input time
+    input num_cities 
+    input wgf_prod_setting
+    input wgf_gold_setting 
+    input wgf_food_setting
+
+    input income_expense_cleric
+    input income_expense_crime
+    input income_expense_maintenance
+    input income_expense_wages
+    input income_expense_science
+    input income_expense_savings 
+    input save_expense_overtime
+    input sci_ave_turns_to_advance 
+
+//*********************************
+	output city_threat_decay[0.0, 1.0] = 0.2
+	output max_attack_strength[0.0,1000.0] = 1000
+	output max_defense_strength[0.0,1000.0] = 1000
+	
+	output com_city_scale[0.0,10.0] = 10
+	output com_city_decay[0.0,1.0] = 0.9
+	output explore_near_civ[0.0,100.0] = 40.0
+	
+	output recruit_goal_threshold[0.0,10000.0] = 0.0
+    output attack_goal_threshold[0.0,10000.0] = 0.0
+    output settle_goal_threshold[0.0,10000.0] = 0.0
+    output explore_goal_threshold[0.0,10000.0] = 0.0  
+
+    output bid_recruit_scale[0.0, 10.0] = 5.0
+    output bid_recruit_attackers_scale[0.0, 10000.0] = 1000.0
+    output bid_attack_scale[0.0, 1000.0] = 1000.0
+    output bid_settle_scale[0.0, 1.0] = 1.0
+    output bid_explore_scale[0.0, 1.0] = 0.01
+
+    output army_foreign_threat_decay[0.0, 1.0] = 0.9
+    output army_foreign_threat_falloff[0.0, 10.0] = 5.0
+
+    output reserve_flank_attack[0.0, 1.0] = 0.25
+    output reserve_flank_defense[0.0, 1.0] =  0.37
+    output reserve_range0_attack[0.0, 1.0] = 0.25
+    output reserve_range0_defense[0.0, 1.0] = 0.37
+    output reserve_range1_attack[0.0, 1.0] = 0.25
+    output reserve_range1_defense[0.0, 1.0] = 0.37
+
+    output unexplored_ocean_threshold[0.0, 10.0] = 3.0
+
+    output inst_prod[0.0, 100.0] = 1.0
+    output inst_food[0.0, 100.0] = 10.0
+    output inst_move[0.0, 100.0] = 0.01
+    output inst_def[0.0, 100.0] = 1.0
+    output inst_vision_range[0.0, 100.0] = 1.0
+    output inst_airfield[0.0, 100.0] = 1.0
+    output inst_fort[0.0, 100.0] = 1.0
+
+    output freight_coef[0.0, 10000.0] = 100.0
+    output gold_2_production[0.0, 10.0] = 0.5
+
+    output get_on_islands_coef[0.0, 10000.0] = 10.0
+    output coef_fill_area_to_boat_explore[0.0, 1.0] = 0.05
+
+// ************** start of buildings *************
+    output blg_value[0.0,1.0] = 1.0   
+
+    output blg_effect_silo[0.0,1.0] = 1.0     
+    output blg_effect_capitol[0.0,1.0] = 1.0     
+    output blg_effect_defense_bonus[0.0,1.0] = 1.0     
+    output blg_effect_defense_bonus_no_city_walls_attacker[0.0,1.0] = 1.0     
+    output blg_effect_happy_increment[0.0,1.0] = 1.0    
+    output blg_effect_content_aif[0.0,1.0] = 1.0     
+    output blg_effect_double_televan[0.0,1.0] = 1.0     
+    output blg_effect_reduce_waste[0.0,1.0] = 1.0     
+    output blg_effect_reduce_waste[0.0,1.0] = 1.0     
+    output blg_effect_production_type_production_increment[0.0,1.0] = 1.0     
+    output blg_effect_production_type_food_increment[0.0,1.0] = 1.0     
+    output blg_effect_production_type_gold_increment[0.0,1.0] = 1.0     
+    output blg_effect_production_type_knowledge_increment[0.0,1.0] = 1.0     
+    output blg_effect_production_type_entertainment_increment[0.0,1.0]  = 1.0
+    output blg_effect_production_type_production_percent[0.0,1.0] = 1.0     
+    output blg_effect_production_type_food_percent[0.0,1.0] = 1.0
+    output blg_effect_production_type_gold_percent[0.0,1.0] = 1.0
+	output blg_effect_production_type_knowledge_percent[0.0,1.0] = 1.0     
+    output blg_effect_production_type_entertainment_percent[0.0,1.0] = 1.0     
+    output blg_effect_uv_bonus[0.0,1.0] = 1.0
+    output blg_effect_gw_bonus[0.0,1.0] = 1.0     
+    output blg_effect_uv_cleaner[0.0,1.0] = 1.0
+    output blg_effect_gw_cleaner[0.0,1.0] = 1.0
+    output blg_effect_affective_pop_dec[0.0,1.0] = 1.0     
+    output blg_effect_no_unhappy_people[0.0,1.0] = 1.0     
+    output blg_effect_no_happiness[0.0,1.0] = 1.0     
+    output blg_effect_lower_crime[0.0,1.0] = 1.0     
+    output blg_effect_prevent_conver[0.0,1.0] = 1.0     
+    output blg_effect_prevent_conver[0.0,1.0] = 1.0     
+    output blg_effect_prevent_slavery[0.0,1.0] = 1.0     
+    output blg_effect_lower_overcrowding[0.0,1.0] = 1.0     
+    output blg_effect_allow_grunts[0.0,1.0] = 1.0     
+    output blg_effect_lower_peace_move[0.0,1.0] = 1.0     
+    output blg_effect_gold_per_citizen[0.0,1.0] = 1.0     
+    output blg_effect_protect_from_nukes[0.0,1.0] = 1.0     
+    output blg_effect_protect_from_bio[0.0,1.0] = 1.0
+    output blg_effect_protect_from_nano[0.0,1.0] = 1.0     
+    output blg_effect_lower_pop_pollut[0.0,1.0] = 1.0     
+    output blg_effect_television[0.0,1.0] = 1.0     
+    output blg_effect_city_wall[0.0,1.0] = 1.0
+    output blg_effect_airport[0.0,1.0] = 1.0     
+    output blg_effect_space_launch[0.0,1.0] = 1.0     
+
+// ********************end of buildings **************************
+
+    //***************** start of wonders ******************
+    output wonder_value[0.0, 1000.0] =  1.0
+	  
+    output wonder_effect_embassy[0.0,1.0] = 1.0
+    output wonder_effect_close_embassy[0.0,1.0] = 1.0     
+    output wonder_effect_reform_cities[0.0,1.0] = 1.0
+    output wonder_effect_free_slaves[0.0,1.0] = 1.0
+    output wonder_effect_global_radar[0.0,1.0] = 1.0
+    output wonder_effect_spies_everywhere[0.0,1.0] = 1.0
+    output wonder_effect_free_space_trans[0.0,1.0] = 1.0
+    output wonder_effect_stop_biowar[0.0,1.0] = 1.0
+    output wonder_effect_pop_monitor[0.0,1.0] = 1.0
+    output wonder_effect_enable_parkranger[0.0,1.0] = 1.0
+    output wonder_effect_disable_nukes[0.0,1.0] = 1.0
+    output wonder_effect_reduce_readiness_cost[0.0,1.0] = 1.0
+    output wonder_effect_increase_gold[0.0,1.0] = 1.0
+    output wonder_effect_decrease_crime[0.0,1.0] = 1.0
+    output wonder_effect_increase_knowledge[0.0,1.0] = 1.0
+    output wonder_effect_decrease_empire_size[0.0,1.0] = 1.0
+    output wonder_effect_increase_happy_empire[0.0,1.0] = 1.0
+    output wonder_effect_increase_converted_city_fee[0.0,1.0] = 1.0
+    output wonder_effect_tax_water_routes[0.0,1.0] = 1.0
+    output wonder_effect_tax_television[0.0,1.0] = 1.0
+    output wonder_effect_increase_happy[0.0,1.0] = 1.0
+    output wonder_effect_make_genetics_cheap[0.0,1.0] = 1.0
+    output wonder_effect_tax_international_route[0.0,1.0] = 1.0
+    output wonder_effect_polluters_to_parks[0.0,1.0] = 1.0
+    output wonder_effect_reduce_world_pollution[0.0,1.0] = 1.0
+    output wonder_effect_uv_bonus[0.0,1.0] = 1.0
+    output wonder_effect_uv_cleaner[0.0,1.0] = 1.0
+    output wonder_effect_gw_bonus[0.0,1.0] = 1.0
+    output wonder_effect_gw_cleaner[0.0,1.0] = 1.0
+    
+//****************** end of wonders
+
+}

@@ -1,0 +1,1560 @@
+
+// This is separated from the other diplomacy code so that 
+// players can be given personality settings via outputs.
+
+#include "input_responses.fli"
+
+//////////////////////////////////////////
+////////// WHAT IS THE WORLD  ///////////
+//////////////////////////////////////////
+input num_players_in_game
+	
+input size_of_world
+
+input time
+	left ancient_time(time, 40.0, 40.0) 
+	tri a0to15_turns(time, 7.5, 7.5)
+	tri a50to200_turns(time, 125.0, 75.0)
+	tri a175to275_turns(time, 225, 75.0)
+	tri medieval_time(time, 120.0, 45.0) 
+	tri renaissance_time(time, 200, 45.0) 
+	tri industrial_time(time, 280, 45.0) 
+	tri information_time(time, 360, 45.0)
+	tri genetic_time(time, 440, 45.0) 
+	right diamond_time(time, 520, 45.0)
+
+
+/////////////////////////////////
+////////// WHO IS HE  ///////////
+/////////////////////////////////
+
+	////////////////////////////////////
+	////////// IS HE HUMAN?  ///////////
+	////////////////////////////////////
+
+	input player_type
+		tri human_host(player_type, 0.0, 0.1)
+		tri ai(player_type, 1.0, 0.1)
+		tri human_client(player_type, 2.0, 0.1)
+
+	output his_humanity[0,2.0] = 0.0
+		tri human(his_humanity, 1.0, 0.5)
+
+	if(human_host or human_client)
+	{
+		human
+	}
+	///////////////////////////////////////////////////////////////
+	////////// ARE WE AT WAR?  /////////////////////
+	///////////////////////////////////////////////////////////////
+
+	input war_with_him
+		left no_war (war_with_him, 0.0, .5)
+		right yes_war (war_with_him, 1.0, .5)
+
+	////////////////////////////////////////////////////////
+	////////// DO WE HAVE A CEASE FIRE /////////////////////
+	////////////////////////////////////////////////////////
+
+	input cease_fire_with_him
+		left no_cease_fire(cease_fire_with_him, 0.0, .5)
+		right yes_cease_fire(cease_fire_with_him, 1.0, .5)
+
+	///////////////////////////////////////////////////////
+	////////// DO WE HAVE AN ALLIANCE /////////////////////
+	///////////////////////////////////////////////////////
+
+	input alliance_with_him
+		left no_alliance(alliance_with_him, 0.0, .5)
+		right yes_alliance(alliance_with_him, 1.0, .5)
+
+	////////////////////////////////////////////////////////////////
+	////////// ARE WE NEUTRAL? /////////////////////
+	////////////////////////////////////////////////////////////////
+
+	input neutral_with_him
+		left no_neutral(neutral_with_him, 0.0, .5)
+		right yes_neutral(neutral_with_him, 1.0, .5)
+
+	////////////////////////////////////////////
+	////////// WHAT IS HIS RANKING?  ///////////
+	////////////////////////////////////////////
+
+	input his_normalized_rank
+		tri hes_in_last_place(his_normalized_rank, 0.0, 0.05)
+		tri hes_in_bottom_half(his_normalized_rank, 0.3, 0.25)
+		tri hes_in_middle_half(his_normalized_rank, 0.5, 0.25)
+		tri hes_in_top_half(his_normalized_rank, 0.7, 0.25)
+		tri hes_in_first_place(his_normalized_rank, 1.0, 0.05)
+
+	//////////////////////////////////////////////////
+	////////// IS HE MY CLOSEST NEIGHBOR?  ///////////
+	//////////////////////////////////////////////////
+
+	input closest_capitol
+		tri yes_closest_capitol(closest_capitol, 1.0, 0.5) 
+
+	////////////////////////////////////////
+	////////// HOW CLOSE IS HE?  ///////////
+	////////////////////////////////////////
+
+	input distance_to_his_capitol
+		right his_capitol_ten_or_less(distance_to_his_capitol, 10.0, 1.0)
+		tri his_capitol_ten_to_fifteen(distance_to_his_capitol, 12.5, 3.0)
+		left his_capitol_twenty_or_more(distance_to_his_capitol, 20.0, 1.0)
+
+	////////////////////////////////////////////////////
+	////////// IS HE ON THE SAME CONTINENT?  ///////////
+	////////////////////////////////////////////////////
+
+	input he_shares_continent
+		tri yes_he_shares_continent(he_shares_continent, 1.0, 0.5)
+
+	////////////////////////////////////////////////////////
+	////////// HOW MANY PLAYERS IS HE FIGHTING?  ///////////
+	////////////////////////////////////////////////////////
+	// N: added 8/11/99
+
+	input num_he_is_at_war
+		tri he_fights_zero(num_he_is_at_war, 0.0, 0.5)
+		tri he_fights_one(num_he_is_at_war, 1.0, 0.5)
+		tri he_fights_two(num_he_is_at_war, 2.0, 0.5)
+		tri he_fights_three(num_he_is_at_war, 3.0, 0.5)
+		tri he_fights_four(num_he_is_at_war, 4.0, 0.5)
+		tri he_fights_five(num_he_is_at_war, 5.0, 0.5)
+		tri he_fights_six(num_he_is_at_war, 6.0, 0.5)
+		tri he_fights_seven(num_he_is_at_war, 7.0, 0.5)
+		tri he_fights_eight(num_he_is_at_war, 8.0, 0.5)
+		tri he_fights_nine(num_he_is_at_war, 9.0, 0.5)
+		tri he_fights_ten(num_he_is_at_war, 10.0, 0.5)
+		tri he_fights_eleven(num_he_is_at_war, 11.0, 0.5)
+		tri he_fights_twelve(num_he_is_at_war, 12.0, 0.5)
+		tri he_fights_thirteen(num_he_is_at_war, 13.0, 0.5)
+		tri he_fights_fourteen(num_he_is_at_war, 14.0, 0.5)
+		tri he_fights_fifteen(num_he_is_at_war, 15.0, 0.5)
+		tri he_fights_sixteen(num_he_is_at_war, 16.0, 0.5)
+
+
+
+	////////////////////////////////////////////////////////////////
+	////////// CAN HE BE TRUSTED?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	// this sets how loyal I think that he is
+	input loyalty
+		tri distrust_him(loyalty, 10.0, 10.0)
+		tri dont_trust_him(loyalty, 20.0, 10.0)
+		tri watch_him(loyalty, 30.0, 10.0)
+		tri maybe_trust_him(loyalty, 40.0, 10.0)
+		tri completely_trust_him(loyalty, 50.0, 10.0)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE WE FOUGHT?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input length_of_war_with_him
+		tri a0_longest_war_with_him(length_of_war_with_him, 0.0, 0.5)
+		tri a1to10_longest_war_with_him(length_of_war_with_him, 5.0, 5.0)
+		tri a5to15_longest_war_with_him(length_of_war_with_him, 10.0, 5.0)
+		tri a10to20_longest_war_with_him(length_of_war_with_him, 15.0, 5.0)
+		right a20plus_longest_war_with_him(length_of_war_with_him, 20.0, 5.0)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// IS HE MY BEST FRIEND?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input best_friend
+		tri not_best_friend(best_friend, 0.01, 0.5)
+		tri my_best_friend(best_friend, 1.0, 0.5)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// IS HE MY WORST ENEMY?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input worst_enemy
+		tri not_worst_enemy(worst_enemy, 0.01, 0.5)
+		tri my_worst_enemy(worst_enemy, 1.0, 0.5)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HAS HE ATTACKED MY FRIENDS?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input attacked_my_friends
+		tri never_attacked_my_friends(attacked_my_friends, 0.0, 0.75)
+		tri once_attacked_my_friends(attacked_my_friends, 1.0, 0.75)
+		tri twice_attacked_my_friends(attacked_my_friends, 2.0, 0.75)
+		right thrice_attacked_my_friends(attacked_my_friends, 3.0, 1.0)
+
+	output attacked_my_friends_decay[0.0, 1.0] = 0.25
+
+	//////////////////////////////////////////////////////////////
+	////////// HAS HE ATTACKED MY ENEMIES?  //////////////////////
+	//////////////////////////////////////////////////////////////
+
+	input attacked_my_enemies
+		tri never_attacked_my_enemies(attacked_my_enemies, 0.0, 0.75)
+		tri once_attacked_my_enemies(attacked_my_enemies, 1.0, 0.75)
+		tri twice_attacked_my_enemies(attacked_my_enemies, 2.0, 0.75)
+		right thrice_attacked_my_enemies(attacked_my_enemies, 3.0, 1.0)
+
+	output attacked_my_enemies_decay[0.0, 1.0] = 0.25
+
+	/////////////////////////////////////////////////////////////////
+	////////// HAS HE MADE A PACT AGAINST ME?  //////////////////////
+	/////////////////////////////////////////////////////////////////
+
+	// REM300199: problem with has_pact_against_me
+	//input has_pact_against_me
+	//	tri yes_has_pact_against_me(has_pact_against_me, 2.0, 0.5)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MUCH HAS HE PIRATED ME?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input his_pirated_me
+		left hasnt_pirated_me(his_pirated_me, 0, 0.2)
+		tri pirated_a_little(his_pirated_me, 2, 1.2)
+		right blue_beard(his_pirated_me, 5, 2)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MUCH HAS HE ATTACKED ME?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input his_hotwar_attacked_me // How many times he's ever attacked
+		left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.2)
+		tri once_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+		right often_attacked_me(his_hotwar_attacked_me, 2, 0.5)
+
+	output his_hotwar_attacked_me_decay [0, 1.0] = 0.6
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MUCH HAS HE SPECIAL ACTIONED ME?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input his_coldwar_attacked_me // How many times he's ever attacked
+		left hasnt_unconned_me(his_coldwar_attacked_me, 0, 0.2)
+		tri once_unconned_me(his_coldwar_attacked_me, 1, 0.5)
+		right often_unconned_me(his_coldwar_attacked_me, 2, 0.5)
+
+	output his_coldwar_attacked_me_decay [0, 1.0] = 0.6
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG AGO DID HE LAST ATTACK?  //////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input last_attacked_me // the number of turns since he last attacked
+		tri attacked_recently(last_attacked_me, 2, 2)
+		tri attacked_not_long_ago(last_attacked_me, 4, 2)
+		right attacked_long_ago(last_attacked_me, 8, 4)
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY REQUESTS HAS HE REJECTED?  //////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input rejected_requests
+		left no_rejected_requests(rejected_requests, 0, 0.5)
+		tri some_rejected_requests(rejected_requests, 2, 1)
+		right many_rejected_requests(rejected_requests, 6, 3)
+
+	output rejected_requests_decay [0, 1] = 0.75
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// IS HE STRONGER OR WEAKER?  /////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input relative_strength
+		left terrified_of_him(relative_strength, 0.1, 0.3) 
+		tri afraid_of_him(relative_strength, 0.5, 0.25)
+		tri equal_to_him(relative_strength, 1.1, 0.45)
+		tri stronger_than_him(relative_strength, 2.0, 0.5)
+		right much_stronger_than_him(relative_strength, 2.5, 0.25)
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY SOLDIERS DOES HE HAVE IN MY LAND?  /////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Changed again--to set new border policy--WAIS..N.
+	input military_incursions
+		left no_incursions(military_incursions, 0, 0.5)
+		tri few_incursions(military_incursions, 1, 0.1)
+		tri many_incursions(military_incursions, 2, 0.5)
+		right floods_incursions(military_incursions, 3, 0.5)
+
+	///////////////////////////////////////////////////////////////////////////////////
+	////////// HOW DO I FEEL ABOUT HIM?  /////////////////////
+	///////////////////////////////////////////////////////////////////////////////////
+	// the diplomatic regard defines how I feel about him and affects whether I help him out
+	// or say no to him. This does not target his units.
+
+	input diplomatic_regard_towards_him
+		left hate_him(diplomatic_regard_towards_him, 10, 12)
+		tri dislike_him(diplomatic_regard_towards_him, 30, 12)
+		tri neutral_towards_him(diplomatic_regard_towards_him, 50, 12)
+		tri like_him(diplomatic_regard_towards_him, 70, 12)
+		right love_him(diplomatic_regard_towards_him, 90, 12)
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////N: adjusted...changed back
+	////////// HOW MUCH DO I WANT TO FIGHT HIM?  /////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+	input unit_regard_towards_him
+		tri war(unit_regard_towards_him, 10, 11)
+		tri hot_war_prep(unit_regard_towards_him, 23, 2.5)
+		tri cold_war(unit_regard_towards_him, 30, 11)
+		tri neutral(unit_regard_towards_him, 50, 11)
+		tri friends(unit_regard_towards_him, 70, 11)
+		tri blood_brothers(unit_regard_towards_him, 90, 11)
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY TREATIES HAS HE BROKEN?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input his_broken_treaties
+		tri never_broke_treaties(his_broken_treaties, 0.0, 0.75)
+		tri rarely_broke_treaties(his_broken_treaties, 1.0, 0.75)
+		tri sometimes_broke_treaties(his_broken_treaties, 2.0, 0.75)
+		right often_broke_treaties(his_broken_treaties, 3.0, 1.0)
+
+	output his_broken_treaties_decay[0.0, 1.0] = 0.1
+	
+	///////////////////////////////////////////////////
+	////////// HAS HE BUILT THE WORMHOLE ?  ///////////
+	///////////////////////////////////////////////////
+
+	input he_built_wormhole
+		tri yes_he_built_wormhole(he_built_wormhole, 1.0, 0.5) 
+
+	
+	///////////////////////////////////////////////////
+	////////// HAS ANYONE BUILT THE WORMHOLE ?  ///////
+	///////////////////////////////////////////////////
+
+	input someone_built_wormhole
+		tri yes_someone_built_wormhole(someone_built_wormhole, 1.0, 0.5) 
+
+////////////////////////////////////////////
+////////// WHAT IS MY SITUATION  ///////////
+////////////////////////////////////////////
+
+	input current_military_readiness
+		tri war_footing ( current_military_readiness, 2.0, 0.5)
+		tri peace_footing ( current_military_readiness, 0.0, 0.5)
+		tri ready_footing ( current_military_readiness, 0.0, 0.5)
+
+	//////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN FIGHTING CONTINUOUSLY?  //////////
+	//////////////////////////////////////////////////////////////////
+
+	input longest_war
+		tri a0_longest_war(longest_war, 0.0, 0.5)
+		tri a1to10_longest_war(longest_war, 5.0, 5.0)
+		tri a5to15_longest_war(longest_war, 10.0, 5.0)
+		tri a10to20_longest_war(longest_war, 15.0, 5.0)
+		tri a20to30_longest_war(longest_war, 25.0, 5.0)
+		tri a25to35_longest_war(longest_war, 30.0, 5.0)
+		tri a30to50_longest_war(longest_war, 40.0, 10.0)
+		right a50plus_longest_war(longest_war, 55.0, 5.0)
+
+	output nearly_tired_of_war[0.0,2.0] = 0.0
+		tri yes_nearly_tired_of_war(nearly_tired_of_war, 1.0, 0.5)
+
+	output tired_of_war[0.0,2.0] = 0.0
+		tri yes_bored_of_war(tired_of_war, 1.0, 0.5)
+
+	output sick_of_war[0.0,2.0] = 0.0
+		tri yes_sick_of_war(sick_of_war, 1.0, 0.5)
+
+
+	// GET TIRED OF WAR AFTER A LONG TIME
+	if(a20to30_longest_war)
+		{
+			yes_nearly_tired_of_war
+		}
+
+	// GET TIRED OF WAR AFTER A LONG TIME
+	if(a30to50_longest_war)
+		{
+			yes_bored_of_war
+		}
+
+	// GET SICK AND TIRED OF WAR AFTER A VERY LONG TIME
+	if(a50plus_longest_war)
+		{
+			yes_sick_of_war
+		}
+
+	/////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN AT PEACE CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+
+	input shortest_peace
+		tri zero_length_peace(shortest_peace, 0.0, 0.5)
+		tri a0to5_peace(shortest_peace, 5.0, 5.0)
+		tri a5to15_peace(shortest_peace, 10.0, 5.0)
+		tri a10to20_peace(shortest_peace, 15.0, 5.0)
+		right a20plus_peace(shortest_peace, 25.0, 5.0)
+
+	output tired[0.0, 2.0] =0.0
+		tri yes_tired(tired, 1.0, 0.5)
+
+	output barely_refreshed[0.0, 2.0] =0.0
+		tri yes_barely_refreshed(barely_refreshed, 1.0, 0.5)
+
+	output refreshed[0.0, 2.0] =0.0
+		tri yes_refreshed(refreshed, 1.0, 0.5)
+
+	if(zero_length_peace or a0to5_peace or a5to15_peace)
+		{
+			yes_tired
+		}
+
+	// GET ITCHY TO GO TO WAR AFTER A LONG PEACE
+	if(a20plus_peace)
+		{
+			yes_refreshed
+		}
+	
+	// FEEL RELUCTANT TO GO TO WAR AFTER A SHORT PEACE
+	if(a10to20_peace and not yes_refreshed and not yes_tired)
+		{
+			yes_barely_refreshed
+		}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY PLAYERS AM I FIGHTING?  /////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input at_war_count
+		tri zero_at_war(at_war_count, 0.0, 0.5)
+		tri one_at_war(at_war_count, 1.0, 0.5)
+		tri two_at_war(at_war_count, 2.0, 0.5)
+		tri three_at_war(at_war_count, 3.0, 0.5)
+		tri four_at_war(at_war_count, 4.0, 0.5)
+		tri five_at_war(at_war_count, 5.0, 0.5)
+		tri six_at_war(at_war_count, 6.0, 0.5)
+		tri seven_at_war(at_war_count, 7.0, 0.5)
+		tri eight_at_war(at_war_count, 8.0, 0.5)
+		tri nine_at_war(at_war_count, 9.0, 0.5)
+		tri ten_at_war(at_war_count, 10.0, 0.5)
+		tri eleven_at_war(at_war_count, 11.0, 0.5)
+		tri twelve_at_war(at_war_count, 12.0, 0.5)
+		tri thirteen_at_war(at_war_count, 13.0, 0.5)
+		tri fourteen_at_war(at_war_count, 14.0, 0.5)
+		tri fifteen_at_war(at_war_count, 15.0, 0.5)
+		tri sixteen_at_war(at_war_count, 16.0, 0.5)
+
+	///////////////////////////////////////////
+	////////// WHAT IS MY RANKING?  ///////////
+	///////////////////////////////////////////
+
+	input my_normalized_rank
+		tri iam_in_last_place(my_normalized_rank, 0.0, 0.05)
+		tri iam_in_bottom_half(my_normalized_rank, 0.3, 0.25)
+		tri iam_in_middle_half(my_normalized_rank, 0.5, 0.25)
+		tri iam_in_top_half(my_normalized_rank, 0.7, 0.25)
+		tri iam_in_first_place(my_normalized_rank, 1.0, 0.05)
+		tri iam_in_top_ten_percent(my_normalized_rank, 0.95, 0.05)
+
+	/////////////////////////////////////////////////////////////////////
+	////////// HOW MANY SOLDIER DO I HAVE IN FOREIGN LAND?  /////////////
+	/////////////////////////////////////////////////////////////////////
+	// N: WAIS--Wandering AI Syndrome--changed
+
+	input my_military_incursions
+		left no_my_incurions(my_military_incursions, 0, 0.25)
+		tri some_my_incurions(my_military_incursions, 1, 0.5)
+		right many_my_incurions(my_military_incursions, 2, 1)
+
+///////////////////////////////////
+////////// SET LOYALTY  ///////////
+///////////////////////////////////
+	// N: values changed	
+
+output loyalty_modifier [-20, 20] = 0
+	tri benedict_arnold(loyalty_modifier, -10.0, 1.0)
+	tri trust_much_less(loyalty_modifier, -2.0, 1.0)
+	tri trust_less(loyalty_modifier, 0, 0)
+	tri trust_more(loyalty_modifier, 2.0, 1.0)
+	tri trust_much_more(loyalty_modifier, 5.0, 1.0)
+
+	//////////////////////////////////////////////////////
+	////////// SHOULD I TRUST HIM MORE OR LESS?  /////////
+	//////////////////////////////////////////////////////
+
+	if(	my_best_friend
+		and not (maybe_trust_him or completely_trust_him or distrust_him) )
+	{
+		trust_more
+	}
+
+	//////////////////////////////////////////////////////
+	////////// FIGHT MY FRIENDS, TRUST YOU LESS  /////////
+	//////////////////////////////////////////////////////
+
+	// N: changed
+	if(twice_attacked_my_friends)
+	{
+		trust_much_less
+	}	
+
+	// N: added
+	if(thrice_attacked_my_friends)
+	{
+		benedict_arnold
+	}	
+
+
+	//////////////////////////////////////////////////////
+	////////// BREAK TREATIES, TRUST YOU LESS  ///////////
+	//////////////////////////////////////////////////////
+
+	if(	rarely_broke_treaties
+		and human )
+	{	
+		trust_much_less
+	}
+	
+	if( (sometimes_broke_treaties or often_broke_treaties)
+		and not human )
+	{
+		benedict_arnold
+	}
+	
+	if( (sometimes_broke_treaties or often_broke_treaties)
+		and human ) 
+	{
+		benedict_arnold
+	}
+
+	if (( rarely_broke_treaties or sometimes_broke_treaties or often_broke_treaties)
+		and not human)
+	{
+			trust_much_less
+	}
+			 
+/////////////////////////////////////
+//////////   SET REGARD   ///////////
+/////////////////////////////////////
+
+	/////////////////////////////////////
+	//////////   SET REGARD   ///////////
+	/////////////////////////////////////
+
+	output diplomatic_regard_delta[-50, 50] = 0.0
+		tri shift_to_hatred_more(diplomatic_regard_delta, -50, 10.0)
+		tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+		tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+		tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+		tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+		tri distain_him_more(diplomatic_regard_delta, -1, 1.0)
+		tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+		tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+		tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+		right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+	///////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST DUE TO FIRST PLACE   //////////
+	//////////////////////////////////////////////////////////////////////
+	output dip_regard_strength_delta[-100, 25] = 0
+		tri super_hate_strength(dip_regard_strength_delta, -70, 25.0)
+		tri much_hate_strength(dip_regard_strength_delta, -5.0, 5.0)
+		tri little_hate_strength(dip_regard_strength_delta, -2.0, 5.0)
+		tri tiny_hate_strength(dip_regard_strength_delta, -1.0, 5.0)
+		tri tiny_like_strength(dip_regard_strength_delta, 1.0, 5.0)
+		tri little_like_strength(dip_regard_strength_delta, 5.0, 5.0)
+		tri much_like_strength(dip_regard_strength_delta, 10.0, 5.0)
+
+	// N: not LIKE HIM LESS IF HE'S IN FIRST PLACE AND I'M NOT IN LAST PLACE
+	if(	hes_in_first_place 
+		and not iam_in_last_place 
+		and not iam_in_top_ten_percent
+		and (like_him or love_him) 
+		and not my_best_friend
+		and not human )
+		{
+			little_hate_strength
+			trust_much_less
+		}
+	
+	// N: changed
+	if(	hes_in_first_place 
+		and human
+		and not iam_in_last_place 
+		and not iam_in_top_ten_percent )	
+		{
+			tiny_hate_strength
+			trust_much_less
+		}
+
+//	if(	hes_in_first_place 
+//		and not iam_in_last_place 
+//		and (neutral_towards_him or dislike_him))
+//		{
+//			tiny_hate_strength
+//		}
+
+	// LIKE HIM MORE IF I'M IN LAST AND HE'S IN FIRST EXCEPT WHEN HE'S MY WORST ENEMY
+	if(	iam_in_last_place 
+		and hes_in_first_place 
+		and not my_worst_enemy)
+		{
+			little_like_strength
+		}
+	
+	// LIKE HIM MORE IF I'M IN FIRST AND HE'S IN LAST EXCEPT WHEN HE'S MY WORST ENEMY
+	if(	iam_in_first_place 
+		and hes_in_last_place 
+		and not my_worst_enemy)
+		{
+			little_like_strength
+		}
+	////////////////////////////////////////////////////////////
+	//////////   REGARD LOST DUE TO LAST PLACE...N   //////////
+	////////////////////////////////////////////////////////////
+
+	// N: added...If you're in last place and close,
+	// and I'm warlike, I'll bully you a lot
+	if(	iam_in_first_place
+		and warlike	
+		and hes_in_last_place
+		and yes_closest_capitol 
+		and yes_he_shares_continent 
+		and not my_worst_enemy)
+		{
+			loath_him_more
+		}
+
+	// N: added...If you're in last place & not close,
+	// and I'm warlike, I'll bully you somewhat
+	if(	iam_in_first_place
+		and warlike	
+		and hes_in_last_place
+		and yes_he_shares_continent  
+		and not my_worst_enemy)
+		{
+			dislike_him_more
+		}
+
+////////////////////////////////////////////////////////////////////////////////////////
+//////////   SET STRENGTH OF STATE OF WAR      ///////////
+////////////////////////////////////////////////////////////////////////////////////////
+// 
+// when unit regard is less than 20, we target the enemy.
+
+output unit_regard_delta[-100, 100] = 0.0
+	tri go_to_hot_war(unit_regard_delta, 10, 80.0)
+	tri go_to_hot_war_prep(unit_regard_delta, 25, 1.0)
+	tri go_to_cold_war(unit_regard_delta, 35, 1.0)
+	tri go_to_cold_war_prep(unit_regard_delta, 50, 0.5)
+	tri go_to_peace_partial(unit_regard_delta, 60, 0.55)
+	tri go_to_peace_full(unit_regard_delta, 80, 2.0)
+
+	////////////////////////////////////////////////////////////
+	////////// N: added.. UNDERDOG AI CATCHING UP     //////////
+	////////////////////////////////////////////////////////////
+	// special plan and war settings...N: moved up here
+
+		output special_plan[0.0, 2.0] = 0.0
+		tri yes_special_plan(special_plan, 1.0, 0.5)
+
+	// N: added...If I'm in last place and weak,
+	// try to steal more tech to catch up
+	if(	iam_in_last_place
+		and warlike	
+		and hes_in_first_place
+		and not yes_war)
+		{
+			same_like_him
+			go_to_cold_war
+			yes_special_plan
+		}
+
+
+	////////////////////////////////////////////////////////////
+	//////////   REGARD LOST BECAUSE HE'S TOO CLOSE   //////////
+	////////////////////////////////////////////////////////////
+
+	// LIKE HIM LESS IF HE'S CLOSE, ON THE SAME CONTINENT, AND I'M WARLIKE
+	if(	yes_closest_capitol 
+		and yes_he_shares_continent 
+		and warlike
+		and zero_at_war )
+		{
+			super_hate_strength
+		}
+
+	// LIKE HIM MORE IF HE'S CLOSE, ON THE SAME CONTINENT, AND I'M PEACEFUL
+	if(	yes_closest_capitol 
+		and yes_he_shares_continent 
+		and peaceful 
+		and not my_worst_enemy 
+		and not yes_war
+		and not (love_him or like_him) )
+		{
+			little_like_strength
+		}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// REGARD LOST TO SPECIAL ACTIONS  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	// LIKE HIM LESS IF HE USES UNCONVENTIONAL ATTACKS ON ME..N: changed
+	if((once_unconned_me or often_unconned_me) 
+		and (love_him or like_him))
+	{
+		hate_him_more
+		trust_much_less
+	}
+
+	// N: changed	
+	if((once_unconned_me or often_unconned_me) 
+		and (neutral_towards_him or dislike_him))
+	{
+		loath_him_more
+		benedict_arnold
+	}
+	
+	///////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST TO PIRACY   //////////
+	//////////////////////////////////////////////////////////////////////
+	output dip_regard_pirate_delta[-20, 0] = 0
+		tri much_hate_pirate(dip_regard_pirate_delta, -15.0, 5.0)
+		tri little_hate_pirate(dip_regard_pirate_delta, -5.0, 5.0)
+		tri tiny_hate_pirate(dip_regard_pirate_delta, -1.0, 5.0)
+
+	// LIKE HIM LESS IF HE PIRATES ME
+	if(pirated_a_little)
+		{
+			little_hate_pirate
+			trust_much_less
+		}
+
+	if(blue_beard)
+		{
+			much_hate_pirate
+		}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST TO INCURSIONS   //////////
+	//////////////////////////////////////////////////////////////////////////////
+	output dip_regard_incursion_delta[-20, 0] = 0
+		tri much_hate_incursion(dip_regard_incursion_delta, -5.0, 5.0)
+		tri little_hate_incursion(dip_regard_incursion_delta, -3.0, 5.0)
+		tri tiny_hate_incursion(dip_regard_incursion_delta, -1.0, 5.0)
+		tri zero_hate_incursion(dip_regard_incursion_delta, 0.0, 5.0)		
+
+	// LIKE HIM LESS IF HE WALKS ON MY LANDS AND WE'RE NOT ALLIES...N: changed
+		if(	few_incursions 
+			and warlike 
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance)
+		{
+			tiny_hate_incursion
+			trust_much_less
+		}
+
+		if(	few_incursions 
+			and not hate_him 
+			and peaceful 
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance )
+		{
+			tiny_hate_incursion
+		}
+
+		if(	many_incursions 
+			and peaceful 
+			and not hate_him
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance )
+		{
+			tiny_hate_incursion
+		}
+
+		if(	many_incursions 
+			and warlike
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance)
+		{
+			much_hate_incursion
+		}
+
+		if(	many_incursions 
+			and peaceful 
+			and completely_trust_him )
+		{	
+			zero_hate_incursion
+		}
+		
+		// N: changed
+		if(many_incursions 
+			and peaceful 
+			and human
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS 
+			and not yes_alliance )
+		{
+			tiny_hate_incursion
+		}
+
+		// N: changed, no longer just human
+		if(floods_incursions 
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance )
+		{
+			much_hate_incursion
+		}
+
+		if(floods_incursions 
+			and not completely_trust_him
+			and yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+			and not yes_alliance )
+		{
+			much_hate_incursion
+		}
+
+	///////////////////////////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST TO HIM ATTACKING ME   /////////
+	///////////////////////////////////////////////////////////////////////////////////////////
+	// N: last input added
+
+	output dip_regard_attack_delta[-100, 0] = 0
+		tri shift_three_hate_attack(dip_regard_attack_delta, -60.0, 20.0)
+		tri shift_two_hate_attack(dip_regard_attack_delta, -40.0, 20.0)
+		tri shift_one_hate_attack(dip_regard_attack_delta, -20.0, 20.0)
+		tri much_hate_attack(dip_regard_attack_delta, -10.0, 5.0)
+		tri little_hate_attack(dip_regard_attack_delta, -5.0, 5.0)
+		tri okay_hate_attack(dip_regard_attack_delta, -2.0, 2.0)
+
+		// IF I'M PEACEFUL AND WE'RE GOOD FRIENDS, GIVE HIM ONE BREAK WHEN HE ATTACKS ME.
+		if(once_attacked_me and not warlike and (like_him or love_him)) 
+		{
+			little_hate_attack
+		}
+		
+		// IF I'M WARLIKE, THERE are no accidents
+		if(once_attacked_me and warlike and (like_him or love_him))
+		{
+			much_hate_attack
+		}
+
+		// GO TO WAR IF HE ATTACKS AND WE'RE NOT NEUTRAL
+		if(neutral_towards_him and once_attacked_me)
+		{
+			shift_one_hate_attack
+		}
+
+		// GO TO WAR IF HE ATTACKS US A LOT
+		if(love_him and often_attacked_me)
+		{
+			shift_three_hate_attack
+		}
+		
+		// GO TO WAR IF HE ATTACKS US A LOT
+		if(like_him and often_attacked_me)
+		{
+			shift_two_hate_attack
+		}
+
+		// GO TO WAR IF HE ATTACKS US A LOT
+		if(neutral_towards_him and often_attacked_me)
+		{
+			shift_one_hate_attack
+		}
+
+		// GO TO WAR IF HE ATTACKS US A LOT
+		if(dislike_him and often_attacked_me)
+		{
+			shift_one_hate_attack
+		}
+
+		// GO TO WAR IF HE ATTACKS US A LOT
+		if(hate_him and often_attacked_me)
+		{
+			much_hate_attack
+		}
+
+		// N: If I'm breaking border policies like a
+		// dizzy manic squirrel, & peaceful...well, okay 
+		if(once_attacked_me
+			and peaceful
+			and not yes_war
+			and not hot_war_prep
+			and many_my_incurions)
+		{
+			okay_hate_attack
+		}
+
+		// N: If I'm breaking border policies like a
+		// dizzy manic squirrel, & warlike, hmm, well, okay 
+		if(once_attacked_me
+			and warlike
+			and not yes_war
+			and not hot_war_prep
+			and many_my_incurions)
+		{
+			okay_hate_attack
+		}
+
+		// N: If I'm breaking border policies like a dizzy
+		// manic squirrel, & we're allied or at peace, well, okay 
+		if(once_attacked_me
+			and (yes_alliance or yes_cease_fire)
+			and not hot_war_prep
+			and many_my_incurions)
+		{
+			okay_hate_attack
+		}
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST TO REJECTION     //////////
+	//////////////////////////////////////////////////////////////////////////////
+
+		// DISLIKE HIM IF HE WON'T AGREE TO OUR REQUESTS..N: changed
+		// Changed to neutral...N.
+		if(some_rejected_requests and not warlike)
+		{
+			same_like_him
+		}
+
+		// DISLIKE HIM A LOT IF HE WON'T AGREE..N: changed
+		// AND IF I'M WARLIKE
+		// Changed to dislike...N.
+		if(some_rejected_requests and warlike)
+		{
+			dislike_him_more
+		}
+
+		// DISLIKE HIM A LOT IF HE WON'T AGREE A LOT..N: changed
+		// Changed to hate...N. 
+		if(many_rejected_requests)
+		{
+			hate_him_more	
+      		}
+
+	////////////////////////////////////////////////////
+	//////////   REGARD GAINED FROM ACCEPTANCE  ////////
+	////////////////////////////////////////////////////
+
+
+	input accepted_requests
+		left no_accepted_requests(accepted_requests, 0, 0.5)
+		tri some_accepted_requests(accepted_requests, 2, 1)
+		right many_accepted_requests(rejected_requests, 6, 1)
+
+	////////////////////////////////////////////////////////
+	//////////   REGARD GAINED FROM HIM FIGHTING MY FOES ///
+	////////////////////////////////////////////////////////
+
+	// LIKE HIM MORE IF HE ATTACKS OUR ENEMIES..N: changed all
+	if( once_attacked_my_enemies 
+		and no_war
+		and not my_worst_enemy
+		and not love_him )
+		{
+			love_him_more
+			trust_more
+		}
+		
+	if(	twice_attacked_my_enemies
+		and no_war
+		and not my_worst_enemy
+		and not love_him )
+		{
+			love_him_more
+			trust_more
+		}
+		
+	if(	thrice_attacked_my_enemies
+		and no_war
+		and not my_worst_enemy
+		and not love_him )
+		{
+			worship_him_more
+			trust_much_more
+		}	
+
+	////////////////////////////////////////////////////////
+	//////////   REGARD LOST FROM HIM FIGHTING MY FRIENDS ///
+	////////////////////////////////////////////////////////
+
+	// LIKE HIM LESS IF HE ATTACKS OUR FRIENDS..N: changed
+	if(	twice_attacked_my_enemies 
+		and not my_best_friend)
+		{
+			wary_of_him_more
+		}
+		
+	if(	thrice_attacked_my_enemies
+		and not my_best_friend)
+		{
+			dislike_him_more
+		}	
+
+	////////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST BECAUSE HE HAS A PACT TO KILL ME   ////////
+	////////////////////////////////////////////////////////////////////
+
+	// REM300199: problem with has_pact_against_me
+	//if(	yes_has_pact_against_me and not yes_war)
+	//	{
+	//		shift_to_hatred_more
+	//	}
+		
+
+	////////////////////////////////////////////////////////////////////////////////
+	////////// DO WE HAVE A CEASE FIRE /////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	input cease_fire_with_him
+		left no_cease_fire(cease_fire_with_him, 0.0, .5)
+		right yes_cease_fire(cease_fire_with_him, 1.0, .5)
+	
+
+
+	// if he's my best friend, then let's not fight
+	if(	my_best_friend 
+		and war 
+		and yes_cease_fire 
+		and not hot_war_prep)
+	{
+		go_to_cold_war
+		yes_special_plan
+	}
+
+	// if I have a cease fire and I'm not a backstabber, then let's not fight
+	if(	yes_cease_fire 
+		and war 
+		and not backstabber
+		and not hot_war_prep )
+	{
+		go_to_cold_war
+		yes_special_plan
+	}
+
+	// if we have a ceasefire and either I'm weak or I'm trustworthy, then let's not fight
+	if( yes_cease_fire 
+		and war 
+		and not stronger_than_him 
+		and not backstabber )
+	{
+		go_to_cold_war
+		yes_special_plan
+	}
+
+	// if we have a cease fire, and I'm a strong backstabber who's not fighting anyone else, then let's fight
+	// Look for at war settings...
+	if( yes_cease_fire 
+		and stronger_than_him 
+		and backstabber 
+		and zero_at_war 
+		and not yes_tired
+		and not ( terrified_of_him or afraid_of_him) 
+		and my_worst_enemy )
+	{
+		go_to_hot_war
+		yes_special_plan
+	}
+
+	if (yes_cease_fire 
+		and not yes_special_plan
+		and (hate_him or dislike_him or neutral_towards_him))
+	{
+		go_to_cold_war
+	}
+
+	///////////////////////////////////////////////////////
+	////////// IF WE'RE AT WAR, FIGHT /////////////////////
+	///////////////////////////////////////////////////////
+
+	if (yes_war )
+	{
+		very go_to_hot_war
+	}
+	
+	// N: If we're at war with another AI, fight
+	if (yes_war
+	    and not human	 )	
+	{
+		very go_to_hot_war
+	}			
+	///////////////////////////////////////////////////////
+	////////// DO WE HAVE AN ALLIANCE /////////////////////
+	///////////////////////////////////////////////////////
+
+	input alliance_with_him
+		left no_alliance(alliance_with_him, 0.0, .5)
+		right yes_alliance(alliance_with_him, 1.0, .5)
+
+	if(	attacked_recently 
+		and not war 
+		and not ( yes_cease_fire or yes_alliance ))
+	{
+		go_to_hot_war
+	}
+
+	if(	yes_alliance 
+		and not war)
+	{
+		go_to_peace_full
+	}
+
+	if(	(no_alliance or no_cease_fire) 
+		and hate_him 
+		and not yes_tired
+		and not war 
+		and not war_footing)
+	{
+		go_to_hot_war_prep
+	}
+	
+	if(	(no_alliance or no_cease_fire) 
+		and hate_him 
+		and not yes_tired
+		and not war 
+		and war_footing)
+	{
+		go_to_hot_war
+	}
+	
+	if((no_alliance or no_cease_fire) 
+		and dislike_him 
+		and warlike 
+		and not yes_tired
+		and not war 
+		and not war_footing )
+	{
+		go_to_hot_war_prep
+	}
+
+	if( (no_alliance or no_cease_fire) 
+		and dislike_him 
+		and warlike 
+		and not yes_tired
+		and not war 
+		and war_footing )
+	{
+		go_to_hot_war
+	}
+
+	if( yes_alliance 
+		and stronger_than_him 
+		and backstabber 
+		and zero_at_war 
+		and not yes_tired
+		and (hate_him or dislike_him) )
+	{
+		go_to_hot_war
+	}
+
+	
+	////////////////////////////////////////////////////////////////
+	////////// ARE WE NEUTRAL? /////////////////////
+	////////////////////////////////////////////////////////////////
+
+	input neutral_with_him
+		left no_neutral(neutral_with_him, 0.0, .5)
+		right yes_neutral(neutral_with_him, 1.0, .5)
+
+	//  this is for the friendly guy
+	if( yes_neutral 
+		and not attacked_recently 
+		and not war)
+	{
+		go_to_cold_war
+	} 
+
+	// GO TO WAR IF I'M NOT AT WAR WITH ANYONE
+	// AND I HATE THIS GUY AND I FEEL READY FOR WAR
+	if(	yes_neutral 
+		and hate_him 
+		and zero_at_war 
+		and not yes_war 
+		and yes_refreshed
+		and no_cease_fire 
+		and no_alliance
+		and not yes_tired )
+	{
+		go_to_hot_war
+	}
+
+	// GO TO WAR IF I'M NOT AT WAR WITH ANYONE
+	// AND I HATE THIS GUY AND I FEEL READY FOR WAR
+	if(	yes_neutral 
+		and hate_him 
+		and zero_at_war 
+		and not yes_war 
+		and yes_barely_refreshed 
+		and warlike
+		and no_cease_fire 
+		and no_alliance
+		and not backstabber
+		and not yes_tired )
+	{
+		go_to_hot_war_prep
+	}
+
+	// GO TO WAR IF I'M NOT AT WAR WITH ANYONE
+	// AND I HATE THIS GUY AND I FEEL READY FOR WAR
+	if(	yes_neutral 
+		and hate_him 
+		and zero_at_war 
+		and not yes_war 
+		and yes_barely_refreshed 
+		and warlike
+		and no_cease_fire 
+		and no_alliance
+		and not yes_tired )
+	{
+		go_to_hot_war
+	}	
+	
+	/////////////////////////////////////////////////
+	////////// ARE WE FRIENDLY? /////////////////////
+	/////////////////////////////////////////////////
+
+	if ( love_him
+		 and ( yes_neutral or yes_cease_fire or yes_alliance)
+		 and not war )
+	{
+		go_to_peace_full
+	}		
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// LOWER REGARD AND LOYALTY WHEN HE BREAKS STOP TRADE /////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input violating_stop_trade 
+		right violate_stop_trade(violating_stop_trade, 1.0, 0.5)
+
+	input have_stop_trade 
+		right made_stop_trade (have_stop_trade, 1.0, 0.5) 
+
+	// LIKE HIM LESS IF HE VIOLATES THIS STOP TRADE AGREEMENT AND TRUST HIM LESS AS WELL
+	if(made_stop_trade and violate_stop_trade)
+	{
+		benedict_arnold
+		loath_him_more
+	}
+
+	// LIKE HIM MORE AND TRUST HIM MORE IF HE KEEPS HIS WORD
+	if(made_stop_trade and not violate_stop_trade 
+		and not (maybe_trust_him or completely_trust_him or distrust_him) 
+		and not love_him )
+	{
+		kinda like_him_more
+		trust_more	
+	}
+
+	if( made_stop_trade and not violate_stop_trade 
+		and not (maybe_trust_him or completely_trust_him or distrust_him) )
+	{
+		trust_more
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	////////// LOWER REGARD AND LOYALTY WHEN HE BREAKS LEAVE LANDS  ////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	input violating_leave_our_lands
+		right violate_leave_our_lands( violating_leave_our_lands, 1.0, 0.5)
+
+	input have_leave_our_lands
+		right yes_leave_our_lands(have_leave_our_lands, 1.0, 0.5)
+
+	// LIKE HIM LESS AND TRUST HIM LESS IF HE BREAKS THE LEAVE LANDS AGREEMENT
+	if(	yes_leave_our_lands 
+		and violate_leave_our_lands)
+	{
+		benedict_arnold
+		loath_him_more
+	}
+
+	// LIKE HIM MORE AND TRUST HIM MORE IF HE KEEPS THE LEAVE LANDS AGREEMENT
+	if(	yes_leave_our_lands and not violate_leave_our_lands)
+	{
+		like_him_more
+	}
+
+	if(	yes_leave_our_lands and not violate_leave_our_lands
+		and not (maybe_trust_him or completely_trust_him or distrust_him))
+	{
+		trust_more
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////
+	////////// LOWER REGARD AND LOYALTY WHEN HE BREAKS ECO PACT     /////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////
+
+input violating_end_pollution
+	right violate_end_pollution(violating_end_pollution, 1.0, 0.5)
+
+input have_end_pollution
+	right yes_end_pollution(have_end_pollution, 1.0, 0.5)
+
+	if(	yes_end_pollution 
+		and violate_end_pollution
+		and human )
+	{
+		benedict_arnold
+		loath_him_more
+	}
+	
+	if(	yes_end_pollution 
+		and not violate_end_pollution)
+	{
+		kinda like_him_more
+	}
+
+	//	if(yes_end_pollution and not violate_end_pollution
+	//		and not (maybe_trust_him or completely_trust_him or distrust_him))
+	//	{
+	//		trust_much_more 
+	//	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	//////// LOWER REGARD AND LOYALTY WHEN HE BREAKS LOWER SMUT/////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	input violating_reduce_pollution
+		right violate_reduce_pollution(violating_reduce_pollution, 1.0, 0.5)
+
+	input have_reduce_pollution
+		right yes_reduce_pollution(have_reduce_pollution, 1.0, 0.5)
+
+	if(violate_reduce_pollution)
+	{
+		benedict_arnold
+		dislike_him_more
+	}	
+
+	if(yes_reduce_pollution and not violate_reduce_pollution )
+	{
+		kinda like_him_more
+	}
+
+	//	if(yes_reduce_pollution and not violate_reduce_pollution
+	//		and not (maybe_trust_him or completely_trust_him or distrust_him))
+	//	{
+	//		trust_much_more
+	//	}
+
+	//////////////////////////////////////////////////////////////////////////////
+	////////// LOWER REGARD AND LOYALTY WHEN HE BREAKS ATTACK ENEMY //////////////
+	//////////////////////////////////////////////////////////////////////////////
+
+	input violating_attack_enemy
+		right violate_attack_enemy(violating_attack_enemy, 1.0, 0.5)
+
+	input have_attack_enemy
+		right yes_attack_enemy(have_attack_enemy, 1.0, 0.5)
+
+	if ( violate_attack_enemy 
+		 and human )	
+	{	
+		benedict_arnold	
+		dislike_him_more
+	}
+		
+	if ( yes_attack_enemy 
+		and not violate_attack_enemy )	
+	{
+		kinda like_him_more
+	}
+
+	if ( yes_attack_enemy and not violate_attack_enemy 
+		and not (maybe_trust_him or completely_trust_him or distrust_him))	
+	{
+		trust_more
+	}
+
+	////////////////////////////////////////////////////////////////
+	//////////   REGARD LOST BECAUSE HE'S ABOUT TO WIN   //////////
+	////////////////////////////////////////////////////////////////
+
+	// N: changed
+	if(	yes_he_built_wormhole 
+		and human)
+		{
+			super_hate_strength
+			very go_to_cold_war
+			benedict_arnold
+			yes_special_plan
+		}
+
+	// hate ai's that are winning, but don't go overboard..N: changed
+	if(	yes_he_built_wormhole 
+		and not human )
+		{
+			much_hate_strength
+			benedict_arnold
+		}
+
+	////////////////////////////////////////////////////////////////////////////
+	//////////   STOP FIGHTING EVERYONE ELSE IF HUMAN HAS WORMHOLE TECH   //////
+	////////////////////////////////////////////////////////////////////////////
+
+	// N: changed
+	if(	not yes_he_built_wormhole 
+		and yes_someone_built_wormhole
+		and not human 
+		and not (like_him or love_him))
+		{
+			like_him_more
+			go_to_cold_war
+			trust_more
+		}
+
+	////////////////////////////////////////////////////////
+	//////////   REGARD LOST BECAUSE HE'S HUMAN   //////////
+	////////////////////////////////////////////////////////
+
+	// N: changed
+	if(	human 
+		and warlike )
+		{
+			dislike_him_more
+			trust_much_less
+		}
+	
+	// N: changed and added
+	if(	human
+		and not warlike )
+		{
+			same_like_him
+		}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///// SET UP MY MEMORY OF MY RESPONSES TO HIS DEMANDS BASED ON HOW MUCH I LIKE HIM  ////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// if I love him, then I'll give him gold every turn that he demands it (but not
+	// twice in a turn.)
+
+	if( not love_him)
+	{
+		my_long_decay_DEMAND_GOLD
+	}
+
+	if((once_i_said_yes_to_DEMAND_GOLD or onceplus_i_said_yes_to_DEMAND_GOLD)
+		and yes_war)
+	{
+		my_zero_decay_DEMAND_GOLD
+	}
+
+//////////////////////////////////////////////////////////////
+//// IF WE'RE NAGGING ABOUT LEAVE LANDS, STOP ASKING  ////////
+//////////////////////////////////////////////////////////////
+
+	// decay from -1.48 to -1.19 in about 6 turns
+	if(	twice_he_said_no_to_DEMAND_LEAVE_OUR_LANDS
+		and not once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS)
+	{
+		his_longer_decay_DEMAND_LEAVE_OUR_LANDS
+	}
+
+	// decay from -1.2 to -0.5 in about 12 turns
+	if(	not onceplus_he_said_no_to_DEMAND_LEAVE_OUR_LANDS
+		and once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS)
+	{
+		his_long_decay_DEMAND_LEAVE_OUR_LANDS
+	}		
+			
+
+//////////////////////////////////////////////////////////////////
+//// IF WE'RE NAGGING ABOUT EXCHANGING MAPS, STOP ASKING  ////////
+//////////////////////////////////////////////////////////////////
+
+	// decay from -1.48 to -1.0 in about 9 turns
+	if(	onceplus_he_said_yes_to_EXCHANGE_MAP
+		and not once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS)
+	{
+		his_longer_decay_DEMAND_LEAVE_OUR_LANDS
+	}
+
+	// decay from 0.99 to 0.5 in about 18 turns
+	if(	not onceplus_he_said_no_to_DEMAND_LEAVE_OUR_LANDS
+		and once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS)
+	{
+		his_long_decay_DEMAND_LEAVE_OUR_LANDS
+	}		
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////NORDICUS WANDERING AI SYNDROME FIX////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+	input i_will_leave_his_lands
+		tri yes_i_will_leave_his_lands(i_will_leave_his_lands, 1.8, 0.5)
+
+		// N: WAIS added (I'll leave your lands if you're scary
+		// and I'm not going to fight you)
+		if(some_my_incurions 
+			and peaceful 
+			and (afraid_of_him or terrified_of_him)
+			and not hot_war_prep 
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+		
+		// N: WAIS added (I'll leave your lands if you're peaceful
+		// and we're neutral and I'm not fighting anyone)
+		if(some_my_incurions 
+			and peaceful
+			and not yes_war
+			and zero_at_war
+			and (not dislike_him or not hate_him)
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+
+		// N: WAIS added (I'll leave your lands if we're
+		// enjoying a Cease Fire and I like you okay)
+		if(some_my_incurions 
+			and war
+			and not my_worst_enemy
+			and yes_cease_fire
+			and not hot_war_prep
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+
+		// N: WAIS added (I'll leave your lands if we're enjoying a
+		// an Alliance or Peace Treaty and I'm not fighting anyone)
+		if(some_my_incurions 
+			and not yes_war
+			and zero_at_war
+			and (yes_cease_fire or yes_alliance)
+			and (like_him or love_him)
+			and not hot_war_prep
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+
+		// N: WAIS added (I'll leave your lands if we're at Peace
+		// and I'm trespassing like a blindfolded drunk)
+		if(many_my_incurions 
+			and not yes_war
+			and zero_at_war
+			and yes_cease_fire
+			and not hot_war_prep
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+
+		// N: WAIS added (I'll leave your lands if you're peaceful
+		// and we're neutral and neither of us fights anyone)
+		if(some_my_incurions 
+			and peaceful
+			and not yes_war
+			and zero_at_war
+			and he_fights_zero
+			and (not dislike_him or not hate_him)
+			and not yes_alliance )
+		{
+			yes_i_will_leave_his_lands
+		}
+

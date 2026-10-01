@@ -1,0 +1,703 @@
+#########################
+
+# Victory Window LDL Script
+
+#########################
+
+template victoryscreen_pane {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	540
+
+	int	heightpix	290
+}
+
+template victoryscreen_block {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	540
+
+	int	heightpix	290
+
+	string	pattern	"upba6500.tga"
+
+	int bevelwidth	2
+
+	int beveltype	2
+	
+	int	srcxpix		53
+
+	int	srcypix		157
+
+	int	srcwidthpix		544
+
+	int	srcheightpix	294
+
+}
+
+template victoryscreen_tab : T_FONT1_VICTORY1 {
+
+	int	widthpix	100
+
+	int	heightpix	20
+
+	string	parent	"VictoryWindow"
+
+	string	pattern	"upba6417.tga"
+
+	int bevelwidth	1
+
+	int beveltype	2
+}
+
+template victoryscreen_button : T_FONT1_VICTORY1{
+
+	int	widthpix	59
+
+	int heightpix	32
+
+	int bevelwidth	0
+
+	string imagebltflag	"chromakey"
+}
+
+template victoryscreen_staticbox : T_FONT1_VICTORY3 {
+
+	int bevelwidth	2
+
+	int beveltype	2
+
+}
+
+template highscore_buttons : T_FONT5_DELETE {
+
+	int widthpix	91
+
+	int heightpix	24
+
+	int bevelwidth	0
+
+	int beveltype	0
+
+	string imagebltflag	"chromakey"
+
+	string	image0			"upba5702.tga"
+
+	string	image1			"upba5703.tga"
+
+	string	disabledimage0	"upba5707.tga"
+}
+
+VictoryWindow_WonderIcon {
+
+	int xpix	0
+
+	int ypix	0
+
+	int	widthpix	72
+
+	int heightpix	54
+
+	string	image0	"upu087.tga"
+
+	string	imageblttype	"stretch"
+}
+
+
+VictoryWindow {
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	640
+
+	int	heightpix	480
+
+	string	pattern	"upba6500.tga"
+
+
+# Your Civilization Score Is:
+	StaticText0:T_FONT1_VICTORY3 {
+
+		int	xpix	138
+
+		int	ypix	38
+
+		int	widthpix	367
+
+		int	heightpix	20
+
+		#string	text	"str_ldl_YOUR_CIVILIZATION_SCORE_IS_COLON"
+	}
+
+	StaticText1:T_FONT1_VICTORY2 {
+
+		int	xpix	149
+
+		int	ypix	62
+
+		int	widthpix	347
+
+		int	heightpix	14
+
+		string	text	"str_ldl_YOUR_NAME_WILL_GO_DOWN_IN_THE_ANNALS_OF_HISTORY_AS"	
+	}
+
+	StaticText2:T_FONT1_VICTORY2 {
+
+		int	xpix	460
+
+		int	ypix	104
+
+		int	widthpix	80
+
+		int	heightpix	24
+
+		string	text	"str_ldl_POPULATION_COLON"
+	}
+
+	StaticText3:victoryscreen_staticbox {
+
+		int	xpix	542
+
+		int	ypix	104
+
+		int	widthpix	80
+
+		int	heightpix	24
+
+	}
+
+	StaticText4:T_FONT1_VICTORY2 {
+
+		int	xpix	15
+
+		int	ypix	104
+
+		int	widthpix	80
+
+		int	heightpix	24
+
+		string	text	"str_ldl_CITIES_COLON"
+	}
+
+	StaticText5:victoryscreen_staticbox {
+
+		int	xpix	88
+
+		int	ypix	104
+
+		int	widthpix	80
+
+		int	heightpix	24
+
+	}
+
+# Player known as:
+	StaticText6:T_FONT1_VICTORY1 {
+
+		int	xpix	180
+
+		int	ypix	97
+
+		int	widthpix	268
+
+		int	heightpix	18
+
+	}
+
+# window title
+	StaticText7:T_FONT4_POPTITLE {
+
+		string xanchor	"center"
+
+		string yanchor	"top"
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+	}
+
+	OkButton : CTP_CLOSE_BUTTON {
+
+		int	xpix	569
+
+		int	ypix	442
+
+		string	text	"str_ldl_Close"
+
+	}
+
+	TabGroup {
+
+		int	xpix	53
+
+		int	ypix	137
+
+		int	widthpix	540
+
+		int	heightpix	290
+
+		bool	autoarrange	FALSE
+
+		WonderTab : victoryscreen_tab {
+
+			int	xpix	0
+
+			int	ypix	0
+
+			string	text	"str_ldl_Wonders"
+
+			pane : victoryscreen_pane {	
+
+				WonderBlock : victoryscreen_block {
+
+				}
+
+			}
+
+		}
+
+		GraphTab : victoryscreen_tab {
+
+			int	xpix	105
+
+			int	ypix	0
+
+			string	text	"str_ldl_Power"
+	
+			pane : victoryscreen_pane {	
+
+				GraphBlock : victoryscreen_block {
+
+					Graph {
+
+						int	xpix	5
+
+						int	ypix	5
+
+						int	widthpix	400
+
+						int	heightpix	280
+
+						string image0	"upba6506.tga"
+
+					}
+
+					GraphList {
+
+						int	xpix	410
+
+						int	ypix	7
+
+						int	widthpix	100
+
+						int	heightpix	276
+
+						#string pattern	"upba6417.tga"
+
+						int columns		1
+
+						int bevelwidth	2
+
+						int beveltype	2
+
+						#bool alwaysranger	TRUE
+
+						string	pattern	"upba6507.tga"
+
+#						int	srcxpix		461
+#						int	srcypix		160
+#						int	srcwidthpix		124
+#						int	srcheightpix	284
+
+						rangery {
+
+							int	widthpix	15
+
+							int	heigthpix	15
+
+							string	type	"scroller"
+
+							string	orientation	"vertical"
+
+							string	pattern	"upba5605.tga"
+
+							incy {
+
+								int	widthpix	15
+
+								int	heightpix	15
+
+								string	pattern	"upba5605.tga"
+
+							}
+
+							decy {
+
+								int	widthpix	15
+
+								int	heightpix	15
+
+								string	pattern	"upba5605.tga"
+
+							}
+
+						}
+
+						header {
+							switch0:T_FONT1_14 {
+
+								int	widthpix	100
+
+								int	heightpix	0
+
+								int bevelwidth 	0
+
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		ScoreTab : victoryscreen_tab {
+
+			int	xpix	210
+
+			int	ypix	0
+
+			string	text	"str_ldl_Score"
+
+			pane : victoryscreen_pane {	
+
+				ScoreBlock : victoryscreen_block {
+
+					ScoreList {
+
+						int xpix	120
+
+						int	ypix	5
+
+						int	widthpix	300
+
+						int	heightpix	280
+
+#						string pattern	"upba6417.tga"
+
+						int columns		2
+
+						int bevelwidth	2
+
+						int beveltype	2
+
+#						bool alwaysranger	TRUE
+
+						string	pattern	"upba6500.tga"
+
+						int	srcxpix		171
+
+						int	srcypix		160
+
+						int	srcwidthpix		324
+
+						int	srcheightpix	284
+
+						rangery {
+
+							int	widthpix	15
+
+							int	heigthpix	15
+
+							string	type	"scroller"
+
+							string	orientation	"vertical"
+
+							string	pattern	"upba5605.tga"
+
+							incy {
+
+								int	widthpix	15
+
+								int	heightpix	15
+
+								string	pattern	"upba5605.tga"
+
+							}
+
+							decy {
+
+								int	widthpix	15
+
+								int	heightpix	15
+
+								string	pattern	"upba5605.tga"
+
+							}
+
+						}
+
+						header {
+							switch0:T_FONT1_14 {
+
+								int	widthpix	150
+
+								int	heightpix	0
+
+								int bevelwidth 	0
+
+							}
+							switch1:T_FONT1_14 {
+
+								int	widthpix	150
+
+								int	heightpix	0
+
+								int bevelwidth 	0
+
+							}
+						}
+
+					}
+				}
+			}
+
+		}
+
+	}
+
+
+
+}
+
+VictoryPlayerListItem {
+
+	Name:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		50
+
+		int		heightpix		20
+
+	}
+}
+
+HighScoreListItem {
+
+	Rank:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		250
+
+		int		heightpix		20
+
+	}
+
+	Score:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		50
+
+		int		heightpix		20
+
+	}
+}
+
+HighScoreWindowPopup {
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int		widthpix	400
+
+	int		heightpix	320
+
+	string	pattern	"upba6417.tga"
+
+	Title:T_FONT4_POPTITLE {
+
+		string	parent	"c3_PopupTitle"
+
+		string xanchor "center"
+
+		string yanchor "top"
+
+		int widthpct 50
+
+		int heightpix 20
+
+		string	text	"str_ldl_HIGH_SCORES"
+
+	}
+
+	ContinueButton : highscore_buttons {
+	
+		int		xpix	20
+
+		int		ypix	260
+
+		string	text	"str_ldl_CONTINUE"
+	}
+
+	CreditsButton : highscore_buttons {
+	
+		string	xanchor	"center"
+
+		int		ypix	260
+
+		string	text	"str_ldl_CREDITS"
+	}
+
+	QuitButton : highscore_buttons {
+	
+		int		xpix	290
+
+		int		ypix	260
+
+		string	text	"str_ldl_CAPS_QUIT"
+	}
+
+
+	HighScoreList {
+
+		string	xanchor	"center"
+
+		int	ypix	80
+
+		int	widthpix	300
+
+		int	heightpix	160
+
+		int columns		2
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		bool alwaysranger	TRUE
+
+		string	pattern	"upba6417.tga"
+
+		header {
+
+			switch0:T_FONT1_VICTORY1 {
+
+				int	widthpix	250
+
+				int	heightpix	0
+
+#				string text	"str_ldl_Rank"
+#				string	pattern	"upba3702.tga"
+
+				int bevelwidth 	0
+
+			}
+
+			switch1:T_FONT1_VICTORY1 {
+
+				int	widthpix	50
+
+				int	heightpix	0
+
+#				string text	"str_ldl_Player"
+#				string	pattern	"upba3702.tga"
+
+				int bevelwidth 	0
+
+			}
+		}
+
+	}
+
+}
+
+VictoryScoreListItem {
+
+	ScoreCategory:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+
+	ScoreValue:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+}
+
+VictoryPlayerListItem {
+
+	Civilization:T_FONT1_VICTORY1{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+}
+
+VictoryStrings {
+	int	numstrings	21
+
+	string string0 		"str_ldl_VICTORY"
+	string string1 		"str_ldl_DEFEAT"
+	string string2 		"str_tbl_ldl_Positive_Points_For_Colon"
+	string string3 		"str_tbl_ldl_Total_Positive_Points_Colon"
+	string string4 		"str_tbl_ldl_Negative_Points_For_Colon"
+	string string5 		"str_tbl_ldl_Total_Negative_Points_Colon"
+	string string6 		"str_tbl_ldl_Total_Points_Colon"
+	string string7 		"str_tbl_ldl_Civ_Score_Colon"
+	string string8		"str_ldl_YOUR_CIVILIZATION_SCORE_IS_COLON"
+
+	string string9		"str_ldl_THE_DESTITUTE"
+	string string10		"str_ldl_THE_SQUIRREL_HEARTED"
+	string string11		"str_ldl_THE_RED_FACED"
+	string string12		"str_ldl_THE_WEARY"
+	string string13		"str_ldl_THE_MEEK"
+	string string14		"str_ldl_THE_UNREADY"
+	string string15		"str_ldl_THE_EARNEST"
+	string string16		"str_ldl_THE_WISE"
+	string string17		"str_ldl_THE_VALIANT"
+	string string18		"str_ldl_THE_LION_HEARTED"
+	string string19		"str_ldl_THE_INDOMITABLE"
+	string string20		"str_ldl_THE_CIV_LORD"
+
+}
+
+$

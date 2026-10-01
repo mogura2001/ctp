@@ -1,0 +1,58 @@
+// This is the default personality if none is specified in the profile.
+// Other personalities will be in personalityXXX.fli where XXX is whatever
+// string is in the profile.
+#include "main.fli"
+
+// These things can be set for diplomatic uses and act as the final modifier
+// on utility functions for the given message
+// GREETING_coeff
+// DEMAND_ADVANCE_coeff
+// DEMAND_CITY_coeff
+// DEMAND_MAP_coeff
+// DEMAND_GOLD_coeff
+// DEMAND_STOP_TRADE_coeff
+// DEMAND_ATTACK_ENEMY_coeff
+// DEMAND_LEAVE_OUR_LANDS_coeff
+// DEMAND_REDUCE_POLLUTION_coeff
+// DEMAND_LOWER_TARIFFS_coeff
+// OFFER_ADVANCE_coeff
+// OFFER_CITY_coeff
+// OFFER_MAP_coeff
+// OFFER_GOLD_coeff
+// OFFER_CEASE_FIRE_coeff
+// OFFER_PERMANENT_ALLIANCE_coeff
+// OFFER_PACT_CAPTURE_CITY_coeff
+// OFFER_PACT_END_GLOBAL_WARMING_coeff
+// OFFER_PACT_END_OZONE_LOSS_coeff
+// EXCHANGE_ADVANCE_coeff
+// EXCHANGE_CITY_coeff
+// EXCHANGE_MAP_coeff
+	
+fuzzy_pre_outgoing_diplomacy {
+    output greeting_coeff[0, 10000] = 1
+    output demand_advance_coeff[0, 10000] = 1
+    output demand_city_coeff[0, 10000] = 0.0
+    output demand_map_coeff[0, 10000] = 1.0
+    output demand_gold_coeff[0, 10000] = 1.0
+    output demand_stop_trade_coeff[0, 10000] = 1
+    output demand_attack_enemy_coeff[0, 10000] = 1
+    output demand_leave_our_lands_coeff[0, 10000] = 1
+    output demand_reduce_pollution_coeff[0, 10000] = 1
+    output demand_lower_tariffs_coeff[0, 10000] = 1
+    output offer_advance_coeff[0, 10000] = 1
+    output offer_city_coeff[0, 10000] = 0.0
+    output offer_map_coeff[0, 10000] = 1.0
+    output offer_gold_coeff[0, 10000] = 1.0
+    output offer_cease_fire_coeff[0, 10000] = 1
+    output offer_permanent_alliance_coeff[0, 10000] = 1
+    output offer_pact_capture_city_coeff[0, 10000] = 0.0
+    output offer_pact_end_global_warming_coeff[0, 10000] = 1
+    output offer_pact_end_ozone_loss_coeff[0, 10000] = 1
+    output exchange_advance_coeff[0, 10000] = 1.0
+    output exchange_city_coeff[0, 10000] = 0.0
+    output exchange_map_coeff[0, 10000] = 1.0
+    output give_advance[0, 10000] = 1
+
+	// Won't send the same message more often than this many turns...changed to fifteen from ten..N.
+	output diplomatic_persistence[0, 10000] = 15
+}

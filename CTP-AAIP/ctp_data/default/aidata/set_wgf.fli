@@ -1,0 +1,141 @@
+// set_wgf.fli
+// sets rations, wages and workday
+
+// these are ranking in order of what I want most to what i want lease
+// For example, growth_prod_gold_set_wgf means that you want the AI
+// to set wgf to grow as much as possible, second to make as much prod as 
+// possible, and lastly, to save as much gold as possible.
+
+if(growth_prod_gold_deficit_set_wgf) // 1
+{ 
+	care_not_wgf_gold
+	work_ave_wgf_production
+	feed_nothing_wgf_food
+}
+
+
+if(prod_growth_gold_deficit_set_wgf) // 2
+{ 
+	care_not_wgf_gold
+	work_hard_wgf_production
+	feed_ave_wgf_food
+}
+
+if(growth_prod_gold_set_wgf) // 3 used for over 5 cities
+{
+	pay_ave_wgf_gold //	WW from lots
+	work_ave_wgf_production
+	feed_ave_wgf_food //	WW from nothing
+}
+
+if(prod_growth_gold_set_wgf) // 4
+{
+	pay_lots_wgf_gold
+	work_hard_wgf_production
+	feed_ave_wgf_food
+}
+
+if(prod_gold_growth_set_wgf) // 5
+{
+	work_hard_wgf_production
+	pay_ave_wgf_gold
+	feed_lots_wgf_food
+}
+
+if(growth_gold_prod_set_wgf) // 6
+{
+	pay_ave_wgf_gold
+	work_little_wgf_production
+	feed_nothing_wgf_food
+}
+
+if(gold_prod_growth_set_wgf) // 7
+{
+	pay_nothing_wgf_gold
+	work_ave_wgf_production
+	feed_lots_wgf_food
+}
+
+if(gold_growth_prod_set_wgf) // 8
+{
+	pay_nothing_wgf_gold
+	feed_ave_wgf_food
+	work_little_wgf_production
+}
+
+output money_crisis[0.0, 2.0] = 0.0
+	tri yes_money_crisis ( money_crisis, 1.0, 0.5)
+
+if(dangerously_high_gold_and_wages_cost)
+{
+	yes_money_crisis
+}
+
+
+// up to turn 100; feed 5
+	if( a0to100_turns )
+	{
+		low_food_max //WW from lowest
+		lowest_food_min
+	}
+
+// between 100 and 200; feed 7.5
+	if( a100to200_turns )
+	{
+		average_food_max //WW from low
+		low_food_min
+	}
+
+// between 200 and 300; feed 10
+	if(	a200to300_turns 
+		and not yes_money_crisis)
+	{
+		average_food_max
+		average_food_min
+	}
+
+// after 300; feed 12.5
+	if(	not (a0to100_turns or a100to200_turns or a200to300_turns)
+		and not yes_money_crisis)
+	{
+		high_food_max
+		average_food_min
+	}
+
+// end base states
+
+	if( yes_i_can_build_wormhole_probe
+		or yes_focus_on_units)
+	{	
+		high_food_max
+		very prod_gold_growth_set_wgf
+	}
+
+if ( yes_money_crisis
+	and lowest_wgf_food )
+	{
+		average_food_max
+		average_food_min
+	}
+
+if ( yes_money_crisis
+	and low_wgf_food )
+	{
+		average_food_max
+		average_food_min
+	}
+
+if ( yes_money_crisis
+	and average_wgf_food )
+	{
+		high_food_max
+		average_food_min
+	}
+
+if ( yes_money_crisis
+	and high_wgf_food )
+	{
+		high_food_max
+		average_food_min
+	}
+

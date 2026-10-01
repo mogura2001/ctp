@@ -1,0 +1,83 @@
+// set_settle_loose
+
+	if(a1_num_cities and yes_settle_loose)
+	{
+		dense_settler_packing
+	}
+
+	if(a2_num_cities or a3to5_num_cities or a3to7_num_cities and yes_settle_loose)
+	{
+		loose_settler_packing
+	}
+	
+	if(not(no_num_cities or a1_num_cities or a3to7_num_cities) and yes_settle_loose)
+	{
+		loose_settler_packing
+	}
+
+// set_settle_dense
+
+	if(a1_num_cities and yes_settle_dense)
+	{
+		truly_dense_settler_packing
+	}
+
+	if((a2_num_cities or a3to5_num_cities) and yes_settle_dense)
+	{
+		dense_settler_packing
+	}
+
+	if(not(no_num_cities or a1_num_cities or a3to7_num_cities) and yes_settle_dense)
+	{
+		dense_settler_packing
+	}
+
+output settle_value_coef[0.0, 1000.0]= 0.1
+	tri settler_watch_for_enemies(settle_value_coef, 0.1, 0.5)
+	tri settler_default_behavior(settle_value_coef, 6.0, 0.5)
+	tri settler_get_best_spot(settle_value_coef, 10.0, 0.5)
+
+output settle_patience[0.0, 10000.0] = 500.0
+	tri short_settle_patience(settle_patience, 25.0, 0.5)
+	tri normal_settle_patience(settle_patience, 100.0, 0.5)
+	tri long_settle_patience(settle_patience, 500.0, 0.5)
+
+	if(loose_settler_packing and not yes_survival_mode_aip)
+	{
+		settler_default_behavior
+		normal_settle_patience
+	}
+
+	if(dense_settler_packing and not yes_survival_mode_aip)
+	{
+		settler_get_best_spot
+		normal_settle_patience
+	}
+
+	if(truly_dense_settler_packing and not yes_survival_mode_aip)
+	{
+		settler_get_best_spot
+		short_settle_patience
+	}
+
+	if(loose_settler_packing 
+		and ( yes_survival_mode_aip or not zero_at_war ))
+	{
+		settler_watch_for_enemies
+		normal_settle_patience
+	}
+
+	if(	dense_settler_packing 
+		and ( yes_survival_mode_aip or not zero_at_war))
+	{
+		long_settle_patience
+		settler_watch_for_enemies
+	}
+
+	if(	truly_dense_settler_packing 
+		and ( yes_survival_mode_aip or not zero_at_war))
+	{
+		long_settle_patience
+		settler_watch_for_enemies
+	}
+

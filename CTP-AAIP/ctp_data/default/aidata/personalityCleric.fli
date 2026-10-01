@@ -1,0 +1,34 @@
+// A personality file
+#include "mainCleric.fli"
+
+#include "beginturnCleric.fli"
+
+fuzzy_pre_outgoing_diplomacy {
+    output greeting_coeff[0, 10000] = 10000
+    output demand_advance_coeff[0, 10000] = 1
+    output demand_city_coeff[0, 10000] = 0.0
+    output demand_map_coeff[0, 10000] = 1
+    output demand_gold_coeff[0, 10000] = 1
+    output demand_stop_trade_coeff[0, 10000] = 1
+    output demand_attack_enemy_coeff[0, 10000] = 1
+    output demand_leave_our_lands_coeff[0, 10000] = 1
+    output demand_reduce_pollution_coeff[0, 10000] = 1
+    output demand_lower_tariffs_coeff[0, 10000] = 1
+    output offer_advance_coeff[0, 10000] = 1
+    output offer_city_coeff[0, 10000] = 0.0
+    output offer_map_coeff[0, 10000] = 1
+    output offer_gold_coeff[0, 10000] = 1
+    output offer_cease_fire_coeff[0, 10000] = 1
+    output offer_permanent_alliance_coeff[0, 10000] = 1
+    output offer_pact_capture_city_coeff[0, 10000] = 0.0
+    output offer_pact_end_global_warming_coeff[0, 10000] = 1
+    output offer_pact_end_ozone_loss_coeff[0, 10000] = 1
+    output exchange_advance_coeff[0, 10000] = 1
+    output exchange_city_coeff[0, 10000] = 0.0
+    output exchange_map_coeff[0, 10000] = 1
+    output give_advance[0, 10000] = 1
+
+	// Won't send the same message more often than this many turns...changed to twenty from seventeen..N.
+	output diplomatic_persistence[0, 10000] = 20
+}
+

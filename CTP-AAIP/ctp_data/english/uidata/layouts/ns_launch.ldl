@@ -1,0 +1,2001 @@
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+allinonewindow:nswindow {
+
+	string	pattern	"upba6300.tga"
+
+
+
+	chatbox:nschatbox {
+
+		int	xpix	150
+
+		int	ypix	310
+
+		int	widthpix	445
+
+		int	heightpix	101
+
+
+
+		# this art is too tall (covers textfield) but might work out ok.
+
+		string	image0	"upba6305.tga"
+
+	}
+
+
+
+	playerssheet {
+
+		int	widthpct	100
+
+		int	heightpct	100
+
+
+
+		titlestatictext : nstitlestatictext {
+
+			string	text	"str_ldl_GAME_SETUP"
+		}
+
+
+
+		gamenamestatictext:nsstatictext {
+
+			int	xpix	81
+
+			int	ypix	34
+
+			int	widthpix	200
+
+			int	heightpix	20
+
+			string	text	"str_ldl_Game_Name_COLON"
+
+
+			string	pattern	"upba6300.tga"
+
+			int	srcxpix	81
+
+			int	srcypix	34
+
+			int	srcwidthpix	200
+
+			int	srcheightpix	20
+
+		}
+
+
+
+		gamenametextfield {
+
+			int	xpix	81
+
+			int	ypix	57
+
+			int	widthpix	200
+
+			int	heightpix	20
+
+			bool	autohscroll	false
+
+			int	maxfieldlen	31
+		}
+
+
+
+		playstylestatictext:nsstatictext {
+
+			int	xpix	330
+
+			int	ypix	34
+
+			int	widthpix	88
+
+			int	heightpix	20
+
+			string	text	"str_ldl_Game_Style_COLON"
+
+
+			string	pattern	"upba6300.tga"
+
+			int	srcxpix	330
+
+			int	srcypix	34
+
+			int	srcwidthpix	88
+
+			int	srcheightpix	20
+
+		}
+
+
+
+		playstyledropdown {
+
+			int	xpix	330
+
+			int	ypix	57
+
+			int	widthpix	88
+
+			int	heightpix	20
+
+			string pattern "upba6417.tga"
+
+			button {
+				string image0	"upba0103.tga"
+
+				string image1	"upba0103.tga"
+
+				int widthpix	20
+				string imagebltflag "chromakey"
+			}
+
+			window {
+
+				# 4 items == 4 * 18 == 72
+
+				int heightpix 72
+
+				listbox:nslistbox {
+
+					int	bevelwidth	0
+
+				}
+
+			}
+
+		}
+
+
+
+		playstylevaluestatictext:nsstatictext {
+
+			int	xpix	465
+
+			int	ypix	34
+
+			int	widthpix	105
+
+			int	heightpix	20
+
+
+
+			# text is set from w/i code.  See ns_strings.ldl.
+
+
+
+			string	pattern	"upba6300.tga"
+
+			int	srcxpix	465
+
+			int	srcypix	34
+
+			int	srcwidthpix	105
+
+			int	srcheightpix	20
+
+		}
+
+
+
+		playstylevaluespinner:nsspinner {
+
+			int	xpix	500
+
+			int	ypix	57
+
+			int	widthpix	35
+
+			int	heightpix	18
+
+			string	orientation	"horizontal"
+
+			string	type	"spinner"
+
+			string	pattern "upba6417.tga"
+
+			int	minxval	1
+
+			int	maxxval	300
+
+			int	incxval	1
+
+			int	pagexval	10
+
+			int	xval	10
+
+			incx {
+
+				int	widthpix	22
+
+				string	image0	"upba5258.tga"
+
+				string	image1	"upba5259.tga"
+
+				string	disabledimage0	"upba5262.tga"
+
+				string	disabledimage1	"upba5262.tga"
+
+				string	imagebltflag	"chromakey"
+
+			}
+
+			decx {
+
+				int	widthpix	22
+
+				string	image0	"upba5260.tga"
+
+				string	image1	"upba5261.tga"
+
+				string	disabledimage0	"upba5263.tga"
+
+				string	disabledimage1	"upba5263.tga"
+
+				string	imagebltflag	"chromakey"
+
+			}
+
+		}
+
+
+
+		hplayerslistbox:nslistbox {
+
+			int	xpix	62
+
+			int	ypix	104
+
+			int	widthpix	519
+
+# fits 8 players
+			int	heightpix	176
+# fits 4 players
+#			int	heightpix	88
+
+
+			string	pattern	"upba6300.tga"
+
+			int	srcxpix	60
+
+			int	srcypix	82
+
+			int	srcwidthpix	523
+
+# fits 8 players
+			int	srcheightpix	200
+# fits 4 players
+#			int	srcheightpix	112
+
+
+
+			# see ns_template.ldl in the listitem's ldl block to
+
+			# make sure the dimensions below match items'.
+
+			# don't compare the heights of the items, just widths.
+
+			header {
+
+				switch0:nsheaderswitch {
+
+					int	widthpix	20
+
+					int	heightpix	20
+					string  tipwindow  "str_ldl_CROWN"
+					string	icon	"ug021.tga"
+
+				}
+
+				switch1:nsheaderswitch {
+
+					int	widthpix	20
+
+					int	heightpix	20
+					string tipwindow "str_ldl_PLANE"
+					string	icon	"ug022.tga"
+
+				}
+
+				switch2:nsheaderswitch {
+
+					int	widthpix	140
+
+					int	heightpix	20
+
+					string	text	"str_ldl_Player"
+				}
+
+				switch3:nsheaderswitch {
+
+					int	widthpix	45
+
+					int	heightpix	20
+
+					string	text	"str_ldl_Ping"
+				}
+
+				switch4:nsheaderswitch {
+
+					int	widthpix	109
+
+					int	heightpix	20
+
+					string	text	"str_ldl_Tribe"
+				}
+
+				switch5:nsheaderswitch {
+
+					int	widthpix	91
+
+					int	heightpix	20
+
+					string	text	"str_ldl_Gold"
+				}
+
+				switch6:nsheaderswitch {
+
+					int	widthpix	91
+
+					int	heightpix	20
+
+					string	text	"str_ldl_Pw"
+				}
+
+			}
+
+		}
+
+
+
+		loadmapbutton:nscommonbutton {
+
+			int	xpix	526
+
+			int	ypix	90
+
+			int	widthpix	89
+
+			int	heightpix	21
+
+			string text "str_ldl_Load_Map"
+			string	image0	"upba5702.tga"
+
+			string	image1	"upba5703.tga"
+
+			string	disabledimage0	"upba6326.tga"
+
+			string	disabledimage1	"upba6328.tga"
+
+		}
+
+
+
+		addaibutton:nscommonbutton {
+
+			int	xpix	150
+
+			int	ypix	285
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string text "str_ldl_Add_AI"
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+
+
+		exclusionsbutton:nscommonbutton {
+
+			int	xpix	311
+
+			int	ypix	285
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string text "str_ldl_Exclusions"
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+
+
+		rulesbutton:nscommonbutton {
+
+			int	xpix	472
+
+			int	ypix	285
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string text "str_ldl_Rules"
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+
+
+#		customizebutton:nscommonbutton {
+
+#			int	xpix	526
+
+#			int	ypix	198
+
+#			int	widthpix	89
+
+#			int	heightpix	21
+
+#			string text "Customize"
+
+#			string	image0	"upba5702.tga"
+
+#			string	image1	"upba5703.tga"
+
+#			string	disabledimage0	"upba6326.tga"
+
+#			string	disabledimage1	"upba6328.tga"
+
+#		}
+
+	}
+
+
+
+#	customizesheet {
+
+#		int	widthpct	100
+
+#		int	heightpct	100
+
+#
+
+#		titlestatictext : nstitlestatictext {
+
+#			string	text	"CUSTOMIZATIONS"
+
+#		}
+
+#
+
+#		mapsizebutton:nscommonbutton {
+
+#			string	text	"Map Size"
+
+#			string	xanchor	"center"
+
+#			int	ypix	54
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#		worldtypebutton:nscommonbutton {
+
+#			string	text	"Environment"
+
+#			string	xanchor	"center"
+
+#			int	ypix	81
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#		worldshapebutton:nscommonbutton {
+
+#			string	text	"World Shape"
+
+#			string	xanchor	"center"
+
+#			int	ypix	109
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#		difficultybutton:nscommonbutton {
+
+#			string	text	"Difficulty"
+
+#			string	xanchor	"center"
+
+#			int	ypix	136
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#		agesbutton:nscommonbutton {
+
+#			string	text	"Ages"
+
+#			string	xanchor	"center"
+
+#			int	ypix	164
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#
+
+#		customizeokbutton:nscommonbutton {
+
+#			string	text	"OK"
+
+#			string	xanchor	"right"
+
+#			int	xpix	48
+
+#			int	ypix	237
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#		}
+
+#	}
+
+
+
+	closebutton:nsclosebutton {
+
+	}
+
+
+
+	cancelbutton:nsprevbutton {
+
+		string	text	"str_ldl_Lobby"
+	}
+
+
+
+	okbutton:nsnextbutton {
+
+		string	text	"str_ldl_Launch"
+	}
+
+
+
+	lockswitch:nscommonbutton {
+
+		int	xpix	48
+
+		int	ypix	310
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		string text "str_ldl_Lock"
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		string	disabledimage1	"upba6328.tga"
+
+	}
+
+
+
+	infobutton:nscommonbutton {
+
+		int	xpix	48
+
+		int	ypix	337
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Profile"
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		string	disabledimage1	"upba6328.tga"
+
+	}
+
+
+
+	kickbutton:nscommonbutton {
+
+		int	xpix	48
+
+		int	ypix	364
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Kick"
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		string	disabledimage1	"upba6328.tga"
+
+	}
+
+
+
+	# See ns_strings.ldl at the "ppt" block for the text for this control.
+
+	publicprivateteamswitch:nscommonbutton {
+
+		int	xpix	48
+
+		int	ypix	391
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		string	disabledimage1	"upba6328.tga"
+
+		int	numstates	2
+
+	}
+
+
+
+	reviewbutton:nscommonbutton {
+
+		int	xpix	48
+
+		int	ypix	418
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		string text "str_ldl_Review"
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		string	disabledimage1	"upba6328.tga"
+
+	}
+
+
+
+	mapstatic:T_FONT1_14 {
+
+		int	xpix	475
+		int	ypix	300
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	300
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		string	text	"str_ldl_MAP_TYPE"
+	}
+
+	mapfield:T_FONT1_12 {
+
+		int	xpix	475
+		int	ypix	320
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	320
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		bool	shadowfont	false
+	}
+
+	mapnamestatic:T_FONT1_14 {
+
+		int	xpix	475
+		int	ypix	340
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	340
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		string	text	"str_ldl_Map_COLON"
+	}
+
+	mapnamefield:T_FONT1_12 {
+
+		int	xpix	475
+		int	ypix	360
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	360
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		bool	shadowfont	false
+	}
+
+	mapnotestatic:T_FONT1_14 {
+
+		int	xpix	475
+		int	ypix	380
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	380
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		string	text	"str_ldl_Note_COLON"
+	}
+
+	mapnotefield:T_FONT1_12 {
+
+		int	xpix	475
+		int	ypix	400
+		int	widthpix	150
+		int	heightpix	20
+
+		string	pattern	"upba6300.tga"
+
+		int	srcxpix	475
+		int	srcypix	400
+		int	srcwidthpix	150
+		int	srcheightpix	20
+
+		bool	shadowfont	false
+	}
+
+}
+
+
+
+hack {
+
+	gplayerslistbox:nslistbox {
+
+		int	widthpix	412
+
+		int	heightpix	80
+
+		header {
+
+			switch0:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	18
+
+				int	heightpix	18
+
+				string	icon	"ug021.tga"
+
+			}
+
+			switch1:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	18
+
+				int	heightpix	18
+
+				string	icon	"ug022.tga"
+
+			}
+
+			switch2:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	63
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Player"
+			}
+
+			switch3:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	63
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Ping"
+			}
+
+			switch4:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	63
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Tribe"
+			}
+
+			switch5:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	62
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Gold"
+			}
+
+			switch6:nsheaderswitch {
+
+				string	parent	"hack.gplayerslistbox"
+
+				int	widthpix	62
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Pw"
+			}
+
+		}
+
+	}
+
+
+
+	aiplayerslistbox:nslistbox {
+
+		int	widthpix	412
+
+		int	heightpix	80
+
+		header {
+
+			switch0:nsheaderswitch {
+
+				string	parent	"hack.aiplayerslistbox"
+
+				int	widthpix	63
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Player"
+			}
+
+			switch1:nsheaderswitch {
+
+				string	parent	"hack.aiplayerslistbox"
+
+				int	widthpix	63
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Tribe"
+			}
+
+			switch2:nsheaderswitch {
+
+				string	parent	"hack.aiplayerslistbox"
+
+				int	widthpix	62
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Gold"
+			}
+
+			switch3:nsheaderswitch {
+
+				string	parent	"hack.aiplayerslistbox"
+
+				int	widthpix	62
+
+				int	heightpix	18
+
+				string	text	"str_ldl_Pw"
+			}
+
+		}
+
+	}
+
+}
+
+
+
+ruleswindow:nswindow_popup {
+
+	int	widthpix	640
+
+	int	heightpix	306
+
+
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+#	rightbottomcorner:nsrightbottomcorner {
+
+#	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge {
+
+		string	xanchor	"right"
+
+		int	widthpix	8
+
+		int	heightpix	278
+
+		string	image0	"upba6403.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	bottomedge {
+
+		string	yanchor	"bottom"
+
+		int	widthpix	570
+
+		int	heightpix	10
+
+		string	image0	"upba6407.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	rulesokbutton : T_FONT1_16{
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		int	widthpix	70
+
+		int	heightpix	28
+
+		string	imagebltflag	"chromakey"
+
+		string	text	"str_ldl_CAPS_OK"
+		string	image0	"upba6413.tga"
+
+		string	image1	"upba6414.tga"
+
+		string disabledimage0	"upba6338.tga"
+
+		string disabledimage1	"upba6338.tga"
+
+	}
+
+
+
+	rulessheet {
+
+		int	widthpct	100
+
+		int	heightpct	100
+
+
+
+		titlestatictext : T_FONT1_18{
+
+			int	xpix	70
+
+			int	ypix	15
+
+			int	widthpix	253
+
+			int	heightpix	30
+
+
+
+			bool	shadowfont	false
+
+			int	fontcolorred	0
+
+			int	fontcolorgreen	0
+
+			int	fontcolorblue	0
+
+
+
+			string	text	"str_ldl_CAPS_RULES"
+		}
+
+
+
+		titlestatictext2 : T_FONT1_18{
+
+			int	xpix	447
+
+			int	ypix	15
+
+			int	widthpix	123
+
+			int	heightpix	30
+
+
+
+			bool	shadowfont	false
+
+			int	fontcolorred	0
+
+			int	fontcolorgreen	0
+
+			int	fontcolorblue	0
+
+
+
+			string	text	"str_ldl_CUSTOMIZE"
+		}
+
+
+
+#		teamsswitch:nstoggleswitch {
+
+#			int	xpix	30
+
+#			int	ypix	54
+
+#			stringtable {
+
+#				string	string0	"str_tbl_ldl_Teams_Off"
+#				string	string1 "str_tbl_ldl_Teams_On"
+#			}
+
+#		}
+
+		bloodlustswitch:nstoggleswitch {
+
+			int	xpix	30
+
+			int	ypix	54
+
+			stringtable {
+
+				string	string0	"str_tbl_ldl_Bloodlust_Off"
+				string	string1	"str_tbl_ldl_Bloodlust_On"
+			}
+
+		}
+
+		pollutionswitch:nstoggleswitch {
+
+			int	xpix	30
+
+			int	ypix	81
+
+			int	state	1
+
+			stringtable {
+
+				string	string0	"str_tbl_ldl_Pollution_Off"
+				string	string1	"str_tbl_ldl_Pollution_On"
+			}
+
+		}
+
+#		tradeswitch:nscommonbutton {
+#
+#			int	xpix	70
+#
+#			int	ypix	81
+#
+#			int	widthpix	123
+#
+#			int	heightpix	21
+#
+#			string	image0	"upba5700.tga"
+#
+#			string	image1	"upba5701.tga"
+#
+#			string disabledimage0	"upba5705.tga"
+#
+#			string disabledimage1	"upba5706.tga"
+#
+#			int	state	1
+#
+#			stringtable {
+#
+#				string	string0	"str_tbl_ldl_Trade_Off"
+#				string	string1	"str_tbl_ldl_Trade_On"
+#			}
+#
+#		}
+#
+#		invultradeswitch:nscommonbutton {
+#
+#			int	xpix	70
+#
+#			int	ypix	109
+#
+#			int	widthpix	123
+#
+#			int	heightpix	21
+#
+#			string	image0	"upba5700.tga"
+#
+#			string	image1	"upba5701.tga"
+#
+#			string disabledimage0	"upba5705.tga"
+#
+#			string disabledimage1	"upba5706.tga"
+#
+#			int	state	1
+#
+#			stringtable {
+#
+#				string	string0	"str_tbl_ldl_Invul_Trade_Off"
+#				string	string1	"str_tbl_ldl_Invul_Trade_On"
+#			}
+#
+#		}
+#
+#		fogofwarswitch:nscommonbutton {
+#
+#			int	xpix	70
+#
+#			int	ypix	136
+#
+#			int	widthpix	123
+#
+#			int	heightpix	21
+#
+#			string	image0	"upba5700.tga"
+#
+#			string	image1	"upba5701.tga"
+#
+#			string disabledimage0	"upba5705.tga"
+#
+#			string disabledimage1	"upba5706.tga"
+#
+#			stringtable {
+#
+#				string	string0	"str_tbl_ldl_Fog_of_War_Off"
+#				string	string1	"str_tbl_ldl_Fog_of_War_On"
+#			}
+#
+#		}
+
+
+
+		dynamicjoinswitch:nstoggleswitch {
+
+			string	text	"str_ldl_Dynamic_Join"
+			int	xpix	200
+
+			int	ypix	54
+
+			stringtable {
+
+				string	string0	"str_tbl_ldl_Dynamic_Join_Off"
+				string	string1	"str_tbl_ldl_Dynamic_Join_On"
+			}
+
+		}
+
+#		regenerationswitch:nscommonbutton {
+
+#			int	xpix	200
+
+#			int	ypix	81
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#			stringtable {
+
+#				string	string0	"Regeneration - Off"
+
+#				string	string1	"Regeneration - On"
+
+#			}
+
+#		}
+
+#		startswitch:nscommonbutton {
+
+#			int	xpix	200
+
+#			int	ypix	109
+
+#			int	widthpix	123
+
+#			int	heightpix	21
+
+#			string	image0	"upba5700.tga"
+
+#			string	image1	"upba5701.tga"
+
+#			string disabledimage0	"upba5705.tga"
+
+#			string disabledimage1	"upba5706.tga"
+
+#			stringtable {
+
+#				string	string0	"Start - Random"
+
+#				string	string1	"Start - Fixed"
+
+#			}
+
+#		}
+
+		handicappingswitch:nstoggleswitch {
+
+			int	xpix	200
+
+			int	ypix	81
+
+			stringtable {
+
+				string	string0	"str_tbl_ldl_Handicapping_Off"
+				string	string1	"str_tbl_ldl_Handicapping_On"
+			}
+
+		}
+
+#		handicapswitchgroup {
+
+#			int	xpix	200
+
+#			int	ypix	163
+
+#			int	widthpix	193
+
+#			int	heightpix	21
+
+#			goldswitch:nscommonbutton {
+
+#				int	widthpix	89
+
+#				int	heightpix	21
+
+#				string	text	"Gold"
+
+#				int	state	1
+
+#				string	image0	"upba5702.tga"
+
+#				string	image1	"upba5703.tga"
+
+#				string	disabledimage0	"upba6326.tga"
+
+#				string	disabledimage1	"upba6328.tga"
+
+#			}
+
+#			civpointsswitch:nscommonbutton {
+
+#				string	xanchor	"right"
+
+#				int	widthpix	89
+
+#				int	heightpix	21
+
+#				string	text	"Civ Points"
+
+#				string	image0	"upba5702.tga"
+
+#				string	image1	"upba5703.tga"
+
+#				string	disabledimage0	"upba6326.tga"
+
+#				string	disabledimage1	"upba6328.tga"
+
+#			}
+
+#		}
+
+		goldstatictext:nsstatictext {
+
+			string	just	"left"
+			bool	vertcenter	true
+
+			int	xpix	200
+
+			int	ypix	109
+
+			int	widthpix	66
+
+			int	heightpix	21
+
+			string	text	"str_ldl_Gold_COLON_"
+
+
+			string	pattern	"upba6417.tga"
+
+			int	srcxpix	200
+
+			int	srcypix	109
+
+			int	srcwidthpix	66
+
+			int	srcheightpix	21
+
+		}
+
+
+
+		civpointsbutton:T_FONT1_16 {
+
+			int	xpix	288
+
+			int	ypix	109
+
+			int	widthpix	70
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+			int	min	100
+
+			int	max	1000000
+
+			int	val	100
+
+			field {
+
+				int	xpix	288
+
+				int	ypix	109
+
+				int	widthpix	70
+
+				int	heightpix	18
+
+				string	pattern	"upba6417.tga"
+
+				bool	autohscroll	false
+
+				bool	numeralonly	true
+
+				int	min	100
+
+				int	max	1000000
+
+			}
+
+		}
+
+
+		pwstatictext:nsstatictext {
+
+			string	just	"left"
+			bool	vertcenter	true
+
+			int	xpix	200
+
+			int	ypix	137
+
+			int	widthpix	66
+
+			int	heightpix	21
+
+			string	text	"str_ldl_Pw_COLON_"
+
+
+			string	pattern	"upba6417.tga"
+
+			int	srcxpix	200
+
+			int	srcypix	137
+
+			int	srcwidthpix	66
+
+			int	srcheightpix	21
+
+		}
+
+
+
+		pwpointsbutton:T_FONT1_16 {
+
+			int	xpix	288
+
+			int	ypix	137
+
+			int	widthpix	70
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+			int	min	1
+
+			int	max	9
+
+			int	val	1
+
+			field {
+
+				int	xpix	288
+
+				int	ypix	137
+
+				int	widthpix	70
+
+				int	heightpix	18
+
+				string	pattern	"upba6417.tga"
+
+				bool	autohscroll	false
+
+				bool	numeralonly	true
+
+				int	min	1
+
+				int	max	9
+
+			}
+		}
+
+
+
+		mapsizebutton:nscommonbutton {
+
+			string	text	"str_ldl_Map_Size"
+			int	xpix	447
+
+			int	ypix	54
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+		worldtypebutton:nscommonbutton {
+
+			string	text	"str_ldl_Environment"
+			int	xpix	447
+
+			int	ypix	81
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+		worldshapebutton:nscommonbutton {
+
+			string	text	"str_ldl_World_Shape"
+			int	xpix	447
+
+			int	ypix	109
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+		difficultybutton:nscommonbutton {
+
+			string	text	"str_ldl_Difficulty"
+			int	xpix	447
+
+			int	ypix	136
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+		agesbutton:nscommonbutton {
+
+			string	text	"str_ldl_Ages"
+			int	xpix	447
+
+			int	ypix	164
+
+			int	widthpix	123
+
+			int	heightpix	21
+
+			string	image0	"upba5700.tga"
+
+			string	image1	"upba5701.tga"
+
+			string disabledimage0	"upba5705.tga"
+
+			string disabledimage1	"upba5706.tga"
+
+		}
+
+	}
+
+}
+
+
+
+exclusionswindow:nswindow_popup {
+
+	int	widthpix	640
+
+	int	heightpix	306
+
+
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+#	rightbottomcorner:nsrightbottomcorner {
+
+#	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge {
+
+		string	xanchor	"right"
+
+		int	widthpix	8
+
+		int	heightpix	278
+
+		string	image0	"upba6403.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	bottomedge {
+
+		string	yanchor	"bottom"
+
+		int	widthpix	570
+
+		int	heightpix	10
+
+		string	image0	"upba6407.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	exclusionsokbutton : T_FONT1_16{
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		int	widthpix	70
+
+		int	heightpix	28
+
+		string	imagebltflag	"chromakey"
+
+		string	text	"str_ldl_CAPS_OK"
+		string	image0	"upba6413.tga"
+
+		string	image1	"upba6414.tga"
+
+		string disabledimage0	"upba6338.tga"
+
+		string disabledimage1	"upba6338.tga"
+
+	}
+
+
+
+	exclusionssheet {
+
+		int	widthpct	100
+
+		int	heightpct	100
+
+
+
+		titlestatictext : T_FONT1_18{
+
+			string	xanchor	"center"
+
+			int	ypix	15
+
+			int	widthpix	106
+
+			int	heightpix	30
+
+
+
+			bool	shadowfont	false
+
+			int	fontcolorred	0
+
+			int	fontcolorgreen	0
+
+			int	fontcolorblue	0
+
+
+
+			string	text	"str_ldl_CAPS_EXCLUSIONS"
+		}
+
+
+
+		smallnastytabgroup {
+
+			string	alignment	"right"
+
+			bool	autoarrange	false
+
+			int	xpix	-10
+
+			int	ypix	48
+
+			int	widthpix	451
+
+			int	heightpix	224
+
+			int	paneoffsetx	-26
+
+			int	paneoffsety	0
+
+			unitstab:nstoggleswitch {
+
+				string	text	"str_ldl_Units"
+				int	xpix	475
+
+				int	ypix	44
+
+				pane {
+
+					int	widthpix	451
+
+					int	heightpix	224
+
+					unitslistbox:nslistbox {
+
+						int	xpix	42
+
+						int	ypix	2
+
+						int	widthpix	430
+
+						int	heightpix	200
+
+
+
+						string	pattern	"upba6300.tga"
+
+						int	srcxpix	46
+
+						int	srcypix	48
+
+						int	srcwidthpix	451
+
+						int	srcheightpix	224
+
+					}
+
+				}
+
+			}
+
+			improvementstab:nstoggleswitch {
+
+				string	text	"str_ldl_Improvements"
+				int	xpix	475
+
+				int	ypix	72
+
+				pane {
+
+					int	widthpix	451
+
+					int	heightpix	224
+
+					improvementslistbox:nslistbox {
+
+						int	xpix	42
+
+						int	ypix	2
+
+						int	widthpix	430
+
+						int	heightpix	200
+
+
+
+						string	pattern	"upba6300.tga"
+
+						int	srcxpix	46
+
+						int	srcypix	48
+
+						int	srcwidthpix	451
+
+						int	srcheightpix	224
+
+					}
+
+				}
+
+			}
+
+			wonderstab:nstoggleswitch {
+
+				string	text	"str_ldl_Wonders"
+				int	xpix	475
+
+				int	ypix	100
+
+				pane {
+
+					int	widthpix	451
+
+					int	heightpix	224
+
+					wonderslistbox:nslistbox {
+
+						int	xpix	42
+
+						int	ypix	2
+
+						int	widthpix	430
+
+						int	heightpix	200
+
+
+
+						string	pattern	"upba6300.tga"
+
+						int	srcxpix	46
+
+						int	srcypix	48
+
+						int	srcwidthpix	451
+
+						int	srcheightpix	224
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+$

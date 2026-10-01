@@ -1,0 +1,690 @@
+#######################################
+
+# File: playerpad.ldl
+
+# Last Access: Mon Jun 01 13:01:31 1998
+
+#######################################
+
+
+
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+PlayerPad {
+
+	string	xanchor	"left"
+
+	string	yanchor	"top"
+
+	string	pattern	"upba3010.tga"
+
+	int	xpix	90
+
+	int	ypix	175
+
+	int	widthpix	530
+
+	int	heightpix	130
+
+	ExitButton {
+
+		int	xpix	510
+
+		int	ypix	5
+
+		int	widthpix	15
+
+		int	heightpix	15
+
+		string	text	"str_ldl_X"
+		string	pattern	"upba3010.tga"
+
+	}
+
+	PlayerNumber:T_FONT1_14 {
+
+		int	xpix	10
+
+		int	ypix	10
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Player_number"
+		Item:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_"
+		}
+
+	}
+
+	PlayerName:T_FONT1_14 {
+
+		int	xpix	10
+
+		int	ypix	40
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Player_Name"
+		Item:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_"
+		}
+
+	}
+
+	Character:T_FONT1_14 {
+
+		int	xpix	10
+
+		int	ypix	100
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Character"
+		ItemOne:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Untarnished"
+		}
+
+		ItemTwo:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Reliable"
+		}
+
+		ItemThree:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Questionable"
+		}
+
+		ItemFour:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Underhanded"
+		}
+
+		ItemFive:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Deplorable"
+		}
+
+		ItemSix:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Pairah"
+		}
+
+	}
+
+	PersonalitySheet {
+
+		int	xpix	135
+
+		int	ypix	5
+
+		int	widthpix	260
+
+		int	heightpix	120
+
+		string	pattern	"upba3010.tga"
+
+		
+
+		PersonalityText:T_FONT1_14 {
+
+			int	xpix	10
+
+			int	ypix	10
+
+			int	widthpix	240
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Personality"
+		}
+
+
+
+		Reliability:T_FONT1_14 {
+
+			int	xpix	5
+
+			int	ypix	35
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Reliability"
+			Steadfast:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Steadfast"
+			}
+
+			SelfInterested:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Self_interested"
+			}
+
+			Treacherous:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Treacherous"
+			}
+
+		}
+
+
+
+		GrowthStyle:T_FONT1_14 {
+
+			int	xpix	5
+
+			int	ypix	65
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_GrwothStyle"
+			LandGrabber:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Land_Grabber"
+			}
+
+			CityBuilder:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_City_Builder"
+			}
+
+		}
+
+
+
+		Aggression:T_FONT1_14 {
+
+			int	xpix	5
+
+			int	ypix	95
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Aggression"
+			Warlike:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Warlike"
+			}
+
+			Cautious:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Cautious"
+			}
+
+			PeaceMaker:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Peace_Maker"
+			}
+
+		}
+
+
+
+		Style:T_FONT1_14 {
+
+			int	xpix	135
+
+			int	ypix	35
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Style"
+			Bold:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Bold"
+			}
+
+			Unpredictable:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Unpredictable"
+			}
+
+			Cautious:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Cautious"
+			}
+
+		}
+
+
+
+		Intelligence:T_FONT1_14 {
+
+			int	xpix	135
+
+			int	ypix	65
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Intelligence"
+			Dumb:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Dumb"
+			}
+
+			Average:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Average"
+			}
+
+			Cunning:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Cunning"
+			}
+
+		}
+
+
+
+		Environmentalism:T_FONT1_14 {
+
+			int	xpix	135
+
+			int	ypix	95
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_Environmentalism"
+			Uncaring:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Polluter"
+			}
+
+			Protective:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	100
+
+				int heightpix	16
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_NonPolluter"
+			}
+
+		}
+
+
+
+	}
+
+
+
+	RegardText:T_FONT1_14 {
+
+		int	xpix	400
+
+		int	ypix	10
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Regard_Towards_COLON"
+	}
+
+	PlayerNN:T_FONT1_14 {
+
+		int	xpix	400
+
+		int	ypix	40
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Player_3_Caesar"
+		Item:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_"
+		}
+
+	}
+
+	RegardWord:T_FONT1_14 {
+
+		int	xpix	430
+
+		int	ypix	70
+
+		int	widthpix	90
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Neutral"
+		int bevelwidth	2
+
+		int	beveltype	1
+
+	}
+
+	Patience:T_FONT1_14 {
+
+		int	xpix	400
+
+		int	ypix	100
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Impatient"
+		Item:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	100
+
+			int heightpix	16
+
+			string	pattern	"upba3010.tga"
+
+			string	text	"str_ldl_"
+		}
+
+	}
+
+
+
+}
+
+
+
+$

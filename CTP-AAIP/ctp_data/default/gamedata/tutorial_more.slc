@@ -1,0 +1,369 @@
+//tutorial_triggers.slc
+
+//begin turn
+trigger 'TInitVars' when (g.player == g.tutorialplayer){
+//	showedterrainmessage = 0;
+	//terrain message stall 
+	if(g.year == 0) {
+		DisableMessageClass(666);
+		DetachRobot(0);
+	}
+	//impatience message stall 4 turns
+	if(begin_turn_count == 1) {
+		time_since_started = time_since_started + 1;
+	}
+	//wasting work stall for 2 turns
+	if(wait_two_turns == 1) {
+		count_to_two = count_to_two + 1; 
+	}
+	if(building_tile_improvement == 1) {
+		two_turns = two_turns + 1;
+	}
+	if(stall_message == 1) {
+		keep_hitting_n = keep_hitting_n + 1; 
+	}
+	if(reenable_ingame == 1) {
+		EnableMessageClass(666);
+		EnableTileImprovementButton();
+		EnableScreensButton();
+		Message(1, 'ResurrectAI');
+		EnableChooseResearch();
+	}
+}
+
+trigger 'TDeactivatedTutorial' when (g.player == g.tutorialplayer && special.tutorialdeactivated) {
+	DisableTrigger('TDeactivatedTutorial');
+	Message(1, 'KillAllMessages');
+	Message(1, 'ResurrectAI');
+	EnableMessageClass(666);
+	EnableTileImprovementButton();
+	EnableScreensButton();
+	EnableChooseResearch();
+}
+
+trigger 'TBeginTurnCount' when (g.player == g.tutorialplayer && player.cities == 1
+&& !city.buildingnothing && city.owner == g.tutorialplayer) {
+	begin_turn_count = 1;
+	init_count = 1;	
+	DisableTrigger('TBeginTurnCount');
+}
+
+trigger 'TEndTurnCount' when (g.player == g.tutorialplayer && player.cities == 1 && 
+city.buildingnothing && city.owner == g.tutorialplayer && init_count == 1) {
+	begin_turn_count = 0;
+	init_count = 0;
+	DisableTrigger('TEndTurnCount');
+}
+
+//can't settle now
+trigger 'TCantSettleNow' when (g.player == g.tutorialplayer && special.cantsettlenomovement) {
+	Message(g.tutorialplayer, 'ACantSettleNow');
+	PlaySound("SOUND_ID_GENERALFAIL");
+}
+
+//got advances
+trigger 'TGotAdvance' when (g.player == g.tutorialplayer && discovery.type >= 0 && g.year > 0) { 
+	if(!choose_research_disabled) {
+		DisableTrigger('TGotAdvance');
+		Message(g.tutorialplayer, 'AGotAdvance');
+		PlaySound("SOUND_ID_ALERT");
+	}
+}
+
+//ZOC 
+trigger 'TZOC' when (g.player == g.tutorialplayer && special.zoc) {
+	Message(g.tutorialplayer, 'AZOC');
+	DisableTrigger('TZOC');
+}
+
+trigger 'TRightClick' on "GamePlayOptionsWindow.LeftRightClickMoveButton" when (g.player == g.tutorialplayer) {
+	DisableTrigger('TRightClick');
+	Message(g.tutorialplayer, 'ARightClick');
+}
+
+alertbox 'ARightClick' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_RIGHT_CLICK);
+	Text(ID_TUT639_RIGHT_CLICK);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+	Button(ID_BUTTON_END_TUTORIAL) {
+		Kill();
+		DeactivateTutorial();
+	}
+}
+
+//deselect message
+trigger 'TUnitDeselected' when (g.player == g.tutorialplayer && unit.deselected && g.year < 25) {
+	Message(g.tutorialplayer, 'AUnitDeselected');
+	DisableTrigger('TUnitDeselected');
+}
+
+trigger 'TDumbassSortWonderButton' on "ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ListHolder.WonderButton" 
+when (g.player == g.tutorialplayer) {
+	Message(g.tutorialplayer, 'ADumbassSortButtons');
+	DisableTrigger('TDumbassSortImprovementButton');
+	DisableTrigger('TDumbassSortWonderButton');
+	DisableTrigger('TDumbassSortUnitButton');
+}
+
+trigger 'TDumbassSortUnitButton' on "ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ListHolder.UnitButton" 
+when (g.player == g.tutorialplayer) {
+	Message(g.tutorialplayer, 'ADumbassSortButtons');
+	DisableTrigger('TDumbassSortImprovementButton');
+	DisableTrigger('TDumbassSortWonderButton');
+	DisableTrigger('TDumbassSortUnitButton');
+}
+
+trigger 'TDumbassSortImprovementButton' on "ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ListHolder.ImprovementButton" 
+when (g.player == g.tutorialplayer) {
+	Message(g.tutorialplayer, 'ADumbassSortButtons');
+	DisableTrigger('TDumbassSortImprovementButton');
+	DisableTrigger('TDumbassSortWonderButton');
+	DisableTrigger('TDumbassSortUnitButton');
+}
+
+messagebox 'KillAllMessages' {
+	Abort();
+	kill_class = 1;
+	while(kill_class <= 500) {
+		KillClass(g.tutorialplayer, kill_class);
+		kill_class = kill_class + 1;
+	}
+}
+
+messagebox 'KillAI' {
+	Abort();
+
+	max_players = 5;
+	while(players < max_players) {
+		if(IsPlayerAlive(players)) {
+			DetachRobot(players);
+		}		players = players + 1;
+	}		
+}
+
+messagebox 'ResurrectAI' {
+	Abort();
+
+	max_players = 5;
+	while(players < max_players) {
+		if(IsPlayerAlive(players) && players != g.tutorialplayer) {
+			AttachRobot(players);
+		}		players = players + 1;
+	}
+}
+
+messagebox 'DisableTriggers1' {
+//for token = -4 to 7
+//player.cities < 2
+	Abort();
+	DisableTrigger('TBeginTutorial');
+	DisableTrigger('TMoveSettler');
+	DisableTrigger('TCycledTurn');
+	DisableTrigger('TCityNotBuilding');
+	DisableTrigger('TCityBuilt');
+	DisableTrigger('TCityBuildingUnit');
+	DisableTrigger('TGoal2Accomplished');
+	DisableTrigger('TUnitOutOfCity');	
+	DisableTrigger('TCityBuildingSilo');
+}
+
+messagebox 'DisableTriggers1A' {
+//for started settler too soon
+	Abort();
+	DisableTrigger('TGoal3Accomplished');
+	DisableTrigger('TStartedSettler');
+	DisableTrigger('TNewSettlerBuilt');
+	DisableTrigger('TNewSettlerMoved');
+	DisableTrigger('TSecondCityBuilt');
+}	
+
+messagebox 'DisableTriggers2' {
+//token = 8 to 18
+	Abort();
+	DisableTrigger('TBuildingDefender');
+	DisableTrigger('TClearBuildQueue2');
+	DisableTrigger('TOpenedWorkView');
+	DisableTrigger('TMovedWorker');
+	DisableTrigger('TCivTabOpen');
+	DisableTrigger('TChangedPW');
+	DisableTrigger('TPublicWorks200');
+	DisableTrigger('TDecreasePW');
+	DisableTrigger('TBuildingFarm');
+	DisableTrigger('TBuildingRoad');
+	DisableTrigger('TEndTICount');
+	DisableTrigger('TBuiltFarm');
+	DisableTrigger('TBuiltRoad');
+	DisableTrigger('TGimmeeAWarrior');
+	DisableTrigger('TContactMade2');
+}
+
+messagebox 'EnableTriggers2' {
+	Abort();
+	DisableTrigger('TSecondCityBuilt');
+	EnableTrigger('TBuildingDefender');
+	EnableTrigger('TClearBuildQueue2');
+	EnableTrigger('TOpenedWorkView');
+	EnableTrigger('TMovedWorker');
+	EnableTrigger('TCivTabOpen');
+	EnableTrigger('TChangedPW');
+	EnableTrigger('TPublicWorks200');
+	EnableTrigger('TDecreasePW');
+	EnableTrigger('TBuildingFarm');
+	EnableTrigger('TBuildingRoad');
+	EnableTrigger('TEndTICount');
+	EnableTrigger('TBuiltFarm');
+	EnableTrigger('TBuiltRoad');
+	EnableTrigger('TGimmeeAWarrior');
+	EnableTrigger('TContactMade2');
+}
+
+messagebox 'DisableTriggers3' {
+//token = 19 to 26
+	Abort();
+	DisableTrigger('TAcceptedGreetings');
+	DisableTrigger('TTurdBurglar');
+	DisableTrigger('TStackedUnits');
+	DisableTrigger('TStackLocked');
+	DisableTrigger('TMovedStack');
+	DisableTrigger('TAttackMade');
+	DisableTrigger('TNonStackedAttack');
+	DisableTrigger('TClosedBattle');
+	DisableTrigger('TDiplomacyButton');
+	DisableTrigger('TSendEmissary');
+	DisableTrigger('TNextDiplomacy');
+	DisableTrigger('TSuggestTreaty');
+	DisableTrigger('TCeaseButton');
+	DisableTrigger('TSentCease');
+	DisableTrigger('TEndHelpBoxes');
+}		
+
+messagebox 'EnableTriggers3' {
+	Abort();
+	EnableTrigger('TAcceptedGreetings');
+	EnableTrigger('TTurdBurglar');
+	EnableTrigger('TStackedUnits');
+	EnableTrigger('TStackLocked');
+	EnableTrigger('TMovedStack');
+	EnableTrigger('TAttackMade');
+	EnableTrigger('TNonStackedAttack');
+	EnableTrigger('TClosedBattle');
+	EnableTrigger('TDiplomacyButton');
+	EnableTrigger('TSendEmissary');
+	EnableTrigger('TNextDiplomacy');
+	EnableTrigger('TSuggestTreaty');
+	EnableTrigger('TCeaseButton');
+	EnableTrigger('TSentCease');
+	EnableTrigger('TEndHelpBoxes');
+}
+
+messagebox 'DisableTriggers4' {
+//token = 27 to 39
+	Abort();
+	DisableTrigger('TMakeCitiesForGoods');
+	DisableTrigger('TAddGoodsToCities');
+	DisableTrigger('TLevel4');
+	DisableTrigger('TGood1Placed');
+	DisableTrigger('TGood2Placed');
+	DisableTrigger('TBothGoodsPlaced');
+	DisableTrigger('TTradeNextButton');
+	DisableTrigger('TTradeSendButton');
+	DisableTrigger('TTradeScreen');
+	DisableTrigger('TTradeMakeTradeRoute');
+	DisableTrigger('TSaveLevel5');
+	DisableTrigger('TMaxTab');
+	DisableTrigger('TMaxScienceButton');
+	DisableTrigger('TLaborTab');
+	DisableTrigger('TEntertainerMade');
+	DisableTrigger('TScientistMade');
+	DisableTrigger('TQueueButton');
+	DisableTrigger('TQueueMade');
+	DisableTrigger('TCityStatus');
+	DisableTrigger('TCityBuildButtonUsed');
+	DisableTrigger('TCitiesBuilding');
+	DisableTrigger('TFortifiedUnits');
+	DisableTrigger('TMakeFreeBoat');
+	DisableTrigger('TLoadedUnits');
+	DisableTrigger('TUnloadedUnits');
+}
+	
+messagebox 'EnableTriggers4' {
+	Abort();
+	EnableTrigger('TMakeCitiesForGoods');
+	EnableTrigger('TAddGoodsToCities');
+	EnableTrigger('TLevel4');
+	EnableTrigger('TGood1Placed');
+	EnableTrigger('TGood2Placed');
+	EnableTrigger('TBothGoodsPlaced');
+	EnableTrigger('TTradeNextButton');
+	EnableTrigger('TTradeSendButton');
+	EnableTrigger('TTradeScreen');
+	EnableTrigger('TTradeMakeTradeRoute');
+	EnableTrigger('TSaveLevel5');
+	EnableTrigger('TMaxTab');
+	EnableTrigger('TMaxScienceButton');
+	EnableTrigger('TLaborTab');
+	EnableTrigger('TEntertainerMade');
+	EnableTrigger('TScientistMade');
+	EnableTrigger('TQueueButton');
+	EnableTrigger('TQueueMade');
+	EnableTrigger('TCityStatus');
+	EnableTrigger('TCityBuildButtonUsed');
+	EnableTrigger('TCitiesBuilding');
+	EnableTrigger('TFortifiedUnits');
+	EnableTrigger('TMakeFreeBoat');
+	EnableTrigger('TLoadedUnits');
+	EnableTrigger('TUnloadedUnits');
+}
+
+
+messagebox 'DisableRest' {
+	Abort();
+	DisableTrigger('TStall1');
+	DisableTrigger('TStall2');
+	DisableTrigger('TStall4');
+	DisableTrigger('TStall5');
+	DisableTrigger('TStall6');
+	DisableTrigger('T1EncoreUneFois');
+	DisableTrigger('TStall7');
+	DisableTrigger('TStall8');
+	DisableTrigger('TEncoreUneFois');
+	DisableTrigger('TCantSettleNow');
+	DisableTrigger('TStall9');
+	DisableTrigger('TStall10');
+	DisableTrigger('TSecondCityBuilt');
+	DisableTrigger('TCheat');
+	DisableTrigger('TLevel4Cheat');
+	DisableTrigger('TCheat4');
+	DisableTrigger('TEnableScreens');
+}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

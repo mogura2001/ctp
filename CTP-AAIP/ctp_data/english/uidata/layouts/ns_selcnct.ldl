@@ -1,0 +1,209 @@
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+connectionselectwindow:nswindow {
+
+	int	widthpix	450
+
+	int	heightpix	385
+
+	string	pattern	"upba6315.tga"
+
+
+
+	titlestatictext : nstitlestatictext {
+
+		string	text	"str_ldl_SELECT_CONNECTION"
+	}
+
+
+
+	connectiontypestatictext:nsstatictext {
+
+		int	xpix	37
+
+		int	ypix	100
+
+		int	widthpix	129
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Connection_Type_COLON"
+
+
+		string	pattern	"upba6315.tga"
+
+		int	srcxpix	37
+
+		int	srcypix	100
+
+		int	srcwidthpix	129
+
+		int	srcheightpix	20
+
+	}
+
+
+
+	connectiontypelistbox:nslistbox {
+
+		int	xpix	37
+
+		int	ypix	123
+
+		int	widthpix	129
+
+		int	heightpix	90
+
+
+
+		string	pattern	"upba6315.tga"
+
+		int	srcxpix	35
+
+		int	srcypix	121
+
+		int	srcwidthpix	133
+
+		int	srcheightpix	94
+
+	}
+
+
+
+	connectiondescriptionstatictext:nsstatictext {
+
+		int	xpix	198
+
+		int	ypix	100
+
+		int	widthpix	216
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Description_COLON"
+
+
+		string	pattern	"upba6315.tga"
+
+		int	srcxpix	198
+
+		int	srcypix	100
+
+		int	srcwidthpix	216
+
+		int	srcheightpix	20
+
+	}
+
+
+
+	connectiondescriptiontextfield:nspane {
+
+		int	xpix	198
+
+		int	ypix	123
+
+		int	widthpix	216
+
+		int	heightpix	93
+
+		string	just	"left"
+
+		bool wordwrap	TRUE
+
+		string	image0	"upba6316.tga"
+
+	}
+
+
+
+	connectiondescriptionstrings {
+
+		string	text	"str_ldl_Please_choose_connection"
+		winets2 {
+
+			string	text	"str_ldl_Activlink_Internet"
+		}
+
+		winets2d {
+
+			string	text	"str_ldl_Debug_version"
+		}
+
+		wipx2 {
+
+			string	text	"str_ldl_Local_Area_Network_IPX"
+		}
+
+		wipx2d {
+
+			string	text	"str_ldl_Debug_version"
+		}
+
+		wudplan {
+
+			string	text	"str_ldl_Local_Area_Network_TCPIP"
+		}
+
+		wudpland {
+
+			string	text	"str_ldl_Debug_version"
+		}
+
+	}
+
+
+
+#	connectiondescriptionstrings {
+
+#		# Nothing selected.
+
+#		string	string0	"Please choose how you would like to connect to other players for your multiplayer game."
+
+#
+
+#		# Internet.  Must use winets2.dll for this.
+
+#		string	string1	"Activlink/Internet requires an active dial-up or direct connection to the Internet."
+
+#
+
+#		# IPX.  Must use wipx2.dll for this.
+
+#		string	string2	"This is a Local Area Network connection for users who only have access to IPX connections."
+
+#
+
+#		# LAN.  Must use wudplan.dll for this.
+
+#		string	string3 "This is the Local Area Network connection for users who have TCP/IP network connections (this is the most common LAN connection type)."
+
+#	}
+
+
+
+	closebutton:nsclosebutton {
+
+	}
+
+
+
+	cancelbutton:nsprevbutton {
+
+	}
+
+
+
+	okbutton:nsnextbutton {
+
+	}
+
+}
+
+
+
+$

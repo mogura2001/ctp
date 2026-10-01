@@ -1,0 +1,248 @@
+#######################################
+# File: battleview.ldl
+# Last Access: Thu Sep 10 01:18:45 1998
+#######################################
+
+
+##-----------------------------------##
+##                Data               ##
+##-----------------------------------##
+BattleViewWindow {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	
+	int	widthpix	640
+	int	heightpix	480
+
+	TopBorder {
+		int xpix		0
+		int ypix		0
+		int widthpix	640
+		int heightpix	91
+		
+		string image0	"upba6600.tga"
+	}
+	
+	LeftBorder {
+		int xpix		0
+		int ypix		92
+		int widthpix	9
+		int heightpix	389
+		
+		string image0	"upba6601.tga"
+	}
+	
+	RightBorder {
+		int xpix		631
+		int ypix		92
+		int widthpix	9
+		int heightpix	389
+		
+		string image0	"upba6602.tga"
+	}
+	
+	BottomBorder {
+		int xpix		9
+		int ypix		464
+		int widthpix	622
+		int	heightpix	17
+
+		string image0	"upba6603.tga"
+	}
+	
+	ExitButton {
+		int	xpix	605
+		int	ypix	14
+		int	widthpix	18
+		int	heightpix	14
+		string	image0	"upbb1811.tga"
+		string	image1	"upbb1811.tga"
+	}
+	
+	TitleText:T_FONT1_BATTLE2 {
+		int	xpix	215
+		int	ypix	4
+		int	widthpix	203
+		int	heightpix	17
+		string	text	"str_ldl_BATTLE_VIEW"
+	}
+	
+	TerrainBonusText:T_FONT2_BATTLE12 {
+		int	xpix	327
+		int	ypix	46
+		int	widthpix	89
+		int	heightpix	16
+		string	text	"str_ldl_Terrain_Bonus_COLON"
+	}
+	TerrainBonusValue:T_FONT2_BATTLE12 {
+		int	xpix	415
+		int	ypix	46
+		int	widthpix	50
+		int	heightpix	16
+		string	text	"str_ldl_0"
+	}
+	
+	CityBonusText:T_FONT2_BATTLE12 {
+		int	xpix	347
+		int	ypix	64
+		int	widthpix	69
+		int	heightpix	16
+		string	text	"str_ldl_City_Bonus_COLON"
+	}
+	CityBonusValue:T_FONT2_BATTLE12 {
+		int	xpix	409
+		int	ypix	64
+		int	widthpix	46
+		int	heightpix	16
+		string	text	"str_ldl_0"
+	}
+	CityBonusImage {
+		int	xpix	450
+		int	ypix	105
+		int	widthpix	50
+		int	heightpix	16
+#		string image0	"upba6620.tga"
+		string	imagebltflag	"chromakey"
+	}
+	
+	CityName:T_FONT1_BATTLE2 {
+		int xpix	450
+		int ypix	91
+		int widthpix	100
+		int heightpix	16
+	}
+	
+	FortBonusText:T_FONT2_BATTLE12 {
+		int	xpix	495
+		int	ypix	46
+		int	widthpix	70
+		int	heightpix	16
+		string	text	"str_ldl_Fort_Bonus_COLON"
+	}
+	FortBonusValue:T_FONT2_BATTLE12 {
+		int	xpix	555
+		int	ypix	46
+		int	widthpix	50
+		int	heightpix	16
+		string	text	"str_ldl_0"
+	}
+
+	FortBonusImage {
+		int	xpix	310
+		int	ypix	120
+		int	widthpix	50
+		int	heightpix	16
+		string image0	"upba6618.tga"
+		string	imagebltflag	"chromakey"
+	}
+	
+	FortifiedBonusText:T_FONT2_BATTLE12 {
+		int	xpix	460
+		int	ypix	64
+		int	widthpix	97
+		int	heightpix	16
+		string	text	"str_ldl_Entrench_Bonus_COLON"
+	}
+	FortifiedBonusValue:T_FONT2_BATTLE12 {
+		int	xpix	555
+		int	ypix	64
+		int	widthpix	50
+		int	heightpix	16
+		string	text	"str_ldl_0"
+	}
+	
+	AttackersText:T_FONT2_BATTLE14 {
+		int	xpix	19
+		int	ypix	14
+		int	widthpix	153
+		int	heightpix	15
+		string	text	"str_ldl_Attackers"
+	}
+
+	AttackersName:T_FONT2_BATTLE14 {
+		int	xpix	19
+		int	ypix	28
+		int	widthpix	153
+		int	heightpix	18
+		int bevelwidth	1
+		int beveltype	1
+	}
+	
+	AttackersFlag {
+		int xpix		174
+		int ypix		26
+		int widthpix	23
+		int heightpix	23
+	}
+	
+	DefendersText:T_FONT2_BATTLE14 {
+		int	xpix	442
+		int	ypix	14
+		int	widthpix	153
+		int	heightpix	15
+		string	text	"str_ldl_Defenders"
+	}
+
+	DefendersName:T_FONT2_BATTLE14 {
+		int	xpix	442
+		int	ypix	28
+		int	widthpix	153
+		int	heightpix	18
+		int bevelwidth	1
+		int beveltype	1
+	}
+
+	DefendersFlag {
+		int xpix		596
+		int ypix		26
+		int widthpix	23
+		int heightpix	23
+	}
+
+	BattleViewArea {
+		int xpix		9
+		int ypix		92
+		int widthpix	622
+		int heightpix	380
+	}
+}
+
+BattleViewTerrainTable {
+	int numstrings		24
+	bool	nodatabase	true
+	string	string0		"upba6607.tga"
+	string	string1		"upba6612.tga"
+	string	string2		"upba6616.tga"
+	string	string3		"upba6613.tga"
+	string	string4		"upba6608.tga"
+	string	string5		"upba6606.tga"
+	string	string6		"upba6615.tga"
+	string	string7		"upba6610.tga"
+	string	string8		"upba6604.tga"
+	string	string9		"upba6609.tga"
+	string	string10	"upba6611.tga"
+	string	string11	"upba6611.tga"
+	string	string12	"upba6611.tga"
+	string	string13	"upba6614.tga"
+	string	string14	"upba6611.tga"
+	string	string15	"upba6611.tga"
+	string	string16	"upba6611.tga"
+	string	string17	"upba6611.tga"
+	string	string18	"upba6605.tga"
+	string	string19	"upba6605.tga"
+	string	string20	"upba6604.tga"
+	string	string21	"upba6617.tga"
+	string	string22	"upba6617.tga"
+	string	string23	"upba6605.tga"
+}
+
+BattleViewCityTable {
+	int	numstrings	4
+	bool nodatabase	true
+	string	string0		"upba6620.tga"
+	string	string1		"upba6621.tga"
+	string	string2		"upba6622.tga"
+	string	string3		"upba6623.tga"
+}
+
+$
