@@ -1,0 +1,282 @@
+// diplomacy_rejected.fli
+
+//////////////////////////////////////////
+////////// WHO IS HE  ///////////
+//////////////////////////////////////////
+
+input diplomatic_regard_towards_him
+	left hate_him(diplomatic_regard_towards_him, 10, 10)
+	tri dislike_him(diplomatic_regard_towards_him, 30, 10)
+	tri neutral_towards_him(diplomatic_regard_towards_him, 50, 10)
+	tri neutral_or_better_towards_him(diplomatic_regard_towards_him, 70, 10)
+	tri like_him(diplomatic_regard_towards_him, 80, 10)
+	right love_him(diplomatic_regard_towards_him, 90, 10)
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = 0.0
+	tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+	tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+	tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+	tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+	tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+	tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+	tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+	right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+	///////////////////////////////////////////////////////
+	////////// HOW MUCH DO I WANT TO FIGHT HIM?  //////////
+	///////////////////////////////////////////////////////
+
+	input unit_regard_towards_him
+		tri hot_war(unit_regard_towards_him, 10, 11)
+		tri hot_war_prep(unit_regard_towards_him, 23, 2.5)
+		tri cold_war(unit_regard_towards_him, 30, 11)
+		tri neutral(unit_regard_towards_him, 50, 11)
+		tri friends(unit_regard_towards_him, 70, 11)
+		tri blood_brothers(unit_regard_towards_him, 90, 11)
+
+	////////////////////////////////////////////////////////////////////
+	////////// HOW MANY SOLDIERS DOES HE HAVE IN MY LAND?  /////////////
+	////////////////////////////////////////////////////////////////////
+
+	input military_incursions
+		left no_incursions(military_incursions, 0, 0.5)
+		tri few_incursions(military_incursions, 1, 0.1)
+		tri many_incursions(military_incursions, 3, 0.5)
+		right floods_incursions(military_incursions, 4, 0.5)
+
+//////////////////////////////////////////////////////////
+//////////   SET STRENGTH OF STATE OF WAR      ///////////
+//////////////////////////////////////////////////////////
+
+output unit_regard_delta[-100, 100] = 0.0
+	tri go_to_hot_war(unit_regard_delta, 10, 40.0)
+	tri go_to_hot_war_prep(unit_regard_delta, 25, 10.0)
+	tri go_to_cold_war(unit_regard_delta, 35, 10.0)
+	tri go_to_cold_war_prep(unit_regard_delta, 50, 5)
+	tri go_to_peace_partial(unit_regard_delta, 60, 5)
+	tri go_to_peace_full(unit_regard_delta, 80, 10.0)
+
+input relative_strength
+	left afraid_of_him(relative_strength, 0.5, 0.25)
+	tri equal_to_him(relative_strength, 1, 0.2)
+	right stronger_than_him(relative_strength, 2.5, 0.25)
+
+/////////////////////////////////////////////
+//////////   GREETING REJECTED    ///////////
+/////////////////////////////////////////////
+// cant accept or reject greetings
+
+	input he_rejected_greetings
+		right yes_he_rejected_greetings(he_rejected_greetings, 1.0, .5)
+
+
+/////////////////////////////////////////////
+//////////   DEMAND ADVANCE REJECTED    /////
+/////////////////////////////////////////////
+
+	input he_rejected_demand_advance
+		right yes_he_rejected_demand_advance(he_rejected_demand_advance, 1.0, .5)
+
+	if(yes_he_rejected_demand_advance)
+	{
+		dislike_him_more
+	}
+
+/////////////////////////////////////////////
+//////////   DEMAND GOLD REJECTED    ////////
+/////////////////////////////////////////////
+	input he_rejected_gold_demand
+		right yes_he_rejected_gold_demand(he_rejected_gold_demand, 1.0, .5)
+
+	if(yes_he_rejected_gold_demand and (dislike_him or hate_him))
+	{
+		dislike_him_more
+	}
+
+	if(yes_he_rejected_gold_demand and (neutral_towards_him or neutral_or_better_towards_him))
+	{
+		wary_of_him_more
+	}
+
+	if(yes_he_rejected_gold_demand and (like_him or love_him))
+	{
+		same_like_him
+	}
+
+/////////////////////////////////////////////
+//////////   DEMAND MAP REJECTED    /////////
+/////////////////////////////////////////////
+	input he_rejected_demand_map
+		right yes_he_rejected_demand_map(he_rejected_demand_map, 1.0, .5)
+
+	if(yes_he_rejected_demand_map and stronger_than_him and (dislike_him or hate_him))
+	{
+		dislike_him_more
+	}
+
+	if(yes_he_rejected_demand_map and like_him)
+	{
+		wary_of_him_more
+	}
+
+	if(yes_he_rejected_demand_map and love_him)
+	{
+		same_like_him
+	}
+
+//////////////////////////////////////////////////////
+//////////   DEMAND LEAVE OUR LANDS REJECTED    //////
+//////////////////////////////////////////////////////
+	input he_rejected_demand_leave_our_lands
+		right yes_he_rejected_demand_leave_our_lands(he_rejected_demand_leave_our_lands, 1.0, .5)
+
+	if(yes_he_rejected_demand_leave_our_lands 
+		and (many_incursions or floods_incursions)
+		and hot_war_prep )
+	{
+		dislike_him_more
+		go_to_hot_war
+	}
+
+	if(yes_he_rejected_demand_leave_our_lands 
+		and (many_incursions or floods_incursions)
+		and not ( hot_war_prep or hot_war ) )
+	{
+		dislike_him_more
+		go_to_hot_war_prep
+	}
+
+//////////////////////////////////////////////////////
+//////////   DEMAND LESS POLLUTION REJECTED    ///////
+//////////////////////////////////////////////////////
+	input he_rejected_demand_reduce_pollution
+		right yes_he_rejected_demand_reduce_pollution(he_rejected_demand_reduce_pollution, 1.0, .5)
+
+	if(yes_he_rejected_demand_reduce_pollution)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   DEMAND STOP PIRACY REJECTED       ///////
+//////////////////////////////////////////////////////
+	input he_rejected_demand_no_piracy
+		right yes_he_rejected_demand_no_piracy(he_rejected_demand_no_piracy, 1.0, .5)
+
+	if(yes_he_rejected_demand_no_piracy)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   DEMAND STOP TRADE REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_demand_stop_trade
+		right yes_he_rejected_demand_stop_trade(he_rejected_demand_stop_trade, 1.0, .5)
+
+	if(yes_he_rejected_demand_stop_trade)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   DEMAND ATTACK ENEMY REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_demand_attack_enemy
+		right rejected_attack(he_rejected_demand_attack_enemy, 1.0, 0.5)
+
+	if(rejected_attack)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   EXCHANGE ADVACE REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_exchange_advance
+		right yes_he_rejected_exchange_advance(he_rejected_exchange_advance, 1.0, .5)
+
+	if(yes_he_rejected_exchange_advance)
+	{
+		dislike_him_more
+	}
+
+
+//////////////////////////////////////////////////////
+//////////   EXCHANGE MAP REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_exchange_map
+		right yes_he_rejected_exchange_map(he_rejected_exchange_map, 1.0, .5)
+
+	if(yes_he_rejected_exchange_map)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   OFFER MAP REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_offer_advance
+		right yes_he_rejected_offer_advance(he_rejected_offer_advance, 1.0, .5)
+
+	if(yes_he_rejected_offer_advance)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   OFFER GOLD REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_offer_gold
+		right yes_he_rejected_offer_gold(he_rejected_offer_gold, 1.0, .5)
+
+	if(yes_he_rejected_offer_gold)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   OFFER MAP REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_offer_map
+		right yes_he_rejected_offer_map(he_rejected_offer_map, 1.0, .5)
+
+	if(yes_he_rejected_offer_map)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   TREATY CEASE FIRE REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_offer_cease_fire
+		right yes_he_rejected_offer_cease_fire(he_rejected_offer_cease_fire, 1.0, .5)
+
+	if(yes_he_rejected_offer_cease_fire)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   TREATY ALLIANCE REJECTED    ///////////
+//////////////////////////////////////////////////////
+input he_rejected_offer_alliance
+right yes_he_rejected_offer_alliance(he_rejected_offer_alliance, 1.0, .5)
+
+	if(yes_he_rejected_offer_alliance)
+	{
+		dislike_him_more
+	}
+
+//////////////////////////////////////////////////////
+//////////   TREATY ECOPACT REJECTED    ///////////
+//////////////////////////////////////////////////////
+	input he_rejected_offer_pact_end_pollution
+		right he_rejected_ecopact (he_rejected_offer_pact_end_pollution, 1.0, 0.5)
+
+	if(he_rejected_ecopact)
+	{
+		dislike_him_more
+	}
+

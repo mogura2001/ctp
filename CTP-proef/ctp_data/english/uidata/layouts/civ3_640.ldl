@@ -1,0 +1,749 @@
+#######################################
+# File: C:\civ3_project\civ3_data\english\uidata\layouts\civ3.ldl
+# Last Access: Mon Jun 01 13:01:30 1998
+#######################################
+##-----------------------------------##
+##              Imports              ##
+##-----------------------------------##
+import "font1640.ldl"
+import "font2640.ldl"
+import "font3640.ldl"
+import "font4640.ldl"
+import "font5640.ldl"
+import "font6640.ldl"
+
+import "ctp_template.ldl"
+
+import "buttonbank640.ldl"
+# loaded 640 ldl version
+	import "controlpanel640.ldl"
+import "tradescreen.ldl"
+# loaded 640 ldl version
+	import "ancient640.ldl"
+import "cityview.ldl"
+import "cvscreen.ldl"
+import "citystatus.ldl"
+import "queuewin.ldl"
+import "unitstatus.ldl"
+import "greatlibrary.ldl"
+# loaded 640 version
+	import "messagebox640.ldl"
+import "helptile.ldl"
+import "diplomacy.ldl"
+import "fliwindow.ldl"
+import "science.ldl"
+# loaded 640 ldl version
+	import "statswindow640.ldl"
+	import "spnewgame640.ldl"
+import "scenario.ldl"
+import "custommap.ldl"
+import "options.ldl"
+import "graphics.ldl"
+import "sound.ldl"
+import "gameplayoptions.ldl"
+import "loadsave.ldl"
+
+
+#########################
+# cheat tool ldl's
+#########################
+import "toolbar.ldl"
+import "unitpad.ldl"
+import "advancespad.ldl"
+
+import "citypad.ldl"
+import "tilepad.ldl"
+import "pollutionpad.ldl"
+#########################
+
+# import 640 version
+import "civstatus640.ldl"
+
+import "ce_screen.ldl"
+
+
+import "km_screen.ldl"
+import "creditsscreen.ldl"
+
+
+import "happystatus.ldl"
+import "infoscreen.ldl"
+import "helppopup.ldl"
+import "spnewgamepopups.ldl"
+import "battleview.ldl"
+import "c3utilitydialog.ldl"
+import "wondermovie.ldl"
+import "endgame.ldl"
+import "victorymovie.ldl"
+import "victoryscreen.ldl"
+import "throneroom.ldl"
+import "musicscreen.ldl"
+
+import "fancy.ldl"
+
+
+import "ns_template.ldl"
+import "ns_selcnct.ldl"
+import "ns_selserv.ldl"
+import "ns_selplyr.ldl"
+import "ns_editplyr.ldl"
+import "ns_lobby.ldl"
+import "ns_chglobby.ldl"
+import "ns_joingame.ldl"
+import "ns_launch.ldl"
+import "ns_strings.ldl"
+import "attract.ldl"
+
+import "tutorialwin.ldl"
+
+import "intromovie.ldl"
+
+import "hotseatlist.ldl"
+
+##-----------------------------------##
+##             Templates             ##
+##-----------------------------------##
+template default {
+	string	xanchor	"left"
+	string	yanchor	"top"
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	100
+	int	heightpix	100
+}
+
+
+##-----------------------------------##
+##              Data                 ##
+##-----------------------------------##
+
+# No evidence of this being used right now
+OldCityViewWindow {
+	string	xanchor	"left"
+	string	yanchor	"top"
+	int	xpix	0
+	int	ypix	0
+	int	widthpix	1024
+	int	heightpix	768
+	string	pattern	"upba3010.tga"
+	StaticImage {
+		string	image0	"citytemp.tga"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	1024
+		int	heightpix	768
+	}
+}
+
+
+
+# This stuff is probably for the debug aui test windows
+mywindow {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	string	pattern	"patternl.tga"
+	int	widthpct	75
+	int	heightpct	75
+	mybutton {
+		string	xanchor	"right"
+		string	yanchor	"bottom"
+		int	xpct	10
+		int	ypct	10
+		int	widthpct	20
+		int	heightpct	10
+		string	pattern	"patternd.tga"
+		string	text	"str_ldl_Exit"
+	}
+	myspinner {
+		string	xanchor	"right"
+		string	yanchor	"top"
+		int	xpct	10
+		int	ypct	10
+		int	widthpct	10
+		int	heightpix	0
+		bool	vertical	TRUE
+		string	pattern	"patternd.tga"
+	}
+	mytabgroup {
+		string	xanchor	"left"
+		string	yanchor	"bottom"
+		int	xpix	10
+		int	ypix	10
+		int	widthpct	50
+		int	heightpct	50
+		sadtab {
+			string	parent	"mywindow"
+			int	heightpct	5
+			string	pattern	"patternd.tga"
+			string	text	"str_ldl_Sad"
+			pane {
+				string	parent	"mywindow"
+				int	widthpct	50
+				int	heightpct	45
+				checkbox {
+					int	xpix	50
+					int	ypix	50
+					int	widthpix	150
+					int	heightpix	30
+					string	pattern	"upba3010.t"
+					string	text	"str_ldl_Add_Tab"
+				}
+				dragcheckbox {
+					int	xpix	50
+					int	ypix	90
+					int	widthpix	150
+					int	heightpix	30
+					string	pattern	"upba3010.tga"
+					string	text	"str_ldl_Make_Draggable"
+				}
+				transparentcheckbox {
+					int	xpix	50
+					int	ypix	130
+					int	widthpix	150
+					int	heightpix	30
+					string	pattern	"upba3010.tga"
+					string	text	"str_ldl_Make_Transparent"
+				}
+			}
+		}
+		indifferenttab {
+			string	parent	"mywindow"
+			int	heightpct	5
+			string	pattern	"upba3010.tga"
+			string	text	"str_ldl_Indifferent"
+			pane {
+				string	parent	"mywindow"
+				int	widthpct	50
+				int	heightpct	45
+				modalradiogroup {
+					string	xanchor	"center"
+					string	yanchor	"center"
+					int	widthpct	90
+					int	heightpct	90
+					string	pattern	"upba3010.tga"
+					string	text	"str_ldl_Radio_Group"
+					stronglymodalradio {
+						int	xpix	50
+						int	ypix	30
+						int	widthpix	150
+						int	heightpix	30
+						string	pattern	"upba3010.tga"
+						string	text	"str_ldl_Strongly_Modal"
+					}
+					weaklymodalradio {
+						int	xpix	50
+						int	ypix	70
+						int	widthpix	150
+						int	heightpix	30
+						string	pattern	"upba3010.tga"
+						string	text	"str_ldl_Weakly_Modal"
+					}
+				}
+			}
+		}
+	}
+}
+
+# Work window small enough for 640x480 - no change
+WorkWindow {
+	int	xpix	5
+	int	ypix	140
+	int	widthpix	411
+	int	heightpix	252
+	string	pattern	"upba6141.tga"
+	ExitButton {
+		int	xpix	389
+		int	ypix	-1
+		int	widthpix	22
+		int	heightpix	16
+		string	image0	"upba6145.tga"
+		string	image1	"upba6146.tga"
+		int bevelwidth 0
+	}
+	WorkMap {
+		int	xpix	14
+		int	ypix	15
+		int	widthpix	384
+		int	heightpix	216
+	}
+}
+
+WorkMapStrings {
+	int	numstrings		3
+
+	string	string0		"str_tbl_ldl_FOOD_COLON"
+	string	string1		"str_tbl_ldl_PROD_COLON"
+	string	string2		"str_tbl_ldl_GOLD_COLON"
+}
+
+
+# Radar window in main interface
+RadarWindow {
+	int	xpix	0
+	int	ypix	345
+	int	widthpix	162
+	int	heightpix	132
+	RadarMap {
+		string	pattern	"upba6108.tga"
+		int	xpix	15
+		int	ypix	14
+		int	widthpix	148
+		int	heightpix	106
+	}
+	LeftBorder {
+		string	image0	"upbb6151.tga"
+		int	xpix	0
+		int	ypix	15
+		int	widthpix	16
+		int	heightpix	118
+	}
+	TopBorder {
+		string	image0	"upbb6152.tga"
+		int	xpix	21
+		int	ypix	0
+		int	widthpix	132
+		int	heightpix	13
+	}
+	BottomBorder {
+		string	image0	"upbb6154.tga"
+		int	xpix	16
+		int	ypix	122
+		int	widthpix	146
+		int	heightpix	13
+	}
+
+
+}
+
+
+TurnWindow {
+	int	xpix	603
+	int	ypix	345
+	int	widthpix	37
+	int	heightpix	135
+	string	pattern	"upba3010.tga"
+	UnitButton {
+		int	xpix	3
+		int	ypix	10
+		int	widthpix	36	
+		int	heightpix	31
+		string	image0	"upbb0504.tga"
+		string	image1	"upbb0511.tga"
+		#string	imageblttype	"stretch"
+		int	bevelwidth	0
+	}
+	CityButton {
+		int	xpix	3
+		int	ypix	51
+		int	widthpix	37
+		int	heightpix	30
+		string	image0	"upbb0506.tga"
+		string	image1	"upbb0513.tga"
+		int	bevelwidth	0
+	}
+	UndoButton {
+		int	xpix	3
+		int	ypix	63
+		int	widthpix	37
+		int	heightpix	31
+		string	image0	"upbb0505.tga"
+		string	image1	"upbb0505.tga"
+		int	bevelwidth	0
+	}
+	EndButton {
+		int	xpix	3
+		int	ypix	91
+		int	widthpix	37
+		int	heightpix	31
+		string	image0	"upbb0507.tga"
+		string	image1	"upbb0514.tga"
+		string	disabledimage0	"upbb0531.tga"
+		int	bevelwidth	0
+	}
+}
+
+
+ThumbWindow {
+	int xpix 0
+	int ypix 0
+	int widthpix 640
+	int heightpix 480
+	string pattern "upba3010.tga"
+	
+	ThumbnailMap {
+		int xpix 20
+		int ypix 20
+		int widthpix 320
+		int heightpix 240
+		string pattern "upba3010.tga"
+		TipWindow {
+			int widthpix 150
+			int heightpix 20
+			tip {
+				string	text	"str_ldl_This_is_a_City"
+			}
+		}
+	}
+}
+
+# city name window
+CityNameWindow {
+	int		xpix	525
+	int 	ypix	593
+
+	int	widthpix	234
+
+	int	heightpix	27
+
+	Name:T_FONT5_CITYNAME {
+		string	image0	"upba0525.tga"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	234
+		int	heightpix	27
+	}
+
+}
+
+
+# Ranger Buttons
+RangerUp {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	11
+	int	heightpix	6
+	string	image0	"upba5615.tga"
+}
+
+
+RangerDown {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	11
+	int	heightpix	6
+	string	image0	"upba5614.tga"
+}
+RangerLeft {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	6
+	int	heightpix	11
+	string	image0	"upba6322.tga"
+#	string	image1	"upba6323.tga"
+}
+RangerRight {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	6
+	int	heightpix	11
+	string	image0	"upba6324.tga"
+#	string	image1	"upba6325.tga"
+}
+
+
+# Civ Mouse
+
+
+CivMouse {
+	# for telling the mouse you will eventually have more
+	# cursors than what's listed here.
+	int numcursors 64
+		
+	string cursor0	"cursor0.tga"
+	int	 hotspotx0	0
+	int	 hotspoty0	0
+
+
+	string cursor1	"cursor1.tga"
+	int	 hotspotx1	0
+	int	 hotspoty1	0
+
+
+	string cursor2	"cursor2.tga"
+	int	 hotspotx2	0
+	int	 hotspoty2	0
+
+
+	string cursor3	"cursor1.tga"
+	int	 hotspotx3	0
+	int	 hotspoty3	0
+
+
+	string cursor4	"UC001.tga"
+	int	hotspotx4	16
+	int hotspoty4	16
+
+
+	string cursor5	"UC002.tga"
+	int	hotspotx5	16
+	int hotspoty5	16
+
+
+	string cursor6	"UC003.tga"
+	int	hotspotx6	16
+	int hotspoty6	16
+
+
+	string cursor7	"UC004.tga"
+	int	hotspotx7	16
+	int hotspoty7	16
+
+
+	string cursor8	"UC005.tga"
+	int	hotspotx8	16
+	int hotspoty8	16
+
+
+	string cursor9	"UC006.tga"
+	int	hotspotx9	16
+	int hotspoty9	16
+
+
+	string cursor10	"UC007.tga"
+	int	hotspotx10	16
+	int hotspoty10	16
+
+
+	string cursor11	"UC008.tga"
+	int	hotspotx11	16
+	int hotspoty11	16
+
+
+	string cursor12	"UC009.tga"
+	int	hotspotx12	16
+	int hotspoty12	16
+
+
+	string cursor13	"UC010.tga"
+	int	hotspotx13	16
+	int hotspoty13	16
+
+
+	string cursor14	"UC011.tga"
+	int	hotspotx14	16
+	int hotspoty14	16
+
+
+	string cursor15	"UC012.tga"
+	int	hotspotx15	16
+	int hotspoty15	16
+
+
+	string cursor16	"UC013.tga"
+	int	hotspotx16	16
+	int hotspoty16	16
+
+
+	string cursor17	"UC014.tga"
+	int	hotspotx17	16
+	int hotspoty17	16
+
+
+	string cursor18	"UC015.tga"
+	int	hotspotx18	16
+	int hotspoty18	16
+
+
+	string cursor19	"UC016.tga"
+	int	hotspotx19	16
+	int hotspoty19	16
+	
+	string	cursor20	"UC029.tga"
+	int		hotspotx20	13
+	int		hotspoty20	13
+
+	string	cursor21	"UC030.tga"
+	int		hotspotx21	13
+	int		hotspoty21	13
+
+	# number of miliseconds between animation frames.
+	int	animdelay	200
+
+
+	int	firstindex	0
+	int	lastindex	3
+	
+	# default cursor
+	anim0 {
+		int	animdelay	200
+		
+		int	firstindex	0
+		int	lastindex	3
+	}
+
+
+	# Assault	
+	anim1 {
+		int animdelay 	200
+		int firstindex	4
+		int lastindex	6
+	}
+	
+	# Bombard
+	anim2 {
+		int animdelay 	200
+		int firstindex	7
+		int lastindex	9
+	}
+	
+	# No Move
+	anim3 {
+		int animdelay 	200
+		int firstindex	10
+		int lastindex	12
+	}
+	
+	# Move
+	anim4 {
+		int animdelay 	200
+		int firstindex	13
+		int lastindex	15
+	}
+	
+	# Selection
+	anim5 {
+		int animdelay 	200
+		int firstindex	16
+		int lastindex	18
+	}
+
+
+	# Special Action
+	anim6 {
+		int animdelay 	200
+		int firstindex	19
+		int lastindex	19
+	}
+	
+	# Zoom In
+	anim7 {
+		int animdelay	200
+		int firstindex	20
+		int lastindex	20
+	}
+
+	# Zoom Out
+	anim8 {
+		int animdelay	200
+		int firstindex	21
+		int lastindex	21
+	}
+
+# now you can do the same for anim1, anim2, etc. and use
+# aui_Mouse::SetAnim( animNum ) in your code instead of
+# aui_Mouse::SetIndexes/AnimDelay().
+}
+
+
+# Fonts for things other than interface
+
+TiledMapFontStringTable {
+	int	numstrings	3
+	
+	string string0 		"str_tbl_ldl_arialbd_ttf"
+	string string1 		"str_tbl_ldl_9"
+	string string2		"str_ldl_F"
+}
+
+
+TurnStrings {
+	int	numstrings		14
+	string string0		"str_tbl_ldl_upbb0515_tga"
+	string string1		"str_tbl_ldl_upbb0516_tga"
+	string string2		"str_tbl_ldl_upbb0517_tga"
+	string string3		"str_tbl_ldl_upbb0518_tga"
+	string string4		"str_tbl_ldl_upbb0519_tga"
+	string string5		"str_tbl_ldl_upbb0520_tga"
+	string string6		"str_tbl_ldl_upbb0521_tga"
+	string string7		"str_tbl_ldl_upbb0522_tga"
+	string string8		"str_tbl_ldl_upbb0506_tga"
+	string string9		"str_tbl_ldl_upbb0513_tga"
+	string string10		"str_tbl_ldl_upbb0507_tga"
+	string string11		"str_tbl_ldl_upbb0514_tga"
+	string string12		"str_tbl_ldl_upbb0526_tga"
+	string string13		"str_tbl_ldl_upbb0527_tga"
+}
+
+DefaultTipWindow {
+	int	xpix		0
+	int	ypix		0
+	int	widthpix	10
+	int	heightpix	10
+	tip:T_FONT5_12 {
+		int	xpix		0
+		int	ypix		0
+		int	widthpix	10
+		int	heightpix	10
+		int fontcolorred			255
+		int fontcolorgreen			255
+		int fontcolorblue			255
+	}
+}
+
+DefaultHyperTipWindow {
+	int	xpix		0
+	int	ypix		0
+	int	widthpix	100
+	int	heightpix	100
+	hypertip:T_FONT3_8 {
+		int	xpix		0
+		int	ypix		0
+		int	widthpix	10
+		int	heightpix	10
+		int fontcolorred			255
+		int fontcolorgreen			255
+		int fontcolorblue			255
+		string	pattern	"upba5605.tga"
+	}
+}
+#
+# SAM021799 added new chat window
+#
+ChatWindow {
+	int	xpix		0
+	int ypix		0
+	int widthpix	320
+	int heightpix	240
+	string	pattern		"upba3705.tga"
+
+	ChatTextBox:T_FONT3_9 {
+		int xpix		6
+		int ypix		7
+		int widthpix	290
+		int heightpix	200
+		string	pattern		"upba3705.tga"
+		int bevelwidth 0
+		rangery {
+			int	widthpix		15
+			string	type		"scroller"
+			string	orientation	"vertical"
+#			string	pattern		"upba5605.tga"
+			int		maxxval		0
+
+			incy {
+				int	heightpix	15
+#				string	pattern	"upba5605.tga"
+			}
+			decy {
+				int	heightpix	15
+#				string	pattern	"upba5605.tga"
+			}
+			thumb {
+#				string	pattern	"upba5605.tga"
+			}
+		}
+	}
+	
+	ChatTextField {
+		int xpix		7
+		int ypix		212
+		int widthpix	296
+		int heightpix	18
+		int bevelwidth	2
+		int beveltype	1
+	}
+}
+
+$

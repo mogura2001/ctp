@@ -1,0 +1,575 @@
+// aiploader.fli
+
+// This is used to make sure the aips load in the right order.
+output primary_loaded[0.0, 2.0 ] = 0.0
+	tri yes_primary_loaded(primary_loaded, 1.0, 0.5)
+
+// pick my aip
+output red_dog_test[0.0,2.0] = 0.0
+	tri yes_red_dog_test(red_dog_test, 1.0, 0.5)
+
+	if(reddog1_count or reddog2_count or reddog3_count or reddog4_count)
+	{
+		yes_red_dog_test
+	}
+
+action load("sally.aip") when (red_dog_test > 0.9)
+action load("nosally.aip") when (red_dog_test < 0.9)
+
+action load("lowdist.aip") when (count < 5)
+action load("highdist.aip") when (count > 5)
+
+output warmany_test[0.0, 2.0] = 0.0
+	tri yes_warmany(warmany_test, 1.0, 0.5)
+
+output warfew_test[0.0, 2.0] = 0.0
+	tri yes_warfew(warfew_test, 1.0, 0.5)
+
+output scifew_test[0.0, 2.0] = 0.0
+	tri yes_scifew(scifew_test, 1.0, 0.5)
+
+output scimany_test[0.0, 2.0] = 0.0
+	tri yes_scimany(scimany_test, 1.0, 0.5)
+
+if(yes_warrior and yes_settle_dense)
+{
+	yes_warmany
+}
+
+if(yes_warrior and yes_settle_loose)
+{
+	yes_warfew
+}
+
+if(yes_scientist and yes_settle_dense)
+{
+	yes_scimany
+}
+
+if(yes_scientist and yes_settle_loose)
+{
+	yes_scifew
+}
+
+output few_cities_test[0.0, 2.0] = 0.0
+	tri yes_few_cities(few_cities_test, 1.0, 0.5)
+
+output fewplus_cities_test[0.0, 2.0] = 0.0
+	tri yes_fewplus_cities(fewplus_cities_test, 1.0, 0.5)
+
+if(a1to5_num_cities or a3to7_num_cities or a5to9_num_cities)
+	{
+	yes_few_cities
+	}
+
+if(a1to5_num_cities 
+	or a3to7_num_cities 
+	or a5to9_num_cities 
+	or a7to11_num_cities 
+	or a9to13_num_cities)
+	{
+	yes_fewplus_cities
+	}
+
+output early_aip[0.0, 2.0] =0.0
+	tri found_early_aip(early_aip, 1.0, 0.5)
+
+if(zero_at_war and (a48_96_map or a70_140_map or a64_128_map) 
+	and (a1_num_cities or a2_num_cities or a3to5_num_cities)
+	and not (chieftain or warlord or prince ))
+	{
+		yes_mass_settle_aip
+		found_early_aip
+		yes_primary_loaded
+	}
+
+if(zero_at_war and (a48_96_map or a70_140_map or a64_128_map) 
+	and (a1_num_cities or a2_num_cities or a3to5_num_cities)
+	and (chieftain or warlord or prince ))
+	{
+		yes_mass_settle_sandbag_aip
+		found_early_aip
+		yes_primary_loaded
+	}
+
+action load("masssettle.aip") when (mass_settle_aip > 0.8)
+action load("masssettle_sandbag.aip") when (mass_settle_sandbag_aip > 0.8)
+
+if((human_capitol_ten_or_less or human_capitol_ten_to_fifteen or aover4unit_to_city_best_human_ratio) 
+	and yes_opening_gambit_time 
+	and yes_primary_loaded )
+	{
+		yes_citywall_aip
+	}
+
+if((human_capitol_ten_or_less or human_capitol_ten_to_fifteen or aover4unit_to_city_best_human_ratio) 
+	and not a0to15_turns 
+	and yes_opening_gambit_time 
+	and yes_primary_loaded 
+	and not a35_or_more_turns)
+	{
+		yes_survival_mode_aip
+	}
+
+//////////////////////
+//// LOAD MILFEW /////
+//////////////////////
+		
+if(not found_early_aip and yes_warfew )
+	{
+		yes_milfew_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+//////////////////////
+//// LOAD MILMANY ////
+//////////////////////
+
+if(not found_early_aip and yes_warmany )
+	{
+		yes_milmany_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+
+///////////////////////
+////  LOAD SCIFEW  ////
+///////////////////////
+
+if(not found_early_aip and yes_scifew )
+	{
+		yes_scifew_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+
+////////////////////////
+////  LOAD SCIMANY  ////
+////////////////////////
+
+if(not found_early_aip and yes_scimany )
+	{
+		yes_scimany_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+///////////////////////
+////  LOAD CLERIC  ////
+///////////////////////
+
+if(not found_early_aip and yes_cleric )
+	{
+		yes_cleric_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+///////////////////////
+////  LOAD SLAVER  ////
+///////////////////////
+
+if(not found_early_aip and yes_slaver )
+	{
+		yes_slaver_aip
+		yes_improvement_build_normal_aip
+		yes_primary_loaded
+	}
+
+
+//////////////////////////////
+////  Always load personality AIPS the first turn
+//////////////////////////////
+
+if(first_turn and yes_warmany )
+	{
+		yes_milmany_aip
+	}
+
+if(first_turn and yes_warfew )
+	{
+		yes_milfew_aip
+	}
+
+if(first_turn and yes_scifew )
+	{
+		yes_scifew_aip
+	}
+
+if(first_turn and yes_scimany )
+	{
+		yes_scimany_aip
+	}
+
+if(first_turn and yes_cleric )
+	{
+		yes_cleric_aip
+	}		
+
+if(first_turn and yes_slaver )
+	{	
+		yes_slaver_aip
+	}
+
+//////////////////////////////
+////  LOAD AIP COMMANDS  ////
+//////////////////////////////
+
+action load ("slaver.aip") when (slaver_aip > 0.5)
+action load ("milmany.aip") when (milmany_aip > 0.5)
+action load ("milfew.aip") when (milfew_aip > 0.5)
+action load ("scimany.aip") when (scimany_aip > 0.5)
+action load ("scifew.aip") when (scifew_aip > 0.5)
+action load ("cleric.aip") when (cleric_aip > 0.5)
+action load ("improvement_build_normal.aip") when (improvement_build_normal_aip > 0.8)
+
+//////////////////////////////
+////  LOAD EARLY DEFENSE  ////
+//////////////////////////////
+
+action load ("citywall.aip") when (citywall_aip > 0.9)
+action load ("survival_mode.aip") when (survival_mode_aip > 0.9)
+
+action load("naval.aip") when (land_continents_full_of_friends > 0.65)
+action load("supernaval.aip") when (land_continents_full_of_friends > 0.9)
+
+output settle_bonus_island[0.0, 1000001.0] = 0.0
+	tri	yes_settle_islands(settle_bonus_island, 100000.0, 0.1)
+
+
+if(full_continent_except_friends)
+	{
+		yes_settle_islands
+	}
+// added troops only to deal with no enough soldiers
+
+output troops_only_aip[0.0, 2.0] = 0.0
+	tri yes_troops_only_aip(troops_only_aip, 1.0, 0.5)
+
+/// rules for basic wars
+	if(start_war)
+	{
+		yes_getarmy_aip
+		yes_citywall_aip
+		build_no_settlers
+		yes_primary_loaded
+	}
+	if(phase1_war)
+	{
+		yes_getarmy_aip
+		yes_citywall_aip
+		yes_gather_aip
+		build_no_settlers
+		yes_primary_loaded
+	}
+	if(phase2_war)
+	{
+		yes_takecity_aip
+		yes_citywall_aip
+		yes_getarmy_aip
+		build_no_settlers
+		yes_primary_loaded
+	}
+	if(phase3_war)
+	{
+		yes_getarmy_aip
+		yes_citywall_aip
+		yes_fallback_aip
+		build_no_settlers
+		yes_primary_loaded
+	}
+	if(phase4_war)
+	{
+		yes_takecity_aip
+		yes_citywall_aip
+		build_no_settlers
+		yes_primary_loaded
+	}
+	if(phase5_war)
+	{
+		yes_getarmy_aip
+		yes_citywall_aip
+		yes_fallback_aip
+		yes_primary_loaded
+	}
+action load("getarmy.aip") when (getarmy_aip > 0.75)
+action load("gather.aip") when (gather_aip > 0.75)
+action load("takecity.aip") when (takecity_aip > 0.75)
+action load("fallback.aip") when (fallback_aip > 0.75)
+action load ("citywall.aip") when (citywall_aip > 0.9)
+
+/////////////////////////////////////////////
+////  CHECK FOR TOO MANY CITIES PENALTY  ////
+/////////////////////////////////////////////
+
+output many_cities_test_happ[0.0, 2.0] = 0.0
+	tri too_many_cities_test_happ(many_cities_test_happ, 1.0, 0.5)
+
+output many_cities_test_diff[0.0, 2.0] = 0.0
+	tri too_many_cities_test_diff(many_cities_test_diff, 1.0, 0.5)
+
+output many_cities_test_total[0.0, 2.0] = 0.0
+	tri too_many_cities_test_total(many_cities_test_total, 1.0, 0.5)
+
+output few_cities_test[0.0, 2.0] = 0.0
+	tri too_few_cities_test(few_cities_test, 1.0, 0.5)
+
+
+///////////////////////////////////////////////////////////
+////  DONT SETTLE IF WE WILL SUFFER HAPPINESS PENALTY  ////
+///////////////////////////////////////////////////////////
+
+if(	(neg3toneg1_city_delta 
+	or neg3minus_city_delta ) 
+	)
+	{
+		too_many_cities_test_happ
+		yes_no_settling_aip
+	}
+
+if( neg3minus_city_delta )
+{
+	yes_siege_off_aip
+}
+ 
+action load("siege_off.aip") when ( siege_off_aip > 0.75)
+
+/////////////////////////////////////////////////////////////////////
+////  DONT SETTLE IF CHIEFTAIN AND HUMAN HASNT MADE MANY CITIES  ////
+/////////////////////////////////////////////////////////////////////
+
+output more_cities_than_human_test[0.0, 2.0] = 0.0
+	tri yes_more_cities_than_human_test(more_cities_than_human_test, 1.0, 0.5)
+
+if(	i_have_two_or_more_cities_than_human 
+	and a0to100_turns )
+{
+	yes_more_cities_than_human_test
+}
+
+if(	i_have_four_or_more_cities_than_human 
+	and a100to150_turns )
+{
+	yes_more_cities_than_human_test
+}
+
+
+if(	i_have_six_or_more_cities_than_human 
+	and a150to200_turns )
+{
+	yes_more_cities_than_human_test
+}
+
+
+if(	i_have_eight_or_more_cities_than_human 
+	and a200plus_turns )
+{
+	yes_more_cities_than_human_test
+}
+
+
+if(	( yes_chieftain or warlord or prince)
+	and yes_more_cities_than_human_test
+	and not yes_can_sea_settle
+	and not yes_can_space_settle)
+	{
+		too_many_cities_test_diff
+	}
+
+/////////////////////////////////////////////////
+////  CHECK IF EITHER TOO MANY TEST IS TRUE  ////
+/////////////////////////////////////////////////
+
+// they are getting tons of cities very early
+if(too_many_cities_test_diff or too_many_cities_test_happ)
+{
+	too_many_cities_test_total
+}
+
+///////////////////////////////////////////////////
+////  ONLY STOP SETTLING AFTER OPENING OF GAME ////
+///////////////////////////////////////////////////
+
+if ( too_many_cities_test_total)
+	{
+		yes_no_settling_aip
+	}
+
+action load ("no_settle.aip") when (no_settling_aip > 0.75)
+
+if (not yes_no_settling_aip)
+{
+	yes_yes_settling_aip
+}
+
+action load ("yes_settle.aip") when (yes_settling_aip > 0.75)
+
+//////////////////////////////
+////  EXPLORE A LOT EARLY ////
+//////////////////////////////
+
+output one_explore_aip[0.0, 2.0] = 0.0
+	tri yes_one_explore_aip(one_explore_aip, 1.0, 0.5)
+
+output two_explore_aip[0.0, 2.0] = 0.0
+	tri yes_two_explore_aip(two_explore_aip, 1.0, 0.5)
+
+output normal_explore_aip[0.0, 2.0] = 0.0
+	tri yes_normal_explore_aip(normal_explore_aip, 1.0, 0.5)
+
+
+if	( a1_num_cities )
+{	
+	yes_one_explore_aip
+}
+
+if ( a2to3_num_cities )
+{
+	yes_two_explore_aip
+}
+
+if (not yes_opening_game_strategy)
+{
+	yes_normal_explore_aip
+}
+
+action load("one_explore.aip") when (one_explore_aip > 0.75)
+action load("two_explore.aip") when (two_explore_aip > 0.75)
+action load("normal_explore.aip") when (normal_explore_aip > 0.75)
+
+//action load("citywall.aip") when (troops_only_aip > 0.75)
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+////  IF IM TOO STRONG, DONT BUILD MORE UNITS UNTIL I HAVE ALL THE BUILDINGS THAT I NEED  ////
+//// AND I AM NOT IN THE ANCIENT AGE 
+//// AND I AM NOT AT WAR WITH ANYONE
+//////////////////////////////////////////////////////////////////////////////////////////////
+ 
+	if((i_am_stronger_2x_to_4x_than_strongest_human
+		or i_am_stronger_2x_to_4x_than_strongest)
+		and not_ancient_time 
+	    and zero_at_war
+		and not yes_focus_on_units )
+	{
+		yes_build_troops_off_aip
+	}
+
+
+action load("build_troops_off.aip") when (build_troops_off_aip > 0.75)
+action load("build_troops_on.aip") when (build_troops_off_aip < 0.75)
+
+//////////////////////////////////////////////////
+//// OCCASIONALLY INCREASE MINIMUM DEFENDERS  ////
+//////////////////////////////////////////////////
+
+if( zero_at_war 
+	and high_count
+	and not med_count)
+	{
+		yes_pull_units_into_city_aip
+	}
+
+action load("pull_units_into_city.aip") when ( pull_units_into_city_aip > 0.8)
+action load("defend_normal.aip") when (pull_units_into_city_aip < 0.9)
+
+//////////////////////////////////////////////////
+//// DONT RUSH THE HUMAN ON EASY DIFF LEVELS  ////
+//////////////////////////////////////////////////
+
+output special_actions_off_test[0.0, 2.0] = 0.0
+	tri yes_special_actions_off_test(special_actions_off_test, 1.0, 0.5)
+
+output cleric_on_test[0.0, 2.0] = 0.0
+	tri yes_cleric_on_test(cleric_on_test, 1.0, 0.5)
+
+output slave_on_test[0.0, 2.0] = 0.0
+	tri yes_slave_on_test(slave_on_test, 1.0, 0.5)
+
+	if( (prince or warlord or chieftain)
+		and a0to50_turns )
+		{
+			yes_special_actions_off_test
+		}
+
+	if ( not yes_special_actions_off_test
+		and ( yes_slaver or yes_warrior) )
+		{
+			yes_slave_on_test
+		}
+
+	if ( not yes_special_actions_off_test
+		and  yes_cleric)
+		{
+			yes_cleric_on_test
+		}
+
+action load("special_attacks_off.aip") when (special_actions_off_test > 0.75)
+action load("cleric_on.aip") when (cleric_on_test > 0.75)
+action load("slave_on.aip") when (slave_on_test > 0.75)
+
+////////////////////////////////////////////////////////////
+//// BUILD STUFF TO STOP POLLUTION IF I'VE MADE A PACT  ////
+////////////////////////////////////////////////////////////
+
+output green_me_test[0.0, 2.0] = 0.0
+	tri yes_green_me_test(green_me_test, 1.0, 0.5)
+
+if(	yes_i_agreed_to_stop_polluting and
+	yes_primary_loaded ) 
+{
+	yes_green_me_test
+}
+
+///////////////////////////////////////////
+////  IF IM TOO WEAK, BUILD MORE UNITS ////
+///////////////////////////////////////////
+
+output unit_focus_test [0.0, 2.0] = 0.0
+	tri yes_unit_focus_test ( unit_focus_test, 1.0, 0.5)
+
+if( yes_focus_on_units
+	and yes_primary_loaded
+	and not found_early_aip)
+	{
+		yes_unit_focus_test
+	}
+
+action load("unit_focus.aip") when (unit_focus_test > 0.75)
+
+////////////////////////////////////////////////////////////////////////
+////  IF I'M TRYING TO GET CITY WALLS AND ITS EARLY IN THE GAME,	////
+////  THEN RESEARCH WHAT I NEED FOR CITY WALLS						////
+////////////////////////////////////////////////////////////////////////
+
+if(	yes_citywall_aip
+	and a0to50_turns )
+{
+	yes_citywall_science_aip
+}
+
+action load("citywall_science.aip") when (citywall_science_aip > 0.75)
+
+////////////////////////////////////////////////////////
+////  IF I'M HAVE THE UNITS TO PILLAGE, THEN DO IT	////
+////////////////////////////////////////////////////////
+
+//if(	not zero_at_war
+//	and aover3unit_to_city_best_human_ratio 
+//	and not a0to100_turns )
+//{
+//	yes_pillage_high_five_aip
+//}
+//
+//action load("pillage_high_five.aip") when (pillage_high_five_aip > 0.75)
+//
+//if (not yes_pillage_five_high_aip)
+//{
+//	yes_pillage_normal_aip
+//}
+//
+//action load("pillage_normal.aip") when (pillage_normal_aip > 0.75)
+

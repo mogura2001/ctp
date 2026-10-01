@@ -1,0 +1,1058 @@
+#######################################
+# File: spnewgame.ldl
+# Last Access: Thu Jul 22 14:45:58 1999
+#######################################
+
+##-----------------------------------##
+##             Templates             ##
+##-----------------------------------##
+SPNEWGAME_BUTTONS_LEFT {
+	string	image0	"upba1403.tga"
+	int	ypix	685
+}
+
+SPNEWGAME_GENERAL_LABEL:T_FONT5_10 {
+	int	xpix	74
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+SPNEWGAME_BUTTONS {
+	string	fontname	"arialbd.ttf"
+	int	shadowfont	1
+	int	fontcolorred	0
+	int	fontcolorgreen	0
+	int	fontcolorblue	0
+	int	fontshadowcolorred	255
+	int	fontshadowcolorgreen	255
+	int	fontshadowcolorblue	200
+	int	fontsize	9
+	string	pattern	"upba0104.tga"
+	int	ypix	685
+	int	widthpix	154
+	int	heightpix	28
+}
+
+SP_BUTTON_BIG:T_FONT5_10 {
+	bool	shadowfont	TRUE
+	string	imagebltflag	"chromakey"
+	int	widthpix	158
+	int	heightpix	30
+	int	bevelwidth	0
+}
+
+CUSTOM_BUTTON:T_FONT5_8 {
+	bool	shadowfont	TRUE
+	int	xpix	793
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+WORLD_BUTTONS {
+	string	fontname	"arialbd.ttf"
+	int	shadowfont	1
+	int	fontcolorred	0
+	int	fontcolorgreen	0
+	int	fontcolorblue	0
+	int	fontshadowcolorred	255
+	int	fontshadowcolorgreen	255
+	int	fontshadowcolorblue	200
+	int	fontsize	9
+	string	pattern	"upba0104.tga"
+	int	xpix	123
+	int	widthpix	153
+	int	heightpix	36
+}
+
+RULES_BUTTONS {
+	string	fontname	"arialbd.ttf"
+	int	shadowfont	1
+	int	fontcolorred	0
+	int	fontcolorgreen	0
+	int	fontcolorblue	0
+	int	fontshadowcolorred	255
+	int	fontshadowcolorgreen	255
+	int	fontshadowcolorblue	200
+	int	fontsize	9
+	string	pattern	"upba0104.tga"
+	int	xpix	759
+	int	widthpix	174
+	int	heightpix	28
+}
+
+SPNEWGAME_BUTTONS_BOT {
+	string	image0	"upba2421.tga"
+	int	ypix	713
+}
+
+FIELD {
+	int	xpix	50
+	int	ypix	268
+	int	widthpix	185
+	int	heightpix	20
+	int	maxfieldlen	23
+}
+
+WORLD_BUTTON:T_FONT5_8 {
+	bool	shadowfont	TRUE
+	int	xpix	427
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+SPNEWGAME_BUTTONS_TOP {
+	string	image0	"upba2420.tga"
+	int	ypix	670
+}
+
+GENERAL_BUTTON:T_FONT5_8 {
+	bool	shadowfont	TRUE
+	int	xpix	74
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+PROFILE_BUTTONS {
+	string	fontname	"arialbd.ttf"
+	int	shadowfont	1
+	int	fontcolorred	0
+	int	fontcolorgreen	0
+	int	fontcolorblue	0
+	int	fontshadowcolorred	255
+	int	fontshadowcolorgreen	255
+	int	fontshadowcolorblue	200
+	int	fontsize	9
+	string	pattern	"upba0104.tga"
+	int	xpix	90
+	int	widthpix	174
+	int	heightpix	28
+}
+
+INIT_PLAY_BUTTON:T_FONT5_10 {
+	bool	shadowfont	TRUE
+	string	imagebltflag	"chromakey"
+	int	bevelwidth	0
+}
+
+SPNEWGAME_CUSTOM_LABEL:T_FONT5_10 {
+	int	xpix	793
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+SPNEWGAME_BUTTONS_RIGHT {
+	string	image0	"upba1402.tga"
+	int	ypix	685
+}
+
+SP_BUTTON_SMALL:T_FONT5_10 {
+	bool	shadowfont	TRUE
+	string	imagebltflag	"chromakey"
+	int	widthpix	123
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+SPNEWGAME_WORLD_LABEL:T_FONT5_10 {
+	int	xpix	427
+	int	widthpix	134
+	int	heightpix	32
+	int	bevelwidth	0
+}
+
+
+##-----------------------------------##
+##                Data               ##
+##-----------------------------------##
+SPDifficultyStringTable {
+	int	numstrings	5
+	string	string0	"str_tbl_ldl_Easiest"
+	string	string1	"str_tbl_ldl_Easy"
+	string	string2	"str_tbl_ldl_Average"
+	string	string3	"str_tbl_ldl_Hard"
+	string	string4	"str_tbl_ldl_Hardest"
+}
+
+InitPlayWindow {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	1024
+	int	heightpix	768
+	SPButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5904.tga"
+		string	image1	"upba5905.tga"
+		string	text	"str_ldl_SINGLEPLAYER"
+		int	xpix	776
+		int	ypix	215
+		int	widthpix	158
+		int	heightpix	38
+	}
+	MPButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5900.tga"
+		string	image1	"upba5901.tga"
+		string	text	"str_ldl_MULTIPLAYER"
+		int	xpix	75
+		int	ypix	215
+		int	widthpix	158
+		int	heightpix	40
+	}
+	HotseatButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5900.tga"
+		string	image1	"upba5901.tga"
+		string	text	"str_ldl_HOTSEAT"
+		int	xpix	75
+		int	ypix	255
+		int	widthpix	158
+		int	heightpix	40
+	}
+	EmailButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5900.tga"
+		string	image1	"upba5901.tga"
+		string	text	"str_ldl_EMAIL"
+		int	xpix	75
+		int	ypix	295
+		int	widthpix	158
+		int	heightpix	40
+	}
+	LoadButton:INIT_PLAY_BUTTON {
+		string	image0	"upba2703.tga"
+		string	text	"str_ldl_LOAD_GAME"
+		int	xpix	72
+		int	ypix	203
+		int	widthpix	165
+		int	heightpix	28
+	}
+	ContinueButton:INIT_PLAY_BUTTON {
+		string	image0	"upba2707.tga"
+		string	text	"str_ldl_CONTINUE_GAME"
+		int	xpix	760
+		int	ypix	203
+		int	widthpix	165
+		int	heightpix	28
+	}
+	InstantButton:INIT_PLAY_BUTTON {
+		string	image0	"upba2704.tga"
+		string	text	"str_ldl_INSTANT_START"
+		int	xpix	72
+		int	ypix	233
+		int	widthpix	165
+		int	heightpix	28
+	}
+	MapEditorButton:INIT_PLAY_BUTTON {
+		string	image0	"upba2708.tga"
+		string	text	"str_ldl_MAP_EDITOR"
+		int	xpix	760
+		int	ypix	233
+		int	widthpix	165
+		int	heightpix	28
+	}
+	QuitButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5902.tga"
+		string	image1	"upba5903.tga"
+		string	text	"str_ldl_CAPS_QUIT"
+		int	xpix	89
+		int	ypix	410
+		int	widthpix	123
+		int	heightpix	38
+	}
+	CreditsButton:INIT_PLAY_BUTTON {
+		string	image0	"upba5906.tga"
+		string	image1	"upba5907.tga"
+		string	text	"str_ldl_CREDITS"
+		int	xpix	792
+		int	ypix	406
+		int	widthpix	123
+		int	heightpix	42
+	}
+	Background {
+		string	image0	"upba2701.tga"
+		int	xpix	0
+		int	ypix	0
+	}
+}
+
+SPGenderChoicesStringTable {
+	int	numstrings	2
+	string	string0	"str_tbl_ldl_Male"
+	string	string1	"str_tbl_ldl_Female"
+}
+
+SPNewGameWindow {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	1024
+	int	heightpix	768
+	MapTypeLabel:SPNEWGAME_WORLD_LABEL {
+		string	text	"str_ldl_MAP_TYPE"
+		int	ypix	45
+	}
+	MapTypeButton:WORLD_BUTTON {
+		string	image0	"upba6007.tga"
+		string	image1	"upba6008.tga"
+		string	text	"str_ldl_RANDOM"
+		int	ypix	72
+	}
+	CivilizationLabel:SPNEWGAME_GENERAL_LABEL {
+		string	text	"str_ldl_CAPS_CIVILIZATION"
+		int	ypix	174
+	}
+	TribeButton:GENERAL_BUTTON {
+		string	image0	"upba6001.tga"
+		string	image1	"upba6002.tga"
+		string	text	"str_ldl_ROMANS"
+		int	ypix	201
+	}
+	LeaderNameLabel:SPNEWGAME_GENERAL_LABEL {
+		string	text	"str_ldl_LEADER_NAME"
+		int	ypix	236
+	}
+	Name:FIELD {
+		string	fontname	"Arial"
+	}
+	DifficultyLabel:SPNEWGAME_GENERAL_LABEL {
+		string	text	"str_ldl_CAPS_DIFFICULTY"
+		int	ypix	287
+	}
+	DifficultyButton:GENERAL_BUTTON {
+		string	image0	"upba6003.tga"
+		string	image1	"upba6004.tga"
+		string	text	"str_ldl_CAPS_DIFFICULTY"
+		int	ypix	314
+	}
+	MapSizeLabel:SPNEWGAME_GENERAL_LABEL {
+		string	text	"str_ldl_WORLD_SIZE"
+		int	ypix	342
+	}
+	MapSizeButton:GENERAL_BUTTON {
+		string	image0	"upba6005.tga"
+		string	image1	"upba6006.tga"
+		string	text	"str_ldl_MAP_CAPS_SIZE"
+		int	ypix	369
+	}
+	WorldShapeLabel:SPNEWGAME_CUSTOM_LABEL {
+		string	text	"str_ldl_CAPS_WORLD_SHAPE"
+		int	ypix	184
+	}
+	WorldShapeButton:CUSTOM_BUTTON {
+		int	heightpix	30
+		string	image0	"upba6022.tga"
+		string	image1	"upba6009.tga"
+		string	text	"str_ldl_EAST_WEST"
+		int	ypix	211
+	}
+	RulesLabel:SPNEWGAME_CUSTOM_LABEL {
+		string	text	"str_ldl_CAPS_RULES"
+		int	ypix	238
+	}
+	RulesButton:CUSTOM_BUTTON {
+		string	image0	"upba6010.tga"
+		string	image1	"upba6011.tga"
+		string	text	"str_ldl_CAPS_RULES"
+		int	ypix	265
+	}
+	PlayersLabel:SPNEWGAME_CUSTOM_LABEL {
+		string	text	"str_ldl_CAPS_PLAYERS"
+		int	ypix	295
+	}
+	PlayersButton:CUSTOM_BUTTON {
+		string	image0	"upba6012.tga"
+		string	image1	"upba6013.tga"
+		string	text	"str_ldl_CAPS_PLAYERS"
+		int	ypix	322
+	}
+	MapButtonLabel:SPNEWGAME_CUSTOM_LABEL {
+		string	text	"str_ldl_WORLD_TYPE"
+		int	ypix	351
+	}
+	MapButton:CUSTOM_BUTTON {
+		string	image0	"upba6014.tga"
+		string	image1	"upba6015.tga"
+		string	text	"str_ldl_CAPS_MAP"
+		int	ypix	378
+	}
+	EditorButton:T_FONT5_8 {
+		bool	shadowfont	TRUE
+		int	xpix	798
+		int	widthpix	125
+		int	heightpix	23
+		int	bevelwidth	0
+		string	text	"str_ldl_Editor"
+		string	image0	"upba5700.tga"
+		string	image1	"upba5701.tga"
+		string	imagebltflag	"chromakey"
+		int	ypix	434
+	}
+	ScenarioButton:T_FONT5_8 {
+		bool	shadowfont	TRUE
+		int	xpix	78
+		int	ypix	434
+		int	widthpix	125
+		int	heightpix	23
+		int	bevelwidth	0
+		string	text	"str_ldl_SP_SCENARIO_PICKER"
+		string	image0	"upba5700.tga"
+		string	image1	"upba5701.tga"
+		string	imagebltflag	"chromakey"
+	}
+	ScenarioName:T_FONT4_14 {
+		int	fontcolorred	10
+		int	fontcolorblue	10
+		int	fontshadowcolorred	0
+		int	fontshadowcolorgreen	0
+		int	fontshadowcolorblue	0
+		int	xpix	122
+		int	ypix	465
+		int	widthpix	880
+		int	heightpix	23
+		string	text	"str_ldl_SP_STANDARD_GAME"
+		string  just 	"left"
+	}
+	ScenarioStaticText:T_FONT4_14 {
+		int	fontcolorred	200
+		int	fontcolorgreen	255
+		int	fontcolorblue	200
+		int	fontshadowcolorred	0
+		int	fontshadowcolorgreen	0
+		int	fontshadowcolorblue	0
+		int	xpix	18
+		int	ypix	465
+		int	widthpix	100
+		int	heightpix	23
+		string	text	"str_ldl_SP_SCENARIO_STATIC_TEXT"
+		string	just	"right"
+	}
+	General:T_FONT3_14 {
+		string	text	"str_ldl_GENERAL"
+		int	xpix	123
+		int	ypix	187
+		int	widthpix	153
+		int	heightpix	36
+	}
+	World:T_FONT3_14 {
+		string	text	"str_ldl_WORLD"
+		int	xpix	439
+		int	ypix	290
+		int	widthpix	153
+		int	heightpix	36
+	}
+	Custom:T_FONT3_14 {
+		string	text	"str_ldl_CAPS_CUSTOM"
+		int	xpix	747
+		int	ypix	383
+		int	widthpix	153
+		int	heightpix	36
+	}
+	StartButton:T_FONT5_8 {
+		int	fontcolorred	0
+		int	fontcolorgreen	255
+		int	fontcolorblue	0
+		int	fontshadowcolorred	0
+		int	fontshadowcolorgreen	0
+		int	fontshadowcolorblue	0
+		string	image0	"upba6020.tga"
+		string	image1	"upba6021.tga"
+		int	xpix	940
+		int	ypix	716
+		int	widthpix	84
+		int	heightpix	52
+		int	bevelwidth	0
+		bool	shadowfont	TRUE
+		string	text	"str_ldl_LAUNCH"
+	}
+	ReturnButton:T_FONT5_8 {
+		bool	shadowfont	TRUE
+		string	image0	"upba6018.tga"
+		string	image1	"upba6019.tga"
+		string	text	"str_ldl_BACK"
+		int	xpix	444
+		int	ypix	715
+		int	widthpix	114
+		int	heightpix	46
+		int	bevelwidth	0
+	}
+	QuitButton:T_FONT5_8 {
+		bool	shadowfont	TRUE
+		string	image0	"upba6016.tga"
+		string	image1	"upba6017.tga"
+		string	text	"str_ldl_CAPS_QUIT"
+		int	xpix	0
+		int	ypix	716
+		int	widthpix	85
+		int	heightpix	50
+		int	bevelwidth	0
+	}
+	Title:T_FONT4_14 {
+		string	text	"str_ldl_NEW_GAME"
+		int	xpix	422
+		int	ypix	0
+		int	widthpix	153
+		int	heightpix	23
+	}
+	InstaStartButton:SPNEWGAME_BUTTONS {
+		string	text	"str_ldl_Save_as_InstaStart"
+		int	xpix	81
+	}
+	IBTOP:SPNEWGAME_BUTTONS_TOP {
+		int	xpix	59
+	}
+	IBBOT:SPNEWGAME_BUTTONS_BOT {
+		int	xpix	61
+	}
+	IBLEFT:SPNEWGAME_BUTTONS_LEFT {
+		int	xpix	61
+	}
+	IBRIGHT:SPNEWGAME_BUTTONS_RIGHT {
+		int	xpix	235
+	}
+	SBTOP:SPNEWGAME_BUTTONS_TOP {
+		int	xpix	296
+	}
+	SBBOT:SPNEWGAME_BUTTONS_BOT {
+		int	xpix	298
+	}
+	SBLEFT:SPNEWGAME_BUTTONS_LEFT {
+		int	xpix	298
+	}
+	SBRIGHT:SPNEWGAME_BUTTONS_RIGHT {
+		int	xpix	472
+	}
+	RBTOP:SPNEWGAME_BUTTONS_TOP {
+		int	xpix	530
+	}
+	RBBOT:SPNEWGAME_BUTTONS_BOT {
+		int	xpix	532
+	}
+	RBLEFT:SPNEWGAME_BUTTONS_LEFT {
+		int	xpix	532
+	}
+	RBRIGHT:SPNEWGAME_BUTTONS_RIGHT {
+		int	xpix	706
+	}
+	QBTOP:SPNEWGAME_BUTTONS_TOP {
+		int	xpix	767
+	}
+	QBBOT:SPNEWGAME_BUTTONS_BOT {
+		int	xpix	769
+	}
+	QBLEFT:SPNEWGAME_BUTTONS_LEFT {
+		int	xpix	769
+	}
+	QBRIGHT:SPNEWGAME_BUTTONS_RIGHT {
+		int	xpix	943
+	}
+	Clan:PROFILE_BUTTONS {
+		int	widthpix	154
+		int	ypix	230
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+	}
+	Gender:PROFILE_BUTTONS {
+		int	widthpix	154
+		int	ypix	290
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+	}
+	Preferences:PROFILE_BUTTONS {
+		int	ypix	410
+		string	text	"str_ldl_Load_Preferences"
+	}
+	PCustom:PROFILE_BUTTONS {
+		int	ypix	470
+		string	text	"str_ldl_Custom"
+	}
+	PTOP {
+		string	image0	"upba1706.tga"
+		int	xpix	37
+		int	ypix	151
+	}
+	PHEADER:T_FONT1_18 {
+		string	image0	"upba2105.tga"
+		int	xpix	29
+		int	ypix	166
+		string	text	"str_ldl_CAPS_PROFILE"
+		int	widthpix	300
+		int	heightpix	20
+	}
+	PLEFT {
+		string	pattern	"upba2417.tga"
+		int	xpix	74
+		int	ypix	199
+		int	widthpix	10
+		int	heightpix	333
+	}
+	PRIGHT {
+		string	pattern	"upba2417.tga"
+		int	xpix	270
+		int	ypix	199
+		int	widthpix	10
+		int	heightpix	333
+	}
+	PBOT {
+		string	image0	"upba2507.tga"
+		int	xpix	74
+		int	ypix	532
+	}
+	MapSize:WORLD_BUTTONS {
+		int	ypix	194
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Choose_Map_Size"
+			}
+		}
+	}
+	WorldType:WORLD_BUTTONS {
+		int	ypix	254
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Choose_World_Type"
+			}
+		}
+	}
+	WorldShape:WORLD_BUTTONS {
+		int	ypix	314
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Choose_World_Shape"
+			}
+		}
+	}
+	Difficulty:WORLD_BUTTONS {
+		int	ypix	374
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Choose_Difficulty_Level"
+			}
+		}
+	}
+	RiskLevel:WORLD_BUTTONS {
+		int	ypix	434
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Choose_Risk_Level"
+			}
+		}
+	}
+	Opponent:WORLD_BUTTONS {
+		int	ypix	494
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba0104.tga"
+			}
+		}
+		tipwindow {
+			int	widthpix	200
+			int	heightpix	20
+			tip {
+				string	text	"str_ldl_Number_of_Opponents"
+			}
+		}
+	}
+	WCustom:WORLD_BUTTONS {
+		int	xpix	433
+		int	ypix	554
+		string	text	"str_ldl_Custom"
+	}
+	WTOP {
+		string	image0	"upba1706.tga"
+		int	xpix	368
+		int	ypix	115
+	}
+	WHEADER:T_FONT1_18 {
+		string	image0	"upba2105.tga"
+		int	xpix	361
+		int	ypix	130
+		string	text	"str_ldl_WORLD"
+		int	widthpix	300
+		int	heightpix	20
+	}
+	WLEFT {
+		string	pattern	"upba2417.tga"
+		int	xpix	407
+		int	ypix	163
+		int	widthpix	10
+		int	heightpix	442
+	}
+	WRIGHT {
+		string	pattern	"upba2417.tga"
+		int	xpix	602
+		int	ypix	163
+		int	widthpix	10
+		int	heightpix	442
+	}
+	WBOT {
+		string	image0	"upba2507.tga"
+		int	xpix	407
+		int	ypix	605
+	}
+	GenocideButton:RULES_BUTTONS {
+		int	ypix	230
+		string	text	"str_ldl_Genocide"
+	}
+	TradeButton:RULES_BUTTONS {
+		int	ypix	290
+		string	text	"str_ldl_Trade"
+	}
+	CombatButton:RULES_BUTTONS {
+		int	ypix	350
+		string	text	"str_ldl_Simple_Combat"
+	}
+	PollutionButton:RULES_BUTTONS {
+		int	ypix	410
+		string	text	"str_ldl_Pollution"
+	}
+	RTOP {
+		string	image0	"upba1706.tga"
+		int	xpix	703
+		int	ypix	151
+	}
+	RHEADER:T_FONT1_18 {
+		string	image0	"upba2105.tga"
+		int	xpix	696
+		int	ypix	166
+		string	text	"str_ldl_CAPS_RULES"
+		int	widthpix	300
+		int	heightpix	20
+	}
+	RLEFT {
+		string	pattern	"upba2417.tga"
+		int	xpix	742
+		int	ypix	199
+		int	widthpix	10
+		int	heightpix	333
+	}
+	RRIGHT {
+		string	pattern	"upba2417.tga"
+		int	xpix	938
+		int	ypix	199
+		int	widthpix	10
+		int	heightpix	333
+	}
+	RBOT {
+		string	image0	"upba2507.tga"
+		int	xpix	742
+		int	ypix	531
+	}
+	Background {
+		string	imagebltflag	"chromakey"
+		string	image0	"upba6000.tga"
+		int	xpix	0
+		int	ypix	0
+		int	width	1024
+		int	height	768
+	}
+	TL {
+		string	image0	"upba2103.tga"
+		int	xpix	0
+		int	ypix	27
+	}
+	TR {
+		string	image0	"upba2104.tga"
+		int	xpix	979
+		int	ypix	27
+	}
+	BL {
+		string	image0	"upba2503.tga"
+		int	xpix	0
+		int	ypix	713
+	}
+	BR {
+		string	image0	"upba2504.tga"
+		int	xpix	982
+		int	ypix	713
+	}
+	TTL {
+		string	image0	"upba1201.tga"
+		int	xpix	0
+		int	ypix	0
+	}
+	TTR {
+		string	image0	"upba1208.tga"
+		int	xpix	661
+		int	ypix	0
+	}
+	BOT {
+		string	pattern	"upba0601.tga"
+		int	xpix	0
+		int	ypix	755
+		int	widthpix	1024
+		int	heightpix	13
+	}
+}
+
+SPMapSizeStringTable {
+	int	numstrings	4
+	string	string0	"str_tbl_ldl_Small_32x48"
+	string	string1	"str_tbl_ldl_Medium_48x64"
+	string	string2	"str_tbl_ldl_Large_96x64"
+	string	string3	"str_tbl_ldl_Gigantic_128_96"
+}
+
+SPNewGameStrings {
+	int	numstrings	17
+	string	string0	"str_tbl_ldl_Chieftain"
+	string	string1	"str_tbl_ldl_Warlord"
+	string	string2	"str_tbl_ldl_Prince"
+	string	string3	"str_tbl_ldl_King"
+	string	string4	"str_tbl_ldl_Emperor"
+	string	string5	"str_tbl_ldl_Deity"
+	string	string6	"str_tbl_ldl_Small"
+	string	string7	"str_tbl_ldl_Medium"
+	string	string8	"str_tbl_ldl_Large"
+	string	string9	"str_tbl_ldl_Very_Large"
+	string	string10	"str_tbl_ldl_Random"
+	string	string11	"str_tbl_ldl_Custom"
+	string	string12	"str_tbl_ldl_Earth_World"
+	string	string13	"str_tbl_ldl_Doughnut_World"
+	string	string14	"str_tbl_ldl_Flat_World"
+	string	string15	"str_tbl_ldl_Default"
+	string	string16	"str_tbl_ldl_Custom"
+}
+
+SPDropDownListItem {
+	string	pattern	"upba0104.tga"
+	Gender:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	Clan:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	15
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	MapSize:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	WorldType:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	WorldShape:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	Difficulty:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	RiskLevel:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+	Opponent:T_FONT1_14 {
+		int	widthpix	154
+		int	heightpix	20
+		string	text	"str_ldl_"
+		string	pattern	"upba0104.tga"
+	}
+}
+
+SPRiskLevelStringTable {
+	int	numstrings	5
+	string	string0	"str_tbl_ldl_Very_Risky"
+	string	string1	"str_tbl_ldl_Risky"
+	string	string2	"str_tbl_ldl_Not_Too_Bad"
+	string	string3	"str_tbl_ldl_Pretty_Safe"
+	string	string4	"str_tbl_ldl_No_Danger_Here"
+}
+
+SPWorldShapeStringTable {
+	int	numstrings	3
+	string	string0	"str_tbl_ldl_East_West_Wrap_Only"
+	string	string1	"str_tbl_ldl_No_Wrap"
+	string	string2	"str_tbl_ldl_North_South_and_East_West"
+}
+
+SPWindow {
+	string	pattern	"upba0104.tga"
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	1024
+	int	heightpix	768
+	MapEditorButton:SP_BUTTON_BIG {
+		int	heightpix	38
+		string	image0	"upba5908.tga"
+		string	image1	"upba5909.tga"
+		string	text	"str_ldl_MAP_EDITOR"
+		int	xpix	75
+		int	ypix	175
+	}
+	TutorialButton:SP_BUTTON_BIG {
+		int	heightpix	38
+		string	image0	"upba5908.tga"
+		string	image1	"upba5909.tga"
+		string	text	"str_ldl_PLAY_TUTORIAL"
+		int	xpix	75
+		int	ypix	175
+	}
+	NewGameButton:SP_BUTTON_BIG {
+		int	heightpix	38
+		string	image0	"upba5914.tga"
+		string	image1	"upba5915.tga"
+		string	text	"str_ldl_NEW_GAME"
+		int	xpix	776
+		int	ypix	177
+	}
+	LoadGameButton:SP_BUTTON_BIG {
+		int	heightpix	38
+		string	image0	"upba5912.tga"
+		string	image1	"upba5913.tga"
+		string	text	"str_ldl_LOAD_GAME"
+		int	xpix	776
+		int	ypix	252
+	}
+	LoadScenarioGameButton:SP_BUTTON_BIG {
+		int	heightpix	40
+		string	image0	"upba5900.tga"
+		string	image1	"upba5901.tga"
+		string	text	"str_ldl_LOAD_SCENARIO_GAME"
+		int	xpix	75
+		int	ypix	212
+	}
+	OptionsButton:SP_BUTTON_BIG {
+		int	heightpix	38
+		string	image0	"upba5910.tga"
+		string	image1	"upba5911.tga"
+		string	text	"str_ldl_OPTIONS"
+		int	xpix	75
+		int	ypix	252
+	}
+	QuitButton:SP_BUTTON_SMALL {
+		int	heightpix	38
+		string	image0	"upba5902.tga"
+		string	image1	"upba5903.tga"
+		string	text	"str_ldl_CAPS_QUIT"
+		int	xpix	89
+		int	ypix	410
+	}
+	ReturnButton:SP_BUTTON_SMALL {
+		int	heightpix	43
+		string	image0	"upba5906.tga"
+		string	image1	"upba5907.tga"
+		string	text	"str_ldl_BACK"
+		int	xpix	792
+		int	ypix	406
+	}
+	InstaStartButton:T_FONT1_18 {
+		string	image0	"upba2706.tga"
+		string	text	"str_ldl_INSTANT_START"
+		int	xpix	760
+		int	ypix	173
+		int	widthpix	165
+		int	heightpix	28
+	}
+	Background {
+		string	image0	"upba2701.tga"
+		int	xpix	0
+		int	ypix	0
+	}
+}
+
+SPWorldTypeStringTable {
+	int	numstrings	3
+	string	string0	"str_tbl_ldl_Kings_Quest_Peachy"
+	string	string1	"str_tbl_ldl_Leisure_Suit_Larrys_Home"
+	string	string2	"str_tbl_ldl_Cecilias_Blade_Runner"
+}
+
+
+$

@@ -1,0 +1,6 @@
+AIQP_ADDED "AI queue probe: granary appended and immediately found in the queue. Observe this city's queue for five AI turns. Existing production was not cleared."
+AIQP_PRESENT "AI queue probe: the granary is still in the target city's queue at a later AI turn."
+AIQP_MISSING "AI queue probe: the granary disappeared from the queue and is not built. Record the city and turn; the script will not add it again."
+AIQP_BUILT "AI queue probe: the target city now has a granary. Record the turn and check its normal production history."
+AIQP_SKIPPED "AI queue probe skipped: Agriculture is missing, or the first AI city already has a granary or has one queued. Start a fresh test game if necessary."
+AIQP_READBACK_FAILED "AI queue probe: append was attempted but immediate queue readback failed. Record any SLIC error and the target city's state."

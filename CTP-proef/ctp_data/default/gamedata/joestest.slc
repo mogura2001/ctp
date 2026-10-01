@@ -1,0 +1,89 @@
+
+messagebox 'MTutorialStarted' {
+	Text(ID_TUT1000_TUTORIAL_STARTED);
+	Button(ID_YES) {
+		Kill();
+	}
+
+	Button(ID_NO) {
+		DeactivateTutorial();
+		Kill();
+	}
+
+	Button(ID_TUT1001_TELL_ME_MORE) {
+		Message(g.tutorialplayer, 'MTutorialStartedTellMeMore');
+	}
+}
+
+messageBox 'MTutorialStartedTellMeMore' {
+	Text(ID_TUT1002_TUTORIAL_STARTED_TELL_ME_MORE);
+}
+
+messageBox 'MUnitDied' {
+	Text(ID_TUT1003_UNIT_DIED);
+	Button(ID_RATS) {
+		Kill();
+	}
+	EyePoint(unit.location);
+}
+
+messagebox 'MJoke' {
+	Text(ID_WANT_A_JOKE);
+	Button(ID_YES) {
+		Message(g.player, 'MShowJoke');
+		Kill();
+	}
+
+	Button(ID_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MShowJoke' {
+	Text(ID_JOKE);
+	Button(ID_VERY_FUNNY) {
+		Kill();
+	}
+	Button(ID_BOO) {
+		Message(g.player, 'MJokeBoo');
+	}
+}
+
+messagebox 'MJokeBoo' {
+	Text(ID_JOKE_BOO);
+	Button(ID_YES) {
+		Message(g.player, 'MShowJoke2');
+		Kill();
+	}
+	Button(ID_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MShowJoke2' {
+	Text(ID_JOKE2);
+	Button(ID_ENOUGH) {
+		Kill();
+	}
+	MessageClass(3);
+}
+
+trigger 'JTDoneMoving' when(unit.donemoving && g.player == g.tutorialplayer)
+{
+	Message(g.tutorialplayer, 'MShowJoke2');
+	Attract("MessageIconWindow.icon");
+}
+
+//trigger 'KillDoneMoving' when (g.year == 3 && g.player == g.tutorialplayer)
+//{
+//	KillClass(g.tutorialplayer, 3);
+//}
+
+messagebox 'JMCity' {
+	Text(ID_JOES_CITY_TEXT);
+	Title(ID_JOES_CITY_TITLE);
+}
+
+trigger 'JTCity' when(g.player == g.tutorialplayer && city.food >= 0) {
+	Message(g.tutorialplayer, 'JMCity');
+}

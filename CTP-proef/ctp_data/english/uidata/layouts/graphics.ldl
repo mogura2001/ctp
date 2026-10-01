@@ -1,0 +1,407 @@
+#######################################
+# File: graphics.ldl
+# Last Access: Thu Apr 22 17:20:10 1999
+#######################################
+
+##-----------------------------------##
+##             Templates             ##
+##-----------------------------------##
+GRAPHICS_CHECKBOX:T_FONT1_91 {
+	string	image0	"upba6422.tga"
+	string	image1	"upba6423.tga"
+	string	disabledimage0	"upba6424.tga"
+	string	disabledimage1	"upba6425.tga"
+	string	imageblttype	"stretch"
+	int	xpix	20
+	int	widthpix	170
+	int	heightpix	24
+}
+
+
+##-----------------------------------##
+##                Data               ##
+##-----------------------------------##
+GraphicsWindow {
+	string	pattern	"upba6417.tga"
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	440
+	int	heightpix	257
+	int	xpix	0
+	int	ypix	0
+	Name:T_FONT4_POPTITLE {
+		string	parent	"c3_PopupTitle"
+		string	xanchor	"center"
+		string	yanchor	"top"
+		int	widthpct	50
+		int	heightpix	20
+		string	text	"str_ldl_GRAPHICS_OPTIONS"
+	}
+	Background {
+		string	image0	"upba2710.tga"
+		int	xpix	93
+		int	ypix	0
+	}
+	AcceptButton {
+		int	xpix	404
+		int	ypix	217
+		int	widthpix	48
+		int	heightpix	19
+		int	bevelwidth	0
+		string	imagebltflag	"chromakey"
+		string	image0	"upbb2303.tga"
+	}
+	BrightSlider {
+		int	xpix	10
+		int	ypix	127
+		int	widthpix	300
+		int	heightpix	14
+		int	maxxval	10
+		int	maxyval	0
+		int	pagexval	1
+		int	pageyval	1
+		int	xval	5
+		string	pattern	"upba6417.tga"
+		string	type	"slider"
+		string	orientation	"horizontal"
+		bool	rigidthumb	TRUE
+		bool	quantizedrag	TRUE
+		thumb {
+			int	widthpix	10
+			int	heightpix	20
+			string	image0	"upba2512.tga"
+		}
+	}
+	GammaSlider {
+		int	xpix	10
+		int	ypix	167
+		int	widthpix	300
+		int	heightpix	14
+		int	maxxval	10
+		int	maxyval	0
+		int	pagexval	1
+		int	pageyval	1
+		int	xval	5
+		string	pattern	"upba6417.tga"
+		string	type	"slider"
+		string	orientation	"horizontal"
+		bool	rigidthumb	TRUE
+		bool	quantizedrag	TRUE
+		thumb {
+			int	widthpix	10
+			int	heightpix	20
+			string	image0	"upba2512.tga"
+		}
+	}
+	ColorSlider {
+		int	xpix	10
+		int	ypix	207
+		int	widthpix	300
+		int	heightpix	14
+		int	maxxval	10
+		int	maxyval	0
+		int	pagexval	1
+		int	pageyval	1
+		int	xval	5
+		string	pattern	"upba6417.tga"
+		string	type	"slider"
+		string	orientation	"horizontal"
+		bool	rigidthumb	TRUE
+		bool	quantizedrag	TRUE
+		thumb {
+			int	widthpix	10
+			int	heightpix	20
+			string	image0	"upba2512.tga"
+		}
+	}
+	ContrastSlider {
+		int	xpix	10
+		int	ypix	247
+		int	widthpix	300
+		int	heightpix	14
+		int	maxxval	10
+		int	maxyval	0
+		int	pagexval	1
+		int	pageyval	1
+		int	xval	5
+		string	pattern	"upba6417.tga"
+		string	type	"slider"
+		string	orientation	"horizontal"
+		bool	rigidthumb	TRUE
+		bool	quantizedrag	TRUE
+		thumb {
+			int	widthpix	10
+			int	heightpix	20
+			string	image0	"upba2512.tga"
+		}
+	}
+	BrightName:T_FONT1_14 {
+		int	xpix	10
+		int	ypix	107
+		int	widthpix	300
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Brightness"
+	}
+	GammaName:T_FONT1_14 {
+		int	xpix	10
+		int	ypix	147
+		int	widthpix	300
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Gamma"
+	}
+	ColorName:T_FONT1_14 {
+		int	xpix	10
+		int	ypix	187
+		int	widthpix	300
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Color"
+	}
+	ContrastName:T_FONT1_14 {
+		int	xpix	10
+		int	ypix	227
+		int	widthpix	300
+		int	heightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Contrast"
+	}
+	ScreenSize:T_FONT1_14 {
+		int	xpix	280
+		int	ypix	357
+		int	widthpix	134
+		int	heightpix	28
+		button {
+			string	image0	"upba1521.tga"
+			int	widthpix	20
+		}
+		window {
+			int	heightpix	100
+			listbox {
+				string	pattern	"upba6417.tga"
+			}
+		}
+	}
+	WalkButton:GRAPHICS_CHECKBOX {
+		int	xpix	40
+		int	ypix	40
+		stringtable {
+			string	string0	"str_ldl_Unit_Animation_Off"
+			string	string1	"str_ldl_Unit_Animation_On"
+		}
+	}
+	GoodButton:GRAPHICS_CHECKBOX {
+		int	xpix	40
+		int	ypix	100
+		stringtable {
+			string	string0	"str_ldl_Animated_Goods_Off"
+			string	string1	"str_ldl_Animated_Goods_On"
+		}
+	}
+	TradeButton:GRAPHICS_CHECKBOX {
+		int	xpix	40
+		int	ypix	130
+		stringtable {
+			string	string0	"str_ldl_Animated_Trade_Routes_Off"
+			string	string1	"str_ldl_Animated_Trade_Routes_On"
+		}
+	}
+	WonderButton:GRAPHICS_CHECKBOX {
+		int	xpix	40
+		int	ypix	160
+		stringtable {
+			string	string0	"str_ldl_Wonder_Movies_Off"
+			string	string1	"str_ldl_Wonder_Movies_On"
+		}
+	}
+	LibraryButton:GRAPHICS_CHECKBOX {
+		int	xpix	230
+		int	ypix	100
+		stringtable {
+			string	string0	"str_ldl_Great_Library_Animation_Off"
+			string	string1	"str_ldl_Great_Library_Animation_On"
+		}
+	}
+	WaterButton:GRAPHICS_CHECKBOX {
+		int	xpix	230
+		int	ypix	100
+		stringtable {
+			string	string0	"str_ldl_Water_Animation_Off"
+			string	string1	"str_ldl_Water_Animation_On"
+		}
+	}
+	MovieButton:GRAPHICS_CHECKBOX {
+		int	xpix	230
+		int	ypix	130
+		stringtable {
+			string	string0	"str_ldl_Movie_Windowed"
+			string	string1	"str_ldl_Movie_Full_Screen"
+		}
+	}
+	GridButton:GRAPHICS_CHECKBOX {
+		int	xpix	230
+		int	ypix	160
+		stringtable {
+			string	string0	"str_ldl_Grid_Off"
+			string	string1	"str_ldl_Grid_On"
+		}
+	}
+	EnemyMovesButton:GRAPHICS_CHECKBOX {
+		int	xpix	230
+		int	ypix	190
+		stringtable {
+			string	string0	"str_ldl_Enemy_Moves_Off"
+			string	string1	"str_ldl_Enemy_Moves_On"
+		}
+	}
+	CityNamesButton:GRAPHICS_CHECKBOX {
+		int	xpix	40
+		int	ypix	190
+		stringtable {
+			string	string0	"str_ldl_City_Names_Off"
+			string	string1	"str_ldl_City_Names_On"
+		}
+	}
+	ResolutionButton:T_FONT1_91 {
+		string	image0	"upba5700.tga"
+		string	image1	"upba5701.tga"
+		int	widthpix	123
+		int	heightpix	21
+		int	bevelwidth	0
+		string	imagebltflag	"chromakey"
+		int	xpix	153
+		int	ypix	221
+		string	text	"str_ldl_RES_CHANGE_BUTTON"
+	}
+	UnitSpeedSlider {
+		int	xpix	167
+		int	ypix	64
+		int	widthpix	160
+		int	heightpix	35
+		int	maxxval	9
+		int	maxyval	0
+		int	pagexval	1
+		int	pageyval	1
+		int	xval	5
+		string	pattern	"upba6417.tga"
+		string	type	"slider"
+		string	orientation	"horizontal"
+		bool	rigidthumb	TRUE
+		bool	quantizedrag	TRUE
+		int	minthumbsize	9
+		int	ticks	1
+		thumb {
+			int	widthpix	9
+			int	heightpix	40
+			string	image0	"upba2513.tga"
+			string	imagebltflag	"chromakey"
+		}
+	}
+	UnitSpeedName:T_FONT1_91 {
+		int	xpix	89
+		int	ypix	72
+		int	widthpix	74
+		int	heightpix	20
+		int	srcxpix	95
+		int	srcypix	100
+		int	srcwidthpix	160
+		int	srcheightpix	20
+		string	pattern	"upba6417.tga"
+		string	text	"str_ldl_Unit_Speed"
+	}
+}
+
+GRAPHICSSCREEN_BUTTONS {
+	string	fontname	"TimesBD.ttf"
+	int	shadowfont	1
+	int	fontcolorred	0
+	int	fontcolorgreen	0
+	int	fontcolorblue	0
+	int	fontshadowcolorred	255
+	int	fontshadowcolorgreen	255
+	int	fontshadowcolorblue	200
+	int	fontsize	8
+	string	pattern	"upba6417.tga"
+	string	xanchor	"right"
+	int	xpix	20
+	int	widthpix	250
+	int	heightpix	20
+}
+
+ScreenResScreen {
+	string	pattern	"upba6417.tga"
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	235
+	int	heightpix	174
+	Name:T_FONT4_8 {
+		string	parent	"c3_PopupTitle"
+		string	xanchor	"center"
+		string	yanchor	"top"
+		int	widthpct	50
+		int	heightpix	20
+		string	text	"str_ldl_RES_TITLE"
+	}
+	ResList:T_FONT5_8 {
+		bool	shadowfont	TRUE
+		int	xpix	21
+		int	ypix	35
+		int	widthpix	177
+		int	heightpix	89
+		int	columns	1
+		int	bevelwidth	1
+		int	beveltype	2
+		string	pattern	"upba6417.tga"
+		int	srcxpix	19
+		int	srcypix	33
+		int	srcwidthpix	181
+		int	srcheightpix	93
+		bool	alwaysranger	TRUE
+		header {
+			switch0 {
+				int	heightpix	0
+				int	widthpix	177
+			}
+		}
+		rangery {
+			int	widthpix	15
+			int	heigthpix	15
+			string	type	"scroller"
+			string	orientation	"vertical"
+			string	pattern	"upba6417.tga"
+			incy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba6417.tga"
+			}
+			decy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba6417.tga"
+			}
+		}
+	}
+	Warning:T_FONT5_8 {
+		int	fontcolorred	220
+		int	fontcolorgreen	10
+		int	fontcolorblue	10
+		int	xpix	10
+		int	ypix	125
+		int	widthpix	215
+		int	heightpix	30
+		string	text	"str_ldl_RES_REBOOT_WARNING"
+		string	textblttype	"fill"
+	}
+	ScreenResListItem {
+		int	widthpix	177
+		int	heightpix	20
+		ScreenRes:T_FONT5_8 {
+			int	widthpix	177
+			int	heightpix	20
+		}
+	}
+}
+
+
+$

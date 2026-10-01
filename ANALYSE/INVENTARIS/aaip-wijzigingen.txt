@@ -1,0 +1,3885 @@
+## aidata/AIPs/cleric.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Infector_Troops_Core", 4500.0; 
+-"Ecoterrorist_Troops_Core", 4500.0; 
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++      "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 1.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+- "UNIT_FIGHTER", -3.0;
++ "UNIT_FIGHTERS", -3.0;
+-      "UNIT_CLERIC", -3.0;
+- "UNIT_TELEVANGELIST", -3.0;
++      "UNIT_CLERIC", -1.0;
++ "UNIT_TELEVANGELIST", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_HOPLITE", 1.0;
+- "UNIT_PIKEMEN", 1.0;
+- "UNIT_MUSKETEERS", 1.0;
+- "UNIT_MACHINE_GUNNER", 1.0;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.75;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+-//--------------------------------------------------------------------  
++//--------------------------------------------------------------------
+-Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];  
++Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];
+- "UNIT_STEALTH_BOMBER", 1.0;
++ "UNIT_STEALTH_BOMBER", 1.0;  
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.6; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-"WONDER_STONEHENGE", 9250.0; 
++"WONDER_HAGIA_SOPHIA", 9350.0; //TLL 15/6/99 changed Hagia Sophia order to 2nd, increased priority
++"WONDER_STONEHENGE", 9100.0; 
+-"WONDER_I_CHING", 9100.0; 
++"WONDER_I_CHING", 9250.0; 
+-"WONDER_HAGIA_SOPHIA", 9250.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0; 
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
++"IMPROVE_BEEF_VAT", 7930.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_HOUSE_OF_FREEZING", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_NANITE_FACTORY", 7990.0;
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8999.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 7950.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
+-"IMPROVE_FORCEFIELD", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 8000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
+- "ADVANCE_RELIGION"; 
++ "ADVANCE_STONE_WORKING"; 
++ "ADVANCE_ASTRONOMY";
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_GEOMETRY"; 
+- "ADVANCE_ASTRONOMY"; 
+- "ADVANCE_STONE_WORKING"; 
++ "ADVANCE_MONARCHY"; 
++ "ADVANCE_IRON_WORKING"; 
++ "ADVANCE_ALCHEMY"; 
++ "ADVANCE_ENGINEERING";
+- "ADVANCE_GEOMETRY"; 
+- "ADVANCE_ENGINEERING"; 
+- "ADVANCE_PRINTING_PRESS"; 
+- "ADVANCE_ALCHEMY"; 
+- "ADVANCE_IRON_WORKING"; 
+- "ADVANCE_AGE_OF_REASON"; 
++ "ADVANCE_OPTICS";
++ "ADVANCE_PRINTING_PRESS";
++ "ADVANCE_AGE_OF_REASON";
++ "ADVANCE_CAVALRY_TACTICS"; 
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_OPTICS"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_CAVALRY_TACTICS"; 
+- "ADVANCE_JET_PROPULSION"; 
++ "ADVANCE_JET_PROPULSION";
+- "ADVANCE_WORMHOLES"; 
++ "ADVANCE_WORMHOLES";
+- "ADVANCE_MONARCHY"; 
+## aidata/AIPs/default.aip
+-double sally_priority = 0.0; 
++double sally_priority = 500000.0; // WW from 0.0
+-double bioterror_priority = 1500000.0; 
+-double nanoattack_priority = 1500000.0; 
++double bioterror_priority = 100000.0; //WW from 1,500,000
++double nanoattack_priority = 100000.0; //WW from 1,500,000 
+-double plant_nuke_priority = 1000000.0; 
+-double create_park_priority = 1000000.0; 
++double plant_nuke_priority = 100000.0; //WW from 1,000,000 
++double create_park_priority = 100000.0; //WW from 1,000,000 
+-double franchising_priority = 2000000.0; 
++double franchising_priority = 200000.0; //WW from 2,000,000 
+-double incite_revolution_priority = 2000000.0; 
++double incite_revolution_priority = 1000000.0; //WW from 2,000,000 
+-double nuke_city_priority = 1000000.0; 
++double nuke_city_priority = 400000.0; //WW from 1,000,000 
+-double sue_franchise_priority = 2000000.0; 
++double sue_franchise_priority = 20000000.0; //WW increased from 2,000,000 
+-int num_city_defenders = 1; 
++int num_city_defenders = 2; //WW from 1
+-#define MAX_EXEC_REFORM_CITY_GOALS 0.5 
++#define MAX_EXEC_REFORM_CITY_GOALS 0.25 //Changed by TLL 14/6/99
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
++"Lawyer_Troops_Core", 4000.0; 
++"Branch_Troops_Core", 4000.0; 
++"Ad_Troops_Core", 4000.0; 
+-      "UNIT_WARRIOR", 1.0;
+- "UNIT_HOPLITE", 1.0;
++      "UNIT_WARRIOR", 0.5;
++ "UNIT_HOPLITE", 1.5;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_MUSKETEERS", 2.0;
++ "UNIT_MACHINE_GUNNER", 1.5;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.25;
++ "UNIT_BATTLESHIP", 0.25;
+- "UNIT_WARRIOR", 0.75;
++ "UNIT_WARRIOR", 0.1;
++"X_LAB",  20000.0;  
++"EMBRYO_TANK",  20000.0;  
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
+-"IMPROVE_UNIVERSITY", 7950.0; 
++"IMPROVE_UNIVERSITY", 7950.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
++"IMPROVE_BAZAAR", 8400.0; 
+-"X_LAB",  20000.0;  
+-"EMBRYO_TANK",  20000.0;  
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_GENETICS"; 
++ "ADVANCE_GENETICS";
+- "ADVANCE_ADVANCED_COMPOSITES"; 
++ "ADVANCE_ADVANCED_COMPOSITES";
++ "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_SUPERCONDUCTOR"; 
+- "ADVANCE_WORMHOLES"; 
+- "ADVANCE_SUPERCONDUCTOR"; 
+- "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_ULTRAPRESSURE_MACHINERY";
++ "ADVANCE_WORMHOLES"; 
+- "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
++ "ADVANCE_CLOAKING";
+- "ADVANCE_CLOAKING"; 
+## aidata/AIPs/defend_normal.aip
+-int num_city_defenders = 1; 
++int num_city_defenders = 2; 
+## aidata/AIPs/fallback.aip
+-double build_buildings_priority = 20000000.0; 
+-double build_troops_priority = 20000000.0; 
++double build_buildings_priority = 19998000.0; 
++double build_troops_priority = 20002000.0; 
+## aidata/AIPs/gather.aip
++int num_city_defenders = 1; //WW inserted
+## aidata/AIPs/getarmy.aip
+-"Settler_Troops_Core", 3500.0; 
++"Settler_Troops_Core", 3000.0; 
+-"Diplomatic_Troops_Core", 0.1; 
+-"Scout_Troops_Core", 0.1; 
+-"Spy_Troops_Core", 0.1; 
+-"Infector_Troops_Core", 0.1; 
+-"Ecoterrorist_Troops_Core", 0.1; 
++"Diplomatic_Troops_Core", 4500.0; 
++"Scout_Troops_Core", 2900.0; 
++"Spy_Troops_Core", 4500.0; 
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
+-"Naval_Tranport_Troops_Core", 4501.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
++"Naval_Tranport_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-"Slaver_Troops_Overflow", 0.1; 
+-"Scout_Troops_Overflow", 0.1; 
++"Slaver_Troops_Overflow", 1500.0; 
++"Scout_Troops_Overflow", 1500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 1.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_DESTROYER", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+- "UNIT_FIGHTER", -3.0;
++ "UNIT_FIGHTERS", -3.0;
+-      "UNIT_HOPLITE",  -1.0;
++      "UNIT_SLAVER", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_DIPLOMAT", -2.0;
++ "UNIT_DIPLOMAT",  -2.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_LEGION", 3.0;
+- "UNIT_HOPLITE", 3.0;
+- "UNIT_PIKEMEN", 3.0;
+- "UNIT_MUSKETEERS", 3.0;
+- "UNIT_MACHINE_GUNNER", 3.0;
+- "UNIT_PARATROOPER", 3.0;
+- "UNIT_MARINES", 3.0;
+- "UNIT_PLASMATICA", 3.0;
+- "UNIT_LEVIATHAN", 3.0;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.50;
++ "UNIT_PLASMATICA", 0.25;
++ "UNIT_LEVIATHAN", 0.50;
+- "UNIT_SAMURAI", 3.0;
+- "UNIT_KNIGHT", 3.0;
+- "UNIT_CAVALRY", 3.0;
+- "UNIT_TANK", 3.0;
+- "UNIT_PARATROOPER", 3.0;
+- "UNIT_MARINES", 3.0;
+- "UNIT_FUSION_TANK", 3.0;
+- "UNIT_SWARM", 3.0;
++ "UNIT_SAMURAI", 0.5;
++ "UNIT_KNIGHT", 0.5;
++ "UNIT_CAVALRY", 0.5;
++ "UNIT_TANK", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
++ "UNIT_FUSION_TANK", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 1.5;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.5;
+- "UNIT_BATTLEBOT", 1.5;
++ "UNIT_GREEK_FIRE", 0.7;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.7;
++ "UNIT_BATTLEBOT", 0.7;
+- "UNIT_TRIREMES", 0.25;
+- "UNIT_GREEK_FIRE_TRIREME", 0.25;
++ "UNIT_TRIREMES", 0.2;
++ "UNIT_GREEK_FIRE_TRIREME", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.25;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -2.0;
++ "UNIT_LAWYER",  -10.0;
+-      "UNIT_SLAVER",  -1.0;
++      "UNIT_SLAVER", -1.0;
+- "UNIT_DIPLOMAT", 0.1;
+- "UNIT_SPY", 0.75;
+- "UNIT_SPY_PLANE", 0.75;
++ "UNIT_SPY_PLANE", 0.1;
+- "UNIT_SWARM", 0.5;
++ "UNIT_SWARM", 1.0;
+- "UNIT_GREEK_FIRE", 1.5;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.5;
+- "UNIT_BATTLEBOT", 1.5;
++ "UNIT_GREEK_FIRE", 3.0;
++ "UNIT_CANNON", 3.0;
++ "UNIT_ARTILLERY", 3.0;
++ "UNIT_BATTLEBOT", 3.0;
+- "UNIT_TRIREMES", 2.0;
+- "UNIT_GREEK_FIRE_TRIREME", 2.0;
+- "UNIT_LONGSHIP", 2.0;
+- "UNIT_SHIP_OF_THE_LINE", 2.0;
++ "UNIT_TRIREMES", 0.2;
++ "UNIT_GREEK_FIRE_TRIREME", 0.2;
++ "UNIT_LONGSHIP", 0.2;
++ "UNIT_SHIP_OF_THE_LINE", 0.2;
+- "UNIT_TRIREMES", 2.0;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_TRIREMES", 0.5;
++ "UNIT_TROOP_SHIP", 0.5;
++ "UNIT_AIRCRAFT_CARRIER", 0.5;
++ "UNIT_CRAWLER", 0.5;
+## aidata/AIPs/green_me.aip
+-"IMPROVE_RAIL_LAUNCHER", 7850.0; 
++"IMPROVE_RAIL_LAUNCHER", 9850.0; 
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
++ "IMPROVE_FUSION_PLANT", 6000.0;
++ "IMPROVE_POPULATION_MONITOR", 9880.0; 
++ "IMPROVE_RECYCLING_PLANT", 9900.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 9000.0;
++ "IMPROVE_MILL", 8990.0;
++ "IMPROVE_FACTORY", 3990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2990.0;
+- "IMPROVE_OIL_REFINERY", 7990.0;
++ "IMPROVE_OIL_REFINERY", 2990.0;
+## aidata/AIPs/milfew.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Infector_Troops_Core", 4500.0; 
+-"Ecoterrorist_Troops_Core", 4500.0; 
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.75;
+- "UNIT_CAVALRY", 1.0;
+- "UNIT_TANK", 1.25;
+- "UNIT_FUSION_TANK", 1.25;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
++ "UNIT_TANK", 0.5;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_SLAVER", -3.0;
++      "UNIT_SLAVER", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_DIPLOMAT",  -2.0;
++ "UNIT_DIPLOMAT", -2.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_HOPLITE", 0.75;
+- "UNIT_LEGION", 0.75;
+- "UNIT_PIKEMEN", 0.75;
+- "UNIT_MUSKETEERS", 0.75;
+- "UNIT_MACHINE_GUNNER", 0.75;
+- "UNIT_PARATROOPER", 0.75;
+- "UNIT_MARINES", 0.50;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.50;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_LEGION", 0.75;
+- "UNIT_SAMURAI", 0.75;
+- "UNIT_KNIGHT", 0.75;
+- "UNIT_CAVALRY", 0.75;
+- "UNIT_TANK", 0.75;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
+- "UNIT_FUSION_TANK", 0.75;
+- "UNIT_SWARM", 0.75;
++ "UNIT_SAMURAI", 0.5;
++ "UNIT_KNIGHT", 0.5;
++ "UNIT_CAVALRY", 0.5;
++ "UNIT_TANK", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
++ "UNIT_FUSION_TANK", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+- "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_GREEK_FIRE", 3.0;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.6; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-double Miscellaneous_List_Threshhold =  0.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++double Miscellaneous_List_Threshhold =  0.0; ///////////////////////////////////////////////////////////////////////////////  
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0; 
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
++"IMPROVE_BEEF_VAT", 7930.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+- "IMPROVE_NANITE_FACTORY", 7990.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
+-"IMPROVE_CITY_CLOCK", 7950.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
++"IMPROVE_CITY_CLOCK", 7990.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 7950.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
+-"IMPROVE_FORCEFIELD", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 8000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
++ "ADVANCE_MONARCHY"; 
++ "ADVANCE_RELIGION"; 
+- "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
++ "ADVANCE_MECHANICAL_CLOCK";
++ "ADVANCE_OPTICS";
+- "ADVANCE_PRINTING_PRESS"; 
+- "ADVANCE_MECHANICAL_CLOCK"; 
++ "ADVANCE_HULL_MAKING";
+- "ADVANCE_HULL_MAKING"; 
++ "ADVANCE_AGE_OF_REASON"; 
++ "ADVANCE_PERSPECTIVE"; 
++ "ADVANCE_PRINTING_PRESS"; 
++ "ADVANCE_COMMUNISM"; 
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_OPTICS"; 
+- "ADVANCE_PERSPECTIVE"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_AGE_OF_REASON"; 
++ "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_SUPERCONDUCTOR";
+- "ADVANCE_SUPERCONDUCTOR"; 
++ "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
+- "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
+- "ADVANCE_SEA_COLONIES"; 
+- "ADVANCE_COMMUNISM"; 
+- "ADVANCE_THEOCRACY"; 
+## aidata/AIPs/milmany.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Infector_Troops_Core", 4500.0; 
+-"Ecoterrorist_Troops_Core", 4500.0; 
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
+- "UNIT_TANK", 1.25;
+- "UNIT_FUSION_TANK", 1.25;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
++ "UNIT_TANK", 0.5;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_DESTROYER", 0.30;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_SLAVER", -3.0;
++      "UNIT_SLAVER", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_DIPLOMAT", -2.0;
++  "UNIT_DIPLOMAT", -2.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_HOPLITE", 0.75;
+- "UNIT_LEGION", 0.75;
+- "UNIT_PIKEMEN", 0.75;
+- "UNIT_MUSKETEERS", 0.75;
+- "UNIT_MACHINE_GUNNER", 0.75;
+- "UNIT_PARATROOPER", 0.75;
+- "UNIT_MARINES", 0.50;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.50;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_LEGION", 0.75;
+- "UNIT_SAMURAI", 0.75;
+- "UNIT_KNIGHT", 0.75;
+- "UNIT_CAVALRY", 0.75;
+- "UNIT_TANK", 0.75;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
+- "UNIT_FUSION_TANK", 0.75;
+- "UNIT_SWARM", 0.75;
++ "UNIT_SAMURAI", 0.5;
++ "UNIT_KNIGHT", 0.5;
++ "UNIT_CAVALRY", 0.5;
++ "UNIT_TANK", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
++ "UNIT_FUSION_TANK", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+- "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_GREEK_FIRE", 1.5;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.68; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-"WONDER_STONEHENGE", 9250.0; 
++"WONDER_STONEHENGE", 9100.0; 
+-"WONDER_RAYAMANA", 9250.0; 
+-"WONDER_PARTHENON", 9100.0; 
++"WONDER_RAYAMANA", 9100.0; 
++"WONDER_PARTHENON", 9250.0; 
+-"WONDER_THE_FORBIDDEN_CITY", 9250.0; 
++"WONDER_THE_FORBIDDEN_CITY", 9100.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0; 
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+- "IMPROVE_OIL_REFINERY", 7990.0;
+- "IMPROVE_NANITE_FACTORY", 7990.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
+-"IMPROVE_CITY_CLOCK", 7950.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
++"IMPROVE_CITY_CLOCK", 7990.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 7900.0; 
+-"IMPROVE_SDI", 7900.0; 
+-"IMPROVE_BIO_WARFARE_FILTERS", 7900.0; 
+-"IMPROVE_FORCEFIELD", 7900.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
++"IMPROVE_SDI", 7950.0; 
++"IMPROVE_BIO_WARFARE_FILTERS", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 8000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
++ "ADVANCE_CITY_STATE"; 
++ "ADVANCE_BUREAUCRACY"; 
++ "ADVANCE_THEOCRACY"; 
+- "ADVANCE_GEOMETRY"; 
+- "ADVANCE_AGRICULTURAL_REVOLUTION"; 
++ "ADVANCE_GEOMETRY"; 
++ "ADVANCE_ENGINEERING";
++ "ADVANCE_CAVALRY_TACTICS"; 
++ "ADVANCE_STIRRUP";
++ "ADVANCE_MECHANICAL_CLOCK";
++ "ADVANCE_OPTICS";
++ "ADVANCE_AGRICULTURAL_REVOLUTION"; 
+- "ADVANCE_MECHANICAL_CLOCK"; 
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_BUREAUCRACY"; 
++ "ADVANCE_AGE_OF_REASON"; 
+- "ADVANCE_ENGINEERING"; 
+- "ADVANCE_OPTICS"; 
+- "ADVANCE_CAVALRY_TACTICS"; 
+- "ADVANCE_STIRRUP"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_AGE_OF_REASON"; 
++ "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_SUPERCONDUCTOR"; 
+- "ADVANCE_WORMHOLES"; 
+- "ADVANCE_SUPERCONDUCTOR"; 
+- "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_ULTRAPRESSURE_MACHINERY";
++ "ADVANCE_WORMHOLES";
+- "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
+- "ADVANCE_CITY_STATE"; 
++ "ADVANCE_CLOAKING";
+- "ADVANCE_THEOCRACY"; 
+- "ADVANCE_CLOAKING"; 
+## aidata/AIPs/naval.aip
+-"Sea_Troops_Primary", 6000.0; 
++"Sea_Troops_Primary", 6500.0; 
+-"Naval_Attack_Troops_Core", 3050.0; 
+-"Naval_Defense_Troops_Core", 3050.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Carrier_Naval_Transport_Troops_Core", 3050.0; 
+-"Naval_Stealth_Troops_Core", 3050.0; 
++"Carrier_Naval_Transport_Troops_Core", 1650.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 2.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES",  -2.0;
+- "UNIT_LONGSHIP",  -2.0;
+- "UNIT_SHIP_OF_THE_LINE",  -3.0;
+- "UNIT_DESTROYER",  -3.0;
+- "UNIT_PLASMA_DESTROYER",  -3.0;
++ "UNIT_TRIREMES", 0.4;
++ "UNIT_LONGSHIP", 0.5;
++ "UNIT_SHIP_OF_THE_LINE", 0.5;
++ "UNIT_DESTROYER",  0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_DIPLOMAT", -2.0;
++ "UNIT_DIPLOMAT", -2.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", 0.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_LEGION", 1.0;
+- "UNIT_HOPLITE", 1.0;
+- "UNIT_PIKEMEN", 1.0;
+- "UNIT_MUSKETEERS", 1.0;
+- "UNIT_MACHINE_GUNNER", 1.0;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.75;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SWARM", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.75;
+- "UNIT_GREEK_FIRE_TRIREME", 0.75;
+- "UNIT_LONGSHIP", 0.75;
+- "UNIT_SHIP_OF_THE_LINE", 0.75;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_TRIREMES", 0.4;
++ "UNIT_GREEK_FIRE_TRIREME", 0.15;
++ "UNIT_LONGSHIP", 0.5;
++ "UNIT_SHIP_OF_THE_LINE", 0.5;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+## aidata/AIPs/scifew.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Infector_Troops_Core", 4500.0; 
+-"Ecoterrorist_Troops_Core", 4500.0; 
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 1.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_DIPLOMAT", -2.0;
++ "UNIT_SLAVER", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_HOPLITE", 1.0;
+- "UNIT_PIKEMEN", 1.0;
+- "UNIT_MUSKETEERS", 1.0;
+- "UNIT_MACHINE_GUNNER", 1.0;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.75;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.4;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.6; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-double Miscellaneous_List_Threshhold =  0.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++double Miscellaneous_List_Threshhold =  0.0; ///////////////////////////////////////////////////////////////////////////////  
+-"WONDER_STONEHENGE", 10000.0; 
+-"WONDER_SPHINX", 4000.0; 
+-"WONDER_LABRYINTH_OF_THE_MINOTAUR", 10000.0; 
+-"WONDER_RAYAMANA", 10000.0; 
+-"WONDER_PARTHENON", 9100.0; 
+-"WONDER_I_CHING", 4000.0; 
+-"WONDER_THE_FORBIDDEN_CITY", 10000.0; 
+-"WONDER_PHILOSOPHERS_STONE", 5000.0; 
+-"WONDER_HAGIA_SOPHIA", 0.0; 
+-"WONDER_GUTTENBERGS_BIBLE", 9100.0; 
+-"WONDER_EAST_INDIA_COMPANY", 10000.0; 
++"WONDER_STONEHENGE", 9100.0; 
++"WONDER_SPHINX", 9100.0; 
++"WONDER_LABRYINTH_OF_THE_MINOTAUR", 9100.0; 
++"WONDER_RAYAMANA", 9250.0; 
++"WONDER_PARTHENON", 9250.0; 
++"WONDER_I_CHING", 9100.0; 
++"WONDER_THE_FORBIDDEN_CITY", 5000.0; 
++"WONDER_PHILOSOPHERS_STONE", 9250.0; 
++"WONDER_HAGIA_SOPHIA", 9250.0; 
++"WONDER_GUTTENBERGS_BIBLE", 10000.0; 
++"WONDER_EAST_INDIA_COMPANY", 9100.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0; 
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_NANITE_FACTORY", 7990.0;
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
+-"IMPROVE_CITY_CLOCK", 7950.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
++"IMPROVE_CITY_CLOCK", 7990.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 9950.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
+-"IMPROVE_FORCEFIELD", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 8000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
+- "ADVANCE_ARCOLOGIES"; 
+- "ADVANCE_ASTRONOMY"; 
++ "ADVANCE_MONARCHY"; 
++ "ADVANCE_ASTRONOMY"; 
++ "ADVANCE_THEOCRACY";
++ "ADVANCE_IRON_WORKING"; 
++ "ADVANCE_ALCHEMY"; 
++ "ADVANCE_STIRRUP";
++ "ADVANCE_CAVALRY_TACTICS"; 
+- "ADVANCE_IRON_WORKING"; 
+- "ADVANCE_ALCHEMY"; 
++ "ADVANCE_MECHANICAL_CLOCK";
++ "ADVANCE_OPTICS";
+- "ADVANCE_MONARCHY"; 
+- "ADVANCE_MECHANICAL_CLOCK"; 
++ "ADVANCE_AGE_OF_REASON"; 
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_AGE_OF_REASON"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_OPTICS"; 
+- "ADVANCE_ELECTRIFICATION"; 
++ "ADVANCE_ELECTRIFICATION";
+- "ADVANCE_CAVALRY_TACTICS"; 
+- "ADVANCE_STIRRUP"; 
+- "ADVANCE_WORMHOLES"; 
++ "ADVANCE_ARCOLOGIES";
++ "ADVANCE_WORMHOLES";
++ "ADVANCE_CLOAKING"; 
+- "ADVANCE_CLOAKING"; 
+- "ADVANCE_THEOCRACY"; 
+## aidata/AIPs/scimany.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0;
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 1.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_DIPLOMAT", -2.0;
++ "UNIT_SLAVER", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_HOPLITE", 1.0;
+- "UNIT_PIKEMEN", 1.0;
+- "UNIT_MUSKETEERS", 1.0;
+- "UNIT_MACHINE_GUNNER", 1.0;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.75;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_GREEK_FIRE", 1.0;
+- "UNIT_CANNON", 1.0;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.0;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.6; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-"WONDER_SPHINX", 4000.0; 
++"WONDER_SPHINX", 9100.0; 
+-"WONDER_RAYAMANA", 10000.0; 
+-"WONDER_PARTHENON", 9125.0; 
+-"WONDER_I_CHING", 9100.0; 
+-"WONDER_THE_FORBIDDEN_CITY", 10000.0; 
+-"WONDER_PHILOSOPHERS_STONE", 5000.0; 
+-"WONDER_HAGIA_SOPHIA", 0.0; 
+-"WONDER_GUTTENBERGS_BIBLE", 9100.0; 
+-"WONDER_EAST_INDIA_COMPANY", 9250.0; 
++"WONDER_RAYAMANA", 9250.0; 
++"WONDER_PARTHENON", 9255.0; 
++"WONDER_I_CHING", 9250.0; 
++"WONDER_THE_FORBIDDEN_CITY", 5000.0; 
++"WONDER_PHILOSOPHERS_STONE", 9250.0; 
++"WONDER_HAGIA_SOPHIA", 9250.0; 
++"WONDER_GUTTENBERGS_BIBLE", 9250.0; 
++"WONDER_EAST_INDIA_COMPANY", 9100.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0;
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+- "IMPROVE_OIL_REFINERY", 7990.0;
+- "IMPROVE_NANITE_FACTORY", 7990.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
+-"IMPROVE_CITY_CLOCK", 7950.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
++"IMPROVE_CITY_CLOCK", 7990.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 9999.0; 
+-"IMPROVE_SDI", 7999.0; 
+-"IMPROVE_BIO_WARFARE_FILTERS", 7999.0; 
+-"IMPROVE_FORCEFIELD", 7999.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
++"IMPROVE_SDI", 7950.0; 
++"IMPROVE_BIO_WARFARE_FILTERS", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 8000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
++ "ADVANCE_MONARCHY"; 
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY";
+- "ADVANCE_RELIGION"; 
++ "ADVANCE_IRON_WORKING"; 
++ "ADVANCE_ALCHEMY"; 
++ "ADVANCE_ENGINEERING"; 
++ "ADVANCE_CAVALRY_TACTICS"; 
++ "ADVANCE_STIRRUP"; 
++ "ADVANCE_MECHANICAL_CLOCK";
++ "ADVANCE_OPTICS";
+- "ADVANCE_ENGINEERING"; 
+- "ADVANCE_IRON_WORKING"; 
+- "ADVANCE_ALCHEMY"; 
+- "ADVANCE_MONARCHY"; 
+- "ADVANCE_MECHANICAL_CLOCK"; 
+- "ADVANCE_OPTICS"; 
++ "ADVANCE_CANNON_MAKING"; 
+- "ADVANCE_CANNON_MAKING"; 
++ "ADVANCE_PERSPECTIVE"; 
++ "ADVANCE_PHYSICS"; 
+- "ADVANCE_PERSPECTIVE"; 
+- "ADVANCE_CAVALRY_TACTICS"; 
+- "ADVANCE_STIRRUP"; 
+- "ADVANCE_PHYSICS"; 
+- "ADVANCE_ROCKETRY"; 
++ "ADVANCE_ROCKETRY";
++ "ADVANCE_SEA_COLONIES";
++ "ADVANCE_SUPERCONDUCTOR";
+- "ADVANCE_SUPERCONDUCTOR"; 
++ "ADVANCE_CLOAKING"; 
+- "ADVANCE_SEA_COLONIES"; 
+- "ADVANCE_CLOAKING"; 
+- "ADVANCE_THEOCRACY"; 
+## aidata/AIPs/slaver.aip
+-"Sea_Troops_Primary", 5000.0; 
++"Sea_Troops_Primary", 6000.0; 
+-"Settler_Troops_Core", 3500.0; 
++"Settler_Troops_Core", 3000.0; 
+-"Spy_Troops_Core", 4500.0; 
+-"Infector_Troops_Core", 4500.0; 
+-"Ecoterrorist_Troops_Core", 4500.0; 
++"Spy_Troops_Core", 4500.0
++"Infector_Troops_Core", 2500.0; 
++"Ecoterrorist_Troops_Core", 2500.0; 
+-"Naval_Attack_Troops_Core", 1750.0; 
+-"Naval_Defense_Troops_Core", 1750.0; 
+-"Naval_Tranport_Troops_Core", 4501.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
++"Naval_Tranport_Troops_Core", 3550.0; 
+-"Naval_Stealth_Troops_Core", 1750.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 1.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES", -1.0;
+- "UNIT_LONGSHIP", -2.0;
+- "UNIT_SHIP_OF_THE_LINE", -2.0;
+- "UNIT_DESTROYER", -2.0;
+- "UNIT_PLASMA_DESTROYER", -2.0;
++ "UNIT_TRIREMES", 0.25;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.30;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_SLAVER", -3.0;
++      "UNIT_SLAVER", -1.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_LEGION", 0.75;
+- "UNIT_HOPLITE", 0.75;
+- "UNIT_PIKEMEN", 0.75;
+- "UNIT_MUSKETEERS", 0.75;
+- "UNIT_MACHINE_GUNNER", 0.75;
+- "UNIT_PARATROOPER", 0.75;
+- "UNIT_MARINES", 0.50;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.50;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_LEGION", 0.75;
+- "UNIT_SAMURAI", 0.75;
+- "UNIT_KNIGHT", 0.75;
+- "UNIT_CAVALRY", 0.75;
+- "UNIT_TANK", 0.75;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
+- "UNIT_FUSION_TANK", 0.75;
+- "UNIT_SWARM", 0.75;
++ "UNIT_SAMURAI", 0.5;
++ "UNIT_KNIGHT", 0.5;
++ "UNIT_CAVALRY", 0.5;
++ "UNIT_TANK", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
++ "UNIT_FUSION_TANK", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.15;
++ "UNIT_TRIREMES", 0.2;
+- "UNIT_LONGSHIP", 0.15;
+- "UNIT_SHIP_OF_THE_LINE", 0.15;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_LONGSHIP", 0.25;
++ "UNIT_SHIP_OF_THE_LINE", 0.3;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_DESTROYER", 0.5;
+- "UNIT_PLASMA_DESTROYER", 0.5;
++ "UNIT_DESTROYER", 0.3;
++ "UNIT_PLASMA_DESTROYER", 0.3;
+- "UNIT_TROOP_SHIP", 0.5;
+- "UNIT_CRAWLER", 0.5;
++ "UNIT_TROOP_SHIP", 0.2;
++ "UNIT_CRAWLER", 0.2;
+- "UNIT_LAWYER",  -10.0;
++ "UNIT_LAWYER",  -2.0;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+-double Wonders_List_Threshhold =  0.8; 
+-double Transportation_List_Threshhold =  0.6; 
++double Wonders_List_Threshhold =  0.6; 
++double Transportation_List_Threshhold =  0.4; 
+-double Happiness_List_Threshhold =  0.2; 
+-double Production_List_Threshhold = 0.4; 
++double Happiness_List_Threshhold =  0.3; 
++double Production_List_Threshhold = 0.7; 
+-double Science_List_Threshhold =  0.2; 
++double Science_List_Threshhold =  0.5; 
+-"WONDER_STONEHENGE", 9250.0; 
++"WONDER_STONEHENGE", 9100.0; 
+-"WONDER_LABRYINTH_OF_THE_MINOTAUR", 9250.0; 
++"WONDER_LABRYINTH_OF_THE_MINOTAUR", 9350.0; 
+-"WONDER_PARTHENON", 9100.0; 
++"WONDER_PARTHENON", 9150.0; 
+-"WONDER_EAST_INDIA_COMPANY", 9100.0; 
++"WONDER_EAST_INDIA_COMPANY", 9500.0; 
+-"WONDER_LONDON_STOCK_EXCHANGE", 9300.0; 
+-"WONDER_EMANCIPATION_PROCLAMATION", 9100.0; 
++"WONDER_LONDON_STOCK_EXCHANGE", 9500.0; 
++"WONDER_EMANCIPATION_PROCLAMATION", 10000.0; 
+-"WONDER_HOLLYWOOD", 9100.0; 
++"WONDER_HOLLYWOOD", 9400.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
++"IMPROVE_AIRPORT", 9910.0; 
+-"IMPROVE_SILO", 9000.0; 
+-"IMPROVE_AQUEDUCT", 9000.0; 
++"IMPROVE_SILO", 9990.0; 
++"IMPROVE_AQUEDUCT", 9980.0; 
+- "IMPROVE_TEMPLE", 8999.0;
+- "IMPROVE_THEATER", 8999.0;
+- "IMPROVE_CIRCUS", 8999.0;
+- "IMPROVE_HOSPITAL", 7990.0;
+- "IMPROVE_CATHEDRAL", 8999.0;
+- "IMPROVE_MOVIE_PALACE", 8999.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_WATER_TRANSFORMER", 8999.0;
+- "IMPROVE_BODY_EXCHANGE", 8999.0;
+- "IMPROVE_ARCOLOGIES", 8999.0;
++ "IMPROVE_TEMPLE", 9960.0;
++ "IMPROVE_THEATER", 9950.0;
++ "IMPROVE_CIRCUS", 9940.0;
++ "IMPROVE_HOSPITAL", 9930.0;
++ "IMPROVE_CATHEDRAL", 8960.0;
++ "IMPROVE_MOVIE_PALACE", 8949.0;
++ "IMPROVE_DRUG_STORE", 9920.0;
++ "IMPROVE_WATER_TRANSFORMER", 8939.0;
++ "IMPROVE_BODY_EXCHANGE", 8829.0;
++ "IMPROVE_ARCOLOGIES", 8919.0;
+-///////////////////////////////////////////////////////////////////////////////  
++///////////////////////////////////////////////////////////////////////////////  N..
+- "IMPROVE_FUSION_PLANT", 10000.0;
+- "IMPROVE_POPULATION_MONITOR", 8980.0; 
+- "IMPROVE_MILL", 7990.0;
+- "IMPROVE_FACTORY", 7990.0;
+- "IMPROVE_DRUG_STORE", 8999.0;
+- "IMPROVE_NUCLEAR_PLANT", 7990.0;
+- "IMPROVE_ROBOTIC_PLANT", 7990.0;
+- "IMPROVE_RECYCLING_PLANT", 9000.0;
+- "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+- "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+- "IMPROVE_OIL_REFINERY", 7990.0;
+- "IMPROVE_NANITE_FACTORY", 7990.0;
++ "IMPROVE_MILL", 8960.0;
++ "IMPROVE_DRUG_STORE", 8950.0;
++ "IMPROVE_FACTORY", 5980.0;
++ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 5890.0;
++ "IMPROVE_POPULATION_MONITOR", 5880.0; 
++ "IMPROVE_NUCLEAR_PLANT", 5990.0;
++ "IMPROVE_ROBOTIC_PLANT", 2890.0;
++ "IMPROVE_RECYCLING_PLANT", 6000.0;
++ "IMPROVE_ZERO_EMISSION_VEHICLES", 4990.0;
++ "IMPROVE_OIL_REFINERY", 3000.0;
++ "IMPROVE_FUSION_PLANT", 4000.0;
++ "IMPROVE_NANITE_FACTORY", 4990.0;
+-"IMPROVE_BAZAAR", 7980.0; 
+-"IMPROVE_BANK", 7980.0; 
++"IMPROVE_BAZAAR", 9900.0; 
++"IMPROVE_BANK", 8990.0; 
+-"IMPROVE_TELEVISION", 7980.0; 
+-"IMPROVE_AIRPORT", 7850.0; 
+-"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
++"IMPROVE_TELEVISION", 6930.0; 
++"IMPROVE_AIRPORT", 8850.0; 
++"IMPROVE_HOUSE_OF_FREEZING", 6920.0; 
+-"IMPROVE_ACADEMY", 7950.0; 
++"IMPROVE_ACADEMY", 8980.0; 
++"IMPROVE_LIBRARY", 8970.0; 
+-"IMPROVE_LIBRARY", 7950.0; 
+-"IMPROVE_COMPUTER_CENTER", 7950.0; 
+-"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
++"IMPROVE_COMPUTER_CENTER", 7850.0; 
++"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 6950.0; 
+-"IMPROVE_CITY_WALLS", 7950.0; 
++"IMPROVE_CITY_WALLS", 9970.0; 
+-"IMPROVE_FORCEFIELD", 7950.0; 
++"IMPROVE_FORCEFIELD", 8950.0; 
+-///////////////////////////////////////////////////////////////////////////////  
++/////////////////////////////////////////////////////////////////////////////// N.. 
+-"IMPROVE_SILO", 5000.0; 
+-"IMPROVE_CITY_WALLS", 7980.0; 
+-"IMPROVE_BAZAAR", 8500.0; 
+-"IMPROVE_COURTHOUSE", 7980.0; 
+-"IMPROVE_POPULATION_MONITOR", 7980.0; 
++"IMPROVE_SILO", 9900.0; 
++"IMPROVE_CITY_WALLS", 9500.0; 
++"IMPROVE_BAZAAR", 9000.0; 
++"IMPROVE_COURTHOUSE", 8500.0; 
++"IMPROVE_POPULATION_MONITOR", 8000.0; 
+-//   
++//   N..
+-//--------------------------------------------------------------------  
++//-------------------------------------------------------------------- 
++ "ADVANCE_CORPORATION"; 
++ "ADVANCE_BUREAUCRACY";
++ "ADVANCE_TRADE"; 
++ "ADVANCE_BANKING";
++ "ADVANCE_THEOCRACY";
++ "ADVANCE_MONARCHY"; 
++ "ADVANCE_RELIGION"; 
+- "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+- "ADVANCE_PHILOSOPHY"; 
+- "ADVANCE_TRADE"; 
+- "ADVANCE_BUREAUCRACY"; 
++ "ADVANCE_PHILOSOPHY";  
++ "ADVANCE_ALCHEMY"; 
++ "ADVANCE_ENGINEERING"; 
+- "ADVANCE_THEOCRACY"; 
+- "ADVANCE_BANKING"; 
+- "ADVANCE_ENGINEERING"; 
+- "ADVANCE_ALCHEMY"; 
++ "ADVANCE_MECHANICAL_CLOCK"; 
++ "ADVANCE_OPTICS";
+- "ADVANCE_MECHANICAL_CLOCK"; 
+- "ADVANCE_OPTICS"; 
++ "ADVANCE_CONSUMER_ELECTRONICS";
+- "ADVANCE_STEEL"; 
+- "ADVANCE_CORPORATION"; 
++ "ADVANCE_STEEL";  
+- "ADVANCE_MASS_PRODUCTION"; 
+- "ADVANCE_CONSUMER_ELECTRONICS"; 
++ "ADVANCE_MASS_PRODUCTION";  
++ "ADVANCE_SEA_COLONIES"; 
++ "ADVANCE_SUPERCONDUCTOR"; 
+- "ADVANCE_WORMHOLES"; 
+- "ADVANCE_SEA_COLONIES"; 
+- "ADVANCE_SUPERCONDUCTOR"; 
++ "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
++ "ADVANCE_WORMHOLES"; 
+- "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
+- "ADVANCE_VIRTUAL_DEMOCRACY"; 
++ "ADVANCE_VIRTUAL_DEMOCRACY";
++ "ADVANCE_CLOAKING";  
+- "ADVANCE_CLOAKING"; 
+## aidata/AIPs/supernaval.aip
+-"Land_Settler_Troops_Primary", 10500.0; 
++//"Land_Settler_Troops_Primary", 10500.0; //WW
+-"Sea_Troops_Primary", 6000.0; 
++"Sea_Troops_Primary", 7000.0; 
+-"Settler_Troops_Core", 3500.0; 
++//"Settler_Troops_Core", 3000.0; //WW
+-"Naval_Attack_Troops_Core", 3050.0; 
+-"Naval_Defense_Troops_Core", 3050.0; 
+-"Naval_Tranport_Troops_Core", 4501.0; 
+-"Carrier_Naval_Transport_Troops_Core", 3050.0; 
+-"Naval_Stealth_Troops_Core", 3050.0; 
++"Naval_Attack_Troops_Core", 3550.0; 
++"Naval_Defense_Troops_Core", 3550.0; 
++"Naval_Tranport_Troops_Core", 7550.0; 
++"Carrier_Naval_Transport_Troops_Core", 1650.0; 
++"Naval_Stealth_Troops_Core", 3550.0; 
+-"Nuke_Troops_Core", 4500.0; 
+-"Lawyer_Troops_Core", 5000.0; 
+-"Branch_Troops_Core", 4500.0; 
+-"Ad_Troops_Core", 4500.0; 
+-"Terror_Troops_Core", 4500.0; 
++"Nuke_Troops_Core", 3500.0; 
++"Lawyer_Troops_Core", 3000.0; 
++"Branch_Troops_Core", 3000.0; 
++"Ad_Troops_Core", 3000.0; 
++"Terror_Troops_Core", 3500.0; 
+-"Settler_Troops_Overflow", 3000.0; 
++//"Settler_Troops_Overflow", 3000.0; //WW
+-      "UNIT_WARRIOR", 1.0;
++ "UNIT_WARRIOR", 0.5;
+- "UNIT_PIKEMEN", 2.0;
+- "UNIT_MUSKETEERS", 2.5;
+- "UNIT_MACHINE_GUNNER", 1.0;
++ "UNIT_PIKEMEN", 1.3;
++ "UNIT_MUSKETEERS", 1.3;
++ "UNIT_MACHINE_GUNNER", 1.3;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SAMURAI", 0.5;
+- "UNIT_KNIGHT", 0.5;
+- "UNIT_CAVALRY", 0.5;
++ "UNIT_LEGION", 0.4;
++ "UNIT_SAMURAI", 0.4;
++ "UNIT_KNIGHT", 0.4;
++ "UNIT_CAVALRY", 0.4;
+- "UNIT_FUSION_TANK", 2.0;
++ "UNIT_FUSION_TANK", 0.8;
+- "UNIT_CANNON", 1.5;
+- "UNIT_ARTILLERY", 1.0;
+- "UNIT_BATTLEBOT", 1.25;
++ "UNIT_CANNON", 0.7;
++ "UNIT_ARTILLERY", 0.8;
++ "UNIT_BATTLEBOT", 1.0;
+- "UNIT_TRIREMES",  -3.0;
+- "UNIT_LONGSHIP",  -3.0;
+- "UNIT_SHIP_OF_THE_LINE",  -4.0;
+- "UNIT_DESTROYER",  -4.0;
+- "UNIT_PLASMA_DESTROYER",  -4.0;
++ "UNIT_TRIREMES", 0.45;
++ "UNIT_LONGSHIP", 0.45;
++ "UNIT_SHIP_OF_THE_LINE", 0.50;
++ "UNIT_BATTLESHIP", 0.25;
++ "UNIT_PLASMA_DESTROYER", 0.30;
+-      "UNIT_DIPLOMAT", -2.0;
++      "UNIT_DIPLOMAT", -1.0;
+- "UNIT_ABOLITIONIST", -3.0;
++ "UNIT_ABOLITIONIST", -1.0;
+- "UNIT_SPY", -3.0;
+- "UNIT_CYBER_NINJA", -3.0;
++ "UNIT_SPY", -1.0;
++ "UNIT_CYBER_NINJA", -1.0;
+- "UNIT_INFECTOR", -2.0;
++ "UNIT_INFECTOR", -1.0;
+- "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_ECOTERRORIST", -1.0;
+- "UNIT_LEGION", 1.0;
+- "UNIT_HOPLITE", 1.0;
+- "UNIT_PIKEMEN", 1.0;
+- "UNIT_MUSKETEERS", 1.0;
+- "UNIT_MACHINE_GUNNER", 1.0;
+- "UNIT_PARATROOPER", 1.0;
+- "UNIT_MARINES", 0.75;
++ "UNIT_HOPLITE", 0.7;
++ "UNIT_LEGION", 0.7;
++ "UNIT_PIKEMEN", 0.7;
++ "UNIT_MUSKETEERS", 0.7;
++ "UNIT_MACHINE_GUNNER", 0.7;
++ "UNIT_PARATROOPER", 0.5;
++ "UNIT_MARINES", 0.5;
+- "UNIT_LEVIATHAN", 0.75;
++ "UNIT_LEVIATHAN", 0.5;
+- "UNIT_LEGION", 0.5;
+- "UNIT_SWARM", 0.5;
++ "UNIT_SWARM", 0.25;
+- "UNIT_GREEK_FIRE", 0.75;
+- "UNIT_CANNON", 0.75;
+- "UNIT_ARTILLERY", 0.75;
+- "UNIT_BATTLEBOT", 0.75;
++ "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_CANNON", 0.5;
++ "UNIT_ARTILLERY", 0.5;
++ "UNIT_BATTLEBOT", 0.5;
+- "UNIT_TRIREMES", 0.75;
+- "UNIT_GREEK_FIRE_TRIREME", 0.75;
+- "UNIT_LONGSHIP", 0.75;
+- "UNIT_SHIP_OF_THE_LINE", 0.75;
+- "UNIT_BATTLESHIP", 0.15;
++ "UNIT_TRIREMES", 0.5;
++ "UNIT_GREEK_FIRE_TRIREME", 0.2;
++ "UNIT_LONGSHIP", 0.7;
++ "UNIT_SHIP_OF_THE_LINE", 0.7;
++ "UNIT_BATTLESHIP", 0.3;
+- "UNIT_CORPORATE_BRANCH", -3.0;
++ "UNIT_CORPORATE_BRANCH", -2.0;
+- "UNIT_SUBNEURAL_ADS", -3.0;
++ "UNIT_SUBNEURAL_ADS", -2.0;
+- "UNIT_ECOTERRORIST", -3.0;
+- "UNIT_INFECTOR", -3.0;
++ "UNIT_ECOTERRORIST", -2.0;
++ "UNIT_INFECTOR", -2.0;
+- "UNIT_GREEK_FIRE", 0.5;
++ "UNIT_GREEK_FIRE", 3.0;
+## aidata/AIPs/takecity.aip
+-double distance_from_unit_priority_modifier = -500.0; 
++double distance_from_unit_priority_modifier = -1500.0; 
++int num_city_defenders = 1; //WW inserted
+## aidata/diplomacy_accepted.fli
++///////////////////////////////////
++////////// SET LOYALTY  ///////////
++///////////////////////////////////
++	// N: values changed	
++output loyalty_modifier [-20, 20] = 0
++	tri benedict_arnold(loyalty_modifier, -10.0, 1.0)
++	tri trust_much_less(loyalty_modifier, -2.0, 1.0)
++	tri trust_less(loyalty_modifier, 0, 0)
++	tri trust_more(loyalty_modifier, 2.0, 1.0)
++	tri trust_much_more(loyalty_modifier, 5.0, 1.0)
+-//accepted greetings
++//accepted greetings...N: changed
+-		love_him_more
++		same_like_him
+-		like_him_more
++		love_him_more
+-		like_him_more
++		love_him_more
+-//accepted leave our lands demand
++//accepted leave our lands demand..N: changed
++		trust_more
+-//accepted reduce pollution demand
++//accepted reduce pollution demand..N: changed
++		trust_more
+-//accepted stop piracy demand
++//accepted stop piracy demand..N: changed
+-		love_him_more
++		like_him_more
++		trust_more
+-//accepted attack enemy
++//accepted attack enemy..N: changed
+-		like_him_more
++		love_him_more
++		trust_more
++// N: added..accepted exchange advance at war 
++input war_with_him
++	left no_war (war_with_him, 0.0, .5)
++	right yes_war (war_with_him, 1.0, .5)
++	if(yes_he_accepted_exchange_advance
++		and yes_war)
++	{
++		same_like_him
++	}
+-		love_him_more
++		like_him_more
++	}
++// N: added..accepted exchange map at war
++	if(yes_he_accepted_exchange_map
++		and yes_war)
++	{
++		same_like_him
+-		love_him_more
++		like_him_more
+-//accepted map offer
++//accepted map offer..N: changed
+-		love_him_more
++		same_like_him
+-//accepted cease fire
++//accepted cease fire..N: changed
+-		love_him_more
++		like_him_more
++// N: added..accepted cease fire not at war
++input he_accepted_offer_cease_fire
++right yes_he_accepted_offer_cease_fire(he_accepted_offer_cease_fire, 1.0, .5)
++	if(yes_he_accepted_offer_cease_fire
++		and not yes_war)
++	{
++		like_him_more
++	}
+-		love_him_more
++		like_him_more
+## aidata/diplomacy_begin.fli
++	// N: added 8/11/99
++		tri he_fights_nine(num_he_is_at_war, 9.0, 0.5)
++		tri he_fights_ten(num_he_is_at_war, 10.0, 0.5)
++		tri he_fights_eleven(num_he_is_at_war, 11.0, 0.5)
++		tri he_fights_twelve(num_he_is_at_war, 12.0, 0.5)
++		tri he_fights_thirteen(num_he_is_at_war, 13.0, 0.5)
++		tri he_fights_fourteen(num_he_is_at_war, 14.0, 0.5)
++		tri he_fights_fifteen(num_he_is_at_war, 15.0, 0.5)
++		tri he_fights_sixteen(num_he_is_at_war, 16.0, 0.5)
++	// Changed again--to set new border policy--WAIS..N.
+-		tri many_incursions(military_incursions, 3, 0.5)
+-		right floods_incursions(military_incursions, 4, 0.5)
++		tri many_incursions(military_incursions, 2, 0.5)
++		right floods_incursions(military_incursions, 3, 0.5)
+-	////////////////////////////////////////////////////////////////////////////////////////////////////////
++	////////////////////////////////////////////////////////////////////////////////////////////////////////N: adjusted...changed back
++		tri nine_at_war(at_war_count, 9.0, 0.5)
++		tri ten_at_war(at_war_count, 10.0, 0.5)
++		tri eleven_at_war(at_war_count, 11.0, 0.5)
++		tri twelve_at_war(at_war_count, 12.0, 0.5)
++		tri thirteen_at_war(at_war_count, 13.0, 0.5)
++		tri fourteen_at_war(at_war_count, 14.0, 0.5)
++		tri fifteen_at_war(at_war_count, 15.0, 0.5)
++		tri sixteen_at_war(at_war_count, 16.0, 0.5)
++	// N: WAIS--Wandering AI Syndrome--changed
+-		left no_my_incurions(my_military_incursions, 0, 0.5)
+-		tri some_my_incurions(my_military_incursions, 2, 1)
+-		right many_my_incurions(my_military_incursions, 6, 3)
++		left no_my_incurions(my_military_incursions, 0, 0.25)
++		tri some_my_incurions(my_military_incursions, 1, 0.5)
++		right many_my_incurions(my_military_incursions, 2, 1)
++	// N: values changed	
+-	tri trust_much_less(loyalty_modifier, -5.0, 1.0)
+-	tri trust_less(loyalty_modifier, -1.0, 1.0)
+-	tri trust_more(loyalty_modifier, 1.0, 1.0)
++	tri trust_much_less(loyalty_modifier, -2.0, 1.0)
++	tri trust_less(loyalty_modifier, 0, 0)
++	tri trust_more(loyalty_modifier, 2.0, 1.0)
++	// N: changed
++	if(twice_attacked_my_friends)
++	{
++		trust_much_less
++	}	
++	// N: added
+-		trust_less
++		benedict_arnold
++	if( (sometimes_broke_treaties or often_broke_treaties)
++		and not human )
++	{
++		benedict_arnold
++	}
++	
+-			trust_less
++			trust_much_less
+-	// LIKE HIM LESS IF HE'S IN FIRST PLACE AND I'M NOT IN LAST PLACE
++	// N: not LIKE HIM LESS IF HE'S IN FIRST PLACE AND I'M NOT IN LAST PLACE
+-			much_hate_strength
++			little_hate_strength
++			trust_much_less
++	
++	// N: changed
+-			much_hate_strength
++			tiny_hate_strength
++			trust_much_less
+-//			little_hate_strength
++//			tiny_hate_strength
++	////////////////////////////////////////////////////////////
++	//////////   REGARD LOST DUE TO LAST PLACE...N   //////////
++	////////////////////////////////////////////////////////////
++	// N: added...If you're in last place and close,
++	// and I'm warlike, I'll bully you a lot
++	if(	iam_in_first_place
++		and warlike	
++		and hes_in_last_place
++		and yes_closest_capitol 
++		and yes_he_shares_continent 
++		and not my_worst_enemy)
++		{
++			loath_him_more
++		}
++	// N: added...If you're in last place & not close,
++	// and I'm warlike, I'll bully you somewhat
++	if(	iam_in_first_place
++		and warlike	
++		and hes_in_last_place
++		and yes_he_shares_continent  
++		and not my_worst_enemy)
++		{
++			dislike_him_more
++		}
++////////////////////////////////////////////////////////////////////////////////////////
++//////////   SET STRENGTH OF STATE OF WAR      ///////////
++////////////////////////////////////////////////////////////////////////////////////////
++// 
++// when unit regard is less than 20, we target the enemy.
++output unit_regard_delta[-100, 100] = 0.0
++	tri go_to_hot_war(unit_regard_delta, 10, 80.0)
++	tri go_to_hot_war_prep(unit_regard_delta, 25, 1.0)
++	tri go_to_cold_war(unit_regard_delta, 35, 1.0)
++	tri go_to_cold_war_prep(unit_regard_delta, 50, 0.5)
++	tri go_to_peace_partial(unit_regard_delta, 60, 0.55)
++	tri go_to_peace_full(unit_regard_delta, 80, 2.0)
++	////////////////////////////////////////////////////////////
++	////////// N: added.. UNDERDOG AI CATCHING UP     //////////
++	////////////////////////////////////////////////////////////
++	// special plan and war settings...N: moved up here
++		output special_plan[0.0, 2.0] = 0.0
++		tri yes_special_plan(special_plan, 1.0, 0.5)
++	// N: added...If I'm in last place and weak,
++	// try to steal more tech to catch up
++	if(	iam_in_last_place
++		and warlike	
++		and hes_in_first_place
++		and not yes_war)
++		{
++			same_like_him
++			go_to_cold_war
++			yes_special_plan
++		}
+-			much_hate_strength
++			super_hate_strength
+-	// LIKE HIM LESS IF HE USES UNCONVENTIONAL ATTACKS ON ME
++	// LIKE HIM LESS IF HE USES UNCONVENTIONAL ATTACKS ON ME..N: changed
++		trust_much_less
++	// N: changed	
+-		dislike_him_more
++		loath_him_more
++		benedict_arnold
++			trust_much_less
+-	// LIKE HIM LESS IF HE WALKS ON MY LANDS AND WE'RE NOT ALLIES
++	// LIKE HIM LESS IF HE WALKS ON MY LANDS AND WE'RE NOT ALLIES...N: changed
++			trust_much_less
++		
++		// N: changed
+-			much_hate_incursion
++			tiny_hate_incursion
++		// N: changed, no longer just human
+-			and human
++	// N: last input added
++		tri okay_hate_attack(dip_regard_attack_delta, -2.0, 2.0)
++		// N: If I'm breaking border policies like a
++		// dizzy manic squirrel, & peaceful...well, okay 
++		if(once_attacked_me
++			and peaceful
++			and not yes_war
++			and not hot_war_prep
++			and many_my_incurions)
++		{
++			okay_hate_attack
++		}
++		// N: If I'm breaking border policies like a
++		// dizzy manic squirrel, & warlike, hmm, well, okay 
++		if(once_attacked_me
++			and warlike
++			and not yes_war
++			and not hot_war_prep
++			and many_my_incurions)
++		{
++			okay_hate_attack
++		}
++		// N: If I'm breaking border policies like a dizzy
++		// manic squirrel, & we're allied or at peace, well, okay 
++		if(once_attacked_me
++			and (yes_alliance or yes_cease_fire)
++			and not hot_war_prep
++			and many_my_incurions)
++		{
++			okay_hate_attack
++		}
+-		// DISLIKE HIM IF HE WON'T AGREE TO OUR REQUESTS
++		// DISLIKE HIM IF HE WON'T AGREE TO OUR REQUESTS..N: changed
++		// Changed to neutral...N.
+-			dislike_him_more
++			same_like_him
+-		// DISLIKE HIM A LOT IF HE WON'T AGREE 
++		// DISLIKE HIM A LOT IF HE WON'T AGREE..N: changed
++		// Changed to dislike...N.
+-		// DISLIKE HIM A LOT IF HE WON'T AGREE A LOT 
++		// DISLIKE HIM A LOT IF HE WON'T AGREE A LOT..N: changed
++		// Changed to hate...N. 
+-			hate_him_more
+-		}
++			hate_him_more	
++      		}
+-	// LIKE HIM MORE IF HE ATTACKS OUR ENEMIES
++	// LIKE HIM MORE IF HE ATTACKS OUR ENEMIES..N: changed all
+-			like_him_more
++			love_him_more
++			trust_more
+-	if(	twice_attacked_my_enemies 
++	if(	twice_attacked_my_enemies
++			trust_more
++			trust_much_more
+-	// LIKE HIM LESS IF HE ATTACKS OUR FRIENDS
++	// LIKE HIM LESS IF HE ATTACKS OUR FRIENDS..N: changed
+-////////////////////////////////////////////////////////////////////////////////////////
+-//////////   SET STRENGTH OF STATE OF WAR      ///////////
+-////////////////////////////////////////////////////////////////////////////////////////
+-// 
+-// when unit regard is less than 20, we target the enemy.
+-output unit_regard_delta[-100, 100] = 0.0
+-	tri go_to_hot_war(unit_regard_delta, 10, 80.0)
+-	tri go_to_hot_war_prep(unit_regard_delta, 25, 1.0)
+-	tri go_to_cold_war(unit_regard_delta, 35, 1.0)
+-	tri go_to_cold_war_prep(unit_regard_delta, 50, 0.5)
+-	tri go_to_peace_partial(unit_regard_delta, 60, 0.55)
+-	tri go_to_peace_full(unit_regard_delta, 80, 2.0)
+-	output special_plan[0.0, 2.0] = 0.0
+-		tri yes_special_plan(special_plan, 1.0, 0.5)
++	
++	// N: If we're at war with another AI, fight
++	if (yes_war
++	    and not human	 )	
++	{
++		very go_to_hot_war
++	}			
+-		go_to_hot_war
++		go_to_hot_war_prep
+-		kinda like_him_more	
++		kinda like_him_more
++		trust_more	
+-		kinda like_him_more
++		like_him_more
+-		loath_him_more
++		dislike_him_more
+-		loath_him_more
++		dislike_him_more
+-	//////////   REGARD LOST BECAUSE HE'S ABOUT TO WOIN   //////////
++	//////////   REGARD LOST BECAUSE HE'S ABOUT TO WIN   //////////
++	// N: changed
+-			go_to_hot_war
++			very go_to_cold_war
++			benedict_arnold
++			yes_special_plan
+-	// hate ai's that are winning, but don't go overboard
++	// hate ai's that are winning, but don't go overboard..N: changed
++			benedict_arnold
++	// N: changed
++			trust_more
++	// N: changed
+-			distain_him_more
++			dislike_him_more
++			trust_much_less
+-//	if(	human
+-//		and ( afraid_of_him or terrified_of_him )
+-//		not warlike )
+-//		{
+-//			distain_him_more
+-//		}
++	// N: changed and added
++	if(	human
++		and not warlike )
++		{
++			same_like_him
++		}
++/////////////////////////////////////////////////////////////////////////////////
++///////////////////////NORDICUS WANDERING AI SYNDROME FIX////////////////////////
++////////////////////////////////////////////////////////////////////////////////
++	input i_will_leave_his_lands
++		tri yes_i_will_leave_his_lands(i_will_leave_his_lands, 1.8, 0.5)
++		// N: WAIS added (I'll leave your lands if you're scary
++		// and I'm not going to fight you)
++		if(some_my_incurions 
++			and peaceful 
++			and (afraid_of_him or terrified_of_him)
++			and not hot_war_prep 
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
++		
++		// N: WAIS added (I'll leave your lands if you're peaceful
++		// and we're neutral and I'm not fighting anyone)
++		if(some_my_incurions 
++			and peaceful
++			and not yes_war
++			and zero_at_war
++			and (not dislike_him or not hate_him)
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
++		// N: WAIS added (I'll leave your lands if we're
++		// enjoying a Cease Fire and I like you okay)
++		if(some_my_incurions 
++			and war
++			and not my_worst_enemy
++			and yes_cease_fire
++			and not hot_war_prep
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
++		// N: WAIS added (I'll leave your lands if we're enjoying a
++		// an Alliance or Peace Treaty and I'm not fighting anyone)
++		if(some_my_incurions 
++			and not yes_war
++			and zero_at_war
++			and (yes_cease_fire or yes_alliance)
++			and (like_him or love_him)
++			and not hot_war_prep
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
++		// N: WAIS added (I'll leave your lands if we're at Peace
++		// and I'm trespassing like a blindfolded drunk)
++		if(many_my_incurions 
++			and not yes_war
++			and zero_at_war
++			and yes_cease_fire
++			and not hot_war_prep
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
++		// N: WAIS added (I'll leave your lands if you're peaceful
++		// and we're neutral and neither of us fights anyone)
++		if(some_my_incurions 
++			and peaceful
++			and not yes_war
++			and zero_at_war
++			and he_fights_zero
++			and (not dislike_him or not hate_him)
++			and not yes_alliance )
++		{
++			yes_i_will_leave_his_lands
++		}
+## aidata/diplomacy_pre_incoming.fli
+-	tri few_incursions(military_incursions, 2, 1.5)
++	tri few_incursions(military_incursions, 2, 1.8)
++	// N: preceding: normalized
+-			average_reason_to_accept
++			good_reason_to_accept
++	// N: added...If we're allied, have a map
++	if(	yes_he_gets_map and not yes_i_gain_map 
++		and yes_alliance 
++		and not hate_him ) 
++		{
++			best_reason_to_accept
++		}
++	// N: added...If we have a treaty, have a map
++	if(	yes_he_gets_map and not yes_i_gain_map 
++		and yes_cease_fire 
++		and not hate_him
++		and not yes_war) 
++		{
++			best_reason_to_accept
++		}
++	// N: added..If I'm tough & don't like you, watch it!
++	if(	yes_he_gets_map and not yes_i_gain_map	
++		and yes_enough_me_giving_in_to_DEMAND_MAP 
++		and not (like_him or love_him ))
++		{
++			zero_reason_to_accept
++			no_way_give_adv
++			hate_him_more
++		}
+-		// Now set regard based on our responses.
++		// N: all changed...Now set regard based on our responses.
+-				like_him_more
++				same_like_him
+-				like_him_more
++				same_like_him
+-		good_reason_to_accept
++		best_reason_to_accept
+-				same_like_him
++				like_him_more
++	// N: Wandering AI Syndrome attempted fix...changed to one-point-eight
+-		tri yes_i_will_leave_his_lands(i_will_leave_his_lands, 1, 0.5)
++		tri yes_i_will_leave_his_lands(i_will_leave_his_lands, 1.8, 0.5)
+-			good_reason_to_accept
++			best_reason_to_accept
+-			good_reason_to_accept
++			best_reason_to_accept
+-			// set regard based on responses.
++		// N: added
++		if(	yes_i_will_leave_his_lands 
++			and (like_him or love_him or neutral_towards_him)
++			and not yes_war)
++		{
++			best_reason_to_accept
++		} 
++		// N: added
++		if(	yes_i_will_leave_his_lands 
++			and not (dont_trust_him or distrust_him)
++			and not yes_war)
++		{
++			best_reason_to_accept
++		} 
++		// N: added
++		if(	yes_i_will_leave_his_lands 
++			and iam_in_last_place
++			and not yes_war)
++		{
++			best_reason_to_accept
++		} 
++		// N: added
++		if(	yes_i_will_leave_his_lands 
++			and hes_in_first_place
++			and not yes_war)
++		{
++			best_reason_to_accept
++		} 
++			// set regard based on responses..N: the above four and this one changed
+-			and good_reason_to_accept)
++			and best_reason_to_accept)
++	// N: added	
++	if( yes_reduces_pollution
++		and like_him 
++		and not distrust_him )
++		{
++			good_reason_to_accept
++		}
++	// N: added	
++	if( yes_reduces_pollution
++		and peaceful
++		and not yes_war  )
++		{
++			good_reason_to_accept
++		}
++	// N: changed
+-		love_him_more
++		like_him_more
++	// N: regard changed to neutral	
+-			love_him_more
++			same_like_him
+-			like_him_more
++			same_like_him
+-		and love_him
++		and (like_him or love_him)
+-			best_reason_to_accept
++			good_reason_to_accept
+-			good_reason_to_accept
++			best_reason_to_accept
+-		love_him_more
++		like_him_more
+-		and not love_him)
++		and not love_him )
++	// N: If we are not at war and we like or love you
++	// then accept a peace treaty
++	if(	yes_gains_cease_fire
++		and not yes_war
++		and human
++		and (like_him or love_him )
++		and not distrust_him)
++		{
++			best_reason_to_accept
++		}
++	// N: If we are not at war and you're scary
++	// then accept a peace treaty
++	if(	yes_gains_cease_fire
++		and not yes_war
++		and (afraid_of_him or terrified_of_him ))
++		{
++			best_reason_to_accept
++		}
++	// N: If we are not at war and we are peaceful
++	// then accept a peace treaty
++	if(	yes_gains_cease_fire
++		and zero_at_war
++		and human
++		and peaceful
++		and not distrust_him )
++		{
++			best_reason_to_accept
++		}
+-		average_reason_to_accept
++		best_reason_to_accept
++	// N: changed
+-		average_reason_to_accept
++		good_reason_to_accept
++	// N: changed
++		and human
+-		and not my_worst_enemy
+-		) 
++		and not my_worst_enemy) 
++	{
++		best_reason_to_accept
++	}	
++	
++	// N: added...
++	if(	yes_gains_alliance 
++		and ai
++		and warlike
++		and not yes_war
++		and not hate_him
++		and not my_worst_enemy) 
+-	// set regard based on responses.
++	// N: added...
++	if(	yes_gains_alliance 
++		and ai
++		and yes_neutral
++		and not yes_war
++		and not hate_him
++		and not my_worst_enemy) 
++	{
++		best_reason_to_accept
++	}	
++	// set regard based on responses...N: added
+-			and good_reason_to_accept)
++			and best_reason_to_accept)
++		if(	yes_gains_alliance 
++			and good_reason_to_accept)
++		{
++			like_him_more
++		}
++	// N: added
++	if( yes_end_pollution_pact
++		and ai
++		and like_him 
++		and not distrust_him )
++		{
++			good_reason_to_accept
++		}
++	// N: added
++	if( yes_end_pollution_pact
++		and like_him 
++		and not distrust_him )
++		{
++			good_reason_to_accept
++		}
++	// N: added
++	if( yes_end_pollution_pact
++		and peaceful
++		and not yes_war )
++		{
++			best_reason_to_accept
++		}
+-	
++	// N: changed	
+-		bad_reason_to_accept
++		average_reason_to_accept
++	// N: changed
+-		average_reason_to_accept
++		good_reason_to_accept
++	// N: changed
+-		average_reason_to_accept
++		good_reason_to_accept
++	// N: changed
++	// N: changed
+-		love_him_more
++		like_him_more
++	// N: changed...
++	// N: added...
++	if(	yes_he_gains_advance and yes_i_gain_advance 
++		and yes_war)
++	{	
++		same_like_him
++	}
++		// N: changed
+-			good_reason_to_accept
++			best_reason_to_accept
++		// N: changed	
+-			and not distrust_him
++			and peaceful
++			and not yes_just_saw_your_map)
++		{
++			best_reason_to_accept
++		}
++		// N: added	
++		if(	yes_he_gets_map and yes_i_gain_map 
++			and not yes_war 
++			and (equal_to_him or stronger_than_him)
+-			// Now, set regard based on our responses.
++			// Now, set regard based on our responses...both: N..
+-				like_him_more
++				same_like_him
++	// N: added
++	if(not found
++		and like_him)
++	{
++		average_reason_to_accept
++	}
++	// N: added
++	if(not found
++		and love_him)
++	{
++		good_reason_to_accept
++	}
+## aidata/diplomacy_pre_outgoing.fli
++	///////////////////////////////////////////////////////
++	///// DO WE HAVE AN ALLIANCE ..N: moved////////////////
++	///////////////////////////////////////////////////////
++	input alliance_with_him
++		left no_alliance(alliance_with_him, 0.0, .5)
++		right yes_alliance(alliance_with_him, 1.0, .5)
++	/////////////////////////////////////////////////////
++	/// SHOULD I OFFER CEASE FIRE OR PEACE TREATY////////
++	///N: moved up here//////////////////////////////////
++	////////////////////////////////////////////////////
++	/// 	return k_GOOD_VALUE;
++	// 12/31 I have doubts about the afraid of him and hatfields n mccoys stuff
++	input gains_cease_fire
++		right yes_gains_cease_fire(gains_cease_fire, 1, .5)
++	// N: changed priority back again
++	if(yes_gains_cease_fire)
++	{
++		med_priority
++	}
++	if(	yes_gains_cease_fire 
++		and not my_worst_enemy
++		and yes_war
++		and yes_too_many_enemies
++		and not (distrust_him or dont_trust_him)
++		and not yes_human)
++	{
++		good_message_to_send
++		found
++	}
++	if(	yes_gains_cease_fire 
++		and not my_worst_enemy 
++		and equal_to_him 
++		and yes_bored_of_war 
++		and yes_war 
++		and (not distrust_him or not dont_trust_him))
++		{
++			bad_message_to_send
++			found
++		}
++	// N...changed...added	
++	if(	yes_gains_cease_fire 
++		and not my_worst_enemy 
++		and peaceful 
++		and not yes_war 
++		and (not distrust_him or not dont_trust_him)
++		and not yes_alliance) 
++		{
++			okay_message_to_send
++			found
++		}
++	// N...added	
++	if(	yes_gains_cease_fire 
++		and not yes_war 
++		and yes_alliance) 
++		{
++			worst_message_to_send
++			found
++		}
++	if(	yes_gains_cease_fire 
++		and not my_worst_enemy 
++		and yes_war 
++		and yes_fear 
++		and not one_at_war 
++		and (not distrust_him or not dont_trust_him)) 
++		{
++			good_message_to_send
++			found
++		}
++	if(	yes_gains_cease_fire 
++		and yes_war 
++		and yes_terror 
++		and (not distrust_him or not dont_trust_him))
++		{
++			good_message_to_send
++			found
++		}
++	if(	yes_gains_cease_fire 
++		and yes_war 
++		and yes_sick_of_war
++		and not dont_trust_him)
++		{
++			good_message_to_send
++			found
++		}
++	if(	yes_gains_cease_fire 
++		and yes_war 
++		and warlike 
++		and not yes_sick_of_war)
++		{
++			worst_message_to_send
++			found
++		}
++	if(	yes_gains_cease_fire 
++		and yes_chase_the_rabbit 
++		and not yes_human)
++		{
++			best_message_to_send
++		}
++	////////////////////////////////////////////////////////
++	////////// DO WE HAVE A CEASE FIRE ..N: added///////////
++	////////////////////////////////////////////////////////
++	input cease_fire_with_him
++		left no_cease_fire(cease_fire_with_him, 0.0, .5)
++		right yes_cease_fire(cease_fire_with_him, 1.0, .5)
++	// N...changed all
+-			wont_demand_adv
++			thinkin_bout_demandin_adv
+-		
++	
++	// N: added
++	if(	advance_to_me and not advance_to_him 
++		and warlike
++		and equal_to_him
++		and not yes_ive_been_losing)
++		{
++			thinkin_bout_demandin_adv
++			found
++			rand_min_25
++			rand_max_100
++		}
++	
++	// N: added...If I'm tough, we're allied or in a treaty,
++	// gimme some tech!	
++	if(	advance_to_me and not advance_to_him 
++		and not (yes_alliance or yes_cease_fire)
++		and stronger_than_him 
++		and not (love_him or hate_him)
++		and not yes_war)	
++		{
++			gimmee_adv
++			good_message_to_send
++			found
++			rand_min_25
++			rand_max_100
++		}
++	
++		// N: added
++		if(	(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold)
++			and stronger_than_him 
++			and not yes_war
++			and not yes_terror
++			and (dislike_him or hate_him)
++			and not yes_i_just_asked_for_gold )
++			{
++				best_message_to_send
++				found
++				rand_min_25
++				rand_max_100
++			}
++	
++		// N: added
++		if(	(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold)
++			and stronger_than_him 
++			and yes_alliance
++			and not yes_terror
++			and not yes_i_just_asked_for_gold )
++			{
++				best_message_to_send
++				found
++				rand_min_25
++				rand_max_100
++			}
++		// N: added
++		if(	(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold)
++			and stronger_than_him 
++			and yes_cease_fire
++			and not yes_terror
++			and not yes_i_just_asked_for_gold )
++			{
++				best_message_to_send
++				found
++				rand_min_25
++				rand_max_100
++			}
+-	// Threaten him to force him not to trade with our enemies.	
++	// Threaten him to force him not to trade with our enemies...N: changed	
+-		good_message_to_send
++		best_message_to_send
+-	//	return 0;	
++	//	return 0;// N: war inputs added	
++	input num_he_is_at_war
++		tri he_fights_zero(num_he_is_at_war, 0.0, 0.5)
++		tri he_fights_one(num_he_is_at_war, 1.0, 0.5)
++		tri he_fights_two(num_he_is_at_war, 2.0, 0.5)
++		tri he_fights_three(num_he_is_at_war, 3.0, 0.5)
++		tri he_fights_four(num_he_is_at_war, 4.0, 0.5)
++		tri he_fights_five(num_he_is_at_war, 5.0, 0.5)
++		tri he_fights_six(num_he_is_at_war, 6.0, 0.5)
++		tri he_fights_seven(num_he_is_at_war, 7.0, 0.5)
++		tri he_fights_eight(num_he_is_at_war, 8.0, 0.5)
++		tri he_fights_nine(num_he_is_at_war, 9.0, 0.5)
++		tri he_fights_ten(num_he_is_at_war, 10.0, 0.5)
++		tri he_fights_eleven(num_he_is_at_war, 11.0, 0.5)
++		tri he_fights_twelve(num_he_is_at_war, 12.0, 0.5)
++		tri he_fights_thirteen(num_he_is_at_war, 13.0, 0.5)
++		tri he_fights_fourteen(num_he_is_at_war, 14.0, 0.5)
++		tri he_fights_fifteen(num_he_is_at_war, 15.0, 0.5)
++		tri he_fights_sixteen(num_he_is_at_war, 16.0, 0.5)
++	// reduce to love only...N: added...if human		
++	if(consider_attacks_enemy 
++		and love_him
++		and human
++		and not yes_war 
++		and he_is_stronger_than_3rd 
++		and i_am_weaker_than_3rd 
++		and my_best_friend
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		good_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies, & ai, attack my enemy		
++	if(consider_attacks_enemy 
++		and (like_him or love_him)
++		and ai
++		and not yes_war 
++		and he_is_stronger_than_3rd 
++		and i_am_weaker_than_3rd 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		best_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies, & you're human,
++	// attack my enemy		
++	if(consider_attacks_enemy 
++		and (like_him or love_him)
++		and human
++		and not yes_war 
++		and he_is_stronger_than_3rd 
++		and i_am_weaker_than_3rd 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		good_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies and you're already		
++	// attacking my enemy, I'll shut up
++	if(consider_attacks_enemy 
++		and (like_him or love_him)
++		and not yes_war 
++		and (he_fights_one or he_fights_two)
++		and yes_ive_been_winning 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		bad_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies and you're human and		
++	// already attacking my enemy, I'll shut up
++	if(consider_attacks_enemy 
++		and (like_him or love_him)
++		and human
++		and not yes_war 
++		and (he_fights_one or he_fights_two)
++		and yes_ive_been_winning 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		bad_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies & you're attacking		
++	// my enemy and I'm losing, attack my enemy more!
++	if(consider_attacks_enemy 
++		and not yes_war 
++		and not yes_ive_been_winning
++		and yes_humbled_this_turn 
++		and i_am_weaker_than_3rd 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		good_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
++	// N: added...If we're Allies & ai & you're attacking		
++	// my enemy and I'm losing, attack my enemy more!
++	if(consider_attacks_enemy 
++		and not yes_war 
++		and ai
++		and not yes_ive_been_winning
++		and yes_humbled_this_turn 
++		and i_am_weaker_than_3rd 
++		and yes_alliance
++		and not yes_i_ve_asked_enough_about_attacking_enemy)
++	{
++		best_message_to_send
++		found
++		rand_min_25
++		rand_max_100
++	}
+-	}	
+-	
++	}	
++	
++	// N: added...Hey, I'm a peaceful AI who's chokin on
++	// smoke over here, so cut it out!	
++	if(	high_global_pollution 
++		and stronger_than_him 
++		and peaceful 
++		and average_his_pollution)
++	{
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	// N: added...Hey, I'm an AI who's chokin on
++	// smoke over here, so, you, AI, cut it out!	
++	if(	high_global_pollution 
++		and ai 
++		and not yes_war
++		and peaceful 
++		and average_his_pollution)
++	{
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	// N: added...Hey, I'm a warlike AI who's chokin on
++	// smoke over here, so cut it out or else!	
++	if(	high_global_pollution 
++		and warlike 
++		and not yes_war 
++		and average_his_pollution)
++	{
++		good_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	// N: added...Hey, I'm a powerful AI whose farms
++	// are turnin to swamp, so cut it out or else!	
++	if(	high_global_pollution 
++		and iam_in_first_place
++		and not yes_war
++		and average_his_pollution)
++	{
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	//N: added...If we're allied, gimme a map!
++	if(	yes_he_gets_map and not yes_i_gain_map 
++		and yes_alliance
++		and not yes_war 
++		and got_map_centuries_ago
++		and not yes_ive_got_your_map )
++	{
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	// N: added...If I'm losing a war with you, &
++	// I'm peaceful, I'll offer tech to encourage peace
++	if(advance_to_him and not advance_to_me
++		and yes_war 
++		and yes_ive_been_losing
++		and yes_humbled_this_turn
++		and (afraid_of_him or terrified_of_him)
++		and peaceful) 
++	{
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++	// N: added...If I'm losing a war with you, &
++	// I'm warlike, I'll offer tech to encourage peace
++	if(advance_to_him and not advance_to_me
++		and yes_war 
++		and yes_ive_been_losing
++		and yes_humbled_this_turn
++		and (afraid_of_him or terrified_of_him)
++		and warlike) 
++	{
++		good_message_to_send
++		rand_min_25
++		rand_max_100
++		found
++	}
++		// N: added...If we're at war & I'm losing,
++		// and I'm peaceful, I'll offer gold to encourage peace
++		if(	gives_him_gold 
++			and yes_war 
++			and peaceful
++			and yes_terror
++			and yes_ive_been_losing
++			and yes_humbled_this_turn 
++			and not yes_he_said_yes_recently_to_OFFER_GOLD)
++		{
++			best_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++		// N: added...If we're at war & I'm losing,
++		// and I'm warlike, I'll offer gold to encourage peace
++		if(	gives_him_gold 
++			and yes_war 
++			and warlike
++			and yes_terror
++			and yes_ive_been_losing
++			and yes_humbled_this_turn
++			and not yes_he_said_yes_recently_to_OFFER_GOLD )
++		{
++			good_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++		//N: added...If we're allied, have a map
++		if(	yes_he_gets_map and not yes_i_gain_map 
++			and yes_alliance
++			and not yes_youve_got_my_map
++			and not yes_war ) 
++		{
++			good_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++	// N: changed
+-			good_message_to_send
++			best_message_to_send
+-		// make you feel like you're someones best friend
++		// you feel like you're someones best friend
+-		// make you feel like someone is peaceful
++		// N...Changed...you feel like someone is peaceful
++			best_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++		// N: added...feel like warlike is peaceful
++		if(	advance_to_me 
++			and advance_to_him 
++			and warlike
++			and (love_him or like_him) 
++			and not yes_war)
++		{
+-	// inputs under demand
++	// inputs under demand...N: priority changed
+-		low_priority
++		med_priority
++	// N: changed
+-		good_message_to_send
++		best_message_to_send
+-////////////////////////
+-/// SHOULD I ALLY   ////
+-////////////////////////
+-	///////////////////////////////////
+-	/// SHOULD I OFFER CEASE FIRE   ///
+-	///////////////////////////////////
+-	/// 	return k_GOOD_VALUE;
+-	// 12/31 I have doubts about the afraid of him and hatfields n mccoys stuff
+-	input gains_cease_fire
+-		right yes_gains_cease_fire(gains_cease_fire, 1, .5)
+-	if(yes_gains_cease_fire)
++	// N: added...If we're allies, let's trade maps
++	if(	yes_i_gain_map and yes_he_gets_map 
++		and yes_alliance 
++		and not yes_war
++		and not yes_he_has_been_asked_to_EXCHANGE_MAP
++		and not yes_youve_got_my_map)
+-		high_priority
++		best_message_to_send
++		rand_min_25
++		rand_max_100
++		found
+-	if(	yes_gains_cease_fire 
+-		and not my_worst_enemy
+-		and yes_war
+-		and yes_too_many_enemies
+-		and not (distrust_him or dont_trust_him)
+-		and not yes_human)
++	// N: added...If we have a treaty, let's trade maps
++	if(	yes_i_gain_map and yes_he_gets_map 
++		and yes_cease_fire
++		and not yes_war
++		and not yes_he_has_been_asked_to_EXCHANGE_MAP
++		and not yes_youve_got_my_map)
+-		good_message_to_send
++		best_message_to_send
++		rand_min_25
++		rand_max_100
+-	if(	yes_gains_cease_fire 
+-		and not my_worst_enemy 
+-		and equal_to_him 
+-		and yes_bored_of_war 
+-		and yes_war 
+-		and (not distrust_him or not dont_trust_him))
+-		{
+-			bad_message_to_send
+-			found
+-		}
+-	if(	yes_gains_cease_fire 
+-		and not my_worst_enemy 
+-		and yes_war 
+-		and yes_fear 
+-		and yes_bored_of_war 
+-		and (not distrust_him or not dont_trust_him)) 
+-		{
+-			good_message_to_send
+-			found
+-		}
+-	if(	yes_gains_cease_fire 
+-		and not my_worst_enemy 
+-		and yes_war 
+-		and yes_fear 
+-		and not one_at_war 
+-		and (not distrust_him or not dont_trust_him)) 
+-		{
+-			good_message_to_send
+-			found
+-		}
+-	if(	yes_gains_cease_fire 
+-		and yes_war 
+-		and yes_terror 
+-		and (not distrust_him or not dont_trust_him))
+-		{
+-			good_message_to_send
+-			found
+-		}
+-	if(	yes_gains_cease_fire 
+-		and yes_war 
+-		and yes_sick_of_war
+-		and not dont_trust_him)
+-		{
+-			good_message_to_send
+-			found
+-		}
+-	if(	yes_gains_cease_fire 
+-		and yes_war 
+-		and warlike 
+-		and not yes_sick_of_war)
+-		{
+-			worst_message_to_send
+-			found
+-		}
++//	// N: added...if we're at war & peaceful, I may
++//	// exchange maps to help us win 	
++//	if(	yes_i_gain_map and yes_he_gets_map 
++//		and peaceful 
++//		and equal_to_him 
++//		and yes_war
++//		and not yes_he_has_been_asked_to_EXCHANGE_MAP
++//		and not yes_youve_got_my_map)
++//	{
++//		okay_message_to_send
++//		rand_min_25
++//		rand_max_100
++//		found
++//	}
++//
++//	// N: added...if we're at war & warlike, I'll
++//	// exchange maps to help us win 	
++//	if(	yes_i_gain_map and yes_he_gets_map 
++//		and warlike 
++//		and equal_to_him 
++//		and yes_war
++//		and not yes_he_has_been_asked_to_EXCHANGE_MAP
++//		and not yes_youve_got_my_map)
++//	{
++//		good_message_to_send
++//		rand_min_25
++//		rand_max_100
++//		found
++//	}
+-	if(	yes_gains_cease_fire 
+-		and yes_chase_the_rabbit 
+-		and not yes_human)
+-		{
+-			best_message_to_send
+-		}
++////////////////////////
++/// SHOULD I ALLY   ////
++////////////////////////
+-			okay_message_to_send
++			good_message_to_send
+-			okay_message_to_send
++			good_message_to_send
++		// N: added...
++		if(does_gain_alliance
++			and ai
++			and warlike 
++			and like_him 
++			and not zero_at_war 
++			and not yes_war 
++			and (not distrust_him or not dont_trust_him) )
++		{
++			best_message_to_send
++			found
++		}
++		// N: added...
++		if(does_gain_alliance
++			and ai
++			and neutral_towards_him 
++			and like_him 
++			and not zero_at_war 
++			and not yes_war 
++			and (not distrust_him or not dont_trust_him) )
++		{
++			best_message_to_send
++			found
++		}
++		// N: added: don't ask for alliance if allied
++		if(	does_gain_alliance 
++			and yes_alliance  
++			and not yes_war )
++		{
++			worst_message_to_send
++			found
++		}
++		// N: added
++		if(	yes_end_pollution_pact 
++			and high_global_pollution 
++			and peaceful
++			and not yes_war)
++		{
++			good_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++		// N: added
++		if(	yes_end_pollution_pact 
++			and high_global_pollution 
++			and iam_in_first_place
++			and not yes_war)
++		{
++			good_message_to_send
++			rand_min_25
++			rand_max_100
++			found
++		}
++		// N: added
++		if(not found
++			and not (distrust_him or dont_trust_him)
++			and not hate_him ) 
++		{
++			okay_message_to_send
++			med_priority
++		}
++ 
+## aidata/diplomacy_rejected.fli
++	// N: changed and changed back
++	// N: changed
+-		left no_incursions(military_incursions, 0, 0.5)
+-		tri few_incursions(military_incursions, 1, 0.1)
+-		tri many_incursions(military_incursions, 3, 0.5)
+-		right floods_incursions(military_incursions, 4, 0.5)
++		left no_incursions(military_incursions, 0, 0.25)
++		tri few_incursions(military_incursions, 1, 0.5)
++		tri many_incursions(military_incursions, 2, 0.1)
++		right floods_incursions(military_incursions, 3, 0.1)
++      output special_plan[0.0, 2.0] = 0.0
++		tri yes_special_plan(special_plan, 1.0, 0.5)
++	// N: changed
++		go_to_cold_war
++		yes_special_plan
++	// N: changed
++	// N: changed
+-		dislike_him_more
+-		go_to_hot_war
++		hate_him_more
++		very go_to_hot_war
++	// N: changed
+-		dislike_him_more
++		hate_him_more
++	// N: changed
+-		dislike_him_more
++		hate_him_more
++	// N: changed
++	{
++		same_like_him
++	}
++	// N: added
++	if(yes_he_rejected_exchange_advance and equal_to_him)
++		
++	// N: changed
++	{
++		hate_him_more
++	}
++	// N: added
++	if(yes_he_rejected_offer_cease_fire and not hot_war)
++	// N: changed
++	{
++		same_like_him
++	}
++	// N: added
++	if(yes_he_rejected_offer_alliance and equal_to_him )
+## aidata/inputs.fli
+-	left dangerously_low_unit_to_city_ratio(unit_to_city_ratio, 3.0, 0.1)
++	left dangerously_low_unit_to_city_ratio(unit_to_city_ratio, 2.5, 0.1) //Edited TLL 13/6/99 (from 3.0)
+-	tri yes_can_sea_settle(can_space_settle, 1.0, 0.5)
++	tri yes_can_sea_settle(can_sea_settle, 1.0, 0.5) //edited TLL 13/6/99
++	right i_am_stronger_1halfx_plus_than_strongest(highest_enemy_strength_ratio, 2.5, 1.0) //Added by TLL 13/6/99
++	right i_am_stronger_1halfx_plus_than_strongest_human(highest_human_enemy_strength_ratio, 2.5, 1.0) //Added by TLL 13/6/99
+-	tri no_incursions(total_military_incursions, 0.0, 0.1)
+-	tri one_incursion(total_military_incursions, 1.0, 0.1)
+-	tri few_incursions(total_military_incursions, 3.0, 1.9)
+-	right many_incursions(total_military_incursions, 6.0, 1.0)
++//removed TLL 13/6/99 - to avoid conflict with similarly named strings in diplomacy AI
+-// how many people am I fighting
++// how many people am I fighting...N: added 8/11/99
++	tri seven_at_war(at_war_count, 7.0, 0.5)
++	tri eight_at_war(at_war_count, 8.0, 0.5)
++	tri nine_at_war(at_war_count, 9.0, 0.5)
++	tri ten_at_war(at_war_count, 10.0, 0.5)
++	tri eleven_at_war(at_war_count, 11.0, 0.5)
++	tri twelve_at_war(at_war_count, 12.0, 0.5)
++	tri thirteen_at_war(at_war_count, 13.0, 0.5)
++	tri fourteen_at_war(at_war_count, 14.0, 0.5)
++	tri fifteen_at_war(at_war_count, 15.0, 0.5)
++	tri sixteen_at_war(at_war_count, 16.0, 0.5)
++	tri a2to4_num_cities(num_cities, 3.0, 1.1) //Added by TLL 12/6/99
++	tri a0to40_turns(time, 20.0, 20.0) //defined TLL 14/6/99
++	// N: new map sizes added, old ones corrected--8/11/99
+-	tri a64_128_map(size_of_world, 1152, 250.0)
+-	tri a70_140_map(size_of_world, 8192, 250.0)
++	tri a64_128_map(size_of_world, 8192, 250.0) // corrected..N
++	tri a70_140_map(size_of_world, 9800, 250.0) // corrected..N
++	tri a86_172_map(size_of_world, 14792, 250.0)
++	tri a102_204_map(size_of_world, 20808, 250.0)
++	tri a118_236_map(size_of_world, 27848, 250.0)
++	tri a134_268_map(size_of_world, 35912, 250.0)
++	tri a150_300_map(size_of_world, 45000, 250.0)
++	tri a166_332_map(size_of_world, 55112, 250.0)
++	tri a182_364_map(size_of_world, 66248, 250.0)
++	tri a198_396_map(size_of_world, 78408, 250.0)
++	tri a214_428_map(size_of_world, 91592, 250.0)
++	tri a230_460_map(size_of_world, 105800, 250.0)
++	tri a246_492_map(size_of_world, 121032, 250.0)
++	// N: added more players--8/11/99
++	tri nine_players(num_players_in_game, 9.0, 0.5)
++	tri ten_players(num_players_in_game, 10.0, 0.5)
++	tri eleven_players(num_players_in_game, 11.0, 0.5)
++	tri twelve_players(num_players_in_game, 12.0, 0.5)
++	tri thirteen_players(num_players_in_game, 13.0, 0.5)
++	tri fourteen_players(num_players_in_game, 14.0, 0.5)
++	tri fifteen_players(num_players_in_game, 15.0, 0.5)
++	tri sixteen_players(num_players_in_game, 16.0, 0.5)
++	tri seventeen_players(num_players_in_game, 17.0, 0.5)
++	tri eighteen_players(num_players_in_game, 18.0, 0.5)
++	tri nineteen_players(num_players_in_game, 19.0, 0.5)
++	tri twenty_players(num_players_in_game, 20.0, 0.5)
++	tri twentyone_players(num_players_in_game, 21.0, 0.5)
++	tri twentytwo_players(num_players_in_game, 22.0, 0.5)
++	tri twentythree_players(num_players_in_game, 23.0, 0.5)
++	tri twentyfour_players(num_players_in_game, 24.0, 0.5)
++	tri twentyfive_players(num_players_in_game, 25.0, 0.5)
++	tri twentysix_players(num_players_in_game, 26.0, 0.5)
++	tri twentyseven_players(num_players_in_game, 27.0, 0.5)
++	tri twentyeight_players(num_players_in_game, 28.0, 0.5)
++	tri twentynine_players(num_players_in_game, 29.0, 0.5)
++	tri thirty_players(num_players_in_game, 30.0, 0.5)
++  	tri thirtyone_players(num_players_in_game, 31.0, 0.5)
++	tri thirtytwo_players(num_players_in_game, 32.0, 0.5)
+## aidata/outputs.fli
+-	tri average_growth_min_food_factor(min_food_factor, 1.5, 0.1)
+-	tri high_growth_min_food_factor(min_food_factor, 2.0, 0.1)
++	tri average_growth_min_food_factor(min_food_factor, 1.5, 0.1) 
++	tri high_growth_min_food_factor(min_food_factor, 1.7, 0.1) //WW from 2.0
+-	tri no_roads(inst_road_coef, 0.01, 0.001)
++	tri no_roads(inst_road_coef, 0.05, 0.001) // TTL from 0.0, WW from .01
+-// weight the choice of wgf
+-output wgf_production[0.0, 20.0]= 7.5
+-	tri work_forgetit_wgf_production(wgf_production, 6.0, 0.5)
+-	tri work_little_wgf_production(wgf_production, 8.0, 0.5)
+-	tri work_ave_wgf_production(wgf_production, 10.0, 0.5)
+-	tri work_hard_wgf_production(wgf_production, 24.0, 0.5) // from 12
++// weight the choice of wgf // WW minimized deviation of settings 
++output wgf_production[0.0, 20.0]= 5.0 // WW from 7.5
++	tri work_forgetit_wgf_production(wgf_production, 3.0, 0.5)
++	tri work_little_wgf_production(wgf_production, 4.0, 0.5)
++	tri work_ave_wgf_production(wgf_production, 5.0, 0.5)
++	tri work_hard_wgf_production(wgf_production, 6.0, 0.5) // from 12
+-output wgf_food[0.0, 45.0]= 0.2 
+-	tri feed_lots_wgf_food(wgf_food, 0.5, 0.5)
++output wgf_food[0.0, 45.0]= 0.5 // WW from 0.2 
++	tri feed_lots_wgf_food(wgf_food, 3.0, 0.5)
+-	tri feed_nothing_wgf_food(wgf_food, 25.0, 0.5)
++	tri feed_nothing_wgf_food(wgf_food, 6.0, 0.5)
+-	tri care_not_wgf_gold(wgf_gold, 0.1 , 0.1)
++	tri care_not_wgf_gold(wgf_gold, 3.0 , 0.1)
+-	tri pay_ave_wgf_gold(wgf_gold, 8.0, 0.1)
+-	tri pay_little_wgf_gold(wgf_gold, 10.0, 0.1)
+-	tri pay_nothing_wgf_gold(wgf_gold, 25.0, 0.1)
++	tri pay_ave_wgf_gold(wgf_gold, 5.0, 0.1)
++	tri pay_little_wgf_gold(wgf_gold, 6.0, 0.1)
++	tri pay_nothing_wgf_gold(wgf_gold, 6.0, 0.1)
+-output desired_military_readiness[0.0, 2.0] = 0.0
++output desired_military_readiness[0.0, 2.0] = 1.0 // WW from 0.0
+-output production[0.0, 1.3] = 0.99
+-	tri low_production(production, 0.33, 0.2)
+-	tri med_production(production, 0.66, 0.2)
+-	tri high_production(production, 0.99, 0.2)
++output production[0.0, 1.3] = 0.50 // WW from .99
++	tri low_production(production, 0.50, 0.2) //WW from .33
++	tri med_production(production, 0.50, 0.2) //WW from .66
++	tri high_production(production, 0.50, 0.2) //WW from .99 for all sections
+-output food[0.0, 1.3] = 0.33
+-	tri low_food(food, 0.33, 0.2)
+-	tri med_food(food, 0.66, 0.2)
+-	tri high_food(food, 0.99, 0.2)
++output food[0.0, 1.3] = 0.50 // WW from .33
++	tri low_food(food, 0.50, 0.2)
++	tri med_food(food, 0.50, 0.2)
++	tri high_food(food, 0.50, 0.2)
+-output science[0.0, 1.3] = 0.33
+-	tri low_science(science, 0.33, 0.2)
+-	tri med_science(science, 0.66, 0.2)
+-	tri high_science(science, 0.99, 0.2)
++output science[0.0, 1.3] = 0.50 // WW from .33
++	tri low_science(science, 0.50, 0.2)
++	tri med_science(science, 0.50, 0.2)
++	tri high_science(science, 0.50, 0.2)
+-output happiness[0.0, 1.3] =0.1
+-	tri low_happiness(happiness, 0.33, 0.2)
+-	tri med_happiness(happiness, 0.66, 0.2)
+-	tri high_happiness(happiness, 0.99, 0.2)
++output happiness[0.0, 1.3] =0.50 // WW from .10
++	tri low_happiness(happiness, 0.50, 0.2)
++	tri med_happiness(happiness, 0.50, 0.2)
++	tri high_happiness(happiness, 0.50, 0.2)
+-	tri low_defense(defense, 0.33, 0.2)
+-	tri med_defense(defense, 0.66, 0.2)
+-	tri high_defense(defense, 0.99, 0.2)
++	tri low_defense(defense, 0.50, 0.2)
++	tri med_defense(defense, 0.50, 0.2)
++	tri high_defense(defense, 0.50, 0.2)
+-	tri low_offense(offense, 0.33, 0.2)
+-	tri med_offense(offense, 0.66, 0.2)
+-	tri high_offense(offense, 0.99, 0.2)
++	tri low_offense(offense, 0.50, 0.2)
++	tri med_offense(offense, 0.50, 0.2)
++	tri high_offense(offense, 0.50, 0.2)
+-output pop_gold[0,2000] = 150 
++output pop_gold[0,2000] = 100 // WW from 150
+-	tri med_pop_gold (pop_gold, 150, 100.0)
++	tri med_pop_gold (pop_gold, 100, 100.0) // used WW from 150
+-output pop_production_max[-1000,10000] = 110.0 // was 100, 450, 900 -- trying 100, 650, 1200
+-	tri low_pop_production_max (pop_production_max, 10, 100.0)
+-	tri med_pop_production_max (pop_production_max, 110, 100.0)
+-	tri high_pop_production_max (pop_production_max, 400, 100.0)
++output pop_production_max[-1000,10000] = 110.0 // was 100, 450, 900 -- trying 100, 650, 1200 --WW set to these below
++	tri low_pop_production_max (pop_production_max, 200, 100.0)
++	tri med_pop_production_max (pop_production_max, 100, 100.0) // used
++	tri high_pop_production_max (pop_production_max, 1500, 100.0)
+-	tri low_pop_production_min (pop_production_min, 50, 10.0)
+-	tri med_pop_production_min (pop_production_min, 110, 10.0)
++	tri low_pop_production_min (pop_production_min, 100, 10.0) //used WWfrom50
++	tri med_pop_production_min (pop_production_min, 150, 10.0) // WW from 110
+-output pop_food_max[0,1000] = 100.0
++output pop_food_max[0,1000] = 100.0 // WW minimized deviation of settings
+-	tri low_pop_food_max (pop_food_max, 50.0, 10.0)
++	tri low_pop_food_max (pop_food_max, 75.0, 10.0)
+-	tri high_pop_food_max (pop_food_max, 200.0, 10.0)
++	tri high_pop_food_max (pop_food_max, 150.0, 10.0)
+-output pop_food_min[0,1000] = 10.0
+-	tri low_pop_food_min (pop_food_min, 10.0, 10.0)
+-	tri med_pop_food_min (pop_food_min, 100.0, 10.0)
+-	tri high_pop_food_min (pop_food_min, 200.0, 10.0)
++output pop_food_min[0,1000] = 100.0 // WW from 10, min deviation of settings 
++	tri low_pop_food_min (pop_food_min, 50.0, 10.0)
++	tri med_pop_food_min (pop_food_min, 75.0, 10.0)
++	tri high_pop_food_min (pop_food_min, 125.0, 10.0)
+-output pop_science[0, 25000] = 150.0
++output pop_science[0, 25000] = 100.0 // WW from 150, min deviation of settings 
+-	tri low_pop_science (pop_science, 10, 10.0)
+-	tri med_pop_science (pop_science, 150, 10.0)
+-	tri high_pop_science (pop_science, 200, 10.0)
++	tri low_pop_science (pop_science, 75, 10.0)
++	tri med_pop_science (pop_science, 100, 10.0)
++	tri high_pop_science (pop_science, 125, 10.0)
+-output production_tax[0.0, 1.0]=0.99
+-	tri super_zero_production_tax(production_tax, 0.001, 0.1)
+-	tri zero_production_tax(production_tax, 0.0, 0.00025)
+-	tri low_production_tax(production_tax, 0.10, 0.00025)
+-	tri med_production_tax(production_tax, 0.30, 0.00025)
++output production_tax[0.0, 1.0]=0.20 // WW from .99
++	tri super_zero_production_tax(production_tax, 0.001, 0.1) 
++	tri zero_production_tax(production_tax, 0.0, 0.00025) 
++	tri low_production_tax(production_tax, 0.10, 0.00025) 
++	tri med_production_tax(production_tax, 0.20, 0.00025) //TLL 13/6/99
+-	tri truly_dense_settler_packing(settler_packing, 3.0, 0.5)
+-	tri dense_settler_packing(settler_packing, 3.5, 0.5)
+-	tri loose_settler_packing(settler_packing, 4.0, 0.5)
+-	tri very_loose_settler_packing(settler_packing, 4.5, 0.5)
++	tri truly_dense_settler_packing(settler_packing, 3.7, 0.5) // WW from 3.0
++	tri dense_settler_packing(settler_packing, 3.7, 0.5)
++	tri loose_settler_packing(settler_packing, 3.7, 0.5)
++	tri very_loose_settler_packing(settler_packing, 3.7, 0.5) // WW from 4.5
++//Added by TLL 5/5/99
++output i_want_this_gov_FUNDAMENTALISM[-2.0, 12.0]=-1.0
++	tri gov_fundamentalism_1 (I_want_this_gov_FUNDAMENTALISM, 1.0, 0.1)
++	tri gov_fundamentalism_2 (I_want_this_gov_FUNDAMENTALISM, 2.0, 0.1)
++	tri gov_fundamentalism_3 (I_want_this_gov_FUNDAMENTALISM, 3.0, 0.1)
++	tri gov_fundamentalism_4 (I_want_this_gov_FUNDAMENTALISM, 4.0, 0.1)
++	tri gov_fundamentalism_5 (I_want_this_gov_FUNDAMENTALISM, 5.0, 0.1)
++	tri gov_fundamentalism_6 (I_want_this_gov_FUNDAMENTALISM, 6.0, 0.1)
++	tri gov_fundamentalism_7 (I_want_this_gov_FUNDAMENTALISM, 7.0, 0.1)
++	tri gov_fundamentalism_8 (I_want_this_gov_FUNDAMENTALISM, 8.0, 0.1)
++	tri gov_fundamentalism_9 (I_want_this_gov_FUNDAMENTALISM, 9.0, 0.1)
++	tri gov_fundamentalism_10 (I_want_this_gov_FUNDAMENTALISM,10.0, 0.1)
+-//output I_want_this_gov[0,14] = 11.0
++//output I_want_this_gov[0,14] = 12.0
+-//	tri gov_ecotopia (I_want_this_gov, 8.0, 0.5)
+-//	tri gov_multicorp (I_want_this_gov, 9.0, 0.5)
+-//	tri gov_technocracy (I_want_this_gov, 10.0, 0.5)
+-//	tri gov_virtual_d (I_want_this_gov, 11.0, 0.5)
++//	tri gov_fundamentalism (I_want_this_gov, 8.0, 0.5)
++//	tri gov_ecotopia (I_want_this_gov, 9.0, 0.5)
++//	tri gov_multicorp (I_want_this_gov, 10.0, 0.5)
++//	tri gov_technocracy (I_want_this_gov, 11.0, 0.5)
++//	tri gov_virtual_d (I_want_this_gov, 12.0, 0.5)
+-// was 1, 8, 30, trying 8, 50
+-output inst_prod[0,100] = 1.0
+-	tri few_mines(inst_prod, 1.0, 0.5)
+-	tri default_mines(inst_prod, 8.0, 0.5)
+-	tri tons_mines(inst_prod, 30.0, 0.5) 
++// was 1, 8, 30, trying 8, 50 ---WW to current
++output inst_prod[0,100] = 10.0 // WW from 1.0
++	tri few_mines(inst_prod, 5.0, 0.5)
++	tri default_mines(inst_prod, 10.0, 0.5)
++	tri tons_mines(inst_prod, 15.0, 0.5) 
+## aidata/personality.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 10
++	// Won't send the same message more often than this many turns...changed to fifteen from ten..N.
++	output diplomatic_persistence[0, 10000] = 15
+## aidata/personalityCleric.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 17
++	// Won't send the same message more often than this many turns...changed to twenty from seventeen..N.
++	output diplomatic_persistence[0, 10000] = 20
+## aidata/personalityDefault.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 10
++	// Won't send the same message more often than this many turns...changed to thirteen from nine..N.
++	output diplomatic_persistence[0, 10000] = 13
+## aidata/personalitySciFew.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 13
++	// Won't send the same message more often than this many turns...changed to fifteen from thirteen..N.
++	output diplomatic_persistence[0, 10000] = 15
+## aidata/personalitySciMany.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 9
++	// Won't send the same message more often than this many turns...changed from nine to thirteen..N.
++	output diplomatic_persistence[0, 10000] =13 
+## aidata/personalitySlaver.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 10
++	// Won't send the same message more often than this many turns...changed to thirteen from ten..N.
++	output diplomatic_persistence[0, 10000] = 13
+## aidata/personalityWarFew.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 5.0
++	// Won't send the same message more often than this many turns...changed to eight from five..N.
++	output diplomatic_persistence[0, 10000] = 8.0
+## aidata/personalityWarMany.fli
+-	// Won't send the same message more often than this many turns
+-	output diplomatic_persistence[0, 10000] = 15.0
++	// Won't send the same message more often than this many turns...changed to seventen from fifteen..N.
++	output diplomatic_persistence[0, 10000] = 17.0
+## aidata/set_food_or_prod.fli
+-		even_city_growth_ratio
+-		even_city_growth_ratio
+-		even_city_growth_ratio
+-		med_production_tax
++		very med_production_tax
+-		yes_opening_game_strategy
+-		even_city_growth_ratio
+-		med_production_tax
++		very zero_production_tax
+-		even_city_growth_ratio
+-		med_production_tax
+-		yes_opening_game_strategy
++		very med_production_tax
+-		even_city_growth_ratio
+-		med_production_tax
++		very zero_production_tax
+-		even_city_growth_ratio
+-		med_production_tax
+-		yes_opening_game_strategy
++		very med_production_tax
+-	max_production_city_growth_ratio
+## aidata/set_inst_priority.fli
+-		tons_mines
++		default_mines
+-		tons_mines
++		default_farms
+## aidata/set_pw.fli
+-		super_zero_production_tax
++		very low_production_tax
+-		super_zero_production_tax
++		very low_production_tax
+-		super_high_production_tax
++		very med_production_tax
+-		med_production_tax
++		very med_production_tax
+-	super_zero_production_tax
++	very zero_production_tax
+-	super_zero_production_tax
++	very zero_production_tax
+-		very super_high_production_tax
++		very high_production_tax
+## aidata/set_resource_desire.fli
+-	and not yes_barbarian)
++	and not a5to9_num_cities and not yes_barbarian)
+-	and not yes_barbarian)
++	and not a5to9_num_cities and not yes_barbarian)
+-	even_city_growth_ratio
+## aidata/set_science_speed.fli
+-	even_city_growth_ratio
+-}
++}
+## aidata/set_settle_density.fli
+-		truly_dense_settler_packing
++		dense_settler_packing
+-		settler_get_best_spot
++		settler_default_behavior 
+-		settler_get_best_spot
+-		short_settle_patience
++		settler_default_behavior 
++		normal_settle_patience
+-		normal_settle_patience
++		long_settle_patience
+## aidata/set_wgf.fli
+-if(growth_prod_gold_set_wgf) // 3
++if(growth_prod_gold_set_wgf) // 3 used for over 5 cities
+-	pay_lots_wgf_gold
++	pay_ave_wgf_gold //	WW from lots
+-	feed_nothing_wgf_food
++	feed_ave_wgf_food //	WW from nothing
+-		lowest_food_max
++		low_food_max //WW from lowest
+-		low_food_max
++		average_food_max //WW from low
+-// after 100 and 200; feed 10
++// between 200 and 300; feed 10

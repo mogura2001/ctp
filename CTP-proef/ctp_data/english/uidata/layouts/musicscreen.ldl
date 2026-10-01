@@ -1,0 +1,159 @@
+#	musicscreen.ldl
+
+template MS_BUTTON:T_FONT5_8 {
+	bool	shadowfont	true
+	string	image0	"upba5700.tga"
+	string	image1	"upba5701.tga"
+	int	widthpix	123
+	int	heightpix	21
+	int	bevelwidth	0
+	string	imagebltflag	"chromakey"
+}
+
+
+# EAS011599 - added this for use w/ switches that shouldn't be checkboxes.
+template MS_TOGGLESWITCH:T_FONT1_91 {
+
+	string	image0	"upba6422.tga"
+	string	image1	"upba6423.tga"
+	string	disabledimage0	"upba6424.tga"
+	string	disabledimage1	"upba6425.tga"
+
+	string	xanchor		"center"
+
+	int	widthpix	160
+
+	int	heightpix	24
+
+}
+
+
+MusicScreen {
+	string	pattern	"upba6417.tga"
+#	int 	xpix		316
+#	int 	ypix		185
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int	widthpix	220
+	int	heightpix	200
+	Name:T_FONT4_POPTITLE {
+		string	parent	"c3_PopupTitle"
+		string xanchor "center"
+		string yanchor "top"
+		int widthpct 50
+		int heightpix 20
+		string	text	"str_ldl_CAPS_MUSIC"
+	}
+
+	SelectTrackButton:MS_BUTTON {
+		bool	shadowfont	false
+		int	xpix	46
+		int	ypix	47
+		string	text	"str_ldl_Select_Track"
+	}
+	AutoRepeatSwitch:MS_TOGGLESWITCH {
+		int	ypix	73
+	}
+	RandomOrderSwitch:MS_TOGGLESWITCH {
+		int	ypix	100
+	}
+	MusicOnSwitch:MS_TOGGLESWITCH {
+		int	ypix	127
+		stringtable {
+			string	string0	"str_ldl_Music_Off"
+			string	string1	"str_ldl_Music_On"
+		}
+	}
+}
+
+MusicTrackScreen {
+	string	pattern	"upba6417.tga"
+#	int 	xpix		316
+#	int 	ypix		185
+	string	xanchor		"center"
+	string	yanchor		"center"
+	int	widthpix	235
+	int	heightpix	174
+	Name:T_FONT4_8 {
+		string	parent	"c3_PopupTitle"
+		string xanchor "center"
+		string yanchor "top"
+		int widthpct 50
+		int heightpix 20
+		string	text	"str_ldl_CAPS_SELECT_TRACK"
+	}
+
+	TrackList:T_FONT5_8 {
+		bool	shadowfont	true
+		int	xpix	21
+		int	ypix	35
+		int	widthpix	177
+		int	heightpix	89
+		int columns		1
+		int bevelwidth	1
+		int beveltype	2
+		string	pattern	"upba6417.tga"
+		int	srcxpix	19
+		int	srcypix	33
+		int	srcwidthpix	181
+		int	srcheightpix	93
+		header {
+			switch0 {
+				int	heightpix	0
+				int	widthpix	177
+			}
+		}
+		bool alwaysranger	true
+		rangery {
+			int	widthpix	15
+			int	heigthpix	15
+			string	type	"scroller"
+			string	orientation	"vertical"
+			string	pattern	"upba6417.tga"
+			incy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba6417.tga"
+			}
+			decy {
+				int	widthpix	15
+				int	heightpix	15
+				string	pattern	"upba6417.tga"
+			}
+#			thumb {
+#				string	image0	"upba5613.tga"
+#				string	imagebltflag	"chromakey"
+#			}
+		}
+	}
+	TrackNames {
+		int numstrings	8
+		string	string0	"str_tbl_ldl_Music_Track_1"
+		string	string1	"str_tbl_ldl_Music_Track_2"
+		string	string2	"str_tbl_ldl_Music_Track_3"
+		string	string3	"str_tbl_ldl_Music_Track_4"
+		string	string4	"str_tbl_ldl_Music_Track_5"
+		string	string5	"str_tbl_ldl_Music_Track_6"
+		string	string6	"str_tbl_ldl_Music_Track_7"
+		string	string7	"str_tbl_ldl_Music_Track_8"
+	}
+	
+	MusicTrackListItem {
+		int widthpix	177
+		int heightpix	20
+		TrackName:T_FONT5_8 {
+			int widthpix	177
+			int heightpix	20
+		}
+	}
+}
+
+MS_Strings {
+	int	numstrings	4
+	string	string0	"str_tbl_ldl_Auto_Repeat_On"
+	string	string1	"str_tbl_ldl_Auto_Repeat_Off"
+	string	string2	"str_tbl_ldl_Random_Order_On"
+	string	string3 "str_tbl_ldl_Random_Order_Off"
+}
+
+$

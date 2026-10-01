@@ -1,0 +1,638 @@
+template GREAT_BUTTON:T_FONT1_12 {
+
+	bool	shadowfont	true
+
+	string	pattern	"upba3010.tga"
+
+	int	ypix		0
+
+	int	widthpix	80
+
+	int	heightpix	29
+
+}
+
+
+
+template GREAT_INDEX_BUTTON:T_FONT5_63 {
+
+	int	widthpix	89
+
+	int	heightpix	21
+
+	int	bevelwidth	0
+
+	string	image0	"upba5310.tga"
+
+	string	image1	"upba5311.tga"
+
+}
+
+
+
+template GREAT_ARROW_BUTTON:T_FONT5_8 {
+
+	int	ypix	152
+
+	int	widthpix	46
+
+	int	heightpix	23
+
+	int	bevelwidth	0
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template GREAT_BOX:T_FONT5_8 {
+
+	int	ypix	182
+
+	int	widthpix	144
+
+	int	heightpix	104
+
+	string	pattern	"upba5300.tga"
+
+	int	srcxpix	-5
+
+	int	srcypix	177
+
+	int	srcwidthpix		149
+
+	int	srcheightpix	114
+
+#	bool alwaysranger	true
+
+	int	minthumbsize	15
+
+	rangery {
+
+		int	widthpix	15
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba5605.tga"
+
+		int	maxxval	0
+
+		incy {
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		decy {
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		thumb {
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+	}
+}
+
+
+
+template GREAT_WALLPAPER {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	560
+
+	int	heightpix	110
+
+	string	pattern	"upba5300.tga"
+
+	int	srcxpix	40
+
+	int	srcypix	320
+
+	int	srcwidthpix	560
+
+	int	srcheightpix	110
+
+	int	bevelwidth	0
+
+}
+
+
+
+template GREAT_BIG_BOX:T_FONT5_8 {
+
+	int	xpix	5
+
+	int	ypix	5
+
+	int	widthpix	539
+
+	int	heightpix	100
+
+	string	pattern	"upba5300.tga"
+
+	int	srcxpix	40
+
+	int	srcypix	320
+
+	int	srcwidthpix		544
+
+	int	srcheightpix	110
+
+#	bool alwaysranger	true
+
+	int	minthumbsize	15
+
+	int	hypermaxlength	2048
+
+	rangery {
+
+		int	widthpix	15
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba5605.tga"
+
+		int	maxxval	0
+
+		incy {
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		decy {
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		thumb {
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+	}
+
+}
+
+
+
+
+
+#######################
+
+# GreatLibrary
+
+#######################
+
+GreatLibrary {
+
+	string	pattern	"upba5300.tga"
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+#	int	ypix	80
+
+	int	widthpix	640
+
+	int	heightpix	480
+
+
+	Title:T_FONT_POPUP_TITLE {
+
+		string	xanchor	"center"
+
+		int	ypix	0
+
+		int	widthpix	100
+
+		int	heightpix	13	
+
+		string	text	"str_ldl_CAPS_GREAT_LIBRARY"
+	}
+
+
+	OkButton:CTP_CLOSE_BUTTON {
+
+		int	xpix	569
+
+		int	ypix	442
+
+	}
+
+
+	TechTree {
+
+		int	xpix	40
+
+		int	ypix	34
+
+		int	widthpix	560
+
+		int	heightpix	114
+
+		string	pattern	"upba5300.tga"
+
+		int	srcxpix	103
+
+		int	srcypix	34
+
+		int	srcwidthpix	433
+
+		int	srcheightpix	114
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		button:T_FONT3_TREEBUTTON {
+
+			string	text	"str_ldl_"
+			int	xpix	0
+
+			int	ypix	0
+
+			int	widthpix	150
+
+			int	heightpix	20
+
+			string	pattern	"chart.tga"
+
+			string	textblttype	"center"
+
+		}
+
+	}
+
+
+
+	TechStillShot {
+
+		int	xpix	239
+
+		int	ypix	184
+
+		int	widthpix	160
+
+		int	heightpix	120
+
+		string	imageblttype	"stretch"
+
+	}
+
+
+
+	RequirementsText:GREAT_BOX {
+
+		int	xpix	45
+
+		int	srcxpix	50
+
+	}
+
+	VariablesText:GREAT_BOX {
+
+		int	xpix	436
+
+		int	srcxpix	436
+
+	}
+
+
+
+	TabGroup {
+
+		int	xpix	40
+
+		int	ypix	300
+
+		int	widthpix	560
+
+		int	heightpix	130
+
+		bool	autoarrange	false
+
+		GameplayTab:T_FONT5_8 {
+
+			int	xpix	0
+
+			int	ypix	0
+
+			int	widthpix	80
+
+			int	heightpix	20
+
+			string	text	"str_ldl_GAMEPLAY"
+
+			string	image0	"upba0523.tga"
+			string	image1	"upba3010.tga"
+			string	disabledimage0	"upba0524.tga"
+			string	imageblttype	"stretch"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	20
+
+				int	widthpix	560
+
+				int	heightpix	110
+
+				Wallpaper:GREAT_WALLPAPER {
+
+					GameplayText:GREAT_BIG_BOX {
+
+					}
+
+				}
+
+			}
+
+		}
+
+		HistoricalTab:T_FONT5_8 {
+
+			int	xpix	80
+
+			int	ypix	0
+
+			int	widthpix	80
+
+			int	heightpix	20
+
+			string	text	"str_ldl_HISTORICAL"
+
+			string	image0	"upba0523.tga"
+			string	image1	"upba3010.tga"
+			string	disabledimage0	"upba0524.tga"
+			string	imageblttype	"stretch"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	20
+
+				int	widthpix	560
+
+				int	heightpix	110
+
+				Wallpaper:GREAT_WALLPAPER {
+
+					HistoricalText:GREAT_BIG_BOX {
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+	##### index stuff
+
+	IndexButtonSwitchGroup {
+
+		int	xpix	14
+
+		int	ypix	44
+
+		UnitsButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	0
+
+			int	ypix	0
+
+			string	text	"str_ldl_CAPS_UNITS"
+		}
+
+		ImproveButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	0
+
+			int	ypix	23
+
+			string	text	"str_ldl_IMPROVE"
+		}
+
+		WondersButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	0
+
+			int	ypix	46
+
+			string	text	"str_ldl_CAPS_WONDERS"
+		}
+
+		AdvancesButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	0
+
+			int	ypix	69
+
+			string	text	"str_ldl_CAPS_ADVANCES"
+		}
+
+		GovernButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	522
+
+			int	ypix	0
+
+			string	text	"str_ldl_GOVERN"
+		}
+
+		TerrainButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	522
+
+			int	ypix	23
+
+			string	text	"str_ldl_TERRAIN"
+		}
+
+		TileImpButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	522
+
+			int	ypix	46
+
+			string	text	"str_ldl_CAPS_TILE_IMP"
+		}
+
+		ConceptButton:GREAT_INDEX_BUTTON {
+
+			int	xpix	522
+
+			int	ypix	69
+
+			string	text	"str_ldl_CONCEPTS"
+		}
+	}
+
+
+	LeftArrowButton:GREAT_ARROW_BUTTON {
+
+		int	xpix	220
+
+		string	image0	"upba5306.tga"
+
+		string	image1	"upba5307.tga"
+
+	}
+
+	IndexButton:T_FONT5_63 {
+
+		bool	shadowfont	false
+
+		string	xanchor	"center"
+
+		int	ypix	148
+
+		int	widthpix	89
+
+		int	heightpix	24
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+
+		string	image0	"upba5301.tga"
+
+		string	image1	"upba5305.tga"
+
+		string	disabledimage0	"upba5313.tga"
+
+	}
+
+	RightArrowButton:GREAT_ARROW_BUTTON {
+
+		int	xpix	370
+
+		string	image0	"upba5308.tga"
+
+		string	image1	"upba5309.tga"
+
+	}
+
+
+
+	IndexSheet {
+
+		int	xpix	103
+
+		int	ypix	34
+
+		int	widthpix	433
+
+		int	heightpix	114
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		ListButtonSwitchGroup {
+
+			int	xpix	0
+
+			int	ypix	0
+
+			int	widthpix	433
+
+			int	heightpix	114
+
+			ListButton:T_FONT5_8 {
+
+				int	xpix	0
+
+				int	ypix	0
+
+				int	widthpix	143
+
+				int	heightpix	22
+
+				int	beveltype	2
+
+				int	bevelwidth	1
+
+				string	pattern	"upba5300.tga"
+
+				int	srcxpix	0
+
+				int	srcypix	0
+
+				int	srcwidthpix	143
+
+				int	srcheightpix	22
+
+			}
+		}
+	}
+}
+
+
+
+TechListItem {
+
+	Name:T_FONT6_8 {
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		701
+
+		int		heightpix		20
+
+	}
+
+}
+
+
+
+########################
+
+# strings
+
+########################
+
+LibraryStrings {
+
+	int	numstrings	2
+
+	string	string0	"str_tbl_ldl_INDEX"
+	string	string1	"str_tbl_ldl_TREE"
+}
+
+
+
+$

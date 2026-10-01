@@ -1,0 +1,89 @@
+#######################################
+# File: messagebox.ldl
+# Last Access: Thu Jul 30 17:01:13 1998
+#######################################
+
+##-----------------------------------##
+##                Data               ##
+##-----------------------------------##
+HelpFancyTL {
+	string	pattern	"upba2413.tga"
+	int 	xpix		-7
+	int 	ypix		-7
+	int	widthpix	54
+	int	heightpix	54
+}
+HelpFancyTR {
+	string	pattern	"upba2414.tga"
+	int 	xpix		215
+	int 	ypix		-7
+	int	widthpix	54
+	int	heightpix	54
+}
+
+HelpFancyBL {
+	string	pattern	"upba2416.tga"
+	int 	xpix		-7
+	int 	ypix		76
+	int	widthpix	54
+	int	heightpix	54
+}
+HelpFancyBR {
+	string	pattern	"upba2415.tga"
+	# xpix = ( widthpix of HelpPopup ) - 47
+	# ypix = ( heightpix of HelpPopup ) - 47
+	int 	xpix		215
+	int 	ypix		76
+	int	widthpix	54
+	int	heightpix	54
+}
+
+HelpPopupWindow {
+	int	xpix	692
+	int	ypix	93
+	int	widthpix	262
+	int	heightpix	140
+	string	pattern	"upba6417.tga"
+	HelpLeftBar {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	10
+		int	heightpix	123
+		string	image0	"upba2417.tga"
+	}
+	HelpTopBar {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	262
+		int	heightpix	16
+		string	image0	"upba2409.tga"
+	}
+	HelpRightBar {
+		int	xpix	0
+		int	ypix	0
+		string	xanchor	"right"
+		int	widthpix	10
+		int	heightpix	123
+		string	image0	"upba2418.tga"
+	}
+	HelpBottomBar {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	262
+		int	heightpix	11
+		string	yanchor	"bottom"
+		string	image0	"upba2410.tga"
+	}
+	HelpTextBox:T_FONT1_16 {
+		int	xpix	10
+		int	ypix	10
+		int	widthpix	242
+		int	heightpix	120
+		int	bevelwidth	1
+		int	beveltype	1
+		string	pattern	"upba6417.tga"
+#		string	textblttype	"fill"
+	}
+}
+
+$

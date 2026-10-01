@@ -1,0 +1,128 @@
+
+## new keymap strings
+str_tbl_ldl_Toggle_City_Names "Toggle City Names"
+
+## Graphics Options
+str_ldl_City_Names_Off			"City Names Off"
+str_ldl_City_Names_On			"City Names On"
+
+str_ldl_Unit_Speed				"Unit Speed:"
+
+## Gameplay Options
+str_ldl_Show_All_Battles_Off	"Show All Battles Off"
+str_ldl_Show_All_Battles_On		"Show All Battles On"
+str_ldl_Mouse_Speed				"Mouse Speed:"
+str_ldl_Autosave_Off			"Autosave Off"
+str_ldl_Autosave_On				"Autosave On"
+str_ldl_Left_Handed_Mouse_Off	"Right-handed Mouse"
+str_ldl_Left_Handed_Mouse_On	"Left-handed Mouse"
+
+# autosave string
+AUTOSAVE_NAME					"AUTOSAVE"
+
+# 'A' is for Alliance in the diplomacy screen
+str_ldl_Alliance				"A"
+
+# for Terrain Pad
+str_ldl_Clear_Map				"Clear Map"
+
+## SLIC stuff
+BUTTON_DONT_SHOW_AGAIN "Don't show me this again"
+
+NEW_CITY_BUILT "You have founded the city of [city.1.name]."
+
+WAR_OVER "The [player.1.civ_name_plural] are no longer at war with the [player.2.civ_name_plural]"
+
+# Starting Locations Pad Strings
+str_ldl_Start_Loc				"Start Locs."
+
+str_ldl_Start_Loc_Title			"Starting Locations Editor"
+str_ldl_Start_Loc_Mode_Text		"Start Location Mode:"
+str_ldl_Start_Loc_Mode_None		"No Start Locations"
+str_ldl_Start_Loc_Mode_Player	"Start Loc. by Player"
+str_ldl_Start_Loc_Mode_Civ		"Start Loc. by Civ"
+str_ldl_Start_Loc_Civ_Text		"Civilization:"
+str_ldl_Start_Loc_Player_Text	"Player:"
+str_ldl_Player_Civ_Name_Text	"Civ/Player Name"
+str_ldl_Start_Loc_None			"Not Used"
+str_ldl_Start_Loc_Delete		"Delete Loc"
+str_ldl_Civs_Unlocked			"Civs Unlocked"
+str_ldl_Civs_Locked				"Civs Locked"
+str_ldl_Player_Text				"Player"
+
+# for disclaimer window
+str_ldl_Disclaimer				"Disclaimer"
+str_ldl_I_Agree					"I Agree To Terms"
+str_ldl_I_Disagree				"I Do Not Agree"
+
+#Netshell stuff
+str_ldl_No_Scenario "Scenario not found."
+
+# SAM050399
+# naming the cities
+str_ldl_Name_City_Title		"City Name"
+str_ldl_Name_City_Message	"What would you like to name your newly founded city?"
+
+##################################
+#
+# All/Only Patch 1.2 Stuff Follows
+#
+##################################
+
+# JBR062399
+NEXT_HOT_SEAT_PLAYER "[player.1.leader_name] of the [player.1.civ_name_plural], it is now your turn."
+NEXT_EMAIL_PLAYER "Please mail the saved game on your desktop to [player.1.leader_name] ([string.1.name]) of the [player.1.civ_name_plural]."
+
+# JBR07071999 stuff for new wasting work messages
+NEW_UNIT_COMPLETED "A new [unit.name] is ready in [city.1.name].  Next item in queue: [action.1.name]"
+UNIT_COMPLETED_QUEUE_EMPTY "A new [unit.name] is ready in [city.1.name].  The queue for [city.1.name] is now empty."
+BUILDING_BUILT "[city.1.name] has built a [building.name].  Next item in queue: [action.1.name]."
+BUILDING_BUILT_QUEUE_EMPTY "[city.1.name] has built a [building.name].  The queue for [city.1.name] is now empty."
+WONDER_BUILT "[city.1.name] has built [wonder.name].  Next item in queue: [action.1.name]."
+WONDER_BUILT_QUEUE_EMPTY "[city.1.name] has built [wonder.name].  The queue for [city.1.name] is now empty."
+ENDGAME_BUILT "[city.1.name] has built a [action.1.name].  Next item in queue: [action.2.name]."
+ENDGAME_BUILT_QUEUE_EMPTY "[city.1.name] has built a [action.1.name].  The queue for [city.1.name] is now empty."
+
+TRADE_ROUTE_RESET "Trade route reset!"
+
+
+# SAM070899
+str_ldl_SP_SCENARIO_PICKER		"Select Scenario"
+str_ldl_SP_STANDARD_GAME		"Standard Game"
+str_ldl_SP_SCENARIO_STATIC_TEXT		"Scenario:"
+str_ldl_SCENARIO_PICKER_TITLE		"Scenario Picker"
+str_ldl_PACK_INSTRUCTIONS		"Activision does not provide technical support for the Program Utilities or for New Game Materials created by using the Program Utilities."
+str_ldl_AVAILABLE_SCEN_PACK		"Available Scenario Packs"
+#str_ldl_PACK_INSTRUCTIONS		"Please select the Scenario Pack that you'd like to use:"
+str_ldl_SCEN_INSTRUCTIONS		"Please choose which Scenario you are interested in playing:"
+str_ldl_LOAD_SCENARIO_GAME		"Load Scenario Game"
+str_ldl_SAVE_SCENARIO			"Save Scenario"
+str_ldl_SAVE_SCENARIO_AS		"Save Scenario As"
+
+str_ERR_CANT_LOCATE_SCEN		"Unable to locate the scenario that created this saved game.  Looking for: "
+str_NAME_SCENARIO				"Name Scenario"
+str_DEFAULT_SCENARIO_NAME		"Custom Call to Power Scenario"
+str_NAME_SCENARIO_MESSAGE		"Please enter a name for this scenario.  A scenario is uniquely identified by its name, so the names must be distinct."
+
+# JBR07131999
+VICTORY_ENSLAVEMENT_CITY 		"Your [unit.1.name] has captured a new slave and sent it to [city.1.name]."
+
+HOTSEAT_HUMAN "Human"
+HOTSEAT_AI "Computer"
+ldl_str_EMAIL_LIST_TITLE		"Setup Email Game"
+ldl_str_HOTSEAT_LIST_TITLE		"Setup Hotseat Game"
+
+str_ldl_Player_Type "Type"
+str_ldl_Email_Address "Email"
+str_ldl_Player_Name "Name"
+
+str_ldl_HOTSEAT "Hotseat Game"
+str_ldl_EMAIL "Email Game"
+
+str_tbl_ldl_Toggle_Trade_Routes "Show Trade Routes"
+str_tbl_ldl_Execute_Eyepoint "Eyepoint"
+
+SHOW_ME "Show me"
+HOTSEAT_CITY_ATTACKED "The [player.1.civ_name_plural] attacked [city.1.name] with a [unit.1.name]."
+HOTSEAT_ARMY_ATTACKED "The [player.1.civ_name_plural] attacked your [unit.2.name] with a [unit.1.name]"
+BUTTON_QUIT_GAME "Quit Game"

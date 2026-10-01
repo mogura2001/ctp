@@ -1,0 +1,2573 @@
+#include "tutorial_triggers.slc"
+#include "tutorial_more.slc"
+
+alertbox 'ACantGoOn' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_CANT_GO_ON);
+	Text(ID_TUT513_CANT_GO_ON);
+	PlaySound("SOUND_ID_ALERT");
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'ACantSettleNow' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_CANT_SETTLE_NOW);
+	Text(ID_TUT203_CANT_SETTLE_NOW);
+
+	Attract("TurnWindow.EndButton");
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'AGotAdvance' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_GOT_ADVANCE);
+	Text (ID_TUT138_GOT_ADVANCE);
+
+	if(g.year == 0) {
+		Abort();
+	}
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'AZOC' {
+MessageType("TUTORIAL");
+MessageClass(420);	
+	Title(ID_TITLE_ZOC);
+	Text(ID_TUT168_ZOC);
+	
+	Button(ID_BUTTON_OK){
+		Kill();
+	}
+}
+
+alertbox 'ADumbassSortButtons' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_DUMBASS_SORT_BUTTONS);
+	Text(ID_TUT631_DUMBASS_SORT_BUTTONS);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'AUnitDeselected' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_UNIT_DESELECTED);
+	Text(ID_TUT579_UNIT_DESELECTED);
+
+	PlaySound("SOUND_ID_SLERT");	
+	if(IsUnitSelected()) {
+		Abort();
+	}
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'AAlertQueue' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_ALERT_QUEUE);
+	Text(ID_TUT638_ALERT_QUEUE);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox 'MWelcomeCTP' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_WELCOME_CTP);
+	Text(ID_TUT500_WELCOME_CTP);
+	Show();
+
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		go = go + 1;
+		Kill();
+		Message(g.tutorialplayer, 'MTheTutorial');
+	}
+}
+
+
+messagebox 'MTheTutorial' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_THE_TUTORIAL);
+	Text(ID_TUT500A_THE_TUTORIAL);
+	Show();
+	
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+
+	Attract("TutorialWin.TitleButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		go = go + 1;
+		Kill();
+		Message(g.tutorialplayer, 'MNavigation');
+	}
+}
+
+messagebox 'MNavigation' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_MAP_SCROLL);
+	Text(ID_TUT500B_MAP_SCROLL);
+	Show();
+
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+		
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		go = go + 1;
+		Kill();
+		Message(g.tutorialplayer, 'MThisIsSettler');
+	}
+}			
+
+messagebox 'MThisIsSettler' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_THIS_IS_SETTLER);
+	Text(ID_TUT502_THIS_IS_SETTLER);
+	Show();
+
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		go = go + 1;	
+		Kill();
+		Message(g.tutorialplayer, 'MSelectSettler');
+	}
+}
+
+messagebox 'MSelectSettler' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_SELECT_SETTLER);
+	Text(ID_TUT502A_SELECT_SETTLER);
+	Show();
+
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		go = go + 1;		
+		Kill();
+		Message(g.tutorialplayer, 'MMoveSettler');
+	}
+}
+
+messagebox 'MMoveSettler' {
+MessageType("TUTORIAL");
+MessageClass(4);
+	Title(ID_TITLE_MOVE_YOUR_SETTLER);
+	Text(ID_TUT503_MOVE_YOUR_SETTLER);
+	Show();
+
+	if(token == -3) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal1');	
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+			Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MOnRiver' {
+MessageType("TUTORIAL");
+MessageClass(5);
+	Title(ID_TITLE_ON_RIVER);
+	Text(ID_TUT503B_ON_RIVER);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MRiver2');
+	}
+}
+
+messagebox 'MRiver2' {
+MessageType("TUTORIAL");
+MessageClass(5);
+	Title(ID_TITLE_CANT_MOVE_MORE);
+	Text(ID_TUT503C_RIVER_2);
+	Show();
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MCantMoveMore' {
+MessageType("TUTORIAL");
+MessageClass(5);
+	Title(ID_TITLE_CANT_MOVE_MORE);
+	Text(ID_TUT503A_CANT_MOVE_MORE);
+	Show();
+
+	Attract("TurnWindow.EndButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+			Attract("TurnWindow.EndButton");
+		}
+}
+
+messagebox 'MGoal1' {
+MessageType("TUTORIAL");
+MessageClass(6);
+	Title(ID_TITLE_GOAL_1);
+	Text(ID_TUT501_GOAL_1);
+	Show();
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MHowToBuildCity');
+	}
+}					
+
+messagebox 'MHowToBuildCity' {
+MessageType("TUTORIAL");
+MessageClass(6);
+	Title(ID_TITLE_HOW_TO_BUILD_CITY);
+	Text(ID_TUT504_HOW_TO_BUILD_CITY);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+			Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MGoal1Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(7);
+	Title(ID_TITLE_GOAL_1_ACCOMPLISHED);
+	Text(ID_TUT505_GOAL_1_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGoal2');
+	}
+}
+
+messagebox 'MGoal2' {
+MessageType("TUTORIAL");
+MessageClass(7);
+	Title(ID_TITLE_GOAL_2);
+	Text(ID_TUT506_GOAL_2);
+	Show();
+
+//	if(IsCitySelected()) {
+//		Attract("ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdChangeButton");
+//	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MTurnsToComplete' {
+MessageType("TUTORIAL");
+MessageClass(71);
+	Title(ID_TITLE_TURNS_TO_COMPLETE);
+	Text(ID_TUT507_TURNS_TO_COMPLETE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MBuildProgress');
+	}
+}
+
+messagebox 'MBuildProgress' {
+MessageType("TUTORIAL");
+MessageClass(71);
+	Title(ID_TITLE_BUILD_PROGRESS);
+	Text(ID_TUT508_BUILD_PROGRESS);
+	Show();
+
+	Attract("TurnWindow.EndButton");
+
+	DisableClose();
+		
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+		Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MStall1' {
+MessageType("TUTORIAL");
+MessageClass(71);
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513A_INTERIM_SCIENCE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall7');
+	}
+}
+
+messagebox 'MStall2' {
+MessageType("TUTORIAL");
+MessageClass(71);
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513B_INTERIM_TURNS);
+	Show();
+	
+	Attract("ControlPanelWindow.YearBoxHolder");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall7');
+	}
+}
+
+messagebox 'MStall3' {
+MessageType("TUTORIAL");
+MessageClass(71);
+//continue exploring 
+	Title(ID_TITLE_KEEP_HITTING_N);
+	Text(ID_TUT507A_KEEP_HITTING_N);
+	Show();
+
+	Attract("TurnWindow.EndButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+		Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MStall4' {
+MessageType("TUTORIAL");
+MessageClass(71);
+//minimize message
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513C_INTERIM_X);
+	Show();
+	
+	if(token == 1) {
+		Abort();
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall7');
+	}		
+}
+
+messagebox 'MStall5' {
+MessageType("TUTORIAL");
+MessageClass(71);
+//city pop drops one
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513D_INTERIM_Y);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall7');
+	}		
+}
+
+messagebox 'MStall6' {
+MessageType("TUTORIAL");
+MessageClass(71);
+//heralds
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513E_INTERIM_Z);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall7');
+	}		
+}
+
+messagebox 'MStall7' {
+MessageType("TUTORIAL");
+MessageClass(71);
+//check progress
+	Title(ID_TITLE_INTERIM);
+	Text(ID_TUT513F_CHECK_PROGRESS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MStall3');
+	}		
+}	
+
+messagebox 'MGoal2Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(8);
+	Title(ID_TITLE_GOAL_2_ACCOMPLISHED);
+	Text(ID_TUT509_GOAL_2_ACCOMPLISHED);
+	Show();
+
+	if(token == 2) {
+		Abort();
+		Message(g.tutorialplayer, 'MExploreMap');
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MExploreMap');
+	}
+}
+
+messagebox 'MExploreMap' {
+MessageType("TUTORIAL");
+MessageClass(8);
+	Title(ID_TITLE_EXPLORE_THE_MAP);
+	Text(ID_TUT510_EXPLORE_THE_MAP);
+	Show();
+
+	Attract("TurnWindow.UnitButton");
+
+	if(token == 2) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal3');
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MDeselect' {
+MessageType("TUTORIAL");
+MessageClass(8);
+	Title(ID_TITLE_DESELECT);
+	Text(ID_TUT550A_DESELECT);
+	Show();
+	
+	if(token == 2) {
+		Abort();
+		Message(g.tutorialplayer, 'MGoal3');
+	}
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGoal3');
+	}
+}
+
+messagebox 'MGoal3' {
+MessageType("TUTORIAL");
+MessageClass(9);
+	Title(ID_TITLE_GOAL_3);
+	Text(ID_TUT511_GOAL_3);
+	Show();
+
+	if(token == 3 || token == 5) {
+		Abort();
+		Message(g.tutorialplayer, 'MContinueExploring');
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MContinueExploring' {
+MessageType("TUTORIAL");
+MessageClass(10);
+	Title(ID_TITLE_CONTINUE_EXPLORING);
+	Text(ID_TUT512_CONTINUE_EXPLORING);
+	Show();
+
+	Attract("TurnWindow.EndButton");	
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+		Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MGoal3Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(11);
+	Title(ID_TITLE_GOAL_3_ACCOMPLISHED);
+	Text(ID_TUT514_GOAL_3_ACCOMPLISHED);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGoal4');
+	}
+}
+
+messagebox 'MGoal4' {
+MessageType("TUTORIAL");
+MessageClass(11);
+	Title(ID_TITLE_GOAL_4);
+	Text(ID_TUT515_GOAL_4);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MContinueExploring2' {
+MessageType("TUTORIAL");
+MessageClass(12);
+	Title(ID_TITLE_CONTINUE_EXPLORING);
+	Text(ID_TUT512A_CONTINUE_EXPLORING);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+		Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MDeselect2' {
+MessageType("TUTORIAL");
+MessageClass(13);
+	Title(ID_TITLE_DESELECT);
+	Text(ID_TUT550A_DESELECT);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MNewSettlerBuilt');
+	}
+}
+
+messagebox 'MNewSettlerBuilt' {
+MessageType("TUTORIAL");
+MessageClass(13);
+	Title(ID_TITLE_SETTLER_BUILT);
+	Text(ID_TUT516_SETTLER_BUILT);
+	Show();	
+
+	if(token == 7) {
+		Abort();
+		Message(g.tutorialplayer, 'MFindGoodSpot');
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MFindGoodSpot' {
+MessageType("TUTORIAL");
+MessageClass(14);
+	Title(ID_TITLE_FIND_G_SPOT);
+	Text(ID_TUT518_FIND_G_SPOT);
+	Show();
+	
+	DisableClose();
+		
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MBuildSecondCity');
+	}
+}
+
+messagebox 'MBuildSecondCity' {
+MessageType("TUTORIAL");
+MessageClass(14);
+	Title(ID_TITLE_BUILD_SECOND_CITY);
+	Text(ID_TUT519_BUILD_SECOND_CITY);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+		Attract("TurnWindow.EndButton");
+	}
+}
+
+messagebox 'MStall8' {
+MessageType("TUTORIAL");
+MessageClass(14);
+	Title(ID_TITLE_REMEMBER_N);
+	Text(ID_TUT518A_REMEMBER_N);
+	Show();
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MBuildSecondCity');
+	}
+}			
+
+messagebox 'MStall9' {
+MessageType("TUTORIAL");
+MessageClass(14);
+	Title(ID_TITLE_GOOD_PLACES_TO_SETTLE);
+	Text(ID_TUT518B_GOOD_PLACES_TO_SETTLE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MBuildSecondCity');
+	}
+}
+
+messagebox 'MGoal4Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(15);
+	Title(ID_TITLE_GOAL_4_ACCOMPLISHED);
+	Text(ID_TUT520_GOAL_4_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MLevel2' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_LEVEL_2);
+	Text(ID_TUT519A_LEVEL_2);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MHowToSave');
+	}
+}
+	
+messagebox 'MHowToSave' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_SAVE);
+	Text(ID_TUT519B_SAVE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M2Goal1');
+	}
+}
+
+messagebox 'M2Goal1' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_2_GOAL_1);
+	Text(ID_TUT521_2_GOAL_1);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MResources');
+	}
+}
+
+messagebox 'MResources' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_RESOURCES);
+	Text(ID_TUT522_RESOURCES);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGetResources');
+	}
+}
+
+messagebox 'MGetResources' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_GET_RESOURCES);
+	Text(ID_TUT523_GET_RESOURCES);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MWorkView');
+	}
+}
+
+messagebox 'MWorkView' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_WORK_VIEW);
+	Text(ID_TUT524_WORK_VIEW);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(work_view) {
+			Kill();
+			Message(g.tutorialplayer, 'MWorkViewIcons');
+		} else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+}
+
+messagebox 'MWorkViewIcons' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_WORK_VIEW_ICONS);
+	Text(ID_TUT524A_WORK_VIEW_ICONS);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMovingWorkers');
+	}	
+}
+
+messagebox 'MMovingWorkers' {
+MessageType("TUTORIAL");
+MessageClass(16);
+	Title(ID_TITLE_MOVING_WORKERS);
+	Text(ID_TUT525_MOVING_WORKERS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MGetFoodProduction' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_GET_FOOD_PRODUCTION);
+	Text(ID_TUT526_GET_FOOD_PRODUCTION);
+	Show();	
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MRuling');
+	}
+}			
+
+messagebox 'MRuling' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_RULING);
+	Text(ID_TUT527_RULING);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMaintainHappy');
+	}
+}
+
+messagebox 'MMaintainHappy' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_MAINTAIN_HAPPY);
+	Text(ID_TUT528_MAINTAIN_HAPPY);
+	Show();	
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGlobalRules');
+	}
+}
+
+messagebox 'MGlobalRules' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_GLOBAL_RULES);
+	Text(ID_TUT529_GLOBAL_RULES);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MOpenCivTab');
+	}
+}
+
+messagebox 'MOpenCivTab' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_OPEN_CIV_TAB);
+	Text(ID_TUT530_OPEN_CIV_TAB);
+	Show();
+
+	if(IsCitySelected()) {
+		Attract("ControlPanelWindow.CityUnitSelectedTabGroup.CivTab");
+	}
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MTheCivTab' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_THE_CIV_TAB);
+	Text(ID_TUT531_THE_CIV_TAB);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MHappinessIs');
+	}
+}
+
+messagebox 'MHappinessIs' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_HAPPINESS_IS);
+	Text(ID_TUT532_HAPPINESS_IS);
+	Show();
+	
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.HappinessText");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MUnhappinessIs');
+	}
+}
+
+messagebox 'MUnhappinessIs' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_UNHAPPINESS_IS);
+	Text(ID_TUT533_UNHAPPINESS_IS);
+	Show();
+
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.RiotBox");
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MResearchScience');
+	}
+}
+
+messagebox 'MResearchScience' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_RESEARCH_SCIENCE);
+	Text(ID_TUT534_RESEARCH_SCIENCE);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MSettingScience');
+	}
+}
+
+messagebox 'MSettingScience' {
+MessageType("TUTORIAL");
+MessageClass(17);
+	Title(ID_TITLE_SETTING_SCIENCE);
+	Text(ID_TUT535_SETTING_SCIENCE);
+	Show();
+
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.ScienceBox");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MPublicWorks');
+	}
+}
+
+messagebox 'MPublicWorks' {
+MessageType("TUTORIAL");
+MessageClass(17);	
+	Title(ID_TITLE_PUBLIC_WORKS);
+	Text(ID_TUT536_PUBLIC_WORKS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MSettingPublicWorks');
+	}
+}
+
+messagebox 'MSettingPublicWorks' {
+MessageType("TUTORIAL");
+MessageClass(17);	
+	Title(ID_TITLE_SETTING_PUBLIC_WORKS);
+	Text(ID_TUT537_SETTING_PUBLIC_WORKS);
+	Show();
+
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.PwBox");
+
+	if(token == 13) {
+		Abort();
+		Message(g.tutorialplayer, 'MGettingPublicWorks');
+	}
+		
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M2Goal2');
+
+	}				
+}
+
+messagebox 'M2Goal2' {
+MessageType("TUTORIAL");
+MessageClass(17);	
+	Title(ID_TITLE_2_GOAL_2);
+	Text(ID_TUT538_2_GOAL_2);
+	Show();
+
+	if(token == 13) {
+		Abort();
+		Message(g.tutorialplayer, 'MGettingPublicWorks');
+	}
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(pw_is_70) {
+			Kill();
+			Message(g.tutorialplayer, 'MGettingPublicWorks');
+		} else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+		pw_cue = 1;
+	}
+}
+
+messagebox 'MGettingPublicWorks' {
+MessageType("TUTORIAL");
+MessageClass(18);	
+	Title(ID_TITLE_GETTING_PUBLIC_WORKS);
+	Text(ID_TUT539_GETTING_PUBLIC_WORKS);
+	Show();
+
+	Attract("ControlPanelWindow.PwBox");
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MWaitForPW');
+	}
+}
+
+messagebox 'MWaitForPW' {
+MessageType("TUTORIAL");
+MessageClass(18);
+	Title(ID_TITLE_WAIT_FOR_PW);
+	Text(ID_TUT549_WAIT_FOR_PW);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MDecreasePW' {
+MessageType("TUTORIAL");
+MessageClass(19);
+	Title(ID_TITLE_DECREASE_PW);
+	Text(ID_TUT539A_DECREASE_PW);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(pw_is_20) {
+			Kill();
+			Message(g.tutorialplayer, 'MUsingPW');
+		} else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+}
+
+messagebox 'MUsingPW' {
+MessageType("TUTORIAL");
+MessageClass(19);
+	Title(ID_TITLE_USING_PW);
+	Text(ID_TUT540_USING_PW);
+	Show();
+
+	Attract("ControlPanelWindow.TileImpPanel.TileImpButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MGoalFarm' {
+MessageType("TUTORIAL");
+MessageClass(20);
+	Title(ID_TITLE_GOAL_FARM);
+	Text(ID_TUT542_GOAL_FARM);
+	Show();
+
+	Attract("ControlPanelWindow.TileImpPanel.TileImpButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MGoalRoad' {
+MessageType("TUTORIAL");
+MessageClass(20);
+	Title(ID_TITLE_GOAL_ROAD);
+	Text(ID_TUT543_GOAL_ROAD);
+	Show();
+
+	Attract("ControlPanelWindow.TileImpPanel.TileImpButton");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'M2Goal2AccomplishedFarm' {
+MessageType("TUTORIAL");
+MessageClass(21);
+	Title(ID_TITLE_2_GOAL_2_ACCOMPLISHED_FARM);
+	Text(ID_TUT544_2_GOAL_2_ACCOMPLISHED_FARM);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+//		Message(g.tutorialplayer, 'MOpenWorkView2');
+		EndTurn();
+	}
+}
+
+messagebox 'M2Goal2AccomplishedRoad' {
+MessageType("TUTORIAL");
+MessageClass(21);
+	Title(ID_TITLE_2_GOAL_2_ACCOMPLISHED_ROAD);
+	Text(ID_TUT545_2_GOAL_2_ACCOMPLISHED_ROAD);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MLevel3');
+		EndTurn();
+	}
+}
+
+//only if player built a farm
+messagebox 'MOpenWorkView2' {
+MessageType("TUTORIAL");
+MessageClass(21);	
+	Title(ID_TITLE_OPEN_WORK_VIEW_2);
+	Text(ID_TUT546_OPEN_WORK_VIEW_2);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+//		Message(g.tutorialplayer, 'MLevel3');
+		EndTurn();
+	}
+}
+
+messagebox 'MLevel3' {
+MessageType("TUTORIAL");
+MessageClass(22);
+	Title(ID_TITLE_LEVEL_3);
+	Text(ID_TUT551_LEVEL_3);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MCivInteraction');
+	}
+}
+
+messagebox 'MCivInteraction' {
+MessageType("TUTORIAL");
+MessageClass(22);
+	Title(ID_TITLE_CIV_INTERACTION);
+	Text(ID_TUT552_CIV_INTERACTION);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M3Goal1');
+	}
+}
+
+messagebox 'M3Goal1' {
+MessageType("TUTORIAL");
+MessageClass(22);
+	AddCityByIndex(g.tutorialplayer, 0);
+	Title(ID_TITLE_3_GOAL_1);
+	Text(ID_TUT553_3_GOAL_1);
+	Show();
+	
+//	M3_goal_1 = 1;
+	
+	if(mountain_warrior) { 
+		Message(g.tutorialplayer, 'AMountainWarrior');
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(IsInZOC(g.tutorialplayer, ChiefSittingDuck_location)) {
+			Message(1, 'KillAllMessages');
+			Message(1, 'EnableTriggers3');
+			Message(1, 'DisableTriggers2');
+			DisableTrigger('TContactMade2');
+
+			Message(g.tutorialplayer, 'MPseudoGreetings');
+			Message(g.tutorialplayer, 'M3Goal1Accomplished');
+			PlaySound("SOUND_ID_ALERT");
+
+		token = 18;
+		} else {
+			Message(g.tutorialplayer, 'ACantGoOn');		
+		}
+	}
+}
+
+alertbox 'AMountainWarrior' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_MOUNTAIN_WARRIOR);
+	Text(ID_TUT553A_MOUNTAIN_WARRIOR);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox 'MBePatient3' {
+MessageType("TUTORIAL");
+MessageClass(22);
+	Title(ID_TITLE_BE_PATIENT_3);
+	Text(ID_TUT554_BE_PATIENT_3);
+	Show();
+
+	if(token == 17) {
+		Abort();
+		Message(g.tutorialplayer, 'M3Goal1Accomplished');
+		Message(g.tutorialplayer, 'MPseudoGreetings');
+	}
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');	
+	}
+}
+
+messagebox 'M3Goal1Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(231);
+	Title(ID_TITLE_3_GOAL_1_ACCOMPLISHED);
+	Text(ID_TUT556_3_GOAL_1_ACCOMPLISHED);
+	Show();
+
+	DisableClose();	
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGreetings');
+	}
+}			
+
+messagebox 'MGreetings' {
+MessageType("TUTORIAL");
+MessageClass(23);
+	Title(ID_TITLE_GREETINGS);
+	Text(ID_TUT558_GREETINGS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MOpenGreetings');
+
+	}
+}
+
+messagebox 'MPseudoGreetings' {
+MessageType("DIPLOMATIC");
+MessageClass(23);
+	Title(ID_TITLE_PSEUDO_GREETINGS);
+	Text(ID_TUT580_PSEUDO_GREETINGS);
+
+	DisableClose();
+
+	Button(ID_BUTTON_ACCEPT) {
+		Kill();
+		accepted_greetings = 1;		
+		Message(g.tutorialplayer, 'MCoverYourBack');
+		KillClass(g.tutorialplayer, 23);
+	}
+}
+	
+messagebox 'MOpenGreetings' {
+MessageType("TUTORIAL");
+MessageClass(23);
+	Title(ID_TITLE_OPEN_GREETINGS);
+	Text(ID_TUT559_OPEN_GREETINGS);
+	Show();
+
+	Attract("MessageIconWindow.icon");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+			Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MCoverYourBack' {
+MessageType("TUTORIAL");
+MessageClass(24);
+	Title(ID_TITLE_COVER_YOUR_BACK);
+	Text(ID_TUT560_COVER_YOUR_BACK);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		EndTurn();
+		token = 19;
+	}
+}
+
+
+messagebox 'MNoStackedBattle' {
+MessageType("TUTORIAL");
+MessageClass(24);
+	Title(ID_TITLE_NO_STACKED_BATTLE);
+	Text(ID_TUT560A_NO_STACKED_BATTLE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMakePeace');
+	}
+}
+
+messagebox 'M3Goal2' {
+MessageType("TUTORIAL");
+MessageClass(25);
+	AddUnit(FreeArcher);
+	Title(ID_TITLE_3_GOAL_2);
+	Text(ID_TUT561_3_GOAL_2);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMakingArmy');
+	}
+	EyePoint(FreeArcher);
+}
+
+messagebox 'MMakingArmy' {
+MessageType("TUTORIAL");
+MessageClass(25);
+	Title(ID_TITLE_MAKING_ARMY);
+	Text(ID_TUT562_MAKING_ARMY);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MKeepMoving' {
+MessageType("TUTORIAL");
+MessageClass(25);
+	Title(ID_TITLE_KEEP_MOVING);
+	Text(ID_TUT563_KEEP_MOVING);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MMixedForces' {
+MessageType("TUTORIAL");
+MessageClass(26);
+	Title(ID_TITLE_MIXED_FORCES);
+	Text(ID_TUT573_MIXED_FORCES);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MLockDisplay');
+	}
+}
+
+messagebox 'MLockDisplay' {
+MessageType("TUTORIAL");
+MessageClass(26);
+	Title(ID_TITLE_LOCK_DISPLAY);
+	Text(ID_TUT564_LOCK_DISPLAY);
+	Show();
+
+	if(IsUnitSelected()) {
+		Attract("ControlPanelWindow.CityUnitSelectedTabGroup.UnitsTab.pane.TabWallpaper.LockButton");
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(IsUnitSelected()) {
+			Kill();
+			Message(g.tutorialplayer, 'MLockStack');
+		}
+		else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+}
+
+messagebox 'MLockStack' {
+MessageType("TUTORIAL");
+MessageClass(26);
+	Title(ID_TITLE_LOCK_STACK);
+	Text(ID_TUT565_LOCK_STACK);
+	Show();
+
+	if(IsUnitSelected()) {
+		Attract("ControlPanelWindow.CityUnitSelectedTabGroup.UnitsTab.pane.TabWallpaper.LockButton");
+	}
+		
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MStackHerald' {
+MessageType("TUTORIAL");
+MessageClass(261);
+	Title(ID_TITLE_STACK_HERALD);
+	Text(ID_TUT566_STACK_HERALD);
+	Show();
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(IsUnitSelected()) {
+			Kill();
+			Message(g.tutorialplayer, 'MMoveStack');
+		}
+		else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+}
+
+messagebox 'MMoveStack' {
+MessageType("TUTORIAL");
+MessageClass (261);
+	Title(ID_TITLE_MOVE_STACK);
+	Text(ID_TUT567_MOVE_STACK);
+	Show();
+	
+	move_stack = 1;
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MAttackNeighbour' {
+MessageType("TUTORIAL");
+MessageClass(27);
+	Title(ID_TITLE_ATTACK_NEIGHBOUR);
+	Text(ID_TUT568_ATTACK_NEIGHBOUR);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+alertbox 'ABattleView' {
+MessageType("TUTORIAL");
+MessageClass(281);
+	Title(ID_TITLE_BATTLE_VIEW);
+	Text(ID_TUT571_BATTLE_VIEW);
+
+	if(closed_battle_view == 1)	{
+		Abort();
+		Message(g.tutorialplayer, 'MMakePeace');
+	}
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'ACloseBattleView');
+	}
+}
+
+alertbox 'ACloseBattleView' {
+MessageType("TUTORIAL");
+MessageClass(281);
+	Title(ID_TITLE_CLOSE_BATTLE_VIEW);
+	Text(ID_TUT574_CLOSE_BATTLE_VIEW);
+	
+	if(closed_battle_view)	{
+		Abort();
+		Message(g.tutorialplayer, 'MMakePeace');
+	}
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMakePeace');
+	}
+}
+
+messagebox 'MMakePeace' {
+MessageType("TUTORIAL");
+MessageClass(28);
+	KillClass(g.tutorialplayer, 281);
+	AddCityByIndex(g.tutorialplayer, 0);
+	Title(ID_TITLE_MAKE_PEACE);
+	Text(ID_TUT575_MAKE_PEACE);
+	Show();
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MOpenDiplomacyScreen');
+	}
+}
+
+messagebox 'MOpenDiplomacyScreen' {
+MessageType("TUTORIAL");
+MessageClass(28);
+	Title(ID_TITLE_OPEN_DIPLOMACY);
+	Text(ID_TUT576_OPEN_DIPLOMACY);
+	Show();
+
+	Attract("StatsWindow.ScreensSwitch");
+	
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+	OnClose	{
+		AttachRobot(2);
+	}
+
+}
+
+alertbox 'A3Goal3' {
+MessageType("TUTORIAL");
+MessageClass(29);	
+	Title(ID_TITLE_3_GOAL_3);
+	Text(ID_TUT578_3_GOAL_3);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'AGreetEmissary' {
+MessageType("TUTORIAL");
+MessageClass(29);
+	Title(ID_TITLE_GREET_EMISSARY);
+	Text(ID_TUT582_GREET_EMISSARY);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}	
+}
+
+alertbox 'AMakeRequest' {
+MessageType("TUTORIAL");
+MessageClass(29);
+	Title(ID_TITLE_MAKE_REQUEST);
+	Text(ID_TUT583_MAKE_REQUEST);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}	
+}
+
+alertbox 'APeaceTreaty' {
+MessageType("TUTORIAL");
+MessageClass(29);
+	Title(ID_TITLE_PEACE_TREATY);
+	Text(ID_TUT584_PEACE_TREATY);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}	
+}
+
+alertbox 'ACeaseButton' {
+MessageType("TUTORIAL");
+MessageClass(29);
+	Title(ID_TITLE_CEASE_BUTTON);
+	Text(ID_TUT584A_CEASE_BUTTON);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}		
+}
+
+alertbox 'AResponse' {
+MessageType("TUTORIAL");
+MessageClass(29);
+	Title(ID_TITLE_RESPONSE);
+	Text(ID_TUT585_RESPONSE);
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}	
+}
+
+messagebox 'M3Goal3Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(30);
+	Title(ID_TITLE_3_GOAL_3_ACCOMPLISHED);
+	Text(ID_TUT586_3_GOAL_3_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		level_4 = 1;
+		EndTurn();
+	}
+}
+
+messagebox 'MLevel4' {
+MessageType("TUTORIAL");
+MessageClass(30);
+	Title(ID_TITLE_LEVEL_4);
+	Text(ID_TUT587_LEVEL_4);
+	Show();
+
+	DisableClose();
+
+	if(level_3_saved) {
+		Message(g.tutorialplayer, 'MLevel3Save');
+	}
+	if(level_2_saved) {
+		Message(g.tutorialplayer, 'MLevel2Save');
+	}
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MGoods');
+	}
+}
+
+messagebox 'MGoods' {
+MessageType("TUTORIAL");
+MessageClass(30);
+	Title(ID_TITLE_GOODS);
+	Text(ID_TUT588_GOODS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M4Goal1');
+	}
+}
+
+messagebox 'M4Goal1' {
+MessageType("TUTORIAL");
+MessageClass(30);
+	Title(ID_TITLE_4_GOAL_1);
+	Text(ID_TUT589_4_GOAL_1);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		EndTurn();
+		Message(g.tutorialplayer, 'MLookForCities');
+	}
+}
+
+messagebox 'MLookForCities' {
+MessageType("TUTORIAL");
+MessageClass(30);
+	AddCity(trade_city_1);
+	AddCity(trade_city_2);
+	Title(ID_TITLE_LOOK_FOR_CITIES);
+	Text(ID_TUT590_LOOK_FOR_CITIES);
+	Show();
+		
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MMoveWorker1');
+	}
+	Eyepoint(trade_city_1);
+}
+
+
+messagebox 'MMoveWorker1' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddCity(trade_city_1);
+	Title(ID_TITLE_MOVE_TO_GOOD_1);
+	Text(ID_TUT591_MOVE_TO_GOOD_1);
+
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+	Eyepoint(trade_city_1);
+}
+
+messagebox 'MMoveWorker2' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddCity(trade_city_2);
+	Title(ID_TITLE_MOVE_TO_GOOD_2);
+	Text(ID_TUT592_MOVE_TO_GOOD_2);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}	
+	Eyepoint(trade_city_2);
+}
+
+messagebox 'MCaravans' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_CARAVANS);
+	Text(ID_TUT595_CARAVANS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MFreeCaravan');
+	}
+}
+
+messagebox 'MFreeCaravan' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_FREE_CARAVAN);
+	Text(ID_TUT596_FREE_CARAVAN);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MCreateMonopoly');
+	}
+}
+
+messagebox 'MCreateMonopoly' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_CREATE_MONOPOLY);
+	Text(ID_TUT593_CREATE_MONOPOLY);
+	Show();
+	
+	Attract("StatsWindow.ScreensSwitch");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+alertbox 'ATheTradeScreen' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_THE_TRADE_SCREEN);
+	Text(ID_TUT594_THE_TRADE_SCREEN);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'ASelectBeaver' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_SELECT_BEAVER);
+	Text(ID_TUT595_SELECT_BEAVER);
+
+	Attract("TradeSendWindow.NextButton");
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertbox 'APickDestination' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddCity(trade_city_1);
+	AddCity(trade_city_2);
+	Title(ID_TITLE_PICK_DESTINATION);
+	Text(ID_TUT596_PICK_DESTINATION);
+
+	Attract("TradeSendCityWindow.SendButton");
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox 'M4Goal1Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_4_GOAL_1_ACCOMPLISHED);
+	Text(ID_TUT597_4_GOAL_1_ACCOMPLISHED);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MLevel5');
+	}
+}			
+		
+messagebox 'MLevel5' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_LEVEL_5);
+	Text(ID_TUT598_LEVEL_5);
+	Show();
+	 
+	if(level_4_saved) {
+		Message(g.tutorialplayer, 'MLevel4Save');
+	}
+	if(level_3_saved) {
+		Message(g.tutorialplayer, 'MLevel3Save');
+	}
+	if(level_2_saved) {
+		Message(g.tutorialplayer, 'MLevel2Save');
+	}
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M5Goal1');
+	}
+
+	StartTimer(1, 5);
+}
+
+messagebox 'M5Goal1' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_1);
+	Text(ID_TUT599_5_GOAL_1);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MTheMaxTab');
+	}		
+}
+
+messagebox 'MTheMaxTab' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_MAX_TAB);
+	Text(ID_TUT600_MAX_TAB);
+	Show();
+	
+	if(IsCitySelected()) {
+		Attract("ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab");
+	}
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(max_tab) {
+			Kill();
+			Message(g.tutorialplayer, 'MMaximizeScience');
+		}else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+}
+
+messagebox 'MMaximizeScience' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_MAXIMIZE_SCIENCE);
+	Text(ID_TUT601_MAXIMIZE_SCIENCE);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'M5Goal1Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_1_ACCOMPLISHED);
+	Text(ID_TUT602_5_GOAL_1_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MSpecialists');
+	}
+}
+
+messagebox 'MSpecialists' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_SPECIALISTS);
+	Text(ID_TUT603_SPECIALISTS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MLaborTab');
+	}
+}
+
+messagebox 'MLaborTab' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddCity(trade_city_1);
+	Title(ID_TITLE_LABOR_TAB);
+	Text(ID_TUT605_LABOR_TAB);
+	Show();
+	
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		if(labor_tab) {
+			Kill();
+			Message(g.tutorialplayer, 'MEntertainer');
+		} else {
+			Message(g.tutorialplayer, 'ACantGoOn');
+		}
+	}
+
+	EyePoint(trade_city_1);
+}
+
+messagebox 'MEntertainer' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_ENTERTAINER);
+	Text(ID_TUT606_ENTERTAINER);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MScientist' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_SCIENTIST);
+	Text(ID_TUT607_SCIENTIST);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MSpecialistWarning' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddCity(trade_city_1);
+	Title(ID_TITLE_SPECIALIST_WARNING);
+	Text(ID_TUT604_SPECIALIST_WARNING);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MBuildQueues');
+	}
+}
+
+messagebox 'MBuildQueues' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_BUILD_QUEUE);
+	Text(ID_TUT608_BUILD_QUEUE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M5Goal2');
+	}
+}
+
+messagebox 'M5Goal2' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_2);
+	Text(ID_TUT609_5_GOAL_2);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MQueueHelp');
+	}
+}
+
+messagebox 'MQueueHelp' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_QUEUE_HELP);
+	Text(ID_TUT610_QUEUE_HELP);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MAddItemsToQueue' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_ADD_ITEMS_TO_QUEUE);
+	Text(ID_TUT610A_ADD_ITEMS_TO_QUEUE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'M5Goal2Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_2_ACCOMPLISHED);
+	Text(ID_TUT611_5_GOAL_2_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE){
+		Kill();
+		Message(g.tutorialplayer, 'M5Goal3');
+	}
+}
+
+messagebox 'M5Goal3' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_3);
+	Text(ID_TUT612_5_GOAL_3);
+	Show();
+
+	Attract("StatsWindow.ScreensSwitch");
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+alertbox 'AOrder2Cities' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_ORDER_2_CITIES);
+	Text(ID_TUT615_ORDER_2_CITIES);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox 'MCitiesNotBuilding' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_CITIES_NOT_BUILDING);
+	Text(ID_TUT615A_CITIES_NOT_BUILDING);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_OK) {
+		Kill();
+		Message(g.tutorialplayer, 'MDefendingCities');
+	}
+}
+
+messagebox 'M5Goal3Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_3_ACCOMPLISHED);
+	Text(ID_TUT616_5_GOAL_3_ACCOMPLISHED);
+	Show();
+	
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MDefendingCities');
+	}
+}
+
+messagebox 'MDefendingCities' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_DEFENDING_CITIES);
+	Text(ID_TUT617_DEFENDING_CITIES);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M5Goal4');
+	}
+}
+
+messagebox 'M5Goal4' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_5_GOAL_4);
+	Text(ID_TUT618_5_GOAL_4);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MFortifyInField' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_FORTIFY_IN_FIELD);
+	Text(ID_TUT619_FORTIFY_IN_FIELD);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		EndTurn();
+		Message(g.tutorialplayer, 'MLevel5Complete');
+	}
+}
+
+messagebox 'MLevel5Complete' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_LEVEL_5_COMPLETE);
+	Text(ID_TUT620_LEVEL_5_COMPLETE);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		level_6 = 1;
+		Message(g.tutorialplayer,'MLevel6');
+	}
+}
+
+messagebox 'MLevel6' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_LEVEL_6);
+	Text(ID_TUT621_LEVEL_6);
+	Show();
+
+	DisableClose();
+
+	if(level_5_saved) {
+		Message(g.tutorialplayer, 'MLevel5Save');
+	}			
+	if(level_4_saved) {
+		Message(g.tutorialplayer, 'MLevel4Save');
+	}
+	if(level_3_saved) {
+		Message(g.tutorialplayer, 'MLevel3Save');
+	}
+	if(level_2_saved) {
+		Message(g.tutorialplayer, 'MLevel2Save');
+	}
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MExploreTheWorld');
+	}
+}
+
+messagebox 'MExploreTheWorld' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_EXPLORE_THE_WORLD);
+	Text(ID_TUT624_EXPLORE_THE_WORLD);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MFreeBoat');
+	}
+
+}
+
+messagebox 'MFreeBoat' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	AddUnit(FreeCargo);
+	AddCity(trade_city_1);
+	Title(ID_TITLE_FREE_BOAT);
+	Text(ID_TUT625_FREE_BOAT);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MLoadingUnits');
+	}
+	Eyepoint(FreeCargo);
+}
+
+messagebox 'MLoadingUnits' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_LOADING_UNITS);
+	Text(ID_TUT627_LOADING_UNITS);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'MMovingTheBoat' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_MOVING_THE_BOAT);
+	Text(ID_TUT628A_MOVING_THE_BOAT);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'M6Goal1');
+	}
+}
+
+messagebox 'M6Goal1' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_6_GOAL_1);
+	Text(ID_TUT628_6_GOAL_1);
+	Show();
+
+	DisableClose();
+	
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Message(g.tutorialplayer, 'ACantGoOn');
+	}
+}
+
+messagebox 'M6Goal1Accomplished' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_6_GOAL_1_ACCOMPLISHED);
+	Text(ID_TUT629_6_GOAL_1_ACCOMPLISHED);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MVictoire');
+		EndTurn();
+	}
+}
+
+messagebox 'MVictoire' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_VICTORY_CONDITIONS);
+	Text(ID_TUT622_VICTORY_CONDITIONS);
+	Show();
+
+	DisableClose();
+		
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MDifferentStrategies');
+	}
+}
+
+messagebox 'MDifferentStrategies' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_DIFFERENT_STRATEGIES);
+	Text(ID_TUT623_DIFFERENT_STRATEGIES);
+	Show();
+
+	DisableClose();
+
+	Button(ID_BUTTON_NEXT_MESSAGE) {
+		Kill();
+		Message(g.tutorialplayer, 'MEndOfTutorial');
+	}
+}
+
+messagebox 'MEndOfTutorial' {
+MessageType("TUTORIAL");
+MessageClass(31);
+	Title(ID_TITLE_END_OF_TUTORIAL);
+	Text(ID_TUT631_END_OF_TUTORIAL);
+	Show();
+
+	PlaySound("SOUND_ID_CHEER_CASTLE");
+
+	if(level_6_saved) {
+		Message(g.tutorialplayer, 'MLevel6Save');
+	}
+	if(level_5_saved) {
+		Message(g.tutorialplayer, 'MLevel5Save');
+	}			
+	if(level_4_saved) {
+		Message(g.tutorialplayer, 'MLevel4Save');
+	}
+	if(level_3_saved) {
+		Message(g.tutorialplayer, 'MLevel3Save');
+	}
+	if(level_2_saved) {
+		Message(g.tutorialplayer, 'MLevel2Save');
+	}
+
+	DisableClose();
+		
+	Button(ID_BUTTON_BYE) {
+		Kill();
+		reenable_ingame = 1;
+		Message(1, 'DisableTriggers1');
+		Message(1, 'DisableTriggers1A');
+		Message(1, 'DisableTriggers2');
+		Message(1, 'DisableTriggers3');
+		Message(1, 'DisableTriggers4');
+		Message(1, 'DisableRest');
+		if(IsPlayerAlive(0)) {
+			AttachRobot(0);
+		} 
+		if(IsPlayerAlive(2)) {
+			AttachRobot(2);
+		}
+		if(IsPlayerAlive(3)) {
+			AttachRobot(3);
+		}
+		Message(1, 'ResurrectAI');
+		EndTurn();
+	}
+}
+
+alertbox 'AAlertSave' {
+MessageType("TUTORIAL");
+MessageClass(420);
+	Title(ID_TITLE_ALERT_SAVE);
+	Text(ID_TUT632_ALERT_SAVE_NEW);
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox 'MLevel2Save' {
+MessageType("TUT_LEVEL_2");
+MessageClass(13);
+	Title(ID_TITLE_LEVEL_2);
+	Text(ID_TUT633_LEVEL_2);
+	
+	Button(ID_BUTTON_YES) {
+		Kill();
+		LoadGame("level_2");
+	}
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MLevel3Save' {						
+MessageType("TUT_LEVEL_3");
+MessageClass(13);
+	Title(ID_TITLE_LEVEL_3);
+	Text(ID_TUT634_LEVEL_3);
+	
+	Button(ID_BUTTON_YES) {
+		Kill();
+		LoadGame("level_3");
+	}
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MLevel4Save' {						
+MessageType("TUT_LEVEL_4");
+MessageClass(13);
+	Title(ID_TITLE_LEVEL_4);
+	Text(ID_TUT635_LEVEL_4);
+	
+	Button(ID_BUTTON_YES) {
+		Kill();
+		LoadGame("level_4");
+	}
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MLevel5Save' {						
+MessageType("TUT_LEVEL_5");
+MessageClass(13);
+	Title(ID_TITLE_LEVEL_5);
+	Text(ID_TUT636_LEVEL_5);
+
+	Button(ID_BUTTON_YES) {
+		Kill();
+		LoadGame("level_5");
+	}
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+}
+
+messagebox 'MLevel6Save' {						
+MessageType("TUT_LEVEL_6");
+MessageClass(13);
+	Title(ID_TITLE_LEVEL_6);
+	Text(ID_TUT637_LEVEL_6);
+
+	Button(ID_BUTTON_YES) {
+		Kill();
+		LoadGame("level_6");
+	}
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+}

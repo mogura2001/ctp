@@ -1,0 +1,490 @@
+
+
+
+
+template CUSTOMMAP_LABEL_LEFT:T_FONT5_VARIES {
+
+	string	pattern	"upba6417.tga"
+
+	int 	xpix		10
+
+	int	widthpix	80
+
+	int	heightpix	20
+}
+
+template CUSTOMMAP_LABEL_RIGHT:T_FONT5_VARIES {
+
+	string	pattern	"upba6417.tga"
+
+	string	xanchor "right"
+
+	int 	xpix		20
+
+	int	widthpix	80
+
+	int	heightpix	20
+
+
+}
+
+
+
+CustomMapWindow {
+
+	string	pattern	"upba6417.tga"
+
+#	int 	xpix		506
+
+#	int 	ypix		130
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int	widthpix	450
+
+	int	heightpix	310
+
+	Name:T_FONT4_POPTITLE {
+
+		string	parent	"c3_PopupTitle"
+
+		string xanchor "center"
+
+		string yanchor "top"
+
+		int widthpct 50
+
+		int heightpix 20
+
+		string	text	"str_ldl_Map"
+#		string	pattern	"upba3010.tga"
+
+	}
+
+	BackButton:T_FONT1_14 {
+
+		int	xpix	370
+
+		int	ypix	275
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+		string	text	"str_ldl_BACK"
+	}
+
+	AcceptButton:T_FONT1_14 {
+
+		int	xpix	182
+
+		int	ypix	364
+
+		int	widthpix	95
+
+		int	heightpix	57
+
+		string	imagebltflag	"chromakey"
+
+		string	image0		"upba2607.tga"
+
+	}
+
+	CancelButton:T_FONT1_14  {
+
+		int	xpix	443
+
+		int	ypix	364
+
+		int	widthpix	95
+
+		int	heightpix	57
+
+		string	imagebltflag	"chromakey"
+
+		string	image0		"upba2608.tga"
+
+	}
+
+	WetDrySlider {
+
+		string xanchor "center"
+
+		int ypix		40
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Wet:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	50
+
+		string text	 "str_ldl_Wet"
+	}
+
+	Dry:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	50
+
+		string text	 "str_ldl_Dry"
+	}
+
+	WarmColdSlider {
+
+		string xanchor "center"
+
+		int ypix		80
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Warm:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	90
+
+		string text	 "str_ldl_Warm"
+	}
+
+	Cold:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	90
+
+		string text	 "str_ldl_Cold"
+	}
+
+	OceanLandSlider {
+
+		string xanchor "center"
+
+		int ypix		120
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Ocean:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	130
+
+		string text	 "str_ldl_Ocean"
+	}
+
+	Land:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	130
+
+		string text	 "str_ldl_Land"
+	}
+
+	IslandContinentSlider {
+
+		string xanchor "center"
+
+		int ypix		160
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Island:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	170
+
+		string text	 "str_ldl_Island"
+	}
+
+	Continent:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	170
+
+		string text	 "str_ldl_Continent"
+	}
+
+	HomoDiverseSlider {
+
+		string xanchor "center"
+
+		int ypix		200
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Homo:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	210
+
+		string text	 "str_ldl_Homogeneous"
+	}
+
+	Diverse:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	210
+
+		string text	 "str_ldl_Diverse"
+	}
+
+	GoodCountSlider {
+
+		string xanchor "center"
+
+		int ypix		240
+
+		int widthpix	250
+
+		int heightpix	40
+
+		int	maxxval		10
+
+		int	maxyval		0
+
+		int	pagexval	1
+
+		int	pageyval	1
+
+		int xval		5
+
+		string	pattern	"upba6417.tga"
+
+		string	type	"slider"
+
+		string	orientation	"horizontal"
+
+		bool	rigidthumb	TRUE
+
+		bool	quantizedrag	TRUE
+
+		int		minthumbsize	9
+
+		int	ticks	1
+
+		thumb {
+
+			int	widthpix	9
+
+			int heightpix	40
+
+			string	image0	"upba2513.tga"
+
+			string	imagebltflag	"chromakey"
+
+		}
+
+	}
+
+	Poor:CUSTOMMAP_LABEL_LEFT {
+
+		int ypix	250
+
+		string text	 "str_ldl_Few_Goods"
+	}
+
+	Rich:CUSTOMMAP_LABEL_RIGHT {
+
+		int ypix	250
+
+		string text	 "str_ldl_Many_Goods"
+	}
+
+
+	CloseButtonStrings {
+		string	string0	"str_ldl_CLOSE"
+		string	string1	"str_ldl_LAUNCH"
+	}
+}
+
+$

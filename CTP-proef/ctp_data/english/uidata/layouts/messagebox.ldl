@@ -1,0 +1,970 @@
+#######################################
+
+# File: messagebox.ldl
+
+# Last Access: Thu Jul 30 17:01:13 1998
+
+#######################################
+
+
+
+##-----------------------------------##
+
+##             Templates             ##
+
+##-----------------------------------##
+
+MessageTipWindow {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	200
+
+	int	heightpix	20
+
+	string	pattern	"upba6417.tga"
+
+}
+
+
+
+WindowControl {
+
+	int	xpix	0
+
+	int	ypix	17
+
+	int	heightpix	23
+
+	int	widthpix	28
+
+	string	xanchor	"right"
+
+	string	yanchor	"top"
+
+}
+
+
+
+MessageIcon {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	heightpix	33
+
+	int	widthpix	33
+
+	int	numimagegroups	2
+
+}
+
+
+
+MessageColors {
+
+	int fontcolorred			0
+
+	int fontcolorgreen		0
+
+	int fontcolorblue			0
+
+	int fontshadowcolorred 		255		
+
+	int fontshadowcolorgreen 	255
+
+	int fontshadowcolorblue 	255
+
+}
+
+
+
+##-----------------------------------##
+
+##                Data               ##
+
+##-----------------------------------##
+
+MessageboxAttributes {
+
+	int	readx	32
+
+	int	ready	408
+
+	int	morex 32
+
+	int	morey 128
+
+	int	lessx 32
+
+	int	lessy 443
+
+	int	miconspacing 2
+
+	int 	miconheight 33
+
+	int	miconwidth	33
+
+	int	maxvisible	8
+
+	int	buttonspacing	4
+
+	int	textpadding	5
+
+	int	buttonwidth	50
+
+	int	dropdownpadding	25
+
+	int	eyewidth	70
+
+	int	greatlibrary	3
+
+}
+
+
+
+AdviceWindowItem:T_FONT1_16 {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	200
+
+	int	heightpix	54
+
+	string	textblttype	"fill"
+
+}
+
+
+
+AdviceWindow {
+
+	int	xpix	692
+
+	int	ypix	83
+
+	int	widthpix	262
+
+	int	heightpix	123
+
+	string	pattern	"upba6417.tga"
+
+	MessageLeftBar {
+
+		int	xpix	0
+
+		int	ypix	29
+
+		int	widthpix	9
+
+		int	heightpix	93
+
+		string	image0	"upba2403.tga"
+
+	}
+
+	MessageRightBar {
+
+		int	xpix	4
+
+		int	ypix	29
+
+		string	xanchor	"right"
+
+		int	widthpix	9
+
+		int	heightpix	93
+
+		string	image0	"upba2404.tga"
+
+	}
+
+	DismissButton:WindowControl {
+
+		string	image0	"upba1811.tga"
+
+		int	xpix	9
+
+		int	ypix	9
+
+	}
+
+	MessageTextBox:MessageColors:T_FONT1_16 {
+
+		int	xpix	20
+
+		int	ypix	35
+
+		int	widthpix	200
+
+		int	heightpix	60
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+	}
+
+}
+
+
+
+ModalWindow {
+
+	int	xpix	54
+
+	int	ypix	83
+
+	int	widthpix	262
+
+	int	heightpix	193
+
+	string xanchor "right"
+
+	string yanchor "top"
+
+	string	pattern	"upba6417.tga"
+
+	MessageLeftBar {
+
+		int	xpix	0
+
+		int	ypix	29
+
+		int	widthpix	9
+
+		int	heightpix	143
+
+		string	image0	"upba2403.tga"
+
+	}
+
+	MessageRightBar {
+
+		int	xpix	4
+
+		int	ypix	29
+
+		string	xanchor	"right"
+
+		int	widthpix	9
+
+		int	heightpix	143
+
+		string	image0	"upba2404.tga"
+
+	}
+
+	MessageTextBox:T_FONT5_10 {
+		bool	shadowfont	false
+
+		int	xpix	20
+
+		int	ypix	20
+
+		int	widthpix	220
+
+		int	heightpix	170
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Text_at_run_time"
+	}
+
+	ModalResponseButton:MessageColors:T_FONT1_16 {
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+		int	widthpix	70
+
+		int	heightpix	24
+
+		string	text	"str_ldl_Submit"
+		string	pattern	"upba6417.tga"
+
+	}
+
+	StandardEyeButton:MessageIcon {
+
+		string	image0	"ups006.tga"
+
+#		string	xanchor	"left"
+
+#		string	yanchor	"bottom"
+
+		int	xpix	17
+
+		int	ypix	110
+
+	}
+
+	EyeLeftButton:MessageIcon {
+
+		string	image0	"ups009.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+	}
+
+	EyeRightButton:MessageIcon {
+
+		string	image0	"ups008.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	51
+
+		int	ypix	15
+
+	}
+
+	StandardEyePointDropdown:T_FONT1_16 {
+
+		int	xpix	65
+
+		int	ypix	114
+
+		int	widthpix	150
+
+		int	heightpix	24
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+#		string	yanchor	"bottom"
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Select"
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			string imagebltflag	"chromakey"
+
+			int widthpix	20
+
+		}
+
+		window {
+
+			int heightpix 128
+
+			listbox {
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+	}
+
+	StandardEyePointDropdownItem {
+
+		name:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	150
+
+			int heightpix	20
+
+		}
+
+	}
+
+
+}
+
+
+
+MessageIconWindow {
+
+	string	pattern	"upba6417.tga"
+
+	int	xpix	32
+
+	int	ypix	408
+
+	int	heightpix	33
+
+	int	widthpix	33
+
+	icon:MessageIcon {
+
+		tipwindow:MessageTipWindow {
+
+			tip {
+
+				string	text	"str_ldl_this_text_at_run_time"
+			}
+
+		}
+
+	}
+
+}
+
+
+
+MoreMessagesIconWindow {
+
+	string	pattern	"upba6417.tga"
+
+	int	xpix	32
+
+	int	ypix	128
+
+	int	heightpix	33
+
+	int	widthpix	33
+
+	icon:MessageIcon {
+
+		string	image0	"ups009.tga"
+
+		tipwindow:MessageTipWindow {
+
+			tip {
+
+				string	text	"str_ldl_More_Messages"
+			}
+
+		}
+
+	}
+
+}
+
+
+
+LessMessagesIconWindow {
+
+	int	xpix	32
+
+	int	ypix	443
+
+	int	heightpix	33
+
+	int	widthpix	33
+
+	icon:MessageIcon {
+
+		string	image0	"ups008.tga"
+
+		tipwindow:MessageTipWindow {
+
+			tip {
+
+				string	text	"str_ldl_Less_Messages"
+			}
+
+		}
+
+	}
+
+}
+
+
+
+StandardMessageWindow {
+
+	int	xpix	85
+
+	int	ypix	408
+
+	int	widthpix	639
+
+	int	heightpix	148
+
+	string	pattern	"upba6417.tga"
+
+	MessageTopBar {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	639
+
+		int	heightpix	16
+
+		string	image0	"upba2409.tga"
+
+	}
+
+	MessageLeftBar {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	7
+
+		int	heightpix	148
+
+		string	image0	"upba2411.tga"
+
+	}
+
+	MessageRightBar {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		string	xanchor	"right"
+
+		int	widthpix	7
+
+		int	heightpix	148
+
+		string	image0	"upba2412.tga"
+
+	}
+
+	MessageBottomBar {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		string	yanchor	"bottom"
+
+		int	widthpix	639
+
+		int	heightpix	10
+
+		string	image0	"upba2410.tga"
+
+	}
+
+	MessageTextBox:T_FONT1_16 {
+
+		int	xpix	30
+
+		int	ypix	40
+
+		int	widthpix	500
+
+		int	heightpix	80
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Text_at_run_time"
+	}
+
+	TurnTextBox:T_FONT1_16 {
+
+		int	xpix	20
+
+		int	ypix	16
+
+		int	widthpix	400
+
+		int	heightpix	20
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Turn_PERCENTd"
+	}
+
+	StandardDismissButton:WindowControl {
+
+		string	image0	"upba1811.tga"
+
+		string	imagebltflag	"chromakey"
+
+		int	xpix	14
+
+	}
+
+	StandardMinimizeButton:WindowControl {
+
+		string	image0	"upba1814.tga"
+
+		string	imagebltflag	"chromakey"
+
+		int	xpix	42
+
+	}
+
+	GreatLibraryButton:MessageIcon {
+
+		string	image0	"ups007.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+	}
+
+	StandardEyeButton:MessageIcon {
+
+		string	image0	"ups006.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+	}
+
+	EyeLeftButton:MessageIcon {
+
+		string	image0	"ups009.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+	}
+
+	EyeRightButton:MessageIcon {
+
+		string	image0	"ups008.tga"
+
+		string	xanchor	"left"
+
+		string	yanchor	"bottom"
+
+		int	xpix	51
+
+		int	ypix	15
+
+	}
+
+	StandardResponseButton:T_FONT1_16 {
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		int	xpix	15
+
+		int	ypix	15
+
+		int	widthpix	70
+
+		int	heightpix	24
+
+		string	text	"str_ldl_Submit"
+		string	pattern	"upba6417.tga"
+
+	}
+
+	StandardResponseDropdown:T_FONT1_16 {
+
+		int	xpix	15
+
+		int	ypix	15
+
+		int	widthpix	70
+
+		int	heightpix	24
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Select"
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			string imagebltflag	"chromakey"
+
+			int widthpix	20
+
+		}
+
+		window {
+
+			int heightpix 60
+
+			listbox {
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+	}
+
+	StandardResponseDropdownItem {
+
+		name:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	150
+
+			int heightpix	20
+
+		}
+
+	}
+
+	
+
+	StandardEyePointDropdown:T_FONT1_16 {
+
+		int	xpix	86
+
+		int	ypix	15
+
+		int	widthpix	150
+
+		int	heightpix	24
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+		string	yanchor	"bottom"
+
+		string	pattern	"upba6417.tga"
+
+		string	text	"str_ldl_Select"
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			string imagebltflag	"chromakey"
+
+			int widthpix	20
+
+		}
+
+		window {
+
+			int heightpix 128
+
+			listbox {
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+	}
+
+	StandardEyePointDropdownItem {
+
+		name:T_FONT1_14 {
+
+			int xpix	0
+
+			int ypix	0
+
+			int widthpix	150
+
+			int heightpix	20
+
+		}
+
+	}
+
+}
+
+
+
+MessageNWCorner {
+
+	string	pattern	"upba2413.tga"
+
+	int 	xpix		-7
+
+	int 	ypix		-7
+
+	int	widthpix	54
+
+	int	heightpix	54
+
+}
+
+
+
+MessageNECorner {
+
+	string	pattern	"upba2414.tga"
+
+	int 	xpix		592
+
+	int 	ypix		-7
+
+	int	widthpix	54
+
+	int	heightpix	54
+
+}
+
+
+
+MessageSWCorner {
+
+	string	pattern	"upba2416.tga"
+
+	int 	xpix		-7
+
+	int 	ypix		101
+
+	int	widthpix	54
+
+	int	heightpix	54
+
+}
+
+
+
+MessageSECorner {
+
+	string	pattern	"upba2415.tga"
+
+	# xpix = ( widthpix of parent ) - 47
+
+	# ypix = ( heightpix of parent ) - 47
+
+	int 	xpix		592
+
+	int 	ypix		101
+
+	int	widthpix	54
+
+	int	heightpix	54
+
+}
+
+
+
+FancyAdviceTopBar {
+
+	string	pattern	"upba2401.tga"
+
+	int	xpix	-20
+
+	int	ypix	-10
+
+	int	widthpix	299
+
+	int	heightpix	39
+
+}
+
+
+
+FancyModalTopBar {
+
+	string	pattern	"upba2401.tga"
+
+	int	xpix	-20
+
+	int	ypix	-10
+
+	int	widthpix	299
+
+	int	heightpix	39
+
+}
+
+
+
+FancyAdviceBottomBar {
+
+	string	pattern	"upba2402.tga"
+
+	int	xpix	-20
+
+	int	ypix	92
+
+	int	widthpix	298
+
+	int	heightpix	39
+
+}
+
+
+
+FancyModalBottomBar {
+
+	string	pattern	"upba2402.tga"
+
+	int	xpix	-20
+
+	int	ypix	170
+
+	int	widthpix	298
+
+	int	heightpix	39
+
+}
+
+
+
+
+
+$

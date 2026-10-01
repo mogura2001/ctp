@@ -1,0 +1,70 @@
+// CTP I v1.2: one-shot queue probe for AI player 2, first city.
+// Append a normal granary; never clear queues, grant resources or retry.
+// A fresh game gives the cleanest test; loaded-script behavior is unverified.
+TypeLocation aiqp_location;
+TypeCity aiqp_city;
+
+messagebox 'AIQP_Added' { Show();
+    Text(ID_AIQP_ADDED);
+    EyePoint(aiqp_location);
+}
+messagebox 'AIQP_Present' { Show(); Text(ID_AIQP_PRESENT); }
+messagebox 'AIQP_Missing' { Show(); Text(ID_AIQP_MISSING); }
+messagebox 'AIQP_Built' { Show(); Text(ID_AIQP_BUILT); }
+messagebox 'AIQP_Skipped' { Show(); Text(ID_AIQP_SKIPPED); }
+messagebox 'AIQP_ReadbackFailed' { Show(); Text(ID_AIQP_READBACK_FAILED); }
+
+// Using only g.player in the condition selects the player-turn event.
+trigger 'AIQP_PlayerTurn' when (g.player == 2) {
+    if(!IsHumanPlayer(2) && PlayerCityCount(2) > 0) {
+        if(aiqp_started == 0) {
+            SetCityByIndex(1, 2, 0);
+            ExtractLocation(city.1, aiqp_location);
+            GetCityByLocation(aiqp_location, aiqp_city);
+            aiqp_started = 1;
+            aiqp_terrain = TerrainType(aiqp_location);
+            aiqp_goods = GoodCountTotal(aiqp_city);
+            aiqp_silo = BuildingType("IMPROVE_SILO");
+            // Follow the working CTP I tutorial: a string ID, not quoted name.
+            if(HasAdvance(2, ID_ADVANCE_AGRICULTURE) &&
+                !CityHasBuilding(aiqp_city, "IMPROVE_SILO") &&
+                !IsBuildingInBuildList(aiqp_city, aiqp_silo)) {
+                AddBuildingToBuildList(aiqp_city, aiqp_silo);
+                if(IsBuildingInBuildList(aiqp_city, aiqp_silo)) {
+                    aiqp_added = 1;
+                    Message(1, 'AIQP_Added');
+                } else {
+                    Message(1, 'AIQP_ReadbackFailed');
+                    DisableTrigger('AIQP_PlayerTurn');
+                }
+            } else {
+                Message(1, 'AIQP_Skipped');
+                DisableTrigger('AIQP_PlayerTurn');
+            }
+        } else {
+            if(aiqp_added == 1) {
+                GetCityByLocation(aiqp_location, aiqp_city);
+                SetCity(1, aiqp_city);
+                if(city.1.owner != 2) {
+                    DisableTrigger('AIQP_PlayerTurn');
+                } else {
+                    aiqp_checks = aiqp_checks + 1;
+                    if(CityHasBuilding(aiqp_city, "IMPROVE_SILO")) {
+                        Message(1, 'AIQP_Built');
+                        DisableTrigger('AIQP_PlayerTurn');
+                    } else {
+                        if(IsBuildingInBuildList(aiqp_city, aiqp_silo)) {
+                            Message(1, 'AIQP_Present');
+                        } else {
+                            Message(1, 'AIQP_Missing');
+                            DisableTrigger('AIQP_PlayerTurn');
+                        }
+                    }
+                    if(aiqp_checks >= 5) {
+                        DisableTrigger('AIQP_PlayerTurn');
+                    }
+                }
+            }
+        }
+    }
+}

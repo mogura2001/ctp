@@ -1,0 +1,284 @@
+# fancy.ldl
+
+
+
+# ########################################################
+
+# WINDOW ART this should be in a general place
+
+# IT is important for resize to work correctly that that all dimension and position
+
+# values do not change there is a dependency base on the original size of the 
+
+# help tile box
+
+# ########################################################
+
+c3_FancyTL {
+
+	string	pattern	"upba5600.tga"
+
+	int 	xpix		-18
+
+	int 	ypix		0
+
+	int	widthpix	18
+
+	int	heightpix	32
+
+}
+
+c3_FancyTR {
+
+	string	pattern	"upba5602.tga"
+
+	int 	xpix		538
+
+	int 	ypix		0
+
+	int	widthpix	21
+
+	int	heightpix	31
+
+}
+
+c3_FancyTop {
+
+	string	pattern	"upba5601.tga"
+
+	int 	xpix		0
+
+	int 	ypix		-9
+
+	int	widthpix	538
+
+	int	heightpix	9
+
+}
+
+
+
+c3_FancyCancel {
+
+		int	numimagegroups	2
+
+		string	image0	"upba5616.tga"
+
+		string	image1	"upba5610.tga"
+
+		int	xpix	4
+
+		int	ypix	456
+
+		int	widthpix	46
+
+		int	heightpix	19	
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+
+	}
+
+c3_FancyOk:CTP_CLOSE_BUTTON {
+
+		int	xpix	488
+
+		int	ypix	456
+
+}
+
+
+
+c3_PopupUL {
+
+	string	image0	"upba6401.tga"
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+}
+
+c3_PopupUR {
+
+	string	image0	"upba6406.tga"
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+}
+
+c3_PopupLL {
+
+	string	image0	"upba6404.tga"
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+}
+
+c3_PopupLR {
+
+	string	image0	"upba6402.tga"
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+}
+
+
+
+c3_PopupLeft {
+
+	string	pattern	"upba6405.tga"
+
+	int	widthpix	8
+
+}
+
+c3_PopupTop {
+
+	string	pattern	"upba6400.tga"
+
+	int	heightpix	10
+
+}
+
+c3_PopupRight {
+
+	string	pattern	"upba6403.tga"
+
+	int	widthpix	8
+
+}
+
+c3_PopupBottom {
+
+	string	pattern	"upba6407.tga"
+
+	int	heightpix	10
+
+}
+
+
+
+c3_PopupTitle {
+
+	string	image0	"upba6412.tga"
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	167
+
+	int	heightpix	34
+
+	c3_PopupTitleText:T_FONT4_POPTITLE {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	167
+
+		int	heightpix	20
+
+		string	text	"str_ldl_TITLE"
+	}
+
+}
+
+c3_PopupCancel:T_FONT5_TRADE {
+
+	string	image0	"upba6415.tga"
+
+	string	image1	"upba6416.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	70
+
+	int	heightpix	28
+
+	string	text	"str_ldl_Cancel"
+	int	bevelwidth	0
+
+}
+
+c3_PopupNo:T_FONT5_TRADE {
+
+	string	image0	"upba6415.tga"
+
+	string	image1	"upba6416.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	70
+
+	int	heightpix	28
+
+	string	text	"str_ldl_No"
+	int	bevelwidth	0
+
+}
+
+c3_PopupClose:T_FONT5_TRADE{
+
+	string	image0	"upba6413.tga"
+
+	string	image1	"upba6414.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	70
+
+	int	heightpix	28
+
+	string	text	"str_ldl_Close"
+	int	bevelwidth	0
+
+}
+
+c3_PopupOk:T_FONT5_TRADE {
+
+	string	image0	"upba6413.tga"
+
+	string	image1	"upba6414.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	70
+
+	int	heightpix	28
+
+	string	text	"str_ldl_Ok"
+	int	bevelwidth	0
+
+}
+
+c3_PopupYes:T_FONT5_TRADE {
+
+	string	image0	"upba6413.tga"
+
+	string	image1	"upba6414.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	70
+
+	int	heightpix	28
+
+	string	text	"str_ldl_Yes"
+	int	bevelwidth	0
+
+}
+
+$
+
+

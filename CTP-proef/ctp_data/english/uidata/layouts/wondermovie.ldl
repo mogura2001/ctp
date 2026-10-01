@@ -1,0 +1,63 @@
+
+#
+#
+# Wonder Movie
+#
+#
+
+WonderMovieWindow {
+	string	xanchor	"center"
+	string	yanchor	"center"
+	int	widthpix	338
+	int	heightpix	305
+	string	pattern		"upba3705.tga"
+	
+	MovieButton {
+		int	xpix	10
+		int	ypix	48
+		int	widthpix	320
+		int	heightpix	240
+	}
+	
+	WonderName:T_FONT3_9 {
+		int	xpix	70
+		int	ypix	7
+		int	widthpix	199
+		int	heightpix	11
+	}
+
+	TopBorder {
+		int xpix		0
+		int ypix		0
+		int widthpix	338
+		int heightpix	48
+		
+		string image0	"upba6700.tga"
+	}
+	LeftBorder {
+		int xpix		0
+		int ypix		48
+		int widthpix	9
+		int heightpix	240
+		
+		string image0	"upba6701.tga"
+	}
+	RightBorder {
+		int xpix		329
+		int ypix		48
+		int widthpix	9
+		int heightpix	240
+		
+		string image0	"upba6702.tga"
+	}
+	BottomBorder {
+		int xpix		0
+		int ypix		288
+		int widthpix	338
+		int heightpix	17
+		
+		string image0	"upba6703.tga"
+	}
+}
+
+$

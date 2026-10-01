@@ -1,0 +1,3215 @@
+﻿# AI-bestanden: declaraties en afhankelijkheden
+
+Automatisch gegenereerd. Commentaren verwijderd voor declaraties; geen bewijs van runtimebereikbaarheid.
+
+## aidata/aiploader.fli
+- `output primary_loaded`
+- `output red_dog_test`
+- `output warmany_test`
+- `output warfew_test`
+- `output scifew_test`
+- `output scimany_test`
+- `output few_cities_test`
+- `output fewplus_cities_test`
+- `output early_aip`
+- `output settle_bonus_island`
+- `output troops_only_aip`
+- `output many_cities_test_happ`
+- `output many_cities_test_diff`
+- `output many_cities_test_total`
+- `output few_cities_test`
+- `output more_cities_than_human_test`
+- `output one_explore_aip`
+- `output two_explore_aip`
+- `output normal_explore_aip`
+- `output special_actions_off_test`
+- `output cleric_on_test`
+- `output slave_on_test`
+- `output green_me_test`
+- `output unit_focus_test`
+- `action load("sally.aip") when (red_dog_test > 0.9)`
+- `action load("nosally.aip") when (red_dog_test < 0.9)`
+- `action load("lowdist.aip") when (count < 5)`
+- `action load("highdist.aip") when (count > 5)`
+- `action load("masssettle.aip") when (mass_settle_aip > 0.8)`
+- `action load("masssettle_sandbag.aip") when (mass_settle_sandbag_aip > 0.8)`
+- `action load ("slaver.aip") when (slaver_aip > 0.5)`
+- `action load ("milmany.aip") when (milmany_aip > 0.5)`
+- `action load ("milfew.aip") when (milfew_aip > 0.5)`
+- `action load ("scimany.aip") when (scimany_aip > 0.5)`
+- `action load ("scifew.aip") when (scifew_aip > 0.5)`
+- `action load ("cleric.aip") when (cleric_aip > 0.5)`
+- `action load ("improvement_build_normal.aip") when (improvement_build_normal_aip > 0.8)`
+- `action load ("citywall.aip") when (citywall_aip > 0.9)`
+- `action load ("survival_mode.aip") when (survival_mode_aip > 0.9)`
+- `action load("naval.aip") when (land_continents_full_of_friends > 0.65)`
+- `action load("supernaval.aip") when (land_continents_full_of_friends > 0.9)`
+- `action load("getarmy.aip") when (getarmy_aip > 0.75)`
+- `action load("gather.aip") when (gather_aip > 0.75)`
+- `action load("takecity.aip") when (takecity_aip > 0.75)`
+- `action load("fallback.aip") when (fallback_aip > 0.75)`
+- `action load ("citywall.aip") when (citywall_aip > 0.9)`
+- `action load("siege_off.aip") when ( siege_off_aip > 0.75)`
+- `action load ("no_settle.aip") when (no_settling_aip > 0.75)`
+- `action load ("yes_settle.aip") when (yes_settling_aip > 0.75)`
+- `action load("one_explore.aip") when (one_explore_aip > 0.75)`
+- `action load("two_explore.aip") when (two_explore_aip > 0.75)`
+- `action load("normal_explore.aip") when (normal_explore_aip > 0.75)`
+- `action load("build_troops_off.aip") when (build_troops_off_aip > 0.75)`
+- `action load("build_troops_on.aip") when (build_troops_off_aip < 0.75)`
+- `action load("pull_units_into_city.aip") when ( pull_units_into_city_aip > 0.8)`
+- `action load("defend_normal.aip") when (pull_units_into_city_aip < 0.9)`
+- `action load("special_attacks_off.aip") when (special_actions_off_test > 0.75)`
+- `action load("cleric_on.aip") when (cleric_on_test > 0.75)`
+- `action load("slave_on.aip") when (slave_on_test > 0.75)`
+- `action load("unit_focus.aip") when (unit_focus_test > 0.75)`
+- `action load("citywall_science.aip") when (citywall_science_aip > 0.75)`
+
+## aidata/aipplan.txt
+
+## aidata/AIPs/Aipdef.h
+- `double priority;`
+- `double units_per_city;`
+- `double priority;`
+- `#define UNLIMITED -999999`
+- `#define YES 1`
+- `#define NO 0`
+- `#define MAX_BUILD_LISTS 200`
+- `#define MAX_ELEMENTS 200`
+
+## aidata/AIPs/barbarian.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `int num_city_defenders = 0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.99;`
+- `double Transportation_List_Threshhold =  0.99;`
+- `double Growth_List_Threshhold =  0.99;`
+- `double Happiness_List_Threshhold =  0.99;`
+- `double Production_List_Threshhold = 0.99;`
+- `double Gold_List_Threshhold =  0.99;`
+- `double Science_List_Threshhold =  0.99;`
+- `double Defense_List_Threshhold =  0.99;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 0`
+- `#define MAX_EVAL_SEIGE_GOALS -10`
+- `#define MAX_EVAL_SETTLE_GOALS 0`
+- `#define MAX_EVAL_EXPLORE_GOALS -25`
+- `#define MAX_EVAL_CONSTRUCT_BUILDING_GOALS 0`
+- `#define MAX_EVAL_CONSTRUCT_FREIGHT_GOALS 0`
+- `#define MAX_EVAL_BIOTERROR_CITY_GOALS -15`
+- `#define MAX_EVAL_NANOATTACK_CITY_GOALS -15`
+- `#define MAX_EVAL_EXPEL_GOALS 0`
+- `#define MAX_EVAL_COUNTER_STEALTH_GOALS 0`
+- `#define MAX_EVAL_GOODY_HUT_GOALS 0`
+- `#define MAX_EVAL_ESTABLISH_EMBASSY_GOALS 0`
+- `#define MAX_EVAL_STEAL_TECHNOLOGY_GOALS 0`
+- `#define MAX_EVAL_REFORM_CITY_GOALS 0`
+- `#define MAX_EVAL_SUE_FRANCHISE_GOALS 0`
+- `#define MAX_EVAL_PROBE_WORMHOLE_GOALS 0`
+- `#define MAX_EVAL_WANDER_GOALS -25;`
+- `#define MAX_EXEC_DEFENSE_GOALS 0`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+- `#define MAX_EXEC_SETTLE_GOALS 0`
+- `#define MAX_EXEC_CONSTRUCT_BUILDING_GOALS 0`
+- `#define MAX_EXEC_CONSTRUCT_FREIGHT_GOALS 0`
+- `#define MAX_EXEC_CONSTRUCT_WONDER_GOALS 0`
+- `#define MAX_EXEC_PERIMETER_GOALS 0`
+- `#define MAX_EXEC_CHOKEPOINT_GOALS 0`
+- `#define MAX_EXEC_PATROL_GOALS 0`
+- `#define MAX_EXEC_HARASS_CITY_GOALS -2`
+- `#define MAX_EXEC_BIOTERROR_CITY_GOALS -5`
+- `#define MAX_EXEC_NANOATTACK_CITY_GOALS -5`
+- `#define MAX_EXEC_EXPEL_GOALS 0`
+- `#define MAX_EXEC_GOODY_HUT_GOALS 0`
+- `#define MAX_EXEC_ESTABLISH_EMBASSY_GOALS 0`
+- `#define MAX_EXEC_FRANCHISING_GOALS 0`
+- `#define MAX_EXEC_STEAL_TECHNOLOGY_GOALS 0`
+- `#define MAX_EXEC_INJOIN_GOALS 0`
+- `#define MAX_EXEC_UNDERGROUND_RAILWAY_GOALS 0`
+- `#define MAX_EXEC_ENSLAVE_GOALS -5`
+- `#define MAX_EXEC_SUE_FRANCHISE_GOALS 0.5`
+- `#define MAX_EXEC_PROBE_WORMHOLE_GOALS 0`
+- `#define MAX_EXEC_WANDER_GOALS -5`
+
+## aidata/AIPs/build_troops_off.aip
+- `#include "aipdef.h"`
+- `double build_troops_priority = 19998000.0;`
+
+## aidata/AIPs/build_troops_on.aip
+- `#include "aipdef.h"`
+- `double build_troops_priority = 20000000.0;`
+
+## aidata/AIPs/citywall.aip
+- `#include "aipdef.h"`
+- `double build_buildings_priority = 19999800.0;`
+- `double Wonders_List_Threshhold =  0.6;`
+- `double Transportation_List_Threshhold =  0.7;`
+- `double Growth_List_Threshhold =  0.3;`
+- `double Happiness_List_Threshhold =  0.5;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.3;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.0;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+
+## aidata/AIPs/citywall_science.aip
+- `#include "aipdef.h"`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+
+## aidata/AIPs/clean-aips.pl
+
+## aidata/AIPs/cleric.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 2`
+- `#define MAX_EVAL_SEIGE_GOALS 0.5`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EVAL_CONVERT_CITY_GOALS -15`
+- `#define MAX_EVAL_MAKE_PARK_GOALS -15`
+- `#define MAX_EVAL_INCITE_REVOLUTION_GOALS -15`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+- `#define MAX_EXEC_EXPLORE_GOALS -5`
+
+## aidata/AIPs/cleric_on.aip
+- `#include "aipdef.h"`
+- `#define MAX_EVAL_CONVERT_CITY_GOALS -35`
+- `#define MAX_EVAL_CAUSE_UNHAPPINESS_GOALS -35`
+- `#define MAX_EXEC_CONVERT_CITY_GOALS -5`
+- `#define MAX_EXEC_CAUSE_UNHAPPINESS_GOALS -5`
+
+## aidata/AIPs/default.aip
+- `#include "aipdef.h"`
+- `int infiltrator_period = 2;`
+- `double build_buildings_priority = 20000000.0;`
+- `double build_troops_priority = 20000000.0;`
+- `double fzwonder_priority_modifier = 19997500.0;`
+- `double build_end_game_object_priority = 20000000.0;`
+- `double build_capitalization_priority = 20000000.0;`
+- `double settle_priority = 17000000.0;`
+- `double sally_priority = 0.0;`
+- `double defend_priority = 457000.0;`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double goody_hut_priority = 600000.0;`
+- `double pillage_priority = 393000.0;`
+- `double pirate_priority = 393000.0;`
+- `double explore_priority = 393000.0;`
+- `double counter_stealth_priority = 390000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double convert_priority = 1000000.0;`
+- `double bioterror_priority = 1500000.0;`
+- `double nanoattack_priority = 1500000.0;`
+- `double enslave_priority = 1000000.0;`
+- `double plant_nuke_priority = 1000000.0;`
+- `double create_park_priority = 1000000.0;`
+- `double underground_railway_priority = 1000000.0;`
+- `double establish_embassy_priority = 1000000.0;`
+- `double franchising_priority = 2000000.0;`
+- `double assasinate_ruler_priority = 1000000.0;`
+- `double steal_technology_priority = 1000000.0;`
+- `double injoin_priority = 1000000.0;`
+- `double incite_revolution_priority = 2000000.0;`
+- `double cause_unhappiness_priority = 1000000.0;`
+- `double nuke_city_priority = 1000000.0;`
+- `double reform_city_priority = 1000000.0;`
+- `double sue_franchise_priority = 2000000.0;`
+- `double probe_wormhole_priority = 1000000.0;`
+- `double bonus_food_priority = 0.0;`
+- `double defuse_mines_priority = 0.0;`
+- `double wander_priority = 1.0;`
+- `double attack_region_priority = 0.0;`
+- `double retreat_priority = 0.0;`
+- `double rustle_priority = 1.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double human_target_raw_bonus =  5000.0;`
+- `double defenseless_city_raw_bonus =   50000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `double fzbuild_priority_modifier = 1.0;`
+- `double fzfreight_priority_modifier = 1000.0;`
+- `double persistence_modifier = 1000.0;`
+- `double better_unit_type_modifier = 1000.0;`
+- `double distance_from_unit_priority_modifier = -500.0;`
+- `double wander_density = 0.05;`
+- `int wander_rounds_from_target = 3;`
+- `int patrol_one_in_n = 10;`
+- `int memory_rounds = 10;`
+- `int memory_rounds_stealth = 2;`
+- `int captured_city_defend_turns = 5;`
+- `double captured_city_modifier = 100000;`
+- `double min_defense_matching_force_ratio =  1.2;`
+- `double min_attack_matching_force_ratio =  1.2;`
+- `int num_city_defenders = 1;`
+- `int max_build_building_rounds = 15.0;`
+- `int max_build_unit_rounds = 20.0;`
+- `int max_build_wonder_rounds = 50.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.8;`
+- `double Growth_List_Threshhold =  0.3;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.2;`
+- `double Gold_List_Threshhold =  0.3;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `double End_Game_Object_List_Threshhold =  0.0;`
+- `double Capitalization_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element End_Game_Object_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Capitalization_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define alert_to_aip_load NO`
+- `#define MAX_EVAL_DEFENSE_GOALS 2`
+- `#define MAX_EVAL_ATTACK_GOALS -25`
+- `#define MAX_EVAL_RETREAT_GOALS 0`
+- `#define MAX_EVAL_SEIGE_GOALS -20`
+- `#define MAX_EVAL_SETTLE_GOALS -80`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EVAL_CONSTRUCT_BUILDING_GOALS -5`
+- `#define MAX_EVAL_CONSTRUCT_FREIGHT_GOALS 1`
+- `#define MAX_EVAL_CONSTRUCT_WONDER_GOALS 0`
+- `#define MAX_EVAL_TRANSPORT_GOALS 0`
+- `#define MAX_EVAL_BUILD_SUPPLEMENTAL_GOALS 1`
+- `#define MAX_EVAL_PERIMETER_GOALS -5`
+- `#define MAX_EVAL_CHOKEPOINT_GOALS -5`
+- `#define MAX_EVAL_PATROL_GOALS -5`
+- `#define MAX_EVAL_ATTACK_REGION_GOALS 0`
+- `#define MAX_EVAL_RUSTLE_GOALS 0.1`
+- `#define MAX_EVAL_BOMBARD_GOALS -100000;`
+- `#define MAX_EVAL_HARASS_CITY_GOALS 0`
+- `#define MAX_EVAL_CONVERT_CITY_GOALS 0`
+- `#define MAX_EVAL_BIOTERROR_CITY_GOALS -15`
+- `#define MAX_EVAL_NANOATTACK_CITY_GOALS -15`
+- `#define MAX_EVAL_EXPEL_GOALS 0.1`
+- `#define MAX_EVAL_SALLY_GOALS 1`
+- `#define MAX_EVAL_RETREAT_GOALS -25`
+- `#define MAX_EVAL_HURT_ARMY_GOALS 0`
+- `#define MAX_EVAL_DEFUSE_MINES_GOALS 0`
+- `#define MAX_EVAL_PILLAGE_GOALS 1`
+- `#define MAX_EVAL_PIRATE_GOALS 1`
+- `#define MAX_EVAL_COUNTER_STEALTH_GOALS 0.1`
+- `#define MAX_EVAL_BONUS_FOOD_GOALS 0`
+- `#define MAX_EVAL_GOODY_HUT_GOALS -5`
+- `#define MAX_EVAL_PLANT_NUKE_GOALS -5`
+- `#define MAX_EVAL_MAKE_PARK_GOALS -5`
+- `#define MAX_EVAL_CAUSE_UNHAPPINESS_GOALS -5`
+- `#define MAX_EVAL_ESTABLISH_EMBASSY_GOALS -5`
+- `#define MAX_EVAL_FRANCHISING_GOALS -5`
+- `#define MAX_EVAL_STEAL_TECHNOLOGY_GOALS -5`
+- `#define MAX_EVAL_INCITE_REVOLUTION_GOALS -5`
+- `#define MAX_EVAL_INJOIN_GOALS -5`
+- `#define MAX_EVAL_ASSASINATE_RULER_GOALS -5`
+- `#define MAX_EVAL_UNDERGROUND_RAILWAY_GOALS -10`
+- `#define MAX_EVAL_NUKE_CITY_GOALS -5`
+- `#define MAX_EVAL_ENSLAVE_GOALS 0`
+- `#define MAX_EVAL_REFORM_CITY_GOALS 0.5`
+- `#define MAX_EVAL_SUE_FRANCHISE_GOALS 0.5`
+- `#define MAX_EVAL_PROBE_WORMHOLE_GOALS -3`
+- `#define MAX_EVAL_WANDER_GOALS -3`
+- `#define MAX_EXEC_DEFENSE_GOALS 1`
+- `#define MAX_EXEC_ATTACK_GOALS -25`
+- `#define MAX_EXEC_RETREAT_GOALS 0`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+- `#define MAX_EXEC_SETTLE_GOALS -5`
+- `#define MAX_EXEC_EXPLORE_GOALS -3`
+- `#define MAX_EXEC_CONSTRUCT_BUILDING_GOALS -0.1`
+- `#define MAX_EXEC_CONSTRUCT_FREIGHT_GOALS 0.1`
+- `#define MAX_EXEC_CONSTRUCT_WONDER_GOALS 0`
+- `#define MAX_EXEC_TRANSPORT_GOALS 0`
+- `#define MAX_EXEC_BUILD_SUPPLEMENTAL_GOALS 1`
+- `#define MAX_EXEC_PERIMETER_GOALS -3`
+- `#define MAX_EXEC_CHOKEPOINT_GOALS -3`
+- `#define MAX_EXEC_PATROL_GOALS -3`
+- `#define MAX_EXEC_ATTACK_REGION_GOALS 0`
+- `#define MAX_EXEC_RUSTLE_GOALS 0`
+- `#define MAX_EXEC_BOMBARD_GOALS -100000;`
+- `#define MAX_EXEC_HARASS_CITY_GOALS 0`
+- `#define MAX_EXEC_CONVERT_CITY_GOALS 0`
+- `#define MAX_EXEC_BIOTERROR_CITY_GOALS -5`
+- `#define MAX_EXEC_NANOATTACK_CITY_GOALS -5`
+- `#define MAX_EXEC_EXPEL_GOALS -3`
+- `#define MAX_EXEC_SALLY_GOALS 1`
+- `#define MAX_EXEC_RETREAT_GOALS 10`
+- `#define MAX_EXEC_HURT_ARMY_GOALS 0`
+- `#define MAX_EXEC_DEFUSE_MINES_GOALS 0`
+- `#define MAX_EXEC_PILLAGE_GOALS 1`
+- `#define MAX_EXEC_PIRATE_GOALS 1`
+- `#define MAX_EXEC_COUNTER_STEALTH_GOALS 0.1`
+- `#define MAX_EXEC_BONUS_FOOD_GOALS 0`
+- `#define MAX_EXEC_GOODY_HUT_GOALS -2`
+- `#define MAX_EXEC_PLANT_NUKE_GOALS 0`
+- `#define MAX_EXEC_MAKE_PARK_GOALS -3`
+- `#define MAX_EXEC_CAUSE_UNHAPPINESS_GOALS -3`
+- `#define MAX_EXEC_ESTABLISH_EMBASSY_GOALS -3`
+- `#define MAX_EXEC_FRANCHISING_GOALS -3`
+- `#define MAX_EXEC_STEAL_TECHNOLOGY_GOALS -3`
+- `#define MAX_EXEC_INCITE_REVOLUTION_GOALS -3`
+- `#define MAX_EXEC_INJOIN_GOALS -1`
+- `#define MAX_EXEC_ASSASINATE_RULER_GOALS -10`
+- `#define MAX_EXEC_UNDERGROUND_RAILWAY_GOALS -2`
+- `#define MAX_EXEC_NUKE_CITY_GOALS 0.1`
+- `#define MAX_EXEC_ENSLAVE_GOALS 0`
+- `#define MAX_EXEC_REFORM_CITY_GOALS 0.5`
+- `#define MAX_EXEC_SUE_FRANCHISE_GOALS 0.5`
+- `#define MAX_EXEC_PROBE_WORMHOLE_GOALS -1`
+- `#define MAX_EXEC_WANDER_GOALS -1`
+- `#define LOGGING_OFF 0`
+- `#define LOG_HEADERS 1`
+- `#define LOG_MEDIUM 2`
+- `#define LOG_DETAILS 3`
+- `#define LOG_PAINFUL_DETAILS 4`
+- `#define AI_VERBOSITY LOGGING_OFF`
+
+## aidata/AIPs/defend_normal.aip
+- `#include "aipdef.h"`
+- `int num_city_defenders = 1;`
+
+## aidata/AIPs/fallback.aip
+- `#include "aipdef.h"`
+- `double build_buildings_priority = 20000000.0;`
+- `double build_troops_priority = 20000000.0;`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 5000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `double distance_from_unit_priority_modifier = -250.0;`
+- `double min_defense_matching_force_ratio =  1.5;`
+- `double min_attack_matching_force_ratio =  1.5;`
+- `#define alert_to_aip_load NO`
+- `#define MAX_EVAL_SEIGE_GOALS -15`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_DEFENSE_GOALS 1`
+- `#define MAX_EXEC_ATTACK_GOALS -15`
+- `#define MAX_EXEC_SEIGE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS -3`
+
+## aidata/AIPs/gather.aip
+- `#include "aipdef.h"`
+- `double build_buildings_priority = 20000000.0;`
+- `double build_troops_priority = 20000000.0;`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 0.0;`
+- `double threat_proximity_modifier = 10000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `double distance_from_unit_priority_modifier = -500.0;`
+- `double min_defense_matching_force_ratio =  1.2;`
+- `double min_attack_matching_force_ratio =  2.4;`
+- `#define alert_to_aip_load NO`
+- `#define MAX_EVAL_SEIGE_GOALS -15`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_DEFENSE_GOALS 1`
+- `#define MAX_EXEC_ATTACK_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS -3`
+
+## aidata/AIPs/getarmy.aip
+- `#include "aipdef.h"`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+
+## aidata/AIPs/green_me.aip
+- `#include "aipdef.h"`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+
+## aidata/AIPs/highdist.aip
+- `#include "aipdef.h"`
+- `double distance_from_unit_priority_modifier = -500.0;`
+
+## aidata/AIPs/improvement_build_normal.aip
+- `#include "aipdef.h"`
+- `double build_buildings_priority = 20000000.0;`
+
+## aidata/AIPs/lowdist.aip
+- `#include "aipdef.h"`
+- `double distance_from_unit_priority_modifier = -5.0;`
+
+## aidata/AIPs/masssettle.aip
+- `#include "aipdef.h"`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+
+## aidata/AIPs/masssettle_sandbag.aip
+- `#include "aipdef.h"`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+
+## aidata/AIPs/milfew.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 2`
+- `#define MAX_EVAL_SEIGE_GOALS 2`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EVAL_ENSLAVE_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -3`
+- `#define MAX_EXEC_ENSLAVE_GOALS -4`
+
+## aidata/AIPs/milmany.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 2`
+- `#define MAX_EVAL_SEIGE_GOALS 2`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EVAL_ENSLAVE_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -3`
+- `#define MAX_EXEC_ENSLAVE_GOALS -4`
+
+## aidata/AIPs/naval.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 1`
+- `#define MAX_EVAL_SEIGE_GOALS -10`
+- `#define MAX_EVAL_EXPLORE_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+
+## aidata/AIPs/no_settle.aip
+- `#include "aipdef.h"`
+- `#define MAX_EVAL_SETTLE_GOALS 0`
+- `#define MAX_EXEC_SETTLE_GOALS 0`
+
+## aidata/AIPs/normal_explore.aip
+- `#include "aipdef.h"`
+- `double explore_priority = 393000.0;`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS 0.25;`
+
+## aidata/AIPs/nosally.aip
+- `#include "aipdef.h"`
+- `double sally_priority = 300000.0;`
+
+## aidata/AIPs/noscience.aip
+- `#include "aipdef.h"`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+
+## aidata/AIPs/one_explore.aip
+- `#include "aipdef.h"`
+- `double explore_priority = 500000.0;`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS -1.0;`
+
+## aidata/AIPs/pull_units_into_city.aip
+- `#include "aipdef.h"`
+- `int num_city_defenders = 5;`
+
+## aidata/AIPs/README.txt
+
+## aidata/AIPs/sally.aip
+- `#include "aipdef.h"`
+- `double sally_priority = 459000.0;`
+
+## aidata/AIPs/scifew.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double enslave_priority = 00.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 5`
+- `#define MAX_EVAL_SEIGE_GOALS 0.5`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_SEIGE_GOALS -3`
+
+## aidata/AIPs/scimany.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double enslave_priority = 00.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 5`
+- `#define MAX_EVAL_SEIGE_GOALS 0.5`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_SEIGE_GOALS -3`
+
+## aidata/AIPs/siege_off.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 0.0;`
+- `#define MAX_EVAL_SEIGE_GOALS 0`
+- `#define MAX_EXEC_SEIGE_GOALS 0`
+
+## aidata/AIPs/slave_on.aip
+- `#include "aipdef.h"`
+- `#define MAX_EVAL_ENSLAVE_GOALS -44`
+- `#define MAX_EXEC_ENSLAVE_GOALS -4`
+
+## aidata/AIPs/slaver.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 80000.0;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `double Wonders_List_Threshhold =  0.8;`
+- `double Transportation_List_Threshhold =  0.6;`
+- `double Growth_List_Threshhold =  0.2;`
+- `double Happiness_List_Threshhold =  0.2;`
+- `double Production_List_Threshhold = 0.4;`
+- `double Gold_List_Threshhold =  0.4;`
+- `double Science_List_Threshhold =  0.2;`
+- `double Defense_List_Threshhold =  0.2;`
+- `double Miscellaneous_List_Threshhold =  0.0;`
+- `Building_Build_List_Element Wonder_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Transportation_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Growth_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Happiness_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Production_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Gold_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Science_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Defense_List[MAX_ELEMENTS];`
+- `Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];`
+- `Advancement_Element Advancements_List[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 2`
+- `#define MAX_EVAL_SEIGE_GOALS -5`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EVAL_ENSLAVE_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+- `#define MAX_EXEC_EXPLORE_GOALS -5`
+- `#define MAX_EXEC_PLANT_NUKE_GOALS -4`
+- `#define MAX_EXEC_UNDERGROUND_RAILWAY_GOALS 0`
+- `#define MAX_EXEC_ENSLAVE_GOALS -4`
+
+## aidata/AIPs/special_attacks_off.aip
+- `#include "aipdef.h"`
+- `#define MAX_EXEC_CONVERT_CITY_GOALS 0`
+- `#define MAX_EXEC_CAUSE_UNHAPPINESS_GOALS 0`
+- `#define MAX_EXEC_ENSLAVE_GOALS 0`
+
+## aidata/AIPs/supernaval.aip
+- `#include "aipdef.h"`
+- `double seige_priority = 405000.0;`
+- `double attack_troops_priority = 405000.0;`
+- `double bombard_priority = 407000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+- `#define MAX_EVAL_DEFENSE_GOALS 1`
+- `#define MAX_EVAL_SEIGE_GOALS -10`
+- `#define MAX_EVAL_EXPLORE_GOALS -25`
+- `#define MAX_EXEC_SEIGE_GOALS -4`
+
+## aidata/AIPs/survival_mode.aip
+- `#include "aipdef.h"`
+- `Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];`
+- `Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];`
+- `Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];`
+- `Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];`
+
+## aidata/AIPs/takecity.aip
+- `#include "aipdef.h"`
+- `double build_buildings_priority = 20000000.0;`
+- `double build_troops_priority = 20000000.0;`
+- `double seige_priority = 415000.0;`
+- `double attack_troops_priority = 415000.0;`
+- `double bombard_priority = 415000.0;`
+- `double perimeter_priority = 5000.0;`
+- `double patrol_priority = 5000.0;`
+- `double harass_priority = 7000.0;`
+- `double expel_priority = 7000.0;`
+- `double chokepoint_priority = 1000.0;`
+- `double max_threat_raw_bonus = 1000.0;`
+- `double distance_from_home_priority_modifier = 500.0;`
+- `double distance_from_enemy_priority_modifier = 250.0;`
+- `double max_chokepoint_raw_bonus = 1000.0;`
+- `double random_modifier = 10.0;`
+- `double max_power_raw_bonus = 1000.0;`
+- `double max_value_raw_bonus = 1000.0;`
+- `double danger_diminishment = 0.5;`
+- `double max_danger_raw_bonus = 1000.0;`
+- `double per_capita_modifier = 500.0;`
+- `double threat_proximity_modifier = 1000.0;`
+- `double max_misc_bid_bonus = 1000.0;`
+- `double distance_from_unit_priority_modifier = -500.0;`
+- `double min_defense_matching_force_ratio =  1.2;`
+- `double min_attack_matching_force_ratio =  1.2;`
+- `#define alert_to_aip_load NO`
+- `#define MAX_EVAL_SEIGE_GOALS -15`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_DEFENSE_GOALS 1`
+- `#define MAX_EXEC_ATTACK_GOALS -15`
+- `#define MAX_EXEC_SEIGE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS -3`
+
+## aidata/AIPs/two_explore.aip
+- `#include "aipdef.h"`
+- `double explore_priority = 500000.0;`
+- `#define MAX_EVAL_EXPLORE_GOALS -15`
+- `#define MAX_EXEC_EXPLORE_GOALS -2.0;`
+
+## aidata/AIPs/unit_focus.aip
+- `#include "aipdef.h"`
+- `double build_troops_priority = 20002000.0;`
+
+## aidata/AIPs/yes_settle.aip
+- `#include "aipdef.h"`
+- `#define MAX_EVAL_SETTLE_GOALS -30`
+- `#define MAX_EXEC_SETTLE_GOALS -5`
+
+## aidata/beginturn.fli
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+
+## aidata/beginturnBarbarians.fli
+- `#include "def_personality_who_barbarian.fli"`
+- `#include "def_personality_science_slow.fli"`
+- `#include "def_personality_settle_dense.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `action load("barbarian.aip") when (num_cities < 50.0)`
+
+## aidata/beginturnCleric.fli
+- `#include "def_personality_who_cleric.fli"`
+- `#include "def_personality_science_fast.fli"`
+- `#include "def_personality_settle_dense.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/beginturnSciFew.fli
+- `#include "def_personality_who_scientist.fli"`
+- `#include "def_personality_settle_loose.fli"`
+- `#include "def_personality_science_fast.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/beginturnSciMany.fli
+- `#include "def_personality_who_scientist.fli"`
+- `#include "def_personality_science_fast.fli"`
+- `#include "def_personality_settle_dense.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/beginturnSlaver.fli
+- `#include "def_personality_who_slaver.fli"`
+- `#include "def_personality_settle_dense.fli"`
+- `#include "def_personality_science_fast.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/beginturnWarFew.fli
+- `#include "def_personality_who_warrior.fli"`
+- `#include "def_personality_settle_loose.fli"`
+- `#include "def_personality_science_slow.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/beginturnWarMany.fli
+- `#include "def_personality_who_warrior.fli"`
+- `#include "def_personality_settle_dense.fli"`
+- `#include "def_personality_science_slow.fli"`
+- `#include "inputs.fli"`
+- `#include "outputs.fli"`
+- `#include "output_aipnames.fli"`
+- `#include "set_settle_density.fli"`
+- `#include "set_science_speed.fli"`
+- `#include "set_resource_desire.fli"`
+- `#include "set_food_or_prod.fli"`
+- `#include "set_budget.fli"`
+- `#include "set_govern.fli"`
+- `#include "set_wgf.fli"`
+- `#include "set_military_readiness.fli"`
+- `#include "set_inst_priority.fli"`
+- `#include "set_pw.fli"`
+- `#include "aiploader.fli"`
+
+## aidata/def_personality_science_fast.fli
+- `output science_speed`
+
+## aidata/def_personality_science_slow.fli
+- `output science_speed`
+
+## aidata/def_personality_settle_dense.fli
+- `output settle_density`
+
+## aidata/def_personality_settle_loose.fli
+- `output settle_density`
+
+## aidata/def_personality_who_barbarian.fli
+- `output barbarian`
+- `output warrior`
+- `output scientist`
+- `output slaver`
+- `output cleric`
+
+## aidata/def_personality_who_cleric.fli
+- `output cleric`
+- `output slaver`
+- `output warrior`
+- `output scientist`
+- `output barbarian`
+
+## aidata/def_personality_who_scientist.fli
+- `output scientist`
+- `output warrior`
+- `output slaver`
+- `output cleric`
+- `output barbarian`
+
+## aidata/def_personality_who_slaver.fli
+- `output slaver`
+- `output warrior`
+- `output scientist`
+- `output cleric`
+- `output barbarian`
+
+## aidata/def_personality_who_warrior.fli
+- `output warrior`
+- `output scientist`
+- `output slaver`
+- `output cleric`
+- `output barbarian`
+
+## aidata/diplomacy.fli
+
+## aidata/diplomacy_accepted.fli
+- `output diplomatic_regard_delta`
+- `input he_accepted_greetings`
+- `input he_accepted_demand_advance`
+- `input he_accepted_gold_demand`
+- `input he_accepted_demand_map`
+- `input he_accepted_demand_leave_our_lands`
+- `input he_accepted_demand_reduce_pollution`
+- `input he_accepted_demand_no_piracy`
+- `input he_accepted_demand_stop_trade`
+- `input he_accepted_demand_attack_enemy`
+- `input he_accepted_exchange_advance`
+- `input he_accepted_exchange_map`
+- `input he_accepted_offer_advance`
+- `input he_accepted_offer_gold`
+- `input he_accepted_offer_map`
+- `input he_accepted_offer_cease_fire`
+- `input he_accepted_offer_alliance`
+- `input he_accepted_offer_pact_end_pollution`
+
+## aidata/diplomacy_begin.fli
+- `#include "input_responses.fli"`
+- `input num_players_in_game`
+- `input size_of_world`
+- `input time`
+- `input player_type`
+- `output his_humanity`
+- `input war_with_him`
+- `input cease_fire_with_him`
+- `input alliance_with_him`
+- `input neutral_with_him`
+- `input his_normalized_rank`
+- `input closest_capitol`
+- `input distance_to_his_capitol`
+- `input he_shares_continent`
+- `input num_he_is_at_war`
+- `input loyalty`
+- `input length_of_war_with_him`
+- `input best_friend`
+- `input worst_enemy`
+- `input attacked_my_friends`
+- `output attacked_my_friends_decay`
+- `input attacked_my_enemies`
+- `output attacked_my_enemies_decay`
+- `input his_pirated_me`
+- `input his_hotwar_attacked_me`
+- `output his_hotwar_attacked_me_decay`
+- `input his_coldwar_attacked_me`
+- `output his_coldwar_attacked_me_decay`
+- `input last_attacked_me`
+- `input rejected_requests`
+- `output rejected_requests_decay`
+- `input relative_strength`
+- `input military_incursions`
+- `input diplomatic_regard_towards_him`
+- `input unit_regard_towards_him`
+- `input his_broken_treaties`
+- `output his_broken_treaties_decay`
+- `input he_built_wormhole`
+- `input someone_built_wormhole`
+- `input current_military_readiness`
+- `input longest_war`
+- `output nearly_tired_of_war`
+- `output tired_of_war`
+- `output sick_of_war`
+- `input shortest_peace`
+- `output tired`
+- `output barely_refreshed`
+- `output refreshed`
+- `input at_war_count`
+- `input my_normalized_rank`
+- `input my_military_incursions`
+- `output loyalty_modifier`
+- `output diplomatic_regard_delta`
+- `output dip_regard_strength_delta`
+- `output dip_regard_pirate_delta`
+- `output dip_regard_incursion_delta`
+- `output dip_regard_attack_delta`
+- `input accepted_requests`
+- `output unit_regard_delta`
+- `input cease_fire_with_him`
+- `output special_plan`
+- `input alliance_with_him`
+- `input neutral_with_him`
+- `input violating_stop_trade`
+- `input have_stop_trade`
+- `input violating_leave_our_lands`
+- `input have_leave_our_lands`
+- `input violating_end_pollution`
+- `input have_end_pollution`
+- `input violating_reduce_pollution`
+- `input have_reduce_pollution`
+- `input violating_attack_enemy`
+- `input have_attack_enemy`
+
+## aidata/diplomacy_pre_incoming.fli
+- `#include "input_responses.fli"`
+- `input his_normalized_rank`
+- `input best_friend`
+- `input worst_enemy`
+- `input shortest_peace`
+- `output tired`
+- `output barely_refreshed`
+- `output refreshed`
+- `input longest_war`
+- `output nearly_tired_of_war`
+- `output tired_of_war`
+- `output sick_of_war`
+- `input cease_fire_with_him`
+- `input alliance_with_him`
+- `input neutral_with_him`
+- `input war_with_him`
+- `input diplomatic_regard_towards_him`
+- `input length_of_war_with_him`
+- `input loyalty`
+- `output i_do_not_trust_him`
+- `input relative_strength`
+- `output he_is_scary`
+- `input player_type`
+- `input his_hotwar_attacked_me`
+- `output his_hotwar_attacked_me_decay`
+- `input my_normalized_rank`
+- `input longest_war`
+- `input at_war_count`
+- `output too_many_enemies`
+- `output accept_threshold`
+- `output found_accept`
+- `output diplomatic_regard_delta`
+- `input military_incursions`
+- `input contact_gained`
+- `input i_gain_advance`
+- `input he_gains_advance`
+- `output give_advance`
+- `input i_lose_city`
+- `input he_gains_city`
+- `input i_gain_map`
+- `input he_gets_map`
+- `input he_gains_gold`
+- `input stops_trade_with_third_party`
+- `input his_trade_with_third_party`
+- `input third_party_regard`
+- `output trade_utility`
+- `input i_will_attack_third_party`
+- `input his_third_party_relative_strength`
+- `input third_party_relative_strength`
+- `input at_war_with_third_party`
+- `input i_will_leave_his_lands`
+- `input reduces_pollution`
+- `input his_pollution_level`
+- `input my_pollution_level`
+- `input global_pollution_level`
+- `output reduce_pollution_utility`
+- `input i_will_stop_piracy`
+- `input i_gain_city`
+- `input i_gain_gold`
+- `input gold_gained`
+- `output just_saw_your_map`
+- `input gains_cease_fire`
+- `input gains_alliance`
+- `input end_pollution_pact`
+- `output pact_end_pollution`
+
+## aidata/diplomacy_pre_outgoing.fli
+- `#include "input_responses.fli"`
+- `#include "input_deals.fli"`
+- `output diplomacy_rand_min`
+- `output diplomacy_rand_max`
+- `input at_war_count`
+- `output too_many_enemies`
+- `input his_normalized_rank`
+- `input chase_the_rabbit`
+- `input loyalty`
+- `input war_with_him`
+- `input he_beat_me_this_turn`
+- `output humbled_this_turn`
+- `output triumphant_this_turn`
+- `input he_beat_me`
+- `output ive_been_losing`
+- `output ive_been_winning`
+- `input length_of_war_with_him`
+- `input relative_strength`
+- `output fear_test`
+- `output terror_test`
+- `input best_friend`
+- `input worst_enemy`
+- `input diplomatic_regard_towards_him`
+- `input his_hotwar_attacked_me`
+- `input military_incursions`
+- `input player_type`
+- `output human_test`
+- `input my_normalized_rank`
+- `input shortest_peace`
+- `output tired`
+- `output barely_refreshed`
+- `output refreshed`
+- `input longest_war`
+- `output bored_of_war`
+- `output sick_of_war`
+- `output send_threshold`
+- `output dip_send_coef`
+- `output found_message_i`
+- `output diplomatic_regard_delta`
+- `input contact_gained`
+- `input he_gains_advance`
+- `input i_gain_advance`
+- `input advances_skipped`
+- `output demand_advance`
+- `input gold_gained`
+- `output gold_utility`
+- `input he_stops_trade_with_third_party`
+- `input third_party_regard`
+- `input his_third_party_relative_strength`
+- `input third_party_relative_strength`
+- `output stop_trade`
+- `input his_trade_with_third_party`
+- `input he_attacks_enemy`
+- `input reduces_incursions`
+- `output enough_DEMAND_LEAVE_OUR_LANDS`
+- `input his_pollution_level`
+- `input my_pollution_level`
+- `input global_pollution_level`
+- `output stop_polluting_others`
+- `input i_gain_map`
+- `input he_gets_map`
+- `input map_area_gained`
+- `input map_area_gained`
+- `input last_got_map`
+- `input he_will_stop_piracy`
+- `input his_pirated_me`
+- `output piracy_decay`
+- `input he_gains_advance`
+- `output advance_give`
+- `input he_gains_gold`
+- `output gold_need`
+- `input gains_cease_fire`
+- `input gains_alliance`
+- `input num_he_is_at_war`
+- `output alliance`
+- `input end_pollution_pact`
+- `output pact_end_pollution`
+
+## aidata/diplomacy_rejected.fli
+- `input diplomatic_regard_towards_him`
+- `output diplomatic_regard_delta`
+- `input unit_regard_towards_him`
+- `input military_incursions`
+- `output unit_regard_delta`
+- `input relative_strength`
+- `input he_rejected_greetings`
+- `input he_rejected_demand_advance`
+- `input he_rejected_gold_demand`
+- `input he_rejected_demand_map`
+- `input he_rejected_demand_leave_our_lands`
+- `input he_rejected_demand_reduce_pollution`
+- `input he_rejected_demand_no_piracy`
+- `input he_rejected_demand_stop_trade`
+- `input he_rejected_demand_attack_enemy`
+- `input he_rejected_exchange_advance`
+- `input he_rejected_exchange_map`
+- `input he_rejected_offer_advance`
+- `input he_rejected_offer_gold`
+- `input he_rejected_offer_map`
+- `input he_rejected_offer_cease_fire`
+- `input he_rejected_offer_alliance`
+- `input he_rejected_offer_pact_end_pollution`
+
+## aidata/diplomacy_set_average_trust.fli
+- `output trustworthiness`
+
+## aidata/diplomacy_set_backstab.fli
+- `output trustworthiness`
+
+## aidata/diplomacy_set_loyal.fli
+- `output trustworthiness`
+
+## aidata/diplomacy_set_opportunist.fli
+- `output peacefulness`
+
+## aidata/diplomacy_set_peace.fli
+- `output peacefulness`
+
+## aidata/diplomacy_set_war.fli
+- `output peacefulness`
+
+## aidata/diplomacyBarbarians.fli
+- `input military_incursions`
+- `input his_hotwar_attacked_me`
+- `output his_hotwar_attacked_me_decay`
+- `input last_attacked_me`
+- `input diplomatic_regard_towards_him`
+- `output diplomatic_regard_delta`
+- `output unit_regard_delta`
+- `input his_message_tone`
+- `input his_hotwar_attacked_me`
+- `output accept_threshold`
+- `input diplomatic_regard_towards_him`
+- `output diplomatic_regard_delta`
+- `output gold_utility`
+- `input military_incursions`
+- `output give_advance`
+- `input projected_production`
+- `input he_gains_advance`
+- `input he_gains_city`
+- `input relative_strength`
+- `input contact_gained`
+- `input he_gains_advance`
+- `input he_gains_gold`
+- `input he_gets_map`
+- `input i_will_leave_his_lands`
+- `input his_pollution_level`
+- `input my_pollution_level`
+- `input global_pollution_level`
+- `output reduce_pollution_utility`
+- `input i_will_stop_piracy`
+- `input his_trade_with_third_party`
+- `input third_party_regard`
+- `input stops_trade_with_third_party`
+- `output trade_utility`
+- `input i_will_attack_third_party`
+- `input his_third_party_relative_strength`
+- `input third_party_relative_strength`
+- `input i_gain_advance`
+- `input last_got_map`
+- `input i_gain_map`
+- `input gold_gained`
+- `input gains_cease_fire`
+- `input gains_alliance`
+- `output alliance`
+- `input end_pollution_pact`
+- `output send_threshold`
+- `input diplomatic_regard_towards_him`
+- `output diplomatic_regard_delta`
+- `output send_tone`
+- `input his_hotwar_attacked_me`
+- `input contact_gained`
+- `output gold_utility`
+- `input gold_gained`
+- `input military_incursions`
+- `input reduces_incursions`
+- `output found_message_i`
+- `input advances_skipped`
+- `input last_got_map`
+- `input his_trade_with_third_party`
+- `input third_party_regard`
+- `input he_attacks_enemy`
+- `input he_gains_advance`
+- `input i_gain_advance`
+- `input relative_strength`
+- `output advance_give`
+- `output gold_need`
+- `output demand_advance`
+- `input map_area_gained`
+- `output stop_polluting_others`
+- `input his_pollution_level`
+- `input my_pollution_level`
+- `input global_pollution_level`
+- `input his_pirated_me`
+- `output piracy_decay`
+- `output stop_trade`
+- `input his_third_party_relative_strength`
+- `input third_party_relative_strength`
+- `input his_trade_with_third_party`
+- `output map_exchange`
+- `input map_area_gained`
+- `input he_gets_map`
+- `input he_gains_gold`
+- `input gains_cease_fire`
+- `input war_with_him`
+- `input length_of_war_with_him`
+- `input gains_alliance`
+- `input num_he_is_at_war`
+- `output alliance`
+- `output perceived_loyalty`
+- `output pact_end_pollution`
+- `input end_pollution_pact`
+- `input diplomatic_regard_towards_him`
+- `output diplomatic_regard_delta`
+- `input he_rejected_greetings`
+- `input relative_strength`
+- `input he_rejected_demand_advance`
+- `input he_rejected_gold_demand`
+- `input he_rejected_demand_map`
+- `input he_rejected_demand_leave_our_lands`
+- `input he_rejected_demand_reduce_pollution`
+- `input he_rejected_demand_no_piracy`
+- `input he_rejected_demand_stop_trade`
+- `input he_rejected_demand_attack_enemy`
+- `input he_rejected_exchange_advance`
+- `input he_rejected_exchange_map`
+- `input he_rejected_offer_advance`
+- `input he_rejected_offer_gold`
+- `input he_rejected_offer_map`
+- `input he_rejected_offer_cease_fire`
+- `input he_rejected_offer_alliance`
+- `input he_rejected_offer_pact_end_pollution`
+- `output diplomatic_regard_delta`
+- `input he_accepted_greetings`
+- `input he_accepted_demand_advance`
+- `input he_accepted_gold_demand`
+- `input he_accepted_demand_map`
+- `input he_accepted_demand_leave_our_lands`
+- `input he_accepted_demand_reduce_pollution`
+- `input he_accepted_demand_no_piracy`
+- `input he_accepted_demand_stop_trade`
+- `input he_accepted_demand_attack_enemy`
+- `input he_accepted_exchange_advance`
+- `input he_accepted_exchange_map`
+- `input he_accepted_offer_advance`
+- `input he_accepted_offer_gold`
+- `input he_accepted_offer_map`
+- `input he_accepted_offer_cease_fire`
+- `input he_accepted_offer_alliance`
+- `input he_accepted_offer_pact_end_pollution`
+
+## aidata/diplomacypeacebackstab.fli
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_begin.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_pre_incoming.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_pre_outgoing.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_rejected.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_accepted.fli"`
+
+## aidata/diplomacypeaceloyal.fli
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_begin.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_pre_incoming.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_pre_outgoing.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_rejected.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_peace.fli"`
+- `#include "diplomacy_accepted.fli"`
+
+## aidata/diplomacywarbackstab.fli
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_begin.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_pre_incoming.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_pre_outgoing.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_rejected.fli"`
+- `#include "diplomacy_set_backstab.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_accepted.fli"`
+- `input player_type`
+
+## aidata/diplomacywarloyal.fli
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_begin.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_pre_incoming.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_pre_outgoing.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_rejected.fli"`
+- `#include "diplomacy_set_loyal.fli"`
+- `#include "diplomacy_set_war.fli"`
+- `#include "diplomacy_accepted.fli"`
+
+## aidata/endturn.fli
+
+## aidata/init.fli
+- `input personality_aggression`
+- `input personality_loyalty`
+- `input personality_caution`
+- `input personality_expansion`
+- `input personality_green`
+- `input personality_smart`
+- `input time`
+- `input num_cities`
+- `input wgf_prod_setting`
+- `input wgf_gold_setting`
+- `input wgf_food_setting`
+- `input income_expense_cleric`
+- `input income_expense_crime`
+- `input income_expense_maintenance`
+- `input income_expense_wages`
+- `input income_expense_science`
+- `input income_expense_savings`
+- `input save_expense_overtime`
+- `input sci_ave_turns_to_advance`
+- `output city_threat_decay`
+- `output max_attack_strength`
+- `output max_defense_strength`
+- `output com_city_scale`
+- `output com_city_decay`
+- `output explore_near_civ`
+- `output recruit_goal_threshold`
+- `output attack_goal_threshold`
+- `output settle_goal_threshold`
+- `output explore_goal_threshold`
+- `output bid_recruit_scale`
+- `output bid_recruit_attackers_scale`
+- `output bid_attack_scale`
+- `output bid_settle_scale`
+- `output bid_explore_scale`
+- `output army_foreign_threat_decay`
+- `output army_foreign_threat_falloff`
+- `output reserve_flank_attack`
+- `output reserve_flank_defense`
+- `output reserve_range0_attack`
+- `output reserve_range0_defense`
+- `output reserve_range1_attack`
+- `output reserve_range1_defense`
+- `output unexplored_ocean_threshold`
+- `output inst_prod`
+- `output inst_food`
+- `output inst_move`
+- `output inst_def`
+- `output inst_vision_range`
+- `output inst_airfield`
+- `output inst_fort`
+- `output freight_coef`
+- `output gold_2_production`
+- `output get_on_islands_coef`
+- `output coef_fill_area_to_boat_explore`
+- `output blg_value`
+- `output blg_effect_silo`
+- `output blg_effect_capitol`
+- `output blg_effect_defense_bonus`
+- `output blg_effect_defense_bonus_no_city_walls_attacker`
+- `output blg_effect_happy_increment`
+- `output blg_effect_content_aif`
+- `output blg_effect_double_televan`
+- `output blg_effect_reduce_waste`
+- `output blg_effect_reduce_waste`
+- `output blg_effect_production_type_production_increment`
+- `output blg_effect_production_type_food_increment`
+- `output blg_effect_production_type_gold_increment`
+- `output blg_effect_production_type_knowledge_increment`
+- `output blg_effect_production_type_entertainment_increment`
+- `output blg_effect_production_type_production_percent`
+- `output blg_effect_production_type_food_percent`
+- `output blg_effect_production_type_gold_percent`
+- `output blg_effect_production_type_knowledge_percent`
+- `output blg_effect_production_type_entertainment_percent`
+- `output blg_effect_uv_bonus`
+- `output blg_effect_gw_bonus`
+- `output blg_effect_uv_cleaner`
+- `output blg_effect_gw_cleaner`
+- `output blg_effect_affective_pop_dec`
+- `output blg_effect_no_unhappy_people`
+- `output blg_effect_no_happiness`
+- `output blg_effect_lower_crime`
+- `output blg_effect_prevent_conver`
+- `output blg_effect_prevent_conver`
+- `output blg_effect_prevent_slavery`
+- `output blg_effect_lower_overcrowding`
+- `output blg_effect_allow_grunts`
+- `output blg_effect_lower_peace_move`
+- `output blg_effect_gold_per_citizen`
+- `output blg_effect_protect_from_nukes`
+- `output blg_effect_protect_from_bio`
+- `output blg_effect_protect_from_nano`
+- `output blg_effect_lower_pop_pollut`
+- `output blg_effect_television`
+- `output blg_effect_city_wall`
+- `output blg_effect_airport`
+- `output blg_effect_space_launch`
+- `output wonder_value`
+- `output wonder_effect_embassy`
+- `output wonder_effect_close_embassy`
+- `output wonder_effect_reform_cities`
+- `output wonder_effect_free_slaves`
+- `output wonder_effect_global_radar`
+- `output wonder_effect_spies_everywhere`
+- `output wonder_effect_free_space_trans`
+- `output wonder_effect_stop_biowar`
+- `output wonder_effect_pop_monitor`
+- `output wonder_effect_enable_parkranger`
+- `output wonder_effect_disable_nukes`
+- `output wonder_effect_reduce_readiness_cost`
+- `output wonder_effect_increase_gold`
+- `output wonder_effect_decrease_crime`
+- `output wonder_effect_increase_knowledge`
+- `output wonder_effect_decrease_empire_size`
+- `output wonder_effect_increase_happy_empire`
+- `output wonder_effect_increase_converted_city_fee`
+- `output wonder_effect_tax_water_routes`
+- `output wonder_effect_tax_television`
+- `output wonder_effect_increase_happy`
+- `output wonder_effect_make_genetics_cheap`
+- `output wonder_effect_tax_international_route`
+- `output wonder_effect_polluters_to_parks`
+- `output wonder_effect_reduce_world_pollution`
+- `output wonder_effect_uv_bonus`
+- `output wonder_effect_uv_cleaner`
+- `output wonder_effect_gw_bonus`
+- `output wonder_effect_gw_cleaner`
+
+## aidata/input_deals.fli
+- `input alliance_with_him`
+- `input cease_fire_with_him`
+- `input have_leave_our_lands`
+- `input have_attack_enemy`
+- `input have_reduce_pollution`
+- `input have_end_pollution`
+
+## aidata/input_responses.fli
+- `input my_responses_DEMAND_ADVANCE`
+- `output my_responses_decay_DEMAND_ADVANCE`
+- `input my_responses_DEMAND_CITY`
+- `output my_responses_decay_DEMAND_CITY`
+- `input my_responses_DEMAND_MAP`
+- `output my_responses_decay_DEMAND_MAP`
+- `output enough_me_giving_in_to_DEMAND_MAP`
+- `input my_responses_DEMAND_GOLD`
+- `output my_responses_decay_DEMAND_GOLD`
+- `output enough_me_giving_in_to_DEMAND_GOLD`
+- `input my_responses_DEMAND_STOP_TRADE`
+- `output my_responses_decay_DEMAND_STOP_TRADE`
+- `input my_responses_DEMAND_ATTACK_ENEMY`
+- `output my_responses_decay_DEMAND_ATTACK_ENEMY`
+- `input my_responses_DEMAND_LEAVE_OUR_LANDS`
+- `output my_responses_decay_DEMAND_LEAVE_OUR_LANDS`
+- `input my_responses_DEMAND_REDUCE_POLLUTION`
+- `output my_responses_decay_DEMAND_REDUCE_POLLUTION`
+- `input my_responses_DEMAND_LOWER_TARIFFS`
+- `output my_responses_decay_DEMAND_LOWER_TARIFFS`
+- `input my_responses_OFFER_ADVANCE`
+- `output my_responses_decay_OFFER_ADVANCE`
+- `input my_responses_OFFER_CITY`
+- `output my_responses_decay_OFFER_CITY`
+- `input my_responses_OFFER_MAP`
+- `output my_responses_decay_OFFER_MAP`
+- `input my_responses_OFFER_GOLD`
+- `output my_responses_decay_OFFER_GOLD`
+- `output enough_me_accepting_OFFER_GOLD`
+- `input my_responses_OFFER_CEASE_FIRE`
+- `output my_responses_decay_OFFER_CEASE_FIRE`
+- `input my_responses_OFFER_PERMANENT_ALLIANCE`
+- `output my_responses_decay_OFFER_PERMANENT_ALLIANCE`
+- `input my_responses_OFFER_PACT_CAPTURE_CITY`
+- `output my_responses_decay_OFFER_PACT_CAPTURE_CITY`
+- `input my_responses_OFFER_PACT_END_POLLUTION`
+- `output my_responses_decay_OFFER_PACT_END_POLLUTION`
+- `input my_responses_EXCHANGE_ADVANCE`
+- `output my_responses_decay_EXCHANGE_ADVANCE`
+- `input my_responses_EXCHANGE_CITY`
+- `output my_responses_decay_EXCHANGE_CITY`
+- `input my_responses_EXCHANGE_MAP`
+- `output my_responses_decay_EXCHANGE_MAP`
+- `output enough_me_giving_in_to_EXCHANGE_MAP`
+- `input his_responses_GREETING`
+- `output his_responses_decay_GREETING`
+- `input his_responses_DEMAND_ADVANCE`
+- `output his_responses_decay_DEMAND_ADVANCE`
+- `input his_responses_DEMAND_CITY`
+- `output his_responses_decay_DEMAND_CITY`
+- `input his_responses_DEMAND_MAP`
+- `output his_responses_decay_DEMAND_MAP`
+- `input his_responses_DEMAND_GOLD`
+- `output his_responses_decay_DEMAND_GOLD`
+- `input his_responses_DEMAND_STOP_TRADE`
+- `output his_responses_decay_DEMAND_STOP_TRADE`
+- `input his_responses_DEMAND_ATTACK_ENEMY`
+- `output his_responses_decay_DEMAND_ATTACK_ENEMY`
+- `input his_responses_DEMAND_LEAVE_OUR_LANDS`
+- `output his_responses_decay_DEMAND_LEAVE_OUR_LANDS`
+- `input his_responses_DEMAND_REDUCE_POLLUTION`
+- `output his_responses_decay_DEMAND_REDUCE_POLLUTION`
+- `input his_responses_DEMAND_LOWER_TARIFFS`
+- `output his_responses_decay_DEMAND_LOWER_TARIFFS`
+- `input his_responses_OFFER_ADVANCE`
+- `output his_responses_decay_OFFER_ADVANCE`
+- `input his_responses_OFFER_CITY`
+- `output his_responses_decay_OFFER_CITY`
+- `input his_responses_OFFER_MAP`
+- `output his_responses_decay_OFFER_MAP`
+- `input his_responses_OFFER_GOLD`
+- `output his_responses_decay_OFFER_GOLD`
+- `input his_responses_OFFER_CEASE_FIRE`
+- `output his_responses_decay_OFFER_CEASE_FIRE`
+- `input his_responses_OFFER_PERMANENT_ALLIANCE`
+- `output his_responses_decay_OFFER_PERMANENT_ALLIANCE`
+- `input his_responses_OFFER_PACT_CAPTURE_CITY`
+- `output his_responses_decay_OFFER_PACT_CAPTURE_CITY`
+- `input his_responses_OFFER_PACT_END_POLLUTION`
+- `output his_responses_decay_OFFER_PACT_END_POLLUTION`
+- `input his_responses_EXCHANGE_ADVANCE`
+- `output his_responses_decay_EXCHANGE_ADVANCE`
+- `input his_responses_EXCHANGE_CITY`
+- `output his_responses_decay_EXCHANGE_CITY`
+- `input his_responses_EXCHANGE_MAP`
+- `output his_responses_decay_EXCHANGE_MAP`
+- `output he_has_been_warned_to_LEAVE_OUR_LANDS`
+- `output he_has_been_asked_to_EXCHANGE_MAP`
+- `output youve_got_my_map`
+- `output ive_got_your_map`
+- `output he_said_yes_recently_to_OFFER_GOLD`
+- `output he_said_yes_very_recently_to_OFFER_GOLD`
+- `output ive_got_your_gift`
+- `output we_just_made_a_peace_treaty`
+- `output i_just_asked_for_gold`
+- `output enough_me_giving_in_to_DEMAND_ADVANCE`
+- `output i_ve_asked_enough_about_attacking_enemy`
+
+## aidata/inputs.fli
+- `input my_current_savings`
+- `input desired_farm_pw`
+- `input desired_road_pw`
+- `input desired_mine_pw`
+- `input current_military_readiness`
+- `input unit_to_city_best_human_ratio`
+- `input unit_to_city_ratio`
+- `input i_agreed_to_stop_polluting`
+- `input i_can_build_wormhole_probe`
+- `input can_space_settle`
+- `input can_sea_settle`
+- `input diff_level`
+- `output chieftain_test`
+- `output diety_test`
+- `input most_human_city_delta`
+- `input highest_enemy_strength_ratio`
+- `input highest_human_enemy_strength_ratio`
+- `input total_enemy_strength_ratio`
+- `input allies_vs_enemies_strength_ratio`
+- `input most_human_adv_known_delta`
+- `input ratio_advance_cost_me_to_best_human`
+- `input ratio_advance_cost_me_to_best_other`
+- `input distance_to_nearest_human_capitol`
+- `input public_works`
+- `input count`
+- `input longest_war`
+- `input shortest_peace`
+- `input lowest_unit_regard`
+- `input total_military_incursions`
+- `input percent_cost_readiness`
+- `input at_war_count`
+- `input land_continents_full`
+- `input land_continents_full_of_friends`
+- `input percent_wages_needed_content`
+- `input city_delta`
+- `input num_cities`
+- `input time`
+- `output opening_gambit_time`
+- `input size_of_world`
+- `input wgf_prod_setting`
+- `input wgf_gold_setting`
+- `input wgf_food_setting`
+- `input income_expense_cleric`
+- `input income_expense_crime`
+- `input income_expense_maintenance`
+- `input income_expense_wages`
+- `input income_expense_science`
+- `input income_expense_savings`
+- `input gold_and_wage_percent_cost`
+- `input save_expense_overtime`
+- `input sci_ave_turns_to_advance`
+- `input overall_threat`
+- `input income_expense_cleric`
+- `input income_expense_crime`
+- `input income_expense_maintenance`
+- `input income_expense_wages`
+- `input income_expense_science`
+- `input income_expense_savings`
+- `input save_expense_overtime`
+- `input sci_ave_turns_to_advance`
+- `input power_ratio`
+- `input total_pop_size`
+- `input num_players_in_game`
+
+## aidata/inputs_dip_incoming_mess.txt
+- `input gains_cease_fire`
+- `input gold_gained`
+- `input projected_production`
+- `input cease_fire_with_him`
+- `input i_gain_advance`
+- `input i_will_stop_piracy`
+- `input global_pollution_level`
+- `input my_pollution_level`
+- `input his_pollution_level`
+- `input i_will_attack_third_party`
+- `input stops_trade_with_third_party`
+- `input third_party_regard`
+- `input contact_gained`
+- `input he_gains_advance`
+- `input he_gains_city`
+- `input i_gain_map`
+- `input he_gets_map`
+- `input end_pollution_pact`
+- `input gains_alliance`
+- `input i_will_leave_his_lands`
+- `input he_gains_gold`
+- `input third_party_relative_strength`
+- `input his_third_party_relative_strength`
+- `input his_message_tone`
+- `input alliance_with_him`
+- `input neutral_with_him`
+- `input war_with_him`
+- `input longest_war`
+- `input length_of_war_with_him`
+- `input at_war_count`
+- `input best_friend`
+- `input worst_enemy`
+- `input his_hotwar_attacked_me`
+- `input regard_towards_him`
+- `input loyalty`
+- `input military_incursions`
+- `input relative_strength`
+- `input last_got_map`
+
+## aidata/main.fli
+- `#include "init.fli"`
+- `#include "beginturn.fli"`
+- `#include "diplomacy.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainBarbarians.fli
+- `#include "init.fli"`
+- `#include "beginturnBarbarians.fli"`
+- `#include "diplomacyBarbarians.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainCleric.fli
+- `#include "init.fli"`
+- `#include "beginturnCleric.fli"`
+- `#include "diplomacypeacebackstab.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainSciFew.fli
+- `#include "init.fli"`
+- `#include "beginturnSciFew.fli"`
+- `#include "diplomacypeaceloyal.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainSciMany.fli
+- `#include "init.fli"`
+- `#include "beginturnSciMany.fli"`
+- `#include "diplomacypeaceloyal.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainSlaver.fli
+- `#include "init.fli"`
+- `#include "beginturnSlaver.fli"`
+- `#include "diplomacywarbackstab.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainWarFew.fli
+- `#include "init.fli"`
+- `#include "beginturnWarFew.fli"`
+- `#include "diplomacywarloyal.fli"`
+- `#include "endturn.fli"`
+
+## aidata/mainWarMany.fli
+- `#include "init.fli"`
+- `#include "beginturnWarMany.fli"`
+- `#include "diplomacywarbackstab.fli"`
+- `#include "endturn.fli"`
+
+## aidata/output_aipnames.fli
+- `output pull_units_into_city_aip`
+- `output siege_off_aip`
+- `output build_troops_off_aip`
+- `output mass_settle_aip`
+- `output mass_settle_sandbag_aip`
+- `output yes_settling_aip`
+- `output no_settling_aip`
+- `output improvement_build_normal_aip`
+- `output milfew_aip`
+- `output milmany_aip`
+- `output scifew_aip`
+- `output scimany_aip`
+- `output slaver_aip`
+- `output cleric_aip`
+- `output citywall_aip`
+- `output citywall_science_aip`
+- `output survival_mode_aip`
+- `output getarmy_aip`
+- `output gather_aip`
+- `output takecity_aip`
+- `output fallback_aip`
+- `output lowdist_aip`
+- `output highdist_aip`
+- `output pillage_high_five_aip`
+- `output pillage_normal_aip`
+
+## aidata/outputs.fli
+- `output rushbuy_max_utility`
+- `output no_settling`
+- `output focus_on_units`
+- `output likely_food_multiplier`
+- `output work_min`
+- `output food_max`
+- `output food_min`
+- `output settle_aip`
+- `output military_aip`
+- `output min_food_factor`
+- `output use_expectations`
+- `output inst_road_coef`
+- `output wgf_production`
+- `output wgf_food`
+- `output wgf_gold`
+- `output set_wgf`
+- `output budget_income_wages`
+- `output desired_military_readiness`
+- `output production`
+- `output food`
+- `output science`
+- `output happiness`
+- `output defense`
+- `output offense`
+- `output pop_gold`
+- `output pop_production_max`
+- `output pop_production_min`
+- `output pop_food_max`
+- `output pop_food_min`
+- `output pop_science`
+- `output pop_happiness`
+- `output opening_game_strategy`
+- `output min_happiness`
+- `output max_crime`
+- `output production_tax`
+- `output city_growth_ratio`
+- `output city_growth_min_percent`
+- `output explore_priority`
+- `output settler_packing`
+- `output wonder_uscale`
+- `output bid_recruit_uscale`
+- `output bid_recruit_attackers_uscale`
+- `output bid_attack_uscale`
+- `output bid_defend_uscale`
+- `output bid_settle_uscale`
+- `output bid_explore_uscale`
+- `output bid_enslave_uscale`
+- `output bid_build_list_uscale`
+- `output bid_patrol_uscale`
+- `output bid_harass_uscale`
+- `output bid_bombard_uscale`
+- `output bid_convert_city_uscale`
+- `output bid_pillage_uscale`
+- `output bid_pirate_uscale`
+- `output bid_counter_stealth_uscale`
+- `output bid_defuse_mines_uscale`
+- `output bid_bonus_food_uscale`
+- `output blg_uscale`
+- `output blg_effect_space_launch`
+- `output budget_income_science`
+- `output budget_income_savings`
+- `output budget_income_new_blg`
+- `output i_want_this_gov_TYRANNY`
+- `output i_want_this_gov_THEOCRACY`
+- `output i_want_this_gov_ECOTOPIA`
+- `output i_want_this_gov_MONARCHY`
+- `output i_want_this_gov_REPUBLIC`
+- `output i_want_this_gov_DEMOCRACY`
+- `output i_want_this_gov_FASCISM`
+- `output i_want_this_gov_COMMUNISM`
+- `output i_want_this_gov_MULTICORP`
+- `output i_want_this_gov_TECHNOCRACY`
+- `output i_want_this_gov_VIRTUAL_D`
+- `output i_want_this_gov_uscale`
+- `output inst_prod`
+- `output inst_food`
+- `output make_farm`
+- `output make_mine`
+- `output base_gold_reserve_multiple`
+- `output special_action_gold_reserve_multiple`
+- `output min_force_matching_percent`
+- `output max_force_matching_percent`
+- `output enough_pw`
+- `output too_much_renaissance_pw`
+- `output too_much_modern_pw`
+- `output too_much_genetic_pw`
+
+## aidata/personality.fli
+- `#include "main.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalityBarbarians.fli
+- `#include "mainBarbarians.fli"`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_advance_coeff`
+- `output GREETING_coeff`
+- `output DEMAND_STOP_TRADE_coeff`
+- `output DEMAND_ATTACK_ENEMY_coeff`
+- `output DEMAND_LEAVE_OUR_LANDS_coeff`
+- `output DEMAND_REDUCE_POLLUTION_coeff`
+- `output OFFER_ADVANCE_coeff`
+- `output OFFER_CITY_coeff`
+- `output OFFER_MAP_coeff`
+- `output OFFER_GOLD_coeff`
+- `output OFFER_CEASE_FIRE_coeff`
+- `output OFFER_PERMANENT_ALLIANCE_coeff`
+- `output OFFER_PACT_CAPTURE_CITY_coeff`
+- `output OFFER_PACT_END_GLOBAL_WARMING_coeff`
+- `output OFFER_PACT_END_OZONE_LOSS_coeff`
+- `output EXCHANGE_ADVANCE_coeff`
+- `output EXCHANGE_CITY_coeff`
+- `output EXCHANGE_MAP_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalityCleric.fli
+- `#include "mainCleric.fli"`
+- `#include "beginturnCleric.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalityDefault.fli
+- `#include "main.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalitySciFew.fli
+- `#include "mainSciFew.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalitySciMany.fli
+- `#include "mainSciMany.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalitySlaver.fli
+- `#include "mainSlaver.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalityWarFew.fli
+- `#include "mainWarFew.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/personalityWarMany.fli
+- `#include "mainWarMany.fli"`
+- `output greeting_coeff`
+- `output demand_advance_coeff`
+- `output demand_city_coeff`
+- `output demand_map_coeff`
+- `output demand_gold_coeff`
+- `output demand_stop_trade_coeff`
+- `output demand_attack_enemy_coeff`
+- `output demand_leave_our_lands_coeff`
+- `output demand_reduce_pollution_coeff`
+- `output demand_lower_tariffs_coeff`
+- `output offer_advance_coeff`
+- `output offer_city_coeff`
+- `output offer_map_coeff`
+- `output offer_gold_coeff`
+- `output offer_cease_fire_coeff`
+- `output offer_permanent_alliance_coeff`
+- `output offer_pact_capture_city_coeff`
+- `output offer_pact_end_global_warming_coeff`
+- `output offer_pact_end_ozone_loss_coeff`
+- `output exchange_advance_coeff`
+- `output exchange_city_coeff`
+- `output exchange_map_coeff`
+- `output give_advance`
+- `output diplomatic_persistence`
+
+## aidata/README.txt
+
+## aidata/set_budget.fli
+
+## aidata/set_food_or_prod.fli
+
+## aidata/set_govern.fli
+
+## aidata/set_inst_priority.fli
+
+## aidata/set_military_readiness.fli
+
+## aidata/set_pw.fli
+
+## aidata/set_resource_desire.fli
+
+## aidata/set_science_speed.fli
+
+## aidata/set_settle_density.fli
+- `output settle_value_coef`
+- `output settle_patience`
+
+## aidata/set_wgf.fli
+- `output money_crisis`
+
+## aidata/strategic_AI_config.txt
+- `double relaxation_coefficient = 0.8;`
+- `int relaxation_cycles = 2;`
+- `#define threat_map_resolution 3`
+- `#define death_map_resolution 7`
+- `#define empire_map_resolution 5`
+- `#define enemy_empire_map_resolution 5`
+- `#define exploration_map_resolution 3`
+- `#define goal_map_resolution 5`
+

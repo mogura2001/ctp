@@ -1,0 +1,390 @@
+##################################################
+# File:   creditssreen.ldl                       #
+# Author: Brian Hawkins                          #
+#                                                #
+# Copyright 1998 Activision, all rights reserved #
+##################################################
+
+##-----------------------------------##
+##              Data                 ##
+##-----------------------------------##
+
+CreditsScreen {
+
+## Window origin
+	int		xpix	0
+	int		ypix	0
+
+## Window size
+	int		widthpix	640
+	int		heightpix	480
+
+## Default pattern
+	string	pattern	"upba3010.tga"
+
+## Exit button location.
+	ExitButton {
+		string	image0		"tbb002.tga"
+		string	image1		"tbb001.tga"
+		string	focusimage1		"tbb001.tga"
+		int		xpix			619
+		int		ypix			3
+		int		widthpix		17
+		int		heightpix		14
+	}
+
+## Secret button location.
+	SecretButton {
+		int		xpix			304
+		int		ypix			444
+		int		widthpix		31
+		int		heightpix		25
+	}
+
+## Pause button location.
+	PauseButton {
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		640
+		int		heightpix		480
+	}
+
+## Chromakeyed border.
+	BorderImage {
+		string	image0		"cbb001.tga"
+		string	imagebltflag	"chromakey"
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		640
+		int		heightpix		480
+	}
+
+## Secret image displayed when hidden button is pressed.
+	SecretImage {
+		string	image0		"tpd001.tga"
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		640
+		int		heightpix		480
+	}
+
+## Standard credit screen background.
+	BackgroundImage {
+		string	image0		"cba000.tga"
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		640
+		int		heightpix		480
+	}
+
+## Speed to trigger next frame of animations.  This will include the credits
+## themselves, so this should be used to control the speed of credit changes.
+	int		animationSpeed			3000
+
+## Credits to cycle through.
+	CreditAnim {
+		FrameTable {
+			int		numstrings		20
+			bool		nodatabase		TRUE
+
+			string	string0 		"cba001.tga"
+			string	string1 		"cba002.tga"
+			string	string2 		"cba003.tga"
+			string	string3 		"cba004.tga"
+			string	string4 		"cba005.tga"
+			string	string5 		"cba006.tga"
+			string	string6 		"cba007.tga"
+			string	string7 		"cba008.tga"
+			string	string8 		"cba009.tga"
+			string	string9 		"cba010.tga"
+			string	string10 		"cba011.tga"
+			string	string11 		"cba012.tga"
+			string	string12 		"cba013.tga"
+			string	string13 		"cba014.tga"
+			string	string14 		"cba015.tga"
+			string	string15 		"cba016.tga"
+			string	string16 		"cba017.tga"
+			string	string17 		"cba018.tga"
+			string	string18 		"cba019.tga"
+			string	string19 		"cba020.tga"
+		}
+
+		int		blendSpeed		20
+		int		numimagegroups	2
+		string	imagebltflag	"chromakey"
+		int		xpix			0
+		int		ypix			0
+		int		widthpix		640
+		int		heightpix		480
+	}
+
+## Number of triggered animations for this window.
+	int		triggeredAnims			5
+
+## Triggered animations except for the credits.
+	TriggeredAnim1 {
+		FrameTable {
+			int		numstrings		4
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpg001.tga"
+			string	string1 		"cpg002.tga"
+			string	string2 		"cpg003.tga"
+			string	string3 		"cpg004.tga"
+		}
+
+		string	imagebltflag	"chromakey"
+		int		xpix			48
+		int		ypix			155
+		int		widthpix		217
+		int		heightpix		221
+	}
+	TriggeredAnim2 {
+		FrameTable {
+			int		numstrings		2
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpm001.tga"
+			string	string1 		"cpm002.tga"
+		}
+
+		string	imagebltflag	"chromakey"
+		int		xpix			221
+		int		ypix			300
+		int		widthpix		96
+		int		heightpix		98
+	}
+	TriggeredAnim3 {
+		FrameTable {
+			int		numstrings		2
+			bool		nodatabase		TRUE
+
+			string	string0 		"cph001.tga"
+			string	string1 		"cph002.tga"
+		}
+
+		string	imagebltflag	"chromakey"
+		int		xpix			306
+		int		ypix			328
+		int		widthpix		79
+		int		heightpix		82
+	}
+	TriggeredAnim4 {
+		FrameTable {
+			int		numstrings		2
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpj001.tga"
+			string	string1 		"cpj002.tga"
+		}
+
+		string	imagebltflag	"chromakey"
+		int		xpix			385
+		int		ypix			333
+		int		widthpix		58
+		int		heightpix		58
+	}
+	TriggeredAnim5 {
+		FrameTable {
+			int		numstrings		2
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpk001.tga"
+			string	string1 		"cpk002.tga"
+		}
+
+		string	imagebltflag	"chromakey"
+		int		xpix			443
+		int		ypix			356
+		int		widthpix		43
+		int		heightpix		44
+	}
+
+## Number of background animations for this window.
+	int		backgroundAnims			7
+
+## Torch fire animations.
+	BackgroundAnim1 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpa001.tga"
+			string	string1 		"cpa002.tga"
+			string	string2 		"cpa003.tga"
+			string	string3 		"cpa004.tga"
+			string	string4 		"cpa005.tga"
+			string	string5 		"cpa006.tga"
+			string	string6 		"cpa007.tga"
+			string	string7 		"cpa008.tga"
+			string	string8 		"cpa009.tga"
+			string	string9 		"cpa010.tga"
+			string	string10 		"cpa011.tga"
+			string	string11		"cpa012.tga"
+			string	string12		"cpa013.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			13
+		int		ypix			31
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim2 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpb011.tga"
+			string	string1		"cpb012.tga"
+			string	string2		"cpb013.tga"
+			string	string3		"cpb001.tga"
+			string	string4 		"cpb002.tga"
+			string	string5 		"cpb003.tga"
+			string	string6 		"cpb004.tga"
+			string	string7 		"cpb005.tga"
+			string	string8 		"cpb006.tga"
+			string	string9 		"cpb007.tga"
+			string	string10 		"cpb008.tga"
+			string	string11		"cpb009.tga"
+			string	string12		"cpb010.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			86
+		int		ypix			28
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim3 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpc005.tga"
+			string	string1 		"cpc006.tga"
+			string	string2 		"cpc007.tga"
+			string	string3 		"cpc008.tga"
+			string	string4 		"cpc009.tga"
+			string	string5 		"cpc010.tga"
+			string	string6 		"cpc011.tga"
+			string	string7		"cpc012.tga"
+			string	string8		"cpc013.tga"
+			string	string9 		"cpc001.tga"
+			string	string10 		"cpc002.tga"
+			string	string11		"cpc003.tga"
+			string	string12		"cpc004.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			79
+		int		ypix			97
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim4 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpd007.tga"
+			string	string1 		"cpd008.tga"
+			string	string2 		"cpd009.tga"
+			string	string3 		"cpd010.tga"
+			string	string4 		"cpd011.tga"
+			string	string5		"cpd012.tga"
+			string	string6		"cpd013.tga"
+			string	string7 		"cpd001.tga"
+			string	string8 		"cpd002.tga"
+			string	string9 		"cpd003.tga"
+			string	string10 		"cpd004.tga"
+			string	string11		"cpd005.tga"
+			string	string12		"cpd006.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			518
+		int		ypix			97
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim5 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0		"cpe006.tga"
+			string	string1		"cpe007.tga"
+			string	string2		"cpe008.tga"
+			string	string3 		"cpe009.tga"
+			string	string4 		"cpe010.tga"
+			string	string5 		"cpe011.tga"
+			string	string6		"cpe012.tga"
+			string	string7		"cpe013.tga"
+			string	string8 		"cpe001.tga"
+			string	string9 		"cpe002.tga"
+			string	string10		"cpe003.tga"
+			string	string11		"cpe004.tga"
+			string	string12		"cpe005.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			513
+		int		ypix			28
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim6 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpf011.tga"
+			string	string1		"cpf012.tga"
+			string	string2		"cpf013.tga"
+			string	string3 		"cpf001.tga"
+			string	string4 		"cpf002.tga"
+			string	string5 		"cpf003.tga"
+			string	string6 		"cpf004.tga"
+			string	string7 		"cpf005.tga"
+			string	string8 		"cpf006.tga"
+			string	string9 		"cpf007.tga"
+			string	string10 		"cpf008.tga"
+			string	string11		"cpf009.tga"
+			string	string12		"cpf010.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			586
+		int		ypix			31
+		int		widthpix		41
+		int		heightpix		48
+	}
+	BackgroundAnim7 {
+		FrameTable {
+			int		numstrings		13
+			bool		nodatabase		TRUE
+
+			string	string0 		"cpl001.tga"
+			string	string1		"cpl002.tga"
+			string	string2		"cpl003.tga"
+			string	string3 		"cpl004.tga"
+			string	string4 		"cpl005.tga"
+		}
+
+		int		animationSpeed	50
+		string	imagebltflag	"chromakey"
+		int		xpix			88
+		int		ypix			202
+		int		widthpix		130
+		int		heightpix		124
+	}
+}
+
+$
