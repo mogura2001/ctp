@@ -1,0 +1,379 @@
+# statswindow.ldl
+
+
+# template not being used
+template STATS_BUTTON0:T_FONT1_12 {
+
+	int	ypix	1
+
+	int	widthpix	57
+
+	int	heightpix	22
+
+	string	image0	"upba0110.tga"
+
+}
+
+
+
+template STATS_BUTTON1:T_FONT1_12 {
+
+	int	xpix	2
+
+	int	widthpix	47
+
+	int	heightpix	12
+
+	int	bevelwidth	0
+
+}
+
+
+
+StatsWindow {
+
+	string	xanchor	"left"
+
+	string	yanchor	"top"
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	49
+
+	int	heightpix	141
+
+	string	pattern	"upbb6119.tga"
+
+	ScreensSwitch {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	49
+
+		int	heightpix	18
+
+		int	bevelwidth	0
+
+		string	image0	"upbb6120.tga"
+
+		string	image1	"upbb6121.tga"
+
+	}
+
+	CivButton:STATS_BUTTON1 {
+
+		int	ypix	18	
+
+		string	image0	"upbb6122.tga"
+
+		string	image1	"upbb6123.tga"
+
+		string	disabledimage0	"upbb6157.tga"
+
+	}
+
+	CityButton:STATS_BUTTON1 {
+
+		int	ypix	31
+
+		string	image0	"upbb6124.tga"
+
+		string	image1	"upbb6125.tga"
+
+		string	disabledimage0	"upbb6158.tga"
+
+	}
+
+	UnitButton:STATS_BUTTON1 {
+
+		int	ypix	45
+
+		string	image0	"upbb6126.tga"
+
+		string	image1	"upbb6127.tga"
+
+		string	disabledimage0	"upbb6159.tga"
+
+	}
+
+	SciButton:STATS_BUTTON1 {
+
+		int	ypix	59
+
+		string	image0	"upbb6128.tga"
+
+		string	image1	"upbb6129.tga"
+
+		string	disabledimage0	"upbb6160.tga"
+
+	}
+
+	DipButton:STATS_BUTTON1 {
+
+		int	ypix	72
+
+		string	image0	"upbb6130.tga"
+
+		string	image1	"upbb6131.tga"
+
+		string	disabledimage0	"upbb6161.tga"
+
+	}
+
+	TradeButton:STATS_BUTTON1 {
+
+		int	ypix	86
+
+		string	image0	"upbb6132.tga"
+
+		string	image1	"upbb6133.tga"
+
+		string	disabledimage0	"upbb6162.tga"
+
+	}
+
+	LibButton:STATS_BUTTON1 {
+
+		int	ypix	100
+
+		string	image0	"upbb6134.tga"
+
+		string	image1	"upbb6135.tga"
+
+		string	disabledimage0	"upbb6163.tga"
+
+	}
+
+	InfoButton:STATS_BUTTON1 {
+
+		int	ypix	114
+
+		string	image0	"upbb6136.tga"
+
+		string	image1	"upbb6137.tga"
+
+		string	disabledimage0	"upbb6164.tga"
+
+	}
+
+	OptionsButton:STATS_BUTTON1 {
+
+		int	ypix	128
+
+		string	image0	"upbb6138.tga"
+
+		string	image1	"upbb6139.tga"
+
+		string	disabledimage0	"upbb6165.tga"
+
+	}
+
+# not being used
+	SpaceDropDown:T_FONT1_18 {
+
+		int	xpix		293
+
+		int	ypix		4
+
+		int	widthpix	99
+
+		int	heightpix	20
+
+		string	pattern	"upba0104.tga"
+
+		staticpane:T_FONT1_18 {
+
+			int widthpix 99
+
+			int heightpix 20
+
+			string text "str_ldl_Screens"
+		}
+
+		
+
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			int widthpix	20
+
+		}
+
+		window {
+
+			int heightpix 200
+
+			listbox {
+
+				string pattern "upba0104.tga"
+
+			}
+
+		}
+
+	
+
+	}
+
+
+
+	StatusDropDown:T_FONT1_18 {
+
+		int	xpix		420
+
+		int	ypix		4
+
+		int	widthpix	250
+
+		int	heightpix	20
+
+		string pattern "upba0104.tga"
+
+		staticpane:T_FONT1_18 {
+
+			int widthpix 99
+
+			int heightpix 20
+
+			string text "str_ldl_Great_Library"
+		}
+
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			int widthpix	20
+
+		}
+
+		window {
+
+			int heightpix 200
+
+			listbox {
+
+				string pattern "upba0104.tga"
+
+			}
+
+		}
+
+	}
+
+
+
+}
+
+
+# not being used
+StatusDropDownItem {
+
+	name:T_FONT1_14{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		248
+
+		int		heightpix		16
+
+	}
+
+}
+
+
+# not being used
+StatusDropDownStrings {
+
+	int		numstrings	25
+
+	
+
+	string	string0		"str_tbl_ldl_Great_Library_Screen"
+	string	string1		"str_tbl_ldl_FIVE_HYPHENS"
+	string	string2		"str_tbl_ldl_Great_Library_Biowarfare_Filter"
+	string	string3		"str_tbl_ldl_Great_Library_Cathedral"
+	string	string4		"str_tbl_ldl_Great_Library_Consumer_Electronics"
+	string	string5		"str_tbl_ldl_Great_Library_Eco_Terrorist"
+	string	string6		"str_tbl_ldl_Great_Library_Ecotopia"
+	string	string7		"str_tbl_ldl_Great_Library_Genetics"
+	string	string8		"str_tbl_ldl_Great_Library_Global_Defense_Initiative"
+	string	string9		"str_tbl_ldl_Great_Library_House_of_Freezing"
+	string	string10	"str_tbl_ldl_Great_Library_Life_Extension"
+	string	string11	"str_tbl_ldl_Great_Library_Printing_Press"
+	string	string12	"str_tbl_ldl_Great_Library_Subneural_Ads"
+	string	string13	"str_tbl_ldl_Great_Library_Technocracy"
+	string	string14	"str_tbl_ldl_Great_Library_Television"
+	string	string15	"str_tbl_ldl_Great_Library_Theocracy"
+	string	string16	"str_tbl_ldl_Great_Library_Virtual_Democracy"
+	string	string17	"str_tbl_ldl_Great_Library_Wilderness_Preservation"
+	string	string18	"str_tbl_ldl_Great_Library_Cleric"
+	string	string19	"str_tbl_ldl_Great_Library_Corporate_Branch"
+	string	string20	"str_tbl_ldl_Great_Library_Lawyer"
+	string	string21	"str_tbl_ldl_Great_Library_Multinationalism"
+	string	string22	"str_tbl_ldl_Great_Library_Personal_Encryption"
+	string	string23	"str_tbl_ldl_Great_Library_Televangelist"
+	string	string24	"str_tbl_ldl_Great_Library_Infector"
+}
+
+
+# not being used
+SpaceDropDownStrings {
+
+	int	numstrings	12
+
+	
+
+	string string0 		"str_tbl_ldl_Debug"
+	string string1 		"str_tbl_ldl_FIVE_HYPHENS"
+	string string2 		"str_tbl_ldl_City_Status"
+	string string3 		"str_tbl_ldl_Unit_Status"
+	string string4		"str_tbl_ldl_Civ_Status"
+	string string5		"str_tbl_ldl_Knowledge_Status"
+	string string6		"str_tbl_ldl_Diplomacy_Status"
+	string string7		"str_tbl_ldl_Trade_Status"
+	string string8		"str_tbl_ldl_Cheat_Mode"
+	string string9		"str_tbl_ldl_Play_Options"
+	string string10		"str_tbl_ldl_Happiness_Status"
+	string string11		"str_tbl_ldl_Info_Screen"
+}
+
+
+# not being used
+SpaceDropDownItem {
+
+	name:T_FONT1_14 {
+
+		int xpix	0
+
+		int ypix	0
+
+		int widthpix	99
+
+		int heightpix	16
+
+	}
+
+}
+
+StatsStrings {
+	int	numStrings	3
+	string	string0	"CITY_STATUS_DISABLED"
+	string	string1	"UNIT_STATUS_DISABLED"
+	string	string2	"DIPLOMACY_STATUS_DISABLED"
+}
+
+
+$
+
+

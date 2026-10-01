@@ -1,0 +1,924 @@
+#########################
+
+# Info Window LDL Script
+
+#########################
+
+template infoscreen_icons : T_FONT1_99 {
+	int widthpix	26
+
+	int heightpix	20
+}
+
+template infoscreen_counters : T_FONT1_99 {
+	int widthpix	20
+
+	int heightpix	20
+}
+
+template infoscreen_buttons : T_FONT5_INFOBUTTON {
+
+	int widthpix	91
+
+	int heightpix	20
+
+	int bevelwidth	0
+
+	int beveltype	0
+
+	string imagebltflag	"chromakey"
+
+	string	image0			"upba6201.tga"
+
+	string	image1			"upba6202.tga"
+}
+
+template infoscreen_iconbuttons : T_FONT5_8 {
+
+	int widthpix	33
+
+	int heightpix	33
+
+	int bevelwidth	0
+
+	int beveltype	0
+
+	string imagebltflag	"chromakey"
+}
+
+InfoWindow {
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	string	pattern	"upba6200.tga"
+
+	int	widthpix	640
+
+	int	heightpix	480
+
+	ExitButton : CTP_CLOSE_BUTTON {
+
+		int	xpix	569
+
+		int	ypix	442
+
+	}
+
+
+
+	InfoBigList {
+
+		int	xpix	53
+
+		int	ypix	127
+
+		int	widthpix	534
+
+		int	heightpix	168
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		int columns		4
+
+		int	srcxpix	51
+
+		int	srcypix 105
+
+		int	srcwidthpix		538
+
+		int	srcheightpix	192
+
+		string	pattern	"upba6200.tga"
+
+		header {
+
+			switch0:T_FONT1_99 {
+
+				int	widthpix	100
+
+				int	heightpix	20
+
+				string text "str_ldl_City"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch1:T_FONT1_99 {
+
+				int	widthpix	100
+
+				int	heightpix	20
+
+				string text "str_ldl_Civilization"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch2:T_FONT1_99 {
+
+				int	widthpix	100
+
+				int	heightpix	20
+
+				string text "str_ldl_Population"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch3:T_FONT1_99 {
+
+				int	widthpix	234
+
+				int	heightpix	20
+
+				string text "str_ldl_Wonders"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+
+	}
+
+	InfoScoreList {
+
+		int	xpix	142
+
+		int	ypix	112
+
+		int	widthpix	356
+
+		int	heightpix	287
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		int columns		2
+
+		int	srcxpix	140
+
+		int	srcypix 110
+
+		int	srcwidthpix		360
+
+		int	srcheightpix	291
+
+		string	pattern	"upba6200.tga"
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+		}
+
+		header {
+
+			switch0:T_FONT1_99 {
+
+				int	widthpix	206
+
+				int	heightpix	0
+
+			#	string	pattern	"upba3010.tga"
+
+				int bevelwidth 	0
+
+			}
+
+			switch1:T_FONT1_99 {
+
+				int	widthpix	150
+
+				int	heightpix	0
+
+		#		string	pattern	"upba3010.tga"
+
+				int bevelwidth 	0
+
+			}
+		}
+	}
+
+	InfoWonderList {
+
+		int	xpix	53
+
+		int	ypix	127
+
+		int	widthpix	534
+
+		int	heightpix	168
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		int columns		3
+
+		string	pattern	"upba6200.tga"
+
+		int	srcxpix	51
+
+		int	srcypix 105
+
+		int	srcwidthpix		538
+
+		int	srcheightpix	192
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+		}
+
+		header {
+
+			switch0:T_FONT1_99 {
+
+				int	widthpix	234
+
+				int	heightpix	20
+
+				string text "str_ldl_Wonder"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch1:T_FONT1_99 {
+
+				int	widthpix	150
+
+				int	heightpix	20
+
+				string text "str_ldl_Civilization"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch2:T_FONT1_99 {
+
+				int	widthpix	150
+
+				int	heightpix	20
+
+				string text "str_ldl_City"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+
+	}
+
+	InfoGraph {
+
+		int	xpix	53
+
+		int	ypix	125
+
+		int	widthpix	350
+
+		int	heightpix	304
+
+#		string	pattern	"upba3010.tga"
+
+		string	image0	"upba6208.tga"
+
+#		string	imageblttype	"stretch"
+
+	}
+
+	InfoPlayerList {
+
+		int	xpix	415
+
+		int	ypix	147
+
+		int	widthpix	150
+
+		int	heightpix	280
+
+		int columns		1
+
+		int bevelwidth  2
+
+		int beveltype	2
+
+		string	pattern	"upba6214.tga"
+
+		int	srcxpix		0
+
+		int	srcypix		0
+
+		int	srcwidthpix		150
+
+		int	srcheightpix	301
+
+		header {
+
+			switch0:T_FONT1_99 {
+
+				int	widthpix	150
+
+				int	heightpix	20
+
+				string text "str_ldl_Civilization"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+	}
+
+	PollutionGraph {
+
+		int	xpix	53
+
+		int	ypix	125
+
+		int	widthpix	350
+
+		int	heightpix	254
+
+#		string	pattern	"upba3010.tga"
+
+		string	image0	"upba6208.tga"
+
+	}
+
+	PollutionList {
+
+		int	xpix	415
+
+		int	ypix	147
+
+		int	widthpix	150
+
+		int	heightpix	230
+
+		int columns		1
+
+		int bevelwidth  2
+
+		int beveltype	2
+
+		string	pattern	"upba6214.tga"
+
+		int	srcxpix		0
+
+		int	srcypix		0
+
+		int	srcwidthpix		150
+
+		int	srcheightpix	300
+
+		header {
+
+			switch0:T_FONT1_99 {
+
+				int	widthpix	150
+
+				int	heightpix	20
+
+				string text "str_ldl_Civilization"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+	}
+
+	PollutionTherm {
+
+		int	xpix		70
+
+		int ypix		400
+
+		int widthpix	290
+
+		int heightpix	20
+
+	}
+
+	PollutionLabel:T_FONT1_99 {
+
+		int	xpix		350
+
+		int ypix		380
+
+		int widthpix	100
+
+		int heightpix	20
+
+		string text "str_ldl_Turns_to_Next_Disaster"
+	}
+
+	PollutionBox:T_FONT1_99{
+
+		int	xpix		375
+
+		int ypix		400
+
+		int widthpix	50
+
+		int heightpix	20
+
+		int bevelwidth	2
+
+		int beveltype	2
+	}
+
+	TitleBox:T_FONT_POPUP_TITLE {
+
+		string	xanchor	"center"
+
+		int	ypix	6
+
+		int	widthpix	218
+
+		int	heightpix	12
+
+		string	text	"str_ldl_INFORMATION"
+	}
+
+
+	MiddleLine {
+
+	}
+
+	HeaderFrame {
+
+	}
+
+
+	BottomRightBox {
+
+		int	xpix	298
+
+		int	ypix	311
+
+		int	widthpix	278
+
+		int	heightpix	131	
+
+		int bevelwidth	2
+
+		int beveltype	2
+
+		string	pattern	"upba6200.tga"
+
+		int	srcxpix		298
+
+		int	srcypix		311
+
+		int	srcwidthpix		282
+
+		int	srcheightpix	135
+
+		BottomRightImage {
+
+		}
+
+		CivNameLabel:T_FONT1_99 {
+
+		}
+
+		FoundedLabel:T_FONT1_99 {
+
+			string xanchor	"center"
+
+			int ypix		20
+
+			int widthpix	100
+
+			int heightpix	20
+
+#			string pattern "upba3010.tga"
+
+			string text "str_ldl_Year_Founded_COLON"
+		}
+
+		TurnsLabel:T_FONT1_99 {
+
+			string xanchor	"center"
+
+			int ypix		80
+
+			int widthpix	100
+
+			int heightpix	20
+
+#			string pattern "upba3010.tga"
+
+			string text "str_ldl_Turns_Old_COLON"
+		}
+
+		CivNameBox:T_FONT1_99 {
+
+		}
+
+		FoundedBox:T_FONT1_99 {
+
+			int xpix		104
+			
+			int ypix		40
+
+			int widthpix	70
+
+			int heightpix	20
+
+			int bevelwidth	2
+
+			int beveltype	2
+
+#			string pattern "upba3010.tga"
+			string	pattern	"upba6200.tga"
+
+			int	srcxpix		402
+
+			int	srcypix		351
+
+			int	srcwidthpix		74
+
+			int	srcheightpix	24
+		}
+
+		TurnsBox:T_FONT1_99 {
+
+			int xpix		104
+			
+			int ypix		100
+
+			int widthpix	70
+
+			int heightpix	20
+
+			int bevelwidth	2
+
+			int beveltype	2
+
+#			string pattern "upba3010.tga"
+			string	pattern	"upba6200.tga"
+
+			int	srcxpix		402
+
+			int	srcypix		411
+
+			int	srcwidthpix		74
+
+			int	srcheightpix	24
+		}
+
+	}
+
+
+
+	BigButton:infoscreen_buttons {
+
+		int	xpix	60
+
+		int	ypix	65
+
+		string	text	"str_ldl_Top_5_Cities"
+	}
+
+	WonderButton:infoscreen_buttons {
+
+		int	xpix	165
+
+		int	ypix	65
+
+		string	text	"str_ldl_Wonder"
+	}
+
+	StrengthButton:infoscreen_buttons {
+
+		int	xpix	270
+
+		int	ypix	65
+
+		string	text	"str_ldl_Power_Graph"
+	}
+
+	PollutionButton:infoscreen_buttons {
+
+		int	xpix	375
+
+		int	ypix	65
+
+		string	text	"str_ldl_Pollution"
+	}
+
+	ScoreButton:infoscreen_buttons {
+
+		int	xpix	480
+
+		int	ypix	65
+
+		string	text	"str_ldl_Civ_Score"
+	}
+
+	LabButton:infoscreen_iconbuttons {
+
+		int	xpix	500
+
+		int	ypix	20
+
+		string	image0	"upba6212.tga"
+		string	image1	"upba6213.tga"
+		string  tipwindow "str_ldl_Alien"
+	}
+
+	ThroneButton:infoscreen_iconbuttons {
+
+		int	xpix	540
+
+		int	ypix	20
+
+		string	image0	"upba6210.tga"
+		string	image1	"upba6211.tga"
+		string  tipwindow "str_ldl_Mscreen"	
+}
+
+}
+
+InfoBigListItem {
+
+	CityName:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		100
+
+		int		heightpix		20
+
+	}
+
+	CivName:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		100
+
+		int		heightpix		20
+
+	}
+
+	PopSize:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		100
+
+		int		heightpix		20
+
+	}
+
+	WonderBlock : T_FONT1_99 {
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		234
+
+		int		heightpix		20
+
+		CountBlock1 : infoscreen_counters {
+			int		xpix	0
+			int		ypix	0
+		}
+		IconBlock1 : infoscreen_icons {
+			int		xpix	20
+			int		ypix	0
+			string	image0	"upc027.tga"
+		}
+		CountBlock2 : infoscreen_counters {
+			int		xpix	46
+			int		ypix	0
+		}
+		IconBlock2 : infoscreen_icons {
+			int		xpix	66
+			int		ypix	0
+			string	image0	"upc028.tga"
+		}
+		CountBlock3 : infoscreen_counters {
+			int		xpix	92
+			int		ypix	0
+		}
+		IconBlock3 : infoscreen_icons {
+			int		xpix	112
+			int		ypix	0
+			string	image0	"upc029.tga"
+		}
+		CountBlock4 : infoscreen_counters {
+			int		xpix	138
+			int		ypix	0
+		}
+		IconBlock4 : infoscreen_icons {
+			int		xpix	158
+			int		ypix	0
+			string	image0	"upc030.tga"
+		}
+		CountBlock5 : infoscreen_counters {
+			int		xpix	184
+			int		ypix	0
+		}
+		IconBlock5 : infoscreen_icons {
+			int		xpix	204
+			int		ypix	0
+			string	image0	"upc031.tga"
+		}
+
+	}
+
+}
+
+
+
+InfoWonderListItem {
+
+	WonderName:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		234
+
+		int		heightpix		20
+
+	}
+
+	CivName:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+
+	CityName:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+
+}
+
+
+InfoScoreListItem {
+
+	ScoreCategory:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		206
+
+		int		heightpix		20
+
+	}
+
+	ScoreValue:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+}
+
+InfoPlayerListItem {
+
+	Civilization:T_FONT1_99{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		150
+
+		int		heightpix		20
+
+	}
+}
+
+InfoStrings {
+
+	int	numstrings	7
+
+	string string0 		"str_tbl_ldl_Positive_Points_For_Colon"
+	string string1 		"str_tbl_ldl_Total_Positive_Points_Colon"
+	string string2 		"str_tbl_ldl_Negative_Points_For_Colon"
+	string string3 		"str_tbl_ldl_Total_Negative_Points_Colon"
+	string string4 		"str_tbl_ldl_Total_Points_Colon"
+	string string5 		"str_tbl_ldl_Civ_Score_Colon"
+	string string6		"str_ldl_Turns"
+
+}
+
+
+$
+
+

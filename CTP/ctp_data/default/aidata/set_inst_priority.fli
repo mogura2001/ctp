@@ -1,0 +1,44 @@
+// set_inst_priority.fli
+if(not farm_count )
+	{
+		tons_mines
+	}
+
+if( farm_count )
+	{
+		tons_mines
+	}
+
+
+if(only_farms)
+	{
+		few_mines
+		tons_farms
+	}
+
+// for settle dense
+//if(yes_settle_dense)
+//	{
+//		tons_mines
+//	}
+//
+
+//testing now to see if farms first is 
+// a better strategy
+
+if (yes_opening_game_strategy)
+{
+	zero_roads
+} else {
+	no_roads
+}
+
+if (not dangerously_high_gold_and_wages_cost 
+	and zero_desired_farm_pw
+	and zero_desired_road_pw
+	and zero_desired_mine_pw 
+	and yes_enough_pw )
+	{
+		very zero_pop_science
+		very zero_pop_gold	
+	}

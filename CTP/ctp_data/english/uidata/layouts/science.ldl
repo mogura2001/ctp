@@ -1,0 +1,2208 @@
+template SCI_STATS_RANGER:T_FONT5_8 {
+
+	bool alwaysranger	true
+
+	rangery {
+
+		int	widthpix	15
+
+		int	heigthpix	15
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba5605.tga"
+
+		incy {
+
+			int	widthpix	15
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		decy {
+
+			int	widthpix	15
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+#			thumb {
+
+#				string	image0	"upba5613.tga"
+
+#				string	imagebltflag	"chromakey"
+
+#			}
+
+	}
+
+}
+
+
+
+template PLAYER_TOP:T_FONT5_8 {
+
+	int	ypix 28
+
+	int	widthpix	76
+
+	int	heightpix	23
+
+	string	text	"str_ldl_"
+}
+
+
+
+template PLAYER_BOTTOM:T_FONT5_8 {
+
+	int	ypix 53
+
+	int	widthpix	76
+
+	int	heightpix	23
+
+	string	text	"str_ldl_"
+}
+
+
+
+template FLAG_TOP {
+
+	int	ypix 28
+
+	int	widthpix	23
+
+	int	heightpix	23
+
+	int	bevelwidth	0
+
+}
+
+
+
+template FLAG_BOTTOM {
+
+	int	ypix 53
+
+	int	widthpix	23
+
+	int	heightpix	23
+
+	int	bevelwidth	0
+
+}
+
+
+
+template FLAG_HEADER {
+
+	int	widthpix	23
+
+	int	heightpix	23
+
+	int	bevelwidth	0
+
+}
+
+
+
+template ADVSWITCH:T_FONT1_14 {
+
+	int	widthpix	50
+
+	int	heightpix	20
+
+	string text "str_ldl_Blah"
+	int	bevelwidth	0
+
+#	string	pattern	"upba3010.tga"
+
+}
+
+
+
+template SCIENCE_BOX:T_FONT5_8 {
+
+	int	widthpix	40
+
+	int	heightpix	16
+
+	int	beveltype	2
+
+	int	bevelwidth	1
+
+	string	pattern	"upba5400.tga"
+
+	int	srcwidthpix	40
+
+	int	srcheightpix	16
+
+}
+
+
+
+template SCI_HEADER:T_FONT5_8 {
+
+	int	heightpix	20
+
+	string	pattern	"upba5605.tga"
+
+	int	bevelwidth	1
+
+}
+
+
+
+ScienceWin {
+
+	string	pattern	"upba5400.tga"
+
+#	int 	xpix		194
+
+#	int 	ypix		72
+
+	int	widthpix	635
+
+	int	heightpix	476
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	c3_FancyTop {
+
+		string	pattern	"upba5409.tga"
+
+		int 	xpix		0
+
+		int 	ypix		-9
+
+		int	widthpix	634
+
+		int	heightpix	9
+
+#		string	imagebltflag	"chromakey"
+
+	}
+
+	CloseButton:T_FONT5_TRADE {
+		int	xpix	564
+		int	ypix	438
+		int	widthpix	71
+		int	heightpix	38
+		string	text	"str_ldl_CLOSE"
+		string	image0	"upba5558.tga"
+		string	image1	"upba5559.tga"
+		string	imagebltflag	"chromakey"
+		int	bevelwidth	0
+	}
+
+
+
+	Title:T_FONT_SCREEN_TITLE {
+
+		int	xpix	232
+
+		int	ypix	1
+
+		int	widthpix	158
+
+		int	heightpix	13	
+
+		string	text	"str_ldl_CAPS_SCIENCE"
+	}
+
+
+
+	AdvanceList {
+
+		int	xpix	26
+
+		int	ypix	103
+
+		int	widthpix	409
+
+		int	heightpix	186
+
+		int columns		10
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		bool	alwaysranger	true
+
+		string	pattern "upba5400.tga"
+
+		int	srcxpix	24
+
+		int	srcypix 81
+
+		int	srcwidthpix		413
+
+		int	srcheightpix	210
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+#			thumb {
+
+#				string	image0	"upba5613.tga"
+
+#				string	imagebltflag	"chromakey"
+
+#			}
+
+		}
+
+		header {
+
+			switch0:SCI_HEADER {
+
+				int	widthpix	52
+
+				int	heightpix	20
+
+				string	text	"str_ldl_KNOWN"
+			}
+
+			switch1:SCI_HEADER {
+
+				int	widthpix	47
+
+				string	text	"str_ldl_TREE"
+			}
+
+			switch2:SCI_HEADER {
+
+				int	widthpix	100
+
+				string	text	"str_ldl_CAPS_ADVANCE"
+			}
+
+			switch3:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch4:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch5:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch6:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch7:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch8:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+			switch9:SCI_HEADER {
+
+				int	widthpix	30
+
+				int	heightpix	20
+
+			}
+
+		}
+
+	}
+
+
+
+	ChangeButton:T_FONT5_8 {
+
+		string	image0	"upba5401.tga"
+
+		string	image1	"upba5402.tga"
+
+		int	xpix	494
+
+		int	ypix	40
+
+		int	widthpix	93
+
+		int	heightpix	24
+
+		int bevelwidth 	0
+
+		string	text	"str_ldl_CAPS_CHANGE"
+		string	imagebltflag	"chromakey"
+
+	}
+
+	ResearchBox:T_FONT5_8 {
+
+		int	xpix	464
+
+		int	ypix	89
+
+		int	widthpix	141
+
+		int	heightpix	16
+
+		int beveltype	2
+
+		int bevelwidth 	1
+
+		string	pattern	"upba5400.tga"
+
+		int	srcxpix	467
+
+		int	srcypix	79
+
+		int	srcwidthpix		141
+
+		int	srcheightpix	16
+
+		string	text	"str_ldl_BASKET_WEAVING"
+	}
+
+	ResearchMeter {
+
+		int xpix 465
+
+		int ypix 116
+
+		int widthpix	85
+
+		int heightpix	9
+
+		int percent		80
+
+		string	pattern	"upba5400.tga"
+
+		int srcxpix 474
+
+		int srcypix 120
+
+		int srcwidthpix		85
+
+		int srcheightpix	9
+
+	}
+
+	ResearchClock {
+
+		string	image0	"upba5411.tga"
+		string tipwindow "str_ldl_Clock"
+		int	xpix	555
+
+		int	ypix	109
+
+		int	widthpix	15
+
+		int	heightpix	16
+
+		int bevelwidth 	0
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	TurnsBox:T_FONT5_8 {
+
+		int	xpix	585
+
+		int	ypix	112
+
+		int	widthpix	30
+
+		int	heightpix	16
+
+		int	beveltype	2
+
+		int bevelwidth 	1
+
+		string	text	"str_ldl_5"
+		string	pattern	"upba5400.tga"
+
+		int	srcxpix	585
+
+		int	srcypix	117
+
+		int	srcwidthpix		30
+
+		int	srcheightpix	16
+
+	}
+
+	CostLabel:T_FONT5_8 {
+
+		int	xpix	483
+
+		int	ypix	137
+
+		int	widthpix	30
+
+		int	heightpix	16
+
+		string	text	"str_ldl_CAPS_COST"
+		int	bevelwidth	0
+
+	}
+
+	CostBox:T_FONT5_8 {
+
+		int	xpix	518
+
+		int	ypix	137
+
+		int	widthpix	74
+
+		int	heightpix	16
+
+		int	beveltype	2
+
+		int	bevelwidth	1
+
+		string	pattern	"upba5400.tga"
+
+		int	srcxpix	518
+
+		int	srcypix	137
+
+		int	srcwidthpix		74
+
+		int	srcheightpix	16
+
+	}
+
+	PlusButton {
+
+		int	xpix	569
+
+		int	ypix	159
+
+		int	widthpix	22
+
+		int	heightpix	18
+
+		string	image0	"upba5258.tga"
+
+		string	image1	"upba5259.tga"
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+
+	}
+
+	MinusButton {
+
+		int	xpix	484
+
+		int	ypix	159
+
+		int	widthpix	22
+
+		int	heightpix	18
+
+		string	image0	"upba5260.tga"
+
+		string	image1	"upba5261.tga"
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+
+	}
+
+	PercentBox:SCIENCE_BOX {
+
+		int	xpix	518
+
+		int	ypix	160
+
+		string	text	"str_ldl_50"
+		int	srcxpix	519
+
+		int	srcypix	160
+
+	}
+
+	SciLabel:T_FONT5_8 {
+
+		int	xpix	479
+
+		int	ypix	187
+
+		int	widthpix	30
+
+		int	heightpix	16
+
+		string	text	"str_ldl_SCI"
+	}
+
+	SciBeaker {
+
+		string	image0	"upba5410.tga"
+		string tipwindow "str_ldl_Scien"
+		int	xpix	518
+
+		int	ypix	186
+
+		int	widthpix	12
+
+		int	heightpix	16
+
+		int bevelwidth 	0
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	SciBox:SCIENCE_BOX {
+
+		int	xpix	552
+
+		int	ypix	188
+
+		string	text	"str_ldl_25"
+		int	srcxpix	520
+
+		int	srcypix	188
+
+	}
+
+	LibraryButton:T_FONT5_8 {
+
+		string	image0	"upba5403.tga"
+
+		string	image1	"upba5404.tga"
+
+		int	xpix	486
+
+		int	ypix	244
+
+		int	widthpix	103
+
+		int	heightpix	24
+
+		int	bevelwidth	0
+
+		string	text	"str_ldl_CAPS_GREAT_LIBRARY"
+		string	imagebltflag	"chromakey"
+
+	}
+
+	Chart {
+
+		int	xpix	24
+
+		int	ypix	297
+
+		int	widthpix	534
+
+		int	heightpix	131
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		string	pattern	"upba5400.tga"
+
+		int	srcxpix	24
+
+		int	srcypix	297
+
+		int	srcwidthpix		534
+
+		int	srcheightpix	131
+
+		button:T_FONT3_TREEBUTTON {
+
+			string	text	"str_ldl_"
+			int	xpix	0
+
+			int	ypix	0
+
+			int	widthpix	143
+
+			int	heightpix	20
+
+			string	pattern	"chart.tga"
+
+			string	textblttype	"center"
+
+		}
+
+	}
+
+
+
+	KnownToLabel:T_FONT5_8 {
+
+		int	xpix	0
+
+		int	ypix	10
+
+		int	widthpix	165
+
+		int	heightpix	16
+
+		string	text	"str_ldl_ADVANCES_KNOWN_TO_COLON"
+	}
+
+
+
+	# players and flags
+
+	PlayerOne:PLAYER_TOP {
+
+		int	xpix	61
+
+		string	text "str_ldl_1"
+	}
+
+	PlayerTwo:PLAYER_BOTTOM {
+
+		int	xpix	61
+
+		string	text "str_ldl_2"
+	}
+
+	PlayerThree:PLAYER_TOP {
+
+		int	xpix	161
+
+		string	text "str_ldl_3"
+	}
+
+	PlayerFour:PLAYER_BOTTOM {
+
+		int	xpix	161
+
+		string	text "str_ldl_4"
+	}
+
+	PlayerFive:PLAYER_TOP {
+
+		int	xpix	261
+
+		string	text "str_ldl_5"
+	}
+
+	PlayerSix:PLAYER_BOTTOM {
+
+		int	xpix	261
+
+		string	text "str_ldl_6"
+	}
+
+	PlayerSeven:PLAYER_TOP {
+
+		int	xpix	361
+
+		string	text "str_ldl_7"
+	}
+
+	PlayerEight:PLAYER_BOTTOM {
+
+		int	xpix	361
+
+	}
+
+	FlagOne:FLAG_TOP {
+
+		int xpix	38
+
+	}
+
+	FlagTwo:FLAG_BOTTOM {
+
+		int xpix	38
+
+	}
+
+	FlagThree:FLAG_TOP {
+
+		int xpix	138
+
+	}
+
+	FlagFour:FLAG_BOTTOM {
+
+		int xpix	138
+
+	}
+
+	FlagFive:FLAG_TOP {
+
+		int xpix	238
+
+	}
+
+	FlagSix:FLAG_BOTTOM {
+
+		int xpix	238
+
+	}
+
+	FlagSeven:FLAG_TOP {
+
+		int xpix	338
+
+	}
+
+	FlagEight:FLAG_BOTTOM {
+
+		int xpix	338
+
+	}
+
+
+
+}
+
+
+
+KnowledgeScreen {
+
+	string	xanchor	"left"
+
+	string	yanchor	"top"
+
+	string	pattern	"upba3010.tga"
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	1024
+
+	int	heightpix	768
+
+	ReturnButton {
+
+		string	image0	"upba2303.tga"
+
+		int	xpix	882
+
+		int	ypix	660
+
+		int	widthpix	75
+
+		int	heightpix	46
+
+		int 	bevelwidth	0
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	ExitButton {
+
+		string	image0	"upba1811.tga"
+
+#		string	image1	"upba1811.tga"
+
+		int	xpix	993
+
+		int	ypix	3
+
+		int	widthpix	28
+
+		int	heightpix	23
+
+	}
+
+	AdvanceText:T_FONT1_14 {
+
+		int	xpix	849
+
+		int	ypix	250
+
+		int	widthpix	127
+
+		int	heightpix	30
+
+		int bevelwidth 	2
+
+		int beveltype	1
+
+	}
+
+	BarText:T_FONT1_14 {
+
+		string	text	"str_ldl_Knowledge_Bar"
+		int	xpix	406
+
+		int	ypix	51
+
+		int	widthpix	211
+
+		int	heightpix	24
+
+		int bevelwidth 	1
+
+		int beveltype	1
+
+	}
+
+	SciLabel:T_FONT1_14 {
+
+		string	text	"str_ldl_CAPS_SCIENCE"
+		int	xpix	843
+
+		int	ypix	378
+
+		int	widthpix	60
+
+		int	heightpix	20
+
+		int bevelwidth 	0
+
+	}
+
+	SciBox:T_FONT1_14 {
+
+		string	text	"str_ldl_0"
+		int	xpix	913
+
+		int	ypix	378
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		int	beveltype	1
+
+		int bevelwidth 	2
+
+		string	pattern	"upba3010.tga"
+
+	}
+
+
+
+	GivesBox:T_FONT1_14 {
+
+		int	xpix	700
+
+		int	ypix	568
+
+		int	widthpix	137
+
+		int	heightpix	137
+
+		string	pattern	"upba3010.tga"
+
+	}
+
+	CivBox {
+
+		int	xpix	175
+
+		int	ypix	96
+
+		int	widthpix	664	
+
+		int	heightpix	47
+
+		string	pattern "upba3010.tga"
+
+		int	bevelwidth	2
+
+		int	beveltype	1
+
+		CivText:T_FONT1_14 {
+
+			int	xpix	5
+
+			int	ypix	2
+
+			int	widthpix	100
+
+			int	heightpix	20
+
+			int	bevelwidth 0
+
+			string	text	"str_ldl_CIVILIZATIONS_COLON"
+		}
+
+	}
+
+
+
+	Automate:T_FONT1_18 {
+
+		int	xpix	358
+
+		int	ypix	95
+
+		int	widthpix	286
+
+		int	heightpix	26
+
+		string	pattern	"upba3010.tga"
+
+		string	text	"str_ldl_Automate_Research_To_Find"
+		Military:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Military"
+		}
+
+		Knowledge:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Knowledge"
+		}
+
+		Trade:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Trade"
+		}
+
+		Government:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Government"
+		}
+
+		Ocean:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Ocean"
+		}
+
+		Space:T_FONT1_14 {
+
+				int xpix	0
+
+				int ypix	0
+
+				int widthpix	286
+
+				int heightpix	20
+
+				string	pattern	"upba3010.tga"
+
+				string	text	"str_ldl_Space"
+		}
+
+	}
+
+
+
+	Center {
+
+		string	image0	"upba2107.tga"
+
+		int xpix	106
+
+		int ypix	131
+
+		int widthpix	803
+
+		int heightpix	417
+
+		string	pattern	"upba3010.tga"
+
+		Sheet {
+
+			int	xpix	8
+
+			int	ypix	7
+
+			int	widthpix	787
+
+			int	heightpix	410
+
+			string	pattern	"upba3010.tga"
+
+
+
+			KnownByYou {
+
+				int	xpix	250
+
+				int	ypix	40
+
+				int	widthpix	299
+
+				int	heightpix	60
+
+				int columns		1
+
+				string	pattern	"upba3010.tga"
+
+				header {
+
+					switch0:T_FONT1_14 {
+
+						int	widthpix	299
+
+						int	heightpix	0
+
+						string text "str_ldl_"
+						string	pattern	"upba3010.tga"
+
+					}
+
+				}
+
+			}
+
+			KnownByBoth {
+
+				int	xpix	250
+
+				int	ypix	144
+
+				int	widthpix	299
+
+				int	heightpix	60
+
+				int columns		1
+
+				string	pattern	"upba3010.tga"
+
+				header {
+
+					switch0:T_FONT1_14 {
+
+						int	widthpix	299
+
+						int	heightpix	0
+
+						string text "str_ldl_"
+						string	pattern	"upba3010.tga"
+
+					}
+
+				}
+
+			}
+
+			KnownByOthers {
+
+				int	xpix	250
+
+				int	ypix	249
+
+				int	widthpix	299
+
+				int	heightpix	60
+
+				int columns		1
+
+				string	pattern	"upba3010.tga"
+
+				header {
+
+					switch0:T_FONT1_14 {
+
+						int	widthpix	299
+
+						int	heightpix	0
+
+						string text "str_ldl_"
+						string	pattern	"upba3010.tga"
+
+					}
+
+				}
+
+			}
+
+			Embassies {
+
+				int	xpix	233
+
+				int	ypix	353
+
+				int	widthpix	335
+
+				int	heightpix	60
+
+				int columns		1
+
+				string	pattern	"upba3010.tga"
+
+				header {
+
+					switch0:T_FONT1_14 {
+
+						int	widthpix	299
+
+						int	heightpix	0
+
+						string text "str_ldl_"
+						string	pattern	"upba3010.tga"
+
+					}
+
+				}
+
+			}
+
+			LineOne {
+
+				int	xpix	2
+
+				int	ypix	100
+
+				int	widthpix	783
+
+				int	heightpix	10
+
+				string	pattern	"upba2003.tga"
+
+			}
+
+			LineTwo {
+
+				int	xpix	2
+
+				int	ypix	205
+
+				int	widthpix	783
+
+				int	heightpix	10
+
+				string	pattern	"upba2003.tga"
+
+			}
+
+			LineThree {
+
+				int	xpix	2
+
+				int	ypix	309
+
+				int	widthpix	783
+
+				int	heightpix	10
+
+				string	pattern	"upba2003.tga"
+
+			}
+
+			TitleOne {
+
+				string	image0	"upba2105.tga"
+
+				int	xpix	250
+
+				int	ypix	2
+
+				int	widthpix	299
+
+				int	heightpix	49
+
+			}
+
+			TitleTwo {
+
+				string	image0	"upba2105.tga"
+
+				int	xpix	250
+
+				int	ypix	106
+
+				int	widthpix	299
+
+				int	heightpix	49
+
+			}
+
+			TitleThree {
+
+				string	image0	"upba2105.tga"
+
+				int	xpix	250
+
+				int	ypix	211
+
+				int	widthpix	299
+
+				int	heightpix	49
+
+			}
+
+			TitleFour {
+
+				string	image0	"upba2106.tga"
+
+				int	xpix	233
+
+				int	ypix	315
+
+				int	widthpix	335
+
+				int	heightpix	49
+
+			}
+
+			TitleOneText:T_FONT1_14 {
+
+				string	text	"str_ldl_Known_Only_To_You"
+				int	xpix	250
+
+				int	ypix	2
+
+				int	widthpix	299
+
+				int	heightpix	20
+
+			}
+
+			TitleTwoText:T_FONT1_14 {
+
+				string	text	"str_ldl_Known_To_You_And_Others"
+				int	xpix	250
+
+				int	ypix	106
+
+				int	widthpix	299
+
+				int	heightpix	20
+
+			}
+
+			TitleThreeText:T_FONT1_14 {
+
+				string	text	"str_ldl_Only_Known_By_Others"
+				int	xpix	250
+
+				int	ypix	211
+
+				int	widthpix	299
+
+				int	heightpix	20
+
+			}
+
+			TitleFourText:T_FONT1_14 {
+
+				string	text	"str_ldl_Embassies_With_These_Civilizations"
+				int	xpix	233
+
+				int	ypix	316
+
+				int	widthpix	335
+
+				int	heightpix	20
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+
+	TitleText:T_FONT3_15 {
+
+#		string	pattern	"upba3010.tga"
+
+		int	xpix	400
+
+		int	ypix	25
+
+		int	widthpix	200
+
+		int	heightpix	40
+
+		string	text	"str_ldl_SCIENCE_STATUS"
+	}
+
+
+
+	ListTop {
+
+		string	image0	"upba3301.tga"
+
+		int	xpix	85
+
+		int	ypix	145
+
+		int	widthpix	793
+
+		int heightpix	71
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	ListBl {
+
+		string	image0	"upba2604.tga"
+
+		int	xpix	107
+
+		int	ypix	533
+
+		int	widthpix	333
+
+		int heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	ListBc {
+
+		string	image0	"upba3303.tga"
+
+		int	xpix	440
+
+		int	ypix	533
+
+		int	widthpix	82
+
+		int heightpix	21
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	ListBr {
+
+		string	image0	"upba2604.tga"
+
+		int	xpix	522
+
+		int	ypix	533
+
+		int	widthpix	333
+
+		int heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+
+
+	Lt {
+
+		string	image0	"upba3001.tga"
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	335
+
+		int heightpix	186
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	Ct {
+
+		string	image0	"upba3002.tga"
+
+		int	xpix	335
+
+		int	ypix	0
+
+		int	widthpix	298
+
+		int heightpix	98
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	Rt {
+
+		string	image0	"upba3003.tga"
+
+		int	xpix	633
+
+		int	ypix	0
+
+		int	widthpix	391
+
+		int heightpix	191
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	LeftImage {
+
+		string	image0	"upba3005.tga"
+
+		int	xpix	0
+
+		int	ypix	186
+
+		int	widthpix	37
+
+		int heightpix	544
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	RightImage {
+
+		string	image0	"upba3007.tga"
+
+		int	xpix	983
+
+		int	ypix	191
+
+		int	widthpix	41
+
+		int heightpix	576
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+	BottomImage {
+
+		string	image0	"upba3006.tga"
+
+		int	xpix	0
+
+		int	ypix	730
+
+		int	widthpix	984
+
+		int heightpix	38
+
+		string	imagebltflag	"chromakey"
+
+	}
+
+
+
+
+
+	TitleBar {
+
+		string	image0	"upba2101.tga"
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	1024
+
+		int	heightpix	27
+
+	}
+
+	UpperLeft {
+
+		string	image0	"upba2103.tga"
+
+		int	xpix	0
+
+		int	ypix	29
+
+		int	widthpix	45
+
+		int	heightpix	48
+
+	}
+
+	UpperRight {
+
+		string	image0	"upba2104.tga"
+
+		int	xpix	979
+
+		int	ypix	29
+
+		int	widthpix	45
+
+		int	heightpix	48
+
+	}
+
+	CenterBottomOne {
+
+		string	image0	"upba1707.tga"
+
+		int	xpix	86
+
+		int	ypix	548
+
+		int	widthpix	283
+
+		int	heightpix	20
+
+	}
+
+	CenterBottomTwo {
+
+		string	image0	"upba1707.tga"
+
+		int	xpix	368
+
+		int	ypix	548
+
+		int	widthpix	283
+
+		int	heightpix	20
+
+	}
+
+	CenterBottomThree {
+
+		string	image0	"upba1707.tga"
+
+		int	xpix	651
+
+		int	ypix	548
+
+		int	widthpix	283
+
+		int	heightpix	20
+
+	}
+
+	LowerLeft {
+
+		string	image0	"upba1622.tga"
+
+		int	xpix	0
+
+		int	ypix	728
+
+		int	widthpix	20
+
+		int	heightpix	28
+
+	}
+
+	LowerRight {
+
+		string	image0	"upba1623.tga"
+
+		int	xpix	1004
+
+		int	ypix	728
+
+		int	widthpix	20
+
+		int	heightpix	28
+
+	}
+
+	Bottom {
+
+		int	xpix	0
+
+		int	ypix	755
+
+		int	widthpix	1024
+
+		int	heightpix	13
+
+		string	pattern	"upba0601.tga"
+
+	}	
+
+}
+
+
+
+KnowledgeListItem {
+
+#	string	pattern			"upba3010.tga"
+
+	Name:T_FONT1_14{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		210
+
+		int		heightpix		20
+
+#		string	pattern			"upba3010.tga"
+
+	}
+
+}
+
+
+
+EmbassyListItem {
+
+#	string	pattern			"upba3010.tga"
+
+	Name:T_FONT1_14{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		210
+
+		int		heightpix		20
+
+#		string	pattern			"upba3010.tga"
+
+	}
+
+}
+
+
+
+template ADVTEXT:T_FONT6_SCITEXT {
+
+	int		xpix			0
+
+	int		ypix			0
+
+	int		heightpix		25
+
+	int		widthpix		129
+
+	string	just	"center"
+
+	bool	vertcenter	true
+
+}
+
+
+
+template ADVSYM {
+
+	int		xpix			0
+
+	int		ypix			0
+
+	int		heightpix		25
+
+	int		widthpix		47
+
+	Branch {
+		int	xpix	10
+		int	ypix	3
+		int	widthpix	26
+		int	heightpix	19
+	}
+
+}
+
+
+
+template ADVFLAG {
+
+	int		xpix			20
+
+	int		ypix			0
+
+	int		heightpix		25
+
+	int		widthpix		65
+
+#	string	image0	"upba3305.tga"
+
+#	string	imagebltflag	"chromakey"
+
+}
+
+
+
+AdvanceListItem {
+
+	PlayerFlag:ADVFLAG {
+
+	}
+
+	SymTwo:ADVSYM {
+
+	}
+
+	Name:ADVTEXT {
+
+	}
+
+	FlagOne:ADVFLAG {
+
+	}
+
+	FlagTwo:ADVFLAG {
+
+	}
+
+	FlagThree:ADVFLAG {
+
+	}
+
+	FlagFour:ADVFLAG {
+
+	}
+
+	FlagFive:ADVFLAG {
+
+	}
+
+	FlagSix:ADVFLAG {
+
+	}
+
+	FlagSeven:ADVFLAG {
+
+	}
+
+}
+
+
+
+SciAdvanceScreen {
+
+	string	pattern	"upba5412.tga"
+
+#	int 	xpix		316
+
+#	int 	ypix		185
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int	widthpix	449
+
+	int	heightpix	322
+
+	Name:T_FONT4_SCI {
+
+		string xanchor "center"
+
+		int	ypix	2
+
+		int widthpct 50
+
+		int heightpix 20
+
+		string	text	"str_ldl_CHANGE_SCIENCE"
+	}
+
+	SciAdvanceList {
+
+		int	xpix	46
+
+		int	ypix	118
+
+		int	widthpix	144
+
+		int	heightpix	150
+
+		int columns		1
+
+		int	beveltype	2
+
+		int bevelwidth	2
+
+		bool alwaysranger TRUE
+
+		int	srcxpix	44
+
+		int	srcypix	116
+
+		int	srcwidthpix		148
+
+		int	srcheightpix	154
+
+		string	pattern "upba5412.tga"
+
+		int minthumbsize	6
+
+		rangery {
+
+			int	widthpix	15
+
+			int	heigthpix	15
+
+			string	type	"scroller"
+
+			string	orientation	"vertical"
+
+			string	pattern	"upba5605.tga"
+
+			incy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+			decy {
+
+				int	widthpix	15
+
+				int	heightpix	15
+
+				string	pattern	"upba5605.tga"
+
+			}
+
+#			thumb {
+
+#				string	image0	"upba5613.tga"
+
+#				string	imagebltflag	"chromakey"
+
+#			}
+
+		}
+
+		header {
+
+			switch0:T_FONT1_14 {
+
+				int	widthpix	144
+
+				int	heightpix	0
+
+				int bevelwidth 	0
+
+			}
+
+		}
+
+	}
+
+	BackButton:T_FONT5_8 {
+
+		string	image0	"upba5558.tga"
+
+		string	image1	"upba5559.tga"
+
+		int	xpix	378
+
+		int	ypix	284
+
+		int	widthpix	71
+
+		int	heightpix	38
+		
+		string	text	"str_ldl_CAPS_OK"	
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+
+	}
+
+	CancelButton:T_FONT5_8 {
+		string	image0	"upba5564.tga"
+
+		string	image1	"upba5565.tga"
+
+		int	xpix	0
+
+		int	ypix	284
+
+		int	widthpix	71
+
+		int	heightpix	38	
+
+		string	text	"str_ldl_CAPS_CANCEL"
+
+		string	imagebltflag	"chromakey"
+
+		int	bevelwidth	0
+	}
+
+
+
+	ChangeLabel:T_FONT5_8 {
+
+		int	xpix	122
+
+		int	ypix	94
+
+		int	widthpix	50
+
+		int	heightpix	17
+
+		string	text	"str_ldl_CHANGE_TO_COLON"
+	}
+
+	ChangeBox:T_FONT5_8 {
+
+		int	xpix	196
+
+		int	ypix	94
+
+		int	widthpix	167
+
+		int	heightpix	17
+
+		string	pattern	"upba5412.tga"
+
+		int	srcxpix	196
+
+		int	srcypix	85
+
+		int	srcwidthpix		167
+
+		int	srcheightpix	17
+
+		int	bevelwidth	1
+
+		int	beveltype	2
+
+	}
+
+	TurnsLabel:T_FONT5_8 {
+
+		int	xpix	243
+
+		int	ypix	115
+
+		int	widthpix	102
+
+		int	heightpix	17
+
+		string	text	"str_ldl_TURNS_TO_ADVANCE_COLON"
+	}
+
+	TurnsBox:T_FONT5_8 {
+
+		int	xpix	367
+
+		int	ypix	115
+
+		int	widthpix	41
+
+		int	heightpix	17
+
+		string	pattern	"upba5412.tga"
+
+		int	srcxpix	367
+
+		int	srcypix	111
+
+		int	srcwidthpix		41
+
+		int	srcheightpix	17
+
+		int	beveltype	2
+
+		int	bevelwidth	1
+
+	}
+
+	Message:T_FONT5_8 {
+		int	xpix	47
+		int	ypix	41
+		int	widthpix	360
+		int	heightpix	42
+		string	pattern	"upba5412.tga"
+		int	srcxpix	42
+		int	srcypix	36
+		int	srcwidthpix		365
+		int	srcheightpix	45
+	}
+
+	GlStats:SCI_STATS_RANGER {
+
+		int	xpix	243
+
+		int	ypix	152
+
+		int	widthpix	145
+
+		int	heightpix	114
+
+		int bevelwidth	0
+
+		int beveltype	2
+
+		string	pattern	"upba5412.tga"
+
+		int	srcxpix	238
+
+		int	srcypix	147
+
+		int	srcwidthpix	150
+
+		int	srcheightpix	124
+
+	}
+
+	GLButton:T_FONT5_8 {
+		string	image0	"upba5562.tga"
+		string	image1	"upba5563.tga"
+		int	xpix	150
+		int	ypix	285
+		int	widthpix	71
+		int	heightpix	38	
+		string	text	"str_ldl_Details"
+		string	imagebltflag	"chromakey"
+		int	bevelwidth	0
+	}
+}
+
+
+
+SciListItem {
+
+	Name:T_FONT5_8{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		144
+
+		int		heightpix		20
+
+	}
+
+}
+
+
+SciAdvanceString {
+	int	numStrings	1
+
+	string	string0	"str_tbl_ldl_Select_a_new"
+}
+
+ScienceStrings {
+	int	numStrings	12
+
+	string	string0		"str_tbl_ldl_upk103.tga"
+	string	string1		"str_tbl_ldl_upk110.tga"
+	string	string2		"str_tbl_ldl_upk105.tga"
+	string	string3		"str_tbl_ldl_upk108.tga"
+	string	string4		"str_tbl_ldl_upk111.tga"
+	string	string5		"str_tbl_ldl_upk109.tga"
+	string	string6		"str_tbl_ldl_upk101.tga"
+	string	string7		"str_tbl_ldl_upk100.tga"
+	string	string8		"str_tbl_ldl_upk102.tga"
+	string	string9		"str_tbl_ldl_upk106.tga"
+	string	string10	"str_tbl_ldl_upk104.tga"
+	string	string11	"str_tbl_ldl_upk107.tga"
+}
+
+$

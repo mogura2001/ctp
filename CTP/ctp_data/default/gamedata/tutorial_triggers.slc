@@ -1,0 +1,1120 @@
+/////////////////////
+/////////////////////
+///BEGIN TUTORIAL////
+/////////////////////
+/////////////////////
+trigger 'TBeginTutorial' when(g.player == g.tutorialplayer) {
+	Message(1, 'KillAllMessages');
+	Message(1, 'DisableTriggers2');
+	Message(1, 'DisableTriggers3');
+	Message(1, 'DisableTriggers4');
+//	SetTimerGranularity(1);
+
+	if(player.cities == 0) {
+		Message(g.tutorialplayer, 'MWelcomeCTP');
+	}	
+	if(token >= -2) {
+		DisableTrigger('TBeginTutorial');
+	}
+
+	DisableTileImprovementButton();
+	DisableScreensButton();
+	DisableChooseResearch();
+	GrantAdvance(g.tutorialplayer, 1);
+	GrantAdvance(g.tutorialplayer, 0);
+	GrantAdvance(g.tutorialplayer, 4);
+	GrantAdvance(g.tutorialplayer, 15);
+
+	choose_research_disabled = 1;
+}
+
+TypeLocation settler_moved_here_location;
+
+trigger 'TMoveSettler' when (g.player == g.tutorialplayer && unit.moved && unit.type == UnitType("UNIT_SETTLER") && 
+unit.owner == g.tutorialplayer && player.cities == 0) {
+//MMoveSettler
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TMoveSettler');
+
+	ExtractLocation(unit, settler_moved_here_location);
+
+	if(HasRiver(settler_moved_here_location)) {
+		Message(g.tutorialplayer, 'MOnRiver');
+	} else {
+		Message(g.tutorialplayer, 'MCantMoveMore');
+	}	
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	token = -4;
+}
+
+
+trigger 'TCycledTurn' when (g.player == g.tutorialplayer && g.year > 0 && player.cities == 0 && token == -4) {	
+//MCantMoveMore
+	Message(1, 'KillAllMessages');
+	Message(g.tutorialplayer, 'MGoal1');
+	DisableTrigger('TCycledTurn');
+	token = -3;
+}
+
+trigger 'TCityNotBuilding' when (g.player == g.tutorialplayer && city.buildingnothing && player.cities == 1) {
+	if(token != -1) {
+	Message(1, 'KillAllMessages');
+	Message(g.tutorialplayer, 'MGoal2');
+	}
+		if(player.cities > 1) {
+			DisableTrigger('TCityNotBuilding');
+		}
+}
+
+trigger 'TCityBuilt' when (g.player == g.tutorialplayer && city.built && player.cities == 1) {
+//MHowToBuildCity
+	DisableTrigger('TCityBuilt');
+	Message(1, 'KillAllMessages');
+	
+//	if(city.owner == g.tutorialplayer) {
+	Message(g.tutorialplayer, 'MGoal1Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+//	}
+
+	token = -2;
+}
+
+trigger 'TCityBuildingUnit' when (g.player == g.tutorialplayer && city.buildingunit == UnitType("UNIT_WARRIOR") && 
+player.cities == 1) {
+//MGoal2
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TCityBuildingUnit'); 
+
+	Message(g.tutorialplayer, 'MTurnsToComplete');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	Attract("ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.InfoHolder.TurnText");
+	city_is_building_unit = 1;
+	build_defender_cue = 1;
+	//start stall message counter
+	stall_message = 1;
+
+	DisableTrigger('TCityNotBuilding');
+
+	token = -1;
+}
+
+trigger 'TStall1' when (g.player == g.tutorialplayer && keep_hitting_n == 1 && token < 1) {
+//MBuildProgress
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall1');
+
+	choose_research_disabled = 0;
+	EnableChooseResearch();
+	
+	Message(g.tutorialplayer, 'MStall1');
+}
+
+trigger 'TStall2' when (g.player == g.tutorialplayer && keep_hitting_n == 2 && token < 1) {
+//MStall1
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall2');
+
+	Message(g.tutorialplayer, 'MStall4');
+}
+
+trigger 'TGoal2Accomplished' when(g.player == g.tutorialplayer && unit.built && city_is_building_unit && player.cities < 2) {
+//trigger 'TGoal2Accomplished' when(g.player == g.tutorialplayer && unit.built == UnitType("UNIT_WARRIOR") && player.cities == 1) {
+//MBuildProgress
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TGoal2Accomplished');
+	EnableChooseResearch();
+
+	AddCityByIndex(g.tutorialplayer, 0);
+	ClearBuildQueue(city);
+	Message(g.tutorialplayer, 'MGoal2Accomplished');	
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	//reset stall counter
+	stall_message = 0;	
+	keep_hitting_n = 0;
+	
+	choose_research_disabled = 1;
+	token = 1;
+}
+
+trigger 'TUnitOutOfCity' when (g.player == g.tutorialplayer && unit.moved && player.cities == 1 && player.totalunits >= 1) {
+//MExploreMap
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TUnitOutOfCity');
+	
+	Message(g.tutorialplayer, 'MDeselect');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	token = 2;
+}
+
+trigger 'TCityBuildingSilo' when (g.player == g.tutorialplayer && city.building == BuildingType("IMPROVE_SILO") && 
+player.cities == 1 && token < 5) {
+//MGoal3
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TCityBuildingSilo');
+	Message(1, 'DisableTriggers1');
+	EnableChooseResearch();
+
+	Message(g.tutorialplayer, 'MContinueExploring');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	//start stall message counter
+	stall_message = 1;
+
+	token = 3;
+}
+
+trigger 'TStall4' when (g.player == g.tutorialplayer && keep_hitting_n == 2 && token == 3) {
+//MContinueExploring
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall4');
+
+	choose_research_disabled = 0;
+//	EnableChooseResearch();
+	Message(g.tutorialplayer, 'MStall1');
+}
+
+trigger 'TStall5' when (g.player == g.tutorialplayer && keep_hitting_n == 4 && token == 3) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall5');
+
+//	SetResearching(g.tutorialplayer, 4);
+//	GrantAdvance(g.tutorialplayer, 4);
+	Message(g.tutorialplayer, 'MStall2');
+//	SetResearching(g.tutorialplayer, 15);
+}
+	 
+trigger 'TStall6' when (g.player == g.tutorialplayer && keep_hitting_n == 6 && token == 3) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall6');
+
+	Message(g.tutorialplayer, 'MStall6');
+}
+	
+trigger 'T1EncoreUneFois' when (g.player == g.tutorialplayer && keep_hitting_n == 8 && token == 3) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('T1EncoreUneFois');
+
+	Message(g.tutorialplayer, 'MContinueExploring');
+}
+	
+trigger 'TGoal3Accomplished' when (g.player == g.tutorialplayer && building.built == BuildingType("IMPROVE_SILO")) {
+//MContinueExploring
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TGoal3Accomplished');
+
+	Message(g.tutorialplayer, 'MGoal3Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	//reset stall message counter
+	stall_message = 0;
+	keep_hitting_n = 0;
+
+//	DisableChooseResearch();
+	token = 4;
+}
+
+trigger 'TStartedSettler' when (g.player == g.tutorialplayer && city.buildingunit == UnitType("UNIT_SETTLER") && token == 4) {
+//MGoal4
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStartedSettler');
+
+		if(city.population < 2) {
+			AddPops(city, 1);
+		}
+			
+//	if(token < 4) {
+		Message(1, 'DisableTriggers1');
+//	}
+
+	Message(g.tutorialplayer, 'MContinueExploring2');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	//start stall message counter
+	stall_message = 1;
+
+	token = 5;
+}
+
+trigger 'TStall7' when (g.player == g.tutorialplayer && keep_hitting_n == 2 && token == 5) {
+//MContinueExploring
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall7');
+
+	Message(g.tutorialplayer, 'MStall5');
+}
+
+trigger 'TStall8' when (g.player == g.tutorialplayer && keep_hitting_n == 4 && token == 5) {
+//MStall1
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall8');
+
+	Message(g.tutorialplayer, 'MStall6');
+}
+
+trigger 'TEncoreUneFois' when (g.player == g.tutorialplayer && keep_hitting_n == 7 && token == 5) {
+//MStall2 
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TEncoreUneFois');
+
+	Message(g.tutorialplayer, 'MContinueExploring2');
+}
+
+trigger 'TNewSettlerBuilt' when (g.player == g.tutorialplayer && unit.built && unit.type == UnitType("UNIT_SETTLER")) {
+//MContinueExploring2
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TNewSettlerBuilt');
+
+	if(token == 5) {
+		Message(g.tutorialplayer, 'MDeselect2');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+		//reset stall message counter
+		stall_message = 0;
+		keep_hitting_n = 0;
+	}
+	token = 6;
+}
+
+trigger 'TNewSettlerMoved' when (g.player == g.tutorialplayer && unit.moved && unit.type == UnitType("UNIT_SETTLER") && player.cities == 1) {
+//MNewSettlerBuilt
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TNewSettlerMoved');
+
+	if(token == 6) {
+		Message(g.tutorialplayer, 'MFindGoodSpot');
+	}
+
+	//start stall message counter
+	stall_message = 1;
+
+	token = 7;
+}
+
+trigger 'TCantSettleNow' when (g.player == g.tutorialplayer && special.cantsettlenomovement) {
+	DisableTrigger('TCantSettleNow');
+	Message(g.tutorialplayer, 'ACantSettleNow');
+}
+
+trigger 'TStall9' when (g.player == g.tutorialplayer && keep_hitting_n == 2 && token == 7) {
+//MBuildSecondCity
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall9');
+
+	Message(g.tutorialplayer, 'MStall8');
+}
+
+trigger 'TStall10' when (g.player == g.tutorialplayer && keep_hitting_n == 3 && token == 7) {
+//MStall8
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStall10');
+
+	Message(g.tutorialplayer, 'MStall9');
+}
+
+trigger 'TSecondCityBuilt' when (g.player == g.tutorialplayer && city.built && player.cities == 2 && token < 17) {
+//MBuildSecondCity
+	Message(1, 'KillAllMessages');
+	Message(1, 'DisableTriggers1');
+	Message(1, 'EnableTriggers2');
+
+	DisableTrigger('TSecondCityBuilt');
+
+//	SetPlayer(1, g.tutorialplayer);
+//	if(!HasAdvance(g.tutorialplayer, ID_ADVANCE_BRONZE_WORKING)) {
+//		SetResearching(g.tutorialplayer, 4);
+//		GrantAdvance(g.tutorialplayer, 4);
+//		SetResearching(g.tutorialplayer, 15);
+//	}
+
+	Message(g.tutorialplayer, 'MGoal4Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	
+	//reset stall message counter
+	stall_message = 0;
+	keep_hitting_n = 0;
+
+	second_city_built = 1;
+
+	Message(g.tutorialplayer, 'KillAI');
+
+	token = 8;
+}
+
+trigger 'TBuildingDefender' when (g.player == g.tutorialplayer && city.buildingunit == UnitType("UNIT_HOPLITE") && 
+player.cities == 2) {
+//MGoal4Accomplished
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBuildingDefender');
+
+	if(token == 8) {
+		Message(g.tutorialplayer, 'MLevel2');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+		Message(g.tutorialplayer, 'AAlertSave');
+	}
+	token = 9;
+
+	level_2_saved = 1;
+	SaveGame("level_2");
+}
+
+trigger 'TClearBuildQueue2' when (g.player == g.tutorialplayer && unit.built && unit.type == UnitType("UNIT_HOPLITE")) {
+	DisableTrigger('TClearBuildQueue2');	
+	if(AddCityByIndex(g.tutorialplayer, 1)) {
+		ClearBuildQueue(city);
+	} 				
+}
+
+trigger 'TOpenedWorkView' when (g.player == g.tutorialplayer && special.workview && token >= 9) {
+//	Message(1, 'KillAllMessages');
+	DisableTrigger('TOpenedWorkView');
+
+	work_view = 1;
+//	Message(g.tutorialplayer, 'MWorkViewIcons');
+//	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	token = 10;
+}
+
+trigger 'TMovedWorker' when (g.player == g.tutorialplayer && special.popmoved && token >= 10) {
+//MMovingWorkers
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TMovedWorker');
+
+	Message(g.tutorialplayer, 'MGetFoodProduction');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	moved_worker = 1;
+
+	token = 11;
+}	
+
+trigger 'TCivTabOpen' on "ControlPanelWindow.CityUnitSelectedTabGroup.CivTab" when (g.player == g.tutorialplayer && token <= 11) {
+//MOpenCivTab
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TCivTabOpen');
+
+	Message(g.tutorialplayer, 'MTheCivTab');
+
+	token = 12;
+}
+
+
+trigger 'TChangedPW' when (g.player == g.tutorialplayer && player.publicworkstax == 70) {
+//M2Goal2
+//	Message(1, 'KillAllMessages');
+	DisableTrigger('TChangedPW');
+
+	if(token >= 12) {
+//		Message(g.tutorialplayer, 'MGettingPublicWorks');
+		pw_is_70 = 1;
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	token = 13;
+}
+
+trigger 'TPublicWorks200' when (g.player == g.tutorialplayer && player.publicworkslevel >= 200) {
+//MWaitForPW
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TPublicWorks200');
+
+	if(token == 13) {
+		Message(g.tutorialplayer, 'MDecreasePW');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	token = 14;
+}
+
+trigger 'TDecreasePW' when (g.player == g.tutorialplayer && player.publicworkstax == 20 && token == 14)	{
+//MDecreasePW
+//	Message(1, 'KillAllMessages');
+	DisableTrigger('TDecreasePW');
+
+//	Message(g.tutorialplayer, 'MUsingPW');
+//	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	pw_is_20 = 1;
+
+	EnableTileImprovementButton();
+
+	token = 15;
+}
+
+trigger 'TBuildingFarm' when (g.player == g.tutorialplayer && special.buildfarm) {
+//MUsingPW
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBuildingFarm');
+	DisableTrigger('TBuildingRoad');
+
+	if(token == 15) {
+		Message(g.tutorialplayer, 'MGoalFarm');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	//triggers two_turns in InitVars
+	building_tile_improvement = 1;
+	farm = 1;
+	token = 16;
+}
+
+trigger 'TBuildingRoad' when (g.player == g.tutorialplayer && special.buildroad) {
+//MDecreasePW
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBuildingRoad');
+	DisableTrigger('TBuildingFarm');
+
+	if(token == 15) {
+		Message(g.tutorialplayer, 'MGoalRoad');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	//triggers two_turns in InitVars
+	building_tile_improvement = 1;
+	road = 1;
+
+	token = 16;
+}
+
+trigger 'TEndTICount' when (g.player == g.tutorialplayer && two_turns == 3) {
+	//reset TI counter
+	two_turns = 0;
+	ti_count = 0;
+	building_tile_improvement = 0;
+}
+
+trigger 'TBuiltFarm' when (g.player == g.tutorialplayer && player.cities == 2 && two_turns == 2 && 
+farm == 1) {
+//MGoalFarm
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBuiltFarm');
+
+	if(token == 16) {
+		Message(g.tutorialplayer, 'M2Goal2AccomplishedFarm');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	built_farm = 1;
+
+	token = 17;
+}
+
+trigger 'TBuiltRoad' when (g.player == g.tutorialplayer && player.cities == 2 && two_turns == 2 && 
+road == 1) {
+//MGoalRoad
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBuiltRoad');
+
+	if(token == 16) {
+		Message(g.tutorialplayer, 'M2Goal2AccomplishedRoad');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+
+	built_road = 1;
+
+	token = 17;
+}			
+
+TypeUnit ChiefSittingDuck;
+TypeLocation ChiefSittingDuck_location;
+TypeLocation CapitalCity_location;
+
+trigger 'TGimmeeAWarrior' when (g.player == g.tutorialplayer && token == 17) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TGimmeeAWarrior');
+	Message(1, 'EnableTriggers3');
+
+	if(player.cities > 0) {
+		Message(g.tutorialplayer, 'MLevel3');
+		AddCityByIndex(g.tutorialplayer, 0);
+		ExtractLocation(city.location, CapitalCity_location);
+	}
+
+	if(IsPlayerAlive(2)) {
+		if(CreateUnit(2,UnitType("UNIT_WARRIOR"),CapitalCity_location, 2, ChiefSittingDuck)) {
+			ExtractLocation(ChiefSittingDuck, ChiefSittingDuck_location);
+		}
+		
+			if(TerrainType(ChiefSittingDuck_location) == 8 || TerrainType(ChiefSittingDuck_location) == 20 || 
+			TerrainType(ChiefSittingDuck_location) == 22) {
+			mountain_warrior = 1;	
+			}	
+	}									
+
+	if(IsPlayerAlive(1)) {
+		SetPlayer(1, g.tutorialplayer);
+		if(!player.totalunits) {
+			CreateUnit(1,UnitType("UNIT_WARRIOR"),CapitalCity_location, 2);
+		}		
+	}
+
+	Message(g.tutorialplayer, 'MLevel2Save');
+
+	level_3_saved = 1;
+	SaveGame("level_3");
+}
+
+trigger 'TCheat' when (g.player == g.tutorialplayer && player.cities == 2) {
+	
+	if(IsPlayerAlive(1)) {
+		if(HasAdvance(g.tutorialplayer, ID_ADVANCE_AI_SURVEILLANCE)) { 
+			Message(1, 'KillAllMessages');
+			Message(1, 'EnableTriggers2');
+			DisableTrigger('TCheat');
+			//creates warrior when 2 cities are built && gr 69 && start w/ level 3
+			AddCityByIndex(g.tutorialplayer, 0);
+			CreateUnit(1, UnitType("UNIT_KNIGHT"), city.location, 1); 
+			Message(g.tutorialplayer, 'MLevel3');
+			PlaySound("SOUND_ID_ELEPHANT");
+
+			EnableTileImprovementButton();
+			EnableScreensButton();
+	
+			token = 17;
+		}	
+	}
+}
+
+trigger 'TContactMade2' when (g.player == g.tutorialplayer && special.zoc) {
+
+		Message(1, 'KillAllMessages');
+		Message(1, 'EnableTriggers3');
+		Message(1, 'DisableTriggers2');
+		DisableTrigger('TContactMade2');
+		
+		Message(g.tutorialplayer, 'M3Goal1Accomplished');
+		Message(g.tutorialplayer, 'MPseudoGreetings');
+		PlaySound("SOUND_ID_ALERT");
+
+	token = 18;
+}
+
+trigger 'TAcceptedGreetings' when (accepted_greetings == 1) {	
+//MPseudoGreetings
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TAcceptedGreetings');
+
+	Message(g.tutorialplayer, 'MCoverYourBack');
+
+	token = 19;
+}
+
+//goes with TTurdBurglar
+TypeUnit FreeWarrior;
+TypeUnit FreeArcher;
+TypeLocation FreeWarrior_location;
+TypeLocation FreeArcher_location;
+
+trigger 'TTurdBurglar' when (g.player == g.tutorialplayer && player.cities >= 1 && token == 19) {
+	DisableTrigger('TTurdBurglar');
+	Message(1, 'KillAllMessages');
+
+	if(IsPlayerAlive(1)) {
+		AddCityByIndex(g.tutorialplayer, 0);
+		if(CreateUnit(1, UnitType("UNIT_WARRIOR"), city.1.location, 1, FreeWarrior)) {
+				ExtractLocation(FreeWarrior, FreeWarrior_location);
+		}
+	
+			if(CreateUnit(1, UnitType("UNIT_GREEK_FIRE"), FreeWarrior_location, 1, FreeArcher)) {
+					ExtractLocation(FreeArcher, FreeArcher_location);
+			}
+
+				if(FreeWarrior_location == FreeArcher_location) {
+					KillUnit(FreeWarrior);
+ 
+ 					if(CreateUnit(1,UnitType("UNIT_WARRIOR"), FreeArcher_location, 1, FreeWarrior)) {
+						ExtractLocation(FreeWarrior, FreeWarrior_location);
+					}
+				}
+	}
+	Message(g.tutorialplayer, 'M3Goal2');
+	PlaySound("SOUND_ID_ALERT");
+
+	token = 20;
+}
+
+trigger 'TStackedUnits' when (g.player == g.tutorialplayer && unit.moved && UnitsInCell(unit.location) >= 2 && token == 20) {
+//MKeepMoving
+	DisableTrigger('TStackedUnits');
+	Message(1, 'KillAllMessages');
+
+	Message(g.tutorialplayer, 'MMixedForces');
+
+	if(IsPlayerAlive(1)) {
+		SetPlayer(1, g.tutorialplayer);
+		if(player.totalunits < 2) {
+			CreateUnit(1, UnitType("UNIT_WARRIOR"), CapitalCity_location, 2);
+		}
+	}
+
+	token = 21;
+}
+
+trigger 'TStackLocked' when (g.player == g.tutorialplayer && special.lockedstack && token == 21) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TStackLocked');
+
+	Message(g.tutorialplayer, 'MStackHerald');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	token = 22;
+}
+
+
+trigger 'TMovedStack' when (g.player == g.tutorialplayer && unit.moved && UnitsInCell(unit.location) >= 2 && token == 22) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TMovedStack');
+
+	AddCityByIndex(g.tutorialplayer, 0);
+	Message(g.tutorialplayer, 'MAttackNeighbour');
+
+	token = 23;
+}
+	 
+trigger 'TAttackMade' when (g.player == g.tutorialplayer && special.stackedcombat) {
+//MAttackNeighbour	
+	Message(1, 'KillAllMessages');
+	Message(1, 'DisableTriggers2');
+	Message(1, 'EnableTriggers3');
+	Message(1, 'EnableTriggers4');
+	DisableTrigger('TAttackMade');
+
+	Message(g.tutorialplayer, 'ABattleView');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	EnableScreensButton();
+
+	token = 24;
+}
+
+trigger 'TNonStackedAttack' when (g.player == g.tutorialplayer && special.singlecombat) {
+	Message(1, 'KillAllMessages');
+//	Message(1, 'DisableTriggers2');
+	Message(1, 'EnableTriggers3');
+	Message(1, 'EnableTriggers4');
+	DisableTrigger('TNonStackedAttack');
+	
+	Message(g.tutorialplayer, 'MNoStackedBattle');
+	PlaySound("SOUND_ID_ALERT");
+
+	AttachRobot(2);
+	EnableScreensButton();
+
+	token = 24;
+}
+
+trigger 'TClosedBattle' on "BattleViewWindow.ExitButton" when (g.player == g.tutorialplayer) {
+	closed_battle_view = 1;
+	DisableTrigger('TClosedBattle');
+}	 
+
+trigger 'TEnableScreens' when (g.player == g.tutorialplayer && token == 24) {
+	DisableTrigger('TEnableScreens');
+	EnableScreensButton();
+	token = 25;
+}
+
+trigger 'TDiplomacyButton' on "StatsWindow.DipButton" when (g.player == g.tutorialplayer) {
+//MOpenDiplomacyScreen
+	Message(1, 'KillAllMessages');
+
+	EndTurn();
+	Message(g.tutorialplayer, 'A3Goal3');
+}
+
+trigger 'TSendEmissary' on "DiplomacyWindow.CivilisationListSheet.EmissaryButton" when (g.player == g.tutorialplayer) {
+//M3Goal3
+	Message(1, 'KillAllMessages');
+
+		Message(g.tutorialplayer, 'AGreetEmissary');
+}
+
+trigger 'TNextDiplomacy' on "DiplomacyWindow.OkButton" when (g.player == g.tutorialplayer) {
+//MGreetEmissary
+	Message(1, 'KillAllMessages');
+
+		Message(g.tutorialplayer, 'AMakeRequest');
+}
+
+trigger 'TSuggestTreaty' on "DiplomacyWindow.RequestSheet.TreatyButton" when (g.player == g.tutorialplayer) {
+//MMakeRequest
+	Message(1, 'KillAllMessages');
+
+		Message(g.tutorialplayer, 'APeaceTreaty');
+}
+
+trigger 'TCeaseButton' on "DiplomacyWindow.TreatyOptionsSheet.CeaseFireButton" when (g.player == g.tutorialplayer) {
+//MPeaceTreaty
+	Message(1, 'KillAllMessages');
+
+		Message(g.tutorialplayer, 'ACeaseButton');
+}	
+
+trigger 'TSentCease' on "DiplomacyWindow.DemandViewSheet.SendSheet.SendButton" when (g.player == g.tutorialplayer) {
+//MPeaceTreaty
+	Message(1, 'KillAllMessages');
+
+		Message(g.tutorialplayer, 'AResponse');
+}
+
+trigger 'TEndHelpBoxes' on "DiplomacyWindow.ResponseSheet.NoButton" when (g.player == g.tutorialplayer) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TEndHelpBoxes');
+
+	Message(g.tutorialplayer, 'M3Goal3Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	DisableTrigger('TDiplomacyButton');
+	DisableTrigger('TSendEmissary');
+	DisableTrigger('TNextDiplomacy');
+	DisableTrigger('TSuggestTreaty');
+	DisableTrigger('TCeaseButton');
+	DisableTrigger('TSentCease');
+	DisableTrigger('TClosedBattle');
+	DisableMessageClass(2001);	
+}
+
+trigger 'TLevel4Cheat' when (g.player == g.tutorialplayer && player.cities > 1) {
+	
+	if(IsPlayerAlive(1)) {
+		if(HasAdvance(g.tutorialplayer, ID_ADVANCE_SUBNEURAL_ADS)) {
+			Message(1, 'KillAllMessages');
+			Message(1, 'EnableTriggers3');
+			Message(1, 'EnableTriggers4');
+			DisableTrigger('TLevel4Cheat');
+
+			Message(g.tutorialplayer, 'M3Goal3Accomplished');
+
+			AddCityByIndex(g.tutorialplayer, 0);
+			cheater = 1;
+			EnableTileImprovementButton();
+			EnableScreensButton();
+	
+			token = 25;
+		}	
+	}
+}
+
+//TypeLocation capital_location;
+TypeLocation trade_city_1_location;
+TypeLocation trade_city_2_location;
+TypeCity trade_city_1;
+TypeCity trade_city_2;
+
+trigger 'TMakeCitiesForGoods' when (g.player == g.tutorialplayer && token == 25) {
+	DisableTrigger('TMakeCitiesForGoods');
+	Message(1, 'EnableTriggers4');
+	
+	DetachRobot(2);
+
+	if(player.cities > 0) {
+		AddCityByIndex(g.tutorialplayer, 0);
+	}
+	CreateCoastalCity(1, city.1.location, 7, trade_city_1); 
+	ExtractLocation(trade_city_1, trade_city_1_location);
+
+	CreateCoastalCity(1, trade_city_1_location, 4, trade_city_2);
+	ExtractLocation(trade_city_2, trade_city_2_location);
+
+	token = 26;			
+}
+
+TypeLocation city_1_good_location;
+TypeLocation city_2_good_location;
+
+trigger 'TAddGoodsToCities' when (g.player == g.tutorialplayer && token == 26) {
+	DisableTrigger('TAddGoodsToCities');
+
+	trade_city_1_beavers = GoodCount(trade_city_1, GoodType("TERRAIN_FOREST_GOOD_ONE")); 	
+	if(!trade_city_1_beavers) {
+		GetRandomNeighbor(trade_city_1_location, city_1_good_location);
+		Terraform(city_1_good_location, 0);
+		PlantGood(city_1_good_location);
+	}
+
+	if((GoodCount(trade_city_2, GoodType("TERRAIN_FOREST_GOOD_ONE"))) - trade_city_1_beavers <= 0) {
+		GetRandomNeighbor(trade_city_2_location, city_2_good_location);
+		Terraform(city_2_good_location, 0);
+		PlantGood(city_2_good_location);
+	}
+	
+	token = 27;
+}
+
+
+trigger 'TLevel4' when (g.player == g.tutorialplayer && level_4) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TLevel4');
+	
+	Message(g.tutorialplayer, 'MLevel4');
+
+	level_4_saved = 1;
+	SaveGame("level_4");
+}
+
+
+trigger 'TGood1Placed' when (g.player == g.tutorialplayer && (pop.location == city_1_good_location || 
+(special.popmovedongood && city == trade_city_1 && good.type == GoodType("TERRAIN_FOREST_GOOD_ONE")))) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TGood1Placed');
+	good_1_placed = 1;
+
+	if(!good_2_placed) {
+		Message(g.tutorialplayer, 'MMoveWorker2');
+		token = 29;
+	}
+
+	if(good_2_placed) {
+		if(IsPlayerAlive(1)) {
+			CreateUnit(1, UnitType("UNIT_CARAVAN"), trade_city_1_location, 0);
+		}
+			Message(g.tutorialplayer, 'MCaravans');		
+			DisableTrigger('TBothGoodsPlaced');
+			DisableTrigger('TGood2Placed');
+			token = 30;
+	
+	}
+}
+
+trigger 'TGood2Placed' when (g.player == g.tutorialplayer && (pop.location == city_2_good_location || 
+(special.popmovedongood && city == trade_city_2 && good.type == GoodType("TERRAIN_FOREST_GOOD_ONE")))) {
+	DisableTrigger('TGood2Placed');
+	good_2_placed = 1;
+
+	if(good_1_placed) {
+		if(IsPlayerAlive(1)) {
+			CreateUnit(1, UnitType("UNIT_CARAVAN"), trade_city_1_location, 0);
+		}
+		Message(1, 'KillAllMessages');
+		Message(g.tutorialplayer, 'MCaravans');
+		DisableTrigger('TBothGoodsPlaced');
+		DisableTrigger('TGood1Placed');
+		token = 30;
+	}
+}
+
+trigger 'TBothGoodsPlaced' when (g.player == g.tutorialplayer && good_1_placed && good_2_placed) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TBothGoodsPlaced');
+
+	if(IsPlayerAlive(1)) {
+		CreateUnit(1, UnitType("UNIT_CARAVAN"), trade_city_1_location, 0);
+	}
+
+	Message(g.tutorialplayer, 'MCaravans');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	token = 30;
+}
+
+trigger 'TTradeScreen' on "StatsWindow.TradeButton" when (g.player == g.tutorialplayer && token == 30) {
+	Message(1, 'KillAllMessages');
+
+	Message(g.tutorialplayer, 'ATheTradeScreen');
+}
+
+trigger 'TTradeSendButton' on "TradeMainWindow.SendButton" when (g.player == g.tutorialplayer && token == 30) {
+	Message(1, 'KillAllMessages');
+
+	Message(g.tutorialplayer, 'ASelectBeaver');
+}
+
+trigger 'TTradeNextButton' on "TradeSendWindow.NextButton" when (g.player == g.tutorialplayer && token == 30) {
+	Message(1, 'KillAllMessages');
+	
+	Message(g.tutorialplayer, 'APickDestination');
+}
+
+trigger 'TTradeMakeTradeRoute' when (g.player == g.tutorialplayer && city.owner  == g.tutorialplayer && 
+special.traderoute && token == 30) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TTradeNextButton');
+	DisableTrigger('TTradeNextButton');
+	DisableTrigger('TTradeSendButton');
+	DisableTrigger('TTradeScreen');
+	DisableTrigger('TTradeMakeTradeRoute');
+
+	if(IsPlayerAlive(1)) {
+		SetPlayer(1, g.tutorialplayer);
+		AddCityByIndex(g.tutorialplayer, 0);
+		if(player.totalunits < 1) {
+			CreateUnit(1,UnitType("UNIT_WARRIOR"),CapitalCity_location, 1);
+		}
+	}
+
+	Message(g.tutorialplayer, 'M4Goal1Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	token = 31;	
+}	
+
+trigger 'TCheat4' when (g.player == g.tutorialplayer && player.cities >= 2) {
+	if(IsPlayerAlive(1)) {
+		if(HasAdvance(g.tutorialplayer, ID_ADVANCE_INTELLIGENT_MATERIALS)) { 
+			Message(1, 'KillAllMessages');
+			Message(1, 'EnableTriggers3');
+			Message(1, 'EnableTriggers4');
+			DisableTrigger('TCheat4');
+			AddCityByIndex(g.tutorialplayer, 0);
+			AddPops(city.1, 5);
+			Message(g.tutorialplayer, 'MLevel5');
+			cheater = 1;
+			EnableTileImprovementButton();
+			EnableScreensButton();
+			token = 31;
+		}
+	}
+}
+
+trigger 'TSaveLevel5' when (timer.1.expired) {
+	DisableTrigger('TSaveLevel5');
+	level_5_saved = 1;
+	SaveGame("level_5");
+	StopTimer(1);
+}
+
+trigger 'TMaxTab' on "ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab" when (g.player == g.tutorialplayer && token == 31) {
+	DisableTrigger('TMaxTab');
+	
+	max_tab = 1;	
+}
+		 
+trigger 'TMaxScienceButton' on "ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroKnowledgeButton" 
+when (g.player == g.tutorialplayer && token == 31) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TMaxScienceButton');
+	AddPops(trade_city_1, 3);
+
+	Message(g.tutorialplayer, 'M5Goal1Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	token = 32;
+}
+
+trigger 'TLaborTab' on "ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab" when (g.player == g.tutorialplayer && token == 32) {
+	DisableTrigger('TLaborTab');
+
+	labor_tab = 1;
+}
+
+trigger 'TEntertainerMade' on "ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroMusicianLabel.MicroMusicianPlus"
+when (g.player == g.tutorialplayer && token == 32 && labor_tab) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TEntertainerMade');
+	
+	Message(g.tutorialplayer, 'MScientist');
+}
+
+trigger 'TScientistMade' on "ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroScientistLabel.MicroScientistPlus"
+when (g.player == g.tutorialplayer && token == 32 && labor_tab) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TScientistMade');
+
+	Message(g.tutorialplayer, 'MSpecialistWarning');
+	PlaySound("SOUND_ID_ALERT");
+	token = 33;
+}
+
+trigger 'TQueueButton' on "ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdQueueButton"
+when (g.player == g.tutorialplayer) {
+	if(token < 33) {
+		Message(g.tutorialplayer, 'AAlertQueue');
+	}
+
+	if(token == 33) {
+		Message(1, 'KillAllMessages');
+		Message(g.tutorialplayer, 'MAddItemsToQueue');
+	}
+
+	if(token >= 33) {
+		DisableTrigger('TQueueButton');
+	}	
+}
+
+trigger 'TQueueMade' when (g.player == g.tutorialplayer && city.queue >= 2 && token == 33) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TQueueMade');
+
+	Message(g.tutorialplayer, 'M5Goal2Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+	token = 34;
+}
+
+trigger 'TCityStatus' on "StatsWindow.CityButton" when (g.player == g.tutorialplayer && token == 34) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TCityStatus');
+
+	Message(g.tutorialplayer, 'AOrder2Cities');
+}
+
+trigger 'TCityBuildButtonUsed' on "CityStatusWin.BuildButton" when (g.player == g.tutorialplayer && token == 34) {
+	DisableTrigger('TCityBuildButtonUsed');
+	city_status_build_button = 1;
+}
+
+trigger 'TCitiesBuilding' on "CityStatusWin.OkButton" when (g.player == g.tutorialplayer && token == 34) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TCitiesBuilding');
+
+	if(city_status_build_button) {
+		Message(g.tutorialplayer, 'M5Goal3Accomplished');
+		PlaySound("SOUND_ID_GENERALSUCCEED");
+	}
+	else {
+		Message(g.tutorialplayer, 'MCitiesNotBuilding');
+	}
+	
+	token = 35;
+}
+
+trigger 'TFortifiedUnits' when (g.player == g.tutorialplayer && token == 35 && unit.fortified) {		
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TFortifiedUnits');
+		
+	Message(g.tutorialplayer, 'MFortifyInField');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+
+	token = 36;
+}
+
+TypeUnit FreeBoat;
+TypeUnit FreeCargo;
+TypeLocation WaterForBoat_location;
+
+trigger 'TMakeFreeBoat' when (g.player == g.tutorialplayer && token == 36) {
+	DisableTrigger('TMakeFreeBoat');
+	AddCity(trade_city_1);
+	ExtractLocation(trade_city_1, trade_city_1_location);
+
+	If(IsPlayerAlive(1)) {
+		SetPlayer(1, g.tutorialplayer);
+		if(player.totalunits < 1) {
+			CreateUnit(1,UnitType("UNIT_WARRIOR"),CapitalCity_location, 1);
+		}
+	
+		CreateUnit(1, UnitType("UNIT_CHARIOT"), trade_city_1_location, 0, FreeCargo);
+		GetNearestWater(trade_city_1_location, WaterForBoat_location);
+		CreateUnit(1, UnitType("UNIT_TRIREMES"), WaterForBoat_location, 0, FreeBoat);
+	}
+
+	token = 37;
+
+	level_6_saved = 1;
+	SaveGame("level_6");
+}
+	
+trigger 'TLoadedUnits' when (g.player == g.tutorialplayer && unit.embarked && token <= 37) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TLoadedUnits');
+
+	Message(g.tutorialplayer, 'MMovingTheBoat');
+	token = 38;
+}
+
+trigger 'TUnloadedUnits' when (g.player == g.tutorialplayer && unit.debarked && token >= 37) {
+	Message(1, 'KillAllMessages');
+	DisableTrigger('TUnloadedUnits');
+
+	Message(g.tutorialplayer, 'M6Goal1Accomplished');
+	PlaySound("SOUND_ID_GENERALSUCCEED");
+//	reenable_ingame = 1;
+	token = 39;
+}
+

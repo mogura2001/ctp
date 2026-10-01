@@ -1,0 +1,1473 @@
+// diplomacy_pre_incoming.fli
+
+#include "input_responses.fli"
+
+////////////////////
+/// WHO IS HE    ///
+////////////////////
+
+	////////////////////////////////////////////////////////////////
+	////////// WHAT IS HIS RANKING?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input his_normalized_rank
+		tri hes_in_last_place(his_normalized_rank, 0.0, 0.05)
+		tri hes_in_bottom_half(his_normalized_rank, 0.3, 0.25)
+		tri hes_in_middle_half(his_normalized_rank, 0.5, 0.25)
+		tri hes_in_top_half(his_normalized_rank, 0.7, 0.25)
+		tri hes_in_first_place(his_normalized_rank, 1.0, 0.05)
+
+	////////////////////////////////////////////////////////
+	////////// IS HE MY BEST FRIEND?  //////////////////////
+	////////////////////////////////////////////////////////
+
+	input best_friend
+		tri not_best_friend(best_friend, 0.01, 0.5)
+		tri my_best_friend(best_friend, 1.0, 0.5)
+
+	////////////////////////////////////////////////////////
+	////////// IS HE MY WORST ENEMY?  //////////////////////
+	////////////////////////////////////////////////////////
+
+	input worst_enemy
+		tri not_worst_enemy(worst_enemy, 0.01, 0.5)
+		tri my_worst_enemy(worst_enemy, 1.0, 0.5)
+
+	/////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN AT PEACE CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	// AM I READY FOR MORE WAR?
+
+	input shortest_peace
+		tri zero_length_peace(shortest_peace, 0.0, 0.5)
+		tri a0to5_peace(shortest_peace, 5.0, 5.0)
+		tri a5to15_peace(shortest_peace, 10.0, 5.0)
+		tri a10to20_peace(shortest_peace, 15.0, 5.0)
+		right a20plus_peace(shortest_peace, 20.0, 5.0)
+
+	output tired[0.0, 2.0] =0.0
+		tri yes_tired(tired, 1.0, 0.5)
+
+	output barely_refreshed[0.0, 2.0] =0.0
+		tri yes_barely_refreshed(barely_refreshed, 1.0, 0.5)
+
+	output refreshed[0.0, 2.0] =0.0
+		tri yes_refreshed(refreshed, 1.0, 0.5)
+
+	if(zero_length_peace or a0to5_peace or a5to15_peace)
+		{
+			yes_tired
+		}
+
+	if(a20plus_peace)
+		{
+			yes_refreshed
+		}
+	
+	if(a10to20_peace and not yes_refreshed and not yes_tired)
+		{
+			yes_barely_refreshed
+		}
+
+	/////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN FIGHTING CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+
+	input longest_war
+		tri a0_longest_war(longest_war, 0.0, 0.5)
+		tri a1to10_longest_war(longest_war, 5.0, 5.0)
+		tri a5to15_longest_war(longest_war, 10.0, 5.0)
+		tri a10to20_longest_war(longest_war, 15.0, 5.0)
+		tri a20to30_longest_war(longest_war, 25.0, 5.0)
+		tri a25to35_longest_war(longest_war, 30.0, 5.0)
+		tri a30to50_longest_war(longest_war, 40.0, 10.0)
+		right a50plus_longest_war(longest_war, 55.0, 5.0)
+
+	output nearly_tired_of_war[0.0,2.0] = 0.0
+		tri yes_nearly_tired_of_war(nearly_tired_of_war, 1.0, 0.5)
+
+	output tired_of_war[0.0,2.0] = 0.0
+		tri yes_bored_of_war(tired_of_war, 1.0, 0.5)
+
+	output sick_of_war[0.0,2.0] = 0.0
+		tri yes_sick_of_war(sick_of_war, 1.0, 0.5)
+
+
+	// GET TIRED OF WAR AFTER A LONG TIME
+	if(a20to30_longest_war)
+		{
+			yes_nearly_tired_of_war
+		}
+
+	// GET TIRED OF WAR AFTER A LONG TIME
+	if(a30to50_longest_war)
+		{
+			yes_bored_of_war
+		}
+
+	// GET SICK AND TIRED OF WAR AFTER A VERY LONG TIME
+	if(a50plus_longest_war)
+		{
+			yes_sick_of_war
+		}
+
+	////////////////////////////////////////////////////////
+	////////// DO WE HAVE A CEASE FIRE /////////////////////
+	////////////////////////////////////////////////////////
+
+	input cease_fire_with_him
+		left no_cease_fire(cease_fire_with_him, 0.0, .5)
+		right yes_cease_fire(cease_fire_with_him, 1.0, .5)
+
+	///////////////////////////////////////////////////////
+	////////// DO WE HAVE AN ALLIANCE /////////////////////
+	///////////////////////////////////////////////////////
+
+	input alliance_with_him
+		left no_alliance(alliance_with_him, 0.0, .5)
+		right yes_alliance(alliance_with_him, 1.0, .5)
+
+	////////////////////////////////////////////////////////////////
+	////////// ARE WE NEUTRAL? /////////////////////
+	////////////////////////////////////////////////////////////////
+
+	input neutral_with_him
+		left no_neutral(neutral_with_him, 0.0, .5)
+		right yes_neutral(neutral_with_him, 1.0, .5)
+
+	///////////////////////////////////////////////////////////////
+	////////// ARE WE AT WAR?  /////////////////////
+	///////////////////////////////////////////////////////////////
+
+	input war_with_him
+		left no_war (war_with_him, 0.0, .5)
+		right yes_war (war_with_him, 1.0, .5)
+
+	///////////////////////////////////////////////////////////////////////////////////
+	////////// HOW DO I FEEL ABOUT HIM?  /////////////////////
+	///////////////////////////////////////////////////////////////////////////////////
+
+	input diplomatic_regard_towards_him
+		left hate_him(diplomatic_regard_towards_him, 10, 12)
+		tri dislike_him(diplomatic_regard_towards_him, 30, 12)
+		tri neutral_towards_him(diplomatic_regard_towards_him, 50, 12)
+		tri like_him(diplomatic_regard_towards_him, 70, 12)
+		right love_him(diplomatic_regard_towards_him, 90, 12)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE WE FOUGHT?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input length_of_war_with_him
+		tri zero_length_war_with_him(length_of_war_with_him, 0.0, 0.5)
+		tri a1to9_turn_war_with_him(length_of_war_with_him, 5.0, 4.5)
+		tri a6to14_turn_war_with_him(length_of_war_with_him, 10.0, 5.0)
+		tri a11to19_turn_war_with_him(length_of_war_with_him, 15.0, 5.0)
+		right a16to14_length_war_with_him(length_of_war_with_him, 20.0, 5.0)
+
+	////////////////////////////////////////////////////////////////
+	////////// CAN HE BE TRUSTED?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	// this sets how loyal I think that he is
+	input loyalty
+		tri distrust_him(loyalty, 10.0, 10.0)
+		tri dont_trust_him(loyalty, 20.0, 10.0)
+		tri watch_him(loyalty, 30.0, 10.0)
+		tri maybe_trust_him(loyalty, 40.0, 10.0)
+		tri completely_trust_him(loyalty, 50.0, 10.0)
+
+
+	output i_do_not_trust_him[0.0, 2.0] = 0.0
+		tri yes_i_do_not_trust_him(i_do_not_trust_him, 1.0, 0.5)
+
+		if( distrust_him
+			or dont_trust_him )
+		{
+			yes_i_do_not_trust_him
+		}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// IS HE STRONGER OR WEAKER?  /////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input relative_strength
+		left terrified_of_him(relative_strength, 0.1, 0.3) 
+		tri afraid_of_him(relative_strength, 0.5, 0.25)
+		tri equal_to_him(relative_strength, 1, 0.2)
+		right stronger_than_him(relative_strength, 2.5, 0.25)
+
+	output he_is_scary[0.0, 2.0] =0.0
+		tri yes_he_is_scary(he_is_scary, 1.0, 0.5)
+
+	if(terrified_of_him or afraid_of_him)
+	{
+		yes_he_is_scary
+	}
+
+	/////////////////////////////////////////////////////
+	////////// IS HE HUMAN?  ///////////
+	/////////////////////////////////////////////////////
+
+	input player_type
+		tri human(player_type, 0.0, 0.1)
+		tri ai(player_type, 1.0, 0.1)
+		tri humanclient(player_type, 2.0, 0.1)
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MUCH HAS HE ATTACKED ME?  //////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	input his_hotwar_attacked_me // How many times he's ever attacked
+		left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.2)
+		tri once_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+		right often_attacked_me(his_hotwar_attacked_me, 2, 0.5)
+
+	output his_hotwar_attacked_me_decay [0, 1.0] = 0.6
+
+////////////////////////
+/// WHO AM I? //////////
+////////////////////////
+
+
+	////////////////////////////////////////////////////////////////
+	////////// WHAT IS MY RANKING?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input my_normalized_rank
+		tri iam_in_last_place(his_normalized_rank, 0.0, 0.05)
+		tri iam_in_bottom_half(his_normalized_rank, 0.3, 0.25)
+		tri iam_in_middle_half(his_normalized_rank, 0.5, 0.25)
+		tri iam_in_top_half(his_normalized_rank, 0.7, 0.25)
+		tri iam_in_first_place(his_normalized_rank, 1.0, 0.05)
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN FIGHTING CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input longest_war
+		tri zero_length_war(longest_war, 0.0, 0.5)
+		tri five_length_war(longest_war, 5.0, 5.0)
+		tri ten_length_war(longest_war, 10.0, 5.0)
+		tri fifteen_length_war(longest_war, 15.0, 5.0)
+		right twenty_length_war(longest_war, 20.0, 5.0)
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY PLAYERS AM I FIGHTING?  /////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input at_war_count
+		tri zero_at_war(at_war_count, 0.0, 0.5)
+		tri one_at_war(at_war_count, 1.0, 0.5)
+		tri two_at_war(at_war_count, 2.0, 0.5)
+		tri three_at_war(at_war_count, 3.0, 0.5)
+		tri four_at_war(at_war_count, 4.0, 0.5)
+		tri five_at_war(at_war_count, 5.0, 0.5)
+		tri six_at_war(at_war_count, 6.0, 0.5)
+		tri seven_at_war(at_war_count, 7.0, 0.5)
+		tri eightplus_at_war(at_war_count, 8.0, 0.5)
+
+	output too_many_enemies[0.0, 2.0] = 0.0
+		tri yes_too_many_enemies(too_many_enemies, 1.0, 0.5)
+
+	if( three_at_war 
+		or four_at_war 
+		or five_at_war 
+		or six_at_war
+		or seven_at_war
+		or eightplus_at_war )
+	{
+		yes_too_many_enemies
+	}
+
+	if(	peaceful 
+		and two_at_war)
+	{
+		yes_too_many_enemies
+	}
+
+/////////////////////////////////////////////////
+//////////   SET ACCEPTANCE   ///////////
+////////////////////////////////////////////////
+
+	output accept_threshold[-500, 1500] = 1000
+		tri best_reason_to_accept (accept_threshold, 0, 200);
+		tri good_reason_to_accept(accept_threshold, 250, 100);
+		tri average_reason_to_accept(accept_threshold, 500, 100);
+		tri bad_reason_to_accept(accept_threshold, 750, 100);
+		tri worst_reason_to_accept(accept_threshold, 1000, 200);
+		tri zero_reason_to_accept(accept_threshold, 1000, 500)
+
+	output found_accept[0.0, 1.2] = 0.0
+		tri unfound(found_accept, 0.15, 0.1)
+		tri found(found_accept, 1.0, 0.1)
+
+/////////////////////////////////////////////////
+//////////   SET REGARD   ///////////
+////////////////////////////////////////////////
+
+output diplomatic_regard_delta[-50, 50] = 0.0
+	tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+	tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+	tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+	tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+	tri same_like_him(diplomatic_regard_delta, 0, 8.0)
+	tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+	tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+	right worship_him_more(diplomatic_regard_delta, 8, 4)
+	
+input military_incursions
+	left no_incursions(military_incursions, 0, 0.2)
+	tri few_incursions(military_incursions, 2, 1.5)
+	right many_incursions(military_incursions, 3, 1)
+
+/////////////////////////////////////
+////////// DEAL WITH ATTACKS  ///////
+/////////////////////////////////////
+
+	if(once_attacked_me or often_attacked_me) 
+		{
+			very bad_reason_to_accept
+		}
+
+/////////////////////////////////////
+////////// SEND GREETING  ///////////
+/////////////////////////////////////
+
+input contact_gained
+	right gives_contact_gained(contact_gained, 1.0, 0.5)
+
+		if(gives_contact_gained and not hate_him) 
+		{
+			good_reason_to_accept
+			like_him_more
+		}
+
+///////////////////////////////////////////
+////////// RESPOND TO DEMANDS   ///////////
+///////////////////////////////////////////
+
+	/////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND ADVANCE  ///////////
+	/////////////////////////////////////////////////
+	/// 	// ww 11/19 monitoring
+	///	double cost;
+	///	extern double fz_time;
+	///
+	///	// cost of the advance that I have to give up
+	///	cost = ai->m_science->GetCost(request->GetAdvance());
+	///
+	///	// I want to adjust the cost to reflect the rising costs of advances through the game
+	///	// Hopefully, this lets the AI know whether an Advance is worth more or worth less
+	///	// than the average Advance of the time.
+	///	double adjcost = cost * 2 / (fz_time + 25);
+	///	
+	///	// This keeps the multiplier within a reasonable bound
+	///	if (adjcost > 5)
+	///	{
+	///		adjcost = 5;
+	///	}
+	///
+	///	// if it is worthless, I'll give it up; otherwise, no way; 
+	///	return adjcost * k_POOR_VALUE * fz_give_advance;
+	
+	input i_gain_advance
+		right yes_i_gain_advance(i_gain_advance, 1.0, .5)
+
+	input he_gains_advance
+		right yes_he_gains_advance(he_gains_advance, 1.0, 0.5)
+
+	// can use advance_cost if we want
+
+		if(yes_he_gains_advance and not yes_i_gain_advance)
+		{
+			found
+		}
+
+	output give_advance [0, 2] = 1.0
+		left no_way_give_adv(give_advance, 0, 0.5)
+		tri maybe_give_adv(give_advance, 0.5, 0.25)
+		right yes_give_adv(give_advance, 1.0, 0.5) 
+
+		if(	yes_he_gains_advance and not yes_i_gain_advance 
+			and terrified_of_him
+			and not yes_enough_me_giving_in_to_DEMAND_ADVANCE) 
+			{
+				average_reason_to_accept
+				maybe_give_adv
+			} 
+
+		if(	yes_he_gains_advance and not yes_i_gain_advance 
+			and my_best_friend
+			and not yes_enough_me_giving_in_to_DEMAND_ADVANCE)
+			{
+				average_reason_to_accept
+				wary_of_him_more
+			}
+
+		if(	yes_he_gains_advance and not yes_i_gain_advance	
+			and yes_enough_me_giving_in_to_DEMAND_ADVANCE 
+			and not love_him )
+			{
+				zero_reason_to_accept
+				no_way_give_adv
+				dislike_him_more
+			}
+
+		/// Now set the regard based on our responses.	
+		if(	yes_he_gains_advance and not yes_i_gain_advance 
+			and average_reason_to_accept)
+			{	
+				dislike_him_more
+			}
+
+		if(	yes_he_gains_advance and not yes_i_gain_advance  
+			and bad_reason_to_accept)
+			{	
+				hate_him_more
+			}
+
+	//////////////////////////////////////////////
+	////////// RESPOND TO DEMAND CITY  ///////////
+	//////////////////////////////////////////////
+	// THIS IS CUT -- BUT WE'LL TURN IT OFF ANYWAY
+	// return 0.0
+
+	input i_lose_city
+		tri yes_i_lose_city(i_lose_city, 1.0, 0.5)
+
+	input he_gains_city
+		tri yes_he_gains_city(he_gains_city, 1.0, 0.5)
+
+	if(yes_i_lose_city and yes_he_gains_city)
+	{
+		worst_reason_to_accept
+		found
+	}
+
+	////////////////////////////////////////////
+	////////// RESPOND TO DEMAND MAP  //////////
+	////////////////////////////////////////////
+	///		MapPointData *size = ai->m_map->GetSize();
+	///		
+	///		double explored = ai->m_map->ExploredArea(ai);
+	///		return k_POOR_VALUE - k_AVERAGE_VALUE * (explored / (size->x * size->y));
+
+	input i_gain_map
+		tri yes_i_gain_map(i_gain_map, 1.0, 0.5)
+
+	input he_gets_map
+		tri yes_he_gets_map(he_gets_map, 1, .5)
+
+	// don't use input last_got_map; it means nothing
+
+	if(	yes_he_gets_map and not yes_i_gain_map)
+		{
+			found
+		}
+
+	if(	yes_he_gets_map and not yes_i_gain_map 
+		and terrified_of_him 
+		and not my_worst_enemy) 
+		{
+			average_reason_to_accept
+		}
+	
+	if(	yes_he_gets_map and not yes_i_gain_map 
+		and my_best_friend 
+		and love_him) 
+		{
+			best_reason_to_accept
+		}
+	
+	if(	yes_he_gets_map and not yes_i_gain_map	
+		and yes_enough_me_giving_in_to_DEMAND_MAP 
+		and not love_him )
+		{
+			zero_reason_to_accept
+			no_way_give_adv
+			dislike_him_more
+		}
+
+		// Now set regard based on our responses.
+		if(	yes_he_gets_map and not yes_i_gain_map 
+			and best_reason_to_accept)
+			{	
+				like_him_more
+			}
+
+		if(	yes_he_gets_map and not yes_i_gain_map  
+			and good_reason_to_accept)
+			{	
+				like_him_more
+			}
+
+		if(	yes_he_gets_map and not yes_i_gain_map  
+			and average_reason_to_accept)
+			{	
+				same_like_him
+			}
+
+		if(	yes_he_gets_map and not yes_i_gain_map  
+			and bad_reason_to_accept)
+			{	
+				dislike_him_more
+			}
+
+		if(	yes_he_gets_map and not yes_i_gain_map  
+			and worst_reason_to_accept)
+			{	
+				hate_him_more
+			}
+
+	//////////////////////////////////////////////
+	////////// RESPOND TO DEMAND GOLD  ///////////
+	//////////////////////////////////////////////
+	///		double gold = request->GetGold();
+	///			double savings = ai->m_gold->GetCurrentSavings();
+	///			if(gold > savings )
+	///				return 0.0;
+	///				
+	///			double goldpart = gold / savings;
+	///				
+	///			return k_AVERAGE_VALUE * goldpart;
+	///
+	/// ask for more than 50% of my gold and I need a definitely or better
+
+	input he_gains_gold
+		tri yes_gives_him_gold(he_gains_gold, 1, 0.5)
+
+	if(yes_gives_him_gold)
+	{
+		found
+	}
+		
+	if(	yes_gives_him_gold and terrified_of_him and not distrust_him) 
+		{
+			best_reason_to_accept
+		}
+	
+	if(	yes_gives_him_gold and my_best_friend and peaceful)
+		{
+			best_reason_to_accept
+		}
+
+	if(	yes_gives_him_gold	
+		and yes_enough_me_giving_in_to_DEMAND_GOLD
+		and not love_him )
+		{
+			zero_reason_to_accept
+			no_way_give_adv
+		}
+
+		// Now set regard based on responses.
+		if(	yes_gives_him_gold   
+			and zero_reason_to_accept)
+			{	
+				hate_him_more
+			}
+
+		if(	yes_gives_him_gold   
+			and best_reason_to_accept)
+			{	
+				dislike_him_more
+			}
+
+	///////////////////////////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND STOP TRADING WITH ANOTHER CIV  ///////////
+	///////////////////////////////////////////////////////////////////////
+	///		double tradewiththird = ai->m_player->GetTradeWith(sint32(request->GetThirdParty()));
+	///			
+	///			// friendship is calculated in the fz system
+	///			return k_GOOD_VALUE - (tradewiththird * fz_trade_utility);
+
+	// check for stop trade message
+	input stops_trade_with_third_party
+		tri yes_stops_trade_with_third_party(stops_trade_with_third_party, 1, .5)
+
+	// legal: third_party_strength
+	// legal: third_party_relative_strength
+	// legal: his_third_party_relative_strength
+	
+	if(yes_stops_trade_with_third_party)
+	{
+		found
+	}
+
+	// his trade with third party
+	// if 100, 10 Routes = dont do it
+	// if 500, 2 Routes = don't do it
+	// if zero routes -- I always say yes
+	input his_trade_with_third_party
+		left no_trade_with_third(his_trade_with_third_party, 0, 0.1)
+		tri some_trade_with_third_party(his_trade_with_third_party, 2, 1)
+		right much_trade_with_third_party(his_trade_with_third_party, 5, 2)
+
+	// my opinion of the third party
+	input third_party_regard
+		tri hate_third_party(third_party_regard, 10, 10)
+		tri dislike_third_party(third_party_regard, 30, 10)
+		tri neutral_toward_third_party(third_party_regard, 50, 10)
+		tri like_third_party(third_party_regard, 70, 10)
+		tri love_third_party(third_party_regard, 90, 10)
+
+	output trade_utility [0, 1000] = 1000
+		left ok_i_stop (trade_utility, 0, 100)
+		tri maybe_i_stop (trade_utility, 500, 250)
+		right no_way_jose (trade_utility, 1000, 250)
+
+	// if I love him or he's my best friend and I don't like the other guy anyway, I'll say yes
+	if( 	yes_stops_trade_with_third_party
+		and love_him 
+		and my_best_friend 
+		and hate_third_party)
+		{
+			ok_i_stop
+		}
+	// if I like him or am neutral and I'm not trading with the other guy anyway, I'll maybe say yes
+	if(	yes_stops_trade_with_third_party 
+		and (like_him or neutral_towards_him or love_him)
+		and hate_third_party 
+		and no_trade_with_third )
+		{
+			ok_i_stop	
+		}
+		
+	if(	yes_stops_trade_with_third_party 
+		and (dislike_him or hate_him)
+		and my_worst_enemy)
+		{
+			no_way_jose
+		}
+
+	if(	yes_stops_trade_with_third_party 
+		and hate_third_party 
+		and not distrust_him)
+		{
+			average_reason_to_accept
+			dislike_him_more
+		}
+
+	if(	yes_stops_trade_with_third_party 
+		and distrust_him)
+		{		
+			worst_reason_to_accept
+		}
+			
+	////////////////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND ATTACK ANOTHER CIV  ///////////
+	////////////////////////////////////////////////////////////
+	///		if (regardthird > 60)
+	///		{
+	///			return 0.0;
+	///		}
+	///		// otherwise attack people that I don't like in most cases
+	///		return k_BEST_VALUE - (foreigner->GetRegard() * 10);
+
+	///		utility = 400 with Regard = 60; 
+	///		utility = 1000 with Regard = 0;
+
+	input i_will_attack_third_party
+		tri yes_i_will_attack_third_party(i_will_attack_third_party, 1.0, 0.5)
+
+	// = his_strength / third_party_strength 
+	input his_third_party_relative_strength
+		left he_is_weaker_than_3rd(his_third_party_relative_strength, 0.5, 0.25)
+		tri he_is_same_as_3rd(his_third_party_relative_strength, 1.0, 0.2)
+		right he_is_stronger_than_3rd(his_third_party_relative_strength, 4.0, 3.0)
+
+	// = my_strength / third_party_strength
+	input third_party_relative_strength
+		left i_am_weaker_than_3rd(third_party_relative_strength, 0.5, 0.25)
+		tri i_am_same_as_3rd(third_party_relative_strength, 1.0, 0.2)
+		right i_am_stronger_than_3rd(third_party_relative_strength, 4.0, 3.0)
+
+	input at_war_with_third_party
+		tri yes_at_war_with_third_party(at_war_with_third_party, 1.0, 0.2)
+
+	if(yes_i_will_attack_third_party)
+	{
+		found
+	}
+	
+	// if I'm at war with the third party, I don't mind attacking them
+	if(	yes_i_will_attack_third_party
+		and yes_at_war_with_third_party)
+		{
+			best_reason_to_accept
+		}
+
+	if(	yes_i_will_attack_third_party
+		and (dislike_third_party or hate_third_party)
+		and my_best_friend 
+		and zero_at_war)
+	{
+		good_reason_to_accept
+	}
+
+	if(	yes_i_will_attack_third_party 
+		and (dislike_third_party or hate_third_party)
+		and my_best_friend 
+		and i_am_stronger_than_3rd)
+	{
+		best_reason_to_accept
+	}
+
+	if(	yes_i_will_attack_third_party 
+		and love_him 
+		and my_best_friend 
+		and he_is_stronger_than_3rd 
+		and i_am_stronger_than_3rd 
+		and zero_at_war)
+	{
+		best_reason_to_accept
+	}
+
+	if(	yes_i_will_attack_third_party 
+		and love_him 
+		and my_best_friend 
+		and he_is_stronger_than_3rd 
+		and i_am_stronger_than_3rd 
+		and not zero_at_war)
+		{
+			bad_reason_to_accept
+		}
+
+		// Set regard based on responses.
+		if(	yes_i_will_attack_third_party   
+			and best_reason_to_accept)
+			{	
+				worship_him_more
+			}
+
+		if(	yes_i_will_attack_third_party   
+			and good_reason_to_accept)
+			{	
+				love_him_more
+			}
+
+		if(	yes_i_will_attack_third_party   
+			and average_reason_to_accept)
+			{	
+				like_him_more
+			}
+
+		if(	yes_i_will_attack_third_party   
+			and average_reason_to_accept)
+			{	
+				same_like_him
+			}
+
+		if(	yes_i_will_attack_third_party   
+			and worst_reason_to_accept)
+			{	
+				same_like_him
+			}
+
+	/////////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND LEAVE LANDS  ///////////
+	/////////////////////////////////////////////////////
+	///		return k_AVERAGE_VALUE;
+
+	input i_will_leave_his_lands
+		tri yes_i_will_leave_his_lands(i_will_leave_his_lands, 1, 0.5)
+
+		if(yes_i_will_leave_his_lands)
+		{
+			found
+		}
+
+		if(	yes_i_will_leave_his_lands 
+			and (yes_cease_fire or yes_alliance))
+		{
+			best_reason_to_accept
+		}
+
+		if(	yes_i_will_leave_his_lands 
+			and not my_worst_enemy 
+			and not yes_war)
+		{
+			good_reason_to_accept
+		}
+
+		if(	yes_i_will_leave_his_lands 
+			and yes_he_is_scary
+			and not yes_war)
+		{
+			good_reason_to_accept
+		} 
+		
+			// set regard based on responses.
+			if(	yes_i_will_leave_his_lands   
+			and good_reason_to_accept)
+			{	
+				same_like_him
+			}
+
+
+	//////////////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND REDUCE POLLUTION  ///////////
+	//////////////////////////////////////////////////////////
+	///	return ((global_pollution / pollutiontrigger) * k_BEST_VALUE * fz_reduce_pollution_utility);
+	/// if 90% to next trigger and 1 reducesutility = 900
+	/// temporarily k_AVERAGE_VALUE;
+
+	input reduces_pollution
+		tri yes_reduces_pollution(reduces_pollution, 1.0, 0.5)
+
+	input his_pollution_level
+		left low_his_pollution(his_pollution_level, 50.0, 5.0)
+		tri average_his_pollution(his_pollution_level, 100.0, 50.0)
+		right high_his_pollution(his_pollution_level, 200.0, 75.0)
+
+	input my_pollution_level
+		left low_my_pollution(my_pollution_level, 50.0, 5.0)
+		tri average_my_pollution(my_pollution_level, 100.0, 50.0)
+		right high_my_pollution(my_pollution_level, 200.0, 75.0)
+
+	input global_pollution_level
+		left low_global_pollution(global_pollution_level, 500.0, 5.0)
+		tri average_global_pollution(global_pollution_level, 1000.0, 500.0)
+		right high_global_pollution(global_pollution_level, 2000.0, 1000.0)
+
+	output reduce_pollution_utility[0,1.0]=0  
+		left cant_reduce_pollution(reduce_pollution_utility, 0.1, 0.05)
+		tri maybe_reduce_pollution(reduce_pollution_utility, 0.5, 0.25)
+		right yes_reduce_pollution(reduce_pollution_utility, 1.0, 0.25)
+
+	if(yes_reduces_pollution)
+	{
+		found
+	}
+		
+	//determine extent of global pollution
+	if(	yes_reduces_pollution 
+		and low_global_pollution)
+	{
+		cant_reduce_pollution
+	}
+	
+	if(	yes_reduces_pollution 
+		and average_global_pollution )
+	{
+		maybe_reduce_pollution
+	}
+	if(	yes_reduces_pollution 
+		and high_global_pollution )
+	{
+		yes_reduce_pollution
+	}
+	
+	if( yes_reduces_pollution
+		and love_him 
+		and not distrust_him )
+		{
+			best_reason_to_accept
+		}
+
+//	if(	yes_reduces_pollution 
+//		and high_my_pollution 
+//		and love_him 
+//		and not distrust_him)
+//	{
+//		average_reason_to_accept
+//		dislike_him_more
+//	}
+//
+//	if(	yes_reduces_pollution 
+//		and high_my_pollution 
+//		and terrified_of_him 
+//		and not distrust_him)
+//	{
+//		good_reason_to_accept
+//		dislike_him_more
+//	}
+
+
+	// stop piracy
+	// pirate
+	// stop trade
+	/////////////////////////////////////////////////////
+	////////// RESPOND TO DEMAND STOP PIRACY  ///////////
+	/////////////////////////////////////////////////////
+	///	return k_GOOD_VALUE ; 
+	///
+	/// utility = 
+
+	//this won't work yet
+	input i_will_stop_piracy
+		tri yes_i_will_stop_piracy(i_will_stop_piracy, 1.0, 0.5)
+
+	if(yes_i_will_stop_piracy)
+	{
+		found
+	}
+
+	if(	yes_i_will_stop_piracy 
+		and yes_he_is_scary 
+		and not my_worst_enemy)
+	{
+			average_reason_to_accept
+			dislike_him_more
+	}
+
+	if (yes_i_will_stop_piracy
+		and not hate_him
+		and not yes_war
+		and not yes_i_do_not_trust_him)
+	{
+		best_reason_to_accept
+	}
+
+
+////////////////////////
+/// START OFFERS    ////
+////////////////////////
+
+	///////////////////////////////////
+	/// RESPOND TO OFFER ADVANCE   ////
+	///////////////////////////////////
+	///  return k_GOOD_VALUE;
+
+	// legal advance_cost
+	// legal advances_skipped
+
+	if(yes_i_gain_advance and not yes_he_gains_advance)
+	{
+		found
+	}
+
+	if(	yes_i_gain_advance
+		 and no_war )
+	{
+		best_reason_to_accept
+		love_him_more
+	}
+
+	if(	yes_i_gain_advance 
+		and yes_war 
+		and yes_he_is_scary)
+	{
+		best_reason_to_accept
+		love_him_more
+	}
+
+	if(	yes_i_gain_advance 
+		and yes_war 
+		and twenty_length_war 
+		and not stronger_than_him)
+	{
+		good_reason_to_accept
+		love_him_more
+	}
+
+	if(	yes_i_gain_advance 
+		and yes_war and 
+		(four_at_war or five_at_war or six_at_war or seven_at_war))
+	{
+		best_reason_to_accept
+		love_him_more
+	}
+
+	///////////////////////////////////
+	/// RESPOND TO OFFER CITY   ////
+	///////////////////////////////////
+	// IS CUT: SHOULDN"T HAPPEN
+	input i_gain_city
+		tri yes_i_gain_city(i_gain_city, 1.0, 0.1)
+
+	if(yes_i_gain_city)
+	{
+		found
+		worst_reason_to_accept
+	}
+
+	///////////////////////////////////
+	/// RESPOND TO OFFER GOLD   ////
+	///////////////////////////////////
+	/// return k_AVERAGE_VALUE;
+
+	input i_gain_gold
+		tri yes_i_gain_gold(i_gain_gold, 1.0, 0.5)
+
+	input gold_gained // the x times of our current savings
+		tri gains_gold(gold_gained, 0.2, 0.19)
+		tri gains_much_gold(gold_gained, 1.0, 0.8)
+		tri gains_a_whole_lotta_gold(gold_gained, 2.0, 1.0)
+		right gains_incredible_gold(gold_gained, 5.0, 3.0)
+
+	if(yes_i_gain_gold)
+	{
+		found
+	}
+
+	if(	yes_i_gain_gold
+		and gains_gold 
+		and no_war)  
+		{
+			best_reason_to_accept
+			like_him_more
+		} 
+
+	if(	yes_i_gain_gold 
+		and gains_much_gold 
+		and no_war) 	
+		{
+			best_reason_to_accept
+			love_him_more 
+		}
+		
+	if(	yes_i_gain_gold 
+		and ( gains_gold or gains_much_gold or gains_a_whole_lotta_gold ) 
+		and yes_war 
+		and yes_he_is_scary ) 	
+		{
+			best_reason_to_accept
+			love_him_more 
+		}
+
+	if(	yes_i_gain_gold 
+		and not hate_him
+		and gains_much_gold 
+		and yes_war 
+		and not my_worst_enemy) 	
+		{
+			best_reason_to_accept
+			love_him_more 
+		}
+
+	if(	yes_i_gain_gold 
+		and gains_a_whole_lotta_gold 
+		and yes_war 
+		and not stronger_than_him 
+		and not my_worst_enemy)
+		{
+			best_reason_to_accept
+			love_him_more
+		}
+
+	if(	yes_i_gain_gold 
+		and gains_incredible_gold ) 
+		{
+			best_reason_to_accept
+			worship_him_more
+		}
+
+	if( yes_i_gain_gold
+		and yes_war
+		and yes_nearly_tired_of_war )
+		{
+			good_reason_to_accept
+		}
+
+	///////////////////////////////////
+	/// RESPOND TO OFFER MAP   ////
+	///////////////////////////////////
+	/// return k_AVERAGE_VALUE;
+
+	// see DEMAND MAP for inputs
+
+	output just_saw_your_map[0.0, 2.0] = 0.0
+		tri yes_just_saw_your_map(just_saw_your_map, 1.0, 0.5)
+
+	if(	onceplus_i_said_yes_to_OFFER_MAP 
+		or once_i_said_yes_to_OFFER_MAP
+		or onceplus_i_said_yes_to_EXCHANGE_MAP
+		or once_i_said_yes_to_EXCHANGE_MAP
+		or onceplus_he_said_yes_to_DEMAND_MAP
+		or once_he_said_yes_to_DEMAND_MAP)
+		{
+			yes_just_saw_your_map
+		}
+
+	if(	yes_i_gain_map and not yes_he_gets_map)
+	{
+		found
+	}
+
+	if(	yes_i_gain_map 
+		and not yes_he_gets_map 
+		and not yes_war ) 
+		{
+			best_reason_to_accept
+		}
+
+	if(	yes_i_gain_map and not yes_he_gets_map 
+		and yes_war 
+		and not my_worst_enemy ) 
+		{
+			good_reason_to_accept
+		}
+
+	if( yes_i_gain_map and not yes_he_gets_map 
+		and yes_war  
+		and yes_he_is_scary ) 
+		{
+			good_reason_to_accept
+		}
+
+	if( yes_i_gain_map and not yes_he_gets_map
+		and best_reason_to_accept
+		and not yes_just_saw_your_map)
+		{
+			love_him_more
+		}
+
+	if( yes_i_gain_map and not yes_he_gets_map
+		and good_reason_to_accept
+		and not yes_just_saw_your_map)
+		{
+			like_him_more
+		}
+
+
+/////////////////
+/// TREATIES ////
+/////////////////
+
+	/////////////////////////////
+	/// RESPOND TO CEASE FIRE ///
+	/////////////////////////////
+	/// return k_GOOD_VALUE;
+
+	// check for this deal
+	input gains_cease_fire
+		tri yes_gains_cease_fire(gains_cease_fire, 1, .5)
+
+	if(	yes_gains_cease_fire)
+	{
+		found
+	}
+
+	if( yes_gains_cease_fire
+		and love_him
+		and not distrust_him)
+		{
+			best_reason_to_accept
+		}
+
+	// If we have been at war for a very long time, 
+	// then agree to a peace treaty.
+	if( yes_gains_cease_fire 
+		and yes_sick_of_war
+		and not distrust_him )
+		{
+			best_reason_to_accept
+		}
+
+	// If we are not at war, and we are afraid of you,
+	// then accept a peace treaty.
+	if(	yes_gains_cease_fire 
+		and not yes_war 
+		and ( afraid_of_him or terrified_of_him)) 
+		{
+			good_reason_to_accept
+		}
+
+	// If we are at war for a longer time, then consider
+	// a peace treaty.
+	if(	yes_gains_cease_fire 
+		and yes_war 
+		and neutral_towards_him 
+		and not a1to9_turn_war_with_him)
+		{
+			good_reason_to_accept
+		}
+
+	if(	yes_gains_cease_fire 
+		and yes_war 
+		and terrified_of_him
+		and not distrust_him) 
+		{
+			best_reason_to_accept
+		}
+
+	if(	yes_gains_cease_fire 
+		and not my_worst_enemy 
+		and yes_too_many_enemies
+		and not distrust_him) 
+		{
+			good_reason_to_accept
+		}
+
+
+	if(	yes_gains_cease_fire 
+		and best_reason_to_accept 
+		and not yes_we_just_made_a_peace_treaty
+		and not love_him)
+	{
+		love_him_more
+	}
+
+	if(	yes_gains_cease_fire 
+		and good_reason_to_accept
+		and not yes_we_just_made_a_peace_treaty
+		and not love_him)
+	{	
+		like_him_more
+	}
+
+	if(	yes_gains_cease_fire 
+		and average_reason_to_accept
+		and not yes_we_just_made_a_peace_treaty
+		and not love_him)
+	{	
+		same_like_him
+	}
+
+	/////////////////////////////
+	/// RESPOND TO ALLIANCE ///
+	/////////////////////////////
+	/// 	return k_AVERAGE_VALUE;
+
+	input gains_alliance
+		right yes_gains_alliance(gains_alliance, 1, .5)
+
+	if(	yes_gains_alliance)
+	{
+		found
+	}
+
+	if(	yes_gains_alliance 
+		and (hate_him or dislike_him))
+	{
+		worst_reason_to_accept
+	}
+
+	if(	yes_gains_alliance 
+		and terrified_of_him
+		and not my_worst_enemy
+		and not hes_in_first_place)
+	{
+		best_reason_to_accept
+	}
+
+	if(	yes_gains_alliance 
+		and love_him 
+		and not yes_war 
+		and my_best_friend
+		and yes_too_many_enemies)
+	{
+		good_reason_to_accept
+	}
+
+	if(	yes_gains_alliance 
+		and (like_him or love_him)
+		and not yes_war 
+		and my_best_friend 
+		and peaceful
+		and completely_trust_him)
+	{
+		average_reason_to_accept
+	}
+
+	if(	yes_gains_alliance 
+		and not hate_him
+		and not dislike_him
+		and terrified_of_him
+		and not yes_war
+		and yes_too_many_enemies) 
+	{
+		average_reason_to_accept
+	}
+
+	if(	yes_gains_alliance 
+		and not love_him
+		and equal_to_him 
+		and warlike) 
+	{
+		bad_reason_to_accept
+	}
+
+	
+	if(	yes_gains_alliance 
+		and hes_in_first_place
+		and not iam_in_last_place ) 
+	{
+		bad_reason_to_accept
+	}	
+	
+	if(	yes_gains_alliance 
+		and hes_in_first_place
+		and iam_in_last_place
+		and not my_worst_enemy
+		) 
+	{
+		best_reason_to_accept
+	}	
+	
+	// set regard based on responses.
+		if(	yes_gains_alliance 
+			and good_reason_to_accept)
+		{
+			love_him_more
+		}
+
+		if(	yes_gains_alliance 
+			and average_reason_to_accept)
+		{	
+			like_him_more
+		}
+
+		if(	yes_gains_alliance 
+			and bad_reason_to_accept)
+		{	
+			same_like_him
+		}
+
+	//////////////////////////
+	/// RESPOND TO ECOPACT ///
+	//////////////////////////
+	///	return (ai->m_gs->GetGlobalPollutionLevel() / pollutiontrigger) * 
+	///		k_GOOD_VALUE * fz_pact_end_pollution;
+	/// temporarily return k_AVERAGE_VALUE;
+
+	input end_pollution_pact
+		right yes_end_pollution_pact(end_pollution_pact, 1.0, 0.5)
+
+	output pact_end_pollution[0.0, 100.0] = 1.0
+
+	if(yes_end_pollution_pact)
+	{
+		found
+	}
+
+	if( yes_end_pollution_pact
+		and love_him 
+		and not distrust_him )
+		{
+			best_reason_to_accept
+		}
+
+///////////////////////////////
+/// RESPOND TO  EXCHANGES  ////
+///////////////////////////////
+
+	///////////////////////////////////////////////////
+	////////// RESPOND TO EXCHANGE ADVANCE  ///////////
+	///////////////////////////////////////////////////
+	//	if(mygain > hisgain)
+	//	{
+	//		if(mystepsgained > hisstepsgained
+	//		{
+	//			return k_BEST_VALUE;
+	//		}else
+	//		{
+	//			return k_AVERAGE_VALUE;
+	//		}
+	//	}else
+	//	{
+	//		if(mystepsgained > hisstepsgained)
+	//		{
+	//			return k_POOR_VALUE;
+	//		}else
+	//		{
+	//			return k_WORST_VALUE;
+	//		}
+	//	}
+
+	// see demands for message checks
+	if(	yes_he_gains_advance and yes_i_gain_advance)
+	{
+		found
+	}
+	
+	if(	yes_he_gains_advance and yes_i_gain_advance 
+		and dislike_him)
+	{
+		bad_reason_to_accept
+	}
+
+	if(	yes_he_gains_advance and yes_i_gain_advance 
+		and neutral_towards_him)
+	{
+		average_reason_to_accept
+	}
+
+	if(	yes_he_gains_advance and yes_i_gain_advance 
+		and (like_him or love_him))
+	{
+		average_reason_to_accept
+	}
+
+	if(	yes_he_gains_advance and yes_i_gain_advance 
+		and my_best_friend
+		and love_him)
+	{
+		good_reason_to_accept
+	}
+
+	if(	yes_he_gains_advance and yes_i_gain_advance
+		and good_reason_to_accept)
+	{	
+		love_him_more
+	}
+
+	if(	yes_he_gains_advance and yes_i_gain_advance 
+		and average_reason_to_accept)
+	{	
+		same_like_him
+	}
+
+	///////////////////////////////////////////////
+	////////// RESPOND TO EXCHANGE MAP  ///////////
+	///////////////////////////////////////////////
+	//	if(regard < 60) return 0.0;
+	//	if(known_percent < 0.5)	return k_GOOD_VALUE;
+	//	if(known_percent > 0.8)	return k_POOR_VALUE;
+	//	return k_AVERAGE_VALUE;
+
+	// see DEMAND MAP for inputs
+	// see OFFER MAP for yes_just_saw_your_map
+
+	if(yes_he_gets_map and yes_i_gain_map)
+	{
+		found
+	}
+
+		if(	yes_he_gets_map and yes_i_gain_map
+			and my_best_friend
+			and not yes_just_saw_your_map)
+		{
+			best_reason_to_accept
+		}
+
+		if(	yes_he_gets_map and yes_i_gain_map 
+			and (like_him or love_him) 
+			and afraid_of_him 
+			and not distrust_him
+			and not yes_just_saw_your_map)
+		{
+			good_reason_to_accept
+		}
+
+		if(	yes_he_gets_map and yes_i_gain_map 
+			and (not hate_him or not dislike_him) 
+			and not distrust_him
+			and not yes_just_saw_your_map)
+		{
+			good_reason_to_accept
+		}
+
+			// Now, set regard based on our responses.
+			if(	yes_he_gets_map and yes_i_gain_map 
+				and best_reason_to_accept)
+			{	
+				like_him_more
+			}
+	
+			if(	yes_he_gets_map and yes_i_gain_map  
+				and good_reason_to_accept)
+			{	
+				same_like_him
+			}
+
+
+//////////////////////////////////////////////////////
+////////// DEAL WITH UNFOUND ACCEPTS  ///////////
+//////////////////////////////////////////////////////
+
+	if(not found)
+	{
+		worst_reason_to_accept
+	}

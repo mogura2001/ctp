@@ -1,0 +1,224 @@
+#######################################
+
+# File: pointspad.ldl
+
+# Last Access: Mon Jun 01 13:01:31 1998
+
+#######################################
+
+
+
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+PointsPad {
+
+	string	xanchor	"left"
+
+	string	yanchor	"top"
+
+	string	pattern	"upba3010.tga"
+
+	int	xpix	100
+
+	int	ypix	50
+
+	int	widthpix	300
+
+	int	heightpix	160
+
+	ExitButton:T_FONT1_14 {
+
+		int	xpix	280
+
+		int	ypix	5
+
+		int	widthpix	15
+
+		int	heightpix	15
+
+		string	text	"str_ldl_X"
+		string	pattern	"upba3010.tga"
+
+	}
+
+	TotalPoints:T_FONT1_14 {
+
+		int	xpix	10
+
+		int	ypix	10
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Total_Points"
+		string	pattern	"upba3010.tga"
+
+	}
+
+	TotalPointsText:T_FONT1_14 {
+
+		int	xpix	170
+
+		int	ypix	10
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_500"
+		string	pattern	"upba3010.tga"
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+	}
+
+	PointsUsed:T_FONT1_14 {
+
+		int	xpix	50
+
+		int	ypix	40
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Points_Used"
+		string	pattern	"upba3010.tga"
+
+		string	just	"left"
+
+	}
+
+	PointsUsedText:T_FONT1_14 {
+
+		int	xpix	170
+
+		int	ypix	40
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_25"
+		string	pattern	"upba3010.tga"
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+	}
+
+	PointsRemaining:T_FONT1_14 {
+
+		int	xpix	50
+
+		int	ypix	70
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Points_Remaining"
+		string	pattern	"upba3010.tga"
+
+		string	just	"left"
+
+	}
+
+	PointsRemainingText:T_FONT1_14 {
+
+		int	xpix	170
+
+		int	ypix	70
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_475"
+		string	pattern	"upba3010.tga"
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+	}
+
+	LastCost:T_FONT1_14 {
+
+		int	xpix	50
+
+		int	ypix	100
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Last_Action's_Cost"
+		string	pattern	"upba3010.tga"
+
+		string	just	"left"
+
+	}
+
+	LastCostText:T_FONT1_14 {
+
+		int	xpix	170
+
+		int	ypix	100
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_15"
+		string	pattern	"upba3010.tga"
+
+		int	bevelwidth	1
+
+		int	beveltype	1
+
+	}
+
+	CostsButton:T_FONT1_14 {
+
+		int	xpix	150
+
+		int	ypix	130
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_"
+		string	pattern	"upba3010.tga"
+
+	}
+
+	UndoButton:T_FONT1_14 {
+
+		int	xpix	210
+
+		int	ypix	130
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	text	"str_ldl_CAPS_SELL"
+		string	pattern	"upba3010.tga"
+
+	}
+
+}
+
+
+
+$

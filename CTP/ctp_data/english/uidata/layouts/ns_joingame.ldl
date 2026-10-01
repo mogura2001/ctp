@@ -1,0 +1,877 @@
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+gameselectwindow:nswindow {
+
+	int	widthpix	450
+
+	int	heightpix	385
+
+	string	pattern	"upba6315.tga"
+
+
+
+	titlestatictext : nstitlestatictext {
+
+		string	text	"str_ldl_LOAD_SETUP"
+	}
+
+
+
+	gamenamelistbox:nslistbox {
+
+		int	xpix		119
+
+		int	ypix		59
+
+		int	widthpix	208
+
+		int	heightpix	230
+
+
+
+		string	pattern	"upba6315.tga"
+
+		int	srcxpix	117
+
+		int	srcypix	57
+
+		int	srcwidthpix	212
+
+		int	srcheightpix	234
+
+
+
+#		gamenamestatictext:nsstatictext {
+
+#			string	xanchor	"center"
+
+#			int	ypix	-23
+
+#			int	widthpct	100
+
+#			int	heightpix	20
+
+#			string	text	"Previous Game Setups:"
+
+#		}
+
+#		header {
+
+#			switch0:nsheaderswitch {
+
+#				string	parent	"gameselectwindow"
+
+#				int	widthpct	20
+
+#				int	heightpix	20
+
+#				string	text	"Game Setup Name"
+
+#			}
+
+#		}
+
+	}
+
+
+
+	deletebutton:nscommonbutton {
+
+		string	xanchor	"center"
+
+		int	ypix	303
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		string text		"str_ldl_Delete_Setup"
+		string image0	"upba5700.tga"
+
+		string image1	"upba5701.tga"
+
+		string disabledimage0	"upba5705.tga"
+
+		string disabledimage1	"upba5706.tga"
+
+	}
+
+
+
+	closebutton:nsclosebutton {
+
+	}
+
+
+
+	cancelbutton:nsprevbutton {
+
+	}
+
+
+
+	okbutton:nsnextbutton {
+
+	}
+
+}
+
+
+
+passwordscreen:nswindow_popup {
+
+	int	widthpix	400
+
+	int	heightpix	180
+
+
+
+	askstatic:T_FONT1_18 {
+
+		int ypix 20
+
+		int widthpct 100
+
+		int heightpix 20
+
+		string	text	"str_ldl_password"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	20
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	20
+
+	}
+
+
+
+	joinstatic:T_FONT1_18 {
+
+		int ypix 20
+
+		string xanchor "center"
+
+		int widthpct 100
+
+		int heightpix 20
+
+		string	text	"str_ldl_Password_required_to_join"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	20
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	20
+
+	}
+
+
+
+	yesnoswitchgroup {
+
+		string	xanchor	"center"
+
+		int	ypix	60
+
+		int	widthpix	189
+
+		int	heightpix	21
+
+		yesradio:nscommonbutton {
+
+			int	widthpix	89
+
+			int	heightpix	21
+
+			string	text	"str_ldl_Yes"
+			string	image0	"upba5702.tga"
+
+			string	image1	"upba5703.tga"
+
+			string	disabledimage0	"upba6326.tga"
+
+			string	disabledimage1	"upba6328.tga"
+
+		}
+
+		noradio:nscommonbutton {
+
+			int	xpix	100
+
+			int	widthpix	89
+
+			int	heightpix	21
+
+			string	text	"str_ldl_No"
+			string	image0	"upba5702.tga"
+
+			string	image1	"upba5703.tga"
+
+			string	disabledimage0	"upba6326.tga"
+
+			string	disabledimage1	"upba6328.tga"
+
+		}
+
+	}
+
+
+
+	inputstatic:T_FONT1_16 {
+
+		int	ypix	90
+
+		int	widthpct	100
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Enter_Password_COLON"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	90
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	20
+
+	}	
+
+
+
+	inputtextfield {
+
+		string	xanchor "center"
+
+		int	ypix	110
+
+		int	widthpix	100
+
+		int	heightpix	20
+
+
+
+# we don't want to use asterisks for this.
+
+#		bool	password	true
+
+	}
+
+
+
+	denystatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_Youve_been_denied"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+
+
+	fullstatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_The_game_was_full"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+
+
+	nolobbystatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_Could_not_join_lobby"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+
+
+	connectionloststatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_connectionlost"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+	nodialupstatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_nodialup"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+	connectionerrstatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_connectionerr"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+	noscenariostatic:T_FONT1_16 {
+
+		int	ypix	80
+
+		int	widthpct	100
+
+		int	heightpix	120
+
+		string	just	"center"
+
+		string	text	"str_ldl_No_Scenario"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	80
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	120
+
+	}	
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_CAPS_OK"
+	}
+
+}
+
+
+
+agesscreen:nswindow_popup {
+
+	int	widthpix	400
+
+	int	heightpix	180
+
+
+
+	NameStatic:T_FONT1_18 {
+
+		int ypix 20
+
+		int widthpct 100
+
+		int heightpix 20
+
+		string	text	"str_ldl_Select_Age_Research"
+
+
+		string	pattern	"upba6417.tga"
+
+		int	srcxpix 0
+
+		int	srcypix	20
+
+		int	srcwidthpix	400
+
+		int	srcheightpix	20
+
+	}
+
+	
+
+	StartStatic:T_FONT1_18 {
+
+		int	xpix	14
+
+		int	ypix	60
+
+		int	widthpix	160
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Starting_Age_COLON"
+	}
+
+
+
+	EndStatic:T_FONT1_18 {
+
+		int	xpix	206
+
+		int	ypix	60
+
+		int	widthpix	160
+
+		int	heightpix	20
+
+		string	text	"str_ldl_Maximum_Research_COLON"
+	}
+
+
+
+	StartDropDown {
+
+		int	xpix	14
+
+		int	ypix		80
+
+		int	widthpix	160
+
+		int	heightpix	24
+
+		string pattern "upba6417.tga"
+
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			int widthpix	20
+
+			string	imagebltflag	"chromakey"
+		}
+
+		window {
+
+			# 5 items == 5 * 20 == 100
+
+			int heightpix 100
+
+			listbox {
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+	}
+
+
+
+	EndDropDown {
+
+		int	xpix	206
+
+		int	ypix		80
+
+		int	widthpix	160
+
+		int	heightpix	24
+
+		string pattern "upba6417.tga"
+
+		button {
+
+			string image0	"upba0103.tga"
+
+			string image1	"upba0103.tga"
+
+			int widthpix	20
+
+			string	imagebltflag	"chromakey"
+		}
+
+		window {
+
+			# 5 items == 5 * 20 == 100
+
+			int heightpix 100
+
+			listbox {
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+	}
+
+
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge {
+
+		string	xanchor	"right"
+
+		int	widthpix	8
+
+		int	heightpix	152
+
+		string	image0	"upba6403.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	bottomedge {
+
+		string	yanchor	"bottom"
+
+		int	widthpix	330
+
+		int	heightpix	10
+
+		string	image0	"upba6407.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+
+
+	button0 : T_FONT1_16{
+
+		string	xanchor	"right"
+
+		string	yanchor	"bottom"
+
+		int	widthpix	70
+
+		int	heightpix	28
+
+		string	imagebltflag	"chromakey"
+
+		string	text	"str_ldl_CAPS_OK"
+		string	image0	"upba6413.tga"
+
+		string	image1	"upba6414.tga"
+
+		string disabledimage0	"upba6338.tga"
+
+		string disabledimage1	"upba6338.tga"
+
+	}
+
+}
+
+
+
+startselectingwindow:nswindow {
+
+	int	widthpix	450
+
+	int	heightpix	385
+
+	string	pattern	"upba6318.tga"
+
+
+
+	titlestatictext : nstitlestatictext {
+
+		string	text	"str_ldl_GAME_SETUP"
+	}
+
+
+
+	newbutton:nscommonbutton {
+
+		string	xanchor	"center"
+
+		int	ypix	140
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Create_New_Setup"
+		string	image0	"upba5700.tga"
+
+		string	image1	"upba5701.tga"
+
+		string disabledimage0	"upba5705.tga"
+
+		string disabledimage1	"upba5706.tga"
+
+	}
+
+
+
+	gamesetupbutton:nscommonbutton {
+
+		string	xanchor	"center"
+
+		int	ypix	168
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Load_Game_Setup"
+		string	image0	"upba5700.tga"
+
+		string	image1	"upba5701.tga"
+
+		string disabledimage0	"upba5705.tga"
+
+		string disabledimage1	"upba5706.tga"
+
+	}
+
+
+
+	savedbutton:nscommonbutton {
+
+		string	xanchor	"center"
+
+		int	ypix	195
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Load_Saved_Game"
+		string	image0	"upba5700.tga"
+
+		string	image1	"upba5701.tga"
+
+		string disabledimage0	"upba5705.tga"
+
+		string disabledimage1	"upba5706.tga"
+
+	}
+
+
+
+	scenariobutton:nscommonbutton {
+
+		string	xanchor	"center"
+
+		int	ypix	223
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		string	text	"str_ldl_Load_Scenario"
+		string	image0	"upba5700.tga"
+
+		string	image1	"upba5701.tga"
+
+		string disabledimage0	"upba5705.tga"
+
+		string disabledimage1	"upba5706.tga"
+
+	}
+
+
+
+	closebutton:nsclosebutton {
+
+	}
+
+
+
+	cancelbutton:nsprevbutton {
+
+	}
+
+}
+
+
+
+$

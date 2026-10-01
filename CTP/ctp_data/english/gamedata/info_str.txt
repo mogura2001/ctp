@@ -1,0 +1,444 @@
+#### general message strings ####
+
+##Instant Action Messages##
+IA_BREAK_TREATY     "Wise [Player.1.name], are you certain that you wish to break our treaty with the [Player.2.Civ]? If we do, the leaders of the world’s nations will distrust us."
+IA_BREAK_CEASE_FIRE "Glorious [Player.1.name], are you certain that you wish to break our peace treaty with the [Player.2.Civ]? In [Time.to.End.Cease.Fire] turns, we may attack them freely without upsetting the other leaders of the world."
+IA_BREAK_NO_PIRACY  "Daring Pirate Captain, are you sure you wish to pirate this route? Our agreements forbid this, but in [action.1.name] turns, we can pirate freely without besmirching our good name."
+IA_ENTERING_LANDS   "Brilliant General, are you sure you wish to enter the lands of the [player.2.civ_name_plural]? If we only wait another [action.1.name] turns, we can investigate without lowering our reputation."
+IA_BREAK_ECOPACT    "Mighty Industrialist, our cities are producing too much pollution. Soon we will violate the terms of our ecopact with the [player.2.civ_plural]."
+IA_BREAK_NO_TRADING "Enterprising Trader, creating this trade route will mean breaking our agreement with the [Player.2.civ]? Should we create the route anyway?"
+IA_AUTO_UNLOAD "Ambitious Admiral, do you wish our soldiers to unload here?"
+IA_LAND_IN_OCEAN    "Stellar Star Commander, our soldiers will not survive an ocean landing. Are you sure you wish to drown them?"
+IA_OUT_OF_FUEL "Wise Air Marshal, your orders will cause our planes to run out of fuel and crash. Are you sure you wish to destroy them?"
+IA_PILLAGE_OWN_LAND "Great Builder, are you sure you want to destroy your own people's work? "
+IA_SELL_IMPROVEMENT "You will receive [gold.amount] for selling the [building.name]. Are you sure you want to sell this?"
+IA_CERTAIN_REVOLUTION    "Oh magnificent [Player.title], our people will revolt if we cannot control their discontent. Are you sure you wish to end your turn and leave this crisis unchecked?"
+IA_FREE_SLAVES "Do you wish to free the slaves in [city.1.name]? "
+IA_POLLUTION_ENDS_GOVERNMENT  "The people will tolerate no more of your environmental hypocrisy. Rebels have toppled the government. Anarchy reigns."
+IA_CANNOT_AFFORD_MAINTENANCE  "We cannot afford our maintenance costs. If you end the turn now, improvements will be sold to cover the losses. End turn?"
+IA_CANNOT_AFFORD_SUPPORT  "We cannot afford our unit support costs. If you end the turn now, units will be disbanded. End turn?"
+IA_WAR_DISCONTENT_RISING "Our people are becoming discontent with so many units far from our cities. Perhaps you should send some of your soldiers home."
+IA_MAX_CITIES_REACHED    "You have reached the maximum number of cities that you can control under your Civilization's current government without incurring any happiness penalty. Perhaps you should consider building happiness improvements or switching to a different government."
+IA_SETTLING_TOO_CLOSE    "You cannot build a new city that close to an existing city. Find a more spacious site for your settler to build."
+IA_TOO_MANY_TRADE_ROUTES "[city.1.name] is already the destination of four trade routes. Our merchants cannot receive anymore commercial traffic. Find another city to send your goods."
+IA_CITY_WILL_STARVE   "The citizens of [city.name] have run out of food.  If you end the turn now, citizens will starve. End turn?"
+IA_YOU_WILL_BREAK_ROUTE  "You have stopped collecting the [good.name] at [city.1.name]. If you do not collect this good, your trade route to [city.2.name] will be broken. End turn?"
+IA_TILE_IMP_TIP     "Tile improvements must be placed within three tiles of a friendly city, or next to another of your tile improvements. Each tile improvement has a cost that must be paid from the pool of Public Works.  This message will appear once."
+IA_SEND_GOOD_TIP  "You can send a good that your people are working to another of your cities by double clicking on the good and selecting a destination.  This message will appear once."
+IA_BUY_GOOD_TIP  "You can offer to purchase a good being worked by another Civilization by double-clicking on the good and entering a purchase price.  This message will appear once."
+IA_SPECIAL_INVASION_TIP   "Only Marines may make amphibious assault attacks.  This message will appear once."
+IA_NOMOUNTAIN_UNIT_TIP   "Artillery, Tanks, and mounted units are unable to move through mountain tiles without a road, railroad, or maglev.  This message will appear once."
+IA_TRIREME_DEEPWATER_TIP  "This unit must stay within two tiles of a coastline.  This message will appear once."
+IA_CANNOT_CAPTURE_CITY   "Only military land units (assault greater than 0) can capture an enemy city."
+IA_BREAK_LEAVE_OUR_LANDS  "Bold Adventurer, if you continue on this path you will violate our agreement to respect the [player.1.civ_name] borders. Break the treaty?"
+IA_CAPITOL_WARNING  "The capitol improvement represents the center of your Civilization's government. You can have no more than one capitol at any time. When the new capitol is completed, the old capitol in [city.1.name] will be sold and the center of government will be transfered to [city.2.name]."
+IA_SPACE_BOMBARDMENT_TIP  "Your Commanders report enemy fire raining down with deadly accuracy from a clear blue sky.  Orbital bombardment is suspected.  This message will appear once."
+IA_LEFT_LANDS  "Your Units have returned to the nearest City in compliance with the stop trespassing agreement."
+IA_PILLAGE_SUICIDE  "Units were destroyed when a road was pillaged over impassable terrain."
+IA_AIRPORT_TIP "You now have the technology to construct airports in your cities.  You will need airports to build and refuel aircraft.  This message will appear once."
+IA_BREAK_ROUTE "If you stop working this good, you will break a trade route."
+IA_SPACE_ENGINEER_TIP "The Space Engineer must be launched into space by a Rail Launcher or carried aboard a Space Plane.  This message will appear once."
+IA_TERRAFORM_DEAD_TILE "You must first discover the Conservation advance before you can terraform Dead tiles."
+
+
+#Diplomacy#
+TREATY_TO_EXPIRE "Our treaty with the [player.1.civ_name_plural] is about to expire."
+BROKE_TREATY "The treacherous [player.1.civ_name_plural] have broken a treaty with the [player.1.civ_name_plural]."
+NO_PIRACY_BROKEN "The treacherous [player.1.civ_name_plural] have been caught pirating our trade routes. Our peace treaty is broken."
+ECOPACT_BROKEN "The dishonorable [player.1.civ_name_plural] have violated our ecopact by ravishing our Earth with pollution. Our peace treaty is broken."
+CEASE_FIRE_BROKEN "The dishonorable [player.1.civ_name_plural] have violated our peace treaty agreement, attacking us without provocation."
+ALLIANCE_BROKEN "The dishonorable [player.1.civ_name_plural] have unjustly attacked us, breaking our alliance and their word. It seems no one can be trusted."
+LEAVE_OUR_LANDS_BROKEN "The [player.1.civ_name_plural] have violated the stop trespassing agreement."
+REDUCE_POLLUTION_BROKEN "The [player.1.civ_name_plural] have violated the reduce pollution agreement"
+END_POLLUTION_BROKEN "The [player.1.civ_name_plural] have violated the pact to end pollution."
+ATTACK_ENEMY_BROKEN "The [player.1.civ_name_plural] have violated their agreement to attack the [player.2.civ_name_plural]."
+STOP_TRADE_WITH_BROKEN "The insolent [player.1.ci_name_plural] have violated their agreement to stop trading with the [player.2.civ_name_plural]."
+
+REDUCE_POLLUTION_BROKEN_BY_YOU "You have violated your reduce pollution agreement with the [player.1.civ_name_plural]."
+END_POLLUTION_BROKEN_BY_YOU "You have violated the pact to end pollution with the [player.1.civ_name_plural]."
+ATTACK_ENEMY_BROKEN_BY_YOU "You have violated your agreement with the [player.1.civ_name_plural] to attack the [player.2.civ_name_plural]."
+STOP_TRADE_WITH_BROKEN_BY_YOU "You have violated your agreement with the [player.1.civ_name_plural] to stop trading with the [player.2.civ_name_plural]."
+LEAVE_OUR_LANDS_BROKEN_BY_YOU "You have violated your promise to pull your troops out of [player.1.civ_name_singular] territory."
+
+
+#Civ/City Related#
+
+UNIT_COMPLETED "A new [unit.name] is ready in [city.1.name]"
+CITY_BUILD_QUEUE_IS_EMPTY "The build queue for [city.1.name] is empty."
+CITY_INEFFICIENCY "The people of [city.1.name] are building items that can no longer be built. We must issue them new orders."
+CITY_IS_CELEBRATING_HAPPINESS "Good tidings arrive. The happy people of [city.1.name] are having a celebration in your honor."
+CRISIS_CITIES_IN_REVOLT "Unhappiness has surpassed all reasonable levels. Your citizens in [city.name] have revolted."
+CRISIS_CITY_IS_STARVING "With sunken cheeks and quivering limbs, your people bury their dead and pray for better times. Your citizens in [city.name] are starving."
+CRISIS_CITY_IS_INFECTED "[city.name] is suffering from horrible plagues. Other cities trading with [city.name] are at great risk of infection."
+CITY_STARVING "[city.1.name] is not producing enough food to feed it's citizens"
+CITY_RIOTING "[city.1.name] is rioting"
+CITIES_KILLED_BY_CALAMITY "[city.1.name] has been destroyed by flooding. We must stop pollution and repair the damage done to the environment before more disasters occur."
+NEW_CIV "The [player.1.civ_name_singular] city of [city.1.name] has revolted and formed a new civilization.  They are calling themselves [player.2.civ_name_plural]. "
+CITY_NEW_OWNER "A passing merchant speaks of war. The [player.1.civ_name_plural] have captured [city.1.name] from the [player.2.civ_name_plural]."
+CIV_NEW_GOV "Letters from abroad report that the [player.1.civ_name_plural] have changed governments to [gov.name]."
+NEW_GOV_ENACTED  "Your Civilization has emerged from anarchy. A new government has been enacted."
+AI_ENTITY_REVOLT "The AI Entity has overthrown its human masters and established a new civilization ruled by intelligent machines!"
+SPACE_CITY_BUILDER "Our technological accomplishments have opened a new frontier to explore and conquer. The city of [city.1.name] offers humanity the first permanent colony in space."
+SPACE_CITY_OTHERS "Rumor has it that the [player.1.civ_name_plural] have established the first city in space. "
+SEA_CITY_BUILDER "Our technological accomplishments have opened a new frontier to explore and conquer. The city of [city.1.name] begins mankind's colonization of the ocean floor."
+SEA_CITY_OTHERS "Rumor has it that the [player.1.civ_name_plural] have established the first undersea city. A vast new world awaits colonization. "
+NOT_ENOUGH_GOLD "Your savings are running dangerously low. You must cut costs, or you will run out of money and be forced to sell your city improvements and renege on your citizen's wages. "
+NO_MAINT "The [building.name] in [city.1.name] has been sold for lack of gold for maintenance."
+BARBARIAN_WARNING "Marauding Barbarians have been spotted near the city of [city.1.name]."
+GROSS_POLLUTER "[city.1.name] is destroying the environment with pollution."
+WAGE_LEVEL_RESET "Since you do not have enough income to pay all of your citizens, your wages have been set to a lower level. Your people are not happy about it."
+CANT_BUILD_UNIT_CELL_IS_FULL "Construction of units in [city.1.name] has been halted. There are already nine units in that city. The new unit will be finished after at least one unit is moved out of the city."
+BUILDING_SETTLER_CITY_OF_ONE "You are about to finish building a Settler in [city.1.name]. That city has a size of one. Building the Settler will disband the city. Do you wish to build it anyway?"
+CITY_DESTROYED_BY_STARVING  "The city of [city.1.name] was destroyed by famine."
+CITY_DESTROYED_BY_WAR  "The city of [city.1.name] has been annihilated."
+
+
+#Trade#
+MONOPOLY_DETECTED "Beware the barons of business. [player.leader_name] is trying to corner the market in [good.name] at [city.name]."
+TRADE_OFFER_ACCEPTED "Foreigners wisely acknowledge the wisdom of your trade. [player.leader_name] has accepted your kind offer of [good.name] and will begin transporting it from your city of [city.1.name] to their city of [city.2.name]."
+RECEIVING_FROM_TRADE_ROUTE_AFFECTED "Your supplier of [good.name] in [city.name] of the [player.1.civ_name_plural] has ordered his people to stop sending you goods. If he does not change his mind, your route will be terminated."
+ACCEPT_TRADE_OFFER "The [player.1.civ_name_plural] have shown an interest in your offer of [good.1.name] from [city.1.name].  Shall we sell the Goods?"
+OFFER_REJECTED "[player.1.leader_name] has rejected your offer to buy Goods."
+TRADE_PIRATED "Our trade route from [city.1.name] to [city.2.name] has been pirated. Survivors report that the pirates flew the [player.1.civ_name_singular] flag."
+TRADE_PIRATED_UNKOWN "Our trade route from [city.1.name] to [city.2.name] has been pirated and the Caravan destroyed."
+OFFER_ACCEPTED "The [player.1.civ_name_plural] would like to accept our offer of [good.name]. Create trade route? Yes or no."
+INFECTED_VIA_TRADE "A mysterious plague is reeking havoc in [city.1.name]. The infection seems to have spread through our trade routes."
+BID_ACCEPTED  "The [player.1.civ_name_plural] have accepted your offer to buy goods. Trade route created."
+BID_REJECTED	  "The [player.1.civ_name_plural] have rejected your offer to buy goods."
+FOREIGN_ROUTE_BROKEN  "The [player.1.civ_name_plural] have stopped sending [good.name] to the city of [city.1.name]. Trade route broken."
+SENDER_KILLED_TRADE_ROUTE "[player.1.leader_name] has cancelled the trade route carrying [good.1.name] from [city.1.name] to [city.2.name]."
+
+#Trade Screen Messages#
+TRADER_GREETING	"Trader at your service. What would you like to do today?"
+BUILD_CARAVANS	" I recommend that you build more Caravans."
+SELL_GOODS	" I recommend that you sell your goods."
+SEND_GOODS	" I recommend that you send goods within your Civilization."
+BUY_GOODS	" I recommend that you buy goods from another Civilization."
+# FIXME BRAD
+RESEARCH_TRADE " I recommend that you research Trade."	
+
+RECOMMEND_SELECT_SEND	"This is our inventory of trade goods. I recommend that we send [good.name] from [city.1.name] to [city.2.name]."
+RECOMMEND_NO_SEND	"This is our inventory of trade goods. I recommend that we send nothing at this time."
+ROUTE_DETAILS_SEND_POP_UP	"[good.name] will be sent from [city.1.name] to [city.2.name]."
+VERIFICATION_TRADE_ROUTE_POP_UP	"[good.name] has been sent from [city.1.name] to [city.2.name]. Trade route created."
+NO_CARAVAN	"You have no free Caravan to transport the goods! Trade route could not be created."
+RECOMMENDATION_SELL	"This is our inventory of trade goods. I recommend that we sell [good.name] on the open market."
+SELECT_CITY_SELL	"From what city would you like to sell [good.name]?"
+REJECTION_POP_UP	"No one is interested in purchasing our goods at this time."
+BUY_OFFER_POP_UP	"The [player.1.civ_name_plural] would like to take you up on your offer to sell [good.name]. Create trade route?"
+TURN_DOWN_OFFER_POP_UP	"The [player.1.civ_name-singular] offer has been declined."
+RECOMMEND_BUY	"These goods are for sale on the open market. I recommend that we buy [good.name] and transport the goods to [city.1.name]."
+RECOMMEND_NO_DEAL	"These goods are for sale on the open market, but will not return a profit. I recommend that we buy nothing at this time."
+SELECT_BUY_DESTINATION	"To what city should we transport the [good.name]?"
+SALE_REJECTION_POP_UP	"The [player.1.civ_name_plural] have rejected your offer to buy their goods!"
+REVIEW_TRADE	"Great leader, we have collected this trade information for your review."
+BREAK_ROUTE_WARNING_POP_UP "Breaking a foreign trade route may have diplomatic consequences. Proceed?"
+BROKEN_ROUTE_POP_UP	"Trade route broken. You now have one additional Caravan available."
+MAX_TRADE_DEALS_POP_UP	"Our merchants are exhausted. We can make no further offers to the [player.1.civ_name_plural] right now."
+MULTI_REJECTION_POP_UP	"Your offer has been sent out to the nations of the world. You will be informed if someone would like to purchase your goods."
+REDUNDANT_OFFER_POP_UP	"You are already offering this good at a different price. Replace old offer?"
+MULTI_PURCHASE_OFFER_SENT	"Your offer has been sent to the [player.1.civ_name_plural]."
+CANCEL_OFFER	"Your offer has been withdrawn."
+RECOMMEND_SEND_CITY "I recommend that we send [good.name] to [city.1.name]."
+TRADE_BID_SET_PRICE "You will offer [player.1.leader_name] of the [player.1.civ_name_plural] [gold.1.amount] gold for [good.1.name] from [city.1.name] to [city.2.name]."
+TRADE_BID "[player.1.leader_name] of the [player.1.civ_name_plural] offers you [gold.1.amount] gold every turn in exchange for [good.1.name] from [city.1.name] to [city.2.name]."
+TRADE_BID_ACCEPTED "[player.1.leader_name] of the [player.1.civ_name_plural] accepts your offer of [gold.1.amount] gold for [good.1.name] from [city.1.name] to [city.2.name]. Trade route created."
+TRADE_BID_REJECTED "[player.1.leader_name] has rejected your offer of [gold.1.amount] for [good.1.name] from [city.1.name] to [city.2.name]."
+NO_TRADERS "You do not have any unused Caravans. You cannot create a trade route until you build another Caravan or cancel an existing route."
+RECOMMEND_SEND_CITY "I recommend that we send [good.name] to [city.1.name]."
+RECOMMENDATION_NO_SELL "I recommend that you sell nothing at this time"
+
+
+#Victory/End Conditions#
+PLAYER_DEFEATED "The [player.1.civ_name_plural] have been utterly defeated."
+PLAYER_DEFEATED_BY "The [player.1.civ_name_plural] have been utterly defeated by the [player.2.civ_name_plural]."
+YOU_LOSE "In history, it will be written: your people were destroyed due to your gross incompetence. You have lost."
+END_OF_GAME_TIME_IS_RUNNING_OUT "Time is running out. Humanity is searching for a single leader and will make their choice soon."
+END_OF_GAME_OUT_OF_TIME "The year is 3000AD, there is no more time.  If you continue, no score will be kept."
+ALIEN_ALMOST_DONE "The alien embryo has entered the final stage of its development. Soon the world shall bow before your accomplishment, unless someone kills you or beats you to it first. "
+ALIEN_ALMOST_DONE_OTHERS "Spies report that the [player.1.civ_name_plural] have almost completed their work on the Alien Life Project. We must act fast or all will be lost."
+EMBRYO_STAGE_2 "The alien embryo has entered the second stage of its development. Our scientists report of the creature's stirring intelligence and its unfathomable powers."
+EMBRYO_STAGE_3 "The alien embryo has entered the third stage of its development. Our scientists watch nervously while force fields strain to contain the creature's blossoming psychic energy."
+NEED_ECD "Our scientists advise that we build additional ECD's to continue work on the Alien Life Project."
+NEED_FIELD "The alien's psychic energy is too much for unprotected minds. Our scientists report bouts of madness and refuse to continue work on the Alien Life Project until another Containment Field has been installed. "
+SHOULD_BUILD_SPLICER "Our scientists advise that we build a gene splicer to speed up development of the alien embryo. "
+CAN_DISCOVER_ALIENLIFE	"Your Civilization has entered a new era of scientific exploration.  You may now research Alien Archaeology."
+MUST_DISCOVER_ALIENLIFE	"The embryo's development cannot be completed until we have achieved a scientific understanding of the alien species. We must delve into the secrets of Alien Archaeology."
+END_GAME_RECOVERED_PROBE  "Your probe has returned from its mission, carrying with it the secret of an ancient alien race.  You may now begin construction of the Xenoform Laboratory."
+END_GAME_PROBE_RETURNED "Our Probe has emerged from the Wormhole.  We must bring it into safety before our enemies can strike." 
+END_GAME_CATACLYSM_OTHER_CIV "Spies report that a cataclysmic explosion has destroyed the [player.1.civ_name_singular] Alien Life Project."
+END_GAME_CATACLYSM "Disaster strikes! A faulty containment field unleashed madness in the Xenoform Laboratory. Our chief scientist has initiated the self-destruct mechanism. All our work is lost."
+END_GAME_X_LAB_CAPTURED  "[player.1.civ_name_singular] forces have captured and destroyed the [player.2.civ_name_singular] Xenoform Laboratory in the city of [city.1.name]."
+END_GAME_OTHER_CIV_BUILT_LAB "Spies report that the [player.1.civ_name_plural] have begun work on the Alien Life Project at a secret location."
+END_GAME_OTHER_CIV_STARTED_SEQUENCE "Rumor has it that the [player.1.civ_name_plural] have managed to create a living alien embryo."
+END_GAME_YOU_CAPTURED_X_LAB "Our strike against [city.1.name] uncovered a secret laboratory where the enemy was conducting horrible experiments with some sort of alien being. The laboratory and the alien being have been obliterated."
+END_GAME_FINISHED_X_LAB  "Our secret Xenoform Laboratory has been completed! Now we will need to construct an Embryo Tank to house the alien creature."
+ALIEN_SCRAPPED_OWNER "Rumor has it that the [player.1.civ_name_plural] have completed Stage 2 of the Alien Life Project."
+
+
+#Pollution#
+WORLD_POLLUTION_SPACE_LAUNCH "Our satellites have detected rising atmospheric pollution caused by space launches.."
+WORLD_POLLUTION_NUCLEAR_WAR "Pandora's box has been opened. Nuclear fallout has been detected."
+WORLD_POLLUTION_GLOBAL_WARMING "The Earth cannot tolerate man's continued pollution. Global warming is imminent."
+WORLD_POLLUTION_OZONE_LOSS_IMMINENT "The ozone layer is deteriorating rapidly. Scientists expect ultraviolet radiation will soon reach dangerous levels."
+WORLD_POLLUTION_FLOODING_MINOR "The predicted disasters of global warming have begun. Minor flooding has occurred."
+WORLD_POLLUTION_FLOODING_MAJOR "Writers report of millions drowned. Major flooding has occurred."
+CITY_POLLUTION_WARNING "[city.1.name] is producing much pollution."
+WORLD_POLLUTION_STABLE "The Earth has returned to equilibrium. Global pollution has stabilized."
+
+
+#Wonders#
+WONDER_STARTED "A race has begun to complete a Wonder of the World. [player.1.leader_name] has begun work on the [wonder.name]."
+WONDER_STOPPED "Your competitors surrender their quest for glory. [player.1.leader_name] has stopped work on the [wonder.name]."
+WONDER_ALMOST_FINISHED "You have run out of time.  [player.1.leader_name] has almost finished [wonder.name]."
+WONDER_COMPLETE_OWNER "You have bested all other Civilizations. Your [wonder.name] has been completed."
+WONDER_COMPLETE_ALL "Wandering merchants bring dire news. [player.1.leader_name] has completed [wonder.name]."
+WONDER_DESTROYED "The [wonder.name] has been destroyed."
+NANITE_DEFUSER_ELIMINATES_NUKES "The [player.1.civ_name_plural] have built a [wonder.1.name], eliminating all nuclear weapons."
+FORBIDDEN_CITY_PEACE "The power of the Forbidden City strikes fear into the hearts of your enemies.  The [player.1.civ_name_plural] have ended hostilities."
+CITY_JOINE_YOUR_CIV  "Seeking the true freedom and equality granted by the Egalitarian act, the citizens of [city.1.name] have revolted and joined your civilization." 
+NO_EMBASSIES_WONDER "The Forbidden City prevents you from establishing an embassy with the [player.1.civ_name_plural]"
+WONDER_OBSOLETE "Recent advances have rendered [wonder.name.article][wonder.name] obsolete."
+
+###
+#Goody Huts#
+DISCOVERED_REMNANTS_OF_ANCIENT_CIV "Luck flies with you. You have discovered the remnants of an ancient Civilization and gained a new Advance. You now have the knowledge of [advance.name]."
+RUIN_BECOMES_CITY "You have discovered a lost tribe. Believing you to be a hero from their myths, they have happily joined your Civilization."
+NOMADS_HAVE_JOINED_YOU "A band of wandering nomads has pledged allegiance to your rule."
+MERCENARIES_HAVE_JOINED_YOU "Seeking fortune and glory, mercenaries have joined your tribe."
+DISCOVERED_ANCIENT_TREASURE "You have discovered ancient treasure of [gold.amount] Gold. Pray that no curses follow your fortuitous discovery."
+BESET_BY_VANDALS "Prepare for battle! Your people have been beset by barbarians."
+BESET_BY_NOTHING "Searching the ancient ruins, you find no trace of the people that once lived here."
+
+
+#Advances#
+PICK_NEW_DISCOVERY "Citizens cheer at your wise guidance of their culture. Your Civilization has discovered [advance.1.name]. Select a new Advance."
+SPECIAL_DISCOVERY_PLAYER "You have brought new wisdom into the world, changing forever the way that people think about their lives. You have discovered a special Advance."
+SPECIAL_DISCOVERY_OTHER "Despite your leadership, other nations have taken the lead in expanding human culture. A Player has discovered a special Advance."
+DISCOVERY_FOUND "Your scientific wisdom has led your culture to ever greater heights. An Advance has been found."
+PLAYER_DISCOVERS_NEW_GOVERNMENT "You have discovered [gov.name]. Would you like to enact a new government now?"
+UNIT_OBSOLETE_CIVWIDE "The discovery of [advance.name] has rendered the following units obsolete."
+
+IMPROVEMENT_OBSOLETE_CIVWIDE "The discovery of [advance.name] has rendered the [Improvement.name] obsolete."
+
+
+EDISON_DISCOVERY "Researchers at Edison's Lab have made a major breakthrough. [advance.name] has been discovered."
+INTERNET_DISCOVERY "Our scientists have downloaded the secret of [advance.name] from the Internet."
+
+
+#Units#
+NO_SUPPORT "Units have been disbanded for lack of Support."
+ONE_OR_MORE_UNITS_WILL_CRASH "Your [unit.1.name] will run out of fuel if it does not end its turn in a city or airbase"
+UNIT_EXPELLED  "Units have been expelled by the [player.1.civ_name_plural]."
+UNIT_DISBANDED_ON_GOV_CHANGE "Units have been disbanded due to change in government."
+
+
+
+#Warfare#
+CITIES_CAPTURED_VICTIM "[city.1.name] has been occupied by enemy forces!"
+CAPITAL_CITY_CAPTURED_VICTIM "The capitol has been occupied by enemy forces! Our people are fleeing in terror!"
+CAPITAL_CITY_CAPTURED_ATTACKER "Your military brilliance is unmatched. You have captured the [player.1.civ_name_singular] capitol."
+CIV_STARTED_WAR "The [player.1.civ_name_plural] have gone to war with the [player.2.civ_name_plural]."
+ADVANCE_FROM_CAPTURING_CITY "Looting [city.1.name], you discover the secret of [advance.1.name]"
+
+#Time#
+NEW_AGE_FIRST "You have led the world into a new era of scientific and cultural thought. Our people marvel at the wonders of the [age.name] age."
+NEW_AGE_OTHERS "The [player.1.civ_name_plural] have led the world into a new era of scientific and cultural thought. Our people marvel at the wonders of the [age.name] age."
+
+
+##Special Actions##
+
+
+#Reform#
+REFORM_CITY "The heresy in [city.1.name] has been crushed. City reformed."
+
+
+#Embassy#
+EMBASSY_VICTIM "[player.1.civ_name_singular] Diplomats have established an embassy in our Civilization."
+EMBASSY_ATTACKER "Our Diplomats have established a new embassy with the [player.1.civ_name_plural]."
+
+
+#Party#
+PARTY_COMPLETE_VICTIM "[player.1.civ_name_singular] Diplomats have thrown an extravagant party for our government officials. Our people will protest more strongly if we go to war with these cunning showmen."
+
+
+#Convert#
+CONVERT_COMPLETE_VICTIM "Foreign Clerics have converted the gullible people of [city.1.name] to their false religion."
+CONVERT_FAILED_VICTIM "Foreign Clerics have been caught preaching heresy to the impressionable people of [city.1.name]."
+CONVERT_FAILED_ATTACKER "Foreign heretics have refused to accept the one true faith (namely yours)."
+PROTECTED_FROM_CONVERSION_BY_WONDER "[city.1.name] is protected from conversion by [wonder.1.name]"
+
+#Indulgence#
+INDULGENCE_COMPLETE_VICTIM "Your guilt-ridden citizens have tried to ensure their own salvation by giving gold to the foreign priests."
+
+
+#Soothsay#
+SOOTHSAY_COMPLETE_VICTIM "Our citizens quake with fear as foreign priests foretell of their doom."
+
+
+#Injunction#
+INJUNCTION_COMPLETE_VICTIM "Production has been brought to a crashing halt in [city.1.name] by foreign legal action."
+
+
+#Sue#
+SUE_COMPLETE_VICTIM "Our trade units have been liquidated by a foreign lawsuit."
+
+#Franchise#
+BRANCH_COMPLETE_VICTIM "Foreign corporations have established a franchise to exploit the hard-working people of [city.1.name]."
+BRANCH_FAILED_VICTIM "Our people's loyalty has prevented foreign corporations from gaining a foothold in [city.1.name]."
+
+
+#Advertise#
+ADVERTISE_COMPLETE_VICTIM "Subneural Ads have affected the minds of our people in [city.1.name]. The insidious advertisements have made the people unhappy."
+
+#Conduct Hit#
+CONDUCTHIT_COMPLETE_VICTIM "Recent assassinations of popular political figures have made our people lose their sense of hope."
+
+#Uprising#
+CRISIS_SLAVE_REVOLT "Slaves in [city.1.name] have overthrown their masters."
+UPRISING_COMPLETE_VICTIM "Slaves in [city.1.name] have overthrown their masters.  Foreign interference is suspected."
+UPRISING_FAILED_ATTACKER "Our policy of freedom has suffered a setback. Your attempt to instigate a slave uprising has failed."
+UPRISING_FAILED_VICTIM "Foreign powers are upsetting our slaves. An Abolitionist was thwarted while trying to aid a slave uprising in [city.1.name]."
+
+
+#Terror Hack#
+TERRORHACK_COMPLETE_ATTACKER "Our terror hack has taken down the data-web in [city.1.name], spreading fear and confusion through the enemy city."
+TERRORHACK_COMPLETE_VICTIM "Terror and confusion have overtaken our people of [city.1.name] as information networks crash citywide. Our spies suspect the handiwork of a Cyber Ninja."
+TERRORHACK_FAILED_ATTACKER "The enemy's computer security overcame our Cyber Ninja's bravest efforts. Terror hack unsuccessful."
+TERRORHACK_FAILED_VICTIM "Your information security system is formidable. You have foiled a computer terrorist plot in [city.1.name]."
+
+
+
+#Free Slave#
+FREESLAVE_COMPLETE_VICTIM "Our slaves in [city.1.name] have been stolen by foreign Abolitionists."
+FREESLAVE_FAILED_VICTIM "Foreign Abolitionists have been caught attempting to steal slaves from [city.1.name]."
+FREESLAVE_COMPLETE_AGRESSOR "You have freed slaves from foreign captivity. The ex-slaves have been sent to [city.name]."
+FREESLAVE_FAILED_AGRESSOR "This time you were unable to free slaves from captivity, but the battle for freedom will live on."
+FREESLAVE_NO_SLAVES_TO_FREE  "There are no slaves to free in the city of [city.name]."
+
+#Nukes#
+NUKE_FAILED_VICTIM "Your people have been spared. A terrorist's nuclear device has been found and deactivated."
+SAFE_FROM_NUKES_VICTIM "Thanks to SDI, [city.1.name] has survived a nuclear attack unscathed."
+SAFE_FROM_NUKES_AGRESSOR "SDI has protected the target city from your Nukes."
+NUKE_FAILED_AGRESSOR "Your Spies were caught trying to detonate a nuclear device in the enemy city. This is not going to help our political reputation."
+NUKE_COMPLETE_VICTIM "A nuclear device has been detonated in the city of [city.1.name]. When we discover who is responsible for this heinous act, we will surely make them pay."
+
+
+#Nano-Terror#
+IMMUNE_TO_NANO_TERROR_VICTIM "Your people can sleep well again. The city of [city.1.name] is immune to nano-attack."
+NANO_TERROR_FAILED_VICTIM "Our scientists have foiled an enemy plot to sabotage the industries of [city.1.name] with a nefarious nanological weapon."
+NANO_TERROR_COMPLETE_VICTIM "Foreign dogs have unleashed a nanological virus on the city of [city.1.name]."
+NANO_TERROR_FAILED_AGRESSOR "Your quest to save the Earth has fallen on hard times. Your nano-attack has failed."
+IMMUNE_TO_NANO_TERROR_AGRESSOR "Despite your best efforts, your enemy has foreseen your cunning nature. The city that you targeted for nano-attack is immune."
+
+
+#Slavery#
+SLAVE_COMPLETE_VICTIM "Citizens have disappeared in [city.1.name]. Foreign Slavers are suspected."
+SLAVE_FAILED_VICTIM "Slavers were stopped trying to carry off the citizens of [city.1.name]."
+PROTECTED_FROM_SLAVERY_VICTIM "City walls have protected the people of [city.1.name] from slavery."
+PROTECTED_FROM_SLAVERY_ATTACKER "City walls prevent our Slavers from entering [city.1.name]."
+SLAVERY_COMPLETE_ATTACKER "Our slave raid was successful! The captives have been put to work in [city.name]."
+SETTLER_SLAVED_VICTIM "Our Settler has disappeared.  Slavers are suspected."
+
+#Infection#
+BIOINFECT_COMPLETE_VICTIM  "Your despicable enemies have infected the people of [city.1.name] with a terrible virus."
+BIOINFECT_FAILED_VICTIM "Your brave doctors have prevented an infection from spreading at the city of [city.1.name]. Foreign involvement is suspected."
+BIOINFECT_COMPLETE_AGRESSOR "Your ruthlessness is impressive. You have infected the enemy population with a deadly plague."
+BIOINFECT_FAILED_AGRESSOR "Luck is against you. Your Infector was intercepted on the way to his target. The infection failed."
+IMMUNE_TO_BIOINFECT_AGRESSOR "Your enemy anticipates the depths of your cruelty. Their city is immune to biological infection. Your infection attack has failed."
+IMMUNE_TO_BIOINFECT_VICTIM "High praises for your wise scientific research. Nanolgical defenses have protected the people of [city.1.name] from biological infection."
+
+
+#Stopped by Spies#
+STOPPED_BY_SPIES_VICTIM "Your vigilance has paid off. A Spy has been captured at the city of [city.1.name]."
+STOPPED_BY_SPIES_AGRESSOR  "Your Spy was stopped by foreign Spies."
+
+
+#Investigate City#
+INVESTIGATE_CITY_FAILED_VICTIM "Spies lurk in the darkness, but our security is formidable. A Spy was thwarted while trying to spy on our city."
+INVESTIGATE_CITY_FAILED_AGRESSOR "Our spy was captured while trying to infiltrate the city of [city.1.name]."
+
+
+#Steal Technology#
+STEAL_TECHNOLOGY_FAILED_VICTIM  "Foreigners covet our knowledge, but our guardians are watchful. A Spy was thwarted while trying to steal  scientific materials from the city of [city.1.name]."
+STEAL_TECHNOLOGY_FAILED_AGRESSOR "Foreign countermeasures have thwarted your Spy's attempt to steal an Advance. Your scientists are greatly disappointed."
+NOTHING_TO_STEAL_AGRESSOR "Your dominance shall be written in history. Your Spies report that the targeted civilization has no valuable Advances to steal."
+STOLE_TECHNOLOGY_AGRESSOR "Your Spy shall return home a hero. [advance.1.name] has been stolen from the [player.1.civ_name_plural]"
+STEAL_TECHNOLOGY_VICTIM "Spies have stolen sensitive scientific materials from the city of [city.1.name]."
+STEAL_WHICH_ADVANCE "What Advance do you want to steal from the [player.1.civ_name_plural]? (Or you can try for a random Advance with a greater chance of success)."
+NO_ADVANCES_TO_STEAL "The [player.1.civ_name_plural] do not posses any Advances worth stealing."
+
+#Incite Revolt#
+INCITE_REVOLUTION_FAILED_VICTIM "Foreign agents have attempted to incite your citizens to revolt in [city.1.name]"
+INCITE_REVOLUTION_FAILED_AGRESSOR "Your policy of freedom has suffered a setback. Weapons and propaganda you sent to fuel a peasant revolt have fallen into foreign hands."
+INCITE_REVOLUTION_COMPLETE_VICTIM "The people of [city.1.name] have revolted.   Our agents suspect foreign involvement."
+
+
+#Assassination#
+ASSASSINATION_FAILED_VICTIM "Foreign dogs tried to bomb the government, but your watchful guards found and defused the bomb in time."
+ASSASSINATION_FAILED_AGRESSOR "Foreign agents uncovered your attempt to destroy their government. Rumors swirl over your possible involvement."
+ASSASSINATION_COMPLETE_VICTIM "A bomb has killed many cabinet ministers in the capitol. The government is in shambles. Chaos has broken out."
+ASSASSINATION_COMPLETE_AGGRESSOR "How unfortunate... a terrorist bomb has destroyed the [player.1.civ_name_singular] cabinet building.  Without a functioning government, the [player.1.civ_name_plural] have fallen into a state of anarchy."
+
+
+#Hear Gossip#
+GOSSIP_WARTIME_READINESS "The [player.1.civ_name_plural] are at wartime readiness"
+GOSSIP_ALERT_READINESS "The [player.1.civ_name_plural] are on alert"
+GOSSIP_PEACETIME_READINESS "The [player.1.civ_name_plural] are at peacetime readiness"
+GOSSIP_CAPTION "Gossip"
+GOSSIP_BORING "The [player.1.civ_name_plural] are a remarkably boring people, and have nothing worth gossiping about"
+GOSSIP_MAP "We have gleaned knowledge of the world map from the [player.1.civ_name_plural]"
+GOSSIP_COMPLETE_ATTACKER "Our Diplomats have overheard gossip. We have gained [advance.1.name]."
+
+#Combat#
+UNIT_VETERAN "For valor in combat, your [unit.name] has been promoted to veteran status."
+
+##Disabled Screen Buttons##
+
+CIV_STATUS_DISABLED  "You need to build a city before you can access this screen."
+SCIENCE_STATUS_DISABLED  "You need to build a city before you can access this screen."
+CITY_STATUS_DISABLED   "You need to build a city before you can access this screen."
+DIPLOMACY_STATUS_DISABLED  "You must contact another Civilization before you can access this screen."
+UNIT_STATUS_DISABLED  "You need to have units to access this screen."
+TRADE_STATUS_DISABLED  "You need to build a city before you can access this screen."
+CANT_CHANGE_GOV "You cannot change governments until you discover a new government advance."
+CHANGE_GOV_WARNING "Changing governments will result in a brief period of Anarchy.  Change government to [gov.name]?"
+DIP_OFFER_ADVANCE_NONE "There are no advances to offer."
+
+#Throne Room#
+##	Age 1##
+MONUMENT_AGE_1_REGION_1_ROMAN_BUILDING  "Our finest craftsmen have constructed this palace to honor your prosperous reign."
+MONUMENT_AGE_1_REGION_2_ARENA  "Hail our champion, [player.leader_nocolor]. We celebrate your power  by holding Olympic Games in your honor."
+MONUMENT_AGE_1_REGION_3_FOUNTAIN  "We celebrate your magnificent reign with this wondrous fountain.  May its waters flow for a thousand years."
+MONUMENT_AGE_1_REGION_4_ROMAN_STATUE "Glorious ruler, we trumpet your military cunning with a statue of finest marble.  	"
+MONUMENT_AGE_1_REGION_5_ROMAN_TEMPLE "The mysteries of the universe open beneath the gaze of your wisdom. Our new Temple shall spread wisdom through the land. 	"
+#	Age 2##
+MONUMENT_AGE_2_REGION_1_CASTLE	"Let each stone we lay in this fine Castle be a testament to your greatness. "
+MONUMENT_AGE_2_REGION_2_CONCERT_HALL 	"The master musician, Mozart, dedicates his finest symphony to your glory. Let this symphony hall herald the dawn of a glowing new age. "
+MONUMENT_AGE_2_REGION_3_BETTER_FOUNTAIN	"Generous protector, we celebrate our years beneath your rule. Let this fountain represent the glory which spills from our empire. "
+MONUMENT_AGE_2_REGION_4_BETTER_STATUE  "Great general, to honor your might, we have commissioned this work of art from the genius Italian master. "
+MONUMENT_AGE_2_REGION_5_CATHEDRAL 	"Great leader,  the heavens have blessed us with so fine a leader as yourself. In thanks, we consecrate this Cathedral. "
+##	Age 3##
+MONUMENT_AGE_3_REGION_1_STATE_HOUSE  "Such a sophisticated leader as yourself requires a fitting office from which to conduct business.  Look now upon this magnificent tower of the modern
+age. "
+MONUMENT_AGE_3_REGION_MOVIE_THEATRE  "Great Leader, we hail  the prosperity you have brought to our Empire. The legendary Charlie Chaplin dedicates this theater to your greatness. 	"
+MONUMENT_AGE_3_REGION_3_TRIUMPH	"Let none doubt the rulership prowess of [player.leader_nocolor].  This archway symbolizes the doorway to the prosperity we now enjoy. "
+MONUMENT_AGE_3_REGION_4_COOL_CAR  "Great general, in celebration of our freedom and prosperity, we have constructed the Statue of Liberty! "
+MONUMENT_AGE_3_REGION_5_UNKNOWN	"Let this incredible bridge stand as a symbol of [player.leader_nocolor]'s industriousness and technological mastery."
+##	Age 4##
+MONUMENT_AGE_4_REGION_1_ARCOLOGICAL  "Our wealth rises on the tide of your intelligence. We honor you with a summer palace. "
+MONUMENT_AGE_4_REGION_2_ZOO "Your research grants have opened new worlds of genetic understanding. In celebration, we have created this public science center. "
+MONUMENT_AGE_4_REGION_3_HOLOGRAPHIC	"Your genius protects and nourishes our people.  Let this holofountain stand as a permanent record of your reign. 	"
+MONUMENT_AGE_4_REGION_4_COOLER_CAR	"Oh great military genius. We reward your victories with this statue of pure synthetic ruby. 	"
+MONUMENT_AGE_4_REGION_5_CLONING_CENTER  "Under your rule, we have seen the finest scientific minds born, grow old, and die. Now, with this cloning center we will never need to lose another of our living treasures."
+##	Age 5##
+MONUMENT_AGE_5_REGION_1_SPACE_CASTLE	"Oh Greatest of all Leaders, your people are grateful for your wisdom. In thanks, we present to you this Space Castle. "
+MONUMENT_AGE_5_REGION_2_SPACE_HOLODECK  "Your enlightened rule has ushered in a second Renaissance. We celebrate your vision by dedicating this private holodeck to the fulfillment of all your fantasies. "
+MONUMENT_AGE_5_REGION_3_DNA		"Your greatness outshines the brightest nova. To protect our future, we enshrine your DNA in this sculpture of living energy."
+MONUMENT_AGE_5_REGION_4_SPACE_CRAFT   "The conquest of Space will be the next step in ascension of the [player.1.civ_name_singular_nocolor] people.  We dedicate this monument to all those who have lived and died for your glory. "
+MONUMENT_AGE_5_REGION_5_WE_LOVE_YOU  "Space calls out for your enlightened rule.  We christen this spaceship, The [player.leader_nocolor].  May it bear your light to every corner of the galaxy."
+
+
+
+
+

@@ -1,0 +1,3147 @@
+// This is a SLIC file.
+messagebox '04CitiesKilledByCalamity' {
+	Text(ID_CITIES_KILLED_BY_CALAMITY) ;
+	MessageType("STARVE");
+}
+
+
+messagebox '10aInvestigateCityFailed' {
+	Text(ID_INVESTIGATE_CITY_FAILED_VICTIM) ;
+	MessageType("INVESTIGATE_CITY_ICON");
+}
+
+messagebox '10bStealTechnologyFailed' {
+	Text(ID_STEAL_TECHNOLOGY_FAILED_VICTIM) ;
+	MessageType("STEAL_ADVANCE_ICON");
+}
+
+messagebox '10cInciteRevolutionFailed' {
+	Text(ID_INCITE_REVOLUTION_FAILED_VICTIM) ;
+	MessageType("INCITE");
+}
+
+messagebox '10dAssassinationFailed' {
+	Text(ID_ASSASSINATION_FAILED_VICTIM) ;
+	MessageType("BOMB_CABINET");
+}
+
+messagebox '10gNukeFailed' {
+	Text(ID_NUKE_FAILED_VICTIM) ;
+	MessageType("PLANT_NUKE_ICON");
+}
+
+messagebox '10gSafeFromNukes' {
+	Text(ID_SAFE_FROM_NUKES_VICTIM) ;
+	MessageType("MILITARY");
+}
+
+messagebox '10hImmuneToNanoTerror' {
+	Text(ID_IMMUNE_TO_NANO_TERROR_VICTIM) ;
+	MessageType("NANOVIRUS");
+}
+
+messagebox '10hNanoTerrorFailed' {
+	Text(ID_NANO_TERROR_FAILED_VICTIM) ;
+	MessageType("NANOVIRUS");
+}
+
+messagebox '10hNanoTerrorComplete' {
+	Text(ID_NANO_TERROR_COMPLETE_VICTIM) ;
+	MessageType("NANOVIRUS");
+}
+
+messagebox '10iImmuneToBioInfect' {
+	Text(ID_IMMUNE_TO_BIOINFECT_VICTIM) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '10iBioInfectComplete' {
+	Text(ID_BIOINFECT_COMPLETE_VICTIM) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '10iBioInfectFailed' {
+	Text(ID_BIOINFECT_FAILED_VICTIM) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '10zStoppedBySpies' {
+	Text(ID_STOPPED_BY_SPIES_VICTIM) ;
+	MessageType("SPY");
+}
+
+messagebox '11aInvestigateCityFailed' {
+	Text(ID_INVESTIGATE_CITY_FAILED_AGRESSOR) ;
+	MessageType("INVESTIGATE_CITY_ICON");
+}
+
+alertbox '11bStealTechnologyFailed' {
+	Text(ID_STEAL_TECHNOLOGY_FAILED_AGRESSOR) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '11bNothingToSteal' {
+	Text(ID_NOTHING_TO_STEAL_AGRESSOR) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '11bStoleTechnology' {
+	Text(ID_STOLE_TECHNOLOGY_AGRESSOR) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+messagebox '11cInciteRevolutionFailed' {
+	Text(ID_INCITE_REVOLUTION_FAILED_AGRESSOR) ;
+	MessageType("INCITE");
+}
+
+messagebox '11dAssassinationFailed' {
+	Text(ID_ASSASSINATION_FAILED_AGRESSOR) ;
+	MessageType("BOMB_CABINET");
+}
+
+messagebox '11gSafeFromNukes' {
+	Text(ID_SAFE_FROM_NUKES_AGRESSOR) ;
+	MessageType("MILITARY");
+}
+
+messagebox '11gNukeFailed' {
+	Text(ID_NUKE_FAILED_AGRESSOR) ;
+	MessageType("PLANT_NUKE_ICON");
+}
+
+messagebox '11hNanoTerrorFailed' {
+	Text(ID_NANO_TERROR_FAILED_AGRESSOR) ;
+	MessageType("NANOVIRUS");
+}
+
+messagebox '11hImmuneToNanoTerror' {
+	Text(ID_IMMUNE_TO_NANO_TERROR_AGRESSOR) ;
+	MessageType("NANOVIRUS");
+}
+
+messagebox '11iImmuneToBioInfect' {
+	Text(ID_IMMUNE_TO_BIOINFECT_AGRESSOR) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '11iBioInfectComplete' {
+	Text(ID_BIOINFECT_COMPLETE_AGRESSOR) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '11iBioInfectFailed' {
+	Text(ID_BIOINFECT_FAILED_AGRESSOR) ;
+	MessageType("INFECT_CITY");
+}
+
+messagebox '11zStoppedBySpies' {
+	Text(ID_STOPPED_BY_SPIES_AGRESSOR) ;
+	MessageType("SPY");
+}
+
+//============================================================================
+// New Diplomacy messages
+//============================================================================
+
+messagebox '01dipRequestGreetings' {
+	TEXT(ID_DIP_REQUEST_GREETINGS);
+	MessageType("DIPLOMATIC");
+}
+
+messagebox '01dipDemandGold' {
+	TEXT(ID_DIP_DEMAND_GOLD);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipDemandCity' {
+//  	TEXT(ID_DIP_DEMAND_CITY);
+//  	Button(ID_BUTTON_ACCEPT) { Accept(); }
+//  	Button(ID_BUTTON_REJECT) { Reject(); }
+//  	MessageType("DEMANDS");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipDemandMaps' {
+	TEXT(ID_DIP_DEMAND_MAPS);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandAdvance' {
+	TEXT(ID_DIP_DEMAND_ADVANCE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandPiracy' {
+	TEXT(ID_DIP_DEMAND_PIRACY);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandStoptrade' {
+	TEXT(ID_DIP_DEMAND_STOPTRADE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandPollution' {
+	TEXT(ID_DIP_DEMAND_POLLUTION);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandLeave' {
+	TEXT(ID_DIP_DEMAND_LEAVE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipDemandAttack' {
+	TEXT(ID_DIP_DEMAND_ATTACK);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("DEMANDS");
+	MessageClass(2001);
+}
+
+messagebox '01dipOfferGold' {
+	TEXT(ID_DIP_OFFER_GOLD);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("GIFT");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipOfferCity' {
+//  	TEXT(ID_DIP_OFFER_CITY);
+//  	Button(ID_BUTTON_ACCEPT) { Accept(); }
+//  	Button(ID_BUTTON_REJECT) { Reject(); }
+//  	MessageType("GIFT");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipOfferMaps' {
+	TEXT(ID_DIP_OFFER_MAPS);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("GIFT");
+	MessageClass(2001);
+}
+
+messagebox '01dipOfferAdvance' {
+	TEXT(ID_DIP_OFFER_ADVANCE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("GIFT");
+	MessageClass(2001);
+}
+
+messagebox '01dipTreatyCease' {
+	TEXT(ID_DIP_TREATY_CEASE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("TREATY");
+	MessageClass(2001);
+}
+
+messagebox '01dipTreatyEco' {
+	TEXT(ID_DIP_TREATY_ECO);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("TREATY");
+	MessageClass(2001);
+}
+
+messagebox '01dipTreatyAlliance' {
+	TEXT(ID_DIP_TREATY_ALLIANCE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("TREATY");
+	MessageClass(2001);
+}
+
+messagebox '01dipExchangeAdvance' {
+	TEXT(ID_DIP_EXCHANGE_ADVANCE);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("EXCHANGE");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipExchangeCity' {
+//  	TEXT(ID_DIP_EXCHANGE_CITY);
+//  	Button(ID_BUTTON_ACCEPT) { Accept(); }
+//  	Button(ID_BUTTON_REJECT) { Reject(); }
+//  	MessageType("EXCHANGE");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipExchangeMaps' {
+	TEXT(ID_DIP_EXCHANGE_MAPS);
+	Button(ID_BUTTON_ACCEPT) { Accept(); }
+	Button(ID_BUTTON_REJECT) { Reject(); }
+	MessageType("EXCHANGE");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandGold' {
+	Text(ID_DIP_ACCEPT_DEMAND_GOLD);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+	
+}
+
+//  messagebox '01dipAcceptDemandCity' {
+//  	Text(ID_DIP_ACCEPT_DEMAND_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipAcceptDemandMaps' {
+	Text(ID_DIP_ACCEPT_DEMAND_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);	
+}
+
+messagebox '01dipAcceptDemandAdvance' {
+	Text(ID_DIP_ACCEPT_DEMAND_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandPiracy' {
+	Text(ID_DIP_ACCEPT_DEMAND_PIRACY);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandStoptrade' {
+	Text(ID_DIP_ACCEPT_DEMAND_STOPTRADE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandPollution' {
+	Text(ID_DIP_ACCEPT_DEMAND_POLLUTION);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandLeave' {
+	Text(ID_DIP_ACCEPT_DEMAND_LEAVE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptDemandAttack' {
+	Text(ID_DIP_ACCEPT_DEMAND_ATTACK);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptOfferGold' {
+	Text(ID_DIP_ACCEPT_OFFER_GOLD);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipAcceptOfferCity' {
+//  	Text(ID_DIP_ACCEPT_OFFER_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipAcceptOfferMaps' {
+	Text(ID_DIP_ACCEPT_OFFER_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptOfferAdvance' {
+	Text(ID_DIP_ACCEPT_OFFER_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptTreatyCease' {
+	Text(ID_DIP_ACCEPT_TREATY_CEASE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+	
+}
+
+messagebox '01dipAcceptTreatyEco' {
+	Text(ID_DIP_ACCEPT_TREATY_ECO);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptTreatyAlliance' {
+	Text(ID_DIP_ACCEPT_TREATY_ALLIANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipAcceptExchangeAdvance' {
+	Text(ID_DIP_ACCEPT_EXCHANGE_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipAcceptExchangeCity' {
+//  	Text(ID_DIP_ACCEPT_EXCHANGE_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipAcceptExchangeMaps' {
+	Text(ID_DIP_ACCEPT_EXCHANGE_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandGold' {
+	Text(ID_DIP_REJECT_DEMAND_GOLD);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipRejectDemandCity' {
+//  	Text(ID_DIP_REJECT_DEMAND_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipRejectDemandMaps' {
+	Text(ID_DIP_REJECT_DEMAND_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandAdvance' {
+	Text(ID_DIP_REJECT_DEMAND_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandPiracy' {
+	Text(ID_DIP_REJECT_DEMAND_PIRACY);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandStoptrade' {
+	Text(ID_DIP_REJECT_DEMAND_STOPTRADE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandPollution' {
+	Text(ID_DIP_REJECT_DEMAND_POLLUTION);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandLeave' {
+	Text(ID_DIP_REJECT_DEMAND_LEAVE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectDemandAttack' {
+	Text(ID_DIP_REJECT_DEMAND_ATTACK);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectOfferGold' {
+	Text(ID_DIP_REJECT_OFFER_GOLD);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipRejectOfferCity' {
+//  	Text(ID_DIP_REJECT_OFFER_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipRejectOfferMaps' {
+	Text(ID_DIP_REJECT_OFFER_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectOfferAdvance' {
+	Text(ID_DIP_REJECT_OFFER_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectTreatyCease' {
+	Text(ID_DIP_REJECT_TREATY_CEASE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectTreatyEco' {
+	Text(ID_DIP_REJECT_TREATY_ECO);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectTreatyAlliance' {
+	Text(ID_DIP_REJECT_TREATY_ALLIANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+messagebox '01dipRejectExchangeAdvance' {
+	Text(ID_DIP_REJECT_EXCHANGE_ADVANCE);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+//  messagebox '01dipRejectExchangeCity' {
+//  	Text(ID_DIP_REJECT_EXCHANGE_CITY);
+//  	MessageType("DIPLOMATIC");
+//  	MessageClass(2001);
+//  }
+
+messagebox '01dipRejectExchangeMaps' {
+	Text(ID_DIP_REJECT_EXCHANGE_MAPS);
+	MessageType("DIPLOMATIC");
+	MessageClass(2001);
+}
+
+
+messagebox '25aTariffsRaised' {
+//	Text(ID_TARIFFS_RAISED) ;
+// no longer used
+}
+
+messagebox '25bTariffsLowered' {
+//	Text(ID_TARIFFS_LOWERED) ;
+// no longer used
+}
+
+messagebox '26MonopolyDetected' {
+	Text(ID_MONOPOLY_DETECTED);
+	MessageType("TRADE");	
+}
+		
+//messagebox '27DiscoveryFound' {
+//	Text(ID_DISCOVERY_FOUND) ;
+//}
+
+messagebox '28PickNewDiscovery' {
+	Text(ID_PICK_NEW_DISCOVERY);
+	// discovery.1 is what was just discovered.  So the dropdown starts at discovery.2.
+	EyeDropdown(2, discovery);
+	Button(ID_BUTTON_RESEARCH) {
+		Research();
+		Kill();
+	}
+	Button(ID_BUTTON_LIBRARY) {
+		OpenLibrary();
+	}
+
+	Button(ID_BUTTON_GOAL) {
+		OpenResearchGoalWindow();
+	}
+	MessageType("KNOWLEDGE");
+}
+
+messagebox '29SpecialDiscovery' {
+	Text(ID_SPECIAL_DISCOVERY_PLAYER);
+	MessageType("KNOWLEDGE");
+}
+
+messagebox '30SpecialDiscovery' {
+	Text(ID_SPECIAL_DISCOVERY_OTHER);
+	MessageType("KNOWLEDGE");
+}
+
+messagebox '31CrisisCitiesInRevolt' {
+	Text(ID_CRISIS_CITIES_IN_REVOLT);
+	MessageType("REVOLT");
+}
+
+messagebox '32CrisisStarvingCities' {
+	Text(ID_CRISIS_CITY_IS_STARVING);
+	MessageType("STARVE");
+	EyePoint(city.1);
+}
+
+messagebox '33CrisisCityInfected' {
+	Text(ID_CRISIS_CITY_IS_INFECTED);
+}
+
+messagebox '37CityQueueIsEmpty' {
+	Text(ID_CITY_BUILD_QUEUE_IS_EMPTY);
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+	Duration(1);
+	MessageType("WASTING_WORK");
+	Title(ID_TITLE_CITY_BUILD_QUEUE_IS_EMPTY);
+}
+
+// rsh021299 - added
+messagebox 'OpenProductionCallback' {
+	Abort();
+	KillEyepointMessage();
+	OpenProductionTab();
+}
+
+messagebox '38UnitCompleted' {
+	Text(ID_NEW_UNIT_COMPLETED);
+	Duration(1);
+	MessageType("NEXT_UNIT_ICON");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38UnitCompletedQueueEmpty' {
+	Text(ID_UNIT_COMPLETED_QUEUE_EMPTY);
+	Duration(1);
+	MessageType("WASTING_WORK");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38BuildingBuilt' {
+	Text(ID_BUILDING_BUILT);
+	Duration(1);
+	MessageType("NEW_BUILDING");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38BuildingBuiltQueueEmpty' {
+	Text(ID_BUILDING_BUILT_QUEUE_EMPTY);
+	Duration(1);
+	MessageType("WASTING_WORK");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38WonderBuilt' {
+	Text(ID_WONDER_BUILT);
+	Duration(1);
+	MessageType("IWONDER");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38WonderBuiltQueueEmpty' {
+	Text(ID_WONDER_BUILT_QUEUE_EMPTY);
+	Duration(1);
+	MessageType("WASTING_WORK");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38EndgameBuilt' {
+	Text(ID_ENDGAME_BUILT);
+	Duration(1);
+	MessageType("ENDGAME");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '38EndgameBuiltQueueEmpty' {
+	Text(ID_ENDGAME_BUILT_QUEUE_EMPTY);
+	Duration(1);
+	MessageType("WASTING_WORK");
+	EyePoint(city.1, city.owner, 'OpenProductionCallback');
+}
+
+messagebox '39CitiesInefficient' {
+	Text(ID_CITY_INEFFICIENCY);
+	EyePoint(city.1.location);
+	MessageType("WASTING_WORK");
+}
+
+messagebox '40CityIsCelebratingHappiness' {
+	Text(ID_CITY_IS_CELEBRATING_HAPPINESS);
+	Duration(1);
+}
+
+messagebox '41UnitDisbandedOnGovChange' {
+	Text(ID_UNIT_DISBANDED_ON_GOV_CHANGE);
+}
+
+messagebox '42UnitExpelled' {
+	MessageType("MILITARY");
+	Text(ID_UNIT_EXPELLED);
+}
+
+messagebox '44WonderStarted' {
+	MessageType("IWONDER");
+	Text(ID_WONDER_STARTED);
+	Duration(2);
+}
+
+messagebox '44aWonderStopped' {
+	MessageType("IWONDER");
+	Text(ID_WONDER_STOPPED);
+	Duration(2);
+}
+
+messagebox '45WonderAlmostFinished' {
+	MessageType("IWONDER");
+	Text(ID_WONDER_ALMOST_FINISHED);
+	Duration(2);
+}
+
+messagebox '46WonderComplete' {
+	MessageType("IWONDER");
+	Text(ID_WONDER_COMPLETE_OWNER);
+	Duration(2);
+}
+
+messagebox '47WonderComplete' {
+	MessageType("IWONDER");
+	Text(ID_WONDER_COMPLETE_ALL);
+	Duration(2);
+}
+
+messagebox '48WorldPollutionSpaceLaunch' {
+	if (space_launch_count == 9) {
+		space_launch_count = 0;
+		MessageType("POLLUTION");
+		Text(ID_WORLD_POLLUTION_SPACE_LAUNCH) ;
+        } else {
+		space_launch_count = space_launch_count + 1;
+		Abort();
+	}
+}
+
+messagebox '49WorldPollutionNuclearWar' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_NUCLEAR_WAR) ;
+}
+
+messagebox '50WorldPollution' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_GLOBAL_WARMING) ;
+}
+
+messagebox '51WorldPollutionOzoneLoss' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_OZONE_LOSS_IMMINENT) ;
+}
+
+messagebox '52WorldPollutionFlooding' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_FLOODING_MINOR) ;
+}
+
+messagebox '53WorldPollutionFlooding' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_FLOODING_MAJOR) ;
+}
+
+messagebox '54WorldPollutionOzoneLoss' {
+//FIXMEBRAD	Text(ID_WORLD_POLLUTION_OZONE_LOSS) ;
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_OZONE_LOSS_IMMINENT) ;
+}
+
+messagebox '57PlayerDiscoversNewGovernment' {
+	Text(ID_PLAYER_DISCOVERS_NEW_GOVERNMENT) ;
+	MessageType("CIVILIZATION");
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+
+	Button(ID_BUTTON_YES) {
+		SetGovernment(government.1);
+		Kill();
+	}
+}
+
+messagebox '58UnitObsoleteCivwide' {
+	Text(ID_UNIT_OBSOLETE_CIVWIDE) ;
+	MessageType("WARNING");
+}
+
+messagebox '73EndOfGameTimeIsRunningOut' {
+	Text(ID_END_OF_GAME_TIME_IS_RUNNING_OUT) ;
+	MessageType("CIVILIZATION");
+}
+
+alertbox '74EndOfGameOutOfTime' {
+	Text(ID_END_OF_GAME_OUT_OF_TIME);
+	MessageType("CIVILIZATION");
+	Button(ID_BUTTON_END_GAME) {
+		Kill();
+		GameOver(g.player, 0);
+	}
+	Button(ID_BUTTON_CONTINUE) {
+		Kill();
+	}
+}
+
+messagebox '75PlayerDefeated' {
+	Text(ID_PLAYER_DEFEATED) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '76PlayerDefeatedBy' {
+	Text(ID_PLAYER_DEFEATED_BY) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '77YouLose' {
+	Text(ID_YOU_LOSE) ;
+	MessageType("CIVILIZATION");
+}
+
+//// Found Stuff
+
+alertbox '79DiscoveredRemnantsOfAncientCivilisation' {
+	Text(ID_DISCOVERED_REMNANTS_OF_ANCIENT_CIV) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+alertbox '80RuinBecomesCity' {
+	Text(ID_RUIN_BECOMES_CITY) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+alertbox '81NomadsHaveJoinedYourCivilisation' {
+	Text(ID_NOMADS_HAVE_JOINED_YOU) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+alertbox '82MercenariesHaveJoinedYourCivilisation' {
+	MessageType("MILITARY");
+	Text(ID_MERCENARIES_HAVE_JOINED_YOU) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+alertbox '83DiscoveredAncientTreasure' {
+	MessageType("TRADE");
+	Text(ID_DISCOVERED_ANCIENT_TREASURE) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+alertbox '84BesetByVandals' {
+	Text(ID_BESET_BY_VANDALS) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+//  messagebox '85PactFulfilledCityCapturedFirstParty' {
+//  	Text(ID_PACT_FULFILLED_CITY_CAPTURED_FIRSTPARTY) ;
+//  }
+//  messagebox '86PactFulfilledCityCapturedSecondParty' {
+//  	Text(ID_PACT_FULFILLED_CITY_CAPTURED_SECONDPARTY) ;
+//  }
+
+messagebox '87PactFulfilledEnemyDestroyedFirstParty' {
+	Text(ID_PACT_FULFILLED_ENEMY_DESTROYED_FIRSTPARTY) ;
+}
+messagebox '88PactFulfilledEnemyDestroySecondParty' {
+	Text(ID_PACT_FULFILLED_ENEMY_DESTROYED_SECONDPARTY) ;
+}
+
+messagebox '89CityStarving' {
+	Text(ID_CITY_STARVING);
+	EyePoint(city.1.location);
+	Duration(1);
+	MessageType("STARVE");
+}
+
+messagebox '90AcceptTradeOffer' {
+	MessageType("TRADE");
+	Text(ID_ACCEPT_TRADE_OFFER);
+	Button(ID_BUTTON_YES) {
+		AcceptTradeOffer(1);
+		Kill();
+}
+
+	Button(ID_BUTTON_NO) {
+		DontAcceptTradeOffer(1);
+		Kill();
+	}
+}
+
+messagebox '90bAcceptSlaveTradeOffer' {
+	MessageType("TRADE");
+//FIXMEBRAD	Text(ID_ACCEPT_SLAVE_TRADE_OFFER);
+	Button(ID_BUTTON_YES) {
+		AcceptTradeOffer(1);
+		Kill();
+	}
+
+	Button(ID_BUTTON_NO) {
+		DontAcceptTradeOffer(1);
+		Kill();
+	}
+}
+
+messagebox '90bAcceptSlaveTradeOffer' {
+	MessageType("TRADE");
+//FIXMEBRAD	Text(ID_ACCEPT_SLAVE_TRADE_OFFER);
+	Button(ID_BUTTON_YES) {
+		AcceptTradeOffer(1);
+		Kill();
+	}
+
+	Button(ID_BUTTON_NO) {
+		DontAcceptTradeOffer(1);
+		Kill();
+	}
+}
+
+messagebox '91OfferRejected' {
+	MessageType("TRADE");
+	Text(ID_OFFER_REJECTED);
+}
+
+alertbox '93BesetByNothing' {
+	Text(ID_BESET_BY_NOTHING);
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+	UseDirector();
+}
+
+messagebox '94GossipFullReadiness' {
+	Caption(ID_GOSSIP_CAPTION);
+	Text(ID_GOSSIP_WARTIME_READINESS);
+}
+
+messagebox '95GossipAlertReadiness' {
+	Caption(ID_GOSSIP_CAPTION);
+	Text(ID_GOSSIP_ALERT_READINESS);
+}
+
+messagebox '96GossipPeacetimeReadiness' {
+	Caption(ID_GOSSIP_CAPTION);
+	Text(ID_GOSSIP_PEACETIME_READINESS);
+}
+
+messagebox '97GossipBoring' {
+	Caption(ID_GOSSIP_CAPTION);
+	Text(ID_GOSSIP_BORING);
+}
+
+messagebox '98GossipMap' {
+	Caption(ID_GOSSIP_CAPTION);
+	Text(ID_GOSSIP_MAP);
+	EyePoint(location.1);
+}
+
+messagebox '99AdvanceFromCapturingCity' {
+	MessageType("KNOWLEDGE");
+	Text(ID_ADVANCE_FROM_CAPTURING_CITY);
+}
+
+messagebox '100CityRioting' {
+	Text(ID_CITY_RIOTING);
+	EyePoint(city.1);
+	Duration(1);
+	MessageType("WARNING");
+}
+
+alertbox '101StealWhichAdvance' {
+	Text(ID_STEAL_WHICH_ADVANCE);
+	EyeDropdown(1, discovery);
+
+	Button(ID_BUTTON_CANCEL) {
+		Kill();
+	}
+
+	Button(ID_BUTTON_RANDOM) {
+		StealRandomAdvance();
+		Kill();
+	}
+
+	Button(ID_BUTTON_STEAL_THIS) {
+		StealSpecificAdvance();
+		Kill();
+	}
+}
+
+messagebox '102NoAdvancesToSteal' {
+	Text(ID_NO_ADVANCES_TO_STEAL);
+	MessageType("INVESTIGATE_CITY_ICON");
+}
+
+messageBox '103WageLevelReset' {
+	Text(ID_WAGE_LEVEL_RESET);
+	MessageType("CIVILIZATION");
+}
+
+alertBox '104NextHotSeatPlayer' {
+	Text(ID_NEXT_HOT_SEAT_PLAYER);
+	BlankScreen(1);
+	Button(ID_BUTTON_READY) {
+		BlankScreen(0);
+		Kill();
+	}
+}
+
+alertBox '105NextEmailPlayer' {
+	Text(ID_NEXT_EMAIL_PLAYER);
+	BlankScreen(1);
+	Button(ID_BUTTON_OK) {
+		Kill();
+		ExitToShell();
+	}
+	Button(ID_BUTTON_QUIT_GAME) {
+		Kill();
+		ExitToDesktop();
+	}
+}
+
+messageBox '106YouBrokeAlliance' {
+	Text(ID_YOU_BROKE_ALLIANCE);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messageBox '107AllianceBroken' {
+	Text(ID_ALLIANCE_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messageBox '108YouBrokeCeaseFire' {
+	Text(ID_YOU_BROKE_CEASE_FIRE);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messageBox '109CeaseFireBroken' {
+	Text(ID_CEASE_FIRE_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+alertBox '110CantAttackAllies' {
+	if(AllUnitsCanBeExpelled(location.1)) {
+		Text(ID_CANT_ATTACK_ALLIES_CAN_EXPEL);
+	} else {
+		Text(ID_CANT_ATTACK_ALLIES);
+	}
+
+	MessageType("DIPLOMATIC");
+	
+
+	Button(ID_BUTTON_NO) {
+		ClearOrders(unit.1);
+		Kill();
+	}
+
+	Button(ID_BUTTON_YES) {
+		BreakAlliance(player.1);
+		AddOrder(unit.1, location.1);
+		Kill();
+	}
+
+	if(AllUnitsCanBeExpelled(location.1)) {
+		Button(ID_BUTTON_EXPEL) {
+			AddExpelOrder(unit.1, location.1);
+			Kill();
+		}
+	}
+}
+
+alertBox '110aCantAttackTeammates' {
+	Text(ID_CANT_ATTACK_TEAMMATES);
+	MessageType("DIPLOMATIC");
+	
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+alertBox '110bCantAttackHaveTreaty' {
+	Text(ID_CANT_ATTACK_HAVE_TREATY);
+
+	MessageType("DIPLOMATIC");
+	
+
+	Button(ID_BUTTON_NO) {
+		ClearOrders(unit.1);
+		Kill();
+	}
+
+	Button(ID_BUTTON_YES) {
+		BreakAlliance(player.1);
+		AddOrder(unit.1, location.1);
+		Kill();
+	}
+}
+
+alertBox '111BuildingSettlerCityOfOne' {
+	Text(ID_BUILDING_SETTLER_CITY_OF_ONE);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+
+	Button(ID_BUTTON_YES) {
+		FinishBuilding(city.1);
+		Kill();
+	}
+}
+
+//
+/////////////////////////////////////////////
+//
+
+alertbox '25IABreakEcopact' {
+	Text(ID_IA_BREAK_ECOPACT) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '26IAPollutionEndsGovernment' {
+	Text(ID_IA_POLLUTION_ENDS_GOVERNMENT) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '27IAWarDiscontentRising' {
+MessageClass(420);
+	Text(ID_IA_WAR_DISCONTENT_RISING) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '28IAMaxCitiesReached' {
+MessageClass(420);
+	Text(ID_IA_MAX_CITIES_REACHED) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '29IASettlingTooClose' {
+MessageClass(420);
+	Text(ID_IA_SETTLING_TOO_CLOSE) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '30IATooManyTradeRoutes' {
+MessageClass(420);
+	Text(ID_IA_TOO_MANY_TRADE_ROUTES) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '31IATileImpTip' {
+MessageClass(420);
+	Text(ID_IA_TILE_IMP_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '32IASendGoodTip' {
+	Text(ID_IA_SEND_GOOD_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '33IABuyGoodTip' {
+	Text(ID_IA_BUY_GOOD_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '34IASpecialInvasionTip' {
+MessageClass(420);
+	Text(ID_IA_SPECIAL_INVASION_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '35IANomountainUnitTip' {
+MessageClass(420);
+	Text(ID_IA_NOMOUNTAIN_UNIT_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '36IATriremeDeepwaterTip' {
+MessageClass(420);
+	Text(ID_IA_TRIREME_DEEPWATER_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '37IACannotCaptureCity' {
+MessageClass(420);
+	Text(ID_IA_CANNOT_CAPTURE_CITY) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '38IACapitolWarning' {
+MessageClass(420);
+	Text(ID_IA_CAPITOL_WARNING) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '39IASpaceBombardmentTip' {
+	Text(ID_IA_SPACE_BOMBARDMENT_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '40IALeftLands' {
+	Text(ID_IA_LEFT_LANDS) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+// Same text as 40IALeftLands, but doesn't has to be
+alertbox '40IALeftLandsButNotAll' {
+	Text(ID_IA_LEFT_LANDS);
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '41IAPillageSuicide' {
+	Text(ID_IA_PILLAGE_SUICIDE) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '42IAAirportTip' {
+	Abort();
+//	Text(ID_IA_AIRPORT_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '43IABreakRoute' {
+	Text(ID_IA_BREAK_ROUTE) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '44IASpaceEngineerTip' {
+	Text(ID_IA_SPACE_ENGINEER_TIP) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertbox '45IATerraformDeadTile' {
+	Text(ID_IA_TERRAFORM_DEAD_TILE) ;
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertBox '10IABreakTreaty' {
+MessageClass(420);
+	Text(ID_IA_BREAK_TREATY);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		Kill();
+	}
+}
+
+alertBox '11IABreakCeaseFire' {
+MessageClass(420);
+	Text(ID_IA_BREAK_CEASE_FIRE);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		Kill();
+	}
+}
+
+alertBox '12IABreakNoPiracy' {
+MessageClass(420);
+	Text(ID_IA_BREAK_NO_PIRACY);
+	Button(ID_BUTTON_NO) {
+		ClearOrders(unit.1);
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		BreakNoPiracy();
+		AddOrder(unit.1, location.1);
+		Kill();
+	}
+}
+
+alertBox '13IAEnteringLands' {
+MessageClass(420);
+	Text(ID_IA_ENTERING_LANDS);
+	Button(ID_BUTTON_NO) {
+		ClearOrders(unit.1);
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		BreakLeaveOurLands();
+		AddOrder(unit.1, location.1);
+		Kill();
+	}
+}
+
+alertBox '14IAAutoUnload' {
+	MessageClass(420);
+	if(!played_auto_unload_message) {
+		Text(ID_IA_AUTO_UNLOAD);
+		Button(ID_BUTTON_NO) {
+			DoAutoUnload(location.1, 0);
+			Kill();
+		}
+		Button(ID_BUTTON_YES) {
+			DoAutoUnload(location.1, 1);
+			played_auto_unload_message = 1;
+			Kill();
+		}
+	} else {
+		DoAutoUnload(location.1, 1);
+		Abort();
+	}
+}
+
+alertBox '15IALandInOcean' {
+	Text(ID_IA_LAND_IN_OCEAN);
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+alertBox '16IAOutOfFuel' {
+	Text(ID_IA_OUT_OF_FUEL);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		EndTurn();
+		Kill();
+	}
+}
+
+alertBox '17IAPillageOwnLand' {
+MessageClass(420);
+	Text(ID_IA_PILLAGE_OWN_LAND);
+	if(saidPillageOK == g.year) {
+		DoPillageOwnLand();
+		Abort();
+	}		
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		saidPillageOK = g.year;
+		DoPillageOwnLand();
+		Kill();
+	}
+}
+
+alertBox '18IASellImprovement' {
+MessageClass(420);
+	Text(ID_IA_SELL_IMPROVEMENT);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		DoSellImprovement();
+		Kill();
+	}
+}
+
+alertBox '19IACertainRevolution' {
+MessageClass(420);
+	Text(ID_IA_CERTAIN_REVOLUTION);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		DoCertainRevolution();
+		Kill();
+	}
+}
+
+alertBox '20IAFreeSlaves' {
+MessageClass(420);
+	Text(ID_IA_FREE_SLAVES);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		DoFreeSlaves();
+		Kill();
+	}
+}
+
+alertBox '21IACannotAffordMaintenance' {
+MessageClass(420);
+	Text(ID_IA_CANNOT_AFFORD_MAINTENANCE);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		EndTurn();
+		Kill();
+	}
+}
+
+alertBox '22IACannotAffordSupport' {
+MessageClass(420);
+	Text(ID_IA_CANNOT_AFFORD_SUPPORT);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		EndTurn();
+		Kill();
+	}
+}
+
+alertBox '23IACityWillStarve' {
+	Text(ID_IA_CITY_WILL_STARVE);
+	EyePoint(city.1);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		EndTurn();
+		Kill();
+	}
+}
+
+alertBox '24IAYouWillBreakRoute' {
+MessageClass(420);
+	Text(ID_IA_YOU_WILL_BREAK_ROUTE);
+	Button(ID_BUTTON_NO) {
+		Kill();
+	}
+	Button(ID_BUTTON_YES) {
+		DoYouWillBreakRoute();
+		Kill();
+	}
+}
+
+//
+/////////////////////////////////////////////
+//
+
+messagebox '001TreatyToExpire' {
+    Abort();
+//	Text(ID_TREATY_TO_EXPIRE) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '002BrokeTreaty' {
+	Text(ID_BROKE_TREATY) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '004NoPiracyBroken' {
+	Text(ID_NO_PIRACY_BROKEN) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '005EcopactBroken' {
+	Text(ID_ECOPACT_BROKEN) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '006CeaseFireBroken' {
+	Text(ID_CEASE_FIRE_BROKEN) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '007AllianceBroken' {
+	Text(ID_ALLIANCE_BROKEN) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '008StopTradeWithBroken' {
+	Text(ID_STOP_TRADE_WITH_BROKEN) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '008StopTradeWithBrokenByYou' {
+	Text(ID_STOP_TRADE_WITH_BROKEN_BY_YOU) ;
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '010NewCiv' {
+	Text(ID_NEW_CIV) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '011CityJoinedYourCiv' {
+	Text(ID_CITY_JOINE_YOUR_CIV) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '012CivNewGov' {
+//	Text(ID_CIV_NEW_GOV);
+	MessageType("DIPLOMATIC");
+	
+	Abort();
+}
+
+
+messagebox '012NewGovEnacted' {
+	Text(ID_NEW_GOV_ENACTED) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '013AiEntityRevolt' {
+	Text(ID_AI_ENTITY_REVOLT) ;
+	MessageType("REVOLT");
+}
+
+messagebox '014SpaceCityBuilder' {
+	Text(ID_SPACE_CITY_BUILDER) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '015SpaceCityOthers' {
+	Text(ID_SPACE_CITY_OTHERS) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '016SeaCityBuilder' {
+	Text(ID_SEA_CITY_BUILDER) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '017SeaCityOthers' {
+	Text(ID_SEA_CITY_OTHERS) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '027NotEnoughGold' {
+	Text(ID_NOT_ENOUGH_GOLD) ;
+}
+
+messagebox '029NoMaint' {
+	Text(ID_NO_MAINT) ;
+}
+
+messagebox '033BarbarianWarning' {
+	Text(ID_BARBARIAN_WARNING) ;
+	MessageType("MILITARY");
+}
+
+messagebox '040GrossPolluter' {
+	Text(ID_GROSS_POLLUTER) ;
+	MessageType("POLLUTION");
+}
+
+messagebox '045TradePirated' {
+	Text(ID_TRADE_PIRATED) ;
+	MessageType("PIRATE");
+}
+
+messagebox '045aTradePiratedUnknown' {
+	Text(ID_TRADE_PIRATED_UNKOWN);
+	MessageType("PIRATE");
+}
+
+messagebox '046OfferAccepted' {
+	Text(ID_OFFER_ACCEPTED) ;
+	MessageType("TRADE");
+}
+
+messagebox '047InfectedViaTrade' {
+	Text(ID_INFECTED_VIA_TRADE) ;
+	MessageType("STARVE");
+}
+
+messagebox '052AlienBegunOthers' {
+//FIXMEBRAD	Text(ID_ALIEN_BEGUN_OTHERS) ;
+}
+
+messagebox '053AlienAlmostDone' {
+	Text(ID_ALIEN_ALMOST_DONE) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '054AlienAlmostDoneOthers' {
+	Text(ID_ALIEN_ALMOST_DONE_OTHERS) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '055AlienFailureOthers' {
+//FIXMEBRAD	Text(ID_ALIEN_FAILURE_OTHERS) ;
+}
+
+messagebox '056AlienFailureOwner' {
+//FIXMEBRAD	Text(ID_ALIEN_FAILURE_OWNER) ;
+}
+
+messagebox '057AlienScrappedOthers' {
+//FIXMEBRAD	Text(ID_ALIEN_SCRAPPED_OTHERS) ;
+}
+
+messagebox '058AlienScrappedOwner' {
+	Text(ID_ALIEN_SCRAPPED_OWNER) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '059EmbryoStage2' {
+	Text(ID_EMBRYO_STAGE_2) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '060EmbryoStage3' {
+	Text(ID_EMBRYO_STAGE_3) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '061NeedEcd' {
+	Text(ID_NEED_ECD) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '062NeedField' {
+	Text(ID_NEED_FIELD) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '063ShouldBuildSplicer' {
+	Text(ID_SHOULD_BUILD_SPLICER) ;
+	MessageType("ENDGAME");
+}
+
+messagebox '080CityPollutionWarning' {
+	MessageType("POLLUTION");
+	Text(ID_CITY_POLLUTION_WARNING) ;
+}
+
+messagebox '088WorldPollutionStable' {
+	MessageType("POLLUTION");
+	Text(ID_WORLD_POLLUTION_STABLE) ;
+}
+
+messagebox '097WonderDestroyed' {
+	Text(ID_WONDER_DESTROYED) ;
+	MessageType("IWONDER");
+	Duration(2);
+}
+
+messagebox '097aWonderObsolete' {
+	Text(ID_WONDER_OBSOLETE) ;
+	MessageType("IWONDER");
+	Duration(2);
+}
+
+messagebox '114UnitObsoleteCivwide' {
+	Text(ID_UNIT_OBSOLETE_CIVWIDE) ;
+	EyeDropdown(1, action);
+	MessageType("CIVILIZATION");
+}
+
+messagebox '115EdisonDiscovery' {
+	Text(ID_EDISON_DISCOVERY) ;
+	MessageType("KNOWLEDGE");
+}
+
+messagebox '116InternetDiscovery' {
+	Text(ID_INTERNET_DISCOVERY) ;
+	MessageType("KNOWLEDGE");
+}
+
+messagebox '120NoSupport' {
+	Text(ID_NO_SUPPORT) ;
+}
+
+messagebox '123CitiesCapturedVictim' {
+	Text(ID_CITIES_CAPTURED_VICTIM) ;
+	MessageType("MILITARY");
+}
+
+messagebox '126CapitalCityCapturedAttacker' {
+	Text(ID_CAPITAL_CITY_CAPTURED_ATTACKER) ;
+	MessageType("MILITARY");
+}
+
+messagebox '127CapitalCityCapturedVictim' {
+	Text(ID_CAPITAL_CITY_CAPTURED_VICTIM) ;
+	MessageType("MILITARY");
+}
+
+messagebox '128CivStartedWar' {
+	Text(ID_CIV_STARTED_WAR) ;
+	MessageType("MILITARY");
+}
+
+messagebox '131NewAgeFirst' {
+	Text(ID_NEW_AGE_FIRST) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '132NewAgeOthers' {
+	Text(ID_NEW_AGE_OTHERS) ;
+	MessageType("CIVILIZATION");
+}
+
+messagebox '135ReformCity' {
+	Text(ID_REFORM_CITY) ;
+	MessageType("REFORM_CITY_ICON");
+}
+
+messagebox '137SlaveryCompleteAttacker' {
+	Text(ID_SLAVERY_COMPLETE_ATTACKER) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '137SlaveCompleteVictim' {
+	Text(ID_SLAVE_COMPLETE_VICTIM) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '138SlaveFailedVictim' {
+	Text(ID_SLAVE_FAILED_VICTIM) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '139SettlerSlavedVictim' {
+	Text(ID_SETTLER_SLAVED_VICTIM) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '140ProtectedFromSlaveryVictim' {
+	Text(ID_PROTECTED_FROM_SLAVERY_VICTIM) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '141ProtectedFromSlaveryAttacker' {
+	Text(ID_PROTECTED_FROM_SLAVERY_ATTACKER) ;
+	MessageType("CAPTURE_SLAVES");
+}
+
+messagebox '143EmbassyVictim' {
+	Text(ID_EMBASSY_VICTIM) ;
+	MessageType("ESTABLISH_EMBASSY_ICON");
+}
+
+messagebox '144EmbassyAttacker' {
+	Text(ID_EMBASSY_ATTACKER) ;
+	MessageType("ESTABLISH_EMBASSY_ICON");
+}
+
+messagebox '145NoEmbassiesWonder' {
+	Text(ID_NO_EMBASSIES_WONDER);
+	MessageType("IWONDER");
+	Duration(2);
+}
+
+messagebox '146GossipCompleteAttacker' {
+	Text(ID_GOSSIP_COMPLETE_ATTACKER) ;
+}
+
+messagebox '149PartyCompleteVictim' {
+	Text(ID_PARTY_COMPLETE_VICTIM) ;
+	MessageType("THROW_PARTY_ICON");
+}
+
+messagebox '151ConvertCompleteVictim' {
+	Text(ID_CONVERT_COMPLETE_VICTIM) ;
+	MessageType("CONVERT_CITY");
+}
+
+messagebox '152ConvertFailedVictim' {
+	Text(ID_CONVERT_FAILED_VICTIM) ;
+	MessageType("CONVERT_CITY");
+}
+
+messagebox '153ConvertFailedAttacker' {
+	Text(ID_CONVERT_FAILED_ATTACKER) ;
+	MessageType("CONVERT_CITY");
+}
+
+messagebox '155IndulgenceCompleteVictim' {
+	Text(ID_INDULGENCE_COMPLETE_VICTIM) ;
+	MessageType("INDULGENCE");
+}
+
+messagebox '157SoothsayCompleteVictim' {
+	Text(ID_SOOTHSAY_COMPLETE_VICTIM) ;
+	MessageType("SOOTHSAY_ICON");
+}
+
+messagebox '159InjunctionCompleteVictim' {
+	Text(ID_INJUNCTION_COMPLETE_VICTIM) ;
+	MessageType("FILE_INJUNCTION");
+	EyePoint(city.1);
+}
+
+messagebox '161SueCompleteVictim' {
+	Text(ID_SUE_COMPLETE_VICTIM) ;
+	MessageType("SUE_ICON");
+	EyePoint(location.1);
+}
+
+messagebox '163FreeslaveCompleteVictim' {
+	Text(ID_FREESLAVE_COMPLETE_VICTIM) ;
+	MessageType("FREE_SLAVE");
+}
+
+messagebox '164FreeslaveFailedVictim' {
+	Text(ID_FREESLAVE_FAILED_VICTIM) ;
+	MessageType("FREE_SLAVE");
+}
+
+messagebox '165FreeslaveCompleteAgressor' {
+	Text(ID_FREESLAVE_COMPLETE_AGRESSOR) ;
+	MessageType("FREE_SLAVE");
+}
+
+messagebox '166FreeslaveFailedAgressor' {
+	Text(ID_FREESLAVE_FAILED_AGRESSOR) ;
+	MessageType("FREE_SLAVE");
+}
+
+messagebox '167FreeslaveNoSlavesToFree' {
+	TEXT(ID_FREESLAVE_NO_SLAVES_TO_FREE) ;
+	MessageType("FREE_SLAVE");
+}
+
+messagebox '171InciteRevolutionCompleteVictim' {
+	Text(ID_INCITE_REVOLUTION_COMPLETE_VICTIM) ;
+	MessageType("REVOLT");
+}
+
+messagebox '176AssassinationCompleteVictim' {
+	Text(ID_ASSASSINATION_COMPLETE_VICTIM) ;
+	MessageType("BOMB_CABINET");
+}
+
+messagebox '177AssassinationCompleteAggressor' {
+	Text(ID_ASSASSINATION_COMPLETE_AGGRESSOR) ;
+	MessageType("BOMB_CABINET");
+}
+
+messagebox '178NukeCompleteVictim' {
+	Text(ID_NUKE_COMPLETE_VICTIM) ;
+	MessageType("PLANT_NUKE_ICON");
+}
+
+messagebox '186StealTechnologyVictim' {
+	Text(ID_STEAL_TECHNOLOGY_VICTIM) ;
+	MessageType("STEAL_ADVANCE_ICON");
+}
+
+messagebox '190DefuseMineCompleteVictim' {
+//FIXMEBRAD	Text(ID_DEFUSE_MINE_COMPLETE_VICTIM) ;
+}
+
+messagebox '193BranchCompleteVictim' {
+	Text(ID_BRANCH_COMPLETE_VICTIM) ;
+	MessageType("BRANCH");
+	EyePoint(city.1);
+}
+
+messagebox '195BranchFailedVictim' {
+	Text(ID_BRANCH_FAILED_VICTIM) ;
+	MessageType("BRANCH");
+}
+
+messagebox '197AdvertiseCompleteVictim' {
+	Text(ID_ADVERTISE_COMPLETE_VICTIM) ;
+	MessageType("ADVERTISE");
+}
+
+messagebox '206CrisisSlaveRevolt' {
+	Text(ID_CRISIS_SLAVE_REVOLT) ;
+	MessageType("UPRISING");
+}
+
+messagebox '208UprisingCompleteVictim' {
+	Text(ID_UPRISING_COMPLETE_VICTIM) ;
+	MessageType("UPRISING");
+}
+
+messagebox '209UprisingFailedAttacker' {
+	Text(ID_UPRISING_FAILED_ATTACKER) ;
+	MessageType("UPRISING");
+}
+
+messagebox '210UprisingFailedVictim' {
+	Text(ID_UPRISING_FAILED_VICTIM) ;
+	MessageType("UPRISING");
+}
+
+messagebox '227TerrorhackCompleteAttacker' {
+	Text(ID_TERRORHACK_COMPLETE_ATTACKER) ;
+	MessageType("SPY");
+}
+
+messagebox '228TerrorhackCompleteVictim' {
+	Text(ID_TERRORHACK_COMPLETE_VICTIM) ;
+	MessageType("SPY");
+}
+
+messagebox '229TerrorhackFailedAttacker' {
+	Text(ID_TERRORHACK_FAILED_ATTACKER) ;
+	MessageType("SPY");
+}
+
+messagebox '230TerrorhackFailedVictim' {
+	Text(ID_TERRORHACK_FAILED_VICTIM) ;
+	MessageType("SPY");
+}
+
+messagebox '244RustleCattleCompleteVictim' {
+	//Text(ID_RUSTLE_CATTLE_COMPLETE_VICTIM) ;
+	
+}
+
+messagebox '250UnitGainedVeteranStatus' {
+	Text(ID_UNIT_VETERAN);
+	EyePoint(unit.1);
+	MessageType("MILITARY");
+}
+
+messagebox '251NaniteDefuseEliminatesNukes' {
+	Text(ID_NANITE_DEFUSER_ELIMINATES_NUKES);
+	MessageType("IWONDER");
+	Duration(2);
+}
+
+messagebox '260LeaveOurLandsBroken' {
+	Text(ID_LEAVE_OUR_LANDS_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '261ReducePollutionBroken' {
+	Text(ID_REDUCE_POLLUTION_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '262CaptureCityBroken' {
+//FIXMEBRAD	Text(ID_CAPTURE_CITY_BROKEN);
+	MessageType("DIPLOMATIC");
+	
+}
+
+messagebox '263EndPollutionBroken' {
+	Text(ID_END_POLLUTION_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '264AttackEnemyBroken' {
+	Text(ID_ATTACK_ENEMY_BROKEN);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '260LeaveOurLandsBrokenByYou' {
+	Text(ID_LEAVE_OUR_LANDS_BROKEN_BY_YOU);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '261ReducePollutionBrokenByYou' {
+	Text(ID_REDUCE_POLLUTION_BROKEN_BY_YOU);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '262CaptureCityBrokenByYou' {
+//FIXMEBRAD	Text(ID_CAPTURE_CITY_BROKEN_BY_YOU);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '263EndPollutionBrokenByYou' {
+	Text(ID_END_POLLUTION_BROKEN_BY_YOU);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messagebox '264AttackEnemyBrokenByYou' {
+	Text(ID_ATTACK_ENEMY_BROKEN_BY_YOU);
+	MessageType("ANTIDIPLOMATIC");
+}
+
+messageBox '265CityDestroyedByStarving' {
+	Text(ID_CITY_DESTROYED_BY_STARVING);
+	MessageType("STARVE");
+	EyePoint(city.1.location);
+}
+
+messageBox '266CityDestroyedByWar' {
+	Text(ID_CITY_DESTROYED_BY_WAR);
+	MessageType("STARVE");
+}
+
+// 
+////Help Boxes////
+//
+
+//Advances//
+
+helpbox 'ADVANCE_ENGINEERING' {Text(ID_ADVANCE_ENGINEERING_HELP);}
+helpbox 'ADVANCE_OCEAN_FARING' {Text(ID_ADVANCE_OCEAN_FARING_HELP);}
+
+helpbox 'ADVANCE_TOOLMAKING' {Text(ID_ADVANCE_TOOLMAKING_HELP);}
+helpbox 'ADVANCE_AI_SURVEILLANCE' {Text(ID_ADVANCE_AI_SURVEILLANCE_HELP);}
+helpbox 'ADVANCE_AGRICULTURE' {Text(ID_ADVANCE_AGRICULTURE_HELP);}
+helpbox 'ADVANCE_MINING' {Text(ID_ADVANCE_MINING_HELP);}
+helpbox 'ADVANCE_DOMESTICATION' {Text(ID_ADVANCE_DOMESTICATION_HELP);}
+helpbox 'ADVANCE_BRONZE_WORKING' {Text(ID_ADVANCE_BRONZE_WORKING_HELP);}
+helpbox 'ADVANCE_STONE_WORKING' {Text(ID_ADVANCE_STONE_WORKING_HELP);}
+helpbox 'ADVANCE_JURISPRUDENCE' {Text(ID_ADVANCE_JURISPRUDENCE_HELP);}
+helpbox 'ADVANCE_SHIP_BUILDING' {Text(ID_ADVANCE_SHIP_BUILDING_HELP);}
+helpbox 'ADVANCE_WRITING' {Text(ID_ADVANCE_WRITING_HELP);}
+helpbox 'ADVANCE_GEOMETRY' {Text(ID_ADVANCE_GEOMETRY_HELP);}
+helpbox 'ADVANCE_MONARCHY' {Text(ID_ADVANCE_MONARCHY_HELP);}
+helpbox 'ADVANCE_IRON_WORKING' {Text(ID_ADVANCE_IRON_WORKING_HELP);}
+helpbox 'ADVANCE_RELIGION' {Text(ID_ADVANCE_RELIGION_HELP);}
+helpbox 'ADVANCE_CITY_STATE' {Text(ID_ADVANCE_CITY_STATE_HELP);}
+helpbox 'ADVANCE_PHILOSOPHY' {Text(ID_ADVANCE_PHILOSOPHY_HELP);}
+helpbox 'ADVANCE_TRADE' {Text(ID_ADVANCE_TRADE_HELP);}
+helpbox 'ADVANCE_BUREAUCRACY' {Text(ID_ADVANCE_BUREAUCRACY_HELP);}
+helpbox 'ADVANCE_ASTRONOMY' {Text(ID_ADVANCE_ASTRONOMY_HELP);}
+helpbox 'ADVANCE_THEOCRACY' {Text(ID_ADVANCE_THEOCRACY_HELP);}
+helpbox 'ADVANCE_BANKING' {Text(ID_ADVANCE_BANKING_HELP);}
+helpbox 'ADVANCE_STIRRUP' {Text(ID_ADVANCE_STIRRUP_HELP);}
+helpbox 'ADVANCE_ALCHEMY' {Text(ID_ADVANCE_ALCHEMY_HELP);}
+helpbox 'ADVANCE_CLASSICAL_EDUCATION' {Text(ID_ADVANCE_CLASSICAL_EDUCATION_HELP);}
+helpbox 'ADVANCE_HULL_MAKING' {Text(ID_ADVANCE_HULL_MAKING_HELP);}
+helpbox 'ADVANCE_MEDICINE' {Text(ID_ADVANCE_MEDICINE_HELP);}
+helpbox 'ADVANCE_AGRICULTURAL_REVOLUTION' {Text(ID_ADVANCE_AGRICULTURAL_REVOLUTION_HELP);}
+helpbox 'ADVANCE_GUNPOWDER' {Text(ID_ADVANCE_GUNPOWDER_HELP);}
+helpbox 'ADVANCE_PRINTING_PRESS' {Text(ID_ADVANCE_PRINTING_PRESS_HELP);}
+helpbox 'ADVANCE_PERSPECTIVE' {Text(ID_ADVANCE_PERSPECTIVE_HELP);}
+helpbox 'ADVANCE_MACHINE_TOOLS' {Text(ID_ADVANCE_MACHINE_TOOLS_HELP);}
+helpbox 'ADVANCE_CANNON_MAKING' {Text(ID_ADVANCE_CANNON_MAKING_HELP);}
+helpbox 'ADVANCE_MECHANICAL_CLOCK' {Text(ID_ADVANCE_MECHANICAL_CLOCK_HELP);}
+helpbox 'ADVANCE_OPTICS' {Text(ID_ADVANCE_OPTICS_HELP);}
+helpbox 'ADVANCE_CAVALRY_TACTICS' {Text(ID_ADVANCE_CAVALRY_TACTICS_HELP);}
+helpbox 'ADVANCE_NATIONALISM' {Text(ID_ADVANCE_NATIONALISM_HELP);}
+helpbox 'ADVANCE_PHYSICS' {Text(ID_ADVANCE_PHYSICS_HELP);}
+helpbox 'ADVANCE_CHEMISTRY' {Text(ID_ADVANCE_CHEMISTRY_HELP);}
+helpbox 'ADVANCE_AGE_OF_REASON' {Text(ID_ADVANCE_AGE_OF_REASON_HELP);}
+helpbox 'ADVANCE_DEMOCRACY' {Text(ID_ADVANCE_DEMOCRACY_HELP);}
+helpbox 'ADVANCE_ECONOMICS' {Text(ID_ADVANCE_ECONOMICS_HELP);}
+helpbox 'ADVANCE_ELECTRICITY' {Text(ID_ADVANCE_ELECTRICITY_HELP);}
+helpbox 'ADVANCE_RAILROAD' {Text(ID_ADVANCE_RAILROAD_HELP);}
+helpbox 'ADVANCE_INDUSTRIAL_REVOLUTION' {Text(ID_ADVANCE_INDUSTRIAL_REVOLUTION_HELP);}
+helpbox 'ADVANCE_STEEL' {Text(ID_ADVANCE_STEEL_HELP);}
+helpbox 'ADVANCE_CORPORATION' {Text(ID_ADVANCE_CORPORATION_HELP);}
+helpbox 'ADVANCE_OIL_REFINING' {Text(ID_ADVANCE_OIL_REFINING_HELP);}
+helpbox 'ADVANCE_EXPLOSIVES' {Text(ID_ADVANCE_EXPLOSIVES_HELP);}
+helpbox 'ADVANCE_COMMUNISM' {Text(ID_ADVANCE_COMMUNISM_HELP);}
+helpbox 'ADVANCE_FASCISM' {Text(ID_ADVANCE_FASCISM_HELP);}
+helpbox 'ADVANCE_ELECTRIFICATION' {Text(ID_ADVANCE_ELECTRIFICATION_HELP);}
+helpbox 'ADVANCE_PHARMACEUTICALS' {Text(ID_ADVANCE_PHARMACEUTICALS_HELP);}
+helpbox 'ADVANCE_AERODYNAMICS' {Text(ID_ADVANCE_AERODYNAMICS_HELP);}
+helpbox 'ADVANCE_ROCKETRY' {Text(ID_ADVANCE_ROCKETRY_HELP);}
+helpbox 'ADVANCE_TANK_WARFARE' {Text(ID_ADVANCE_TANK_WARFARE_HELP);}
+helpbox 'ADVANCE_QUANTUM_MECHANICS' {Text(ID_ADVANCE_QUANTUM_MECHANICS_HELP);}
+helpbox 'ADVANCE_GLOBAL_DEFENSE_INITIATIVE' {Text(ID_ADVANCE_GLOBAL_DEFENSE_INITIATIVE_HELP);}
+helpbox 'ADVANCE_JET_PROPULSION' {Text(ID_ADVANCE_JET_PROPULSION_HELP);}
+helpbox 'ADVANCE_MASS_PRODUCTION' {Text(ID_ADVANCE_MASS_PRODUCTION_HELP);}
+helpbox 'ADVANCE_CONSUMER_ELECTRONICS' {Text(ID_ADVANCE_CONSUMER_ELECTRONICS_HELP);}
+helpbox 'ADVANCE_GENETICS' {Text(ID_ADVANCE_GENETICS_HELP);}
+helpbox 'ADVANCE_COMPUTER' {Text(ID_ADVANCE_COMPUTER_HELP);}
+helpbox 'ADVANCE_SPACE_FLIGHT' {Text(ID_ADVANCE_SPACE_FLIGHT_HELP);}
+helpbox 'ADVANCE_ENVIRONMENTALISM' {Text(ID_ADVANCE_ENVIRONMENTALISM_HELP);}
+helpbox 'ADVANCE_GLOBAL_COMMUNICATIONS_NETWORK' {Text(ID_ADVANCE_GLOBAL_COMMUNICATIONS_NETWORK_HELP);}
+helpbox 'ADVANCE_ADVANCED_COMPOSITES' {Text(ID_ADVANCE_ADVANCED_COMPOSITES_HELP);}
+helpbox 'ADVANCE_MULTINATIONAL_REPUBLIC' {Text(ID_ADVANCE_MULTINATIONAL_REPUBLIC_HELP);}
+helpbox 'ADVANCE_ROBOTICS' {Text(ID_ADVANCE_ROBOTICS_HELP);}
+helpbox 'ADVANCE_SUBNEURAL_ADS' {Text(ID_ADVANCE_SUBNEURAL_ADS_HELP);}
+helpbox 'ADVANCE_INTELLIGENT_MATERIALS' {Text(ID_ADVANCE_INTELLIGENT_MATERIALS_HELP);}
+helpbox 'ADVANCE_PERSONAL_ENCRYPTION' {Text(ID_ADVANCE_PERSONAL_ENCRYPTION_HELP);}
+helpbox 'ADVANCE_FUEL_CELLS' {Text(ID_ADVANCE_FUEL_CELLS_HELP);}
+helpbox 'ADVANCE_WORMHOLES' {Text(ID_ADVANCE_WORMHOLES_HELP);}
+helpbox 'ADVANCE_TECHNOCRACY' {Text(ID_ADVANCE_TECHNOCRACY_HELP);}
+helpbox 'ADVANCE_SUPERCONDUCTOR' {Text(ID_ADVANCE_SUPERCONDUCTOR_HELP);}
+helpbox 'ADVANCE_HUMAN_CLONING' {Text(ID_ADVANCE_HUMAN_CLONING_HELP);}
+helpbox 'ADVANCE_ARCOLOGIES' {Text(ID_ADVANCE_ARCOLOGIES_HELP);}
+helpbox 'ADVANCE_SEA_COLONIES' {Text(ID_ADVANCE_SEA_COLONIES_HELP);}
+helpbox 'ADVANCE_SPACE_COLONIES' {Text(ID_ADVANCE_SPACE_COLONIES_HELP);}
+helpbox 'ADVANCE_GENETIC_TAILORING' {Text(ID_ADVANCE_GENETIC_TAILORING_HELP);}
+helpbox 'ADVANCE_ZERO_G_MANUFACTURING' {Text(ID_ADVANCE_ZERO_G_MANUFACTURING_HELP);}
+helpbox 'ADVANCE_CRYONICS' {Text(ID_ADVANCE_CRYONICS_HELP);}
+helpbox 'ADVANCE_ECOTOPIA' {Text(ID_ADVANCE_ECOTOPIA_HELP);}
+helpbox 'ADVANCE_MIND_CONTROL' {Text(ID_ADVANCE_MIND_CONTROL_HELP);}
+helpbox 'ADVANCE_ULTRAPRESSURE_MACHINERY' {Text(ID_ADVANCE_ULTRAPRESSURE_MACHINERY_HELP);}
+helpbox 'ADVANCE_ASTEROID_MINING' {Text(ID_ADVANCE_ASTEROID_MINING_HELP);}
+helpbox 'ADVANCE_UNIFIED_FIELD_THEORY' {Text(ID_ADVANCE_UNIFIED_FIELD_THEORY_HELP);}
+helpbox 'ADVANCE_NANOASSEMBLY' {Text(ID_ADVANCE_NANOASSEMBLY_HELP);}
+helpbox 'ADVANCE_WILDERNESS_PRESERVATION_ACT' {Text(ID_ADVANCE_WILDERNESS_PRESERVATION_ACT_HELP);}
+helpbox 'ADVANCE_GAIA_THEORY' {Text(ID_ADVANCE_GAIA_THEORY_HELP);}
+helpbox 'ADVANCE_VIRTUAL_DEMOCRACY' {Text(ID_ADVANCE_VIRTUAL_DEMOCRACY_HELP);}
+helpbox 'ADVANCE_FUSION' {Text(ID_ADVANCE_FUSION_HELP);}
+helpbox 'ADVANCE_ALIEN_ARCHEOLOGY' {Text(ID_ADVANCE_ALIEN_ARCHEOLOGY_HELP);}
+helpbox 'ADVANCE_NEURAL_SILICON_INTERFACE' {Text(ID_ADVANCE_NEURAL_SILICON_INTERFACE_HELP);}
+helpbox 'ADVANCE_CLOAKING' {Text(ID_ADVANCE_CLOAKING_HELP);}
+helpbox 'ADVANCE_LIFE_EXTENSION' {Text(ID_ADVANCE_LIFE_EXTENSION_HELP);}
+helpbox 'ADVANCE_TELEPORTATION' {Text(ID_ADVANCE_TELEPORTATION_HELP);}
+helpbox 'ADVANCE_SEA2' {Text(ID_ADVANCE_SEA2_HELP);}
+
+
+
+//Units//
+helpbox 'UNIT_CATTLE' { Text(ID_UNIT_CATTLE_HELP);}	
+helpbox 'UNIT_SETTLER' { Text(ID_UNIT_SETTLER_HELP);}	
+helpbox 'UNIT_SLAVER' { Text(ID_UNIT_SLAVER_HELP);}	
+helpbox 'UNIT_CHARIOT' { Text(ID_UNIT_CHARIOT_HELP);}	
+helpbox 'UNIT_TRIREMES' { Text(ID_UNIT_TRIREMES_HELP);}	
+helpbox 'UNIT_HOPLITE' { Text(ID_UNIT_HOPLITE_HELP);}	
+helpbox 'UNIT_DIPLOMAT' { Text(ID_UNIT_DIPLOMAT_HELP);}	
+helpbox 'UNIT_LEGION' { Text(ID_UNIT_LEGION_HELP);}	
+helpbox 'UNIT_CLERIC' { Text(ID_UNIT_CLERIC_HELP);}	
+helpbox 'UNIT_GREEK_FIRE' { Text(ID_UNIT_GREEK_FIRE_HELP);}	
+helpbox 'UNIT_GREEK_FIRE_TRIREME' { Text(ID_UNIT_GREEK_FIRE_TRIREME_HELP);}	
+helpbox 'UNIT_KNIGHT' { Text(ID_UNIT_KNIGHT_HELP);}	
+helpbox 'UNIT_LONGSHIP' { Text(ID_UNIT_LONGSHIP_HELP);}	
+helpbox 'UNIT_PIKEMEN' { Text(ID_UNIT_PIKEMEN_HELP);}	
+helpbox 'UNIT_CANNON' { Text(ID_UNIT_CANNON_HELP);}	
+helpbox 'UNIT_CAVALRY' { Text(ID_UNIT_CAVALRY_HELP);}	
+helpbox 'UNIT_SHIP_OF_THE_LINE' { Text(ID_UNIT_SHIP_OF_THE_LINE_HELP);}	
+helpbox 'UNIT_MUSKETEERS' { Text(ID_UNIT_MUSKETEERS_HELP);}	
+helpbox 'UNIT_LAWYER' { Text(ID_UNIT_LAWYER_HELP);}	
+helpbox 'UNIT_FASCIST' { Text(ID_UNIT_FASCIST_HELP);}	
+helpbox 'UNIT_ABOLITIONIST' { Text(ID_UNIT_ABOLITIONIST_HELP);}	
+helpbox 'UNIT_MACHINE_GUNNER' { Text(ID_UNIT_MACHINE_GUNNER_HELP);}	
+helpbox 'UNIT_ARTILLERY' { Text(ID_UNIT_ARTILLERY_HELP);}	
+helpbox 'UNIT_TROOP_SHIP' { Text(ID_UNIT_TROOP_SHIP_HELP);}	
+helpbox 'UNIT_SUBMARINE' { Text(ID_UNIT_SUBMARINE_HELP);}	
+helpbox 'UNIT_BATTLESHIP' { Text(ID_UNIT_BATTLESHIP_HELP);}	
+helpbox 'UNIT_SPY' { Text(ID_UNIT_SPY_HELP);}	
+helpbox 'UNIT_FIGHTER' { Text(ID_UNIT_FIGHTER_HELP);}	
+helpbox 'UNIT_AIRCRAFT_CARRIER' { Text(ID_UNIT_AIRCRAFT_CARRIER_HELP);}	
+//  helpbox 'UNIT_COMBAT_ENGINEER' { Text(ID_UNIT_COMBAT_ENGINEER_HELP);}	
+helpbox 'UNIT_TANK' { Text(ID_UNIT_TANK_HELP);}	
+helpbox 'UNIT_NUKE' { Text(ID_UNIT_NUKE_HELP);}	
+helpbox 'UNIT_DESTROYER' { Text(ID_UNIT_DESTROYER_HELP);}	
+helpbox 'UNIT_TELEVANGELIST' { Text(ID_UNIT_TELEVANGELIST_HELP);}	
+helpbox 'UNIT_CARGO_POD' { Text(ID_UNIT_CARGO_POD_HELP);}	
+helpbox 'UNIT_INTERCEPTORS' { Text(ID_UNIT_INTERCEPTORS_HELP);}	
+helpbox 'UNIT_BOMBER' { Text(ID_UNIT_BOMBER_HELP);}	
+helpbox 'UNIT_MOBILE_SAM' { Text(ID_UNIT_MOBILE_SAM_HELP);}	
+helpbox 'UNIT_CORPORATE_BRANCH' { Text(ID_UNIT_CORPORATE_BRANCH_HELP);}	
+helpbox 'UNIT_PARATROOPER' { Text(ID_UNIT_PARATROOPER_HELP);}	
+helpbox 'UNIT_C17_TRANSPORT' { Text(ID_UNIT_C17_TRANSPORT_HELP);}	
+helpbox 'UNIT_SPACE_PLANE' { Text(ID_UNIT_SPACE_PLANE_HELP);}	
+helpbox 'UNIT_SUBNEURAL_ADS' { Text(ID_UNIT_SUBNEURAL_ADS_HELP);}	
+helpbox 'UNIT_SPY_PLANE' { Text(ID_UNIT_SPY_PLANE_HELP);}	
+helpbox 'UNIT_BATTLEBOT' { Text(ID_UNIT_BATTLEBOT_HELP);}	
+helpbox 'UNIT_SEA_ENGINEER' { Text(ID_UNIT_SEA_ENGINEER_HELP);}	
+helpbox 'UNIT_STEALTH_SUB' { Text(ID_UNIT_STEALTH_SUB_HELP);}	
+helpbox 'UNIT_ECOTERRORIST' { Text(ID_UNIT_ECOTERRORIST_HELP);}	
+helpbox 'UNIT_SPACE_ENGINEER' { Text(ID_UNIT_SPACE_ENGINEER_HELP);}	
+helpbox 'UNIT_INFECTOR' { Text(ID_UNIT_INFECTOR_HELP);}	
+helpbox 'UNIT_CRAWLER' { Text(ID_UNIT_CRAWLER_HELP);}	
+helpbox 'UNIT_BATTLE_CRUISER' { Text(ID_UNIT_BATTLE_CRUISER_HELP);}	
+helpbox 'UNIT_SPACE_MARINES' { Text(ID_UNIT_SPACE_MARINES_HELP);}	
+helpbox 'UNIT_SPACE_BOMBER' { Text(ID_UNIT_SPACE_BOMBER_HELP);}	
+helpbox 'UNIT_PARK_RANGER' { Text(ID_UNIT_PARK_RANGER_HELP);}	
+helpbox 'UNIT_WORMHOLE_PROBE' { Text(ID_UNIT_WORMHOLE_PROBE_HELP);}	
+helpbox 'UNIT_LEVIATHAN' { Text(ID_UNIT_LEVIATHAN_HELP);}	
+helpbox 'UNIT_SWARM' { Text(ID_UNIT_SWARM_HELP);}	
+//  helpbox 'UNIT_RIFT_GATE' { Text(ID_UNIT_RIFT_GATE_HELP);}	
+helpbox 'UNIT_PHANTOM' { Text(ID_UNIT_PHANTOM_HELP);}	
+helpbox 'UNIT_MARINES' { Text(ID_UNIT_MARINES_HELP);}	
+helpbox 'UNIT_WARRIOR' { Text(ID_UNIT_WARRIOR_HELP);}	
+helpbox 'UNIT_STEALTH_FIGHTER' { Text(ID_UNIT_STEALTH_FIGHTER_HELP);}	
+helpbox 'UNIT_STEALTH_BOMBER' { Text(ID_UNIT_STEALTH_BOMBER_HELP);}	
+helpbox 'UNIT_CYBER_NINJA' { Text(ID_UNIT_CYBER_NINJA_HELP);}	
+helpbox 'UNIT_SAMURAI' { Text(ID_UNIT_SAMURAI_HELP);}	
+helpbox 'UNIT_PLASMATICA' { Text(ID_UNIT_PLASMATICA_HELP);}	
+helpbox 'UNIT_CARAVAN' { Text(ID_UNIT_CARAVAN_HELP);}	
+helpbox 'UNIT_FUSION_TANK' { Text(ID_UNIT_FUSION_TANK_HELP);}	
+helpbox 'UNIT_PLASMA_DESTROYER' { Text(ID_UNIT_PLASMA_DESTROYER_HELP);}	
+
+
+//Improvements//	
+helpbox 'IMPROVE_SILO' { Text(ID_IMPROVE_SILO_HELP);}	
+helpbox 'IMPROVE_CAPITOL' { Text(ID_IMPROVE_CAPITOL_HELP);}	
+helpbox 'IMPROVE_CITY_WALLS' { Text(ID_IMPROVE_CITY_WALLS_HELP);}	
+helpbox 'IMPROVE_TEMPLE' { Text(ID_IMPROVE_TEMPLE_HELP);}	
+helpbox 'IMPROVE_COURTHOUSE' { Text(ID_IMPROVE_COURTHOUSE_HELP);}	
+helpbox 'IMPROVE_LIBRARY' { Text(ID_IMPROVE_LIBRARY_HELP);}	
+helpbox 'IMPROVE_BAZAAR' { Text(ID_IMPROVE_BAZAAR_HELP);}	
+helpbox 'IMPROVE_ACADEMY' { Text(ID_IMPROVE_ACADEMY_HELP);}	
+helpbox 'IMPROVE_THEATER' { Text(ID_IMPROVE_THEATER_HELP);}	
+helpbox 'IMPROVE_AQUEDUCT' { Text(ID_IMPROVE_AQUEDUCT_HELP);}	
+helpbox 'IMPROVE_CIRCUS' { Text(ID_IMPROVE_CIRCUS_HELP);}	
+helpbox 'IMPROVE_BANK' { Text(ID_IMPROVE_BANK_HELP);}	
+helpbox 'IMPROVE_UNIVERSITY' { Text(ID_IMPROVE_UNIVERSITY_HELP);}	
+helpbox 'IMPROVE_HOSPITAL' { Text(ID_IMPROVE_HOSPITAL_HELP);}	
+helpbox 'IMPROVE_MILL' { Text(ID_IMPROVE_MILL_HELP);}	
+helpbox 'IMPROVE_CATHEDRAL' { Text(ID_IMPROVE_CATHEDRAL_HELP);}	
+helpbox 'IMPROVE_CITY_CLOCK' { Text(ID_IMPROVE_CITY_CLOCK_HELP);}	
+helpbox 'IMPROVE_FACTORY' { Text(ID_IMPROVE_FACTORY_HELP);}	
+helpbox 'IMPROVE_OIL_REFINERY' { Text(ID_IMPROVE_OIL_REFINERY_HELP);}	
+helpbox 'IMPROVE_MOVIE_PALACE' { Text(ID_IMPROVE_MOVIE_PALACE_HELP);}	
+helpbox 'IMPROVE_AIRPORT' { Text(ID_IMPROVE_AIRPORT_HELP);}	
+helpbox 'IMPROVE_DRUG_STORE' { Text(ID_IMPROVE_DRUG_STORE_HELP);}	
+helpbox 'IMPROVE_NUCLEAR_PLANT' { Text(ID_IMPROVE_NUCLEAR_PLANT_HELP);}	
+helpbox 'IMPROVE_RECYCLING_PLANT' { Text(ID_IMPROVE_RECYCLING_PLANT_HELP);}	
+helpbox 'IMPROVE_TELEVISION' { Text(ID_IMPROVE_TELEVISION_HELP);}	
+helpbox 'IMPROVE_COMPUTER_CENTER' { Text(ID_IMPROVE_COMPUTER_CENTER_HELP);}	
+helpbox 'IMPROVE_SDI' { Text(ID_IMPROVE_SDI_HELP);}	
+helpbox 'IMPROVE_ROBOTIC_PLANT' { Text(ID_IMPROVE_ROBOTIC_PLANT_HELP);}	
+helpbox 'IMPROVE_POPULATION_MONITOR' { Text(ID_IMPROVE_POPULATION_MONITOR_HELP);}	
+helpbox 'IMPROVE_BIO_WARFARE_FILTERS' { Text(ID_IMPROVE_BIO_WARFARE_FILTERS_HELP);}	
+helpbox 'IMPROVE_WATER_TRANSFORMER' { Text(ID_IMPROVE_WATER_TRANSFORMER_HELP);}	
+helpbox 'IMPROVE_ZERO_EMISSION_VEHICLES' { Text(ID_IMPROVE_ZERO_EMISSION_VEHICLES_HELP);}	
+helpbox 'IMPROVE_ARTIFICIAL_WOMB_COMPLEX' { Text(ID_IMPROVE_ARTIFICIAL_WOMB_COMPLEX_HELP);}	
+helpbox 'IMPROVE_RAIL_LAUNCHER' { Text(ID_IMPROVE_RAIL_LAUNCHER_HELP);}	
+helpbox 'IMPROVE_ARCOLOGIES' { Text(ID_IMPROVE_ARCOLOGIES_HELP);}	
+helpbox 'IMPROVE_BEEF_VAT' { Text(ID_IMPROVE_BEEF_VAT_HELP);}	
+helpbox 'IMPROVE_HOUSE_OF_FREEZING' { Text(ID_IMPROVE_HOUSE_OF_FREEZING_HELP);}	
+helpbox 'IMPROVE_MIND_CONTROL_EMITTER' { Text(ID_IMPROVE_MIND_CONTROL_EMITTER_HELP);}	
+helpbox 'IMPROVE_FORCEFIELD' { Text(ID_IMPROVE_FORCEFIELD_HELP);}	
+helpbox 'IMPROVE_NANITE_FACTORY' { Text(ID_IMPROVE_NANITE_FACTORY_HELP);}	
+helpbox 'IMPROVE_FUSION_PLANT' { Text(ID_IMPROVE_FUSION_PLANT_HELP);}	
+helpbox 'IMPROVE_EMBEDDED_KNOWLEDGE_CHIP' { Text(ID_IMPROVE_EMBEDDED_KNOWLEDGE_CHIP_HELP);}	
+helpbox 'IMPROVE_BODY_EXCHANGE' { Text(ID_IMPROVE_BODY_EXCHANGE_HELP);}	
+	
+
+//Wonders//
+helpbox 'WONDER_STONEHENGE' { Text(ID_WONDER_STONEHENGE_HELP);}	
+helpbox 'WONDER_SPHINX' { Text(ID_WONDER_SPHINX_HELP);}	
+helpbox 'WONDER_LABRYINTH_OF_THE_MINOTAUR' { Text(ID_WONDER_LABRYINTH_OF_THE_MINOTAUR_HELP);}	
+helpbox 'WONDER_RAYAMANA' { Text(ID_WONDER_RAYAMANA_HELP);}	
+helpbox 'WONDER_PARTHENON' { Text(ID_WONDER_PARTHENON_HELP);}	
+helpbox 'WONDER_I_CHING' { Text(ID_WONDER_I_CHING_HELP);}	
+helpbox 'WONDER_THE_FORBIDDEN_CITY' { Text(ID_WONDER_THE_FORBIDDEN_CITY_HELP);}	
+helpbox 'WONDER_PHILOSOPHERS_STONE' { Text(ID_WONDER_PHILOSOPHERS_STONE_HELP);}	
+helpbox 'WONDER_HAGIA_SOPHIA' { Text(ID_WONDER_HAGIA_SOPHIA_HELP);}	
+helpbox 'WONDER_GUTTENBERGS_BIBLE' { Text(ID_WONDER_GUTTENBERGS_BIBLE_HELP);}	
+helpbox 'WONDER_EAST_INDIA_COMPANY' { Text(ID_WONDER_EAST_INDIA_COMPANY_HELP);}	
+helpbox 'WONDER_GALILEOS_TELESCOPE' { Text(ID_WONDER_GALILEOS_TELESCOPE_HELP);}	
+helpbox 'WONDER_LONDON_STOCK_EXCHANGE' { Text(ID_WONDER_LONDON_STOCK_EXCHANGE_HELP);}	
+helpbox 'WONDER_EMANCIPATION_PROCLAMATION' { Text(ID_WONDER_EMANCIPATION_PROCLAMATION_HELP);}	
+helpbox 'WONDER_EDISONS_LAB' { Text(ID_WONDER_EDISONS_LAB_HELP);}	
+helpbox 'WONDER_HOLLYWOOD' { Text(ID_WONDER_HOLLYWOOD_HELP);}	
+helpbox 'WONDER_WORD_INTELLIGENCE_AGENCY' { Text(ID_WONDER_WORD_INTELLIGENCE_AGENCY_HELP);}	
+helpbox 'WONDER_INTERNET' { Text(ID_WONDER_INTERNET_HELP);}	
+helpbox 'WONDER_THE_PILL' { Text(ID_WONDER_THE_PILL_HELP);}	
+helpbox 'WONDER_HUMAN_GENOME_PROJECT' { Text(ID_WONDER_HUMAN_GENOME_PROJECT_HELP);}	
+helpbox 'WONDER_GLOBSAT' { Text(ID_WONDER_GLOBSAT_HELP);}	
+helpbox 'WONDER_STAR_LADDER' { Text(ID_WONDER_STAR_LADDER_HELP);}	
+helpbox 'WONDER_GLOBAL_E_BANK' { Text(ID_WONDER_GLOBAL_E_BANK_HELP);}	
+helpbox 'WONDER_DINOSAUR_PARK' { Text(ID_WONDER_DINOSAUR_PARK_HELP);}	
+helpbox 'WONDER_WORLD_WILDERNESS_ACT' { Text(ID_WONDER_WORLD_WILDERNESS_ACT_HELP);}	
+helpbox 'WONDER_GAIA_CONTROLLER' { Text(ID_WONDER_GAIA_CONTROLLER_HELP);}	
+helpbox 'WONDER_AI_ENTITY' { Text(ID_WONDER_AI_ENTITY_HELP);}	
+helpbox 'WONDER_EGALITARIAN_PROCLAMATION' { Text(ID_WONDER_EGALITARIAN_PROCLAMATION_HELP);}	
+helpbox 'WONDER_SENSORIUM' { Text(ID_WONDER_SENSORIUM_HELP);}	
+helpbox 'WONDER_NANITE_DEFUSER' { Text(ID_WONDER_NANITE_DEFUSER_HELP);}	
+helpbox 'WONDER_ESP_CENTER' { Text(ID_WONDER_ESP_CENTER_HELP);}	
+helpbox 'WONDER_THE_PRIMER' { Text(ID_WONDER_THE_PRIMER_HELP);}	
+//FIXMEBRADhelpbox 'WONDER_INTELLIGENT_LIFE_PROJECT' { Text(ID_WONDER_INTELLIGENT_LIFE_PROJECT_HELP);}
+helpbox 'WONDER_THE_IMMUNE_CELL_PROJECT' { Text(ID_WONDER_THE_IMMUNE_CELL_PROJECT_HELP);}	
+helpbox 'WONDER_WORMHOLE_DETECTOR' { Text(ID_WONDER_WORMHOLE_DETECTOR_HELP);}	
+helpbox 'WONDER_SUPER_FORCE_FIELD' { Text(ID_WONDER_SUPER_FORCE_FIELD_HELP);}
+
+
+
+////UI Help////
+
+
+
+////Main Screen////
+helpbox 'StatsWindow.ZoomPlusButton' { Text(ID_HELP_STATSWINDOW_ZOOMPLUS);}
+helpbox 'StatsWindow.ZoomMinusButton' { Text(ID_HELP_STATSWINDOW_ZOOMMINUS);}
+helpbox 'StatsWindow.OptionsButton' { Text(ID_HELP_STATSWINDOW_OPTIONS);}
+helpbox 'StatsWindow.PwBox' { Text(ID_STATSWINDOW_PWBOX);}	
+helpbox 'StatsWindow.GoldBox' { Text(ID_STATSWINDOW_GOLDBOX);}	
+helpbox 'StatsWindow.YearBox' { Text(ID_STATSWINDOW_YEARBOX);}	
+helpbox 'StatsWindow.CivButton' { Text(ID_STATSWINDOW_CIVBUTTON);}	
+helpbox 'StatsWindow.CityButton' { Text(ID_STATSWINDOW_CITYBUTTON);}	
+helpbox 'StatsWindow.UnitButton' { Text(ID_STATSWINDOW_UNITBUTTON);}	
+helpbox 'StatsWindow.SciButton' { Text(ID_STATSWINDOW_SCIBUTTON);}	
+helpbox 'StatsWindow.DipButton' { Text(ID_STATSWINDOW_DIPBUTTON);}	
+helpbox 'StatsWindow.TradeButton' { Text(ID_STATSWINDOW_TRADEBUTTON);}	
+helpbox 'StatsWindow.LibButton' { Text(ID_STATSWINDOW_LIBBUTTON);}	
+helpbox 'StatsWindow.InfoButton' { Text(ID_STATSWINDOW_INFOBUTTON);}	
+
+helpbox 'TurnWindow.UndoButton' { Text(ID_TURNWINDOW_UNDOBUTTON);}
+helpbox 'TurnWindow.CityButton' { Text(ID_TURNWINDOW_CITYBUTTON);}	
+helpbox 'TurnWindow.UnitButton' { Text(ID_TURNWINDOW_UNITBUTTON);}
+
+helpbox 'TurnWindow.EndButton' {Text(ID_TURNWINDOW_ENDBUTTON);}
+helpbox 'ControlPanelWindow.YearBoxHolder.YearBox' {Text(ID_CONTROLPANELWINDOW_YEARBOXHOLDER_YEARBOX);}
+helpbox 'ControlPanelWindow.ZoomMinusButton' {Text(ID_CONTROLPANELWINDOW_ZOOMMINUSBUTTON);}
+helpbox 'ControlPanelWindow.ZoomPlusButton' {Text(ID_CONTROLPANELWINDOW_ZOOMPLUSBUTTON);}
+helpbox 'ControlPanelWindow.PwBox' {Text(ID_CONTROLPANELWINDOW_PWBOX);}
+helpbox 'ControlPanelWindow.GoldBox' {Text(ID_CONTROLPANELWINDOW_GOLDBOX);}
+helpbox 'ControlPanelWindow.TileImpPanel.TileImpButton' {Text(ID_CONTROLPANELWINDOW_TILEIMPPANEL_TILEIMPBUTTON);}
+helpbox 'ControlPanelWindow.TileImpPanel.SpaceButton' {Text(ID_CONTROLPANELWINDOW_TILEIMPPANEL_SPACEBUTTON);}
+
+helpbox 'UnitPad.TechButton' {Text(ID_UNITPAD_TECHBUTTON);}
+
+helpbox 'TurnWindow.EndButton' {Text(ID_TURNWINDOW_ENDBUTTON);}
+helpbox 'ControlPanelWindow.YearBoxHolder.YearBox' {Text(ID_CONTROLPANELWINDOW_YEARBOXHOLDER_YEARBOX);}
+helpbox 'ControlPanelWindow.ZoomMinusButton' {Text(ID_CONTROLPANELWINDOW_ZOOMMINUSBUTTON);}
+helpbox 'ControlPanelWindow.ZoomPlusButton' {Text(ID_CONTROLPANELWINDOW_ZOOMPLUSBUTTON);}
+helpbox 'ControlPanelWindow.PwBox' {Text(ID_CONTROLPANELWINDOW_PWBOX);}
+helpbox 'ControlPanelWindow.GoldBox' {Text(ID_CONTROLPANELWINDOW_GOLDBOX);}
+helpbox 'ControlPanelWindow.TileImpPanel.TileImpButton' {Text(ID_CONTROLPANELWINDOW_TILEIMPPANEL_TILEIMPBUTTON);}
+
+
+	
+
+////Units Orders////
+//  helpbox 'ButtonBank.MoveButton' { Text(ID_HELP_BUTTONBANK_MOVE);}
+//  helpbox 'ButtonBank.SleepButton' { Text(ID_HELP_BUTTONBANK_SLEEP);}
+//  helpbox 'ButtonBank.SettleButton' {	Text(ID_HELP_BUTTONBANK_SETTLE);}
+//  helpbox 'ButtonBank.GoToButton' { Text(ID_HELP_BUTTONBANK_GOTO);}
+
+
+////Control Panel////
+
+
+
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.UnitsTab' { Text(ID_HELP_CP_UNITSTAB);}
+
+
+//Tile Improvements//
+helpbox 'ControlPanelWindow.TileImpPanel.LandButton' { Text(ID_HELP_CP_TILEIMP_LAND);}
+helpbox 'ControlPanelWindow.TileImpPanel.SeaButton' { Text(ID_HELP_CP_TILEIMP_SEA);}
+//helpbox 'ControlPanelWindow.TileImpPanel.                                                                                                                                                                                                                                                  
+helpbox 'ControlPanelWindow.TileImpPanel.TerraButton' { Text(ID_HELP_CP_TILEIMP_TERRA);}
+helpbox 'ControlPanelWindow.LandSwitches.Farms' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_FARMS);}	
+helpbox 'ControlPanelWindow.LandSwitches.AdvFarms' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_ADVFARMS);}	
+helpbox 'ControlPanelWindow.LandSwitches.HydFarms' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_HYDFARMS);}	
+helpbox 'ControlPanelWindow.LandSwitches.Mine' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_MINE);}	
+helpbox 'ControlPanelWindow.LandSwitches.AdvMine' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_ADVMINE);}	
+helpbox 'ControlPanelWindow.LandSwitches.SuperMine' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_SUPERMINE);}	
+helpbox 'ControlPanelWindow.LandSwitches.Roads' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_ROADS);}	
+helpbox 'ControlPanelWindow.LandSwitches.Railroads' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_RAILROADS);}	
+helpbox 'ControlPanelWindow.LandSwitches.Maglevs' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_MAGLEVS);}	
+helpbox 'ControlPanelWindow.LandSwitches.LPost' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_LPOST);}	
+//  helpbox 'ControlPanelWindow.LandSwitches.MineField' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_MINEFIELD);}	
+helpbox 'ControlPanelWindow.LandSwitches.RadarSite' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_RADARSITE);}	
+helpbox 'ControlPanelWindow.LandSwitches.AirBase' { Text(ID_CONTROLPANELWINDOW_LANDSWITCHES_AIRBASE);}	
+helpbox 'ControlPanelWindow.SeaSwitches.Nets' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_NETS);}	
+helpbox 'ControlPanelWindow.SeaSwitches.BigNets' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_BIGNETS);}	
+helpbox 'ControlPanelWindow.SeaSwitches.AutoFish' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_AUTOFISH);}	
+helpbox 'ControlPanelWindow.SeaSwitches.UWMines' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_UWMINES);}	
+helpbox 'ControlPanelWindow.SeaSwitches.UWAMines' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_UWAMINES);}	
+helpbox 'ControlPanelWindow.SeaSwitches.UWSuperMines' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_UWSUPERMINES);}	
+helpbox 'ControlPanelWindow.SeaSwitches.UWTunnels' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_UWTUNNELS);}	
+helpbox 'ControlPanelWindow.SeaSwitches.SonarBuoys' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_SONARBUOYS);}	
+//  helpbox 'ControlPanelWindow.SeaSwitches.MagMines' { Text(ID_CONTROLPANELWINDOW_SEASWITCHES_MAGMINES);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.FoodPods' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_FOODPODS);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.FoodMods' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_FOODMODS);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.FoodTanks' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_FOODTANKS);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.RDocks' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_RDOCKS);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.ARDocks' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_ARDOCKS);}	
+helpbox 'ControlPanelWindow.SpaceSwitches.SuperRDocks' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_SUPERRDOCKS);}	
+//  helpbox 'ControlPanelWindow.SpaceSwitches.XRMines' { Text(ID_CONTROLPANELWINDOW_SPACESWITCHES_XRMINES);}	
+
+
+
+//Micro Tab//	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroPicHolder.MicroSlavesLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROPICHOLDER_MICROSLAVESLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroPicHolder.MicroSlavesBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROPICHOLDER_MICROSLAVESBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroPicHolder.MicroWorkerLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROPICHOLDER_MICROWORKERLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroPicHolder.MicroWorkerBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROPICHOLDER_MICROWORKERBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroMusicianLabel.MicroMusicianBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROMUSICIANLABEL_MICROMUSICIANBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroMusicianLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROMUSICIANLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroMusicianLabel.MicroMusicianTotalBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROMUSICIANLABEL_MICROMUSICIANTOTALBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroScientistLabel.MicroScientistBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROSCIENTISTLABEL_MICROSCIENTISTBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroScientistLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROSCIENTISTLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroScientistLabel.MicroScientistTotalBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROSCIENTISTLABEL_MICROSCIENTISTTOTALBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroBankerLabel.MicroBankerBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROBANKERLABEL_MICROBANKERBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroBankerLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROBANKERLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroBankerLabel.MicroBankerTotalBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROBANKERLABEL_MICROBANKERTOTALBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroGruntLabel.MicroGruntBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROGRUNTLABEL_MICROGRUNTBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroGruntLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROGRUNTLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroButtonHolder.MicroGruntLabel.MicroGruntTotalBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROBUTTONHOLDER_MICROGRUNTLABEL_MICROGRUNTTOTALBOX);}	
+
+
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB);}
+
+
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MicroTab.pane.MicroTabWallpaper.MicroPicHolder.MicroSlavesBox' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MICROTAB_PANE_MICROTABWALLPAPER_MICROPICHOLDER_MICROSLAVESBOX);}
+
+ 
+
+//Production Tab//
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ListHolder.SellButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_LISTHOLDER_SELLBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.InfoHolder.TurnText' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_INFOHOLDER_TURNTEXT);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdChangeButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_BUILDBUTTONHOLDER_PRODCHANGEBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdOvertimeCost' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_BUILDBUTTONHOLDER_PRODOVERTIMECOST);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdRushBuyButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_BUILDBUTTONHOLDER_PRODRUSHBUYBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.BuildButtonHolder.ProdQueueButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_BUILDBUTTONHOLDER_PRODQUEUEBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ChangeButtonHolder.BuildButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_CHANGEBUTTONHOLDER_BUILDBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.ChangeButtonHolder.BuildQueueButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_CHANGEBUTTONHOLDER_BUILDQUEUEBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.InfoHolder.TurnText' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_INFOHOLDER_TURNTEXT);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.ProductionTab.pane.ProductionTabWallpaper.QueueButtonHolder.ApplyButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_PRODUCTIONTAB_PANE_PRODUCTIONTABWALLPAPER_QUEUEBUTTONHOLDER_APPLYBUTTON);}	
+
+//Macro Tab//
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroProdButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_SWITCHHOLDER_MACROSWITCHGROUP_MACROPRODBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroGrowthButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_SWITCHHOLDER_MACROSWITCHGROUP_MACROGROWTHBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroGoodsButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_SWITCHHOLDER_MACROSWITCHGROUP_MACROGOODSBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroKnowledgeButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_SWITCHHOLDER_MACROSWITCHGROUP_MACROKNOWLEDGEBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.SwitchHolder.MacroSwitchGroup.MacroHappinessButton' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_SWITCHHOLDER_MACROSWITCHGROUP_MACROHAPPINESSBUTTON);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroProdLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROPRODLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroProdBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROPRODBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroGoldLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROGOLDLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroGoldBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROGOLDBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroKnowLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROKNOWLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroKnowBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROKNOWBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroFoodLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROFOODLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroFoodBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROFOODBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroEatenLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROEATENLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroEatenBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROEATENBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroStoredLabel' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROSTOREDLABEL);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroStoredBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROSTOREDBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroNextPopBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACRONEXTPOPBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.MacroTab.pane.MacroTabWallpaper.BoxHolder.MacroHappyBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_MACROTAB_PANE_MACROTABWALLPAPER_BOXHOLDER_MACROHAPPYBOX);}	
+
+
+//Civ Tab//
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB);}	
+//FIXMEBRADhelpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.WorkdaySlider.thumb' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_WORKDAYSLIDER_THUMB);}	
+//FIXMEBRADhelpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.WorkdayBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_WORKDAYBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.RationsSlider.thumb' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_RATIONSSLIDER_THUMB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.RationsBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_RATIONSBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.WagesSlider.thumb' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_WAGESSLIDER_THUMB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.WagesBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_WAGESBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.HappinessBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_HAPPINESSBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.RiotBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_RIOTBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.RevolutionBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_REVOLUTIONBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.AdvanceText' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_ADVANCETEXT);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.AdvanceBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_ADVANCEBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.PwBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_PWBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.ScienceBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_SCIENCEBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CivTab.pane.CivTabWallpaper.WorkdayBox' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CIVTAB_PANE_CIVTABWALLPAPER_WORKDAYBOX);}
+
+
+//City Tab//
+//helpbox 'ontrolPanelWindow.CityUnitSelectedTabGroup.CityTab' { Text(ID_ONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.SwitchHolder.Group.HappinessSwitch' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_SWITCHHOLDER_GROUP_HAPPINESSSWITCH);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.SwitchHolder.Group.PollutionSwitch' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_SWITCHHOLDER_GROUP_POLLUTIONSWITCH);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.LeftBox.CrimeHolder.CrimeBox' { Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_LEFTBOX_CRIMEHOLDER_CRIMEBOX);}	
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB);}
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.SwitchHolder.Group.TradeSwitch' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_SWITCHHOLDER_GROUP_TRADESWITCH);}
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.SwitchHolder.Group.CrimeSwitch' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_SWITCHHOLDER_GROUP_CRIMESWITCH);}
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.LeftBox.TradeHolder.ViewButton' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_LEFTBOX_TRADEHOLDER_VIEWBUTTON);}
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.LeftBox.TradeHolder.SendButton' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_LEFTBOX_TRADEHOLDER_SENDBUTTON);}
+helpbox 'ControlPanelWindow.CityUnitSelectedTabGroup.CityTab.pane.TabWallpaper.LeftBox.TradeHolder.BreakRouteButton' {Text(ID_CONTROLPANELWINDOW_CITYUNITSELECTEDTABGROUP_CITYTAB_PANE_TABWALLPAPER_LEFTBOX_TRADEHOLDER_BREAKROUTEBUTTON);}
+
+
+
+
+////City View////
+//  helpbox 'CityViewWindow.InventoryList.header.switch0' { Text(ID_CITYVIEWWINDOW_INVENTORYLIST_HEADER_SWITCH0);}	
+//  helpbox 'CityViewWindow.InventoryList.header.switch1' { Text(ID_CITYVIEWWINDOW_INVENTORYLIST_HEADER_SWITCH1);}	
+//  helpbox 'CityViewWindow.SellButton' { Text(ID_CITYVIEWWINDOW_SELLBUTTON);}	
+//  helpbox 'CityViewWindow.BuyButton' { Text(ID_CITYVIEWWINDOW_BUYBUTTON);}	
+//  helpbox 'CityViewWindow.BuildButton' { Text(ID_CITYVIEWWINDOW_BUILDBUTTON);}	
+//  helpbox 'CityViewWindow.QueueButton' { Text(ID_CITYVIEWWINDOW_QUEUEBUTTON);}	
+//  helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeTotalTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADETOTALTAB);}	
+//  helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeToTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADETOTAB);}	
+//  helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeFromTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADEFROMTAB);}	
+//helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeTotalTab.pane.GoodsList.header.switch0' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADETOTALTAB_PANE_GOODSLIST_HEADER_SWITCH0);}	
+//helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeTotalTab.pane.GoodsList.header.switch1' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADETOTALTAB_PANE_GOODSLIST_HEADER_SWITCH1);}	
+//helpbox 'CityViewWindow.CityViewTradeTabGroup.TradeTotalTab.pane.GoodsList.header.switch2' { Text(ID_CITYVIEWWINDOW_CITYVIEWTRADETABGROUP_TRADETOTALTAB_PANE_GOODSLIST_HEADER_SWITCH2);}	
+//  helpbox 'CityViewWindow.CityViewCityTabGroup.MacroTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWCITYTABGROUP_MACROTAB);}	
+//  helpbox 'CityViewWindow.CityViewCityTabGroup.MicroTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWCITYTABGROUP_MICROTAB);}	
+//  helpbox 'CityViewWindow.CityViewCityTabGroup.PollutionTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWCITYTABGROUP_POLLUTIONTAB);}	
+//  helpbox 'CityViewWindow.CityViewCityTabGroup.HappinessTab' { Text(ID_CITYVIEWWINDOW_CITYVIEWCITYTABGROUP_HAPPINESSTAB);}	
+//  helpbox 'CityViewWindow.ExitButton' { Text(ID_CITYVIEWWINDOW_EXITBUTTON);}	
+
+//Options Screen//
+helpbox 'OptionsWindow.QuickSaveButton' { Text(ID_OPTIONSWINDOW_QUICKSAVEBUTTON);}	
+helpbox 'OptionsWindow.SaveGameButton' { Text(ID_OPTIONSWINDOW_SAVEGAMEBUTTON);}	
+helpbox 'OptionsWindow.SoundButton' { Text(ID_OPTIONSWINDOW_SOUNDBUTTON);}	
+helpbox 'OptionsWindow.GamePlayButton' { Text(ID_OPTIONSWINDOW_GAMEPLAYBUTTON);}	
+helpbox 'OptionsWindow.ReturnButton' { Text(ID_OPTIONSWINDOW_RETURNBUTTON);}	
+helpbox 'OptionsWindow.RestartButton' { Text(ID_OPTIONSWINDOW_RESTARTBUTTON);}	
+helpbox 'OptionsWindow.LoadGameButton' { Text(ID_OPTIONSWINDOW_LOADGAMEBUTTON);}	
+helpbox 'OptionsWindow.GraphicsButton' { Text(ID_OPTIONSWINDOW_GRAPHICSBUTTON);}	
+helpbox 'OptionsWindow.MapEditorButton' { Text(ID_OPTIONSWINDOW_MAPEDITORBUTTON);}	
+helpbox 'OptionsWindow.QuitButton' { Text(ID_OPTIONSWINDOW_QUITBUTTON);}	
+helpbox 'OptionsWindow.KeyboardButton' { Text(ID_OPTIONSWINDOW_KEYBOARDBUTTON);}	
+
+helpbox 'OptionsWindow.SaveGameMapButton' {Text(ID_OPTIONSWINDOW_SAVEGAMEMAPBUTTON );}
+helpbox 'OptionsWindow.MusicButton' {Text(ID_OPTIONSWINDOW_MUSICBUTTON );}
+helpbox 'OptionsWindow.SaveScenarioButton' {Text(ID_OPTIONSWINDOW_SAVESCENARIOBUTTON );}
+helpbox 'OptionsWindow.NewGameButton' {Text(ID_OPTIONSWINDOW_NEWGAMEBUTTON );}
+
+
+
+
+
+//Units Status//
+helpbox 'UnitStatusWin.OrderGroup.OrderOne' { Text(ID_UNITSTATUSWIN_ORDERGROUP_ORDERONE);}	
+helpbox 'UnitStatusWin.OrderGroup.OrderTwo' { Text(ID_UNITSTATUSWIN_ORDERGROUP_ORDERTWO);}	
+helpbox 'UnitStatusWin.OrderGroup.OrderThree' { Text(ID_UNITSTATUSWIN_ORDERGROUP_ORDERTHREE);}	
+helpbox 'UnitStatusWin.OrderGroup.OrderFour' { Text(ID_UNITSTATUSWIN_ORDERGROUP_ORDERFOUR);}	
+helpbox 'UnitStatusWin.OrderGroup.OrderFive' { Text(ID_UNITSTATUSWIN_ORDERGROUP_ORDERFIVE);}	
+helpbox 'UnitStatusWin.List.header.switch0' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH0);}	
+helpbox 'UnitStatusWin.List.header.switch1' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH1);}	
+helpbox 'UnitStatusWin.List.header.switch2' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH2);}	
+helpbox 'UnitStatusWin.List.header.switch3' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH3);}	
+helpbox 'UnitStatusWin.List.header.switch4' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH4);}	
+helpbox 'UnitStatusWin.List.header.switch5' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH5);}	
+helpbox 'UnitStatusWin.List.header.switch6' { Text(ID_UNITSTATUSWIN_LIST_HEADER_SWITCH6);}	
+helpbox 'UnitStatusWin.MilitarySlider' { Text(ID_UNITSTATUSWIN_MILITARYSLIDER);}	
+helpbox 'UnitStatusWin.CostBox' { Text(ID_UNITSTATUSWIN_COSTBOX);}	
+helpbox 'UnitStatusWin.TotalBox' { Text(ID_UNITSTATUSWIN_TOTALBOX);}	
+
+helpbox 'UnitStatusWin.DisbandButton' {Text(ID_UNITSTATUSWIN_DISBANDBUTTON );}
+
+//City Status//	
+helpbox 'CityStatusWin.CityList.header.switch1' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH1);}	
+helpbox 'CityStatusWin.CityList.header.switch2' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH2);}	
+helpbox 'CityStatusWin.CityList.header.switch3' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH3);}	
+helpbox 'CityStatusWin.CityList.header.switch4' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH4);}	
+helpbox 'CityStatusWin.CityList.header.switch5' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH5);}	
+helpbox 'CityStatusWin.CityList.header.switch6' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH6);}	
+helpbox 'CityStatusWin.CityList.header.switch7' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH7);}	
+helpbox 'CityStatusWin.CityList.header.switch8' { Text(ID_CITYSTATUSWIN_CITYLIST_HEADER_SWITCH8);}	
+helpbox 'CityStatusWin.BuildOptionsList.header.switch1' { Text(ID_CITYSTATUSWIN_BUILDOPTIONSLIST_HEADER_SWITCH1);}	
+helpbox 'CityStatusWin.RushBuyButton' { Text(ID_CITYSTATUSWIN_RUSHBUYBUTTON);}	
+helpbox 'CityStatusWin.BuildButton' { Text(ID_CITYSTATUSWIN_BUILDBUTTON);}	
+helpbox 'CityStatusWin.QueueButton' { Text(ID_CITYSTATUSWIN_QUEUEBUTTON);}	
+
+helpbox 'CityStatusWin.DisbandButton' {Text(ID_CITYSTATUSWIN_DISBANDBUTTON );}
+helpbox 'CityStatusWin.MakeQueueButton' {Text(ID_CITYSTATUSWIN_MAKEQUEUEBUTTON );}
+helpbox 'CityStatusWin.LoadQueueButton' {Text(ID_CITYSTATUSWIN_LOADQUEUEBUTTON );}
+
+
+
+//Civ Status//	
+helpbox 'CivStatusMainWindow.text1' { Text(ID_CIVSTATUSMAINWINDOW_TEXT1);}	
+helpbox 'CivStatusMainWindow.text3' { Text(ID_CIVSTATUSMAINWINDOW_TEXT3);}	
+helpbox 'CivStatusMainWindow.text5' { Text(ID_CIVSTATUSMAINWINDOW_TEXT5);}	
+helpbox 'CivStatusMainWindow.text7' { Text(ID_CIVSTATUSMAINWINDOW_TEXT7);}	
+helpbox 'CivStatusMainWindow.text9' { Text(ID_CIVSTATUSMAINWINDOW_TEXT9);}	
+helpbox 'CivStatusMainWindow.button7' { Text(ID_CIVSTATUSMAINWINDOW_BUTTON7);}	
+helpbox 'CivStatusMainWindow.button0' { Text(ID_CIVSTATUSMAINWINDOW_BUTTON0);}	
+helpbox 'CivStatusMainWindow.text10' { Text(ID_CIVSTATUSMAINWINDOW_TEXT10);}	
+helpbox 'CivStatusMainWindow.text12' { Text(ID_CIVSTATUSMAINWINDOW_TEXT12);}	
+helpbox 'CivStatusMainWindow.text14' { Text(ID_CIVSTATUSMAINWINDOW_TEXT14);}	
+helpbox 'CivStatusMainWindow.text16' { Text(ID_CIVSTATUSMAINWINDOW_TEXT16);}	
+helpbox 'CivStatusMainWindow.button1' { Text(ID_CIVSTATUSMAINWINDOW_BUTTON1);}	
+helpbox 'CivStatusMainWindow.text17' { Text(ID_CIVSTATUSMAINWINDOW_TEXT17);}	
+helpbox 'CivStatusMainWindow.text19' { Text(ID_CIVSTATUSMAINWINDOW_TEXT19);}	
+helpbox 'CivStatusMainWindow.text21' { Text(ID_CIVSTATUSMAINWINDOW_TEXT21);}	
+helpbox 'CivStatusMainWindow.text23' { Text(ID_CIVSTATUSMAINWINDOW_TEXT23);}	
+helpbox 'CivStatusMainWindow.text24' { Text(ID_CIVSTATUSMAINWINDOW_TEXT24);}	
+helpbox 'CivStatusMainWindow.button2' { Text(ID_CIVSTATUSMAINWINDOW_BUTTON2);}	
+helpbox 'CivStatusMainWindow.text26' { Text(ID_CIVSTATUSMAINWINDOW_TEXT26);}	
+helpbox 'CivStatusMainWindow.text28' { Text(ID_CIVSTATUSMAINWINDOW_TEXT28);}	
+helpbox 'CivStatusMainWindow.text30' { Text(ID_CIVSTATUSMAINWINDOW_TEXT30);}	
+helpbox 'CivStatusProdWindow.text1' { Text(ID_CIVSTATUSPRODWINDOW_TEXT1);}	
+helpbox 'CivStatusProdWindow.text3' { Text(ID_CIVSTATUSPRODWINDOW_TEXT3);}	
+helpbox 'CivStatusProdWindow.text5' { Text(ID_CIVSTATUSPRODWINDOW_TEXT5);}	
+helpbox 'CivStatusProdWindow.text7' { Text(ID_CIVSTATUSPRODWINDOW_TEXT7);}	
+helpbox 'CivStatusProdWindow.text9' { Text(ID_CIVSTATUSPRODWINDOW_TEXT9);}	
+helpbox 'CivStatusProdWindow.text11' { Text(ID_CIVSTATUSPRODWINDOW_TEXT11);}	
+helpbox 'CivStatusProdWindow.text13' { Text(ID_CIVSTATUSPRODWINDOW_TEXT13);}	
+helpbox 'CivStatusGoldWindow.text1' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT1);}	
+helpbox 'CivStatusGoldWindow.text3' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT3);}	
+helpbox 'CivStatusGoldWindow.text5' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT5);}	
+helpbox 'CivStatusGoldWindow.text7' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT7);}	
+helpbox 'CivStatusGoldWindow.text9' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT9);}	
+helpbox 'CivStatusGoldWindow.text11' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT11);}	
+helpbox 'CivStatusGoldWindow.text13' { Text(ID_CIVSTATUSGOLDWINDOW_TEXT13);}	
+helpbox 'CivStatusFoodWindow.text1' { Text(ID_CIVSTATUSFOODWINDOW_TEXT1);}	
+helpbox 'CivStatusFoodWindow.text3' { Text(ID_CIVSTATUSFOODWINDOW_TEXT3);}	
+helpbox 'CivStatusFoodWindow.text5' { Text(ID_CIVSTATUSFOODWINDOW_TEXT5);}	
+helpbox 'CivStatusFoodWindow.text7' { Text(ID_CIVSTATUSFOODWINDOW_TEXT7);}	
+helpbox 'CivStatusEnactWindow.ChangeButton' { Text(ID_CIVSTATUSENACTWINDOW_CHANGEBUTTON);}	
+//  helpbox 'CivStatusMainWindow.text25' { Text(ID_CIVSTATUSMAINWINDOW_TEXT25);}	
+
+helpbox 'CivStatusMainWindow.text33' {Text(ID_CIVSTATUSMAINWINDOW_TEXT33 );}
+helpbox 'CivStatusMainWindow.text37' {Text(ID_CIVSTATUSMAINWINDOW_TEXT37 );}
+
+//Science Screen//
+helpbox 'ScienceWin.ChangeButton' { Text(ID_SCIENCEWIN_CHANGEBUTTON);}	
+helpbox 'ScienceWin.ResearchClock' { Text(ID_SCIENCEWIN_RESEARCHCLOCK);}	
+helpbox 'ScienceWin.TurnsBox' { Text(ID_SCIENCEWIN_TURNSBOX);}	
+helpbox 'ScienceWin.CostBox' { Text(ID_SCIENCEWIN_COSTBOX);}	
+helpbox 'ScienceWin.PercentBox' { Text(ID_SCIENCEWIN_PERCENTBOX);}	
+helpbox 'ScienceWin.LibraryButton' { Text(ID_SCIENCEWIN_LIBRARYBUTTON);}	
+helpbox 'ScienceWin.AdvanceList.header.switch0' { Text(ID_SCIENCEWIN_ADVANCELIST_HEADER_SWITCH0);}	
+helpbox 'ScienceWin.AdvanceList.header.switch1' { Text(ID_SCIENCEWIN_ADVANCELIST_HEADER_SWITCH1);}	
+helpbox 'ScienceWin.AdvanceList.header.switch2' { Text(ID_SCIENCEWIN_ADVANCELIST_HEADER_SWITCH2);}	
+helpbox 'ScienceWin.AdvanceList.header.switch1' { Text(ID_SCIENCEWIN_ADVANCELIST_HEADER_SWITCH1);}	
+helpbox 'ScienceWin.AdvanceList.header.switch2' { Text(ID_SCIENCEWIN_ADVANCELIST_HEADER_SWITCH2);}	
+
+helpbox 'ScienceWin.SciBox' {Text(ID_SCIENCEWIN_SCIBOX );}
+
+//Diplomacy Screen//
+helpbox 'DiplomacyWindow.CivilisationListSheet.CivilisationList.header.switch1' { Text(ID_DIPLOMACYWINDOW_CIVILISATIONLISTSHEET_CIVILISATIONLIST_HEADER_SWITCH1);}	
+helpbox 'DiplomacyWindow.CivilisationListSheet.CivilisationList.header.switch2' { Text(ID_DIPLOMACYWINDOW_CIVILISATIONLISTSHEET_CIVILISATIONLIST_HEADER_SWITCH2);}	
+helpbox 'DiplomacyWindow.CivilisationListSheet.CivilisationList.header.switch3' { Text(ID_DIPLOMACYWINDOW_CIVILISATIONLISTSHEET_CIVILISATIONLIST_HEADER_SWITCH3);}	
+helpbox 'DiplomacyWindow.CivilisationListSheet.IntelligenceButton' { Text(ID_DIPLOMACYWINDOW_CIVILISATIONLISTSHEET_INTELLIGENCEBUTTON);}	
+helpbox 'DiplomacyWindow.CivilisationListSheet.EmissaryButton' { Text(ID_DIPLOMACYWINDOW_CIVILISATIONLISTSHEET_EMISSARYBUTTON);}	
+helpbox 'DiplomacyWindow.RequestSheet.DemandButton' { Text(ID_DIPLOMACYWINDOW_REQUESTSHEET_DEMANDBUTTON);}	
+helpbox 'DiplomacyWindow.RequestSheet.ExchangeButton' { Text(ID_DIPLOMACYWINDOW_REQUESTSHEET_EXCHANGEBUTTON);}	
+helpbox 'DiplomacyWindow.RequestSheet.GiftButton' { Text(ID_DIPLOMACYWINDOW_REQUESTSHEET_GIFTBUTTON);}	
+helpbox 'DiplomacyWindow.RequestSheet.TreatyButton' { Text(ID_DIPLOMACYWINDOW_REQUESTSHEET_TREATYBUTTON);}	
+helpbox 'DiplomacyWindow.DemandOptionsSheet.GoldButton' { Text(ID_DIPLOMACYWINDOW_DEMANDOPTIONSSHEET_GOLDBUTTON);}	
+helpbox 'DiplomacyWindow.DemandOptionsSheet.MapButton' { Text(ID_DIPLOMACYWINDOW_DEMANDOPTIONSSHEET_MAPBUTTON);}	
+//  helpbox 'DiplomacyWindow.DemandOptionsSheet.CityButton' { Text(ID_DIPLOMACYWINDOW_DEMANDOPTIONSSHEET_CITYBUTTON);}	
+helpbox 'DiplomacyWindow.DemandOptionsSheet.AdvanceButton' { Text(ID_DIPLOMACYWINDOW_DEMANDOPTIONSSHEET_ADVANCEBUTTON);}	
+helpbox 'DiplomacyWindow.DemandOptionsSheet.ActionButton' { Text(ID_DIPLOMACYWINDOW_DEMANDOPTIONSSHEET_ACTIONBUTTON);}	
+helpbox 'DiplomacyWindow.DemandGoldSheet.Amount' { Text(ID_DIPLOMACYWINDOW_DEMANDGOLDSHEET_AMOUNT);}	
+helpbox 'DiplomacyWindow.DemandGoldSheet.SendButton' { Text(ID_DIPLOMACYWINDOW_DEMANDGOLDSHEET_SENDBUTTON);}	
+//  helpbox 'DiplomacyWindow.ExchangeOptionsSheet.CityButton' { Text(ID_DIPLOMACYWINDOW_EXCHANGEOPTIONSSHEET_CITYBUTTON);}	
+helpbox 'DiplomacyWindow.ExchangeOptionsSheet.MapButton' { Text(ID_DIPLOMACYWINDOW_EXCHANGEOPTIONSSHEET_MAPBUTTON);}	
+helpbox 'DiplomacyWindow.ExchangeOptionsSheet.AdvanceButton' { Text(ID_DIPLOMACYWINDOW_EXCHANGEOPTIONSSHEET_ADVANCEBUTTON);}
+
+	
+helpbox 'DiplomacyWindow.GiftOptionsSheet.GoldButton' { Text(ID_DIPLOMACYWINDOW_GIFTOPTIONSSHEET_GOLDBUTTON);}	
+helpbox 'DiplomacyWindow.GiftOptionsSheet.MapButton' { Text(ID_DIPLOMACYWINDOW_GIFTOPTIONSSHEET_MAPBUTTON);}	
+helpbox 'DiplomacyWindow.GiftOptionsSheet.AdvanceButton' { Text(ID_DIPLOMACYWINDOW_GIFTOPTIONSSHEET_ADVANCEBUTTON);}
+
+helpbox 'DiplomacyWindow.TreatyOptionsSheet.AllianceButton' { Text(ID_DIPLOMACYWINDOW_TREATYOPTIONSSHEET_ALLIANCEBUTTON);}
+	
+
+
+
+helpbox 'DiplomacyWindow.TreatyOptionsSheet.CeaseFireButton' { Text(ID_DIPLOMACYWINDOW_TREATYOPTIONSSHEET_CEASEFIREBUTTON);}
+helpbox 'DiplomacyWindow.TreatyOptionsSheet.EcoPactButton' { Text(ID_DIPLOMACYWINDOW_TREATYOPTIONSSHEET_ECOPACTBUTTON);}	
+
+
+
+helpbox 'DiplomacyWindow.DemandActionSheet.NoPiracyButton' { Text(ID_DIPLOMACYWINDOW_DEMANDACTIONSHEET_NOPIRACYBUTTON);}	
+helpbox 'DiplomacyWindow.DemandActionSheet.ReducePollutionButton' {Text(ID_DIPLOMACYWINDOW_DEMANDACTIONSHEET_REDUCEPOLLUTIONBUTTON);}	
+helpbox 'DiplomacyWindow.DemandActionSheet.LeaveMyLandsButton' { Text(ID_DIPLOMACYWINDOW_DEMANDACTIONSHEET_LEAVEMYLANDSBUTTON);}	
+helpbox 'DiplomacyWindow.DemandActionSheet.StopTradeButton'  { Text(ID_DIPLOMACYWINDOW_DEMANDACTIONSHEET_STOPTRADEBUTTON);}
+helpbox 'DiplomacyWindow.DemandActionSheet.AttackEnemyButton'  { Text(ID_DIPLOMACYWINDOW_DEMANDACTIONSHEET_ATTACKENEMYBUTTON);}
+
+
+
+helpbox 'DiplomacyWindow.ResponseSheet.YesButton' {Text(ID_DIPLOMACYWINDOW_RESPONSESHEET_YESBUTTON);}	
+helpbox 'DiplomacyWindow.ResponseSheet.NoButton' { Text(ID_DIPLOMACYWINDOW_RESPONSESHEET_NOBUTTON);}	
+	
+helpbox 'DiplomacyWindow.GiftGoldSheet.SendButton' {Text(ID_DIPLOMACYWINDOW_GIFTGOLDSHEET_SENDBUTTON);}	
+helpbox 'DipWinIntelligence.CivList.header.switch0' { Text(ID_DIPWININTELLIGENCE_CIVLIST_HEADER_SWITCH0);}	
+helpbox 'DipWinIntelligence.CivList.header.switch1' {Text(ID_DIPWININTELLIGENCE_CIVLIST_HEADER_SWITCH1);}	
+helpbox 'DipWinIntelligence.LeaderLabel' { Text(ID_DIPWININTELLIGENCE_LEADERLABEL);}	
+helpbox 'DipWinIntelligence.PersonalityLabel' {Text(ID_DIPWININTELLIGENCE_PERSONALITYLABEL);}	
+helpbox 'DipWinIntelligence.GovernmentLabel' { Text(ID_DIPWININTELLIGENCE_GOVERNMENTLABEL);}	
+helpbox 'DipWinIntelligence.ReadinessLabel' {Text(ID_DIPWININTELLIGENCE_READINESSLABEL);}	
+helpbox 'DipWinIntelligence.DetailsSheet.DealsList.header.switch0' { Text(ID_DIPWININTELLIGENCE_DETAILSSHEET_DEALSLIST_HEADER_SWITCH0);}	
+helpbox 'DipWinIntelligence.DetailsSheet.DealsList.header.switch1' {Text(ID_DIPWININTELLIGENCE_DETAILSSHEET_DEALSLIST_HEADER_SWITCH1);}	
+helpbox 'DipWinIntelligence.DetailsSheet.DealsList.header.switch2' { Text(ID_DIPWININTELLIGENCE_DETAILSSHEET_DEALSLIST_HEADER_SWITCH2);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.AttitudeTab' {Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_ATTITUDETAB);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.PollutionTab' { Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_POLLUTIONTAB);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.SpecialTab' {Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_SPECIALTAB);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.SpecialTab.pane.UnconventionalSheet.ByButton' {Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_SPECIALTAB_PANE_UNCONVENTIONALSHEET_BYBUTTON);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.SpecialTab.pane.UnconventionalSheet.AgainstButton' { Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_SPECIALTAB_PANE_UNCONVENTIONALSHEET_AGAINSTBUTTON);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.SpecialTab.pane.UnconventionalSheet.UnconventionalList.header.switch0' {Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_SPECIALTAB_PANE_UNCONVENTIONALSHEET_UNCONVENTIONALLIST_HEADER_SWITCH0);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.SpecialTab.pane.UnconventionalSheet.UnconventionalList.header.switch1' { Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_SPECIALTAB_PANE_UNCONVENTIONALSHEET_UNCONVENTIONALLIST_HEADER_SWITCH1);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.PollutionTab.pane.PollutionSheet.PollutionList.header.switch0' { Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_POLLUTIONTAB_PANE_POLLUTIONSHEET_POLLUTIONLIST_HEADER_SWITCH0);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.PollutionTab.pane.PollutionSheet.PollutionList.header.switch1' {Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_POLLUTIONTAB_PANE_POLLUTIONSHEET_POLLUTIONLIST_HEADER_SWITCH1);}	
+helpbox 'DipWinIntelligence.CommandViewSheet.Group.PollutionTab.pane.PollutionSheet.PollutionList.header.switch2' { Text(ID_DIPWININTELLIGENCE_COMMANDVIEWSHEET_GROUP_POLLUTIONTAB_PANE_POLLUTIONSHEET_POLLUTIONLIST_HEADER_SWITCH2);}	
+
+
+
+//Trade Screen//
+helpbox 'TradeMainWindow.BuyButton' { Text(ID_TRADEMAINWINDOW_BUYBUTTON);}	
+helpbox 'TradeMainWindow.SendButton' {Text(ID_TRADEMAINWINDOW_SENDBUTTON);}	
+helpbox 'TradeMainWindow.SellButton' { Text(ID_TRADEMAINWINDOW_SELLBUTTON);}	
+helpbox 'TradeMainWindow.ReviewButton' {Text(ID_TRADEMAINWINDOW_REVIEWBUTTON);}	
+helpbox 'TradeMainWindow.CaravanImage' { Text(ID_TRADEMAINWINDOW_CARAVANIMAGE);}	
+helpbox 'TradeSendWindow.CaravanImage' {Text(ID_TRADESENDWINDOW_CARAVANIMAGE);}	
+helpbox 'TradeSendWindow.ListBox.header.switch2' { Text(ID_TRADESENDWINDOW_LISTBOX_HEADER_SWITCH2);}	
+helpbox 'TradeSendCityWindow.CaravanImage' {Text(ID_TRADESENDCITYWINDOW_CARAVANIMAGE);}	
+helpbox 'TradeSendCityWindow.FromList.header.switch0' { Text(ID_TRADESENDCITYWINDOW_FROMLIST_HEADER_SWITCH0);}	
+helpbox 'TradeSendCityWindow.FromList.header.switch1' {Text(ID_TRADESENDCITYWINDOW_FROMLIST_HEADER_SWITCH1);}	
+helpbox 'TradeSendCityWindow.ToList.header.switch0' { Text(ID_TRADESENDCITYWINDOW_TOLIST_HEADER_SWITCH0);}	
+helpbox 'TradeSendCityWindow.ToList.header.switch1' {Text(ID_TRADESENDCITYWINDOW_TOLIST_HEADER_SWITCH1);}	
+helpbox 'TradeSendCityWindow.ToList.header.switch2' { Text(ID_TRADESENDCITYWINDOW_TOLIST_HEADER_SWITCH2);}	
+helpbox 'TradeSendCityWindow.SendButton' {Text(ID_TRADESENDCITYWINDOW_SENDBUTTON);}	
+helpbox 'TradeSellWindow.ListBox.header.switch2' {Text(ID_TRADESELLWINDOW_LISTBOX_HEADER_SWITCH2);}	
+helpbox 'TradeSellWindow.ListBox.header.switch3' { Text(ID_TRADESELLWINDOW_LISTBOX_HEADER_SWITCH3);}	
+helpbox 'TradeSellCityWindow.text3' {Text(ID_TRADESELLCITYWINDOW_TEXT3);}	
+helpbox 'TradeSellCityWindow.ListBox.header.switch2' { Text(ID_TRADESELLCITYWINDOW_LISTBOX_HEADER_SWITCH2);}	
+helpbox 'TradeSellCityWindow.text0' {Text(ID_TRADESELLCITYWINDOW_TEXT0);}	
+helpbox 'TradeSellCityWindow.button2' { Text(ID_TRADESELLCITYWINDOW_BUTTON2);}	
+helpbox 'TradeBuyWindow.CaravanImage' { Text(ID_TRADEBUYWINDOW_CARAVANIMAGE );}	
+helpbox 'TradeBuyWindow.ListBox.header.switch1' { Text(ID_TRADEBUYWINDOW_LISTBOX_HEADER_SWITCH1);}	
+helpbox 'TradeBuyWindow.ListBox.header.switch2' {Text(ID_TRADEBUYWINDOW_LISTBOX_HEADER_SWITCH2);}	
+helpbox 'TradeBuyWindow.ListBox.header.switch3' { Text(ID_TRADEBUYWINDOW_LISTBOX_HEADER_SWITCH3);}	
+helpbox 'TradeBuyWindow.ListBox.header.switch4' {Text(ID_TRADEBUYWINDOW_LISTBOX_HEADER_SWITCH4);}	
+helpbox 'TradeBuyWindow.ListBox.header.switch5' { Text(ID_TRADEBUYWINDOW_LISTBOX_HEADER_SWITCH5);}	
+helpbox 'TradeBuyDestWindow.CaravanImage' {Text(ID_TRADEBUYDESTWINDOW_CARAVANIMAGE);}	
+helpbox 'TradeBuyDestWindow.AttImage' { Text(ID_TRADEBUYDESTWINDOW_ATTIMAGE);}	
+helpbox 'TradeBuyDestWindow.ListBox.header.switch0' {Text(ID_TRADEBUYDESTWINDOW_LISTBOX_HEADER_SWITCH0);}	
+helpbox 'TradeBuyDestWindow.ListBox.header.switch1' { Text(ID_TRADEBUYDESTWINDOW_LISTBOX_HEADER_SWITCH1);}	
+helpbox 'TradeReviewWindow.CaravanImage' { Text(ID_TRADEREVIEWWINDOW_CARAVANIMAGE);}	
+helpbox 'TradeReviewWindow.GoodsList.header.switch1' {Text(ID_TRADEREVIEWWINDOW_GOODSLIST_HEADER_SWITCH1);}	
+helpbox 'TradeReviewWindow.GoodsList.header.switch2' { Text(ID_TRADEREVIEWWINDOW_GOODSLIST_HEADER_SWITCH2);}	
+helpbox 'TradeReviewWindow.BreakButton'{Text(ID_TRADEREVIEWWINDOW_BREAKBUTTON);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.DomesticTab' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_DOMESTICTAB);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab'{Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.DomesticTab.pane.DomesticList.header.switch1'{Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_DOMESTICTAB_PANE_DOMESTICLIST_HEADER_SWITCH1);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.DomesticTab.pane.DomesticList.header.switch2' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_DOMESTICTAB_PANE_DOMESTICLIST_HEADER_SWITCH2);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.DomesticTab.pane.DomesticList.header.switch3' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_DOMESTICTAB_PANE_DOMESTICLIST_HEADER_SWITCH3);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.DomesticTab.pane.DomesticList.header.switch4' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_DOMESTICTAB_PANE_DOMESTICLIST_HEADER_SWITCH4);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch1' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH1);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch2' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH2);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch3' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH3);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch4' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH4);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch5' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH5);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ExportTab.pane.ExportList.header.switch6' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_EXPORTTAB_PANE_EXPORTLIST_HEADER_SWITCH6);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab.pane.ForSaleList.header.switch1' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB_PANE_FORSALELIST_HEADER_SWITCH1);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab.pane.ForSaleList.header.switch2' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB_PANE_FORSALELIST_HEADER_SWITCH2);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab.pane.ForSaleList.header.switch3' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB_PANE_FORSALELIST_HEADER_SWITCH3);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab.pane.ForSaleList.header.switch4' { Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB_PANE_FORSALELIST_HEADER_SWITCH4);}	
+helpbox 'TradeReviewWindow.ReviewTabGroup.ForSaleTab.pane.ForSaleList.header.switch5' {Text(ID_TRADEREVIEWWINDOW_REVIEWTABGROUP_FORSALETAB_PANE_FORSALELIST_HEADER_SWITCH5);}	
+helpbox 'TradeReviewWindow.ResetButton' { Text(ID_TRADEREVIEWWINDOW_RESETBUTTON);}
+
+
+
+//Great Library//
+helpbox 'GreatLibrary.TabGroup.GameplayTab' {Text(ID_GREATLIBRARY_TABGROUP_GAMEPLAYTAB);}	
+helpbox 'GreatLibrary.TabGroup.HistoricalTab' { Text(ID_GREATLIBRARY_TABGROUP_HISTORICALTAB);}	
+helpbox 'GreatLibrary.IndexButton' {Text(ID_GREATLIBRARY_INDEXBUTTON);}	
+
+
+//Info//
+helpbox 'InfoWindow.BigButton' { Text(ID_INFOWINDOW_BIGBUTTON);}	
+helpbox 'InfoWindow.WonderButton' { Text(ID_INFOWINDOW_WONDERBUTTON);}	
+helpbox 'InfoWindow.StrengthButton' { Text(ID_INFOWINDOW_STRENGTHBUTTON);}	
+helpbox 'InfoWindow.InfoBigList.header.switch0' { Text(ID_INFOWINDOW_INFOBIGLIST_HEADER_SWITCH0);}	
+helpbox 'InfoWindow.InfoBigList.header.switch1' { Text(ID_INFOWINDOW_INFOBIGLIST_HEADER_SWITCH1);}	
+helpbox 'InfoWindow.InfoBigList.header.switch2' { Text(ID_INFOWINDOW_INFOBIGLIST_HEADER_SWITCH2);}	
+helpbox 'InfoWindow.InfoBigList.header.switch3' { Text(ID_INFOWINDOW_INFOBIGLIST_HEADER_SWITCH3);}	
+helpbox 'InfoWindow.PollutionButton' {Text(ID_INFOWINDOW_POLLUTIONBUTTON );}
+helpbox 'InfoWindow.ScoreButton' {Text(ID_INFOWINDOW_SCOREBUTTON );}
+helpbox 'InfoWindow.LabButton' {Text(ID_INFOWINDOW_LABBUTTON );}
+helpbox 'InfoWindow.ThroneButton' {Text(ID_INFOWINDOW_THRONEBUTTON );}	
+
+//CV Screen//
+//  helpbox 'CvScreen.Group.StatsTab' { Text(ID_CVSCREEN_GROUP_STATSTAB);}	
+//  helpbox 'CvScreen.Group.HappyTab' { Text(ID_CVSCREEN_GROUP_HAPPYTAB);}	
+//  helpbox 'CvScreen.Group.PollutionTab' { Text(ID_CVSCREEN_GROUP_POLLUTIONTAB);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.ProdBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_PRODBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.ProdCrimeBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_PRODCRIMEBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.FoodBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_FOODBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.FoodCrimeBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_FOODCRIMEBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.NextPopBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_NEXTPOPBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.StoredBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_STOREDBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.GoldBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_GOLDBOX);}	
+//  helpbox 'CvScreen.Group.StatsTab.pane.ScienceBox' { Text(ID_CVSCREEN_GROUP_STATSTAB_PANE_SCIENCEBOX);}	
+//  helpbox 'CvScreen.Group.HappyTab.pane.UnhappyList.header.switch0' { Text(ID_CVSCREEN_GROUP_HAPPYTAB_PANE_UNHAPPYLIST_HEADER_SWITCH0);}	
+//  helpbox 'CvScreen.Group.HappyTab.pane.HappyList.header.switch0' { Text(ID_CVSCREEN_GROUP_HAPPYTAB_PANE_HAPPYLIST_HEADER_SWITCH0);}	
+//  helpbox 'CvScreen.Group.PollutionTab.pane.CarbonDioxideList.header.switch0' { Text(ID_CVSCREEN_GROUP_POLLUTIONTAB_PANE_CARBONDIOXIDELIST_HEADER_SWITCH0);}	
+//  helpbox 'CvScreen.Group.PollutionTab.pane.OzoneList.header.switch0' { Text(ID_CVSCREEN_GROUP_POLLUTIONTAB_PANE_OZONELIST_HEADER_SWITCH0);}	
+
+//Multiplayer Shell//
+helpbox 'serverselectwindow.selectserverlistbox.header.switch0' { Text(ID_SERVERSELECTWINDOW_SELECTSERVERLISTBOX_HEADER_SWITCH0);}	
+helpbox 'serverselectwindow.selectserverlistbox.header.switch1' { Text(ID_SERVERSELECTWINDOW_SELECTSERVERLISTBOX_HEADER_SWITCH1);}	
+helpbox 'serverselectwindow.selectserverlistbox.header.switch2' { Text(ID_SERVERSELECTWINDOW_SELECTSERVERLISTBOX_HEADER_SWITCH2);}	
+	
+helpbox 'playerselectwindow.newbutton' { Text(ID_PLAYERSELECTWINDOW_NEWBUTTON);}	
+helpbox 'playerselectwindow.editbutton' { Text(ID_PLAYERSELECTWINDOW_EDITBUTTON);}	
+helpbox 'playerselectwindow.deletebutton' { Text(ID_PLAYERSELECTWINDOW_DELETEBUTTON);}	
+	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch0' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH0);}	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch1' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH1);}	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch3' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH3);}	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch4' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH4);}	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch5' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH5);}	
+helpbox 'allinonewindow.playerssheet.hplayerslistbox.header.switch6' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_HPLAYERSLISTBOX_HEADER_SWITCH6);}	
+helpbox 'allinonewindow.playerssheet.loadmapbutton' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_LOADMAPBUTTON);}	
+helpbox 'allinonewindow.playerssheet.customizebutton' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_CUSTOMIZEBUTTON);}	
+helpbox 'allinonewindow.playerssheet.exclusionsbutton' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_EXCLUSIONSBUTTON);}	
+helpbox 'allinonewindow.playerssheet.rulesbutton' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_RULESBUTTON);}	
+helpbox 'allinonewindow.playerssheet.addaibutton' { Text(ID_ALLINONEWINDOW_PLAYERSSHEET_ADDAIBUTTON);}	
+helpbox 'allinonewindow.lockswitch' { Text(ID_ALLINONEWINDOW_LOCKSWITCH);}	
+helpbox 'allinonewindow.infobutton' { Text(ID_ALLINONEWINDOW_INFOBUTTON);}	
+helpbox 'allinonewindow.kickbutton' { Text(ID_ALLINONEWINDOW_KICKBUTTON);}	
+helpbox 'allinonewindow.reviewbutton' { Text(ID_ALLINONEWINDOW_REVIEWBUTTON);}	
+helpbox 'allinonewindow.randommapbutton' { Text(ID_ALLINONEWINDOW_RANDOMMAPBUTTON);}	
+	
+helpbox 'ruleswindow.rulessheet.teamsswitch' { Text(ID_RULESWINDOW_RULESSHEET_TEAMSSWITCH);}	
+helpbox 'ruleswindow.rulessheet.tradeswitch' { Text(ID_RULESWINDOW_RULESSHEET_TRADESWITCH);}	
+helpbox 'ruleswindow.rulessheet.invultradeswitch' { Text(ID_RULESWINDOW_RULESSHEET_INVULTRADESWITCH);}	
+helpbox 'ruleswindow.rulessheet.fogofwarswitch' { Text(ID_RULESWINDOW_RULESSHEET_FOGOFWARSWITCH);}	
+helpbox 'ruleswindow.rulessheet.pollutionswitch' { Text(ID_RULESWINDOW_RULESSHEET_POLLUTIONSWITCH);}	
+helpbox 'ruleswindow.rulessheet.dynamicjoinswitch' { Text(ID_RULESWINDOW_RULESSHEET_DYNAMICJOINSWITCH);}	
+helpbox 'ruleswindow.rulessheet.handicappingswitch' { Text(ID_RULESWINDOW_RULESSHEET_HANDICAPPINGSWITCH);}	
+	
+helpbox 'ruleswindow.rulessheet.bloodlustswitch'  { Text(ID_RULESWINDOW_RULESSHEET_BLOODLUSTSWITCH);}
+	
+helpbox 'ruleswindow.rulessheet.mapsizebutton' { Text(ID_RULESWINDOW_RULESSHEET_MAPSIZEBUTTON);}	
+helpbox 'ruleswindow.rulessheet.worldtypebutton' { Text(ID_RULESWINDOW_RULESSHEET_WORLDTYPEBUTTON);}	
+helpbox 'ruleswindow.rulessheet.worldshapebutton' { Text(ID_RULESWINDOW_RULESSHEET_WORLDSHAPEBUTTON);}	
+helpbox 'ruleswindow.rulessheet.difficultybutton' { Text(ID_RULESWINDOW_RULESSHEET_DIFFICULTYBUTTON);}	
+helpbox 'ruleswindow.rulessheet.agesbutton' { Text(ID_RULESWINDOW_RULESSHEET_AGESBUTTON);}	
+
+helpbox 'lobbywindow.playerslistbox.header.switch0' { Text(ID_LOBBYWINDOW_PLAYERSLISTBOX_HEADER_SWITCH0);}	
+helpbox 'lobbywindow.playerslistbox.header.switch2' { Text(ID_LOBBYWINDOW_PLAYERSLISTBOX_HEADER_SWITCH2);}	
+helpbox 'lobbywindow.gameslistbox.header.switch0' { Text(ID_LOBBYWINDOW_GAMESLISTBOX_HEADER_SWITCH0);}	
+helpbox 'lobbywindow.gameslistbox.header.switch2' { Text(ID_LOBBYWINDOW_GAMESLISTBOX_HEADER_SWITCH2);}	
+helpbox 'lobbywindow.gameslistbox.header.switch3' { Text(ID_LOBBYWINDOW_GAMESLISTBOX_HEADER_SWITCH3);}	
+helpbox 'lobbywindow.gameslistbox.header.switch4' { Text(ID_LOBBYWINDOW_GAMESLISTBOX_HEADER_SWITCH4);}	
+helpbox 'lobbywindow.infobutton' { Text(ID_LOBBYWINDOW_INFOBUTTON);}	
+helpbox 'lobbywindow.muteswitch' { Text(ID_LOBBYWINDOW_MUTESWITCH);}	
+helpbox 'lobbywindow.whisperswitch' { Text(ID_LOBBYWINDOW_WHISPERSWITCH);}	
+helpbox 'lobbywindow.reviewbutton' { Text(ID_LOBBYWINDOW_REVIEWBUTTON);}	
+
+
+//Single Player Shell Help//
+helpbox 'InitPlayWindow.SPButton' {Text(ID_INITPLAYWINDOW_SPBUTTON );}	
+helpbox 'InitPlayWindow.CreditsButton' {Text(ID_INITPLAYWINDOW_CREDITSBUTTON );}	
+helpbox 'InitPlayWindow.QuitButton' {Text(ID_INITPLAYWINDOW_QUITBUTTON );}	
+helpbox 'InitPlayWindow.MPButton' {Text(ID_INITPLAYWINDOW_MPBUTTON );}	
+helpbox 'SPWindow.LoadGameButton' {Text(ID_SPWINDOW_LOADGAMEBUTTON );}	
+helpbox 'SPWindow.NewGameButton' {Text(ID_SPWINDOW_NEWGAMEBUTTON );}	
+helpbox 'SPWindow.TutorialButton' {Text(ID_SPWINDOW_TUTORIALBUTTON );}	
+helpbox 'SPWindow.MapEditorButton' {Text(ID_SPWINDOW_MAPEDITORBUTTON );}	
+helpbox 'SPWindow.ScenarioButton' {Text(ID_SPWINDOW_SCENARIOBUTTON );}	
+helpbox 'SPWindow.OptionsButton' {Text(ID_SPWINDOW_OPTIONSBUTTON );}	
+helpbox 'SPWindow.QuitButton' {Text(ID_SPWINDOW_QUITBUTTON );}	
+helpbox 'SPNewGameWindow.MapButton' {Text(ID_SPNEWGAMEWINDOW_MAPBUTTON );}	
+helpbox 'SPNewGameWindow.PlayersButton' {Text(ID_SPNEWGAMEWINDOW_PLAYERSBUTTON );}	
+helpbox 'SPNewGameWindow.RulesButton' {Text(ID_SPNEWGAMEWINDOW_RULESBUTTON );}	
+helpbox 'SPNewGameWindow.WorldShapeButton' {Text(ID_SPNEWGAMEWINDOW_WORLDSHAPEBUTTON );}	
+helpbox 'SPNewGameWindow.MapTypeButton' {Text(ID_SPNEWGAMEWINDOW_MAPTYPEBUTTON );}	
+helpbox 'SPNewGameWindow.TribeButton' {Text(ID_SPNEWGAMEWINDOW_TRIBEBUTTON );}	
+helpbox 'SPNewGameWindow.DifficultyButton' {Text(ID_SPNEWGAMEWINDOW_DIFFICULTYBUTTON );}	
+helpbox 'SPNewGameWindow.MapSizeButton' {Text(ID_SPNEWGAMEWINDOW_MAPSIZEBUTTON );}	
+
+helpbox 'SPNewGameRulesScreen.RuleOne' { Text(ID_SPNEWGAMERULESSCREEN_RULEONE);}
+helpbox 'SPNewGameRulesScreen.RuleTwo' { Text(ID_SPNEWGAMERULESSCREEN_RULETWO);}
+helpbox 'CustomMapWindow.WetDrySlider' { Text(ID_CUSTOMMAPWINDOW_WETDRYSLIDER);}
+helpbox 'CustomMapWindow.WarmColdSlider' { Text(ID_CUSTOMMAPWINDOW_WARMCOLDSLIDER);}
+helpbox 'CustomMapWindow.OceanLandSlider' { Text(ID_CUSTOMMAPWINDOW_OCEANLANDSLIDER);}
+helpbox 'CustomMapWindow.IslandContinentSlider' { Text(ID_CUSTOMMAPWINDOW_ISLANDCONTINENTSLIDER);}
+helpbox 'CustomMapWindow.HomoDiverseSlider' { Text(ID_CUSTOMMAPWINDOW_HOMODIVERSESLIDER);}
+helpbox 'CustomMapWindow.GoodCountSlider' { Text(ID_CUSTOMMAPWINDOW_GOODCOUNTSLIDER);}
+
+
+//New Help added 7-2-99
+helpbox 'ControlPanelWindow.TerraSwitches.Deserts' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_DESERTS);}
+helpbox 'ControlPanelWindow.TerraSwitches.Forests' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_FORESTS);}
+helpbox 'ControlPanelWindow.TerraSwitches.Grassland' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_GRASSLAND);}
+helpbox 'ControlPanelWindow.TerraSwitches.Hills' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_HILLS);}
+helpbox 'ControlPanelWindow.TerraSwitches.RainForest' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_RAINFOREST);}
+helpbox 'ControlPanelWindow.TerraSwitches.Alpine' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_ALPINE);}
+helpbox 'ControlPanelWindow.TerraSwitches.Savannah' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_SAVANNAH);}
+helpbox 'ControlPanelWindow.TerraSwitches.Swamps' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_SWAMPS);}
+helpbox 'ControlPanelWindow.TerraSwitches.Tundra' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_TUNDRA);}
+helpbox 'ControlPanelWindow.TerraSwitches.Glaciers' { Text(ID_CONTROLPANELWINDOW_TERRASWITCHES_GLACIERS);}
+
+
+
+////New Stuff////
+trigger 'InitializeRoomUpgrades' when (IsHumanPlayer(g.player) && (g.year == 0)) {
+	numberOfUpgradesAvailable = 5;
+	savedThroneRoomScore = player.score;
+	throneRoomUpgradeAt = (g.maxscore-player.score)/35;
+      AgeYear = 0;
+}
+
+trigger 'AgeChangeForThroneRoom' when (IsHumanPlayer(g.player) && special.agechange) {
+	numberOfUpgradesAvailable = numberOfUpgradesAvailable + 5;
+      AgeYear = g.year;
+}
+
+trigger 'ThroneRoomUpgrade' when (IsHumanPlayer(g.player) && ((player.score - savedThroneRoomScore) > throneRoomUpgradeAt) && (numberOfUpgradesAvailable > 0) && (g.year >= AgeYear) ) {
+	numberOfUpgradesAvailable = numberOfUpgradesAvailable - 1;
+	savedThroneRoomScore = savedThroneRoomScore + throneRoomUpgradeAt;
+      AgeYear = g.year + 7;
+	OpenThroneRoom();
+}
+
+
+messagebox '106CantBuildUnitCellIsFull' {
+	MessageType("WASTING_WORK");
+	Text(ID_CANT_BUILD_UNIT_CELL_IS_FULL);
+	Eyepoint(city.1);
+}
+
+messagebox 'TradeBidSetPrice' {
+	MessageType("TRADE");
+	Text(ID_TRADE_BID_SET_PRICE);
+	EyeDropdown(1, city);
+
+	Button(ID_BUTTON_CANCEL) {
+		Kill();
+	}
+	Button(ID_BUTTON_SET_PRICE) {
+		SendTradeBid();
+	}	
+}
+
+messagebox 'TradeBid' {
+	MessageType("TRADE");
+	Text(ID_TRADE_BID);
+	EyeDropdown(1, city);
+	Button(ID_BUTTON_ACCEPT) {
+		AcceptTradeBid();
+	}
+	Button(ID_BUTTON_REJECT) {
+		RejectTradeBid();
+	}
+}
+
+messagebox 'TradeBidAccepted' {
+	MessageType("TRADE");
+	Text(ID_TRADE_BID_ACCEPTED);
+	EyeDropdown(1, city);
+}
+
+messagebox 'TradeBidRejected' {
+	MessageType("TRADE");
+	Text(ID_TRADE_BID_REJECTED);
+	EyeDropdown(1, city);
+}
+
+alertbox 'NoTraders' {
+	MessageType("TRADE");
+	Text(ID_NO_TRADERS);
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+}
+
+messagebox '300EndGameCataclysm' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_CATACLYSM);
+}
+
+messagebox '301EndGameCataclysmOtherCiv' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_CATACLYSM_OTHER_CIV);
+}
+
+messagebox '302EndGameOtherCivBuiltLab' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_OTHER_CIV_BUILT_LAB);
+}
+
+messagebox '303EndGameOtherCivStartedSequence' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_OTHER_CIV_STARTED_SEQUENCE);
+}
+
+messagebox '304EndGameXLabCaptured' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_X_LAB_CAPTURED);
+}
+
+messagebox '305EndGameYouCapturedXLab' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_YOU_CAPTURED_X_LAB);
+}
+
+messagebox '306EndGameRecoveredProbe' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_RECOVERED_PROBE);
+}
+
+messagebox '307EndGameProbeReturned' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_PROBE_RETURNED);
+}
+
+messagebox '308EndGameFinishedXLab' {
+	MessageType("ENDGAME");
+	Text(ID_END_GAME_FINISHED_X_LAB);
+}
+
+alertbox '309EndGameWon' {
+	MessageType("ENDGAME");
+	Text(ID_ENDGAME_WON_OTHER);
+	Button(ID_BUTTON_CLOSE) {
+		Kill();
+	}
+}
+
+messagebox '350NetworkPlayerLeft' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_PLAYER_LEFT);
+}
+
+messagebox '351NetworkPlayerJoined' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_PLAYER_JOINED);
+}
+
+messagebox '352DifferentPlayerJoined' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_DIFFERENT_PLAYER_JOINED);
+	Button(ID_BUTTON_EJECT) {
+		NetworkEject(player.1);
+		Kill();
+	}
+
+	Button(ID_BUTTON_LET_THEM_STAY) {
+		NetworkAccept(player.1);
+		Kill();
+	}
+}
+
+messagebox '353YouAreNowHost' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_YOU_ARE_NOW_HOST);
+}
+
+messagebox '354NewHost' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_NEW_HOST);
+}
+
+alertbox '355SessionLost' {
+	MessageType("NETWORK");
+	Text(ID_NETWORK_SESSION_LOST);
+	BUTTON(ID_BUTTON_OK) {
+		Kill();
+		QuitToLobby();
+	}
+}
+
+messagebox '360SenderKilledTradeRoute' {
+	Text(ID_SENDER_KILLED_TRADE_ROUTE);
+	MessageType("TRADE");
+}
+
+messagebox '361IAProtectedFromConversionByWonder' {
+	Text(ID_PROTECTED_FROM_CONVERSION_BY_WONDER);
+}
+
+alertbox '362IAOneOrMoreUnitsWillCrash' {
+	Text(ID_ONE_OR_MORE_UNITS_WILL_CRASH);
+	Button(ID_BUTTON_OK) {
+		Kill();
+	}
+	UseDirector();
+}
+
+messagebox '363TradeOfferAccepted' {
+	Text(ID_BID_ACCEPTED);
+	MessageType("TRADE");
+}
+
+messagebox '364AtLeastOneArmyCouldntBeExpelled' {
+	Text(ID_AT_LEAST_ONE_COULDNT_BE_EXPELLED);
+	MessageType("DIPLOMATIC");
+}
+
+// SAM050399 removed city built trigger
+//alertbox '400CityBuilt' {
+//	Text(ID_NEW_CITY_BUILT);
+//	MessageType("CIVILIZATION");
+//	Button(ID_BUTTON_OK) {
+//		Kill();
+//	}
+//
+//	Button(ID_BUTTON_DONT_SHOW_AGAIN) {
+//		SetPreference("CityBuiltMessage", 0);
+//		Kill();
+//	}
+//}
+
+//trigger 'T400CityBuilt' when (city.built) {
+//	if(Preference("CityBuiltMessage")) {
+//		Message(g.player, '400CityBuilt');
+//	}
+//}
+
+messagebox '401WarOver' {
+	Text(ID_WAR_OVER);
+	MessageType("CIVILIZATION");
+}
+
+trigger 'TVictoryEnslavement' when (special.VictoryEnslavement) {
+	Message(player.1, '402VictoryEnslavement');
+}
+
+messageBox '402VictoryEnslavement' {
+	Text(ID_VICTORY_ENSLAVEMENT_CITY);
+	MessageType("DEMANDS");
+}
+
+messageBox '410HotseatCityAttacked' {
+	Text(ID_HOTSEAT_CITY_ATTACKED);
+	Button(ID_SHOW_ME) {
+		Kill();
+	}
+
+	OnClose {
+		AddCenter(location.1);
+		AddEffect(location.1, "SPECEFFECT_EXPLOSION_LAND_1", 
+			      "SOUND_ID_DEFAULTATTACK");
+	}
+}
+
+messageBox '411HotseatArmyAttacked' {
+	Text(ID_HOTSEAT_ARMY_ATTACKED);
+	Button(ID_SHOW_ME) {
+		Kill();
+	}
+
+	OnClose {
+		AddCenter(location.1);
+		AddEffect(location.1, "SPECEFFECT_EXPLOSION_LAND_1", 
+			      "SOUND_ID_DEFAULTATTACK");
+	}
+}
+		
+// #including scenario.slc here will pick up the empty scenario.slc in
+// this directory, unless a scenario provides a file named scenario.slc in
+// its own gamedata directory.
+#include "scenario.slc"

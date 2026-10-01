@@ -1,0 +1,5 @@
+// def_personality_settle_dense.fli
+
+	output settle_density[0.0, 2.0] = 2.0
+		tri yes_settle_loose(settle_density, 1.0, 0.1)
+		tri yes_settle_dense(settle_density, 2.0, 0.1)

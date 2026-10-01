@@ -1,0 +1,167 @@
+# ancient.ldl
+
+UpperLeft {
+	int	xpix	0
+	int	ypix	24
+	int	widthpix	42
+	int	heightpix	46
+	Image {
+		string	image0	"upba0113.tga"
+		string imageblttype "chromakey"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	42
+		int	heightpix	46
+	}
+}
+
+UpperRight {
+	int	xpix	982
+	int	ypix	24
+	int	widthpix	42
+	int	heightpix	46
+	Image {
+		string	image0	"upba0114.tga"
+		string imageblttype "chromakey"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	42
+		int	heightpix	46
+	}
+}
+
+LowerRight {
+	int	xpix	909
+	int	ypix	581
+	int	widthpix	116
+	int	heightpix	49
+	Image {
+		string	image0	"upba6118.tga"
+		string imageblttype "chromakey"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	115
+		int	heightpix	49
+	}
+}
+
+LowerRightTwo {
+	int	xpix	910
+	int	ypix	581
+	int	widthpix	115
+	int	heightpix	40
+	Image {
+		string	image0	"upba6118.tga"
+		string imageblttype "chromakey"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	115
+		int	heightpix	40
+	}
+}
+
+AngelLeft {
+	int	xpix	0
+	int	ypix	522
+	int	widthpix	41
+	int	heightpix	81
+	Image {
+		string	image0	"upba0201.tga"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	41
+		int	heightpix	81
+	}
+}
+
+AngelRight {
+	int	xpix	225
+	int	ypix	574
+	int	widthpix	91
+	int	heightpix	47
+	Image {
+		string	image0	"upba0205.tga"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	91
+		int	heightpix	50
+	}
+}
+
+RadarBorderRight {
+	int	xpix	234
+	int	ypix	621
+	int	widthpix	39
+	int	heightpix	147
+	Image {
+		string	image0	"upba0204.tga"
+		string	xanchor	"left"
+		string	yanchor	"top"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	39
+		int	heightpix	147
+	}
+}
+
+ControlLeft {
+	int	xpix	383
+	int	ypix	619
+	int	widthpix	24
+	int	heightpix	147
+	Image {
+		string	image0	"upba0401.tga"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	24
+		int	heightpix	147
+	}
+}
+
+ControlRight {
+	int	xpix	863
+	int	ypix	619
+	int	widthpix	26
+	int	heightpix	147
+	Image {
+		string	image0	"upba0404.tga"
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	26
+		int	heightpix	147
+	}
+}
+
+TurnPiece {
+	int	xpix	992
+	int	ypix	577
+	int	widthpix	32
+	int	heightpix	10
+	string	pattern	"upba0503.tga"
+}
+
+ControlPiece {
+	int	xpix	316
+	int	ypix	610
+	int	widthpix	620
+	int	heightpix	8
+	string	pattern	"upba0402.tga"
+}
+
+StatsPiece {
+	int	xpix	42
+	int	ypix	24
+	int	widthpix	982
+	int	heightpix	7
+	string	pattern	"upba0102.tga"
+}
+
+$

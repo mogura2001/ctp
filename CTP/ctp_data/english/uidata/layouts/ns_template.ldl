@@ -1,0 +1,1388 @@
+##-----------------------------------##
+
+##             Templates             ##
+
+##-----------------------------------##
+
+template nswindow {
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	640
+
+	int	heightpix	480
+
+	string	pattern	"upba6417.tga"
+
+}
+
+
+
+template nsstatictext : T_FONT1_16{
+
+	string	pattern	"upba6417.tga"
+
+}
+
+
+
+template nsspinner : T_FONT1_16{
+
+}
+
+
+
+template nstitlestatictext : T_FONT1_NSTITLE{
+
+	string	xanchor	"center"
+
+	int	ypix	3
+
+	int	widthpix	106
+
+	int	heightpix	20
+
+
+
+	bool	shadowfont	false
+
+	int	fontcolorred	255
+
+	int	fontcolorgreen	255
+
+	int	fontcolorblue	255
+
+}
+
+
+
+template nsclosebutton : T_FONT1_16{
+
+	string	xanchor	"left"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	71
+
+	int	heightpix	38
+
+	string	text	"str_ldl_Quit"
+	string	image0	"upba5564.tga"
+
+	string	image1	"upba5565.tga"
+
+	string disabledimage0	"upba5568.tga"
+
+	string	imagebltflag	"chromakey"
+}
+
+
+template nsprevbutton : T_FONT1_16{
+
+	string	xanchor	"left"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	71
+
+	int	heightpix	38
+
+	string	text	"str_ldl_Back"
+	string	image0	"upba5564.tga"
+
+	string	image1	"upba5565.tga"
+
+	string disabledimage0	"upba5568.tga"
+
+	string	imagebltflag	"chromakey"
+}
+
+
+template ns_OLD_prevbutton : T_FONT1_16{
+
+	string	xanchor	"center"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	92
+
+	int	heightpix	37
+
+	string	text	"str_ldl_Back"
+	string	image0	"upba5562.tga"
+
+	string	image1	"upba5563.tga"
+
+	string disabledimage0	"upba5567.tga"
+
+	string	imagebltflag	"chromakey"
+}
+
+
+
+template nsnextbutton : T_FONT1_16{
+
+	string	xanchor	"right"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	71
+
+	int	heightpix	38
+
+	string	text	"str_ldl_Next"
+	string	image0	"upba5558.tga"
+
+	string	image1	"upba5559.tga"
+
+	string disabledimage0	"upba5566.tga"
+
+	string	imagebltflag	"chromakey"
+}
+
+
+
+template nshelpbutton : T_FONT1_16{
+
+	int	xpix	162
+
+	int	ypix	423
+
+	int	widthpix	78
+
+	int	heightpix	22
+
+	string	text	"str_ldl_Help"
+	string	image0	"upba0111.tga"
+
+	string	image1	"upba0111.tga"
+
+}
+
+
+
+template nsradiobutton:T_FONT1_14 {
+
+	string	image0	"upba2317.tga"
+	string	image1	"upba2318.tga"
+	string	disabledimage0	"upba2323.tga"
+	string	disabledimage1	"upba2324.tga"
+
+	int	widthpix	146
+
+	int	heightpix	24
+
+}
+
+
+template nstoggleswitch:T_FONT1_MULTICOM {
+
+	string	image0	"upba6422.tga"
+	string	image1	"upba6423.tga"
+	string	disabledimage0	"upba6424.tga"
+	string	disabledimage1	"upba6425.tga"
+
+	int	widthpix	160
+
+	int	heightpix	24
+
+}
+
+
+template nswindow_popup:nswindow {
+
+	int	widthpix	362
+
+	int	heightpix	240
+
+}
+
+
+
+template nstitlebox {
+
+	string	xanchor	"center"
+
+	string	image0	"upba6412.tga"
+
+}
+
+
+
+template nslefttopcorner {
+
+	string	xanchor	"left"
+
+	string	yanchor	"top"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+	string	image0	"upba6401.tga"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template nsrighttopcorner {
+
+	string	xanchor	"right"
+
+	string	yanchor	"top"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+	string	image0	"upba6406.tga"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template nsleftbottomcorner {
+
+	string	xanchor	"left"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+	string	image0	"upba6404.tga"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template nsrightbottomcorner {
+
+	string	xanchor	"right"
+
+	string	yanchor	"bottom"
+
+	int	widthpix	27
+
+	int	heightpix	30
+
+	string	image0	"upba6402.tga"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template nsleftedge {
+
+	string	xanchor	"left"
+
+	int	widthpix	8
+
+	int	heightpct	100
+
+	string	image0	"upba6405.tga"
+
+	string	imageblttype	"tile"
+
+}
+
+
+
+template nsrightedge {
+
+	string	xanchor	"right"
+
+	int	widthpix	8
+
+	int	heightpct	100
+
+	string	image0	"upba6403.tga"
+
+	string	imageblttype	"tile"
+
+}
+
+
+
+template nstopedge {
+
+	string	yanchor	"top"
+
+	int	widthpct	100
+
+	int	heightpix	10
+
+	string	image0	"upba6400.tga"
+
+	string	imageblttype	"tile"
+
+}
+
+
+
+template nsbottomedge {
+
+	string	yanchor	"bottom"
+
+	int	widthpct	100
+
+	int	heightpix	10
+
+	string	image0	"upba6407.tga"
+
+	string	imageblttype	"tile"
+
+}
+
+
+
+template nsdescriptionstatictext:nsstatictext {
+
+	string	xanchor	"center"
+
+	int	ypct	10
+
+	int	widthpct	80
+
+	int	heightpct	50
+
+}
+
+
+
+template nsprogressbar {
+
+	string	xanchor	"center"
+
+	int	ypct	60
+
+	int	widthpix	322
+
+	int	heightpix	15
+
+	string	image0	"ug026.tga"
+
+	string	barimage	"ug027.tga"
+
+	string	type	"backandforth"
+
+	int	valuespersecond	100
+
+}
+
+
+
+template nspopupbutton0:ns_OLD_prevbutton {
+
+	string	image0	"upba5702.tga"
+
+	string	image1	"upba5703.tga"
+
+	string	imagebltflag	"chromakey"
+
+	int	widthpix	89
+
+	int	heightpix	21
+
+}
+
+
+
+template nspopupbutton1:nsclosebutton {
+
+	string	image0	"upba6415.tga"
+
+	string	image1	"upba6416.tga"
+
+	int	widthpix	57
+
+	int	heightpix	28
+
+}
+
+
+
+template nspopupbutton2:nsnextbutton {
+
+	string	image0	"upba6413.tga"
+
+	string	image1	"upba6414.tga"
+
+	int	widthpix	57
+
+	int	heightpix	28
+
+}
+
+
+
+template nslistbox {
+
+	int bevelwidth	2
+
+	int beveltype	1
+
+	string	pattern	"upba6417.tga"
+
+	rangery {
+
+		int	widthpix 18
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba6417.tga"
+
+		incy {
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		decy {
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		thumb {
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+	}
+
+	rangerx {
+
+		int	heightpix 18
+
+		string	type	"scroller"
+
+		string	orientation	"horizontal"
+
+		string	pattern	"upba6417.tga"
+
+		incy {
+
+			int	widthpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		decy {
+
+			int	widthpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		thumb {
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+	}
+
+}
+
+
+
+template nsheaderswitch:T_FONT1_MULTIHEADER {
+
+	int	heightpix	20
+
+	string	pattern	"upba6417.tga"
+
+	int bevelwidth 	1
+
+	int	numstates	3
+
+
+
+# I'm keeping this stuff close by to demonstrate the way to assign art for
+
+# sorting up and down and no sorting.
+
+#	string	image0	"temp_bbut0.tga"
+
+#	string	activeimage0	"temp_bbut0a.tga"
+
+#	string	focusimage0	"temp_bbut0f.tga"
+
+#	string	activefocusimage0	"temp_bbut0af.tga"
+
+#	string	disabledimage0	"temp_dis0.tga"
+
+#	string	image1	"temp_hsw1.tga"
+
+#	string	activeimage1	"temp_hsw1a.tga"
+
+#	string	focusimage1	"temp_hsw1f.tga"
+
+#	string	activefocusimage1	"temp_hsw1af.tga"
+
+#	string	disabledimage1	"temp_dis1.tga"
+
+#	string	image2	"temp_hsw2.tga"
+
+#	string	activeimage2	"temp_hsw2a.tga"
+
+#	string	focusimage2	"temp_hsw2f.tga"
+
+#	string	activefocusimage2	"temp_hsw2af.tga"
+
+#	string	disabledimage2	"temp_dis2.tga"
+
+#	string	imageblttype	"stretch"
+
+}
+
+
+
+template nstextstyle {
+
+	int	fontcolorred		255
+
+	int	fontcolorgreen		255
+
+	int	fontcolorblue		255
+
+	int	fontshadowcolorred	0
+
+	int	fontshadowcolorgreen	0
+
+	int	fontshadowcolorblue	0
+
+	string	text			"str_ldl_"
+	int	maxlength			1
+
+	bool	boldfont			false
+
+	bool	italicfont			false
+
+	bool	underlinefont		false
+
+	bool	shadowfont			false
+
+	int	fontsize			16
+
+	string fontname			"times.ttf"
+
+}
+
+
+
+template nstipwindow {
+
+	int	widthpix	300
+
+	int	heightpix	30
+
+	tip {
+
+		string	text	"str_ldl_"
+		int	fontsize	10
+
+		string	image0	"upba6417.tga"
+
+		string	imageblttype	"tile"
+
+	}
+
+}
+
+
+
+template nspane:T_FONT1_16 {
+
+	bool	shadowfont	false
+
+	int	fontcolorred	255
+
+	int	fontcolorgreen	255
+
+	int	fontcolorblue	255
+
+}
+
+
+
+template nscommonbutton : T_FONT1_MULTICOM {
+
+	int widthpix	78
+
+	int heightpix	22
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template nsbutton:T_FONT1_18 {
+
+	string	pattern	"upba6417.tga"
+
+}
+
+
+
+template nschatbox {
+
+	string	fontname	"arialbd.ttf"
+
+	int	fontsize	9
+
+	int	maxlength	25600
+
+	string	pattern	"upba6417.tga"
+
+	rangery {
+
+		int	widthpix 18
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba6417.tga"
+
+		incy {
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		decy {
+
+			int	heightpix	18
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		thumb {
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+	}
+
+}
+
+
+
+
+
+##-----------------------------------##
+
+##              Data                 ##
+
+##-----------------------------------##
+
+
+
+nsbackground {
+
+	string	image0	"upba6319.tga"
+
+}
+
+
+
+connectdialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Connecting_To_Lobby"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_Cancel"
+	}
+
+}
+
+waitserverdialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Waiting_For_Servers"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_Cancel"
+	}
+
+}
+
+
+joinlobbydialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Joining_Lobby"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_Cancel"
+	}
+
+}
+
+
+
+leavelobbydialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Leaving_Lobby"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+}
+
+
+
+joindialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Joining_Game"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_Cancel"
+	}
+
+}
+
+
+
+createdialogboxwindow:nswindow_popup {
+
+	lefttopcorner:nslefttopcorner {
+
+	}
+
+
+
+	righttopcorner:nsrighttopcorner {
+
+	}
+
+
+
+	leftbottomcorner:nsleftbottomcorner {
+
+	}
+
+
+
+	rightbottomcorner:nsrightbottomcorner {
+
+	}
+
+
+
+	leftedge:nsleftedge {
+
+	}
+
+
+
+	topedge:nstopedge {
+
+	}
+
+
+
+	rightedge:nsrightedge {
+
+	}
+
+
+
+	bottomedge:nsbottomedge {
+
+	}
+
+
+
+	descriptionstatictext:nsdescriptionstatictext {
+
+		string	text	"str_ldl_Creating_Game"
+	}
+
+
+
+	progressbar:nsprogressbar {
+
+	}
+
+
+
+	button0:nspopupbutton0 {
+
+		int	ypct	10
+
+		string	text	"str_ldl_Cancel"
+	}
+
+}
+
+
+
+listitems {
+
+	# for netshell special listboxes.
+
+	nsitem:T_FONT1_16 {
+
+		int	widthpix	60
+
+		int	heightpix	20
+
+	}
+
+
+
+	# for the dropdown on the allinonewindow.
+
+	playstyleitem {
+
+		Name:T_FONT1_16 {
+
+			int	widthpix	100
+
+			int	heightpix	18
+
+		}
+
+	}
+
+
+
+	# for the ages selection popup in the allinonewindow.
+
+	ageitem {
+
+		Name:T_FONT1_18 {
+
+			int	widthpix	160
+
+			int	heightpix	20
+
+		}
+
+	}
+
+
+
+	# for the exclusions switches in the allinonewindow.
+
+	exclusioncheckbox:T_FONT1_EXCLUDE {
+
+		int	widthpix	215
+
+		int	heightpix	20
+
+		string	image0	"upba6320.tga"
+
+		string	image1	"upba6321.tga"
+
+	}
+
+
+
+	# for the hybridplayerslistbox on the allinonewindow.
+
+	# see that ldl block to make sure the dimensions below match columns.
+
+	# don't compare the heights of the headers, just the widths.
+
+	hplayeritem:T_FONT1_16 {
+
+		# host
+
+		int	widthpix	20
+
+		int	heightpix	22
+
+
+
+		launched:T_FONT1_16 {
+
+			int	widthpix	20
+
+			int	heightpix	22
+
+		}
+
+
+
+		name:T_FONT1_16 {
+
+			int	widthpix	140
+
+			int	heightpix	22
+
+			string	just	"left"
+
+			bool	vertcenter	true
+
+		}
+
+
+
+		ping:T_FONT1_16 {
+
+			int	widthpix	45
+
+			int	heightpix	22
+
+		}
+
+
+
+		tribe {
+
+			int	widthpix	109
+
+			int	heightpix	22
+
+			button:T_FONT1_EXCLUDE2 {
+
+				int	xpix	1
+
+				int	ypix	3
+
+				int	widthpix	107
+
+				int	heightpix	16
+
+				string pattern "upba6417.tga"
+
+			}
+
+		}
+
+
+		civpoints {
+
+			int	widthpix	91
+
+			int	heightpix	22
+
+			button:T_FONT1_12 {
+
+				int	xpix	13
+
+				int	ypix	3
+
+				int	widthpix	65
+
+				int	heightpix	16
+
+				string	pattern	"upba6417.tga"
+
+				int	min	100
+
+				int	max	1000000
+
+				int	val	100
+
+				field {
+
+					int	xpix	13
+
+					int	ypix	3
+
+					int	widthpix	65
+
+					int	heightpix	16
+
+					string	pattern	"upba6417.tga"
+
+					bool	autohscroll	false
+
+					bool	numeralonly	true
+
+					int	min	100
+
+					int	max	1000000
+
+				}
+			}
+
+		}
+
+		pwpoints {
+
+			int	widthpix	91
+
+			int	heightpix	22
+
+			button:T_FONT1_12 {
+
+				int	xpix	13
+
+				int	ypix	3
+
+				int	widthpix	65
+
+				int	heightpix	16
+
+				string	pattern	"upba6417.tga"
+
+				int	min	1
+
+				int	max	9
+
+				int	val	1
+
+				field {
+
+					int	xpix	13
+
+					int	ypix	3
+
+					int	widthpix	65
+
+					int	heightpix	16
+
+					string	pattern	"upba6417.tga"
+
+					bool	autohscroll	false
+
+					bool	numeralonly	true
+
+					int	min	1
+
+					int	max	9
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+$

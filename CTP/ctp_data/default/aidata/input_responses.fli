@@ -1,0 +1,1259 @@
+// 	input_responses.fli
+
+	/////////////////////////////////////////////////////////////////////////////
+	/// THESE INPUTS ARE FOR REMEMBERING WHAT MESSAGES I ACCEPTED OR REJECTED ///
+	/////////////////////////////////////////////////////////////////////////////
+	// Me is always the AI currently calculating an action.
+	// Him is the Player that I am corresponding with.
+	// When I say yes, I add one to my memory unless my memory is negative.
+	// If my_responses is currently negative, and the AI says yes, then the
+	// old memory is scrubbed completely and only the new positive count is kept.
+	// The same applies for rejection, which sets my_responses to -1.
+
+	////////////////////////////////////////////////
+	/// THESE OUTPUTS ARE FOR DECAYING MY MEMORY ///
+	////////////////////////////////////////////////
+	
+	// Once per turn, the my_responses memory is decayed by whatever the fli system
+	// requests. Decay is done by multiplication. A decay of one creates a perfect memory.
+	// A decay of zero creates a count for this turn only.
+	// If not set, these default to one.
+
+	//////////////////////
+	/// DEMAND_ADVANCE ///
+	//////////////////////
+		
+	input my_responses_DEMAND_ADVANCE 
+		tri onceplus_i_said_yes_to_DEMAND_ADVANCE(
+			my_responses_DEMAND_ADVANCE, 10.0, 9.1)
+		tri once_i_said_yes_to_DEMAND_ADVANCE(
+			my_responses_DEMAND_ADVANCE, 0.75, 0.27)
+		tri i_never_answered_DEMAND_ADVANCE(
+			my_responses_DEMAND_ADVANCE, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_ADVANCE(
+			my_responses_DEMAND_ADVANCE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_ADVANCE(
+			my_responses_DEMAND_ADVANCE, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_ADVANCE[-1.0, 2.0] = 1.0
+		tri my_instant_decay_DEMAND_ADVANCE(
+			my_responses_decay_DEMAND_ADVANCE, 0.0, 0.5)
+		tri my_long_decay_DEMAND_ADVANCE(
+			my_responses_decay_DEMAND_ADVANCE, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_ADVANCE(
+			my_responses_decay_DEMAND_ADVANCE, 1.0, 0.5)
+
+	///////////////////
+	/// DEMAND_CITY ///
+	///////////////////
+
+	input my_responses_DEMAND_CITY 
+		tri onceplus_i_said_yes_to_DEMAND_CITY(
+			my_responses_DEMAND_CITY, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_CITY(
+			my_responses_DEMAND_CITY, 0.75, 0.26)
+		tri i_never_answered_DEMAND_CITY(
+			my_responses_DEMAND_CITY, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_CITY(
+			my_responses_DEMAND_CITY, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_CITY(
+			my_responses_DEMAND_CITY, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_CITY[-1.0, 2.0] = 1.0
+		tri my_instant_decay_DEMAND_CITY(
+			my_responses_decay_DEMAND_CITY, 0.0, 0.5)
+		tri my_long_decay_DEMAND_CITY(
+			my_responses_decay_DEMAND_CITY, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_CITY(
+			my_responses_decay_DEMAND_CITY, 1.0, 0.5)
+
+	//////////////////
+	/// DEMAND_MAP ///
+	//////////////////
+
+	input my_responses_DEMAND_MAP 
+		tri onceplus_i_said_yes_to_DEMAND_MAP(
+			my_responses_DEMAND_MAP, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_MAP(
+			my_responses_DEMAND_MAP, 0.75, 0.26)
+		tri i_never_answered_DEMAND_MAP(
+			my_responses_DEMAND_MAP, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_MAP(
+			my_responses_DEMAND_MAP, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_MAP(
+			my_responses_DEMAND_MAP, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_MAP[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_MAP(
+			my_responses_decay_DEMAND_MAP, 0.0, 0.5)
+		tri my_long_decay_DEMAND_MAP(
+			my_responses_decay_DEMAND_MAP, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_MAP(
+			my_responses_decay_DEMAND_MAP, 1.0, 0.5)
+
+	output enough_me_giving_in_to_DEMAND_MAP[0.0, 2.0] = 0.0
+		tri yes_enough_me_giving_in_to_DEMAND_MAP(
+			enough_me_giving_in_to_DEMAND_MAP, 1.0, 0.5)
+
+	if(onceplus_i_said_yes_to_DEMAND_MAP or once_i_said_yes_to_DEMAND_MAP)
+	{
+		yes_enough_me_giving_in_to_DEMAND_MAP
+	}
+
+	///////////////////
+	/// DEMAND_GOLD ///
+	///////////////////
+
+	input my_responses_DEMAND_GOLD 
+		tri onceplus_i_said_no_to_DEMAND_GOLD(
+			my_responses_DEMAND_GOLD, -10.0, 9.01)
+		tri once_i_said_no_to_DEMAND_GOLD(
+			my_responses_DEMAND_GOLD, -0.75, 0.26)
+		tri i_never_answered_DEMAND_GOLD(
+			my_responses_DEMAND_GOLD, 0.0, 0.26)
+		tri once_i_said_yes_to_DEMAND_GOLD(
+			my_responses_DEMAND_GOLD, 0.75, 0.26)
+		tri onceplus_i_said_yes_to_DEMAND_GOLD(
+			my_responses_DEMAND_GOLD, 10.0, 9.01)
+
+	output my_responses_decay_DEMAND_GOLD[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_GOLD(
+			my_responses_decay_DEMAND_GOLD, 0.0, 0.5)
+		tri my_long_decay_DEMAND_GOLD(
+			my_responses_decay_DEMAND_GOLD, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_GOLD(
+			my_responses_decay_DEMAND_GOLD, 1.0, 0.5)
+
+	output enough_me_giving_in_to_DEMAND_GOLD[0.0, 2.0] = 0.0
+		tri yes_enough_me_giving_in_to_DEMAND_GOLD(
+			enough_me_giving_in_to_DEMAND_GOLD, 1.0, 0.5)
+
+	if(onceplus_i_said_yes_to_DEMAND_GOLD or once_i_said_yes_to_DEMAND_GOLD)
+	{
+		yes_enough_me_giving_in_to_DEMAND_GOLD
+	}
+	/////////////////////////
+	/// DEMAND_STOP_TRADE ///
+	/////////////////////////
+
+	input my_responses_DEMAND_STOP_TRADE 
+		tri onceplus_i_said_yes_to_DEMAND_STOP_TRADE(
+			my_responses_DEMAND_STOP_TRADE, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_STOP_TRADE(
+			my_responses_DEMAND_STOP_TRADE, 0.75, 0.26)
+		tri i_never_answered_DEMAND_STOP_TRADE(
+			my_responses_DEMAND_STOP_TRADE, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_STOP_TRADE(
+			my_responses_DEMAND_STOP_TRADE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_STOP_TRADE(
+			my_responses_DEMAND_STOP_TRADE, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_STOP_TRADE[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_STOP_TRADE(
+			my_responses_decay_DEMAND_STOP_TRADE, 0.0, 0.5)
+		tri my_long_decay_DEMAND_STOP_TRADE(
+			my_responses_decay_DEMAND_STOP_TRADE, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_STOP_TRADE(
+			my_responses_decay_DEMAND_STOP_TRADE, 1.0, 0.5)
+
+	///////////////////////////
+	/// DEMAND_ATTACK_ENEMY ///
+	///////////////////////////
+
+	input my_responses_DEMAND_ATTACK_ENEMY 
+		tri onceplus_i_said_yes_to_DEMAND_ATTACK_ENEMY(
+			my_responses_DEMAND_ATTACK_ENEMY, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_ATTACK_ENEMY(
+			my_responses_DEMAND_ATTACK_ENEMY, 0.75, 0.26)
+		tri i_never_answered_DEMAND_ATTACK_ENEMY(
+			my_responses_DEMAND_ATTACK_ENEMY, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_ATTACK_ENEMY(
+			my_responses_DEMAND_ATTACK_ENEMY, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_ATTACK_ENEMY(
+			my_responses_DEMAND_ATTACK_ENEMY, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_ATTACK_ENEMY[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_ATTACK_ENEMY(
+			my_responses_decay_DEMAND_ATTACK_ENEMY, 0.0, 0.5)
+		tri my_long_decay_DEMAND_ATTACK_ENEMY(
+			my_responses_decay_DEMAND_ATTACK_ENEMY, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_ATTACK_ENEMY(
+			my_responses_decay_DEMAND_ATTACK_ENEMY, 1.0, 0.5)
+
+	//////////////////////////////
+	/// DEMAND_LEAVE_OUR_LANDS ///
+	//////////////////////////////
+
+	input my_responses_DEMAND_LEAVE_OUR_LANDS 
+		tri onceplus_i_said_yes_to_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_DEMAND_LEAVE_OUR_LANDS, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_DEMAND_LEAVE_OUR_LANDS, 0.75, 0.26)
+		tri i_never_answered_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_DEMAND_LEAVE_OUR_LANDS, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_DEMAND_LEAVE_OUR_LANDS, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_DEMAND_LEAVE_OUR_LANDS, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_LEAVE_OUR_LANDS[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_decay_DEMAND_LEAVE_OUR_LANDS, 0.0, 0.5)
+		tri my_long_decay_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_decay_DEMAND_LEAVE_OUR_LANDS, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_LEAVE_OUR_LANDS(
+			my_responses_decay_DEMAND_LEAVE_OUR_LANDS, 1.0, 0.5)
+
+	///////////////////////////////
+	/// DEMAND_REDUCE_POLLUTION ///
+	///////////////////////////////
+
+	input my_responses_DEMAND_REDUCE_POLLUTION 
+		tri onceplus_i_said_yes_to_DEMAND_REDUCE_POLLUTION(
+			my_responses_DEMAND_REDUCE_POLLUTION, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_REDUCE_POLLUTION(
+			my_responses_DEMAND_REDUCE_POLLUTION, 0.75, 0.26)
+		tri i_never_answered_DEMAND_REDUCE_POLLUTION(
+			my_responses_DEMAND_REDUCE_POLLUTION, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_REDUCE_POLLUTION(
+			my_responses_DEMAND_REDUCE_POLLUTION, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_REDUCE_POLLUTION(
+			my_responses_DEMAND_REDUCE_POLLUTION, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_REDUCE_POLLUTION[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_REDUCE_POLLUTION(
+			my_responses_decay_DEMAND_REDUCE_POLLUTION, 0.0, 0.5)
+		tri my_long_decay_DEMAND_REDUCE_POLLUTION(
+			my_responses_decay_DEMAND_REDUCE_POLLUTION, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_REDUCE_POLLUTION(
+			my_responses_decay_DEMAND_REDUCE_POLLUTION, 1.0, 0.5)
+
+	/////////////////////
+	/// LOWER_TARIFFS ///
+	/////////////////////
+
+	input my_responses_DEMAND_LOWER_TARIFFS 
+		tri onceplus_i_said_yes_to_DEMAND_LOWER_TARIFFS(
+			my_responses_DEMAND_LOWER_TARIFFS, 10.0, 9.01)
+		tri once_i_said_yes_to_DEMAND_LOWER_TARIFFS(
+			my_responses_DEMAND_LOWER_TARIFFS, 0.75, 0.26)
+		tri i_never_answered_DEMAND_LOWER_TARIFFS(
+			my_responses_DEMAND_LOWER_TARIFFS, 0.0, 0.26)
+		tri once_i_said_no_to_DEMAND_LOWER_TARIFFS(
+			my_responses_DEMAND_LOWER_TARIFFS, -0.75, 0.26)
+		tri onceplus_i_said_no_to_DEMAND_LOWER_TARIFFS(
+			my_responses_DEMAND_LOWER_TARIFFS, -10.0, 9.01)
+
+	output my_responses_decay_DEMAND_LOWER_TARIFFS[-1.0, 2.0] = 0.93
+		tri my_instant_decay_DEMAND_LOWER_TARIFFS(
+			my_responses_decay_DEMAND_LOWER_TARIFFS, 0.0, 0.5)
+		tri my_long_decay_DEMAND_LOWER_TARIFFS(
+			my_responses_decay_DEMAND_LOWER_TARIFFS, 0.93, 0.5)
+		tri my_zero_decay_DEMAND_LOWER_TARIFFS(
+			my_responses_decay_DEMAND_LOWER_TARIFFS, 1.0, 0.5)
+
+	/////////////////////
+	/// OFFER_ADVANCE ///
+	/////////////////////
+
+	input my_responses_OFFER_ADVANCE 
+		tri onceplus_i_said_yes_to_OFFER_ADVANCE(
+			my_responses_OFFER_ADVANCE, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_ADVANCE(
+			my_responses_OFFER_ADVANCE, 0.75, 0.26)
+		tri i_never_answered_OFFER_ADVANCE(
+			my_responses_OFFER_ADVANCE, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_ADVANCE(
+			my_responses_OFFER_ADVANCE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_ADVANCE(
+			my_responses_OFFER_ADVANCE, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_ADVANCE[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_ADVANCE(
+			my_responses_decay_OFFER_ADVANCE, 0.0, 0.5)
+		tri my_long_decay_OFFER_ADVANCE(
+			my_responses_decay_OFFER_ADVANCE, 0.93, 0.5)
+		tri my_zero_decay_OFFER_ADVANCE(
+			my_responses_decay_OFFER_ADVANCE, 1.0, 0.5)
+
+	//////////////////
+	/// OFFER_CITY ///
+	//////////////////
+
+	input my_responses_OFFER_CITY 
+		tri onceplus_i_said_yes_to_OFFER_CITY(
+			my_responses_OFFER_CITY, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_CITY(
+			my_responses_OFFER_CITY, 0.75, 0.26)
+		tri i_never_answered_OFFER_CITY(
+			my_responses_OFFER_CITY, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_CITY(
+			my_responses_OFFER_CITY, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_CITY(
+			my_responses_OFFER_CITY, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_CITY[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_CITY(
+			my_responses_decay_OFFER_CITY, 0.0, 0.5)
+		tri my_long_decay_OFFER_CITY(
+			my_responses_decay_OFFER_CITY, 0.93, 0.5)
+		tri my_zero_decay_OFFER_CITY(
+			my_responses_decay_OFFER_CITY, 1.0, 0.5)
+
+	/////////////////
+	/// OFFER_MAP ///
+	/////////////////
+
+	input my_responses_OFFER_MAP 
+		tri onceplus_i_said_yes_to_OFFER_MAP(
+			my_responses_OFFER_MAP, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_MAP(
+			my_responses_OFFER_MAP, 0.75, 0.26)
+		tri i_never_answered_OFFER_MAP(
+			my_responses_OFFER_MAP, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_MAP(
+			my_responses_OFFER_MAP, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_MAP(
+			my_responses_OFFER_MAP, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_MAP[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_MAP(
+			my_responses_decay_OFFER_MAP, 0.0, 0.5)
+		tri my_long_decay_OFFER_MAP(
+			my_responses_decay_OFFER_MAP, 0.93, 0.5)
+		tri my_zero_decay_OFFER_MAP(
+			my_responses_decay_OFFER_MAP, 1.0, 0.5)
+
+	//////////////////
+	/// OFFER_GOLD ///
+	//////////////////
+
+	input my_responses_OFFER_GOLD 
+		tri onceplus_i_said_yes_to_OFFER_GOLD(
+			my_responses_OFFER_GOLD, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_GOLD(
+			my_responses_OFFER_GOLD, 0.75, 0.26)
+		tri i_never_answered_OFFER_GOLD(
+			my_responses_OFFER_GOLD, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_GOLD(
+			my_responses_OFFER_GOLD, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_GOLD(
+			my_responses_OFFER_GOLD, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_GOLD[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_GOLD(
+			my_responses_decay_OFFER_GOLD, 0.0, 0.5)
+		tri my_long_decay_OFFER_GOLD(
+			my_responses_decay_OFFER_GOLD, 0.93, 0.5)
+		tri my_zero_decay_OFFER_GOLD(
+			my_responses_decay_OFFER_GOLD, 1.0, 0.5)
+
+	output enough_me_accepting_OFFER_GOLD[0.0, 2.0] = 0.1
+		tri yes_enough_me_accepting_OFFER_GOLD(
+			enough_me_accepting_OFFER_GOLD, 1.0, 0.5)
+
+	if(onceplus_i_said_yes_to_OFFER_GOLD or once_i_said_yes_to_OFFER_GOLD)
+	{
+		yes_enough_me_accepting_OFFER_GOLD
+	}
+	
+	////////////////////////
+	/// OFFER_CEASE_FIRE ///
+	////////////////////////
+
+	input my_responses_OFFER_CEASE_FIRE 
+		tri onceplus_i_said_yes_to_OFFER_CEASE_FIRE(
+			my_responses_OFFER_CEASE_FIRE, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_CEASE_FIRE(
+			my_responses_OFFER_CEASE_FIRE, 0.75, 0.26)
+		tri i_never_answered_OFFER_CEASE_FIRE(
+			my_responses_OFFER_CEASE_FIRE, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_CEASE_FIRE(
+			my_responses_OFFER_CEASE_FIRE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_CEASE_FIRE(
+			my_responses_OFFER_CEASE_FIRE, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_CEASE_FIRE[-1.0, 2.0] = 0.965
+		tri my_instant_decay_OFFER_CEASE_FIRE(
+			my_responses_decay_OFFER_CEASE_FIRE, 0.0, 0.5)
+		tri my_long_decay_OFFER_CEASE_FIRE(
+			my_responses_decay_OFFER_CEASE_FIRE, 0.93, 0.5)
+		tri my_zero_decay_OFFER_CEASE_FIRE(
+			my_responses_decay_OFFER_CEASE_FIRE, 1.0, 0.5)
+
+	////////////////////////////////
+	/// OFFER_PERMANENT_ALLIANCE ///
+	////////////////////////////////
+
+	input my_responses_OFFER_PERMANENT_ALLIANCE 
+		tri onceplus_i_said_yes_to_OFFER_PERMANENT_ALLIANCE(
+			my_responses_OFFER_PERMANENT_ALLIANCE, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_PERMANENT_ALLIANCE(
+			my_responses_OFFER_PERMANENT_ALLIANCE, 0.75, 0.26)
+		tri i_never_answered_OFFER_PERMANENT_ALLIANCE(
+			my_responses_OFFER_PERMANENT_ALLIANCE, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_PERMANENT_ALLIANCE(
+			my_responses_OFFER_PERMANENT_ALLIANCE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_PERMANENT_ALLIANCE(
+			my_responses_OFFER_PERMANENT_ALLIANCE, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_PERMANENT_ALLIANCE[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_PERMANENT_ALLIANCE(
+			my_responses_decay_OFFER_PERMANENT_ALLIANCE, 0.0, 0.5)
+		tri my_long_decay_OFFER_PERMANENT_ALLIANCE(
+			my_responses_decay_OFFER_PERMANENT_ALLIANCE, 0.93, 0.5)
+		tri my_zero_decay_OFFER_PERMANENT_ALLIANCE(
+			my_responses_decay_OFFER_PERMANENT_ALLIANCE, 1.0, 0.5)
+
+	///////////////////////////////
+	/// OFFER_PACT_CAPTURE_CITY ///
+	///////////////////////////////
+
+	input my_responses_OFFER_PACT_CAPTURE_CITY 
+		tri onceplus_i_said_yes_to_OFFER_PACT_CAPTURE_CITY(
+			my_responses_OFFER_PACT_CAPTURE_CITY, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_PACT_CAPTURE_CITY(
+			my_responses_OFFER_PACT_CAPTURE_CITY, 0.75, 0.26)
+		tri i_never_answered_OFFER_PACT_CAPTURE_CITY(
+			my_responses_OFFER_PACT_CAPTURE_CITY, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_PACT_CAPTURE_CITY(
+			my_responses_OFFER_PACT_CAPTURE_CITY, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_PACT_CAPTURE_CITY(
+			my_responses_OFFER_PACT_CAPTURE_CITY, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_PACT_CAPTURE_CITY[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_PACT_CAPTURE_CITY(
+			my_responses_decay_OFFER_PACT_CAPTURE_CITY, 0.0, 0.5)
+		tri my_long_decay_OFFER_PACT_CAPTURE_CITY(
+			my_responses_decay_OFFER_PACT_CAPTURE_CITY, 0.93, 0.5)
+		tri my_zero_decay_OFFER_PACT_CAPTURE_CITY(
+			my_responses_decay_OFFER_PACT_CAPTURE_CITY, 1.0, 0.5)
+
+	////////////////////////////////
+	/// OFFER_PACT_END_POLLUTION ///
+	////////////////////////////////
+
+	input my_responses_OFFER_PACT_END_POLLUTION 
+		tri onceplus_i_said_yes_to_OFFER_PACT_END_POLLUTION(
+			my_responses_OFFER_PACT_END_POLLUTION, 10.0, 9.01)
+		tri once_i_said_yes_to_OFFER_PACT_END_POLLUTION(
+			my_responses_OFFER_PACT_END_POLLUTION, 0.75, 0.26)
+		tri i_never_answered_OFFER_PACT_END_POLLUTION(
+			my_responses_OFFER_PACT_END_POLLUTION, 0.0, 0.26)
+		tri once_i_said_no_to_OFFER_PACT_END_POLLUTION(
+			my_responses_OFFER_PACT_END_POLLUTION, -0.75, 0.26)
+		tri onceplus_i_said_no_to_OFFER_PACT_END_POLLUTION(
+			my_responses_OFFER_PACT_END_POLLUTION, -10.0, 9.01)
+
+	output my_responses_decay_OFFER_PACT_END_POLLUTION[-1.0, 2.0] = 0.93
+		tri my_instant_decay_OFFER_PACT_END_POLLUTION(
+			my_responses_decay_OFFER_PACT_END_POLLUTION, 0.0, 0.5)
+		tri my_long_decay_OFFER_PACT_END_POLLUTION(
+			my_responses_decay_OFFER_PACT_END_POLLUTION, 0.93, 0.5)
+		tri my_zero_decay_OFFER_PACT_END_POLLUTION(
+			my_responses_decay_OFFER_PACT_END_POLLUTION, 1.0, 0.5)
+
+	////////////////////////
+	/// EXCHANGE_ADVANCE ///
+	////////////////////////
+
+	input my_responses_EXCHANGE_ADVANCE 
+		tri onceplus_i_said_yes_to_EXCHANGE_ADVANCE(
+			my_responses_EXCHANGE_ADVANCE, 10.0, 9.01)
+		tri once_i_said_yes_to_EXCHANGE_ADVANCE(
+			my_responses_EXCHANGE_ADVANCE, 0.75, 0.26)
+		tri i_never_answered_EXCHANGE_ADVANCE(
+			my_responses_EXCHANGE_ADVANCE, 0.0, 0.26)
+		tri once_i_said_no_to_EXCHANGE_ADVANCE(
+			my_responses_EXCHANGE_ADVANCE, -0.75, 0.26)
+		tri onceplus_i_said_no_to_EXCHANGE_ADVANCE(
+			my_responses_EXCHANGE_ADVANCE, -10.0, 9.01)
+
+	output my_responses_decay_EXCHANGE_ADVANCE[-1.0, 2.0] = 0.93
+		tri my_instant_decay_EXCHANGE_ADVANCE(
+			my_responses_decay_EXCHANGE_ADVANCE, 0.0, 0.5)
+		tri my_long_decay_EXCHANGE_ADVANCE(
+			my_responses_decay_EXCHANGE_ADVANCE, 0.93, 0.5)
+		tri my_zero_decay_EXCHANGE_ADVANCE(
+			my_responses_decay_EXCHANGE_ADVANCE, 1.0, 0.5)
+
+	/////////////////////
+	/// EXCHANGE_CITY ///
+	/////////////////////
+
+	input my_responses_EXCHANGE_CITY 
+		tri onceplus_i_said_yes_to_EXCHANGE_CITY(
+			my_responses_EXCHANGE_CITY, 10.0, 9.01)
+		tri once_i_said_yes_to_EXCHANGE_CITY(
+			my_responses_EXCHANGE_CITY, 0.75, 0.26)
+		tri i_never_answered_EXCHANGE_CITY(
+			my_responses_EXCHANGE_CITY, 0.0, 0.26)
+		tri once_i_said_no_to_EXCHANGE_CITY(
+			my_responses_EXCHANGE_CITY, -0.75, 0.26)
+		tri onceplus_i_said_no_to_EXCHANGE_CITY(
+			my_responses_EXCHANGE_CITY, -10.0, 9.01)
+
+	output my_responses_decay_EXCHANGE_CITY[-1.0, 2.0] = 0.93
+		tri my_instant_decay_EXCHANGE_CITY(
+			my_responses_decay_EXCHANGE_CITY, 0.0, 0.5)
+		tri my_long_decay_EXCHANGE_CITY(
+			my_responses_decay_EXCHANGE_CITY, 0.93, 0.5)
+		tri my_zero_decay_EXCHANGE_CITY(
+			my_responses_decay_EXCHANGE_CITY, 1.0, 0.5)
+
+	////////////////////
+	/// EXCHANGE_MAP ///
+	////////////////////
+
+	input my_responses_EXCHANGE_MAP 
+		tri onceplus_i_said_yes_to_EXCHANGE_MAP(
+			my_responses_EXCHANGE_MAP, 10.0, 9.01)
+		tri once_i_said_yes_to_EXCHANGE_MAP(
+			my_responses_EXCHANGE_MAP, 0.75, 0.26)
+		tri i_never_answered_EXCHANGE_MAP(
+			my_responses_EXCHANGE_MAP, 0.0, 0.26)
+		tri once_i_said_no_to_EXCHANGE_MAP(
+			my_responses_EXCHANGE_MAP, -0.75, 0.26)
+		tri onceplus_i_said_no_to_EXCHANGE_MAP(
+			my_responses_EXCHANGE_MAP, -10.0, 9.01)
+
+	output my_responses_decay_EXCHANGE_MAP[-1.0, 2.0] = 0.93
+		tri my_instant_decay_EXCHANGE_MAP(
+			my_responses_decay_EXCHANGE_MAP, 0.0, 0.5)
+		tri my_long_decay_EXCHANGE_MAP(
+			my_responses_decay_EXCHANGE_MAP, 0.93, 0.5)
+		tri my_zero_decay_EXCHANGE_MAP(
+			my_responses_decay_EXCHANGE_MAP, 1.0, 0.5)
+
+//kjm i took this out
+//	output enough_me_asking_to_EXCHANGE_MAP[0.0, 2.0] = 0.0
+//	tri yes_enough_me_giving_in_to_EXCHANGE_(
+//			enough_me_giving_in_to_EXCHANGE_, 1.0, 0.5)
+//
+
+//kjm 3/1/99 it seems to want this
+	output enough_me_giving_in_to_EXCHANGE_MAP[0.0, 2.0] = 0.0
+		tri yes_enough_me_giving_in_to_EXCHANGE_MAP(
+			enough_me_giving_in_to_EXCHANGE_MAP, 1.0, 0.5)
+
+
+
+	if(onceplus_i_said_yes_to_EXCHANGE_MAP or once_i_said_yes_to_EXCHANGE_MAP)
+	{
+		yes_enough_me_giving_in_to_EXCHANGE_MAP
+	}
+
+	/////////////////////////////////////////////////////////////////////////////
+	/// THESE INPUTS ARE FOR REMEMBERING WHAT MESSAGES HE ACCEPTED OR REJECTED ///
+	/////////////////////////////////////////////////////////////////////////////
+	// Me is always the AI currently calculating an action.
+	// Him is the Player that I am corresponding with.
+	// When I say yes, I add one to my memory unless my memory is negative.
+	// If my_responses is currently negative, and the AI says yes, then the
+	// old memory is scrubbed completely and only the new positive count is kept.
+	// The same applies for rejection, which sets my_responses to -1.
+
+	////////////////////////////////////////////////
+	/// THESE OUTPUTS ARE FOR DECAYING HIS MEMORY ///
+	////////////////////////////////////////////////
+	
+	// Once per turn, the my_responses memory is decayed by whatever the fli system
+	// requests. Decay is done by multiplication. A decay of one creates a perfect memory.
+	// A decay of zero creates a count for this turn only.
+	// If not set, these default to one.
+
+	////////////////
+	/// GREETING ///
+	////////////////
+		
+	input his_responses_GREETING 
+		tri onceplus_he_said_yes_to_GREETING(
+			his_responses_GREETING, 10.0, 9.01)
+		tri once_he_said_yes_to_GREETING(
+			his_responses_GREETING, 0.75, 0.26)
+		tri he_never_answered_GREETING(
+			his_responses_GREETING, 0.0, 0.26)
+		tri once_he_said_no_to_GREETING(
+			his_responses_GREETING, -0.75, 0.26)
+		tri onceplus_he_said_no_to_GREETING(
+			his_responses_GREETING, -10.0, 9.01)
+
+	output his_responses_decay_GREETING[-1.0, 2.0] = 1.0
+		tri his_instant_decay_GREETING(
+			his_responses_decay_GREETING, 0.0, 0.5)
+		tri his_long_decay_GREETING(
+			his_responses_decay_GREETING, 0.93, 0.5)
+		tri his_zero_decay_GREETING(
+			his_responses_decay_GREETING, 1.0, 0.5)
+
+	//////////////////////
+	/// DEMAND_ADVANCE ///
+	//////////////////////
+		
+	input his_responses_DEMAND_ADVANCE 
+		tri onceplus_he_said_yes_to_DEMAND_ADVANCE(
+			his_responses_DEMAND_ADVANCE, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_ADVANCE(
+			his_responses_DEMAND_ADVANCE, 0.75, 0.26)
+		tri he_never_answered_DEMAND_ADVANCE(
+			his_responses_DEMAND_ADVANCE, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_ADVANCE(
+			his_responses_DEMAND_ADVANCE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_ADVANCE(
+			his_responses_DEMAND_ADVANCE, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_ADVANCE[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_ADVANCE(
+			his_responses_decay_DEMAND_ADVANCE, 0.0, 0.5)
+		tri his_long_decay_DEMAND_ADVANCE(
+			his_responses_decay_DEMAND_ADVANCE, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_ADVANCE(
+			his_responses_decay_DEMAND_ADVANCE, 1.0, 0.5)
+
+	///////////////////
+	/// DEMAND_CITY ///
+	///////////////////
+
+	input his_responses_DEMAND_CITY 
+		tri onceplus_he_said_yes_to_DEMAND_CITY(
+			his_responses_DEMAND_CITY, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_CITY(
+			his_responses_DEMAND_CITY, 0.75, 0.26)
+		tri he_never_answered_DEMAND_CITY(
+			his_responses_DEMAND_CITY, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_CITY(
+			his_responses_DEMAND_CITY, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_CITY(
+			his_responses_DEMAND_CITY, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_CITY[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_CITY(
+			his_responses_decay_DEMAND_CITY, 0.0, 0.5)
+		tri his_long_decay_DEMAND_CITY(
+			his_responses_decay_DEMAND_CITY, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_CITY(
+			his_responses_decay_DEMAND_CITY, 1.0, 0.5)
+
+	//////////////////
+	/// DEMAND_MAP ///
+	//////////////////
+
+	input his_responses_DEMAND_MAP 
+		tri onceplus_he_said_yes_to_DEMAND_MAP(
+			his_responses_DEMAND_MAP, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_MAP(
+			his_responses_DEMAND_MAP, 0.75, 0.26)
+		tri he_never_answered_DEMAND_MAP(
+			his_responses_DEMAND_MAP, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_MAP(
+			his_responses_DEMAND_MAP, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_MAP(
+			his_responses_DEMAND_MAP, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_MAP[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_MAP(
+			his_responses_decay_DEMAND_MAP, 0.0, 0.5)
+		tri his_long_decay_DEMAND_MAP(
+			his_responses_decay_DEMAND_MAP, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_MAP(
+			his_responses_decay_DEMAND_MAP, 1.0, 0.5)
+
+	///////////////////
+	/// DEMAND_GOLD ///
+	///////////////////
+
+	input his_responses_DEMAND_GOLD 
+		tri onceplus_he_said_yes_to_DEMAND_GOLD(
+			his_responses_DEMAND_GOLD, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_GOLD(
+			his_responses_DEMAND_GOLD, 0.75, 0.26)
+		tri he_never_answered_DEMAND_GOLD(
+			his_responses_DEMAND_GOLD, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_GOLD(
+			his_responses_DEMAND_GOLD, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_GOLD(
+			his_responses_DEMAND_GOLD, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_GOLD[-1.0, 2.0] = 0.97
+		tri his_instant_decay_DEMAND_GOLD(
+			his_responses_decay_DEMAND_GOLD, 0.0, 0.5)
+		tri his_long_decay_DEMAND_GOLD(
+			his_responses_decay_DEMAND_GOLD, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_GOLD(
+			his_responses_decay_DEMAND_GOLD, 1.0, 0.5)
+
+	/////////////////////////
+	/// DEMAND_STOP_TRADE ///
+	/////////////////////////
+
+	input his_responses_DEMAND_STOP_TRADE 
+		tri onceplus_he_said_yes_to_DEMAND_STOP_TRADE(
+			his_responses_DEMAND_STOP_TRADE, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_STOP_TRADE(
+			his_responses_DEMAND_STOP_TRADE, 0.75, 0.26)
+		tri he_never_answered_DEMAND_STOP_TRADE(
+			his_responses_DEMAND_STOP_TRADE, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_STOP_TRADE(
+			his_responses_DEMAND_STOP_TRADE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_STOP_TRADE(
+			his_responses_DEMAND_STOP_TRADE, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_STOP_TRADE[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_STOP_TRADE(
+			his_responses_decay_DEMAND_STOP_TRADE, 0.0, 0.5)
+		tri his_long_decay_DEMAND_STOP_TRADE(
+			his_responses_decay_DEMAND_STOP_TRADE, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_STOP_TRADE(
+			his_responses_decay_DEMAND_STOP_TRADE, 1.0, 0.5)
+
+	///////////////////////////
+	/// DEMAND_ATTACK_ENEMY ///
+	///////////////////////////
+
+	input his_responses_DEMAND_ATTACK_ENEMY 
+		tri onceplus_he_said_yes_to_DEMAND_ATTACK_ENEMY(
+			his_responses_DEMAND_ATTACK_ENEMY, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_ATTACK_ENEMY(
+			his_responses_DEMAND_ATTACK_ENEMY, 0.75, 0.26)
+		tri he_never_answered_DEMAND_ATTACK_ENEMY(
+			his_responses_DEMAND_ATTACK_ENEMY, 0.0, 0.26)
+		tri once_he_said_no_to_DEMAND_ATTACK_ENEMY(
+			his_responses_DEMAND_ATTACK_ENEMY, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_ATTACK_ENEMY(
+			his_responses_DEMAND_ATTACK_ENEMY, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_ATTACK_ENEMY[-1.0, 2.0] = 0.965
+		tri his_instant_decay_DEMAND_ATTACK_ENEMY(
+			his_responses_decay_DEMAND_ATTACK_ENEMY, 0.0, 0.5)
+		tri his_long_decay_DEMAND_ATTACK_ENEMY(
+			his_responses_decay_DEMAND_ATTACK_ENEMY, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_ATTACK_ENEMY(
+			his_responses_decay_DEMAND_ATTACK_ENEMY, 1.0, 0.5)
+
+	//////////////////////////////
+	/// DEMAND_LEAVE_OUR_LANDS ///
+	//////////////////////////////
+	
+	input his_responses_DEMAND_LEAVE_OUR_LANDS 
+		tri onceplus_he_said_yes_to_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, 10.0, 9.01)
+
+		tri once_he_said_yes_to_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, 0.75, 0.26)
+
+		tri he_never_answered_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, 0.0, 0.5)
+
+		tri once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, -0.76, .25)
+
+		tri twice_he_said_no_to_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, -1.4, 0.2)
+
+		tri onceplus_he_said_no_to_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_DEMAND_LEAVE_OUR_LANDS, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_LEAVE_OUR_LANDS[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_decay_DEMAND_LEAVE_OUR_LANDS, 0.0, 0.5)
+		tri his_long_decay_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_decay_DEMAND_LEAVE_OUR_LANDS, 0.93, 0.5)
+		tri his_longer_decay_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_decay_DEMAND_LEAVE_OUR_LANDS, 0.965, 0.5)
+		tri his_zero_decay_DEMAND_LEAVE_OUR_LANDS(
+			his_responses_decay_DEMAND_LEAVE_OUR_LANDS, 1.0, 0.5)
+
+	///////////////////////////////
+	/// DEMAND_REDUCE_POLLUTION ///
+	///////////////////////////////
+
+	input his_responses_DEMAND_REDUCE_POLLUTION 
+		tri onceplus_he_said_yes_to_DEMAND_REDUCE_POLLUTION(
+			his_responses_DEMAND_REDUCE_POLLUTION, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_REDUCE_POLLUTION(
+			his_responses_DEMAND_REDUCE_POLLUTION, 0.75, 0.26)
+		tri he_never_answered_DEMAND_REDUCE_POLLUTION(
+			his_responses_DEMAND_REDUCE_POLLUTION, 0.0, 0.5)
+		tri once_he_said_no_to_DEMAND_REDUCE_POLLUTION(
+			his_responses_DEMAND_REDUCE_POLLUTION, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_REDUCE_POLLUTION(
+			his_responses_DEMAND_REDUCE_POLLUTION, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_REDUCE_POLLUTION[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_REDUCE_POLLUTION(
+			his_responses_decay_DEMAND_REDUCE_POLLUTION, 0.0, 0.5)
+		tri his_long_decay_DEMAND_REDUCE_POLLUTION(
+			his_responses_decay_DEMAND_REDUCE_POLLUTION, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_REDUCE_POLLUTION(
+			his_responses_decay_DEMAND_REDUCE_POLLUTION, 1.0, 0.5)
+
+	/////////////////////
+	/// LOWER_TARIFFS ///
+	/////////////////////
+
+	input his_responses_DEMAND_LOWER_TARIFFS 
+		tri onceplus_he_said_yes_to_DEMAND_LOWER_TARIFFS(
+			his_responses_DEMAND_LOWER_TARIFFS, 10.0, 9.01)
+		tri once_he_said_yes_to_DEMAND_LOWER_TARIFFS(
+			his_responses_DEMAND_LOWER_TARIFFS, 0.75, 0.26)
+		tri he_never_answered_DEMAND_LOWER_TARIFFS(
+			his_responses_DEMAND_LOWER_TARIFFS, 0.0, 0.5)
+		tri once_he_said_no_to_DEMAND_LOWER_TARIFFS(
+			his_responses_DEMAND_LOWER_TARIFFS, -0.75, 0.26)
+		tri onceplus_he_said_no_to_DEMAND_LOWER_TARIFFS(
+			his_responses_DEMAND_LOWER_TARIFFS, -10.0, 9.01)
+
+	output his_responses_decay_DEMAND_LOWER_TARIFFS[-1.0, 2.0] = 0.93
+		tri his_instant_decay_DEMAND_LOWER_TARIFFS(
+			his_responses_decay_DEMAND_LOWER_TARIFFS, 0.0, 0.5)
+		tri his_long_decay_DEMAND_LOWER_TARIFFS(
+			his_responses_decay_DEMAND_LOWER_TARIFFS, 0.93, 0.5)
+		tri his_zero_decay_DEMAND_LOWER_TARIFFS(
+			his_responses_decay_DEMAND_LOWER_TARIFFS, 1.0, 0.5)
+
+	/////////////////////
+	/// OFFER_ADVANCE ///
+	/////////////////////
+
+	input his_responses_OFFER_ADVANCE 
+		tri onceplus_he_said_yes_to_OFFER_ADVANCE(
+			his_responses_OFFER_ADVANCE, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_ADVANCE(
+			his_responses_OFFER_ADVANCE, 0.75, 0.26)
+		tri he_never_answered_OFFER_ADVANCE(
+			his_responses_OFFER_ADVANCE, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_ADVANCE(
+			his_responses_OFFER_ADVANCE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_ADVANCE(
+			his_responses_OFFER_ADVANCE, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_ADVANCE[-1.0, 2.0] = 0.93
+		tri his_instant_decay_OFFER_ADVANCE(
+			his_responses_decay_OFFER_ADVANCE, 0.0, 0.5)
+		tri his_long_decay_OFFER_ADVANCE(
+			his_responses_decay_OFFER_ADVANCE, 0.93, 0.5)
+		tri his_zero_decay_OFFER_ADVANCE(
+			his_responses_decay_OFFER_ADVANCE, 1.0, 0.5)
+
+	///////////////////
+	/// OFFER_CITY  ///
+	///////////////////
+
+	input his_responses_OFFER_CITY 
+		tri onceplus_he_said_yes_to_OFFER_CITY(
+			his_responses_OFFER_CITY, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_CITY(
+			his_responses_OFFER_CITY, 0.75, 0.26)
+		tri he_never_answered_OFFER_CITY(
+			his_responses_OFFER_CITY, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_CITY(
+			his_responses_OFFER_CITY, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_CITY(
+			his_responses_OFFER_CITY, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_CITY[-1.0, 2.0] = 0.93
+		tri his_instant_decay_OFFER_CITY(
+			his_responses_decay_OFFER_CITY, 0.0, 0.5)
+		tri his_long_decay_OFFER_CITY(
+			his_responses_decay_OFFER_CITY, 0.93, 0.5)
+		tri his_zero_decay_OFFER_CITY(
+			his_responses_decay_OFFER_CITY, 1.0, 0.5)
+
+	/////////////////
+	/// OFFER_MAP ///
+	/////////////////
+
+	input his_responses_OFFER_MAP 
+		tri onceplus_he_said_yes_to_OFFER_MAP(
+			his_responses_OFFER_MAP, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_MAP(
+			his_responses_OFFER_MAP, 0.75, 0.26)
+		tri he_never_answered_OFFER_MAP(
+			his_responses_OFFER_MAP, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_MAP(
+			his_responses_OFFER_MAP, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_MAP(
+			his_responses_OFFER_MAP, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_MAP[-1.0, 2.0] = 0.97
+		tri his_instant_decay_OFFER_MAP(
+			his_responses_decay_OFFER_MAP, 0.0, 0.5)
+		tri his_long_decay_OFFER_MAP(
+			his_responses_decay_OFFER_MAP, 0.93, 0.5)
+		tri his_zero_decay_OFFER_MAP(
+			his_responses_decay_OFFER_MAP, 1.0, 0.5)
+
+	//////////////////
+	/// OFFER_GOLD ///
+	//////////////////
+
+	input his_responses_OFFER_GOLD 
+		tri onceplus_he_said_yes_to_OFFER_GOLD(
+			his_responses_OFFER_GOLD, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_GOLD(
+			his_responses_OFFER_GOLD, 0.75, 0.26)
+		tri he_never_answered_OFFER_GOLD(
+			his_responses_OFFER_GOLD, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_GOLD(
+			his_responses_OFFER_GOLD, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_GOLD(
+			his_responses_OFFER_GOLD, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_GOLD[-1.0, 2.0] = 0.965
+		tri his_instant_decay_OFFER_GOLD(
+			his_responses_decay_OFFER_GOLD, 0.0, 0.5)
+		tri his_long_decay_OFFER_GOLD(
+			his_responses_decay_OFFER_GOLD, 0.93, 0.5)
+		tri his_zero_decay_OFFER_GOLD(
+			his_responses_decay_OFFER_GOLD, 1.0, 0.5)
+
+
+	////////////////////////
+	/// OFFER_CEASE_FIRE ///
+	////////////////////////
+
+	input his_responses_OFFER_CEASE_FIRE 
+		tri onceplus_he_said_yes_to_OFFER_CEASE_FIRE(
+			his_responses_OFFER_CEASE_FIRE, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_CEASE_FIRE(
+			his_responses_OFFER_CEASE_FIRE, 0.75, 0.26)
+		tri he_never_answered_OFFER_CEASE_FIRE(
+			his_responses_OFFER_CEASE_FIRE, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_CEASE_FIRE(
+			his_responses_OFFER_CEASE_FIRE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_CEASE_FIRE(
+			his_responses_OFFER_CEASE_FIRE, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_CEASE_FIRE[-1.0, 2.0] = 0.965
+		tri his_instant_decay_OFFER_CEASE_FIRE(
+			his_responses_decay_OFFER_CEASE_FIRE, 0.0, 0.5)
+		tri his_long_decay_OFFER_CEASE_FIRE(
+			his_responses_decay_OFFER_CEASE_FIRE, 0.93, 0.5)
+		tri his_zero_decay_OFFER_CEASE_FIRE(
+			his_responses_decay_OFFER_CEASE_FIRE, 1.0, 0.5)
+
+	////////////////////////////////
+	/// OFFER_PERMANENT_ALLIANCE ///
+	////////////////////////////////
+
+	input his_responses_OFFER_PERMANENT_ALLIANCE 
+		tri onceplus_he_said_yes_to_OFFER_PERMANENT_ALLIANCE(
+			his_responses_OFFER_PERMANENT_ALLIANCE, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_PERMANENT_ALLIANCE(
+			his_responses_OFFER_PERMANENT_ALLIANCE, 0.75, 0.26)
+		tri he_never_answered_OFFER_PERMANENT_ALLIANCE(
+			his_responses_OFFER_PERMANENT_ALLIANCE, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_PERMANENT_ALLIANCE(
+			his_responses_OFFER_PERMANENT_ALLIANCE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_PERMANENT_ALLIANCE(
+			his_responses_OFFER_PERMANENT_ALLIANCE, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_PERMANENT_ALLIANCE[-1.0, 2.0] = 0.93
+		tri his_instant_decay_OFFER_PERMANENT_ALLIANCE(
+			his_responses_decay_OFFER_PERMANENT_ALLIANCE, 0.0, 0.5)
+		tri his_long_decay_OFFER_PERMANENT_ALLIANCE(
+			his_responses_decay_OFFER_PERMANENT_ALLIANCE, 0.93, 0.5)
+		tri his_zero_decay_OFFER_PERMANENT_ALLIANCE(
+			his_responses_decay_OFFER_PERMANENT_ALLIANCE, 1.0, 0.5)
+
+	///////////////////////////////
+	/// OFFER_PACT_CAPTURE_CITY ///
+	///////////////////////////////
+
+	input his_responses_OFFER_PACT_CAPTURE_CITY 
+		tri onceplus_he_said_yes_to_OFFER_PACT_CAPTURE_CITY(
+			his_responses_OFFER_PACT_CAPTURE_CITY, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_PACT_CAPTURE_CITY(
+			his_responses_OFFER_PACT_CAPTURE_CITY, 0.75, 0.26)
+		tri he_never_answered_OFFER_PACT_CAPTURE_CITY(
+			his_responses_OFFER_PACT_CAPTURE_CITY, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_PACT_CAPTURE_CITY(
+			his_responses_OFFER_PACT_CAPTURE_CITY, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_PACT_CAPTURE_CITY(
+			his_responses_OFFER_PACT_CAPTURE_CITY, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_PACT_CAPTURE_CITY[-1.0, 2.0] = 0.93
+		tri his_instant_decay_OFFER_PACT_CAPTURE_CITY(
+			his_responses_decay_OFFER_PACT_CAPTURE_CITY, 0.0, 0.5)
+		tri his_long_decay_OFFER_PACT_CAPTURE_CITY(
+			his_responses_decay_OFFER_PACT_CAPTURE_CITY, 0.93, 0.5)
+		tri his_zero_decay_OFFER_PACT_CAPTURE_CITY(
+			his_responses_decay_OFFER_PACT_CAPTURE_CITY, 1.0, 0.5)
+
+	////////////////////////////////
+	/// OFFER_PACT_END_POLLUTION ///
+	////////////////////////////////
+
+	input his_responses_OFFER_PACT_END_POLLUTION 
+		tri onceplus_he_said_yes_to_OFFER_PACT_END_POLLUTION(
+			his_responses_OFFER_PACT_END_POLLUTION, 10.0, 9.01)
+		tri once_he_said_yes_to_OFFER_PACT_END_POLLUTION(
+			his_responses_OFFER_PACT_END_POLLUTION, 0.75, 0.26)
+		tri he_never_answered_OFFER_PACT_END_POLLUTION(
+			his_responses_OFFER_PACT_END_POLLUTION, 0.0, 0.26)
+		tri once_he_said_no_to_OFFER_PACT_END_POLLUTION(
+			his_responses_OFFER_PACT_END_POLLUTION, -0.75, 0.26)
+		tri onceplus_he_said_no_to_OFFER_PACT_END_POLLUTION(
+			his_responses_OFFER_PACT_END_POLLUTION, -10.0, 9.01)
+
+	output his_responses_decay_OFFER_PACT_END_POLLUTION[-1.0, 2.0] = 0.93
+		tri his_instant_decay_OFFER_PACT_END_POLLUTION(
+			his_responses_decay_OFFER_PACT_END_POLLUTION, 0.0, 0.5)
+		tri his_long_decay_OFFER_PACT_END_POLLUTION(
+			his_responses_decay_OFFER_PACT_END_POLLUTION, 0.93, 0.5)
+		tri his_zero_decay_OFFER_PACT_END_POLLUTION(
+			his_responses_decay_OFFER_PACT_END_POLLUTION, 1.0, 0.5)
+
+	////////////////////////
+	/// EXCHANGE_ADVANCE ///
+	////////////////////////
+
+	input his_responses_EXCHANGE_ADVANCE 
+		tri onceplus_he_said_yes_to_EXCHANGE_ADVANCE(
+			his_responses_EXCHANGE_ADVANCE, 10.0, 9.01)
+		tri once_he_said_yes_to_EXCHANGE_ADVANCE(
+			his_responses_EXCHANGE_ADVANCE, 0.75, 0.26)
+		tri he_never_answered_EXCHANGE_ADVANCE(
+			his_responses_EXCHANGE_ADVANCE, 0.0, 0.26)
+		tri once_he_said_no_to_EXCHANGE_ADVANCE(
+			his_responses_EXCHANGE_ADVANCE, -0.75, 0.26)
+		tri onceplus_he_said_no_to_EXCHANGE_ADVANCE(
+			his_responses_EXCHANGE_ADVANCE, -10.0, 9.01)
+
+	output his_responses_decay_EXCHANGE_ADVANCE[-1.0, 2.0] = 0.93
+		tri his_instant_decay_EXCHANGE_ADVANCE(
+			his_responses_decay_EXCHANGE_ADVANCE, 0.0, 0.5)
+		tri his_long_decay_EXCHANGE_ADVANCE(
+			his_responses_decay_EXCHANGE_ADVANCE, 0.93, 0.5)
+		tri his_zero_decay_EXCHANGE_ADVANCE(
+			his_responses_decay_EXCHANGE_ADVANCE, 1.0, 0.5)
+
+	/////////////////////
+	/// EXCHANGE_CITY ///
+	/////////////////////
+
+	input his_responses_EXCHANGE_CITY 
+		tri onceplus_he_said_yes_to_EXCHANGE_CITY(
+			his_responses_EXCHANGE_CITY, 10.0, 9.01)
+		tri once_he_said_yes_to_EXCHANGE_CITY(
+			his_responses_EXCHANGE_CITY, 0.75, 0.26)
+		tri he_never_answered_EXCHANGE_CITY(
+			his_responses_EXCHANGE_CITY, 0.0, 0.26)
+		tri once_he_said_no_to_EXCHANGE_CITY(
+			his_responses_EXCHANGE_CITY, -0.75, 0.26)
+		tri onceplus_he_said_no_to_EXCHANGE_CITY(
+			his_responses_EXCHANGE_CITY, -10.0, 9.01)
+
+	output his_responses_decay_EXCHANGE_CITY[-1.0, 2.0] = 0.93
+		tri his_instant_decay_EXCHANGE_CITY(
+			his_responses_decay_EXCHANGE_CITY, 0.0, 0.5)
+		tri his_long_decay_EXCHANGE_CITY(
+			his_responses_decay_EXCHANGE_CITY, 0.93, 0.5)
+		tri his_zero_decay_EXCHANGE_CITY(
+			his_responses_decay_EXCHANGE_CITY, 1.0, 0.5)
+
+	////////////////////
+	/// EXCHANGE_MAP ///
+	////////////////////
+
+	input his_responses_EXCHANGE_MAP 
+		tri onceplus_he_said_yes_to_EXCHANGE_MAP(
+			his_responses_EXCHANGE_MAP, 10.0, 9.01)
+		tri once_he_said_yes_to_EXCHANGE_MAP(
+			his_responses_EXCHANGE_MAP, 0.75, 0.26)
+		tri he_never_answered_EXCHANGE_MAP(
+			his_responses_EXCHANGE_MAP, 0.0, 0.26)
+		tri once_he_said_no_to_EXCHANGE_MAP(
+			his_responses_EXCHANGE_MAP, -0.75, 0.26)
+		tri onceplus_he_said_no_to_EXCHANGE_MAP(
+			his_responses_EXCHANGE_MAP, -10.0, 9.01)
+
+	output his_responses_decay_EXCHANGE_MAP[-1.0, 2.0] = 0.97
+		tri his_instant_decay_EXCHANGE_MAP(
+			his_responses_decay_EXCHANGE_MAP, 0.0, 0.5)
+		tri his_long_decay_EXCHANGE_MAP(
+			his_responses_decay_EXCHANGE_MAP, 0.93, 0.5)
+		tri his_longer_decay_EXCHANGE_MAP(
+			his_responses_decay_EXCHANGE_MAP, 0.98, 0.5)
+		tri his_zero_decay_EXCHANGE_MAP(
+			his_responses_decay_EXCHANGE_MAP, 1.0, 0.5)
+
+////////////////////
+/// MEMORY TESTS ///
+////////////////////
+
+	//////////////////////////////////////////////////////
+	/// TEST TO SEE IF I'VE RECENTLY TOLD HIM TO LEAVE ///
+	/// NO NEED SPAM HIM 							   /// 
+	//////////////////////////////////////////////////////
+
+	output he_has_been_warned_to_LEAVE_OUR_LANDS[0.0, 2.0] = 0.0
+		tri yes_he_has_been_warned_to_LEAVE_OUR_LANDS(
+			he_has_been_warned_to_LEAVE_OUR_LANDS, 1.0, 0.5)
+
+	if	(	
+		(onceplus_he_said_yes_to_DEMAND_LEAVE_OUR_LANDS
+		or once_he_said_yes_to_DEMAND_LEAVE_OUR_LANDS
+		or onceplus_he_said_no_to_DEMAND_LEAVE_OUR_LANDS
+		or once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS)
+		and
+		(onceplus_he_said_yes_to_GREETING
+		or once_he_said_yes_to_GREETING
+		or onceplus_he_said_no_to_GREETING
+		or once_he_said_no_to_GREETING)
+		)
+		{
+			yes_he_has_been_warned_to_LEAVE_OUR_LANDS
+		}
+	
+	////////////////////////////////////////////////////////
+	/// CHECK IF I'VE OFFERED TO EXCHANGED MAPS RECENTLY ///
+	////////////////////////////////////////////////////////
+
+	output he_has_been_asked_to_EXCHANGE_MAP[0.0, 2.0] = 0.0
+		tri yes_he_has_been_asked_to_EXCHANGE_MAP(
+			he_has_been_asked_to_EXCHANGE_MAP, 1.0, 0.5)
+
+	if	(	onceplus_he_said_yes_to_EXCHANGE_MAP
+			or once_he_said_yes_to_EXCHANGE_MAP
+			or onceplus_he_said_no_to_EXCHANGE_MAP
+			or once_he_said_no_to_EXCHANGE_MAP
+		)
+		{
+			yes_he_has_been_asked_to_EXCHANGE_MAP
+		}
+
+
+	////////////////////////////////////////////////////////
+	/// CHECK IF HE GOT MY MAPS RECENTLY
+	/// THEN DONT GIVE HIM MAPS OR EXCHANGE MAPS
+	////////////////////////////////////////////////////////
+
+	output youve_got_my_map[0.0, 2.0] = 0.0
+		tri yes_youve_got_my_map(
+			youve_got_my_map, 1.0, 0.5)
+
+	if(	onceplus_i_said_yes_to_DEMAND_MAP or once_i_said_yes_to_DEMAND_MAP
+		or onceplus_he_said_yes_to_EXCHANGE_MAP or once_he_said_yes_to_EXCHANGE_MAP
+		or onceplus_he_said_yes_to_OFFER_MAP or once_he_said_yes_to_OFFER_MAP)
+	{
+		yes_youve_got_my_map
+	}
+
+
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I GOT HIS MAPS RECENTLY					///
+	/// THEN DONT BECOME MORE FRIENDLY WHEN HE GIVES MAPS	///
+	///////////////////////////////////////////////////////////
+
+	output ive_got_your_map[0.0, 2.0] = 0.0
+		tri yes_ive_got_your_map(
+			ive_got_your_map, 1.0, 0.5)
+
+	if(	onceplus_he_said_yes_to_DEMAND_MAP or once_he_said_yes_to_DEMAND_MAP
+		or onceplus_i_said_yes_to_EXCHANGE_MAP or once_i_said_yes_to_EXCHANGE_MAP
+		or onceplus_i_said_yes_to_OFFER_MAP or once_i_said_yes_to_OFFER_MAP)
+	{
+		yes_ive_got_your_map
+	}
+
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I RECENTLY GAVE GOLD TO HIM				///
+	/// THEN DONT GIVE MORE FOR A WHILE						///
+	///////////////////////////////////////////////////////////
+
+	output he_said_yes_recently_to_OFFER_GOLD[0.0, 2.0] = 0.0
+		tri yes_he_said_yes_recently_to_OFFER_GOLD(he_said_yes_recently_to_OFFER_GOLD, 1.0, 0.5)
+
+
+	if(	onceplus_he_said_yes_to_OFFER_GOLD or once_he_said_yes_to_OFFER_GOLD )
+	{
+		yes_he_said_yes_recently_to_OFFER_GOLD
+	}
+
+	output he_said_yes_very_recently_to_OFFER_GOLD[0.0, 2.0] = 0.0
+		tri yes_he_said_yes_very_recently_to_OFFER_GOLD(he_said_yes_very_recently_to_OFFER_GOLD, 1.0, 0.5)
+
+	if(	once_he_said_yes_to_OFFER_GOLD )
+	{
+		yes_he_said_yes_very_recently_to_OFFER_GOLD
+	}
+
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I RECENTLY GOT GOLD OR ADVANCES FROM HIM	///
+	/// THEN GIVE HIM STUFF BACK							///
+	///////////////////////////////////////////////////////////
+
+	output ive_got_your_gift[0.0, 2.0] = 0.0
+		tri yes_ive_got_your_gift(
+			ive_got_your_gift, 1.0, 0.5)
+
+	if(	onceplus_i_said_yes_to_OFFER_ADVANCE or once_i_said_yes_to_OFFER_ADVANCE
+		or onceplus_i_said_yes_to_OFFER_GOLD or once_i_said_yes_to_OFFER_GOLD )
+	{
+		yes_ive_got_your_gift
+	}
+
+
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I GOT HIS MAPS RECENTLY					///
+	/// THEN DONT BECOME MORE FRIENDLY WHEN HE GIVES MAPS	///
+	///////////////////////////////////////////////////////////
+
+	output we_just_made_a_peace_treaty[0.0, 2.0] = 0.0
+		tri yes_we_just_made_a_peace_treaty(
+			we_just_made_a_peace_treaty, 1.0, 0.5)
+
+	if(	onceplus_he_said_yes_to_OFFER_CEASE_FIRE or once_he_said_yes_to_OFFER_CEASE_FIRE
+		or onceplus_i_said_yes_to_OFFER_CEASE_FIRE or once_i_said_yes_to_OFFER_CEASE_FIRE )
+	{
+		yes_we_just_made_a_peace_treaty
+	}
+
+
+	//////////////////////////////////////////////////////
+	/// TEST TO SEE IF I'VE RECENTLY TOLD HIM TO GIVE  ///
+	/// GOLD -- no need to spam						   /// 
+	//////////////////////////////////////////////////////
+
+	output i_just_asked_for_gold[0.0, 2.0] = 0.0
+		tri yes_i_just_asked_for_gold (i_just_asked_for_gold, 1.0, 0.5)
+
+	if(	onceplus_he_said_yes_to_DEMAND_GOLD or once_he_said_yes_to_DEMAND_GOLD
+		or onceplus_he_said_no_to_DEMAND_GOLD or once_he_said_no_to_DEMAND_GOLD )
+	{
+		yes_i_just_asked_for_gold
+	}
+
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I RECENTLY GAVE ADVANCES TO HIM			///
+	/// THEN DONT GIVE MORE FOR A WHILE						///
+	///////////////////////////////////////////////////////////
+
+	output enough_me_giving_in_to_DEMAND_ADVANCE[0.0, 2.0] = 0.0
+		tri yes_enough_me_giving_in_to_DEMAND_ADVANCE(
+			enough_me_giving_in_to_DEMAND_ADVANCE, 1.0, 0.5)
+
+	if(onceplus_i_said_yes_to_DEMAND_ADVANCE or once_i_said_yes_to_DEMAND_ADVANCE)
+	{
+		yes_enough_me_giving_in_to_DEMAND_ADVANCE
+	}
+	
+	///////////////////////////////////////////////////////////
+	/// CHECK IF I RECENTLY TOLD HIM TO GO TO WAR			///
+	/// THEN DONT GIVE MORE FOR A WHILE						///
+	///////////////////////////////////////////////////////////
+
+	output i_ve_asked_enough_about_attacking_enemy[0.0, 2.0] = 0.0
+		tri yes_i_ve_asked_enough_about_attacking_enemy(
+			i_ve_asked_enough_about_attacking_enemy, 1.0, 0.5)
+
+	if(	onceplus_he_said_yes_to_DEMAND_ATTACK_ENEMY or once_he_said_yes_to_DEMAND_ATTACK_ENEMY
+		or
+		onceplus_he_said_no_to_DEMAND_ATTACK_ENEMY or once_he_said_no_to_DEMAND_ATTACK_ENEMY)
+	{
+		yes_i_ve_asked_enough_about_attacking_enemy
+	}
+	
+
+

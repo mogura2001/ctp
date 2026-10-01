@@ -1,0 +1,1077 @@
+#######################################
+
+# File: loadsave.ldl
+
+# Last Access: Tue Sep 01 22:09:23 1998
+
+#######################################
+
+
+
+##-----------------------------------##
+
+##                Data               ##
+
+##-----------------------------------##
+
+LoadSaveWindow {
+
+	string	pattern	"upba6417.tga"
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	640
+
+	int	heightpix	450
+
+	Name:T_FONT4_POPTITLE {
+
+		string	parent	"c3_PopupTitle"
+
+		string xanchor "center"
+
+		string yanchor "top"
+
+		int widthpct 50
+
+		int heightpix 20
+
+#		string	text	"str_ldl_Tribe"
+#		string	pattern	"upba6417.tga"
+
+	}
+
+	DeleteButton:T_FONT5_DELETE {
+
+		string	text	"str_ldl_Delete"
+
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		int	xpix	427
+		int	ypix	383
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		int	bevelwidth	0
+
+		string	imagebltflag	"chromakey"
+	}
+
+	TitlePanel {
+
+		int	xpix	31
+
+		int	ypix	72
+
+		int	widthpix	314
+
+		int	heightpix	92
+
+		int	bevelwidth	2
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		GameText:T_FONT1_TRADESMALL {
+
+			int	xpix	5
+
+			int	ypix	6
+
+			int	widthpix	45
+
+			int	heightpix	18
+
+			string	text	"str_ldl_Game_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		GameTextBox {
+
+			int	xpix	55
+
+			int	ypix	7
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			bool	isfilename	true
+		}
+
+		SaveText:T_FONT1_TRADESMALL {
+
+			int	xpix	10
+
+			int	ypix	26
+
+			int	widthpix	42
+
+			int	heightpix	16
+
+			string	text	"str_ldl_Save_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		SaveTextBox {
+
+			int	xpix	55
+
+			int	ypix	27
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			bool	isfilename	true
+		}
+
+		NoteText:T_FONT1_TRADESMALL {
+
+			int	xpix	12
+
+			int	ypix	45
+
+			int	widthpix	38
+
+			int	heightpix	16
+
+			string	text	"str_ldl_Note_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		NoteTextBox {
+
+			int	xpix	55
+
+			int	ypix	47
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+		PlayerText:T_FONT1_TRADESMALL {
+
+			int	xpix	6
+
+			int	ypix	69
+
+			int	widthpix	143
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Player_Name"
+		}
+
+		CivText:T_FONT1_TRADESMALL {
+
+			int	xpix	153
+
+			int	ypix	68
+
+			int	widthpix	145
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Civ_Name"
+		}
+
+	}
+
+	ListOne {
+
+		int	xpix	356
+
+		int	ypix	93
+
+		int	widthpix	231
+
+		int	heightpix	124
+
+		string	pattern	"upba6417.tga"
+
+		int	bevelwidth	2
+
+		int	beveltype	0
+
+		header {
+
+			switch0:T_FONT1_TRADESMALL {
+
+				int	widthpix	132
+
+				int	heightpix	20
+
+				string	text	"str_ldl_Game_Folders"
+				string	pattern	"upba6417.tga"
+
+				int	bevelwidth	1
+
+			}
+
+		}
+
+	}
+
+	ListTwo {
+
+		int	xpix	356
+
+		int	ypix	241
+
+		int	widthpix	231
+
+		int	heightpix	135
+
+		string	pattern	"upba6417.tga"
+
+		int	bevelwidth	2
+
+		int	beveltype	0
+
+		header {
+
+			switch0:T_FONT1_TRADESMALL {
+
+				int	widthpix	132
+
+				int	heightpix	20
+
+				string	text	"str_ldl_Saved_Games"
+				string	pattern	"upba6417.tga"
+
+				int	bevelwidth	1
+
+			}
+
+		}
+
+	}
+
+	LoadTabGroup {
+
+		int	xpix	26
+
+		int	ypix	170
+
+		int	widthpix	300
+
+		int	heightpix	200
+
+		string	pattern	"upba6417.tga"
+
+		bool	autoarrange	TRUE
+
+		InfoTab:T_FONT1_TRADESMALL {
+
+			int	xpix	10
+
+			int	ypix	0
+
+			int	widthpix	50
+
+			int	heightpix	14
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Info"
+			string	parent	"LoadSaveWindow"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	0
+
+				int	widthpix	300
+
+				int	heightpix	200
+
+				string	parent	"LoadSaveWindow"
+
+				InfoImage {
+
+					int	xpix	9
+
+					int	ypix	10
+
+					int	widthpix	282
+
+					int	heightpix	181
+
+					int	bevelwidth	1
+
+					int	beveltype	1
+
+					string	pattern	"pattern.tga"
+
+					string image0 "UPBA2611.tga"
+
+				}
+
+			}
+
+		}
+
+		MapTab:T_FONT1_TRADESMALL {
+
+			int	xpix	60
+
+			int	ypix	0
+
+			int	widthpix	50
+
+			int	heightpix	19
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Map"
+			string	parent	"LoadSaveWindow"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	0
+
+				int	widthpix	300
+
+				int	heightpix	200
+
+				string	parent	"LoadSaveWindow"
+
+				MapImage {
+
+					int	xpix	9
+
+					int	ypix	10
+
+					int	widthpix	282
+
+					int	heightpix	181
+
+					int	bevelwidth	1
+
+					int	beveltype	1
+
+					string	pattern	"pattern.tga"
+
+					string image0 "UPBA2612.tga"
+
+				}
+
+			}
+
+		}
+
+		CivsTab:T_FONT1_TRADESMALL {
+
+			int	xpix	60
+
+			int	ypix	0
+
+			int	widthpix	50
+
+			int	heightpix	19
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Civs"
+			string	parent	"LoadSaveWindow"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	0
+
+				int	widthpix	300
+
+				int	heightpix	200
+
+				string	parent	"LoadSaveWindow"
+
+				CivsList {
+
+					int	xpix	10
+
+					int	ypix	30
+
+					int	widthpix	260
+
+					int	heightpix	158
+
+					string	pattern	"upba6417.tga"
+
+					int	bevelwidth	2
+
+					int	beveltype	0
+
+					header {
+
+						switch0:T_FONT1_TRADESMALL {
+
+							int	widthpix	260
+
+							int	heightpix	20
+
+							string	text	"str_ldl_Civs"
+							string	pattern	"upba6417.tga"
+
+							int	bevelwidth	1
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+ListOneStringTable {
+
+	string	string0	"str_tbl_ldl_Games"
+	string	string1	"str_tbl_ldl_MP_Games"
+	string	string2	"str_tbl_ldl_PBEM_Games"
+}
+
+
+
+ListTwoStringTable {
+
+	string	string0	"str_tbl_ldl_Saves"
+	string	string1	"str_tbl_ldl_MP_Saves"
+	string	string2	"str_tbl_ldl_PBEM_Saves"
+}
+
+
+
+LSSStringTable {
+
+	string	string0	"str_tbl_ldl_CAPS_LOAD_GAME"
+	string	string1	"str_tbl_ldl_CAPS_SAVE_GAME"
+	string	string2	"str_tbl_ldl_LOAD_MP_GAME"
+	string	string3	"str_tbl_ldl_SAVE_MP_GAME"
+	string	string4	"str_tbl_ldl_LOAD_PBEM_GAME"
+	string	string5	"str_tbl_ldl_LOAD_PBEM_GAME"
+	string	string6	"str_tbl_ldl_SAVE_PBEM_GAME"
+}
+
+
+
+LSGamesListItem {
+
+	int	xpix	5
+
+	int	ypix	0
+
+	int	widthpix	230
+
+	int	heightpix	20
+
+	GamesIcon {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	20
+
+		int	heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+		string	image0			"UPBA2610.tga"
+
+	}
+
+	GamesText:T_FONT1_16 {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	textblttype	"fill"
+
+	}
+
+}
+
+
+
+LSCivsListItem {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	260
+
+	int	heightpix	20
+
+	CivText:T_FONT1_16 {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	260
+
+		int	heightpix	20
+
+	}
+
+}
+
+
+
+LSSavesListItem {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	230
+
+	int	heightpix	20
+
+	SavesIcon {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	20
+
+		int	heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+		string	image0			"UPBA2609.tga"
+
+	}
+
+	SavesText:T_FONT1_16 {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	textblttype	"fill"
+
+	}
+
+}
+
+
+
+
+
+################################################################################
+
+# EAS102998:  copy-n-pasted from above to make the loadsavemap window.
+
+
+
+LoadSaveMapWindow {
+
+	string	pattern	"upba6417.tga"
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	640
+
+	int	heightpix	450
+
+	Name:T_FONT4_8 {
+
+		string	parent	"c3_PopupTitle"
+
+		string xanchor "center"
+
+		string yanchor "top"
+
+		int widthpct 50
+
+		int heightpix 20
+
+#		string	text	"str_ldl_Tribe"
+#		string	pattern	"upba6417.tga"
+
+	}
+
+	DeleteButton:T_FONT5_8 {
+
+		string	text	"str_ldl_Delete"
+
+		bool	shadowfont	true
+
+		string	image0	"upba5702.tga"
+
+		string	image1	"upba5703.tga"
+
+		string	disabledimage0	"upba6326.tga"
+
+		int	xpix	427
+		int	ypix	383
+
+		int	widthpix	89
+
+		int	heightpix	21
+
+		int	bevelwidth	0
+
+		string	imagebltflag	"chromakey"
+	}
+
+	TitlePanel {
+
+		int	xpix	31
+
+		int	ypix	72
+
+		int	widthpix	314
+
+		int	heightpix	92
+
+		int	bevelwidth	2
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		GameMapText:T_FONT1_TRADESMALL {
+
+			int	xpix	9
+
+			int	ypix	6
+
+			int	widthpix	45
+
+			int	heightpix	18
+
+			string	text	"str_ldl_Folder_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		GameMapTextBox {
+
+			int	xpix	55
+
+			int	ypix	7
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			bool	isfilename	true
+		}
+
+		SaveMapText:T_FONT1_TRADESMALL {
+
+			int	xpix	14
+
+			int	ypix	26
+
+			int	widthpix	42
+
+			int	heightpix	16
+
+			string	text	"str_ldl_Map_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		SaveMapTextBox {
+
+			int	xpix	55
+
+			int	ypix	26
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+			bool	isfilename	true
+		}
+
+		NoteText:T_FONT1_TRADESMALL {
+
+			int	xpix	16
+
+			int	ypix	45
+
+			int	widthpix	38
+
+			int	heightpix	16
+
+			string	text	"str_ldl_Note_COLON"
+			string	pattern	"upba6417.tga"
+
+		}
+
+		NoteTextBox {
+
+			int	xpix	55
+
+			int	ypix	45
+
+			int	widthpix	250
+
+			int	heightpix	16
+
+			string	pattern	"upba6417.tga"
+
+		}
+
+	}
+
+	ListOne {
+
+		int	xpix	356
+
+		int	ypix	93
+
+		int	widthpix	231
+
+		int	heightpix	124
+
+		string	pattern	"upba6417.tga"
+
+		int	bevelwidth	2
+
+		int	beveltype	0
+
+		header {
+
+			switch0:T_FONT1_TRADESMALL {
+
+				int	widthpix	132
+
+				int	heightpix	20
+
+				string	text	"str_ldl_Map_Folders"
+				string	pattern	"upba6417.tga"
+
+				int	bevelwidth	1
+
+			}
+
+		}
+
+	}
+
+	ListTwo {
+
+		int	xpix	356
+
+		int	ypix	241
+
+		int	widthpix	231
+
+		int	heightpix	135
+
+		string	pattern	"upba6417.tga"
+
+		int	bevelwidth	2
+
+		int	beveltype	0
+
+		header {
+
+			switch0:T_FONT1_TRADESMALL {
+
+				int	widthpix	132
+
+				int	heightpix	20
+
+				string	text	"str_ldl_Saved_Maps"
+				string	pattern	"upba6417.tga"
+
+				int	bevelwidth	1
+
+			}
+
+		}
+
+	}
+
+	LoadTabGroup {
+
+		int	xpix	26
+
+		int	ypix	170
+
+		int	widthpix	300
+
+		int	heightpix	200
+
+		string	pattern	"upba6417.tga"
+
+		bool	autoarrange	TRUE
+
+		MapTab:T_FONT1_TRADESMALL {
+
+			int	xpix	60
+
+			int	ypix	0
+
+			int	widthpix	50
+
+			int	heightpix	19
+
+			string	pattern	"upba6417.tga"
+
+			string	text	"str_ldl_Map"
+			string	parent	"LoadSaveMapWindow"
+
+			pane {
+
+				int	xpix	0
+
+				int	ypix	0
+
+				int	widthpix	300
+
+				int	heightpix	200
+
+				string	parent	"LoadSaveMapWindow"
+
+				MapImage {
+
+					int	xpix	9
+
+					int	ypix	10
+
+					int	widthpix	282
+
+					int	heightpix	181
+
+					int	bevelwidth	1
+
+					int	beveltype	1
+
+					string	pattern	"upba6417.tga"
+
+					string image0 "UPBA2612.tga"
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+# EAS102998: Is this used anywhere?
+
+MapListOneStringTable {
+
+	string	string0	"str_tbl_ldl_Map_Folders"
+}
+
+
+
+# EAS102998: Is this used anywhere?
+
+MapListTwoStringTable {
+
+	string	string0	"str_tbl_ldl_Maps"
+}
+
+
+
+LSMSStringTable {
+
+	string	string0	"str_tbl_ldl_LOAD_MAP"
+	string	string1	"str_tbl_ldl_SAVE_MAP"
+}
+
+
+LSMGameMapsListItem {
+
+	int	xpix	5
+
+	int	ypix	0
+
+	int	widthpix	230
+
+	int	heightpix	20
+
+	GameMapsIcon {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	20
+
+		int	heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+		string	image0			"UPBA2610.tga"
+
+	}
+
+	GameMapsText:T_FONT1_16 {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	textblttype	"fill"
+
+	}
+
+}
+
+LSMSaveMapsListItem {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	widthpix	230
+
+	int	heightpix	20
+
+	SaveMapsIcon {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	20
+
+		int	heightpix	20
+
+		string	imagebltflag	"chromakey"
+
+		string	image0			"UPBA2609.tga"
+
+	}
+
+	SaveMapsText:T_FONT1_16 {
+
+		int	xpix	0
+
+		int	ypix	0
+
+		int	widthpix	50
+
+		int	heightpix	20
+
+		string	textblttype	"fill"
+
+	}
+
+}
+
+InitProgressWindow {
+
+	string	pattern	"ug031.tga"
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	int	widthpix	386
+
+	int	heightpix	92
+
+	message:T_FONT1_PROGRESS {
+
+		int	xpix	15
+
+		int	ypix	15
+
+		int	widthpix	356
+
+		int	heightpix	32
+
+		int	srcxpix	15
+		int	srcypix	15
+		int	srcwidthpix	371
+		int	srcheightpix	32
+
+		string	pattern	"ug031.tga"
+
+		int	beveltype	1
+		int	bevelwidth	1
+	}
+
+	progressbar {
+
+		int	xpix	38
+
+		int	ypix	62
+
+		int	widthpix	322
+
+		int	heightpix	15
+
+		string	image0	"ug026.tga"
+
+		string	barimage	"ug027.tga"
+
+		string	type	"standard"
+	}
+}
+
+$

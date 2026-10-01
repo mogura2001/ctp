@@ -1,0 +1,357 @@
+template KM_SWITCH:T_FONT5_8 {
+
+	int	xpix	0
+
+	int	widthpix	123
+
+	int	heightpix	21
+
+	int	bevelwidth	0
+	string	image0	"upba5700.tga"
+	string	image1	"upba5701.tga"
+	string	imagebltflag	"chromakey"
+}
+
+
+
+KmScreen {
+
+	string	pattern	"upba6417.tga"
+
+#	int 	xpix		274
+
+#	int 	ypix		187
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int	widthpix	475
+
+	int	heightpix	350
+
+	Name:T_FONT3_8 {
+
+		int	xpix	33
+		int	ypix	1
+
+		string yanchor "top"
+
+		int widthpix 100
+
+		int heightpix 20
+
+		string	text	"str_ldl_KEYBOARD_MAPPING"
+
+	}
+
+	KeyList {
+
+		bool	alwaysranger	true
+
+		int	xpix	25
+
+		int	ypix	66
+
+		int	widthpix	281
+
+		int	heightpix	234
+
+		int columns		2
+
+		int	bevelwidth	2
+
+		int	beveltype	1
+
+		string	pattern	"upba6417.tga"
+
+		header {
+
+			switch0:T_FONT1_THRONE {
+
+				int	widthpix	196
+
+				int	heightpix	20
+
+				string text "str_ldl_CAPS_ACTION"
+				string	pattern	"upba6417.tga"
+
+				int bevelwidth 	1
+
+			}
+
+			switch1:T_FONT1_THRONE {
+
+				int	widthpix	85
+
+				int	heightpix	20
+
+				string text "str_ldl_HOT_KEY"
+				string	pattern	"upba6417.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+
+	}
+
+	BackButton {
+
+		int	xpix	401
+
+		int	ypix	359
+
+		int	widthpix	48
+
+		int	heightpix	19
+
+		int	bevelwidth	0
+
+		string	imagebltflag	"chromakey"
+
+		string	image0		"upbb2303.tga"
+
+	}
+
+
+
+	ResetButton:T_FONT5_8 {
+
+		int	xpix	111
+
+		int	ypix	311
+
+		int	widthpix	123
+
+		int	heightpix	21
+
+		int	bevelwidth	0
+		string	image0	"upba5700.tga"
+		string	image1	"upba5701.tga"
+		string	imagebltflag	"chromakey"
+
+		string	text	"str_ldl_RESET_DEFAULTS"
+	}
+
+
+
+	# switches and group
+
+	Group {
+
+		int	xpix	335
+
+		int	ypix	77
+
+		int	widthpix	114
+
+		int	heightpix	200
+
+		Unit:KM_SWITCH {
+
+			int	ypix	0
+
+			string	text	"str_ldl_UNIT_MOVEMENT"
+		}
+
+		Basic:KM_SWITCH {
+
+			int	ypix	31
+
+			string	text	"str_ldl_BASIC_COMMANDS"
+		}
+
+		Special:KM_SWITCH {
+
+			int	ypix	64
+
+			string	text	"str_ldl_SPECIAL_ABILITIES"
+		}
+
+		Screen:KM_SWITCH {
+
+			int	ypix	96
+
+			string	text	"str_ldl_SCREEN_CONTROLS"
+		}
+
+		Map:KM_SWITCH {
+
+			int	ypix	129
+
+			string	text	"str_ldl_MAP_CONTROLS"
+		}
+
+		Game:KM_SWITCH {
+
+			int	ypix	162
+
+			string	text	"str_ldl_GAME_OPTIONS"
+		}
+
+	}
+
+
+
+}
+
+
+
+KeyListItem {
+
+	Name:T_FONT1_THRONE{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		196
+
+		int		heightpix		20
+
+	}
+
+	Keycode:T_FONT1_THRONE{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		85
+
+		int		heightpix		20
+
+	}
+
+}
+
+
+
+
+
+################
+
+# string table
+
+################
+
+KeylistStrings {
+
+	int	numStrings	77
+
+
+
+	string	string0	"str_tbl_ldl_What_the_"
+	string	string1	"str_tbl_ldl_Move_North"
+	string	string2	"str_tbl_ldl_Move_Northwest"
+	string	string3	"str_tbl_ldl_Move_Northeast"
+	string	string4	"str_tbl_ldl_Move_West"
+	string	string5	"str_tbl_ldl_Move_East"
+	string	string6	"str_tbl_ldl_Move_Southwest"
+	string	string7	"str_tbl_ldl_Move_South"
+	string	string8	"str_tbl_ldl_Move_Southeast"
+	string	string9	"str_tbl_ldl_Move_Up_Or_Down"
+	string	string10	"str_tbl_ldl_Execute_Orders"
+	string	string11	"str_tbl_ldl_Lock_Unit_Stack"
+	string	string12	"str_tbl_ldl_Unlock_Unit_Stack"
+	# end Unit Movement
+
+
+
+	string	string13	"str_tbl_ldl_Entrench"
+#	string	string14	"str_tbl_ldl_Detrench"
+	string	string14	"str_tbl_ldl_Unload_Transport"
+	string	string15	"str_tbl_ldl_Settle"
+	string	string16	"str_tbl_ldl_Launch"
+	string	string17	"str_tbl_ldl_Descend"
+	string	string18	"str_tbl_ldl_Pillage"
+	string	string19	"str_tbl_ldl_Bombard"
+#	string	string21	"str_tbl_ldl_Rustle"
+	string	string20	"str_tbl_ldl_Expel"
+	string	string21	"str_tbl_ldl_Sleep"
+	string	string22	"str_tbl_ldl_Skip_Unit"
+	string	string23	"str_tbl_ldl_Next_UnitCity"
+	string	string24	"str_tbl_ldl_UnitCityToggle"
+	string	string25	"str_tbl_ldl_Select_Unit"
+	string	string26	"str_tbl_ldl_Next_Round"
+#	string	string28	"str_tbl_ldl_Next_Round"
+	string	string27	"str_tbl_ldl_Next_Turn"
+	# end Basic Commands
+
+
+
+	string	string28	"str_tbl_ldl_Paradrop"
+	string	string29	"str_tbl_ldl_Investigate_City"
+#	string	string32	"str_tbl_ldl_Investigate_Readiness"
+#	string	string33	"str_tbl_ldl_Nullify_Walls"
+	string	string30	"str_tbl_ldl_Plant_Nuke"
+#	string	string35	"str_tbl_ldl_Blow_Up_Cabinet"
+#	string	string36	"str_tbl_ldl_Sabotage_Building"
+	string	string31	"str_tbl_ldl_Bioinfect"
+	string	string32	"str_tbl_ldl_Nano_Terror"
+	string	string33	"str_tbl_ldl_Create_Park"
+	string	string34	"str_tbl_ldl_Reform"
+	# end Special Abilities
+
+
+
+	string	string35	"str_tbl_ldl_Open_Work_View"
+	string	string36	"str_tbl_ldl_Open_City_View"
+	string	string37	"str_tbl_ldl_Open_City_Status"
+	string	string38	"str_tbl_ldl_Open_Civ_Status"
+	string	string39	"str_tbl_ldl_Open_Science_Status"
+	string	string40	"str_tbl_ldl_Open_Unit_Status"
+	string	string41	"str_tbl_ldl_Open_Trade_Status"
+	string	string42	"str_tbl_ldl_Open_Diplomacy"
+	string	string43	"str_tbl_ldl_Open_Info_Screen"
+	string	string44	"str_tbl_ldl_Open_Great_Library"
+	string	string45	"str_tbl_ldl_Open_Options_Screen"
+	string	string46	"str_tbl_ldl_Open_Monuments"
+	string	string47	"str_tbl_ldl_Open_Alien_Screen"
+	string	string48	"str_tbl_ldl_Message"
+	string	string49	"str_tbl_ldl_Close_Message"
+	string	string50	"str_tbl_ldl_Yes"
+	string	string51	"str_tbl_ldl_No"
+	string  string52    "str_tbl_ldl_Execute_Eyepoint"
+	string	string53	"str_tbl_ldl_Civ_Tab"
+	string	string54	"str_tbl_ldl_Max_Tab"
+	string	string55	"str_tbl_ldl_Pop__Tab"
+	string	string56	"str_tbl_ldl_Prod_Tab"
+	string	string57	"str_tbl_ldl_City_Tab"
+	string	string58	"str_tbl_ldl_Unit_Tab"
+	string	string59	"str_tbl_ldl_Control_Build"
+	string	string60	"str_tbl_ldl_Control_Next"
+	string	string61	"str_tbl_ldl_Control_Prev"
+	string	string62	"str_tbl_ldl_Clear_Queue"
+	string	string63	"str_tbl_ldl_Open_Chat"
+	string	string64	"str_tbl_ldl_Open_Network_Screen"
+	# end Screen Controls
+
+
+
+	string	string65	"str_tbl_ldl_Zoom_in_one_level"
+	string	string66	"str_tbl_ldl_Zoom_out_one_level"
+#	string	string66	"str_tbl_ldl_Return_to_normal"
+	string	string67	"str_tbl_ldl_Toggle_Space"
+	string  string68    "str_tbl_ldl_Toggle_City_Names"
+	string  string69    "str_tbl_ldl_Toggle_Trade_Routes"
+	string	string70	"str_tbl_ldl_Center_Map_on_UnitCity"
+	# end Map Controls
+
+
+
+	string	string71	"str_tbl_ldl_Save_Game"
+	string	string72	"str_tbl_ldl_Load_Game"
+	string	string73	"str_tbl_ldl_Save_World"
+	string	string74	"str_tbl_ldl_Load_World"
+	string	string75	"str_tbl_ldl_Quit"
+	string	string76	"str_tbl_ldl_ReMap_Keyboard"
+	# end Game Options
+
+}
+
+
+
+$

@@ -1,0 +1,7 @@
+/// diplomacy_set_loyal_puppy.fli
+
+output trustworthiness[0.0, 2.0] = 1.9
+	tri backstabber(trustworthiness, 0.1, 0.1)
+	tri average_trustiness(trustworthiness, 1.0, 0.1)
+	tri loyal_puppy(trustworthiness, 1.9, 0.1)
+

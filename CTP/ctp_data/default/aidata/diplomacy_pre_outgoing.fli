@@ -1,0 +1,1630 @@
+// diplomacy_pre_outgoing.fli
+
+#include "input_responses.fli"
+#include "input_deals.fli"
+
+ // have_attack_enemy 
+
+
+////////////////////////
+/// WHO AM I? //////////
+////////////////////////
+
+	// I should have more info here to see what I want to do...
+	
+	////////////////////////
+	/// HOW RANDOM AM I ////
+	////////////////////////
+	output diplomacy_rand_min[-1.0, 3.0] = 0.75
+		tri rand_min_25(diplomacy_rand_min, 0.25, 0.05)
+		tri rand_min_50(diplomacy_rand_min, 0.50, 0.05)
+		tri rand_min_75(diplomacy_rand_min, 0.75, 0.05)
+		tri rand_min_100(diplomacy_rand_min, 1.0, 0.05)
+
+	output diplomacy_rand_max[-1.0, 3.0] = 1.25
+		tri rand_max_75(diplomacy_rand_max, 0.75, 0.05)
+		tri rand_max_100(diplomacy_rand_max, 1.00, 0.05)
+		tri rand_max_125(diplomacy_rand_max, 1.25, 0.05)
+		tri rand_max_200(diplomacy_rand_max, 2.00, 0.05)
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// HOW MANY PLAYERS AM I FIGHTING?  /////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	input at_war_count
+		tri zero_at_war(at_war_count, 0.0, 0.5)
+		tri one_at_war(at_war_count, 1.0, 0.5)
+		tri two_at_war(at_war_count, 2.0, 0.5)
+		tri three_at_war(at_war_count, 3.0, 0.5)
+		tri four_at_war(at_war_count, 4.0, 0.5)
+		tri five_at_war(at_war_count, 5.0, 0.5)
+		tri six_at_war(at_war_count, 6.0, 0.5)
+		tri seven_at_war(at_war_count, 7.0, 0.5)
+		right eightplus_at_war(at_war_count, 8.0, 0.5)
+
+	output too_many_enemies[0.0, 2.0] = 0.0
+		tri yes_too_many_enemies(too_many_enemies, 1.0, 0.5)
+
+	if( three_at_war 
+		or four_at_war 
+		or five_at_war 
+		or six_at_war
+		or seven_at_war
+		or eightplus_at_war )
+	{
+		yes_too_many_enemies
+	}
+
+	if(peaceful and two_at_war)
+	{
+		yes_too_many_enemies
+	}
+
+////////////////////
+/// WHO IS HE    ///
+////////////////////
+
+	////////////////////////////////////////////////////////////////
+	////////// WHAT IS HIS RANKING?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input his_normalized_rank
+		tri hes_in_last_place(his_normalized_rank, 0.0, 0.05)
+		tri hes_in_bottom_half(his_normalized_rank, 0.3, 0.25)
+		tri hes_in_middle_half(his_normalized_rank, 0.5, 0.25)
+		tri hes_in_top_half(his_normalized_rank, 0.7, 0.25)
+		tri hes_in_first_place(his_normalized_rank, 1.0, 0.05)
+
+	////////////////////////////////////////////////////////////////
+	////////// CAN HE BE TRUSTED?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input chase_the_rabbit
+		tri yes_chase_the_rabbit(chase_the_rabbit, 1.0, 0.5)
+
+	////////////////////////////////////////////////////////////////
+	////////// CAN HE BE TRUSTED?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	// this sets how loyal I think that he is
+	input loyalty
+		tri distrust_him(loyalty, 10.0, 10.0)
+		tri dont_trust_him(loyalty, 20.0, 10.0)
+		tri watch_him(loyalty, 30.0, 10.0)
+		tri maybe_trust_him(loyalty, 40.0, 10.0)
+		tri completely_trust_him(loyalty, 50.0, 10.0)
+
+	////////////////////////////////////////////////////////////////
+	////////// AM I FIGHTING HIM?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input war_with_him
+		tri yes_war(war_with_him, 1, 0.5)
+
+	///////////////////////////////////////////////////////////////////////
+	////////// WAS I JUST DEFEATED OR JUST VICTORIOUS /////////////////////
+	///////////////////////////////////////////////////////////////////////
+
+	input he_beat_me_this_turn
+		tri many_defeats_this_turn(he_beat_me_this_turn, 20.0, 18.5)
+		tri some_defeats_this_turn(he_beat_me_this_turn, 1.0, 0.5)
+		tri no_fighting_this_turn(he_beat_me_this_turn, 0.0, 0.5)
+		tri some_victories_this_turn(he_beat_me_this_turn, -1.0, 0.5)
+		tri many_victories_this_turn(he_beat_me_this_turn, -20.0, 18.5)
+
+	output humbled_this_turn[0.0, 2.0] = 0.0
+		tri yes_humbled_this_turn(humbled_this_turn, 1.0, 0.25)
+
+	if( many_defeats_this_turn or some_defeats_this_turn )
+	{
+		yes_humbled_this_turn
+	}
+
+	output triumphant_this_turn[0.0, 2.0] = 0.0
+		tri yes_triumphant_this_turn(triumphant_this_turn, 1.0, 0.25)
+
+	if( some_victories_this_turn or many_victories_this_turn )
+	{
+		yes_triumphant_this_turn
+	}	
+	
+	///////////////////////////////////////////////////////////////////////
+	////////// HAVE I BEEN DEFEATED OR VICTORIOUS RECENTLY ////////////////
+	///////////////////////////////////////////////////////////////////////
+
+	input he_beat_me
+		tri many_defeats(he_beat_me, 20.0, 18.5)
+		tri some_defeats(he_beat_me, 1.0, 0.5)
+		tri no_fighting(he_beat_me, 0.0, 0.5)
+		tri some_victories(he_beat_me, -1.0, 0.5)
+		tri many_victories(he_beat_me, -20.0, 18.5)
+
+	output ive_been_losing [0.0, 2.0] = 0.0
+		tri yes_ive_been_losing( ive_been_losing, 1.0, 0.25)
+
+	output ive_been_winning [0.0, 2.0] = 0.0
+		tri yes_ive_been_winning ( ive_been_winning, 1.0, 0.25)
+
+	if(many_defeats)
+		{
+			yes_ive_been_losing
+		}
+
+	if(many_victories)
+		{
+			yes_ive_been_winning
+		}
+
+	////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE WE FOUGHT?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input length_of_war_with_him 
+		tri a0_war_with_him(length_of_war_with_him, 0, 0.2)
+		tri a1to3_war_with_him(length_of_war_with_him, 2, 1)
+		tri a3to7_war_with_him(length_of_war_with_him, 5, 2)
+		tri a6to14_war_with_him(length_of_war_with_him, 10, 4)
+		right a20plus_war_with_him(length_of_war_with_him, 25, 5)
+
+	////////////////////////////////////////////////////////////////
+	////////// WHAT IS HIS STRENGTH?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input relative_strength
+		left terrified_of_him(relative_strength, 0.1, 0.3) 
+		tri afraid_of_him(relative_strength, 0.5, 0.25)
+		tri equal_to_him(relative_strength, 1, 0.4)
+		tri little_stronger_than_him(relative_strength, 1.75, 0.6)
+		right stronger_than_him(relative_strength, 2.5, 0.25)
+
+	output fear_test[0.0, 2.0] = 0.0
+		tri yes_fear(fear_test, 1.0, 0.5)
+
+	output terror_test[0.0, 2.0] = 0.0
+		tri yes_terror(terror_test, 1.0, 0.5)
+
+	if(	afraid_of_him )
+	{
+		yes_fear
+	}
+	if( terrified_of_him or afraid_of_him )
+	{
+		yes_terror
+	}
+
+	////////////////////////////////////////////////////////////////
+	////////// IS HE MY BEST FRIEND?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input best_friend
+		tri not_best_friend(best_friend, 0.0, 0.5)
+		tri my_best_friend(best_friend, 1.0, 0.5)
+
+	////////////////////////////////////////////////////////////////
+	////////// IS HE MY WORST ENEMY ?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input worst_enemy
+		tri not_worst_enemy(worst_enemy, 0.0, 0.5)
+		tri my_worst_enemy(worst_enemy, 1.0, 0.5)
+
+	////////////////////////////////////////////////////////////////
+	////////// HOW DO I FEEL ABOUT HIM ?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input diplomatic_regard_towards_him
+		left hate_him(diplomatic_regard_towards_him, 10, 12)
+		tri dislike_him(diplomatic_regard_towards_him, 30, 12)
+		tri neutral_towards_him(diplomatic_regard_towards_him, 50, 12)
+		tri like_him(diplomatic_regard_towards_him, 70, 12)
+		right love_him(diplomatic_regard_towards_him, 90, 12)
+
+	//////////////////////////////////////////////////////
+	////////// HOW OFTEN HAS HE ATTACKED ME ?  ///////////
+	//////////////////////////////////////////////////////
+
+	input his_hotwar_attacked_me
+		left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.5)
+		right has_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+
+	////////////////////////////////////////////////////////////////
+	////////// HOW MANY OF HIS SOLDIERS ARE IN MY LAND?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input military_incursions
+		left no_incursions(military_incursions, 0, 0.2)
+		tri few_incursions(military_incursions, 2.0, 1.8)
+		right many_incursions(military_incursions, 3, 1)
+
+	/////////////////////////////////////////////////////
+	////////// IS HE HUMAN?  ///////////
+	/////////////////////////////////////////////////////
+
+	input player_type
+		tri human(player_type, 0.0, 0.1)
+		tri ai(player_type, 1.0, 0.1)
+		tri humanclient(player_type, 2.0, 0.1)
+
+	output human_test[0.0, 2.0] =0.0
+		tri yes_human(human_test, 1.0, 0.5)
+
+	if(human or humanclient)
+		{
+			yes_human
+		}
+
+////////////////////////////////////////////////
+/// HOW MUCH DO I WANT TO SEND IT   ////////////
+////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////
+	////////// WHAT IS MY RANKING?  ///////////
+	////////////////////////////////////////////////////////////////
+
+	input my_normalized_rank
+		tri iam_in_last_place(his_normalized_rank, 0.0, 0.05)
+		tri iam_in_bottom_half(his_normalized_rank, 0.3, 0.25)
+		tri iam_in_middle_half(his_normalized_rank, 0.5, 0.25)
+		tri iam_in_top_half(his_normalized_rank, 0.7, 0.25)
+		tri iam_in_first_place(his_normalized_rank, 1.0, 0.05)
+
+	/////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN AT PEACE CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	// AM I READY FOR MORE WAR?
+
+	input shortest_peace
+		tri zero_length_peace(shortest_peace, 0.0, 0.5)
+		tri a0to5_peace(shortest_peace, 5.0, 5.0)
+		tri a5to15_peace(shortest_peace, 10.0, 5.0)
+		tri a10to20_peace(shortest_peace, 15.0, 5.0)
+		right a20plus_peace(shortest_peace, 20.0, 5.0)
+
+	output tired[0.0, 2.0] =0.0
+		tri yes_tired(tired, 1.0, 0.5)
+
+	output barely_refreshed[0.0, 2.0] =0.0
+		tri yes_barely_refreshed(barely_refreshed, 1.0, 0.5)
+
+	output refreshed[0.0, 2.0] =0.0
+		tri yes_refreshed(refreshed, 1.0, 0.5)
+
+	if(zero_length_peace or a0to5_peace or a5to15_peace)
+		{
+			yes_tired
+		}
+
+	if(a20plus_peace)
+		{
+			yes_refreshed
+		}
+	
+	if(a10to20_peace and not yes_refreshed and not yes_tired)
+		{
+			yes_barely_refreshed
+		}
+
+	/////////////////////////////////////////////////////////////////////////////
+	////////// HOW LONG HAVE I BEEN FIGHTING CONTINUOUSLY?  /////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+
+	input longest_war
+		tri a0_longest_war(longest_war, 0.0, 0.5)
+		tri a1to10_longest_war(longest_war, 5.0, 5.0)
+		tri a5to15_longest_war(longest_war, 10.0, 5.0)
+		tri a10to20_longest_war(longest_war, 15.0, 5.0)
+		tri a25to35_longest_war(longest_war, 30.0, 5.0)
+		tri a30to50_longest_war(longest_war, 40.0, 10.0)
+		tri a40to50_longest_war(longest_war, 35.0, 5.0)
+		right a50plus_longest_war(longest_war, 55.0, 5.0)
+
+	output bored_of_war[0.0,2.0] = 0.0
+		tri yes_bored_of_war(bored_of_war, 1.0, 0.5)
+
+	output sick_of_war[0.0,2.0] = 0.0
+		tri yes_sick_of_war(sick_of_war, 1.0, 0.5)
+
+	if(a25to35_longest_war)
+		{
+			yes_bored_of_war
+		}
+
+	if(a40to50_longest_war or a50plus_longest_war)
+		{
+			yes_sick_of_war
+		}
+
+	///////////////////////////////////
+	/// DO I WANT TO SEND IT AT ALL ///
+	///////////////////////////////////
+	output send_threshold[-1000, 1500.0] = 1000.0 
+		tri best_message_to_send(send_threshold, 0.0, 200)
+		tri good_message_to_send(send_threshold, 250, 100)
+		tri okay_message_to_send(send_threshold, 500, 100)
+		tri bad_message_to_send(send_threshold, 750, 100)
+		tri worst_message_to_send(send_threshold, 1000, 200)
+		tri stomp_this_message(send_threshold, 1250, 250)
+
+	////////////////////////
+	/// HOW IMPORTANT IS THIS MESSAGE VERSUS ANY OTHER ////
+	////////////////////////
+	
+	output dip_send_coef[1, 10000000] = 3.0
+		tri low_priority(dip_send_coef, 1.0, 0.1)
+		tri medlow_priority(dip_send_coef, 50.0, 0.1)
+		tri med_priority(dip_send_coef, 2500.0, 0.1)
+		tri medhigh_priority(dip_send_coef, 125000.0, 0.1)
+		tri high_priority(dip_send_coef, 7250000.0, 0.1)
+
+	output found_message_i[0,3] = 1.0
+		tri didnt_find(found_message_i, 1.0, 0.5)
+		tri found(found_message_i, 2.0, 0.5)
+
+
+////////////////////////
+/// SET REGARD   ///////
+////////////////////////
+output diplomatic_regard_delta[-20, 20] = 0.0
+	tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+	tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+	tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+	tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+	tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+	tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+	tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+	right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+///////////////////////////////////
+/// SHOULD I SEND A GREETING   ////
+///////////////////////////////////
+// utility is 2000 if true, so this code has no effect on the game.
+// Game sends always.
+
+input contact_gained // 0 - 100; 100 = yes
+	right gains_contact(contact_gained, 100, 100)
+
+	if(gains_contact)
+	{
+		high_priority
+		best_message_to_send
+		found
+	}
+	
+//////////////////////////
+/// SHOULD I DEMAND   ////
+//////////////////////////
+
+	//////////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU GIVE ME AN ADVANCE   ////
+	//////////////////////////////////////////////////////
+	// return k_AVERAGE_VALUE;
+	// 
+	// utility often over 1000 after 1st age unless regard > 60
+	// broken --- can't care about strength or anything else
+	
+	// fz_he_gains_advance
+	input he_gains_advance
+		tri advance_to_him(he_gains_advance, 1.0, 0.1)
+
+	// fz_i_gain_advance
+	input i_gain_advance
+		right advance_to_me(i_gain_advance, 1, 0.5)
+
+	// fz_advances_skipped
+	input advances_skipped
+		left no_advances_skipped(advances_skipped, 0, 0.5)
+		tri few_advances_skipped(advances_skipped, 2, 1.2)
+		tri some_advances_skipped(advances_skipped, 4, 1.2)
+		right many_advances_skipped(advances_skipped, 6, 2)
+
+	// This says how much I hunger for knowledge.
+	// return mycost * fz_advances_skipped * fz_demand_advance;
+	output demand_advance [0, 1] = 0
+		left wont_demand_adv(demand_advance, 0, 0.1)
+		tri thinkin_bout_demandin_adv(demand_advance, 0.5, 0.25)
+		right gimmee_adv(demand_advance, 1.0, 0.25)
+
+	// This says I don't want to take an advance from him regardless of utility.
+	// Since advance costs quickly overwhelm all other inputs, this basically
+	// decides whether or not we make the demand.
+	// In fact you don't even need to set a threshold and it will send.
+	if(advance_to_me and not advance_to_him)
+	{
+		med_priority
+	}
+	
+	if(	advance_to_me and not advance_to_him 
+		and (like_him or love_him))
+		{
+			wont_demand_adv
+			found
+			rand_min_25
+			rand_max_100
+		}
+		
+	if(	advance_to_me and not advance_to_him 
+		and ( dislike_him or hate_him )  
+		and little_stronger_than_him 
+		and warlike
+		and not yes_humbled_this_turn
+		and not yes_ive_been_losing )
+		{
+			gimmee_adv
+			found
+			rand_min_25
+			rand_max_100
+		}
+
+	if(	advance_to_me and not advance_to_him 
+		and hate_him 
+		and stronger_than_him 
+		and not yes_humbled_this_turn
+		and not yes_ive_been_losing)	
+		{
+			gimmee_adv
+			good_message_to_send
+			found
+			rand_min_25
+			rand_max_100
+
+		}
+
+
+	// demand gold
+	////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU GIVE ME GOLD   ////
+	////////////////////////////////////////////////
+	//	if (fz_gold_gained * fz_gold_utility > 500)
+	//		return k_AVERAGE_VALUE;
+	//	if (fz_gold_gained * fz_gold_utility > 5000)
+	//		return k_GOOD_VALUE;
+	//	return 0.0;
+	//
+	//
+	//		if(ai->m_gold->GetCurrentSavings() == 0) {
+	//			fz_gold_gained = 100;
+	//		} else {
+	//			// scale value to how much gold we have already. 100 means we'd double our gold
+	//			// if this is accepted.
+	//			fz_gold_gained = (double(m_gold) / double(ai->m_gold->GetCurrentSavings())) * 100.0;
+	//		}
+	input gold_gained // 
+		tri i_gain_gold(gold_gained,125, 100) // don't ask if not upping by 25% or more
+		tri i_gain_much_gold(gold_gained, 500, 400)
+		right i_gain_incredible_gold(gold_gained, 700, 300)
+
+	// if I get more than 250 gold 
+	// may send if better than sometimes
+	output gold_utility[0,10] = 2
+		
+		// set the priority for sending this yes over any other
+		if(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold)
+		{
+			med_priority
+		}
+
+		if(i_gain_gold 
+			and (dislike_him or hate_him)
+			and not yes_terror
+			and my_worst_enemy
+			and not yes_humbled_this_turn
+			and not yes_ive_been_losing
+			and not yes_i_just_asked_for_gold) 
+		{
+			good_message_to_send
+			found
+			rand_min_25
+			rand_max_100
+		} 
+
+	// RETURN
+		if(	i_gain_much_gold 
+			and (dislike_him or hate_him)
+			and not yes_terror
+			and my_worst_enemy
+			and not yes_humbled_this_turn
+			and not yes_ive_been_losing
+			and not yes_i_just_asked_for_gold )
+		{
+			good_message_to_send
+			found
+			rand_min_25
+			rand_max_100
+		}
+
+		if(	i_gain_incredible_gold 
+			and hate_him 
+			and not yes_terror
+			and my_worst_enemy
+			and not yes_humbled_this_turn
+			and not yes_ive_been_losing
+			and not yes_i_just_asked_for_gold ) 
+		{
+			good_message_to_send
+			found
+			rand_min_25
+			rand_max_100
+		}
+
+		// warlike people aren't warlike enough
+		if(	(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold) 
+			and warlike 
+			and (dislike_him or hate_him)
+			and not my_best_friend 
+			and not (yes_terror) 
+			and not yes_i_just_asked_for_gold)
+		{
+			good_message_to_send
+			found
+			rand_min_25
+			rand_max_100
+		} 
+
+		if(	(i_gain_gold or i_gain_much_gold or i_gain_incredible_gold)
+			and yes_triumphant_this_turn 
+			and yes_war
+			and yes_ive_been_winning)
+			{
+				best_message_to_send
+				found
+				rand_min_25
+				rand_max_100
+			}
+
+	// stop trade
+	// stop trading
+	/////////////////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU STOP TRADING WITH MY ENEMY   ///
+	/////////////////////////////////////////////////////////////
+	///  	return k_AVERAGE_VALUE;
+
+	input he_stops_trade_with_third_party // is considering stop trade
+		tri consider_stop_trade(he_stops_trade_with_third_party, 1.0, 0.25)
+		
+	input third_party_regard
+		left low_third_party_regard(third_party_regard, 20, 10)
+		right high_third_party_regard(third_party_regard, 80, 10)
+		tri neutral_third_party_regard(third_party_regard, 50, 25)
+
+	input his_third_party_relative_strength
+		left he_is_weaker_than_3rd(his_third_party_relative_strength, 0.5, 0.25)
+		tri he_is_same_as_3rd(his_third_party_relative_strength, 1.0, 0.2)
+		right he_is_stronger_than_3rd(his_third_party_relative_strength, 4.0, 3.0)
+
+	input third_party_relative_strength
+		left i_am_weaker_than_3rd(third_party_relative_strength, 0.5, 0.25)
+		tri i_am_same_as_3rd(third_party_relative_strength, 1.0, 0.25)
+		right i_am_stronger_than_3rd(third_party_relative_strength, 4.0, 3.0)
+
+	output stop_trade [0, 1] = 0
+		left dont_stop (stop_trade, 0, 0.2)
+		tri think_about_it (stop_trade, 0.5, 0.25)
+		right stop_trading_you_bastard (stop_trade, 1.0, 0.25)
+
+	// trade routes with third party
+	input his_trade_with_third_party
+		left hes_not_trading_with_3rd(his_trade_with_third_party, 0, 0.5)
+		right hes_trading_with_3rd(his_trade_with_third_party, 10, 9 )
+
+	if(	consider_stop_trade)
+	{
+		medhigh_priority
+	}
+
+	// Tell him to stop trade if we like the 3rd party?
+//	if(	consider_stop_trade
+//		and love_him 
+//		and not low_third_party_regard)
+//	{
+//		good_message_to_send
+//		rand_min_25
+//		rand_max_100
+//		found
+//	}
+	
+	// Tell him to stop trade if we hate the third party.
+	if(	consider_stop_trade 
+		and love_him 
+		and low_third_party_regard
+		and hes_trading_with_3rd )
+	{
+		good_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+	
+	// Threaten him to force him not to trade with our enemies.	
+	if(	consider_stop_trade 
+		and hes_trading_with_3rd 
+		and low_third_party_regard 
+		and (hate_him or dislike_him) 
+		and stronger_than_him) 
+	{
+		good_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	// Consider stop trade if he's stronger than the 3rd, and he's my
+	// best friend, and he might be willing to make the deal.
+	if(	consider_stop_trade 
+		and hes_trading_with_3rd 
+		and he_is_stronger_than_3rd 
+		and my_best_friend 
+		and (like_him or love_him)
+		and low_third_party_regard)
+	{
+		best_message_to_send
+		found
+	}
+
+	// demand attack
+	// attack enemy
+	//////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU ATTACK MY ENEMY   ///
+	//////////////////////////////////////////////////
+	//	if (ai->m_foreigner[request->m_thirdParty]->GetUnitRegard() < 20)
+	//	{
+	//		return 750;
+	//	}
+	//	return 0;	
+
+	input he_attacks_enemy
+		right consider_attacks_enemy(he_attacks_enemy, 1, 0.5)
+
+ 
+	if(consider_attacks_enemy)
+	{
+		medhigh_priority
+	}
+
+	if(consider_attacks_enemy 
+		and not yes_war 
+		and love_him 
+		and not low_third_party_regard)
+	{
+		worst_message_to_send
+		found
+	}
+	// reduce to love only	
+	if(consider_attacks_enemy 
+		and not yes_war 	
+		and love_him 
+		and low_third_party_regard
+		and not yes_i_ve_asked_enough_about_attacking_enemy)
+	{
+		good_message_to_send
+		found
+		rand_min_25
+		rand_max_100
+	}
+		
+
+	if(consider_attacks_enemy 
+		and (dislike_him or hate_him))
+	{
+		worst_message_to_send
+		found
+	}
+	
+	
+	// reduce to love only		
+	if(consider_attacks_enemy 
+		and love_him
+		and not yes_war 
+		and he_is_stronger_than_3rd 
+		and i_am_weaker_than_3rd 
+		and my_best_friend
+		and not yes_i_ve_asked_enough_about_attacking_enemy)
+	{
+		best_message_to_send
+		found
+		rand_min_25
+		rand_max_100
+	}
+
+	// leave lands
+	// demand leave
+	/////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU LEAVE MY LANDS   ///
+	/////////////////////////////////////////////////
+	// 	return 500;
+	//  
+
+	input reduces_incursions /// = fz_military_incursions
+		tri doesnt_reduce_incursions(reduces_incursions, 0, 0.5)
+		right does_reduce_incursions(reduces_incursions, 0.75, 0.25)
+	
+	output enough_DEMAND_LEAVE_OUR_LANDS[0.0, 2.0] =0.0
+		tri yes_enough_DEMAND_LEAVE_OUR_LANDS(enough_DEMAND_LEAVE_OUR_LANDS, 1.0, 0.5)
+
+		if(	twice_he_said_no_to_DEMAND_LEAVE_OUR_LANDS 
+			or once_he_said_no_to_DEMAND_LEAVE_OUR_LANDS )
+		{
+			yes_enough_DEMAND_LEAVE_OUR_LANDS
+		}
+
+		// priority of this message is high
+	    //
+		if(does_reduce_incursions)
+		{
+			high_priority
+		}
+
+		// when to send "demand leave our lands"
+
+	    // do not send message if we are at war with him
+		if(does_reduce_incursions 
+		   and yes_war)
+		{
+			worst_message_to_send
+			found
+		}
+	
+		if(does_reduce_incursions
+			and yes_enough_DEMAND_LEAVE_OUR_LANDS)
+		{
+			worst_message_to_send
+			found
+		}
+
+		if(	does_reduce_incursions 
+			and no_incursions 
+			and not yes_war)
+		{
+			worst_message_to_send
+			found
+		}
+		
+		if(	does_reduce_incursions 
+			and (few_incursions or many_incursions) 
+			and (dislike_him or hate_him)
+			and not yes_war) 
+		{
+			best_message_to_send
+			found
+		}
+
+		if(does_reduce_incursions 
+		   and many_incursions 
+		   and not yes_war) 
+		{
+			good_message_to_send
+			found
+		}
+
+		if(does_reduce_incursions 
+		   and many_incursions 
+		   and stronger_than_him 
+		   and dislike_him 
+		   and not yes_war) 
+		{
+			best_message_to_send
+			found
+		}
+
+		if(does_reduce_incursions 
+		   and (few_incursions or many_incursions) 
+		   and hate_him 
+		   and stronger_than_him 
+		   and not yes_war) 
+		{
+			best_message_to_send
+			found
+		} 
+		
+		if(does_reduce_incursions
+			and (yes_leave_our_lands or yes_alliance or yes_attack_enemy))
+			{
+			stomp_this_message
+			}
+
+	//////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU STOP POLLUTING   ////
+	//////////////////////////////////////////////////
+	///		Only send if within 80% of next disaster
+	///		if((globalpollution / pollutiontrigger ) < 0.8) 
+	///			{
+	///				if(fz_his_pollution_level / globalpollution < 0.8) return k_BEST_VALUE;
+	///				if(fz_his_pollution_level / globalpollution < 0.6) return k_GOOD_VALUE;
+	///				if(fz_his_pollution_level / globalpollution < 0.4) return k_AVERAGE_VALUE;
+	///				if(fz_his_pollution_level / globalpollution < 0.2) return k_POOR_VALUE;
+	///				return k_WORST_VALUE;
+	///			}
+	///		% to next trigger and % of world pollution he's causing 
+
+	//demand reduce pollution send
+	input his_pollution_level
+		left low_his_pollution(his_pollution_level, 50.0, 5.0)
+		tri average_his_pollution(his_pollution_level, 100.0, 50.0)
+		right high_his_pollution(his_pollution_level, 200.0, 75.0)
+
+	input my_pollution_level
+		left low_my_pollution(my_pollution_level, 50.0, 5.0)
+		tri average_my_pollution(my_pollution_level, 100.0, 50.0)
+		right high_my_pollution(my_pollution_level, 200.0, 75.0)
+
+	input global_pollution_level
+		left low_global_pollution(global_pollution_level, 500.0, 5.0)
+		tri average_global_pollution(global_pollution_level, 1000.0, 500.0)
+		right high_global_pollution(global_pollution_level, 2000.0, 1000.0)
+
+	output stop_polluting_others [0, 1000] = 0 // higher numbers = higher utility for 
+		left dont_care_pollution(stop_polluting_others, 0.0, 100)
+		tri dupont_chemical(stop_polluting_others, 100, 250)
+		tri average_consumer(stop_polluting_others, 500, 250)
+		right sierra_club(stop_polluting_others, 1000, 100)
+
+	//determine extent of global pollution -- and use this to set how much I care
+	if(	low_global_pollution)
+	{
+		medhigh_priority
+		dont_care_pollution
+		rand_min_25
+		rand_max_100
+		found
+	}
+	
+	if(	average_global_pollution)
+	{
+		medhigh_priority
+		dont_care_pollution
+		rand_min_25
+		rand_max_100
+		found
+	}
+	if(	high_global_pollution)
+	{
+		medhigh_priority
+		dupont_chemical
+		rand_min_25
+		rand_max_100
+		found
+	}
+	
+
+	if(	high_global_pollution 
+		and stronger_than_him 
+		and (my_worst_enemy and (dislike_him or hate_him)) 
+		and average_his_pollution)
+	{
+		okay_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	if(	high_global_pollution 
+		and stronger_than_him 
+		and high_his_pollution)
+	{
+		bad_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}	
+	
+	// demand map
+	/////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU GIVE ME A MAP   ////
+	/////////////////////////////////////////////////
+	//	return (1 - (ai->m_map->ExploredArea(ai) / (size->x * size->y))) * 
+	//	(1 - (ai->m_round_count->GetRound() / 
+	//	(ai->m_round_count->GetRound() + ai->m_round_count->EstimateRoundsToEnd()))) * 500; 
+	//  
+	//	Utility = (% of world unexplored) * % of time left in game
+	//  ex. 95% * 95% * 500 ~= 460 or better than sometimes
+
+	input i_gain_map
+		tri yes_i_gain_map(i_gain_map, 1.0, 0.5)
+
+	input he_gets_map
+		tri yes_he_gets_map(he_gets_map, 1.0, 0.5)
+
+	input map_area_gained 
+		right ai_gets_map(map_area_gained, 1, 0.5) 
+	
+
+	if(yes_i_gain_map and not yes_he_gets_map)
+	{
+		med_priority
+	}
+
+	input map_area_gained 
+		right ai_gets_map(map_area_gained, 1, 0.5) 
+
+	input last_got_map
+		tri recently_got_map(last_got_map, 10, 10)
+		right got_map_centuries_ago(last_got_map, 100, 10)
+
+
+	if(	yes_he_gets_map and not yes_i_gain_map 
+		and my_worst_enemy 
+		and (dislike_him or hate_him) 
+		and stronger_than_him
+		and not yes_ive_got_your_map )
+	{
+		best_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+
+	////////////////////////////////////////////////////
+	/// SHOULD I DEMAND THAT YOU STOP PIRATING ME   ////
+	////////////////////////////////////////////////////
+	//	if(hisPiratedMe > 4)
+	//	{
+	//		return k_BEST_VALUE;
+	//	}
+	//	if(hisPiratedMe > 2)
+	//	{
+	//		return k_AVERAGE_VALUE;
+	//	}
+	//	if(hisPiratedMe > 1)
+	//	{
+	//		return k_BAD_VALUE;
+	//	}
+	//	if(hisPiratedMe < 0.25)
+	//	{
+	//		return -10;
+	//	}
+
+	
+	input he_will_stop_piracy
+		tri yes_he_will_stop_piracy(he_will_stop_piracy, 1.0, 0.5)
+
+	// can use his_trade_threat and my_trade_routes only
+
+	if(yes_he_will_stop_piracy)
+	{
+		high_priority
+	}
+
+	input his_pirated_me
+		left hasnt_pirated_me(his_pirated_me, 0, 0.2)
+		tri pirated_a_little(his_pirated_me, 2, 1)
+		right blue_beard(his_pirated_me, 5, 2)
+
+	output piracy_decay [0, 1] = 0.8
+
+	    // do not send message if we are at war with him
+		if(yes_he_will_stop_piracy 
+		   and yes_war)
+		{
+	 		worst_message_to_send
+			found
+		}
+ 
+		if(yes_he_will_stop_piracy 
+		   and pirated_a_little 
+		   and not yes_war)
+		{
+			best_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}	
+		 
+		if(yes_he_will_stop_piracy 
+		   and blue_beard 
+		   and not yes_war)
+		{
+			best_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}	
+
+
+/////////////////////////
+/// SHOULD I GIVE   /////
+/////////////////////////
+
+	/////////////////////////////////////
+	/// SHOULD I GIVE AWAY ADVANCES   ///
+	/////////////////////////////////////
+	/// if(fz_advances_skipped < 2 )	return k_BEST_VALUE;
+	///	if(fz_advances_skipped < 5 )	return k_GOOD_VALUE;
+	///	if(fz_advances_skipped < 8 )	return k_AVERAGE_VALUE;
+	///	if(fz_advances_skipped < 10 )	return k_POOR_VALUE;
+	///	if(fz_advances_skipped >= 10 )	return k_WORST_VALUE;
+
+	/// if over 60 regard this will almost always send unless advance_give very small
+
+	input he_gains_advance
+		right advance_to_him(he_gains_advance, 1, .5)
+
+	//how much does the AI wanna give away an advance
+	output advance_give [0, 1] = 0
+		left no_way_jose(advance_give, 0, 0.1)
+		tri maybe_i_will(advance_give, 0.1, 0.1)
+		right ok_here(advance_give, 0.25, 0.1)
+
+	if(advance_to_him and not advance_to_me)
+	{
+		low_priority
+		found
+		maybe_i_will
+	}
+
+	if(advance_to_him 
+		and not advance_to_me
+		and many_advances_skipped 
+		and love_him) 
+	{
+		okay_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	} 
+
+	if(advance_to_him and not advance_to_me
+		and some_advances_skipped 
+		and (love_him or yes_terror)) 
+	{
+		bad_message_to_send
+		found
+	}
+
+	if(advance_to_him 
+		and like_him 
+		and some_advances_skipped 
+		and my_best_friend)
+	{
+		okay_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	if(	advance_to_him 
+		and ai 
+		and 
+		yes_chase_the_rabbit)
+	{
+		good_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	/////////////////////////////
+	/// SHOULD I GIVE GOLD   ////
+	/////////////////////////////
+	//		if (foreigner->GetRegard() > 70)
+	//		{
+	//		return (k_AVERAGE_VALUE * fz_gold_need);
+
+	//		m_gold = ai->m_gold->GetCurrentSavings() / 3;
+	//		if(m_gold < 100)
+	//		{
+	//			m_gold = 100;
+	//		}
+	//		m_gold = int(m_gold/100);
+	//		m_gold = m_gold * 100;
+	//		fz_he_gains_gold = m_gold;
+	//		m_isvalid = TRUE;
+	//		break;
+
+	// says I'm considering this type of gift
+	input he_gains_gold
+		right gives_him_gold(he_gains_gold, 1, .5)
+
+	output gold_need [0, 2] = 1
+		left crack_ho(gold_need, 0, 0.2)
+		tri middle_class(gold_need, 0.5, 0.25)
+		right im_rich(gold_need, 1.0, 0.25)
+	
+	if(gives_him_gold) 
+	{
+		low_priority
+	}
+
+		if(	gives_him_gold 
+			and ( love_him 
+				or (yes_terror and yes_war)
+				)
+			and not yes_he_said_yes_recently_to_OFFER_GOLD ) 
+		{
+			good_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	gives_him_gold 
+			and (like_him or love_him) 
+			and my_best_friend
+			and not yes_he_said_yes_recently_to_OFFER_GOLD )
+		{
+			okay_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	gives_him_gold 
+			and (like_him or love_him) 
+			and my_best_friend
+			and not yes_he_said_yes_very_recently_to_OFFER_GOLD 
+			and yes_ive_got_your_gift )
+		{
+			best_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	gives_him_gold 
+			and (stronger_than_him or hate_him)
+			and not love_him )
+		{
+			worst_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	gives_him_gold 
+			and my_best_friend 
+			and yes_fear 
+			and not my_worst_enemy
+			and not love_him
+			and not yes_he_said_yes_recently_to_OFFER_GOLD)
+		{
+			okay_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(gives_him_gold 
+			and my_best_friend
+			and not love_him)
+		{
+			bad_message_to_send
+			rand_min_25
+			rand_max_100
+			like_him_more
+		}
+
+	// offer map
+	// give map
+	///////////////////////////
+	/// SHOULD I GIVE MAP   ///
+	///////////////////////////
+	/// 	return k_POOR_VALUE;
+	///		
+	///		usually % explored is low and % left is low, so value is high (should be low
+
+	///
+	/// inputs under demand map
+	/// 
+
+	if(yes_he_gets_map and not yes_i_gain_map)
+	{
+		low_priority
+	}
+
+		if(	yes_he_gets_map
+			and not yes_i_gain_map 
+			and (dislike_him or hate_him)
+			and not yes_youve_got_my_map) 
+		{
+			worst_message_to_send
+			found
+
+		}
+		
+		if(yes_he_gets_map 
+			and not yes_i_gain_map 
+			and love_him 
+			and completely_trust_him
+			and not yes_youve_got_my_map
+			and not yes_war ) 
+		{
+			best_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	yes_he_gets_map and not yes_i_gain_map 
+			and (like_him or love_him) 
+			and my_best_friend
+			and not yes_youve_got_my_map
+			and not yes_war )
+		{
+			good_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	yes_he_gets_map and not yes_i_gain_map 
+			and (love_him or yes_terror)
+			and not yes_youve_got_my_map
+			and not yes_war ) 
+		{
+			good_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+////////////////////////////
+/// SHOULD I EXCHANGE   ////
+////////////////////////////
+
+	////////////////////////////////////
+	/// SHOULD I EXCHANGE ADVANCES   ///
+	////////////////////////////////////
+	// 	// ratio of his cost to mine * ratio of his skipped advances to mine 
+	//	if(hiscost > mycost)
+	//	{
+	//		if(hisskipped > myskipped)
+	//		{
+	//			return k_WORST_VALUE;
+	//		}else
+	//		{
+	//			return k_POOR_VALUE;
+	//		}
+	//	}else
+	//	{
+	//		if(hisskipped > myskipped)
+	//		{
+	//			return k_AVERAGE_VALUE;
+	//		}else
+	//		{
+	//			return k_GOOD_VALUE;
+	//		}
+	//	}		
+
+	// weird stuff in weightoptions
+	// see demands for inputs
+
+	// exchange advance send 
+	if(advance_to_me and advance_to_him)
+	{
+		medlow_priority
+	}
+
+		if(advance_to_me and advance_to_him 
+			and ai 
+			and not yes_war 
+			and (not hate_him or not dislike_him) 
+			and not hes_in_first_place 
+			and not iam_in_first_place)
+		{
+			good_message_to_send
+			found
+		}
+
+	
+		if(	advance_to_me 
+			and advance_to_him 
+			and yes_war)
+		{
+			worst_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		// make you feel like you're someones best friend
+		if(	advance_to_me 
+			and advance_to_him 
+			and my_best_friend
+			and (love_him or like_him) 
+			and not yes_war)
+		{
+			best_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		// make you feel like someone is peaceful
+		if(	advance_to_me 
+			and advance_to_him 
+			and peaceful 
+			and not my_worst_enemy
+			and not yes_war )
+		{ 
+			good_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+	/////////////////////////////////
+	/// SHOULD I  EXCHANGE MAPS   ///
+	/////////////////////////////////
+	// 	if(regard_to_him < 70) return 0;
+	//	if(percent_explored < .3) return k_GOOD_VALUE; 
+	//	if(percent_explored > .8) return k_POOR_VALUE;
+	//	return k_AVERAGE_VALUE;
+	//}
+	// set fz_map_exchange -- this hideous variable sets a variable inside the utility command
+	// In a way, the AI is adjusting the utility with this -- something it is supposed to leave
+	// alone. 
+	
+
+	// inputs under demand
+	if(	yes_i_gain_map 
+		and yes_he_gets_map
+		and not yes_he_has_been_asked_to_EXCHANGE_MAP)
+	{
+		low_priority
+	}
+
+	if(	yes_i_gain_map 
+		and yes_he_gets_map 
+		and (dislike_him or hate_him))
+	{
+		worst_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	if(	yes_i_gain_map 
+		and yes_he_gets_map 
+		and yes_war)
+	{
+		worst_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+	if(	yes_i_gain_map and yes_he_gets_map 
+		and love_him 
+		and my_best_friend 
+		and not yes_war
+		and not yes_he_has_been_asked_to_EXCHANGE_MAP
+		and not yes_youve_got_my_map)
+	{
+		good_message_to_send
+		rand_min_25
+		rand_max_100
+		found
+	}
+
+
+////////////////////////
+/// SHOULD I ALLY   ////
+////////////////////////
+
+	///////////////////////////////////
+	/// SHOULD I OFFER CEASE FIRE   ///
+	///////////////////////////////////
+	/// 	return k_GOOD_VALUE;
+
+	// 12/31 I have doubts about the afraid of him and hatfields n mccoys stuff
+
+	input gains_cease_fire
+		right yes_gains_cease_fire(gains_cease_fire, 1, .5)
+
+	if(yes_gains_cease_fire)
+	{
+		high_priority
+	}
+
+	if(	yes_gains_cease_fire 
+		and not my_worst_enemy
+		and yes_war
+		and yes_too_many_enemies
+		and not (distrust_him or dont_trust_him)
+		and not yes_human)
+	{
+		good_message_to_send
+		found
+	}
+
+	if(	yes_gains_cease_fire 
+		and not my_worst_enemy 
+		and equal_to_him 
+		and yes_bored_of_war 
+		and yes_war 
+		and (not distrust_him or not dont_trust_him))
+		{
+			bad_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and not my_worst_enemy 
+		and yes_war 
+		and yes_fear 
+		and yes_bored_of_war 
+		and (not distrust_him or not dont_trust_him)) 
+		{
+			good_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and not my_worst_enemy 
+		and yes_war 
+		and yes_fear 
+		and not one_at_war 
+		and (not distrust_him or not dont_trust_him)) 
+		{
+			good_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and yes_war 
+		and yes_terror 
+		and (not distrust_him or not dont_trust_him))
+		{
+			good_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and yes_war 
+		and yes_sick_of_war
+		and not dont_trust_him)
+		{
+			good_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and yes_war 
+		and warlike 
+		and not yes_sick_of_war)
+		{
+			worst_message_to_send
+			found
+		}
+
+	if(	yes_gains_cease_fire 
+		and yes_chase_the_rabbit 
+		and not yes_human)
+		{
+			best_message_to_send
+		}
+
+	/////////////////////////////////
+	/// SHOULD I OFFER ALLIANCE   ///
+	/////////////////////////////////
+	///		if(foreigner->GetRegard() > 50 && fz_loyalty > 30)
+	///		{
+	///		return (ai->GetStrength(foreigner->GetPlayerIndex()) / mystrength) * 250 * fz_alliance;	
+	/// 	}
+	///		otherwise I don't ever want to do this
+	///		return 0.0;
+	
+	input gains_alliance
+		right does_gain_alliance(gains_alliance, 1, .5)
+
+	if(does_gain_alliance)
+	{
+		high_priority
+	}
+
+	input num_he_is_at_war
+		left a0_he_is_at_war(num_he_is_at_war, 0, 0.2)
+		tri a1to3_he_is_at_war(num_he_is_at_war, 2, 1)
+		tri a2to6_he_is_at_war(num_he_is_at_war, 4, 2)
+		right a5to11_he_is_at_war(num_he_is_at_war, 8, 3)
+
+	output alliance [0,1] = 0
+		right no_alliance(alliance, 0, 0.2)
+		tri perchance_alliance(alliance, 0.5, 0.25)
+		left married(alliance, 1.0, 0.25)
+
+		if(	does_gain_alliance 
+			and my_best_friend 
+			and not yes_war 
+			and (not distrust_him or not dont_trust_him))
+		{
+			okay_message_to_send
+			found
+		}
+	
+		if(does_gain_alliance 
+			and (like_him or love_him) 
+			and a1to3_he_is_at_war 
+			and not yes_war 
+			and (not distrust_him or not dont_trust_him))
+		{
+			okay_message_to_send
+			found
+		}
+
+	
+		if(does_gain_alliance 
+			and love_him 
+			and not zero_at_war 
+			and not yes_war 
+			and (not distrust_him or not dont_trust_him) )
+		{
+			best_message_to_send
+			found
+		}
+
+	///////////////////////////////////
+	/// SHOULD I OFFER AN ECOPACT   ///
+	///////////////////////////////////
+	//	if(fz_pact_end_pollution > 500)  
+	//	{
+	//		return (global_pollution / pollutiontrigger) * 	fz_pact_end_pollution;
+	//	}
+	//	return 0;
+
+
+	input end_pollution_pact
+		tri yes_end_pollution_pact(end_pollution_pact, 1.0, 0.1)
+
+	if(yes_end_pollution_pact)
+	{
+		med_priority
+	}
+
+	output pact_end_pollution [0, 1000]= 0
+		left toxic_wastrel(pact_end_pollution, 0, 100)
+		tri joe_lunchpail(pact_end_pollution, 500, 250)
+		right pollution_sucks(pact_end_pollution, 1000, 250)
+
+		if(	yes_end_pollution_pact 
+			and (high_his_pollution or high_my_pollution) 
+			and (not distrust_him or not dont_trust_him))
+		{
+			worst_message_to_send
+			pollution_sucks
+			rand_min_25
+			rand_max_100
+			found
+		}
+	
+		if(	yes_end_pollution_pact 
+			and (average_his_pollution or average_my_pollution) 
+			and (not distrust_him or not dont_trust_him))
+		{
+			worst_message_to_send
+			joe_lunchpail
+			rand_min_25
+			rand_max_100
+			found
+		}
+	
+		if(	yes_end_pollution_pact 
+			and (low_his_pollution or low_my_pollution) 
+			and (not distrust_him or not dont_trust_him))	
+		{
+			toxic_wastrel
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+		if(	yes_end_pollution_pact 
+			and high_global_pollution 
+			and (not distrust_him or not dont_trust_him))
+		{
+			good_message_to_send
+			rand_min_25
+			rand_max_100
+			found
+		}
+
+///////////////////////
+/// NOTHING FOUND   ///
+///////////////////////
+// this ensures that we say no if nothing fires
+
+		if(not found) 
+		{
+			worst_message_to_send
+			low_priority
+		}
+ 

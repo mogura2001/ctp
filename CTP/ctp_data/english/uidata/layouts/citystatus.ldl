@@ -1,0 +1,720 @@
+# citystatus.ldl
+
+
+
+#################
+
+# templates
+
+#################
+
+template CITY_BUTTON:T_FONT5_CITYBUTTON {
+
+	int	ypix	312
+
+	int	widthpix	89
+
+	int	heightpix	21
+
+	int	bevelwidth	0
+
+	string	image0	"upba5702.tga"
+	string	image1	"upba5703.tga"
+	string	disabledimage0	"upba5707.tga"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+template CITY_RANGER:T_FONT5_8 {
+
+	bool alwaysranger	true
+
+	rangery {
+
+		int	widthpix	15
+
+		int	heigthpix	15
+
+		string	type	"scroller"
+
+		string	orientation	"vertical"
+
+		string	pattern	"upba5605.tga"
+
+		incy {
+
+			int	widthpix	15
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+		decy {
+
+			int	widthpix	15
+
+			int	heightpix	15
+
+			string	pattern	"upba5605.tga"
+
+		}
+
+#			thumb {
+
+#				string	image0	"upba5613.tga"
+
+#				string	imagebltflag	"chromakey"
+
+#			}
+
+	}
+
+}
+
+
+
+template CITY_HEADER:T_FONT5_8 {
+
+	string pattern	"upba5605.tga"
+
+	int	heightpix	24
+
+}
+
+
+
+template CITY_ITEM:T_FONT6_CITYLIST {
+
+	int	xpix	0
+
+	int	ypix	0
+
+	int	heightpix	20
+
+}
+
+
+
+template CITY_HEADER_IMAGE {
+
+	string	xanchor	"center"
+
+	string	yanchor	"center"
+
+	string	imagebltflag	"chromakey"
+
+}
+
+
+
+#################
+
+# CityStatusWin
+
+#################
+
+CityStatusWin {
+
+	string	pattern	"upba5000.tga"
+
+	int 	xpix		2
+	int 	ypix		10
+
+#	string	xanchor	"center"
+#	string	yanchor	"center"
+
+	int	widthpix	637
+
+	int	heightpix	365
+
+	OkButton:CTP_CLOSE_BUTTON {
+		int	xpix	566
+		int	ypix	327
+	}
+
+	Title:T_FONT_POPUP_TITLE {
+
+		int	xpix	236
+
+		int	ypix	4
+
+		int	widthpix	158
+
+		int	heightpix	13	
+
+		string	text	"str_ldl_CITY_STATUS"
+	}
+
+
+
+	CityList:CITY_RANGER {
+
+		int	xpix	17
+
+		int	ypix	80
+
+		int	widthpix	395
+
+		int	heightpix	186
+
+		int columns		9
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		string	pattern	"upba5000.tga"
+
+		int	srcxpix	15
+
+		int	srcypix	54
+
+		int	srcwidthpix		414
+
+		int	srcheightpix	214
+
+		header {
+
+			switch0:CITY_HEADER {
+
+				int	widthpix	91
+
+				string text "str_ldl_CAPS_NAME"
+			}
+
+			switch1:CITY_HEADER {
+
+				int	widthpix	26
+
+				string text "str_ldl_CAPS_SIZE"
+			}
+
+			switch2:CITY_HEADER {
+
+				int	widthpix	30
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	24
+
+					int	heightpix	24
+
+					string	image0	"upc068.tga"
+					string tipwindow "str_ldl_Food"
+				}
+
+			}
+
+			switch3:CITY_HEADER {
+
+				int	widthpix	29
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	24
+
+					int	heightpix	24
+
+					string	image0	"upc020.tga"
+					string tipwindow "str_ldl_Prod"
+				}
+
+			}
+
+			switch4:CITY_HEADER {
+
+				int	widthpix	28
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	24
+
+					int	heightpix	24
+
+					string	image0	"upc022.tga"
+					string tipwindow "str_ldl_Goldy"
+				}
+
+			}
+
+			switch5:CITY_HEADER {
+
+				int	widthpix	30
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	26
+
+					int	heightpix	21
+
+					string	image0	"upba5410.tga"
+					string tipwindow "str_ldl_Scien"
+				}
+
+			}
+
+			switch6:CITY_HEADER {
+
+				int	widthpix	28
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	24
+
+					int	heightpix	21
+
+					string	image0	"upd002.tga"
+					string tipwindow "str_ldl_Happ"
+				}
+
+			}
+
+			switch7:CITY_HEADER {
+
+				int	widthpix	101
+
+				string text "str_ldl_PRODUCING"
+			}
+
+			switch8:CITY_HEADER {
+
+				int	widthpix	32
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	26
+
+					int	heightpix	21
+
+					string	image0	"upba5411.tga"
+					string tipwindow "str_ldl_Tprod"
+				}
+
+			}
+
+		}
+
+	}
+
+	BuildOptionsList:CITY_RANGER {
+
+		int	xpix	429
+
+		int	ypix	80
+
+		int	widthpix	175
+
+		int	heightpix	186
+
+		int columns		2
+
+		int	beveltype	2
+
+		int	bevelwidth	2
+
+		string	pattern	"upba5000.tga"
+
+		int	srcxpix	427
+
+		int	srcypix	54
+
+		int	srcwidthpix		179
+
+		int	srcheightpix	214
+
+		header {
+
+			switch0:CITY_HEADER {
+
+				int	widthpix	136
+
+				string text "str_ldl_BUILD_OPTIONS"
+			}
+
+			switch1:CITY_HEADER {
+
+				int	widthpix	39
+
+#				string text "str_ldl_G"
+				string tipwindow "str_ldl_Tbuild"
+
+				headerimage:CITY_HEADER_IMAGE {
+
+					int	widthpix	24
+
+					int	heightpix	24
+
+					string	image0	"upc020.tga"
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+	RushBuyButton:CITY_BUTTON {
+
+		int	xpix	393
+
+		string	text	"str_ldl_RUSH_BUY"
+	}
+
+	BuildButton:CITY_BUTTON {
+
+		int	xpix	488
+
+		string	text	"str_ldl_CAPS_BUILD"
+	}
+
+	MakeQueueButton:CITY_BUTTON {
+
+		int	xpix	167
+
+		string	text	"str_ldl_CAPS_MAKE_QUEUE"
+	}
+
+	LoadQueueButton:CITY_BUTTON {
+
+		int	xpix	262
+
+		string	text	"str_ldl_CAPS_LOAD_QUEUE"
+	}
+
+	DisbandButton:CITY_BUTTON {
+
+		int	xpix	72
+
+		string	text	"str_ldl_DISBAND"
+	}
+
+	CityName:T_FONT5_8 {
+		int	xpix	31
+		int	ypix	25
+		int	widthpix	118
+		int	heightpix	16
+		string	pattern	"upba3010.tga"
+		# Make sure that maxfieldlen same as used in:
+	    #    CityStatusWin:CityName 
+		#    CityPad:CityNameField 
+	    #    NameTheCityPop:TextField (640 and normal)
+		int maxfieldlen	50
+	}
+
+	TotalCitiesLabel:T_FONT5_8 {
+
+		int	xpix	445
+
+		int	ypix	20
+
+		int	widthpix	110
+
+		int	heightpix	20
+
+		int	bevelwidth	0
+
+		string	text	"str_ldl_TOTAL_NO_OF_CITIES_COLON"
+	}
+
+	TotalCitiesBox:T_FONT5_8 {
+
+		int	xpix	560
+
+		int	ypix	20
+
+		int	widthpix	30
+
+		int	heightpix	20
+
+		string	pattern	"upba5000.tga"
+
+		int	srcxpix	560
+
+		int	srcypix	20
+
+		int	srcwidthpix	30
+
+		int	srcheightpix	20
+
+		int	beveltype	2
+
+		int	bevelwidth	1
+
+	}
+
+	RushBuyBox:T_FONT5_8 {
+
+		int	xpix	418
+
+		int	ypix	293
+
+		int	widthpix	41
+
+		int	heightpix	13
+
+		int	beveltype	2
+
+		int	bevelwidth	1
+
+		string	pattern	"upba5000.tga"
+
+		int	srcxpix	192
+
+		int	srcypix	293
+
+		int	srcwidthpix		41
+
+		int	srcheightpix	13
+
+	}
+}
+
+
+
+CityStatusListItem {
+
+	Name:CITY_ITEM{
+#		string	just	"left"
+#		bool	vertcenter	true
+
+		int		widthpix		91
+
+	}
+
+	Size:CITY_ITEM{
+
+		int		widthpix		26
+
+	}
+
+	Food:CITY_ITEM{
+
+		int		widthpix		30
+
+	}
+
+	Production:CITY_ITEM{
+
+		int		widthpix		29
+
+	}
+
+	Gold:CITY_ITEM{
+
+		int		widthpix		28
+
+	}
+
+	Knowledge:CITY_ITEM{
+
+		int		widthpix		30
+
+	}
+
+	Happiness:CITY_ITEM{
+
+		int		widthpix		28
+
+	}
+
+	Producing:CITY_ITEM{
+
+		int		widthpix		101
+
+	}
+
+	Clock:CITY_ITEM{
+
+		int		widthpix		32
+
+	}
+
+}
+
+
+
+InventoryListItem {
+
+	ObjectName:T_FONT6_CITYLIST{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		136
+
+		int		heightpix		20
+
+	}
+
+	Producing:T_FONT6_CITYLIST {
+		int	xpix	0
+		int	ypix	0
+		int	widthpix	39
+		int	heightpix	20
+	}
+
+}
+
+
+
+CssQueueScreen {
+
+	string	pattern	"upba3010.tga"
+
+#	int 	xpix		316
+
+#	int 	ypix		185
+
+	string	xanchor		"center"
+
+	string	yanchor		"center"
+
+	int	widthpix	400
+
+	int	heightpix	160
+
+	Name:T_FONT1_18 {
+
+		string xanchor "center"
+
+		string yanchor "top"
+
+		int widthpct 50
+
+		int heightpix 20
+
+		string	text	"str_ldl_Load_Queue"
+		string	pattern	"upba3010.tga"
+
+	}
+
+	CssQueueList {
+
+#		bool	alwaysranger	true
+
+		string xanchor "center"
+
+		int	ypix	70
+
+		int	widthpix	200
+
+		int	heightpix	80
+
+		int columns		1
+
+		int	bevelwidth	2
+
+		int	beveltype	1
+
+		string	pattern	"upba3010.tga"
+
+		header {
+
+			switch0:T_FONT1_14 {
+
+				int	widthpix	200
+
+				int	heightpix	20
+
+				string text "str_ldl_CAPS_QUEUE"
+				string	pattern	"upba3010.tga"
+
+				int bevelwidth 	1
+
+			}
+
+		}
+
+	}
+
+	BackButton:T_FONT1_14 {
+
+		int	xpix	325
+
+		int	ypix	135
+
+		int	widthpix	40
+
+		int	heightpix	20
+
+#		string	imagebltflag	"chromakey"
+
+#		string	image0		"upba1807.tga"
+
+#		int	bevelwidth	0
+
+		string	text	"str_ldl_CAPS_OK"
+		string	pattern	"upba3010.tga"
+
+	}
+
+}
+
+
+
+CssQueueListItem {
+
+#	string	pattern			"upba3010.tga"
+
+	ObjectName:T_FONT1_14{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		125
+
+		int		heightpix		20
+
+#		string	pattern			"upba3010.tga"
+
+	}
+
+	Name:T_FONT1_14{
+
+		int		xpix			0
+
+		int		ypix			0
+
+		int		widthpix		200
+
+		int		heightpix		20
+
+	}
+
+}
+
+
+
+########################
+
+# strings
+
+########################
+
+
+
+CityStrings {
+
+	int	numstrings	6
+
+	string	string0	"str_tbl_ldl_NP"
+	string	string1	"str_tbl_ldl_RUSH_BUY"
+	string	string2	"str_tbl_ldl_INSTANT"
+	string	string3	"str_ldl_CLOSE"
+	string	string4	"str_ldl_Disband_selected_city"
+	string	string5	"str_ldl_Cant_disband_city"
+}
+
+
+
+$

@@ -1,0 +1,131 @@
+#This is the MAXHIGH Tutorial Profile
+#
+# Number of players in the game, including the Barbarians must be a least 3 players and not more then 32, but with that many it will go verrrrry slowly and is not supported
+#
+NumPlayers= 4
+
+AiOn= Yes
+UseNiceStart= Yes
+
+UseMapPlugin= Yes
+	
+Difficulty= 0
+RiskLevel= 0
+
+Pollution= No
+UnitAnim= Yes
+#WalkAnim= Yes
+#AttackAnim= Yes
+GoodAnim= No
+TradeAnim= Yes
+WaterAnim= Yes
+LibraryAnim= Yes
+WonderMovies= No
+BounceMessage= No
+MessageAdvice= Yes
+TutorialAdvice= Yes
+EnemyMoves= Yes
+RevoltWarning= Yes
+EnemyIntrude= Yes
+UnitLostWarning= Yes
+TradeLostWarning= Yes
+CityLostWarning= Yes
+AutoCenter= Yes
+FullScreenMovies= Yes
+AutoSave= No
+PlayerNumber= 1
+DefaultCivIndex= 16
+CivIndex= 16
+
+Gender= 0
+
+NoHumansOnHost= No
+LogPlayerStats= No
+
+#
+# Default Volume Levels
+#
+# Range is 0 (off) to 10 (loudest)
+#
+SfxVolume= 5
+VoiceVolume= 5
+MusicVolume= 7
+
+XWrap= Yes
+YWrap= Yes
+
+#Automatically group units when clicked
+AutoGroup= No
+
+#Automatically deselect units after moving
+AutoDeselect= No
+
+#When using AUTODESELECT, automatically select the next unit
+AutoSelectNext= No
+
+#Automatically select a unit at the start of the player's turn
+AutoSelectFirstUnit= Yes
+
+#Automatically cycle turns after moving last unit
+AutoTurnCycle= No
+CombatLog= No
+
+UseLeftClick= Yes
+ShowZoomedCombat= Yes
+UseFingerPrinting= No
+UseRedbookAudio= Yes
+RequireCD= Yes
+Prophylaxis= Yes
+
+#
+# Screen Res Settings
+#
+TryWindowsResolution= No
+ScreenResWidth= 1024
+ScreenResHeight= 768
+
+
+ZoomedCombatAlways= No
+AttackEveryone= No
+
+# Turn this on to force civ db AI personalities indexes to match player indexes
+# (e.g. player 2 will get civilization #2 from the DB)
+NonRandomCivs= Yes
+
+# turn this off if you don't like cycling more than one turn automatically
+# the "multicycle" command toggles it in-game.
+AutoEndMultiple= No
+
+WetDry= 5
+WarmCold= 5
+OceanLand= 3
+IslandContinent= 4
+HomoDiverse= 8
+GoodCount= 0
+	
+ThroneRoom= No
+#
+# If MaxPlayers > 0, revolts will add new civilizations up to MaxPlayers,
+# otherwise they will only add civilizations when there are fewer than you
+# started with.
+MaxPlayers= 0
+MapSize= 2
+	
+AlienEndGame= Yes
+UnitCompleteMessages= Yes
+NonContinuousUnitCompleteMessages= Yes
+
+#Turn this on to store names with every slic symbol, uses more memory,
+#but needed for debugging scripts.
+DebugSlic= No
+
+#uncomment this to turn on diplomacy logging - debug exe only
+DiplomacyLog= No
+
+#uncomment this to skip past an age 1-5 - debug exe only
+CheatAge= 0
+
+MapPlugin0=dll\\map\\geometric.dll
+MapPlugin1=dll\\map\\crater.dll
+MapPlugin2=dll\\map\\plasma2.dll
+MapPlugin3=dll\\map\\plasma2.dll
