@@ -1,0 +1,47 @@
+﻿{
+  "binary_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "checks": 68,
+  "failures": [],
+  "examples": [
+    {
+      "case": "uniform",
+      "model": 105.0,
+      "machine": 105.0
+    },
+    {
+      "case": "three_mountains",
+      "model": 458.05,
+      "machine": 458.05
+    },
+    {
+      "case": "three_goods_same_index",
+      "model": 420.0,
+      "machine": 420.0
+    },
+    {
+      "case": "three_goods_different_indices",
+      "model": 420.0,
+      "machine": 420.0
+    },
+    {
+      "case": "three_mountains_only_five_food_surroundings",
+      "model": 5.0,
+      "machine": 5.0
+    },
+    {
+      "case": "three_mountains_three_grass_fourteen_plains",
+      "model": 50.0,
+      "machine": 50.0
+    },
+    {
+      "case": "three_mountains_three_food10_rest_zero",
+      "model": 31.461764705882356,
+      "machine": 31.461764705882352
+    },
+    {
+      "case": "three_mountains_three_food20_rest_zero",
+      "model": 20.0,
+      "machine": 20.0
+    }
+  ]
+}

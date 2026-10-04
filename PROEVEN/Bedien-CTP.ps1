@@ -1,10 +1,13 @@
 param(
-    [ValidateSet('Start','Restart','Status','Capture','Key','Click','DismissError')][string]$Action = 'Status',
+    [ValidateSet('Start','Restart','Status','Capture','Key','Click','Drag','DismissError')][string]$Action = 'Status',
     [string]$Keys,
     [int]$X,
     [int]$Y,
+    [int]$ToX,
+    [int]$ToY,
     [Nullable[int]]$FromX,
-    [Nullable[int]]$FromY
+    [Nullable[int]]$FromY,
+    [switch]$ResetCursor
 )
 $ErrorActionPreference = 'Stop'
 $probeRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../CTP-proef'))
@@ -114,18 +117,54 @@ if ($Action -eq 'Capture') {
     if (-not $Keys) { throw 'Keys is required.' }
     [Windows.Forms.SendKeys]::SendWait($Keys)
     Write-Output "Sent keys to probe game: $Keys"
-} elseif ($Action -eq 'Click') {
+} elseif ($Action -in @('Click','Drag')) {
     if ($X -lt 0 -or $Y -lt 0 -or $X -ge ($bounds.Right-$bounds.Left) -or $Y -ge ($bounds.Bottom-$bounds.Top)) { throw 'Click outside window.' }
+    if ($Action -eq 'Drag' -and ($ToX -lt 0 -or $ToY -lt 0 -or $ToX -ge ($bounds.Right-$bounds.Left) -or $ToY -ge ($bounds.Bottom-$bounds.Top))) { throw 'Drag destination outside window.' }
     $cursorPosition = [Windows.Forms.Cursor]::Position
+    if ($ResetCursor) {
+        # Clamp the internal cursor to the top-left before targeting a control.
+        $resetSteps = [int]([Math]::Ceiling([Math]::Max(($bounds.Right-$bounds.Left), ($bounds.Bottom-$bounds.Top)) / 5.0) + 20)
+        for ($resetIndex = 0; $resetIndex -lt $resetSteps; $resetIndex++) {
+            [CtpWindow]::mouse_event(1, -5, -5, 0, [UIntPtr]::Zero)
+            Start-Sleep -Milliseconds 10
+        }
+        $FromX = 0
+        $FromY = 0
+    }
     # DirectInput can keep its own cursor independent of the Windows cursor.
     if ($null -ne $FromX -and $null -ne $FromY) {
         $cursorPosition = [Drawing.Point]::new(($bounds.Left + $FromX), ($bounds.Top + $FromY))
     }
-    [CtpWindow]::mouse_event(1, $bounds.Left + $X - $cursorPosition.X, $bounds.Top + $Y - $cursorPosition.Y, 0, [UIntPtr]::Zero)
+    $moveX = $bounds.Left + $X - $cursorPosition.X
+    $moveY = $bounds.Top + $Y - $cursorPosition.Y
+    # Small movements avoid Windows acceleration on large relative jumps.
+    while ($moveX -ne 0 -or $moveY -ne 0) {
+        $stepX = [Math]::Max(-5, [Math]::Min(5, $moveX))
+        $stepY = [Math]::Max(-5, [Math]::Min(5, $moveY))
+        [CtpWindow]::mouse_event(1, $stepX, $stepY, 0, [UIntPtr]::Zero)
+        $moveX -= $stepX
+        $moveY -= $stepY
+        Start-Sleep -Milliseconds 10
+    }
     Start-Sleep -Milliseconds 150
     [CtpWindow]::mouse_event(2, 0, 0, 0, [UIntPtr]::Zero)
     Start-Sleep -Milliseconds 150
+    if ($Action -eq 'Drag') {
+        try {
+            $moveX = $ToX - $X
+            $moveY = $ToY - $Y
+            while ($moveX -ne 0 -or $moveY -ne 0) {
+                $stepX = [Math]::Max(-5, [Math]::Min(5, $moveX))
+                $stepY = [Math]::Max(-5, [Math]::Min(5, $moveY))
+                [CtpWindow]::mouse_event(1, $stepX, $stepY, 0, [UIntPtr]::Zero)
+                $moveX -= $stepX
+                $moveY -= $stepY
+                Start-Sleep -Milliseconds 10
+            }
+        } finally { [CtpWindow]::mouse_event(4, 0, 0, 0, [UIntPtr]::Zero) }
+    }
     [CtpWindow]::mouse_event(4, 0, 0, 0, [UIntPtr]::Zero)
     Start-Sleep -Milliseconds 500
-    Write-Output "Clicked probe window at $X,$Y."
+    if ($Action -eq 'Drag') { Write-Output "Dragged probe window from $X,$Y to $ToX,$ToY." }
+    else { Write-Output "Clicked probe window at $X,$Y." }
 }

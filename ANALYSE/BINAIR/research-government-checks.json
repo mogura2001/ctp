@@ -1,0 +1,107 @@
+﻿{
+  "dll_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "checks": [
+    {
+      "label": "null_list",
+      "got": -1,
+      "expected": -1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "empty_list",
+      "got": -1,
+      "expected": -1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "all_known",
+      "got": -1,
+      "expected": -1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "known_first_skipped",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "missing_prerequisites_skipped",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "all_unavailable",
+      "got": -1,
+      "expected": -1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "first_fast_candidate",
+      "got": 1,
+      "expected": 1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "slow_first_fast_second",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "threshold_equality_skipped",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "all_slow_first_fallback",
+      "got": 1,
+      "expected": 1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "zero_science_clamped_to_one",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "science_reverses_time_filter",
+      "got": 1,
+      "expected": 1,
+      "engine_requests": [],
+      "passed": true
+    },
+    {
+      "label": "research_route_sends_choice",
+      "got": 2,
+      "expected": 2,
+      "engine_requests": [
+        2
+      ],
+      "passed": true
+    },
+    {
+      "label": "research_route_no_choice_clears_flag",
+      "got": -1,
+      "expected": -1,
+      "engine_requests": [],
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "total": 14
+}

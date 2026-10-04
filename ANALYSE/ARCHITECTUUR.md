@@ -1,5 +1,7 @@
 # Opbouw van de aanwezige CTP I-code en AI
 
+Aanvulling 4 oktober 2026: de effectieve gedeeltelijke AIP-laadwerking, actionvolgorde, managercache en savepersistentie zijn inmiddels via gerichte DLL-analyse en vijftien offlinecontroles beschreven in [AIP-LAADWERKING.md](AIP-LAADWERKING.md). Lees oudere onzekerheden over lijstvervanging/behoud hieronder met die aanvulling. De broncode ontbreekt lokaal, maar passende binarybinding levert wel controleerbare implementatiebevindingen.
+
 ## Reikwijdte en bewijs
 
 Dit is een architectuuranalyse van de aanwezige installatiebestanden, geen volledige analyse van enginebroncode: die ontbreekt. De executable en robotcom-DLL bevatten de daadwerkelijke algoritmes. Linker-maps tonen symbolen en objectmodules, geen implementatie. We kunnen de tekstinterfaces volledig inventariseren, maar niet alle interne beslissingen verklaren.
@@ -94,6 +96,8 @@ Advance, govern, units, improve, wonder, terrain, tileimp en Const leggen mogeli
 script.slc bevat veel berichten en eventafhandeling; tutorials demonstreren SLIC-functies. Die scripts zijn niet de implementatie van de gewone stadsplanner. De SLIC-bestanden in de geïnventariseerde default/gamedata zijn gelijk tussen origineel en AAIP. Onze eigen proefkopie heeft aanvullingen, maar die behoren niet tot de originele vergelijking.
 
 ## Gecompileerde laag en grens van de analyse
+
+Vervolgonderzoek leest nu ook machinecode: [VESTIGINGSDOELEN.md](VESTIGINGSDOELEN.md). Robotcom.map en robotcom.dll komen overeen op timestamp/imagebase; civctp.map en civctp.exe verschillen in timestamp. Gebruik daarom de engine-map uitsluitend als historische symbolenlijst tot een passende binary/map is gevonden. De nieuwe DLL-analyse verduidelijkt onder meer goallimieten, city_delta en packing; dit vervangt de betreffende eerdere onzekerheden, maar is geen volledige enginebroncode.
 
 robotcom.map noemt onder meer CityAgent, bevolkingsplaatsing, locatie-/settlerplanning en handel. civctp.map noemt engine- en scriptinterfaces. Ze ondersteunen dat deze subsystemen bestaan. Ze geven geen volledige scoreformules, uitvoerbare vervangende broncode of garantie dat interne functies als SLIC-API beschikbaar zijn.
 

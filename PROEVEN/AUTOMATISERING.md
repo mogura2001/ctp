@@ -33,3 +33,33 @@ Een verse Deity-partij met de gecorrigeerde HasAdvance-aanroep bereikte 3950 BC 
 Er is nog geen AIQP-resultaatmelding gelezen. De proefberichten hadden geen Show(); de lokale tutorial gebruikt dit voor het openen van berichten. Show() is nu toegevoegd, maar moet opnieuw geladen en getest worden. De huidige partij bevat die laatste wijziging nog niet. Queuewijziging en persistentie blijven onbewezen.
 
 Click accepteert nu optionele FromX/FromY voor de waargenomen interne cursor. Kleine menuverplaatsingen werkten; een grote verplaatsing overschoot. Nog geen betrouwbare algemene muiskalibratie. Een toetsactie is geweigerd toen focus herstellen niet lukte; er is toen geen invoer verzonden.
+
+## Editorobservatie 2 oktober 2026
+
+Lokale editorhandleiding uitgelezen; fragmenten in editor-handleiding-fragmenten.txt. De handleiding beschrijft Show Map en Edit City voor een geselecteerde beschaving, met toegang tot Production Tab. Nog niet bevestigd dat AI-controle behouden blijft tijdens observeren.
+
+Eerdere ai_queue_probe-include uitgeschakeld in CTP-proef/script.slc; backup PROEVEN/script-voor-observatie.slc. Geen quotavariant ge�nstalleerd. Nieuwe editorstart op Deity/Gigantic/8 beschavingen bereikt het voorwaardenvenster. Geen voorwaarden geaccepteerd. Screenshot editor-voorwaarden.png. Runtimecontrole van AI-steden/queues wacht op persoonlijke afhandeling van dit venster door gebruiker.
+
+Editorvoorwaarden met expliciete toestemming gebruiker geaccepteerd. De daaropvolgende editorstart vraagt: Put your Call to Power CD in your CD-ROM drive, met Retry/Cancel. Editorobservatie daardoor nog niet uitgevoerd. Geen wijzigingen aan executable of CD-controle gedaan. Grote muisbewegingen zijn in Bedien-CTP.ps1 opgesplitst in stappen van maximaal5 pixels; de acceptatieklik werkte in deze proef, algemene betrouwbaarheid nog niet vastgesteld.
+
+Na beschikbaar maken van de cd opnieuw geprobeerd: editor succesvol gestart op Deity/Gigantic/8 beschavingen, zonder nieuwe cd-melding. Show Map geactiveerd en volledige kaart zichtbaar gecontroleerd. Editorpaneel gesloten; daaropvolgende n-invoer bracht de datum van 4000 BC naar 3950 BC. AI-bouwqueues en behoud van AI-controle na spelerselectie zijn nog niet gecontroleerd. Cursorbeweging blijft afhankelijk van de werkelijk zichtbare interne positie: een klik met fout aangenomen startpositie sloot het paneel niet; de gecorrigeerde klik wel. Geen quotavariant geïnstalleerd.
+
+## Werkende AI-stadsobservatie, 2 oktober 2026
+
+Gebruiker heeft de juiste volgorde aangetoond: beschaving selecteren, Edit City openen, daarna een stad van die beschaving op de kaart selecteren. Terwijl Edit City open blijft, via Screens > CITY het City Status-overzicht openen. Eerdere mislukte selectie is geen bewijs dat AI-stadsobservatie onmogelijk is.
+
+Zelf gecontroleerd in het geopende voorbeeld: Amsterdam, grootte 1, totaal 1 stad, huidige productie Warrior, resterende tijd weergegeven als 2, spelindicator Turn 3. Screenshot: automatisering/ai-amsterdam-turn3.png. City Status zelf gesloten en via Screens > CITY opnieuw geopend: dezelfde stad en productie zichtbaar. Geen bouwopdracht, Rush Buy, bevolkingswijziging of beurt uitgevoerd bij deze controle. Volledige queue en behoud van zelfstandige AI-productiekeuzes na hervatten nog niet bewezen; de huidige productie is wel uitleesbaar.
+
+Bedien-CTP.ps1 heeft nu optionele -ResetCursor: relatieve kleine bewegingen naar de bovenste linkerrand, daarna naar de doelpositie. Hiermee is City Status in deze proef gesloten; opnieuw openen werkte vervolgens met de waargenomen FromX/FromY. Randkalibratie kan de kaart laten scrollen en is nog geen algemene betrouwbaarheidsgarantie.
+
+Vanaf gesloten panelen zelf Turkse observatie uitgevoerd: Escape > Cheat Mode, van speler 6 viermaal min naar speler 2, Edit City openen, Screens > CITY. City Status selecteerde/centreerde Ankara automatisch; vooraf geen Turkse stad op de kaart aangeklikt. Zichtbaar op Turn 3: totaal 1 stad, Ankara grootte 1, productie Warrior, resterende tijd 4. Screenshot automatisering/ai-turken-turn3.png. Geen beurt of productieaanpassing uitgevoerd. Overzicht open gelaten. Hiermee ook zelfstandig openen van het overzicht voor een andere AI-beschaving aangetoond.
+
+Herhaalbare stappen en gecontroleerde resultaten: zie [AI-STEDEN-BEKIJKEN.md](AI-STEDEN-BEKIJKEN.md).
+
+## Vaste save en natuurlijke quotaproef, 2 oktober 2026
+
+Save Game en Load Game zijn gecontroleerd: QUOTA-START-T0 op 4000 BC vóór de eerste beurt opgeslagen, bewaard en via het spel teruggeladen. Dezelfde save is gebruikt na volledige herstart voor een variant met uitsluitend primary-settlerquota nul. Beide runs bereikten twintig beurten (3000 BC). Checkpoints en waarnemingen: settlerquota/vaste-start/STARTMANIFEST.md. De AI bouwde en stichtte na observatie zelfstandig verder.
+
+Bedien-CTP.ps1 ondersteunt nu Drag met X/Y en ToX/ToY. Via de titelbalk is City Status van 0,0 naar circa 800,292 verschoven, waardoor alle stadsrijen leesbaar werden naast de editor. Gecontroleerde UI-verplaatsing, geen gameplaywijziging. Dezelfde focus- en boundscontroles gelden; inspecteer het resultaat. Positie blijft gedurende de partij bewaard, maar was na herstart terug op 0,0.
+
+Een menselijke b/Enter-poging in de baseline stichtte geen stad. Herhaling is door automatische goedkeuringscontrole geweigerd wegens mogelijke stadstichting; de variant hield de menselijke speler passief. Dit verschil is expliciet een proefbeperking. Oorspronkelijke AIPs na afloop hersteld; geen SLIC-queue-effect bewezen.

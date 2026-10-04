@@ -24,7 +24,7 @@ De ingestelde grens 40 past bij een rijk van 25–30 steden. Dat betekent niet d
 
 Een tweede garnizoenseenheid levert onder Theocracy geen extra effect binnen de ingestelde martial-law-limiet van één. Extra verdediging moet daarom door militaire noodzaak worden gerechtvaardigd.
 
-Bron: `Advance.txt`. Religion heeft geen vermelde vereiste en basiskosten 20. Theocracy vereist alleen Religion en heeft basiskosten 65. Het pad heeft dus 85 aan opgetelde basiskosten wanneer beide nog ontbreken. Dit is geen voorspelling van de werkelijke Deity-onderzoekskosten of benodigde beurten.
+Bron: `Advance.txt`. Religion heeft geen vermelde vereiste en basiskosten 65 (het eigen ADVANCE_RELIGION-record vanaf regel 149). Theocracy vereist alleen Religion en heeft basiskosten 65. Het pad heeft dus 130 aan opgetelde basiskosten wanneer beide nog ontbreken. Dit is geen voorspelling van de werkelijke Deity-onderzoekskosten of benodigde beurten. De eerdere 20/85-vermelding kwam uit een verkeerd gekoppeld record en is op 4 oktober 2026 gecorrigeerd.
 
 Bron: `set_govern.fli`. De originele regels vragen bij maximaal vijf steden Tyranny. In de normale voorkeuren van warriors, scientists en slavers is Theocracy niet opgenomen; clerics hebben haar wel. Dit is een concreet aanknopingspunt voor verbetering.
 

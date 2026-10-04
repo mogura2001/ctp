@@ -31,6 +31,26 @@ Bereik in de early game min of meer zo snel mogelijk 25–30 steden. Groei is ti
 
 Een goede productiestad kan worden vrijgesteld van kolonistenproductie om bijvoorbeeld Labyrinth te bouwen. Onderzoek de afweging tussen wonderopbrengst en gemiste uitbreiding. De exacte omschakeling binnen de bandbreedte 25–30 en noodzakelijke uitzonderingen worden nog uitgewerkt.
 
+### 1a. Opening aanpassen aan ruimte en buren
+
+Settlerproductie moet op de uitvoerbare uitbreidingsbehoefte reageren. Tijdens snelle uitbreiding willen we meer gelijktijdige settlers kunnen inzetten dan de standaard primary-vraag van twee, zonder een blijvend hoog quotum als eindbeleid vast te leggen. Het precieze aantal wordt nog bepaald.
+
+- Vraag extra settlers aan zolang er voldoende goede, bereikbare en veilige vestigingslocaties zijn. Bestaande settlers en settlers in productie tellen mee.
+- Rem nieuwe productie af en pauzeer haar wanneer de aanwezige settlers de uitvoerbare vestigingsopdrachten al kunnen afdekken. Voorkom ophoping zonder nuttige bestemming.
+- Onderscheid werkelijk gebrek aan locaties van locaties waarvoor eerst transport nodig is. In het laatste geval krijgt de transportoplossing voorrang op nog meer ongebruikte settlers.
+- Stop de extra settleraanvraag voor de opening wanneer de gekozen doelomvang binnen 25–30 steden is bereikt. De precieze grens blijft open; verdere kolonisatie kan later opnieuw worden beoordeeld.
+- Herbeoordeel een tijdelijke pauze wanneer nieuwe ruimte, transport of veiligere omstandigheden beschikbaar komen.
+
+Dit beschrijft gewenst beleid, geen al beschikbare FLI-regels. Onderzoek eerst welke bestaande signalen en plannermechanismen deze afstemming mogelijk maken. De standaard primary-vraag is geen bovengrens voor alle settlerproductie: andere bouwklassen kunnen aanvullende vraag leveren.
+
+De gezamenlijke opening is geen onvoorwaardelijke rabbit-strategie. De AI moet haar uitbreidingsaanpak aanpassen aan bruikbare bereikbare vestigingsruimte en concurrentie op hetzelfde eiland/continent:
+
+- Bij voldoende vrije ruimte krijgt snelle stichting de hoogste nadruk, met noodzakelijke veiligheid.
+- Op een klein eiland met weinig resterende locaties moet uitbreiding over water worden voorbereid: passend onderzoek, kustproductie en bruikbaar transport. Voorkom dat een blijvend hoge settlervraag de daarvoor benodigde schepen verdringt of settlers laat ophopen.
+- Bij gedeeld land met andere AI-beschavingen krijgen verdediging van steden en bescherming van uitbreiding eerder gewicht. Schakel over van vrijwel uitsluitend uitbreiden naar uitbreiding met passende verdediging, ook vóór een formele oorlog. De mate hangt af van nabijheid, concurrentie en dreiging; aanwezigheid van een buur rechtvaardigt geen onbeperkte legerproductie of volledige vestigingsstop.
+
+Deze omstandigheden kunnen tegelijk gelden. Uitbreiding naar 25–30 bruikbare steden blijft het strategische doel waar de kaart en veiligheid dit toelaten. De omstandigheden bepalen hoe we daar komen, niet de persoonlijkheid alleen. Concrete detectie, grenzen en bestaande FLI/AIP/DLL-aanknopingspunten moeten eerst worden geanalyseerd.
+
 ### 2. Beperkte vroege legerlast
 
 Voorkom overmatige vroege eenhedenproductie en de bijbehorende druk op economie en onderzoek. Houd voldoende eenheden voor noodzakelijke veiligheid en nuttige taken. Gewenste aantallen en uitzonderingen bij dreiging worden nog bepaald.

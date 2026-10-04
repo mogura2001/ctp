@@ -77,6 +77,30 @@ Gebruik voorlopig geen verzonnen numerieke gewichten. Eerst moeten we weten welk
 - Houd rekening met kolonisten die al onderweg zijn naar een locatie of good, zodat meerdere plannen niet onbedoeld dezelfde behoefte proberen te vervullen, indien technisch mogelijk.
 - Na de uitbreidingsfase komen uitgestelde, waardevolle science- en productielocaties opnieuw aan bod. Of dit uitbreiding voorbij 30 steden rechtvaardigt, blijft een open strategische keuze.
 
+## Doel: locatiescore aanpassen aan onze vereisten
+
+De gebruiker heeft bevestigd dat we uiteindelijk de locatiebeoordeling willen aanpassen aan deze strategie. Het onderzoek naar de originele score dient om de juiste ingreep te vinden. Alleen het gewicht van de bestaande score verhogen is onvoldoende: die vergelijkt geen good-identiteiten en bevat geen expliciet ontwikkelplan voor production- of science-steden. Zie de aangetoonde berekening in [LOCATIEKWALITEIT.md](ANALYSE/LOCATIEKWALITEIT.md).
+
+Het gewenste beoordelingsmodel onderscheidt **uiteindelijke geschiktheid** van **prioriteit om nu te vestigen**. Een goede toekomstige science-stad kan tijdens de uitbreiding worden uitgesteld; een nog ontbrekende wonderstad of aanvullende monopoly-good kan juist eerder nodig zijn. Onderstaande onderdelen zijn ontwerpvereisten, geen reeds beschikbare functies of gekozen numerieke gewichten.
+
+| Onderdeel | Wat de nieuwe beoordeling moet herkennen |
+| --- | --- |
+| Productie | Minimaal drie daadwerkelijk bruikbare bergen, haalbaar voedselonderhoud voor grootte vier, mijnen en hun ontwikkeltijd; kustvoordeel voor scheepsbouw |
+| Science | Minimaal drie vakjes voor voedsel-improvements, haalbare groei en toekomstige scientists; meer voedselmogelijkheden waar verdere groei rendabel is |
+| Monopoly | Identiteit en aantal gelijke goods, beschikbare exemplaren elders in het rijk en haalbare aanvulling van de afgesproken handelsopzet |
+| Vroege uitbreiding | Voedsel en productie die nu beschikbaar zijn en de tijd tot een volgende settler; toekomstige opbrengst niet behandelen alsof die al aanwezig is |
+| Wondertaak | Vroeg een geschikte Labyrinth-locatie herkennen, inclusief ontwikkeling en de vraag of al een geschikte stad bestaat |
+| Gezamenlijk stadsplan | Benodigde bergen en goods bereikbaar houden voor geplande steden; overlap beoordelen op werkelijke benutting, zonder verplicht afstandsraster |
+| Context | Uitbreidingsfase, bestaande steden en toegewezen settlers, technologie, transport en concrete dreiging laten meewegen in de vestigingsvolgorde |
+
+Voedselpotentieel wordt beoordeeld volgens de afgesproken improvement-timing: normaal geen eerste generatie, met de Labyrinth-uitzondering. Maak onderscheid tussen onderhoud en groei die nu haalbaar zijn en de mogelijkheden na de benodigde technologie en aanleg.
+
+Een scorewijziging alleen lost uitgesloten of onbereikbare locaties niet op. Controleer daarom afzonderlijk het kandidaatmasker/packing, wettelijke vestiging, bereikbaarheid en toewijzing. Een geschikte locatie moet eerst als kandidaat beschikbaar blijven om door de nieuwe beoordeling gekozen te kunnen worden.
+
+Technische route: onderzoek eerst bestaande FLI/AIP-instellingen en selectiepunten in de planner. Bepaal welke kenmerken daar beschikbaar zijn en waar een aanvullende berekening nodig is. Of we daarvoor de engine-score vervangen, de AI-selectie aanvullen of een andere aantoonbaar ondersteunde route gebruiken, blijft open. De huidige engine-score wordt via een gedeelde kaarttabel aangeboden; rijksafhankelijke monopoly- en taakwaardering vraagt dus ook onderzoek naar een beoordeling per beschaving. Cachelevensduur en savegedrag moeten bekend zijn voordat een implementatie en vergelijkingsproef worden gekozen.
+
+Valideer later met kandidaatparen waarvan het gewenste onderscheid duidelijk is: gelijke ruwe opbrengsten maar gelijke versus verschillende goods; een bruikbare driebergenlocatie versus een onbruikbare; onmiddellijke uitbreiding versus een uitstelbare science-locatie; dezelfde locatie vóór en na het verkrijgen van een wonderstad of aanvullende good. Controleer daarna in de vaste benchmark of de AI de gekozen locaties ook ontwikkelt zoals bedoeld. Dit specificeert de meetlat; het bewijst nog geen uitvoerbaarheid of gameplay-effect.
+
 ## Technisch onderzoek
 
 1. Zoek bestaande settlerwaarderingen voor terrein, voedsel, productie, goods, afstand en gevaar.

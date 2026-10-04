@@ -1,0 +1,2816 @@
+{
+  "CTP-og": [
+    {
+      "index": 0,
+      "name": "TERRAIN_FOREST",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 1,
+      "name": "TERRAIN_PLAINS",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 2,
+      "name": "TERRAIN_TUNDRA",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 3,
+      "name": "TERRAIN_GLACIER",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "500",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 4,
+      "name": "TERRAIN_GRASSLAND",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 5,
+      "name": "TERRAIN_DESERT",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 6,
+      "name": "TERRAIN_SWAMP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "300",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 7,
+      "name": "TERRAIN_JUNGLE",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 8,
+      "name": "TERRAIN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 9,
+      "name": "TERRAIN_BROWN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 10,
+      "name": "TERRAIN_WHITE_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 11,
+      "name": "TERRAIN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 12,
+      "name": "TERRAIN_BROWN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 13,
+      "name": "TERRAIN_WHITE_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 14,
+      "name": "TERRAIN_WATER_SHALLOW",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 15,
+      "name": "TERRAIN_WATER_DEEP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "15",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 16,
+      "name": "TERRAIN_WATER_RIFT",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "25",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "40",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "80",
+        "ENV_MATERIALS": "1200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "120",
+        "ENV_MATERIALS": "2400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 17,
+      "name": "TERRAIN_WATER_TRENCH",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 18,
+      "name": "TERRAIN_WATER_VOLCANO",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "45",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "900",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "2000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "50",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "100",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "150",
+        "ENV_MATERIALS": "2800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 19,
+      "name": "TERRAIN_SPACE",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "5",
+        "ENV_FREIGHT": "2",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_GENETIC_TAILORING"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_TELEPORTATION"
+      }
+    },
+    {
+      "index": 20,
+      "name": "TERRAIN_WATER_SHELF",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 21,
+      "name": "TERRAIN_WATER_BEACH",
+      "ENV_BASE": {
+        "ENV_SCORE": "12",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 22,
+      "name": "TERRAIN_DEAD",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 23,
+      "name": "TERRAIN_DEAD_HILL",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    }
+  ],
+  "CTP-proef": [
+    {
+      "index": 0,
+      "name": "TERRAIN_FOREST",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 1,
+      "name": "TERRAIN_PLAINS",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 2,
+      "name": "TERRAIN_TUNDRA",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 3,
+      "name": "TERRAIN_GLACIER",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "500",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 4,
+      "name": "TERRAIN_GRASSLAND",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 5,
+      "name": "TERRAIN_DESERT",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 6,
+      "name": "TERRAIN_SWAMP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "300",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 7,
+      "name": "TERRAIN_JUNGLE",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 8,
+      "name": "TERRAIN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 9,
+      "name": "TERRAIN_BROWN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 10,
+      "name": "TERRAIN_WHITE_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 11,
+      "name": "TERRAIN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 12,
+      "name": "TERRAIN_BROWN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 13,
+      "name": "TERRAIN_WHITE_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 14,
+      "name": "TERRAIN_WATER_SHALLOW",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 15,
+      "name": "TERRAIN_WATER_DEEP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "15",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 16,
+      "name": "TERRAIN_WATER_RIFT",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "25",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "40",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "80",
+        "ENV_MATERIALS": "1200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "120",
+        "ENV_MATERIALS": "2400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 17,
+      "name": "TERRAIN_WATER_TRENCH",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 18,
+      "name": "TERRAIN_WATER_VOLCANO",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "45",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "900",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "2000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "50",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "100",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "150",
+        "ENV_MATERIALS": "2800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 19,
+      "name": "TERRAIN_SPACE",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "5",
+        "ENV_FREIGHT": "2",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_GENETIC_TAILORING"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_TELEPORTATION"
+      }
+    },
+    {
+      "index": 20,
+      "name": "TERRAIN_WATER_SHELF",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 21,
+      "name": "TERRAIN_WATER_BEACH",
+      "ENV_BASE": {
+        "ENV_SCORE": "12",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 22,
+      "name": "TERRAIN_DEAD",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 23,
+      "name": "TERRAIN_DEAD_HILL",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    }
+  ],
+  "CTP-AAIP": [
+    {
+      "index": 0,
+      "name": "TERRAIN_FOREST",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 1,
+      "name": "TERRAIN_PLAINS",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 2,
+      "name": "TERRAIN_TUNDRA",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 3,
+      "name": "TERRAIN_GLACIER",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "500",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 4,
+      "name": "TERRAIN_GRASSLAND",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 5,
+      "name": "TERRAIN_DESERT",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURE"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_AGRICULTURAL_REVOLUTION"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_INTELLIGENT_MATERIALS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "1600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 6,
+      "name": "TERRAIN_SWAMP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "300",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 7,
+      "name": "TERRAIN_JUNGLE",
+      "ENV_BASE": {
+        "ENV_SCORE": "84",
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "300",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 8,
+      "name": "TERRAIN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 9,
+      "name": "TERRAIN_BROWN_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 10,
+      "name": "TERRAIN_WHITE_MOUNTAIN",
+      "ENV_BASE": {
+        "ENV_SCORE": "83",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MOVEMENT": "400",
+        "ENV_FREIGHT": "600",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "1",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "15",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "45",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 11,
+      "name": "TERRAIN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "24",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 12,
+      "name": "TERRAIN_BROWN_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 13,
+      "name": "TERRAIN_WHITE_HILL",
+      "ENV_BASE": {
+        "ENV_SCORE": "20",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "200",
+        "ENV_FREIGHT": "200",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_MINING"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "20",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ELECTRICITY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 14,
+      "name": "TERRAIN_WATER_SHALLOW",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 15,
+      "name": "TERRAIN_WATER_DEEP",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "15",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 16,
+      "name": "TERRAIN_WATER_RIFT",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "25",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "40",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "80",
+        "ENV_MATERIALS": "1200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "120",
+        "ENV_MATERIALS": "2400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 17,
+      "name": "TERRAIN_WATER_TRENCH",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "300",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "700",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 18,
+      "name": "TERRAIN_WATER_VOLCANO",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "5",
+        "ENV_SHIELD": "45",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "10",
+        "ENV_MATERIALS": "400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "30",
+        "ENV_MATERIALS": "900",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "50",
+        "ENV_MATERIALS": "2000",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "50",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "100",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ULTRAPRESSURE_MACHINERY"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_SHIELD": "150",
+        "ENV_MATERIALS": "2800",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SEA"
+      }
+    },
+    {
+      "index": 19,
+      "name": "TERRAIN_SPACE",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "5",
+        "ENV_FREIGHT": "2",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "20",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "40",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "60",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_GENETIC_TAILORING"
+      },
+      "ENV_MINE1": {
+        "ENV_GOLD": "5",
+        "ENV_SHIELD": "30",
+        "ENV_MATERIALS": "600",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SPACE_COLONIES"
+      },
+      "ENV_MINE2": {
+        "ENV_GOLD": "10",
+        "ENV_SHIELD": "60",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ASTEROID_MINING"
+      },
+      "ENV_MINE3": {
+        "ENV_GOLD": "15",
+        "ENV_SHIELD": "90",
+        "ENV_MATERIALS": "2200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_TELEPORTATION"
+      }
+    },
+    {
+      "index": 20,
+      "name": "TERRAIN_WATER_SHELF",
+      "ENV_BASE": {
+        "ENV_SCORE": "0",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "10",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 21,
+      "name": "TERRAIN_WATER_BEACH",
+      "ENV_BASE": {
+        "ENV_SCORE": "12",
+        "ENV_GOLD": "5",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "10",
+        "ENV_SHIELD": "5",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "33",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      },
+      "ENV_IRR1": {
+        "ENV_FOOD": "5",
+        "ENV_MATERIALS": "200",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_SHIP_BUILDING"
+      },
+      "ENV_IRR2": {
+        "ENV_FOOD": "15",
+        "ENV_MATERIALS": "500",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_OCEAN_FARING"
+      },
+      "ENV_IRR3": {
+        "ENV_FOOD": "25",
+        "ENV_MATERIALS": "1400",
+        "ENV_TIME": "2",
+        "ENV_ADVANCE": "ADVANCE_ROBOTICS"
+      }
+    },
+    {
+      "index": 22,
+      "name": "TERRAIN_DEAD",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    },
+    {
+      "index": 23,
+      "name": "TERRAIN_DEAD_HILL",
+      "ENV_BASE": {
+        "ENV_GOLD": "0",
+        "ENV_DEAD_GOLD": "0",
+        "ENV_FOOD": "0",
+        "ENV_SHIELD": "0",
+        "ENV_MOVEMENT": "100",
+        "ENV_FREIGHT": "100",
+        "ENV_MATERIALS": "0",
+        "ENV_TIME": "0",
+        "ENV_DEFENSE": "0.5",
+        "ENV_DEAD_FOOD": "0",
+        "ENV_DEAD_SHIELD": "0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+﻿{
+  "binary_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "checks": [
+    {
+      "case": "absent_fields_retain",
+      "expected": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "absent_fields_retain.aip"
+      },
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "absent_fields_retain.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "scalar_overwrite",
+      "expected": {
+        "troops": 444.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "scalar_overwrite.aip"
+      },
+      "actual": {
+        "troops": 444.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "scalar_overwrite.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "unit_block_replaced",
+      "expected": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805437440,
+        "unit_count": 3,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "unit_block_replaced.aip"
+      },
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805437440,
+        "unit_count": 3,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "unit_block_replaced.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "growth_defense_independent",
+      "expected": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805449728,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "growth_defense_independent.aip"
+      },
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805449728,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "growth_defense_independent.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "research_list_replaced",
+      "expected": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "research_list_replaced.aip"
+      },
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "research_list_replaced.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "explicit_empty_growth",
+      "expected": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805457920,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "explicit_empty_growth.aip"
+      },
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805457920,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "explicit_empty_growth.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "goal_limit_exception",
+      "source": 0.0,
+      "present": true,
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": 0.0,
+        "exec_settle": 0.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "limits.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "goal_limit_exception",
+      "source": -30.0,
+      "present": true,
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -30.0,
+        "exec_settle": -30.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "limits.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "goal_limit_exception",
+      "source": -999999.0,
+      "present": true,
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "limits.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "goal_limit_exception",
+      "source": 0.0,
+      "present": false,
+      "actual": {
+        "troops": 111.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805372672,
+        "defense": 805373952,
+        "advances": 805374976,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "limits.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "last_present_writer_wins",
+      "actual": {
+        "troops": 555.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "second.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "actions_in_list_order_true_only",
+      "loads": [
+        "first.aip",
+        "second.aip"
+      ],
+      "actual": {
+        "troops": 555.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "second.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "next_section_no_load_retains",
+      "loads": [],
+      "actual": {
+        "troops": 555.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "second.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "missing_or_case_mismatch_noop",
+      "request": "unknown.aip",
+      "actual": {
+        "troops": 555.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "second.aip"
+      },
+      "ok": true
+    },
+    {
+      "case": "missing_or_case_mismatch_noop",
+      "request": "First.aip",
+      "actual": {
+        "troops": 555.0,
+        "buildings": 222.0,
+        "unit_classes": 805371904,
+        "unit_count": 7,
+        "wonder": 805372160,
+        "growth": 805445632,
+        "defense": 805373952,
+        "advances": 805453824,
+        "eval_settle": -80.0,
+        "exec_settle": -5.0,
+        "eval_retreat": -999999.0,
+        "exec_retreat": -999999.0,
+        "name": "second.aip"
+      },
+      "ok": true
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "limitations": [
+    "Synthetic pre-parsed objects, not real AIP parser/files.",
+    "No fuzzy rules in FireRules; fixed symbol values.",
+    "OS/log/init callbacks stubbed; destination list ownership bits zero.",
+    "No savegame/app/gameplay run; no unit list contents dereferenced."
+  ]
+}

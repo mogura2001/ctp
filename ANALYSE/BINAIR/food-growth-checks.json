@@ -1,0 +1,464 @@
+{
+  "binary_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "original_range": "494fde..49522c",
+  "checks": 24,
+  "failures": 0,
+  "cases": [
+    {
+      "initial_population": 1,
+      "silo": false,
+      "initial_growth_food": 164,
+      "surplus": 10,
+      "expected": {
+        "population": 1,
+        "growth_food": 174,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 1,
+        "growth_food": 174,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": false,
+      "initial_growth_food": 165,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": false,
+      "initial_growth_food": 188,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": false,
+      "initial_growth_food": 690,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 525,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 525,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": true,
+      "initial_growth_food": 164,
+      "surplus": 10,
+      "expected": {
+        "population": 1,
+        "growth_food": 174,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 1,
+        "growth_food": 174,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": true,
+      "initial_growth_food": 165,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": true,
+      "initial_growth_food": 188,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 1,
+      "silo": true,
+      "initial_growth_food": 690,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 175,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": false,
+      "initial_growth_food": 339,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 349,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 349,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": false,
+      "initial_growth_food": 340,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": false,
+      "initial_growth_food": 363,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": false,
+      "initial_growth_food": 1040,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 700,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 700,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": true,
+      "initial_growth_food": 339,
+      "surplus": 10,
+      "expected": {
+        "population": 2,
+        "growth_food": 349,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 2,
+        "growth_food": 349,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": true,
+      "initial_growth_food": 340,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": true,
+      "initial_growth_food": 363,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 2,
+      "silo": true,
+      "initial_growth_food": 1040,
+      "surplus": 10,
+      "expected": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 3,
+        "growth_food": 262,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": false,
+      "initial_growth_food": 689,
+      "surplus": 10,
+      "expected": {
+        "population": 4,
+        "growth_food": 699,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 4,
+        "growth_food": 699,
+        "food_buffer": 0,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": false,
+      "initial_growth_food": 690,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 0,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": false,
+      "initial_growth_food": 713,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 23,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": false,
+      "initial_growth_food": 1740,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 1050,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 1050,
+        "food_buffer": 0,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": true,
+      "initial_growth_food": 689,
+      "surplus": 10,
+      "expected": {
+        "population": 4,
+        "growth_food": 699,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "actual": {
+        "population": 4,
+        "growth_food": 699,
+        "food_buffer": 10,
+        "growth_calls": 0
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": true,
+      "initial_growth_food": 690,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": true,
+      "initial_growth_food": 713,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    },
+    {
+      "initial_population": 4,
+      "silo": true,
+      "initial_growth_food": 1740,
+      "surplus": 10,
+      "expected": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "actual": {
+        "population": 5,
+        "growth_food": 437,
+        "food_buffer": 10,
+        "growth_calls": 1
+      },
+      "pass": true
+    }
+  ]
+}

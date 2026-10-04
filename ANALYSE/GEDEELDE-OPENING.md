@@ -54,7 +54,7 @@ Onderzoekslijst: Religion, daarna Theocracy, daarna een bewust samengestelde ver
 | Doelomvang bereikt | Settlerdruk verminderen, groei en ontwikkeling laten overnemen | Geen permanente blokkade van latere kolonisatie of verovering |
 | Uitzonderlijke Labyrinth-stad | Eén geschikte stad vrijstellen | AIP-lijsten bieden nog geen bewezen selectie van precies één bergproductiestad |
 
-Maak geen volledige AIP kopie voor elke dreiging. Streef naar een gemeenschappelijke basis met beperkte uitzonderingen, maar bevestig eerst hoe gedeeltelijke AIP-loads samensmelten. Alleen 'het openingsprofiel als laatste laden' kan veiligheidsinstellingen opnieuw overschrijven. Leg per profiel vast welke velden het mag vervangen.
+Maak geen volledige AIP kopie voor elke dreiging. Streef naar een gemeenschappelijke basis met beperkte uitzonderingen en gebruik de inmiddels bewezen [AIP-laadwerking](AIP-LAADWERKING.md): scalars bij aanwezigheid, unitklassen als heel blok, gebouw-/onderzoekslijsten afzonderlijk vervangen. Alleen 'het openingsprofiel als laatste laden' kan veiligheidsinstellingen opnieuw overschrijven. Leg per profiel vast welke velden het mag vervangen; ontbrekende onderdelen verdwijnen niet vanzelf tussen beurten.
 
 ## Eerste proef bewust begrenzen
 
@@ -65,12 +65,14 @@ Behoud oorspronkelijke spelregels en tijdslimieten bij vergelijking. AAIP verand
 ## Validatie vóór en tijdens de eerste proef
 
 1. Controleer voor alle normale persoonlijkheden de actieve includes en ieder profiel dat onderzoeks-/bouwlijsten kan schrijven. Verifieer dat barbaren ongewijzigd blijven.
-2. Bevestig eenheidsquota, gedeeltelijke overrides, governmentrangorde en script-/FLI-inlezen bij applicatiestart. Geen statische succesclaim voor runtimegedrag.
+2. Hergebruik bewezen quota en gedeeltelijke AIP-overrides; volg nog governmentrangorde en overige script-/FLI-laadcondities. Voor AIPs is de bewezen diskgrens manageropbouw/-vrijgave, niet elke beurt of losse load. Geen statische succesclaim voor runtimegedrag.
 3. Maak een vaste Deity-start en een uitgangsmeting zonder eigen queue-script. Log instellingen, persoonlijkheden en toegepaste bestandsversie.
 4. Controleer de nieuwe regels bij 1, 5, 10, 25, 29 en 30 steden; dit zijn testgevallen, geen beweerde reeds aanwezige saves. Controleer vrede, oorlog en gelukrem afzonderlijk.
 5. Observeer Religion/Theocracy-keuze, werkelijke regering, settlers onderweg, stedental, legerlast en bouwkeuzes. Een gewenste output is geen bewezen actie.
 6. Vergelijk turn25/50/100 en stichtingsbeurt stad25/30. Controleer stadsverlies en economische schade. Noteer specifiek of de AI bij faseovergang nog buiten Theocracy zit.
 
 ## Eerstvolgende concrete werkzaamheden
+
+De veldmatrix en het onderzoek naar de betekenis van negatieve quota staan inmiddels in [QUOTA-EN-OVERRIDES.md](QUOTA-EN-OVERRIDES.md). De hypothese 'negatief = vast rijksaantal' blijft onbewezen; de matrix maakt concreet welke modes dezelfde beleidsvelden schrijven.
 
 Maak een veldmatrix voor alle bouw-/onderzoeksoverrides en verduidelijk negatieve quota. Ontwerp daarna de kleinste werkversiewijziging met exclusieve governmentregels, gezamenlijke onderzoekslijst en een apart stadsantalcriterium. De exacte Theocracy-terugmelding en Labyrinth-stad blijven expliciet open; geen ongeteste fictieve engine-inputs of claim van volledige stadsspecialisatie.
