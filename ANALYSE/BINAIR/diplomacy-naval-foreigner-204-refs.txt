@@ -1,0 +1,97 @@
+﻿??0Foreigner@@QAE@J@Z
+0x2000985e mov dword ptr [esi + 0xb4], edi
+0x20009864 mov dword ptr [esi + 0x1ec], edi
+0x2000986a mov dword ptr [esi + 0x1f4], edi
+0x20009870 mov dword ptr [esi + 0x1fc], edi
+0x20009876 mov dword ptr [esi + 0x200], edi
+0x2000987c mov dword ptr [esi + 0x204], edi
+0x20009882 mov eax, esi
+0x20009884 pop edi
+0x20009885 pop esi
+0x20009886 mov dword ptr fs:[0], ecx
+?Serialize@Foreigner@@QAEXAAVCivArchive@@@Z
+0x2000a411 push 8
+0x2000a413 push edx
+0x2000a414 push esi
+0x2000a415 mov dword ptr [ebp - 0x24], eax
+0x2000a418 call dword ptr [ecx + 0xc]
+0x2000a41b mov eax, dword ptr [edi + 0x204]
+0x2000a421 mov ecx, dword ptr [esi]
+0x2000a423 lea edx, [ebp + 8]
+0x2000a426 push 4
+0x2000a428 push edx
+?Serialize@Foreigner@@QAEXAAVCivArchive@@@Z
+0x2000aed7 push eax
+0x2000aed8 push esi
+0x2000aed9 call dword ptr [edx + 0x10]
+0x2000aedc mov ecx, dword ptr [ebp + 8]
+0x2000aedf push 0x54
+0x2000aee1 mov dword ptr [edi + 0x204], ecx
+0x2000aee7 call 0x20026b50
+0x2000aeec add esp, 4
+0x2000aeef mov dword ptr [edi + 0x48], eax
+0x2000aef2 mov edx, dword ptr [esi]
+?UpdateMiscInfo@Foreigner@@QAEXPAVAiMain@@@Z
+0x2000bb5f push edx
+0x2000bb60 push edi
+0x2000bb61 push eax
+0x2000bb62 call dword ptr [ecx + 0x1c4]
+0x2000bb68 cmp eax, ebx
+0x2000bb6a mov dword ptr [edi + 0x204], eax
+0x2000bb70 je 0x2000bb7c
+0x2000bb72 mov dword ptr [esi + 0x13c], 1
+0x2000bb7c pop edi
+0x2000bb7d pop esi
+?AttackedByMe@Foreigner@@QAEXXZ
+0x2000c6fc fnstsw ax
+0x2000c6fe test ah, 0x41
+0x2000c701 je 0x2000c70d
+0x2000c703 mov dword ptr [ecx + 0x68], edx
+0x2000c706 mov dword ptr [ecx + 0x6c], 0x40330000
+0x2000c70d mov dword ptr [ecx + 0x204], edx
+0x2000c713 ret 
+0x2000c714 nop 
+0x2000c715 nop 
+0x2000c716 nop 
+?HotwarAttackedMe@Foreigner@@QAEXPAVAiMain@@N@Z
+0x2000c79d je 0x2000c7a5
+0x2000c79f mov dword ptr [esi + 0x68], ecx
+0x2000c7a2 mov dword ptr [esi + 0x6c], edx
+0x2000c7a5 mov dword ptr [esi + 0x70], ecx
+0x2000c7a8 mov dword ptr [esi + 0x78], ecx
+0x2000c7ab mov dword ptr [esi + 0x204], ecx
+0x2000c7b1 mov dword ptr [esi + 0x74], ecx
+0x2000c7b4 mov dword ptr [esi + 0x7c], ecx
+0x2000c7b7 pop esi
+0x2000c7b8 pop ebp
+?HeBrokeCeaseFire@Foreigner@@QAEXXZ
+0x2000ccc9 test ah, 1
+0x2000cccc je 0x2000ccd8
+0x2000ccce mov dword ptr [ecx + 0x68], edx
+0x2000ccd1 mov dword ptr [ecx + 0x6c], 0x402e0000
+0x2000ccd8 mov dword ptr [ecx + 0x70], edx
+0x2000ccdb mov dword ptr [ecx + 0x204], edx
+0x2000cce1 mov dword ptr [ecx + 0x74], edx
+0x2000cce4 ret 
+0x2000cce5 nop 
+0x2000cce6 nop 
+?HeBrokeAlliance@Foreigner@@QAEXXZ
+0x2000cd27 fnstsw ax
+0x2000cd29 test ah, 0x41
+0x2000cd2c je 0x2000cd38
+0x2000cd2e mov dword ptr [ecx + 0x68], edx
+0x2000cd31 mov dword ptr [ecx + 0x6c], 0x40330000
+0x2000cd38 mov dword ptr [ecx + 0x204], edx
+0x2000cd3e ret 
+0x2000cd3f nop 
+?RegisterAgreementAgainstMe@Foreigner@@QAEXN@Z
+0x2000d8b7 fnstsw ax
+0x2000d8b9 test ah, 0x41
+0x2000d8bc je 0x2000d8c8
+0x2000d8be mov dword ptr [ecx + 0x68], edx
+0x2000d8c1 mov dword ptr [ecx + 0x6c], 0x40330000
+0x2000d8c8 mov dword ptr [ecx + 0x204], edx
+0x2000d8ce pop ebp
+0x2000d8cf ret 8
+0x2000d8d2 nop 
+0x2000d8d3 nop 

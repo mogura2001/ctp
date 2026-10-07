@@ -1,0 +1,134 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "limitations": "Original happiness components; synthetic cities, armies and building records.\n\nGovernment/unitpool/record lookups, location/World army lookup and detail UI are\nmocks. Military flag getter, government getters and complete garrison component\nexecute original code. Caller cap is a valid internal range with explicit caller\nregisters. Building functions execute original loops; wonder percentages and\n64-bit shift are mocks. These are not full happiness updates or game turns.\n",
+  "checks": [
+    {
+      "name": "garrison_empty",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "garrison_one",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "garrison_mixed",
+      "got": 2.0,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "garrison_theocracy_cap",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "garrison_tyranny_cap",
+      "got": 4.0,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "garrison_none_allowed",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "garrison_fascism",
+      "got": 4.0,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "cap_74",
+      "got": [
+        75.0,
+        1
+      ],
+      "expected": [
+        75,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "name": "cap_79.5",
+      "got": [
+        80.0,
+        1
+      ],
+      "expected": [
+        80,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "name": "cap_80",
+      "got": [
+        80.0,
+        0
+      ],
+      "expected": [
+        80,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "cap_85",
+      "got": [
+        85.0,
+        0
+      ],
+      "expected": [
+        85,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "buildings_(0, 0)",
+      "got": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "buildings_(1, 0)",
+      "got": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "buildings_(3, 0)",
+      "got": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "buildings_(4, 0)",
+      "got": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "buildings_(4, 1)",
+      "got": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "buildings_(7, 1)",
+      "got": 8,
+      "expected": 8,
+      "passed": true
+    }
+  ],
+  "passed": 17,
+  "total": 17
+}

@@ -1,0 +1,1206 @@
+/////////////////////////////////////////////////////////////////////////////// // scifew.aip
+// // 
+// // scifew.aip
+// // 
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"   
+    
+    
+// PRIORITIES  
+//  
+// Although these priorities should be principally set by the fuzzy system,  
+// for testing purposes, I've put the ability specify any or all of them to  
+// be changed in a big fat wad when the AIP switches.  
+    
+double seige_priority = 405000.0; 
+double attack_troops_priority = 405000.0; 
+double bombard_priority = 407000.0; 
+double perimeter_priority = 5000.0; 
+double patrol_priority = 5000.0; 
+double harass_priority = 7000.0; 
+double expel_priority = 7000.0; 
+double chokepoint_priority = 1000.0; 
+/// begin special unit bids  
+double enslave_priority = 00.0; 
+// MODIFIERS   
+    
+    
+// Raw Priority  
+double max_threat_raw_bonus = 1000.0; 
+double distance_from_home_priority_modifier = 500.0; 
+double distance_from_enemy_priority_modifier = 250.0; 
+double max_chokepoint_raw_bonus = 1000.0; 
+double random_modifier = 10.0; 
+double max_power_raw_bonus = 1000.0; 
+double max_value_raw_bonus = 1000.0; 
+double danger_diminishment = 0.5; 
+double max_danger_raw_bonus = 1000.0; 
+    
+// Some city based goals will make the priority higher for bigger cities  
+double per_capita_modifier = 500.0; 
+    
+// Some city based goals will make the priority higher closer threats  
+double threat_proximity_modifier = 1000.0; 
+    
+// Unit specific modifiers  
+double max_misc_bid_bonus = 1000.0; 
+    
+// modifier of raw priority computed by fuzzy system  
+//  (1.0 = 100% of fuzzy system computed value)  
+    
+// If a particular type of goal prefers (but does not demand) some type  
+// of unit, add this to the priority  
+    
+    
+    
+    
+    
+    
+// FORCE MATCHING  
+    
+// MAX GOALS PER CITY  
+//  
+// These values are used for an AI team to define the maximum number of each  
+// type of goal to consider in a given round.  The number is defined per city  
+// in the empire, so if the empire had 10 cities, and MAX_ATTACK_GOALS was  
+// 0.5, we'd only allow 5 attacks per round  
+#define MAX_EVAL_DEFENSE_GOALS 5 
+#define MAX_EVAL_SEIGE_GOALS 0.5 
+#define MAX_EVAL_EXPLORE_GOALS -15 
+   
+#define MAX_EXEC_SEIGE_GOALS -3 
+   
+   
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// New Units Build List Stuff  
+//  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// The Build Data  
+//  
+// This specifies a number of lists, from each of which EXACTLY ONE type of  
+// unit will try to get built (in whatever quantity is specified)  
+// Troops_Primary take precedence over Improvements and Wonders.  
+// Troops_Core are interleaved with Improvements and Wonders. Wonders  
+// score just over 8000, Improvements just under 8000. The Troops_Core  
+// score is doubled for the first unit then bonus and given as is for the last  
+// requested unit, so bids over 4000 drown out buildings for part of the build list.  
+// Unit bids over 8000 drown out all buildings and wonders until fulfilled.  
+Build_List_Class Build_List_Classes[MAX_BUILD_LISTS];  
+#DATA  
+//LIST NAME PRIORITY  
+//----------------------------------------------------  
+"Land_Settler_Troops_Primary", 10500.0; 
+"Sea_Settler_Troops_Primary", 11000.0; 
+"Space_Settler_Troops_Primary", 11000.0; 
+"Scout_Troops_Primary", 25000.0; 
+"Land_Troops_Primary", 6000.0; 
+"Land_Strike_Troops_Primary", 6000.0; 
+"Land_Ranged_Troops_Primary", 6000.0; 
+"Sea_Troops_Primary", 5000.0; 
+"Air_Defender_Troops_Primary", 10000.0; 
+"Space_Defense_Troops_Primary", 10000.0; 
+// END PRIMARY  
+"Settler_Troops_Core", 3500.0; 
+"Slaver_Troops_Core", 6001; 
+"Abolitionist_Troops_Core", 6001; 
+"Diplomatic_Troops_Core", 4500.0; 
+"Scout_Troops_Core", 2900.0; 
+"Spy_Troops_Core", 4500.0; 
+"Infector_Troops_Core", 4500.0; 
+"Ecoterrorist_Troops_Core", 4500.0; 
+"Defend_Troops_Core", 3500.0; 
+"Assault_Troops_Core", 3500.0; 
+"Ranged_Troops_Core", 3500.0; 
+"Naval_Attack_Troops_Core", 1750.0; 
+"Naval_Defense_Troops_Core", 1750.0; 
+"Naval_Tranport_Troops_Core", 4501.0; 
+"Carrier_Naval_Transport_Troops_Core", 1650.0; 
+"Naval_Stealth_Troops_Core", 1750.0; 
+"Air_Attack_Troops_Core", 2000.0; 
+"Air_Bomber_Troops_Core", 2000.0; 
+"Air_Defender_Troops_Core", 2000.0; 
+"Space_Assault_Troops_Core", 2000.0; 
+"Space_Defense_Troops_Core", 2000.0; 
+"Space_Bomber_Troops_Core", 2000.0; 
+"Nuke_Troops_Core", 4500.0; 
+"Lawyer_Troops_Core", 5000.0; 
+"Branch_Troops_Core", 4500.0; 
+"Ad_Troops_Core", 4500.0; 
+"Terror_Troops_Core", 4500.0; 
+// END CORE  
+"Settler_Troops_Overflow", 3000.0; 
+"Cow_Troops_Overflow", 0.1; 
+"Slaver_Troops_Overflow", 1500.0; 
+"Scout_Troops_Overflow", 1500.0; 
+"Defend_Troops_Overflow", 1500.0; 
+"Assault_Troops_Overflow", 1500.0; 
+"Ranged_Troops_Overflow", 1500.0; 
+"Naval_Attack_Troops_Overflow", 1000.0; 
+"Naval_Defense_Troops_Overflow", 1000.0; 
+"Naval_Tranport_Troops_Overflow", 1000.0; 
+"Naval_Stealth_Troops_Overflow", 1000.0; 
+"Air_Attack_Troops_Overflow", 1000.0; 
+"Air_Bomber_Troops_Overflow", 1000.0; 
+"Air_Defender_Troops_Overflow", 1000.0; 
+"Space_Assault_Troops_Overflow", 1000.0; 
+"Space_Defense_Troops_Overflow", 1000.0; 
+"Space_Bomber_Troops_Overflow", 1000.0; 
+"Nuke_Troops_Overflow", 1000.0; 
+"Terror_Troops_Overflow", 1000.0; 
+"Wormhole_Probe_Troops", 100000.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// LIST NOTES.  
+//   
+// For each line item in a list, you need to specify a different number of  
+// units per city  
+//  
+///////////////////////////////////////////////////////////////////////////////  
+///////////////////////////////////////////////////////////////////////////////  
+// Land_Settler_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Land_Settler_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SETTLER", -2;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Sea_Settler_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Sea_Settler_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SEA_ENGINEER", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Settler_Troops_Primary  -- Sea Settler  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Settler_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SPACE_ENGINEER", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Scout_Troops_Primary   
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Scout_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_HOPLITE",  -2.0;
+      "UNIT_WARRIOR",  -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Land_Troops_Primary   
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Land_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_WARRIOR", 1.0;
+ "UNIT_HOPLITE", 1.0;
+ "UNIT_PIKEMEN", 2.0;
+ "UNIT_MUSKETEERS", 2.5;
+ "UNIT_MACHINE_GUNNER", 1.0;
+ "UNIT_PLASMATICA", 1.0;
+ "UNIT_LEVIATHAN", 0.1;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Land_Strike_Troops_Primary   
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Land_Strike_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_LEGION", 0.5;
+ "UNIT_SAMURAI", 0.5;
+ "UNIT_KNIGHT", 0.5;
+ "UNIT_CAVALRY", 0.5;
+ "UNIT_TANK", 0.5;
+ "UNIT_FUSION_TANK", 1.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Land_Ranged_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Land_Ranged_Troops_Primary[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_GREEK_FIRE", 0.5;
+ "UNIT_CANNON", 1.5;
+ "UNIT_ARTILLERY", 1.0;
+ "UNIT_BATTLEBOT", 1.25;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Sea_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Sea_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_TRIREMES", -1.0;
+ "UNIT_LONGSHIP", -2.0;
+ "UNIT_SHIP_OF_THE_LINE", -2.0;
+ "UNIT_DESTROYER", -2.0;
+ "UNIT_PLASMA_DESTROYER", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Defender_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Defender_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_FIGHTER", -3.0;
+ "UNIT_INTERCEPTORS", -3.0;
+ "UNIT_STEALTH_FIGHTER", -3.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Defense_Troops_Primary  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Defense_Troops_Primary[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_STEALTH_FIGHTER", -1.0;
+ "UNIT_BATTLE_CRUISER", -1.0;
+#END_DATA  
+///////////////////////////////  
+/// END PRIMARY LISTS  
+///////////////////////////////  
+///////////////////////////////////////////////////////////////////////////////  
+// Settler_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Settler_Troops_Core[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SETTLER", -1.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Slaver_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Slaver_Troops_Core[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_DIPLOMAT", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Abolitionist_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Abolitionist_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_ABOLITIONIST", -3.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Diplomatic_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Diplomatic_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_DIPLOMAT", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Scout_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Scout_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_CHARIOT", -3.0;
+ "UNIT_SPY_PLANE", -3.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Spy_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Spy_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SPY", -3.0;
+ "UNIT_CYBER_NINJA", -3.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Infector_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Infector_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_INFECTOR", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Ecoterrorist_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Ecoterrorist_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_ECOTERRORIST", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Defend_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Defend_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_HOPLITE", 1.0;
+ "UNIT_PIKEMEN", 1.0;
+ "UNIT_MUSKETEERS", 1.0;
+ "UNIT_MACHINE_GUNNER", 1.0;
+ "UNIT_PARATROOPER", 1.0;
+ "UNIT_MARINES", 0.75;
+ "UNIT_PLASMATICA", 0.25;
+ "UNIT_LEVIATHAN", 0.75;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Assault_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Assault_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SAMURAI", 0.5;
+ "UNIT_KNIGHT", 0.5;
+ "UNIT_CAVALRY", 0.5;
+ "UNIT_TANK", 0.7;
+ "UNIT_PARATROOPER", 0.5;
+ "UNIT_MARINES", 0.5;
+ "UNIT_FUSION_TANK", 0.5;
+ "UNIT_SWARM", 0.25;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Ranged_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Ranged_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_GREEK_FIRE", 0.75;
+ "UNIT_CANNON", 0.75;
+ "UNIT_ARTILLERY", 0.75;
+ "UNIT_BATTLEBOT", 0.75;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Attack_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Attack_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_TRIREMES", 0.15;
+ "UNIT_GREEK_FIRE_TRIREME", 0.15;
+ "UNIT_LONGSHIP", 0.15;
+ "UNIT_SHIP_OF_THE_LINE", 0.15;
+ "UNIT_BATTLESHIP", 0.15;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Defense_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Defense_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_DESTROYER", 0.5;
+ "UNIT_PLASMA_DESTROYER", 0.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Transport_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Tranport_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_TROOP_SHIP", 0.5;
+ "UNIT_CRAWLER", 0.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Carrier_Naval_Transport_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Carrier_Naval_Transport_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_AIRCRAFT_CARRIER", 0.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Stealth_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Stealth_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SUBMARINE", 0.25;
+ "UNIT_STEALTH_SUB", 0.25;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Attack_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Attack_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_FIGHTER", 3.0;
+ "UNIT_INTERCEPTORS", 3.0;
+ "UNIT_STEALTH_FIGHTER", 3.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Bomber_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Bomber_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_BOMBER", 1.0;
+ "UNIT_STEALTH_BOMBER", 1.0;
+#END_DATA    
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Defender_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Defender_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_MOBILE_SAM", 1.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Assault_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Assault_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_BATTLE_CRUISER", -2.0;
+ "UNIT_STEALTH_FIGHTER", -8.0;
+ "UNIT_PHANTOM", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Defense_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Defense_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SPACE_MARINES", -15.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Bomber_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Bomber_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SPACE_BOMBER", -6.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Nuke_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Nuke_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_NUKE", -3.0;
+ "UNIT_PARK_RANGER", -1.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Lawyer_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Lawyer_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_LAWYER",  -10.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Branch_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Branch_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_CORPORATE_BRANCH", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Ad_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Ad_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SUBNEURAL_ADS", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Terror_Troops_Core  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Terror_Troops_Core[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_ECOTERRORIST", -3.0;
+ "UNIT_INFECTOR", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Settler_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Settler_Troops_Overflow[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SETTLER", -2.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Cow_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Cow_Troops_Overflow[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_WARRIOR", -1.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Slaver_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Slaver_Troops_Overflow[MAX_ELEMENTS];  
+   
+#DATA  
+//  
+//--------------------------------------------------------------------  
+      "UNIT_SLAVER", -1.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Scout_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Scout_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_WARRIOR", 0.75;
+ "UNIT_SPY", 0.1;
+ "UNIT_SPY_PLANE", 0.75;
+ "UNIT_ECOTERRORIST", 0.75;
+ "UNIT_INFECTOR", 0.75;
+ "UNIT_CYBER_NINJA", 0.75;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Defend_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Defend_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_LEGION", 3.0;
+ "UNIT_SAMURAI", 3.0;
+ "UNIT_KNIGHT", 3.0;
+ "UNIT_CAVALRY", 3.0;
+ "UNIT_TANK", 3.0;
+ "UNIT_PARATROOPER", 1.0;
+ "UNIT_MARINES", 3.0;
+ "UNIT_FUSION_TANK", 3.0;
+ "UNIT_SWARM", 1.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+// Assault_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Assault_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_KNIGHT", 3.0;
+ "UNIT_CAVALRY", 3.0;
+ "UNIT_TANK", 3.0;
+ "UNIT_PARATROOPER", 3.0;
+ "UNIT_MARINES", 3.0;
+ "UNIT_FUSION_TANK", 3.0;
+ "UNIT_SWARM", 3.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Ranged_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Ranged_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_GREEK_FIRE", 0.5;
+ "UNIT_CANNON", 3.0;
+ "UNIT_ARTILLERY", 3.0;
+ "UNIT_BATTLEBOT", 3.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Attack_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Attack_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_TRIREMES", 0.2;
+ "UNIT_GREEK_FIRE_TRIREME", 0.2;
+ "UNIT_LONGSHIP", 0.2;
+ "UNIT_SHIP_OF_THE_LINE", 0.2;
+ "UNIT_BATTLESHIP", -5.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Defense_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Defense_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_DESTROYER", 1.5;
+ "UNIT_PLASMA_DESTROYER", 1.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Transport_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Tranport_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_TRIREMES", 0.5;
+ "UNIT_TROOP_SHIP", 0.5;
+ "UNIT_AIRCRAFT_CARRIER", 0.5;
+ "UNIT_CRAWLER", 0.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Naval_Stealth_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Naval_Stealth_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SUBMARINE", 0.25;
+ "UNIT_STEALTH_SUB", 0.25;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Attack_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Attack_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_FIGHTER", 1.5;
+ "UNIT_INTERCEPTORS", 1.5;
+ "UNIT_STEALTH_FIGHTER", 1.5;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Bomber_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Bomber_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_BOMBER", 1.0;
+ "UNIT_STEALTH_BOMBER", 1.0;
+#END_DATA    
+///////////////////////////////////////////////////////////////////////////////  
+// Air_Defender_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Air_Defender_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_MOBILE_SAM", 1.0;
+#END_DATA       
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Assault_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Assault_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_BATTLE_CRUISER", -2.0;
+ "UNIT_STEALTH_FIGHTER", -8.0;
+ "UNIT_PHANTOM", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Defense_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Defense_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SPACE_MARINES", -15.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Space_Bomber_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Space_Bomber_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_SPACE_BOMBER", -6.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Nuke_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Nuke_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_NUKE", -3.0;
+ "UNIT_PARK_RANGER", -1.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Terror_Troops_Overflow  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Terror_Troops_Overflow[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "UNIT_ECOTERRORIST", -3.0;
+ "UNIT_INFECTOR", -3.0;
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+// Wormhole_Probe  
+//   
+// Defines the types of ground troops we want to be building  
+//  
+Build_List_Element Wormhole_Probe_Troops[MAX_ELEMENTS];  
+#DATA  
+ "UNIT_WORMHOLE_PROBE",  -2.0;
+//  
+//--------------------------------------------------------------------  
+#END_DATA     
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// New Building Build List Stuff  
+//  
+// There are a fixed number of lists here:  
+//  
+// Wonders_List  
+// Transportation_List  
+// Growth_List  
+// Happiness_List  
+// Production_List  
+// Gold_List  
+// Science_List  
+// Defense_List  
+// Miscellaneous_List  
+//  
+///////////////////////////////////////////////////////////////////////////////  
+// Production threshholds 1.0 = top dog and 0.0 = loser  
+double Wonders_List_Threshhold =  0.8; 
+double Transportation_List_Threshhold =  0.6; 
+double Growth_List_Threshhold =  0.2; 
+double Happiness_List_Threshhold =  0.2; 
+double Production_List_Threshhold = 0.4; 
+double Gold_List_Threshhold =  0.4; 
+double Science_List_Threshhold =  0.2; 
+double Defense_List_Threshhold =  0.2; 
+double Miscellaneous_List_Threshhold =  0.0; 
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Wonders_List  
+//   
+Building_Build_List_Element Wonder_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"WONDER_WORMHOLE_DETECTOR", 20000.0; 
+"WONDER_STONEHENGE", 10000.0; 
+"WONDER_SPHINX", 4000.0; 
+"WONDER_LABRYINTH_OF_THE_MINOTAUR", 10000.0; 
+"WONDER_RAYAMANA", 10000.0; 
+"WONDER_PARTHENON", 9100.0; 
+"WONDER_I_CHING", 4000.0; 
+"WONDER_THE_FORBIDDEN_CITY", 10000.0; 
+"WONDER_PHILOSOPHERS_STONE", 5000.0; 
+"WONDER_HAGIA_SOPHIA", 0.0; 
+"WONDER_GUTTENBERGS_BIBLE", 9100.0; 
+"WONDER_EAST_INDIA_COMPANY", 10000.0; 
+"WONDER_GALILEOS_TELESCOPE", 10000.0; 
+"WONDER_LONDON_STOCK_EXCHANGE", 9300.0; 
+"WONDER_EMANCIPATION_PROCLAMATION", 9100.0; 
+"WONDER_EDISONS_LAB", 10000.0; 
+"WONDER_HOLLYWOOD", 10000.0; 
+"WONDER_WORD_INTELLIGENCE_AGENCY", 9100.0; 
+"WONDER_INTERNET", 10000.0; 
+"WONDER_THE_PILL", 9100.0; 
+"WONDER_HUMAN_GENOME_PROJECT", 10000.0; 
+"WONDER_GLOBSAT", 9100.0; 
+"WONDER_STAR_LADDER", 9100.0; 
+"WONDER_GLOBAL_E_BANK", 9100.0; 
+"WONDER_DINOSAUR_PARK", 9100.0; 
+//"WONDER_WORLD_WILDERNESS_ACT", 9100.0; 
+"WONDER_GAIA_CONTROLLER", 9100.0; 
+"WONDER_AI_ENTITY", 9100.0; 
+"WONDER_EGALITARIAN_PROCLAMATION", 9100.0; 
+"WONDER_SENSORIUM", 9100.0; 
+"WONDER_NANITE_DEFUSER", 9100.0; 
+"WONDER_ESP_CENTER", 9100.0; 
+"WONDER_THE_PRIMER", 9100.0; 
+"WONDER_THE_IMMUNE_CELL_PROJECT", 9100.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Transportation_List  
+//   
+Building_Build_List_Element Transportation_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_AIRPORT", 7850.0; 
+"IMPROVE_RAIL_LAUNCHER", 7850.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Growth_List  
+//   
+Building_Build_List_Element Growth_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_SILO", 9000.0; 
+"IMPROVE_AQUEDUCT", 9000.0; 
+"IMPROVE_BEEF_VAT", 7930.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Happiness_List  
+//   
+Building_Build_List_Element Happiness_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "IMPROVE_MIND_CONTROL_EMITTER", 8999.0;
+ "IMPROVE_TEMPLE", 8999.0;
+ "IMPROVE_THEATER", 8999.0;
+ "IMPROVE_CIRCUS", 8999.0;
+ "IMPROVE_HOSPITAL", 7990.0;
+ "IMPROVE_CATHEDRAL", 8999.0;
+ "IMPROVE_MOVIE_PALACE", 8999.0;
+ "IMPROVE_DRUG_STORE", 8999.0;
+ "IMPROVE_WATER_TRANSFORMER", 8999.0;
+ "IMPROVE_BODY_EXCHANGE", 8999.0;
+ "IMPROVE_ARCOLOGIES", 8999.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Production_List  
+//   
+Building_Build_List_Element Production_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "IMPROVE_NANITE_FACTORY", 7990.0;
+ "IMPROVE_MILL", 7990.0;
+ "IMPROVE_FACTORY", 7990.0;
+ "IMPROVE_DRUG_STORE", 8999.0;
+ "IMPROVE_POPULATION_MONITOR", 8980.0; 
+ "IMPROVE_RECYCLING_PLANT", 9000.0;
+ "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+ "IMPROVE_FUSION_PLANT", 10000.0;
+ "IMPROVE_NUCLEAR_PLANT", 7990.0;
+ "IMPROVE_ROBOTIC_PLANT", 7990.0;
+ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Gold_List  
+//   
+Building_Build_List_Element Gold_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_BAZAAR", 7980.0; 
+"IMPROVE_BANK", 7980.0; 
+"IMPROVE_CITY_CLOCK", 7950.0; 
+"IMPROVE_TELEVISION", 7980.0; 
+"IMPROVE_AIRPORT", 7850.0; 
+"IMPROVE_HOUSE_OF_FREEZING", 8920.0; 
+"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7980.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Science_List  
+//   
+Building_Build_List_Element Science_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_ACADEMY", 7950.0; 
+"IMPROVE_UNIVERSITY", 7950.0; 
+"IMPROVE_LIBRARY", 7950.0; 
+"IMPROVE_COMPUTER_CENTER", 7950.0; 
+"IMPROVE_EMBEDDED_KNOWLEDGE_CHIP", 7950.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Defense_List  
+//   
+Building_Build_List_Element Defense_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_CITY_WALLS", 9950.0; 
+"IMPROVE_SDI", 7950.0; 
+"IMPROVE_BIO_WARFARE_FILTERS", 7950.0; 
+"IMPROVE_FORCEFIELD", 7950.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Miscellaneous_List  
+//   
+Building_Build_List_Element Miscellaneous_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_SILO", 8000.0; 
+"IMPROVE_CITY_WALLS", 7980.0; 
+"IMPROVE_BAZAAR", 8500.0; 
+"IMPROVE_COURTHOUSE", 7980.0; 
+"IMPROVE_POPULATION_MONITOR", 7980.0; 
+#END_DATA  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Advancements List  
+//  
+// Just specifies the order in which this civ will choose advances. (It chooses  
+// the highest one on the list that it can build!)  
+//  
+///////////////////////////////////////////////////////////////////////////////  
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Advancements_List  
+//   
+Advancement_Element Advancements_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "ADVANCE_SEA_COLONIES"; 
+ "ADVANCE_ARCOLOGIES"; 
+ "ADVANCE_ADVANCED_COMPOSITES"; 
+ "ADVANCE_FUEL_CELLS"; 
+ "ADVANCE_SUPERCONDUCTOR"; 
+ "ADVANCE_ASTRONOMY"; 
+ "ADVANCE_RELIGION"; 
+ "ADVANCE_AGRICULTURE"; 
+ "ADVANCE_SHIP_BUILDING"; 
+ "ADVANCE_TOOLMAKING"; 
+ "ADVANCE_DOMESTICATION"; 
+ "ADVANCE_STONE_WORKING"; 
+ "ADVANCE_BRONZE_WORKING"; 
+ "ADVANCE_MINING"; 
+ "ADVANCE_TRADE"; 
+ "ADVANCE_WRITING"; 
+ "ADVANCE_PHILOSOPHY"; 
+ "ADVANCE_JURISPRUDENCE"; 
+ "ADVANCE_CITY_STATE"; 
+ "ADVANCE_BUREAUCRACY"; 
+ "ADVANCE_ENGINEERING"; 
+ "ADVANCE_CLASSICAL_EDUCATION"; 
+ "ADVANCE_GEOMETRY"; 
+ "ADVANCE_AGRICULTURAL_REVOLUTION"; 
+ "ADVANCE_BANKING"; 
+ "ADVANCE_IRON_WORKING"; 
+ "ADVANCE_ALCHEMY"; 
+ "ADVANCE_GUNPOWDER"; 
+ "ADVANCE_OCEAN_FARING"; 
+ "ADVANCE_HULL_MAKING"; 
+ "ADVANCE_PRINTING_PRESS"; 
+ "ADVANCE_DEMOCRACY"; 
+ "ADVANCE_CORPORATION"; 
+ "ADVANCE_MONARCHY"; 
+ "ADVANCE_MECHANICAL_CLOCK"; 
+ "ADVANCE_INDUSTRIAL_REVOLUTION"; 
+ "ADVANCE_MACHINE_TOOLS"; 
+ "ADVANCE_CANNON_MAKING"; 
+ "ADVANCE_RAILROAD"; 
+ "ADVANCE_ELECTRICITY"; 
+ "ADVANCE_COMPUTER"; 
+ "ADVANCE_PERSPECTIVE"; 
+ "ADVANCE_EXPLOSIVES"; 
+ "ADVANCE_OIL_REFINING"; 
+ "ADVANCE_CHEMISTRY"; 
+ "ADVANCE_MEDICINE"; 
+ "ADVANCE_ECONOMICS"; 
+ "ADVANCE_NATIONALISM"; 
+ "ADVANCE_COMMUNISM"; 
+ "ADVANCE_AGE_OF_REASON"; 
+ "ADVANCE_PHARMACEUTICALS"; 
+ "ADVANCE_CONSUMER_ELECTRONICS"; 
+ "ADVANCE_AERODYNAMICS"; 
+ "ADVANCE_MASS_PRODUCTION"; 
+ "ADVANCE_PHYSICS"; 
+ "ADVANCE_OPTICS"; 
+ "ADVANCE_QUANTUM_MECHANICS"; 
+ "ADVANCE_ELECTRIFICATION"; 
+ "ADVANCE_TANK_WARFARE"; 
+ "ADVANCE_CAVALRY_TACTICS"; 
+ "ADVANCE_STIRRUP"; 
+ "ADVANCE_STEEL"; 
+ "ADVANCE_ROCKETRY"; 
+ "ADVANCE_JET_PROPULSION"; 
+ "ADVANCE_SPACE_FLIGHT"; 
+ "ADVANCE_ENVIRONMENTALISM"; 
+ "ADVANCE_GAIA_THEORY"; 
+ "ADVANCE_MULTINATIONAL_REPUBLIC"; 
+ "ADVANCE_GLOBAL_COMMUNICATIONS_NETWORK"; 
+ "ADVANCE_HUMAN_CLONING"; 
+ "ADVANCE_GENETIC_TAILORING"; 
+ "ADVANCE_GENETICS"; 
+ "ADVANCE_ROBOTICS"; 
+ "ADVANCE_WORMHOLES"; 
+ "ADVANCE_FUSION"; 
+ "ADVANCE_UNIFIED_FIELD_THEORY"; 
+ "ADVANCE_SPACE_COLONIES"; 
+ "ADVANCE_INTELLIGENT_MATERIALS"; 
+ "ADVANCE_ALIEN_ARCHEOLOGY"; 
+ "ADVANCE_AI_SURVEILLANCE"; 
+ "ADVANCE_CRYONICS"; 
+ "ADVANCE_ULTRAPRESSURE_MACHINERY"; 
+ "ADVANCE_ZERO_G_MANUFACTURING"; 
+ "ADVANCE_TECHNOCRACY"; 
+ "ADVANCE_VIRTUAL_DEMOCRACY"; 
+ "ADVANCE_NEURAL_SILICON_INTERFACE"; 
+ "ADVANCE_PERSONAL_ENCRYPTION"; 
+ "ADVANCE_ASTEROID_MINING"; 
+ "ADVANCE_NANOASSEMBLY"; 
+ "ADVANCE_LIFE_EXTENSION"; 
+ "ADVANCE_SUBNEURAL_ADS"; 
+ "ADVANCE_MIND_CONTROL"; 
+ "ADVANCE_FASCISM"; 
+ "ADVANCE_WILDERNESS_PRESERVATION_ACT"; 
+ "ADVANCE_GLOBAL_DEFENSE_INITIATIVE"; 
+ "ADVANCE_CLOAKING"; 
+ "ADVANCE_THEOCRACY"; 
+ "ADVANCE_ECOTOPIA"; 
+#END_DATA  

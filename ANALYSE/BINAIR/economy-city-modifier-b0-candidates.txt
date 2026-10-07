@@ -1,0 +1,7 @@
+Original engine; field+0xb0 candidates, object identity requires caller binding.
+004a9df7 mov dword ptr [esi + 0xb0], edi
+004aa3cc mov edx, dword ptr [eax + 0xb0]
+004aa3d2 mov dword ptr [ecx + 0xb0], edx
+004ab0a9 mov dword ptr [esi + 0xb0], eax
+004ab0bc mov dword ptr [esi + 0xb0], ebx
+004ab0d7 fld qword ptr [esi + 0xb0]

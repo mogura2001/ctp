@@ -1,0 +1,248 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "limitations": "Original engine fragments: city-count penalty, normal size penalty, WGF.\n\nSynthetic state; government lookup, valid-city/popcount and UI/detail callbacks\nare mocks. Size cases mock wonder/building offsets0. WGF/size are valid internal\ninstruction ranges with explicit caller registers, not full happiness updates.\n",
+  "checks": [
+    {
+      "name": "city_count_(10, 10, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(10, 25, 0)",
+      "got": -7.5,
+      "expected": -7.5,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(20, 25, 0)",
+      "got": -2.5,
+      "expected": -2.5,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(40, 30, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(40, 42, 0)",
+      "got": -1.0,
+      "expected": -1,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(10, 12, 2)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "city_count_(10, 0, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "all handles valid",
+        "city size outputs",
+        "UI/detail callbacks"
+      ]
+    },
+    {
+      "name": "size_penalty_1",
+      "got": [
+        0.0,
+        75.0
+      ],
+      "expected": [
+        0,
+        75
+      ],
+      "passed": true,
+      "mocks": [
+        "wonder/building size offsets0",
+        "detail callback",
+        "caller registers"
+      ]
+    },
+    {
+      "name": "size_penalty_4",
+      "got": [
+        -3.0,
+        72.0
+      ],
+      "expected": [
+        -3,
+        72
+      ],
+      "passed": true,
+      "mocks": [
+        "wonder/building size offsets0",
+        "detail callback",
+        "caller registers"
+      ]
+    },
+    {
+      "name": "size_penalty_8",
+      "got": [
+        -7.0,
+        68.0
+      ],
+      "expected": [
+        -7,
+        68
+      ],
+      "passed": true,
+      "mocks": [
+        "wonder/building size offsets0",
+        "detail callback",
+        "caller registers"
+      ]
+    },
+    {
+      "name": "size_penalty_10",
+      "got": [
+        -9.0,
+        66.0
+      ],
+      "expected": [
+        -9,
+        66
+      ],
+      "passed": true,
+      "mocks": [
+        "wonder/building size offsets0",
+        "detail callback",
+        "caller registers"
+      ]
+    },
+    {
+      "name": "wgf_(4, -1, -1, -1)",
+      "got": 75.0,
+      "expected": 75,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, -2, -1, -1)",
+      "got": 71.0,
+      "expected": 71,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(8, -2, -1, -1)",
+      "got": 67.0,
+      "expected": 67,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, -1, -2, -1)",
+      "got": 71.0,
+      "expected": 71,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, -1, -1, -2)",
+      "got": 71.0,
+      "expected": 71,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, 0, -1, -1)",
+      "got": 77.0,
+      "expected": 77,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, -2, 0, -1)",
+      "got": 75.0,
+      "expected": 75,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    },
+    {
+      "name": "wgf_(4, 0, 0, 0)",
+      "got": 77.0,
+      "expected": 77,
+      "passed": true,
+      "mocks": [
+        "government lookup",
+        "caller registers/contentment population",
+        "detail callbacks"
+      ]
+    }
+  ],
+  "passed": 19,
+  "total": 19
+}

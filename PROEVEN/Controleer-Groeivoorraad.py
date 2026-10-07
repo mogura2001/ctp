@@ -1,6 +1,6 @@
 """Offline execution of original EatFood positive-growth instructions.
 
-Synthetic ordinary cities, no slaves/difficulty/unhappiness modifiers. Database
+Synthetic ordinary cities, no slaves/difficulty/high-happiness modifiers. Database
 lookups and population creation are mocked; imported ftol is replaced by x87
 truncate conversion. Checks growth-food retention, not a complete game turn.
 Never starts the game or writes its binaries.
@@ -10,6 +10,7 @@ import hashlib, json, struct, sys
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'PROEVEN/hulpmiddelen/python'))
 import pefile
+from ctp_x87 import ftol_stub
 from unicorn import Uc, UC_ARCH_X86, UC_MODE_32, UC_HOOK_CODE
 from unicorn.x86_const import UC_X86_REG_EAX, UC_X86_REG_EBP, UC_X86_REG_EIP, UC_X86_REG_ESP, UC_X86_REG_ESI, UC_X86_REG_FPCW
 
@@ -20,7 +21,8 @@ if hashlib.sha256(PATH.read_bytes()).hexdigest() != SHA:
 pe = pefile.PE(str(PATH))
 image = pe.get_memory_mapped_image()
 
-def emulate(population, stored, surplus, silo):
+def emulate(population, stored, surplus, silo, *, player_type=1, difficulty_bonus=0.0,
+            happiness=75, network_active=False, network_remote=False):
     uc = Uc(UC_ARCH_X86, UC_MODE_32)
     uc.mem_map(0x400000, (len(image)+4095)&~4095)
     uc.mem_write(0x400000, image)
@@ -38,19 +40,23 @@ def emulate(population, stored, surplus, silo):
     put32(0xa7dd48,const)
     put32(0xa7dd80,0x20019000)
     put32(0x20019000,player)
-    # Force the unmodified player branch (double(player+4) == 1.0,
-    # network-condition globals zero) rather than silently applying a bonus.
-    put32(player+4,1)
-    put32(0xa44c9c,0)
+    # Explicit context; the default retains the original ordinary-AI fixture.
+    put32(player+4,player_type)
+    put32(0xa44c9c,int(network_active));put32(0xa44c98,int(network_active))
+    difficulty_table, setting, happy_object = 0x20020000,0x20025000,0x20026000
+    put32(0xa7dd54,difficulty_table);put32(0xa7a6a4,setting);put32(setting,5)
+    uc.mem_write(difficulty_table+5*0x200+0x1d8,struct.pack('<d',difficulty_bonus))
+    put32(city+0x5cc,happy_object);put32(const+0x16c,85)
+    uc.mem_write(happy_object,struct.pack('<d',happiness))
     put32(frame-0x1c,int(silo))
     put32(frame-0x20,50 if silo else 0)
     uc.reg_write(UC_X86_REG_EBP,frame)
     uc.reg_write(UC_X86_REG_ESP,frame-0x80)
     uc.reg_write(UC_X86_REG_ESI,city)
-    uc.reg_write(UC_X86_REG_FPCW,0xf7f)
+    uc.reg_write(UC_X86_REG_FPCW,0x37f)
     # _ftol import substitute: x87 integer conversion truncating toward zero.
     stub = 0x200f0000
-    uc.mem_write(stub,bytes.fromhex('83ec08df3c24585ac3'))
+    uc.mem_write(stub,ftol_stub())
     put32(0x743330,stub)
     growth_calls = []
     def return_mock(value,args):
@@ -63,7 +69,7 @@ def emulate(population, stored, surplus, silo):
         if address == 0x4cc980: return_mock(0,0) # citizen type
         elif address == 0x456b70: return_mock(poprecord,4) # non-slave
         elif address == 0x4da870: return_mock(unit,0) # city unit record
-        elif address == 0x4ac370: return_mock(0,0) # no unhappy modifier
+        elif address == 0x579f60: return_mock(int(network_remote),4) # explicit network predicate
         elif address == 0x4da9a0: return_mock(0,4) # position output irrelevant here
         elif address == 0x496440:
             growth_calls.append(get32(city+0xc))

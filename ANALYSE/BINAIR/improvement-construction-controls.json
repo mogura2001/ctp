@@ -1,0 +1,475 @@
+{
+  "binary_sha256": [
+    "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+    "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+  ],
+  "scope": "Original local instructions; synthetic state, no game/PW mutation; eligibility/action mocks explicit",
+  "area_positions": [
+    [
+      [
+        21,
+        38,
+        0
+      ],
+      [
+        22,
+        39,
+        0
+      ],
+      [
+        20,
+        38,
+        0
+      ],
+      [
+        21,
+        39,
+        0
+      ],
+      [
+        22,
+        40,
+        0
+      ],
+      [
+        19,
+        38,
+        0
+      ],
+      [
+        20,
+        39,
+        0
+      ],
+      [
+        21,
+        40,
+        0
+      ],
+      [
+        22,
+        41,
+        0
+      ],
+      [
+        19,
+        39,
+        0
+      ],
+      [
+        21,
+        41,
+        0
+      ],
+      [
+        18,
+        39,
+        0
+      ],
+      [
+        19,
+        40,
+        0
+      ],
+      [
+        20,
+        41,
+        0
+      ],
+      [
+        21,
+        42,
+        0
+      ],
+      [
+        18,
+        40,
+        0
+      ],
+      [
+        19,
+        41,
+        0
+      ],
+      [
+        20,
+        42,
+        0
+      ],
+      [
+        18,
+        41,
+        0
+      ],
+      [
+        19,
+        42,
+        0
+      ]
+    ],
+    [
+      [
+        22,
+        39,
+        0
+      ],
+      [
+        23,
+        40,
+        0
+      ],
+      [
+        21,
+        39,
+        0
+      ],
+      [
+        22,
+        40,
+        0
+      ],
+      [
+        23,
+        41,
+        0
+      ],
+      [
+        20,
+        39,
+        0
+      ],
+      [
+        21,
+        40,
+        0
+      ],
+      [
+        22,
+        41,
+        0
+      ],
+      [
+        23,
+        42,
+        0
+      ],
+      [
+        20,
+        40,
+        0
+      ],
+      [
+        22,
+        42,
+        0
+      ],
+      [
+        19,
+        40,
+        0
+      ],
+      [
+        20,
+        41,
+        0
+      ],
+      [
+        21,
+        42,
+        0
+      ],
+      [
+        22,
+        43,
+        0
+      ],
+      [
+        19,
+        41,
+        0
+      ],
+      [
+        20,
+        42,
+        0
+      ],
+      [
+        21,
+        43,
+        0
+      ],
+      [
+        19,
+        42,
+        0
+      ],
+      [
+        20,
+        43,
+        0
+      ]
+    ]
+  ],
+  "checks": [
+    {
+      "name": "candidate_count_(20, 40, 0)",
+      "got": 20,
+      "expected": 20,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "unique_positions_(20, 40, 0)",
+      "got": 20,
+      "expected": 20,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "center_excluded_(20, 40, 0)",
+      "got": false,
+      "expected": false,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "candidate_count_(21, 41, 0)",
+      "got": 20,
+      "expected": 20,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "unique_positions_(21, 41, 0)",
+      "got": 20,
+      "expected": 20,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "center_excluded_(21, 41, 0)",
+      "got": false,
+      "expected": false,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "adjacent_areas_overlap",
+      "got": true,
+      "expected": true,
+      "passed": true,
+      "external_mocks": [
+        "World layer predicate",
+        "World tile eligibility: all allowed"
+      ]
+    },
+    {
+      "name": "highest",
+      "got": [
+        1,
+        805323008
+      ],
+      "expected": [
+        1,
+        805323008
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "highest_consumed",
+      "got": true,
+      "expected": true,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "first_tie",
+      "got": [
+        1,
+        805322752
+      ],
+      "expected": [
+        1,
+        805322752
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "first_tie_consumed",
+      "got": true,
+      "expected": true,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "nonpositive",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "enough",
+      "got": [
+        1,
+        300
+      ],
+      "expected": [
+        1,
+        300
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Improvement construction request"
+      ]
+    },
+    {
+      "name": "exact",
+      "got": [
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Improvement construction request"
+      ]
+    },
+    {
+      "name": "engine_rejects",
+      "got": [
+        1,
+        300
+      ],
+      "expected": [
+        1,
+        300
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Improvement construction request"
+      ]
+    },
+    {
+      "name": "not_enough",
+      "got": [
+        0,
+        -100
+      ],
+      "expected": [
+        0,
+        -100
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Improvement construction request"
+      ]
+    },
+    {
+      "name": "unoccupied",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "occupied_worker",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "city_center",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "farm_level_1",
+      "got": 37,
+      "expected": 37,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    },
+    {
+      "name": "farm_level_2",
+      "got": 41,
+      "expected": 41,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    },
+    {
+      "name": "farm_level_3",
+      "got": 45,
+      "expected": 45,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    },
+    {
+      "name": "mine_level_1",
+      "got": 21,
+      "expected": 21,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    },
+    {
+      "name": "mine_level_2",
+      "got": 37,
+      "expected": 37,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    },
+    {
+      "name": "mine_level_3",
+      "got": 53,
+      "expected": 53,
+      "passed": true,
+      "external_mocks": [
+        "Cell yield/cache refresh"
+      ]
+    }
+  ],
+  "passed": 25,
+  "total": 25
+}

@@ -1,0 +1,92 @@
+﻿Engine SHA256: b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+Imagebase 00400000; timestamp 37d6f702; no engine map addresses used
+
+RANGE 00484ac0:d0
+00484ac0 55                     push     ebp
+00484ac1 8bec                   mov      ebp, esp
+00484ac3 a010a1a700             mov      al, byte ptr [0xa7a110]
+00484ac8 53                     push     ebx
+00484ac9 56                     push     esi
+00484aca 57                     push     edi
+00484acb a801                   test     al, 1
+00484acd 8bd9                   mov      ebx, ecx
+00484acf 7535                   jne      0x484b06
+00484ad1 8ad0                   mov      dl, al
+00484ad3 b909000000             mov      ecx, 9
+00484ad8 80ca01                 or       dl, 1
+00484adb 33c0                   xor      eax, eax
+00484add bf5ca2a700             mov      edi, 0xa7a25c
+00484ae2 881510a1a700           mov      byte ptr [0xa7a110], dl
+00484ae8 f3ab                   rep stosd dword ptr es:[edi], eax
+00484aea 68804b4800             push     0x484b80
+00484aef c70558a2a700c0377400   mov      dword ptr [0xa7a258], 0x7437c0
+00484af9 a388a2a700             mov      dword ptr [0xa7a288], eax
+00484afe e83d0a2a00             call     0x725540
+00484b03 83c404                 add      esp, 4
+00484b06 8b4508                 mov      eax, dword ptr [ebp + 8]
+00484b09 8b0d70dda700           mov      ecx, dword ptr [0xa7dd70]
+00484b0f 6858a2a700             push     0xa7a258
+00484b14 50                     push     eax
+00484b15 c70588a2a70000000000   mov      dword ptr [0xa7a288], 0
+00484b1f e8cc360900             call     0x5181f0
+00484b24 8b1588a2a700           mov      edx, dword ptr [0xa7a288]
+00484b2a b858a2a700             mov      eax, 0xa7a258
+00484b2f f7d8                   neg      eax
+00484b31 1bc0                   sbb      eax, eax
+00484b33 23c2                   and      eax, edx
+00484b35 83f801                 cmp      eax, 1
+00484b38 7c35                   jl       0x484b6f
+00484b3a 8b7344                 mov      esi, dword ptr [ebx + 0x44]
+00484b3d 4e                     dec      esi
+00484b3e 782f                   js       0x484b6f
+00484b40 8d7cb318               lea      edi, [ebx + esi*4 + 0x18]
+00484b44 6858a2a700             push     0xa7a258
+00484b49 8bcf                   mov      ecx, edi
+00484b4b e8706d0500             call     0x4db8c0
+00484b50 85c0                   test     eax, eax
+00484b52 750f                   jne      0x484b63
+00484b54 4e                     dec      esi
+00484b55 83ef04                 sub      edi, 4
+00484b58 85f6                   test     esi, esi
+00484b5a 7de8                   jge      0x484b44
+00484b5c 5f                     pop      edi
+00484b5d 5e                     pop      esi
+00484b5e 5b                     pop      ebx
+00484b5f 5d                     pop      ebp
+00484b60 c20400                 ret      4
+00484b63 b801000000             mov      eax, 1
+00484b68 5f                     pop      edi
+00484b69 5e                     pop      esi
+00484b6a 5b                     pop      ebx
+00484b6b 5d                     pop      ebp
+00484b6c c20400                 ret      4
+00484b6f 5f                     pop      edi
+00484b70 5e                     pop      esi
+00484b71 33c0                   xor      eax, eax
+00484b73 5b                     pop      ebx
+00484b74 5d                     pop      ebp
+00484b75 c20400                 ret      4
+00484b78 90                     nop      
+00484b79 90                     nop      
+00484b7a 90                     nop      
+00484b7b 90                     nop      
+00484b7c 90                     nop      
+00484b7d 90                     nop      
+00484b7e 90                     nop      
+00484b7f 90                     nop      
+00484b80 c3                     ret      
+00484b81 90                     nop      
+00484b82 90                     nop      
+00484b83 90                     nop      
+00484b84 90                     nop      
+00484b85 90                     nop      
+00484b86 90                     nop      
+00484b87 90                     nop      
+00484b88 90                     nop      
+00484b89 90                     nop      
+00484b8a 90                     nop      
+00484b8b 90                     nop      
+00484b8c 90                     nop      
+00484b8d 90                     nop      
+00484b8e 90                     nop      
+00484b8f 90                     nop      

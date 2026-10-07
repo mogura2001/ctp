@@ -53,7 +53,7 @@ De eerste drie mijnen vragen samen 1200 aan ingestelde materialen. Drie mijnen p
 
 ### Voedsel: de cruciale haalbaarheidsvoorwaarde
 
-Een worker en scientist hebben beide HUNGER 10 in `Pop.txt`. `Const.txt` bevat BASE_RATIONS 1 en UNIT_RATIONS 0.25. Als de rationsfactor wordt toegepast als `1 + 0.25*r`, levert dit het volgende voorlopige consumptiemodel voor vier gewone inwoners op:
+Een worker en scientist hebben beide HUNGER 10 in `Pop.txt`. `Const.txt` bevat BASE_RATIONS 1 en UNIT_RATIONS 0.25. De factor `1 + 0.25*r` is inmiddels via echte parser/setter/getter gebonden; de AI-behoefteopvraag sommeert positieve hunger maal die factor. Zie [RANTSOENEN-EN-STADSOPBRENGSTEN.md](ANALYSE/RANTSOENEN-EN-STADSOPBRENGSTEN.md), zes originele codecontroles. De volledige consumptie-/groeicyclus en gelukgevolgen blijven open. Voor vier gewone inwoners geeft de behoefte-opvraag:
 
 | Rations-instelling r | Factor | Voedsel voor vier inwoners |
 | --- | ---: | ---: |

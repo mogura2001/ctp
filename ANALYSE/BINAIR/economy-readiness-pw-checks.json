@@ -1,0 +1,411 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "limitations": "Read-only original x86 support/PW calculations with synthetic records.\n\nMocks: unit/record lookup, wonder percentage, gross city production and city\nhandle resolution. Whole-player checks bypass the shortage callback using the\nexisting Player+1194 flag; they do not prove shortage, disbanding or a full turn.\nCRT ftol/ceil substitutes preserve x87 CW. No CTP binary is edited.\n",
+  "passed": 29,
+  "total": 29,
+  "checks": [
+    {
+      "name": "unit_(0, 0, 0, 0, 10, 0)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(1, 0, 0, 0, 10, 0)",
+      "got": 5.0,
+      "expected": 5,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(2, 0, 0, 0, 10, 0)",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(0, 256, 0, 0, 10, 0)",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(2, 0, 4096, 0, 10, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(2, 0, 0, 256, 10, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(2, 0, 0, 0, 10, 75)",
+      "got": 2.5,
+      "expected": 2.5,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(2, 0, 0, 0, 0, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "unit_(3, 0, 0, 0, 10, 0)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "unit pool lookup",
+        "unit/government record lookup",
+        "wonder percentage"
+      ]
+    },
+    {
+      "name": "ordinary_city_(100, 0.2, 0.2, 1, 1)",
+      "got": [
+        20,
+        16,
+        64
+      ],
+      "expected": [
+        20,
+        16,
+        64
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "ordinary_city_(7, 0.2, 0.2, 1, 1)",
+      "got": [
+        2,
+        1,
+        4
+      ],
+      "expected": [
+        2,
+        1,
+        4
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "ordinary_city_(100, 0.2, 0.2, 0, 1)",
+      "got": [
+        0,
+        20,
+        80
+      ],
+      "expected": [
+        0,
+        20,
+        80
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "ordinary_city_(100, 0.2, 0.2, 1, 0)",
+      "got": [
+        20,
+        0,
+        80
+      ],
+      "expected": [
+        20,
+        0,
+        80
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "ordinary_city_(0, 0.2, 0.2, 1, 1)",
+      "got": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "ordinary_city_(3, 0.5, 1, 1, 1)",
+      "got": [
+        2,
+        1,
+        0
+      ],
+      "expected": [
+        2,
+        1,
+        0
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "last_city_(100, 20, 0.2)",
+      "got": [
+        16,
+        64
+      ],
+      "expected": [
+        16,
+        64
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "last_city_(1, 3, 0.2)",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "last_city_(3, -1, 0.25)",
+      "got": [
+        1,
+        3
+      ],
+      "expected": [
+        1,
+        3
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "last_city_(7, 2, 0.2)",
+      "got": [
+        1,
+        4
+      ],
+      "expected": [
+        1,
+        4
+      ],
+      "passed": true,
+      "mocks": []
+    },
+    {
+      "name": "pw_tax_0",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "pw_tax_0.257",
+      "got": 0.25,
+      "expected": 0.25,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "pw_tax_0.5",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "pw_tax_1",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "pw_tax_-0.1",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "pw_tax_1.1",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true,
+      "mocks": [
+        "UI refresh",
+        "network globals zero"
+      ]
+    },
+    {
+      "name": "player_allocation_([100, 100], 40, 0.2)",
+      "got": [
+        128,
+        32,
+        [
+          64,
+          64
+        ]
+      ],
+      "expected": [
+        128,
+        32,
+        [
+          64,
+          64
+        ]
+      ],
+      "passed": true,
+      "mocks": [
+        "gross city production/eligibility",
+        "city handle resolution",
+        "shortage callback bypass flag"
+      ]
+    },
+    {
+      "name": "player_allocation_([7, 7, 7], 4, 0.2)",
+      "got": [
+        14,
+        3,
+        [
+          4,
+          4,
+          6
+        ]
+      ],
+      "expected": [
+        14,
+        3,
+        [
+          4,
+          4,
+          6
+        ]
+      ],
+      "passed": true,
+      "mocks": [
+        "gross city production/eligibility",
+        "city handle resolution",
+        "shortage callback bypass flag"
+      ]
+    },
+    {
+      "name": "player_allocation_([1, 1, 1], 1, 0)",
+      "got": [
+        2,
+        0,
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "expected": [
+        2,
+        0,
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "passed": true,
+      "mocks": [
+        "gross city production/eligibility",
+        "city handle resolution",
+        "shortage callback bypass flag"
+      ]
+    },
+    {
+      "name": "player_allocation_([100], 20, 0.2)",
+      "got": [
+        64,
+        16,
+        [
+          64
+        ]
+      ],
+      "expected": [
+        64,
+        16,
+        [
+          64
+        ]
+      ],
+      "passed": true,
+      "mocks": [
+        "gross city production/eligibility",
+        "city handle resolution",
+        "shortage callback bypass flag"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+City-range operand candidates; verify object and instruction alignment.
+00493a8e 8bb1ac030000 mov esi, dword ptr [ecx + 0x3ac]
+00493ec2 8b81ac030000 mov eax, dword ptr [ecx + 0x3ac]
+004975b0 8b96ac030000 mov edx, dword ptr [esi + 0x3ac]
+004975c3 dd86d8030000 fld qword ptr [esi + 0x3d8]

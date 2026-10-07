@@ -1,0 +1,25 @@
+--- baseline/citywall_science.aip
++++ B1/citywall_science.aip
+@@ -21,13 +21,14 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_STONE_WORKING"; 
+  "ADVANCE_BRONZE_WORKING"; 
+  "ADVANCE_TOOLMAKING"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_TRADE"; 
+  "ADVANCE_WRITING"; 
+@@ -117,6 +118,5 @@
+  "ADVANCE_LIFE_EXTENSION"; 
+  "ADVANCE_COMMUNISM"; 
+  "ADVANCE_ECOTOPIA"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_CLOAKING"; 
+ #END_DATA  

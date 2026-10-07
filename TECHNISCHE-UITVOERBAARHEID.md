@@ -1,5 +1,7 @@
 # Technische uitvoerbaarheid van onze AI-strategie
 
+**Leeswijzer7 oktober2026:** dit is de vroege inventarisatie van aanknopingspunten. De brede analyse is inmiddels via [OVERDRACHT-A-NAAR-B](ANALYSE/OVERDRACHT-A-NAAR-B.md) overgedragen; gebruik [DEKKING](ANALYSE/DEKKING.md) en de specifieke actuele rapporten voor opgeloste vragen. Quota, locatiescore/cache, AIP-loadvolgorde, normale regeringselectie/-overgang, goods/routes en bevolkingskeuze zijn inmiddels functioneel onderbouwd. De tabel hieronder behoudt de oorspronkelijke onderzoeksvragen en is geen actuele lijst van alles wat nog onbekend is. De score-/stadstypelogica vereist nog een aantoonbaar uitvoerbare aanvullende ingreep; symbolen of interfaces bewijzen geen SLIC-hook. Robotcom.map past bij de AI-DLL, civctp.map past niet bij de engine. De oude aanbeveling om eerst een SLIC-queueproef te doen is achterhaald. Huidige fase B levert voorstellen, nog geen toepassing.
+
 ## Resultaat en bewijsniveau
 
 De aanwezige FLI/AIP-bestanden bieden bruikbare aansturing voor uitbreiding, onderzoek, regering, legerquota en algemene economische prioriteiten. Exacte stadsspecialisatie, individuele bevolkingsinzet en onze eigen locatiewaardering zijn daarin nog niet aangetoond.

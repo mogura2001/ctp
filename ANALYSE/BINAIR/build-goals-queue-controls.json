@@ -1,0 +1,415 @@
+{
+  "binary_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "scope": "Original DLL instructions, synthetic state; no actual engine queue or full scheduler",
+  "checks": [
+    {
+      "name": "unit_raw_add",
+      "got": 20010500.0,
+      "expected": 20010500,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "building_raw_add",
+      "got": 20007950.0,
+      "expected": 20007950,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "wonder_raw_add",
+      "got": 20007500.0,
+      "expected": 20007500,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "wonder_zero_weight_still_positive",
+      "got": 19997500.0,
+      "expected": 19997500,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "endgame_raw_add",
+      "got": 173.0,
+      "expected": 173,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "capitalization_raw_add",
+      "got": 371.0,
+      "expected": 371,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_request_0",
+      "got": [
+        [
+          77,
+          1,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          1,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "unit_cache_0",
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "unit_request_1",
+      "got": [
+        [
+          77,
+          1,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          1,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "unit_cache_1",
+      "got": [
+        4,
+        1
+      ],
+      "expected": [
+        4,
+        1
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "building_request_0",
+      "got": [
+        [
+          77,
+          3,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          3,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "building_cache_0",
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "building_request_1",
+      "got": [
+        [
+          77,
+          3,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          3,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "building_cache_1",
+      "got": [
+        4,
+        3
+      ],
+      "expected": [
+        4,
+        3
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "wonder_request_0",
+      "got": [
+        [
+          77,
+          9,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          9,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue",
+        "wonder availability/mark"
+      ]
+    },
+    {
+      "name": "wonder_cache_0",
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "wonder_request_1",
+      "got": [
+        [
+          77,
+          9,
+          4
+        ]
+      ],
+      "expected": [
+        [
+          77,
+          9,
+          4
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue",
+        "wonder availability/mark"
+      ]
+    },
+    {
+      "name": "wonder_cache_1",
+      "got": [
+        4,
+        9
+      ],
+      "expected": [
+        4,
+        9
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player enqueue"
+      ]
+    },
+    {
+      "name": "list_first_eligible",
+      "got": [
+        0
+      ],
+      "expected": [
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "eligibility/cost/pretest",
+        "allocator/goal constructor/planner"
+      ]
+    },
+    {
+      "name": "list_skip_unbuildable",
+      "got": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "external_mocks": [
+        "eligibility/cost/pretest",
+        "allocator/goal constructor/planner"
+      ]
+    },
+    {
+      "name": "list_skip_owned",
+      "got": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "passed": true,
+      "external_mocks": [
+        "eligibility/cost/pretest",
+        "allocator/goal constructor/planner"
+      ]
+    },
+    {
+      "name": "list_none",
+      "got": [],
+      "expected": [],
+      "passed": true,
+      "external_mocks": [
+        "eligibility/cost/pretest",
+        "allocator/goal constructor/planner"
+      ]
+    },
+    {
+      "name": "list_busy_queue",
+      "got": [],
+      "expected": [],
+      "passed": true,
+      "external_mocks": [
+        "eligibility/cost/pretest",
+        "allocator/goal constructor/planner"
+      ]
+    },
+    {
+      "name": "stored_production_499_100",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "stored_production_500_29",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "stored_production_500_30",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "stored_production_500_120",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "stored_production_600_120",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "wonder_at_time_limit",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": [
+        "wonder production-cost getter",
+        "CRT float-to-int truncation replacement"
+      ]
+    },
+    {
+      "name": "wonder_over_time_limit",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "wonder production-cost getter",
+        "CRT float-to-int truncation replacement"
+      ]
+    },
+    {
+      "name": "wonder_stock_makes_feasible",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": [
+        "wonder production-cost getter",
+        "CRT float-to-int truncation replacement"
+      ]
+    },
+    {
+      "name": "wonder_busy_cache_blocks",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "wonder production-cost getter",
+        "CRT float-to-int truncation replacement"
+      ]
+    },
+    {
+      "name": "wonder_zero_production_uses_cost",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "wonder production-cost getter",
+        "CRT float-to-int truncation replacement"
+      ]
+    }
+  ],
+  "passed": 33,
+  "total": 33
+}

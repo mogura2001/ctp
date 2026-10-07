@@ -1,0 +1,108 @@
+{
+  "ai_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "limitations": "Original FliEngine centroid with mocked membership samples.\n\nThis does not parse FLI rules. Centroid tests mock membership samples. Four\nseparate consequent tests execute real output transforms with mocked set-function\nmembership. Linked-value getter/setter execute real code.\n",
+  "checks": [
+    {
+      "name": "empty",
+      "got": 7.0,
+      "expected": 7,
+      "passed": true,
+      "samples": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ]
+    },
+    {
+      "name": "constant",
+      "got": 5.0,
+      "expected": 5,
+      "passed": true,
+      "samples": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ]
+    },
+    {
+      "name": "only2",
+      "got": 2.0,
+      "expected": 2,
+      "passed": true,
+      "samples": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ]
+    },
+    {
+      "name": "only10",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "samples": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ]
+    },
+    {
+      "name": "consequent_(0, 2)",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true
+    },
+    {
+      "name": "consequent_(4, 1)",
+      "got": 0.75,
+      "expected": 0.75,
+      "passed": true
+    },
+    {
+      "name": "consequent_(5, 1)",
+      "got": 0.0625,
+      "expected": 0.0625,
+      "passed": true
+    },
+    {
+      "name": "consequent_(6, 1)",
+      "got": 0.4375,
+      "expected": 0.4375,
+      "passed": true
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

@@ -40,15 +40,15 @@ Voorstel: ontwerp een eigen uitbreidingsfase die blijft gelden tot de doelomvang
 
 ## 3. Kolonisten en granaries moeten samen worden gepland
 
-Bron: `Units.txt`. UNIT_SETTLER heeft basiskosten 540, SHIELD_HUNGER 0, FOOD_HUNGER 0 en BUILDING_REMOVES_A_POP. Kolonistenproductie kost dus productie en een inwoner. Reisduur tot vestiging is een aanvullende vertraging.
+Bron: `Units.txt`. UNIT_SETTLER heeft basiskosten 540, SHIELD_HUNGER 0, FOOD_HUNGER 0 en BUILDING_REMOVES_A_POP. De engine past bevolkingskosten echter contextafhankelijk toe: de normale singleplayer-AI kan bij grootte1 voltooien en slaat met de bestaande instelling `AIPopCheat=Yes` zowel bevolkingsverlies als groeivoorraad-aftrek over. Voor de speler geldt die vrijstelling niet. Zie [de gebonden voltooiingsroute en 14 offlinecontroles](ANALYSE/VOEDSEL-GROEI-EN-KOLONISTEN.md). Reisduur tot vestiging is een aanvullende vertraging; de effectief geladen instellingen moeten later in de benchmark worden bevestigd.
 
-Bron: `Improve.txt`. IMPROVE_SILO heeft basiskosten 540, onderhoud 1, vereist Agriculture en bevat IMPROVEMENT_FLAG_SILO 50. Een granary kost in basisproductie evenveel als één settler. De precieze toepassing van de 50-waarde bij groei, kolonistenbouw en de volgorde van gebeurtenissen moet nog in het spel worden vastgesteld; de configuratie alleen bewijst geen volledige formule.
+Bron: `Improve.txt`. IMPROVE_SILO heeft basiskosten 540, onderhoud 1, vereist Agriculture en bevat IMPROVEMENT_FLAG_SILO 50. Een granary kost in basisproductie evenveel als één settler. De engine gebruikt de 50 voor een afzonderlijke silobuffer; de groeivoorraad staat elders. Na groei met silo blijft in de onderzochte positieve groeiroute de helft van de nieuwe basisgroeidrempel staan; zonder silo wordt de gebruikte drempel afgetrokken. Zie dezelfde analyse voor 24 originele codecontroles en de nog open consumptie-/modifierketen.
 
 Bron: `DiffDB.txt`, Deity-blok. GRANARY_COEF is 10. `Const.txt` bevat daarnaast CITY_GROWTH_COEFFICIENT 175. We mogen deze waarden niet zonder enginekennis tot één groeiformule combineren.
 
 Als een stad constant netto P productie heeft en geen voorraad, aanpassingen of bevolkingseffecten optreden, is de productiecomponent van een settler ceil(540/P) beurten. Bij P=30 is dat 18 beurten; bij P=60 negen. De granary heeft dezelfde basisproductietijd. Een wonder van 2160 kost onder die aannames respectievelijk 72 of 36 beurten. Dit zijn rekenvoorbeelden, geen werkelijke AI-bouwtijden: Deity bevat afzonderlijke productieaanpassingen.
 
-Voorstel: vergelijk per geschikte stad settler-direct met granary-dan-settlers. Meet de stichtingsbeurten van opvolgende steden en het herstel van de bevolking. Een granary is voor onze openingsdoelstelling pas effectief als de betere cyclus de aanvankelijke vertraging tijdig terugverdient. Meet ook wat er gebeurt wanneer granaryvoltooiing net vóór versus net ná groei valt.
+Voorstel: vergelijk per geschikte stad settler-direct met granary-dan-settlers, rekening houdend met de bestaande AI-vrijstelling. Bevolkingsherstel na elke settler mag niet als AI-voordeel van een granary worden aangenomen wanneer de AI geen bevolking verliest. Meet stichtingsbeurten en de productie die natuurlijke groei toevoegt. Een granary is voor onze openingsdoelstelling pas effectief als die opbrengst de aanvankelijke vertraging tijdig terugverdient. Meet ook wat er gebeurt wanneer granaryvoltooiing net vóór versus net ná groei valt.
 
 ## 4. Labyrinth is een handelsinvestering
 

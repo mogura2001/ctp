@@ -1,0 +1,64 @@
+Engine SHA256: b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+Decoded from prologue 00406630; tail shown
+00407234 6a00                   push 0
+00407236 68d2000000             push 0xd2
+0040723b e8a0892800             call 0x68fbe0
+00407240 85db                   test ebx, ebx
+00407242 68000c0000             push 0xc00
+00407247 7420                   je 0x407269
+00407249 e862f41700             call 0x5866b0
+0040724e 83c404                 add esp, 4
+00407251 894508                 mov dword ptr [ebp + 8], eax
+00407254 85c0                   test eax, eax
+00407256 c745fc29000000         mov dword ptr [ebp - 4], 0x29
+0040725d 7429                   je 0x407288
+0040725f 53                     push ebx
+00407260 8bc8                   mov ecx, eax
+00407262 e809080500             call 0x457a70
+00407267 eb21                   jmp 0x40728a
+00407269 e842f41700             call 0x5866b0
+0040726e 83c404                 add esp, 4
+00407271 894508                 mov dword ptr [ebp + 8], eax
+00407274 85c0                   test eax, eax
+00407276 c745fc2a000000         mov dword ptr [ebp - 4], 0x2a
+0040727d 7409                   je 0x407288
+0040727f 8bc8                   mov ecx, eax
+00407281 e8ca070500             call 0x457a50
+00407286 eb02                   jmp 0x40728a
+00407288 33c0                   xor eax, eax
+0040728a 8bc8                   mov ecx, eax
+0040728c 83cfff                 or edi, 0xffffffff
+0040728f 85c9                   test ecx, ecx
+00407291 897dfc                 mov dword ptr [ebp - 4], edi
+00407294 890d54dda700           mov dword ptr [0xa7dd54], ecx
+0040729a 7421                   je 0x4072bd
+0040729c 6848d4a700             push 0xa7d448
+004072a1 e8ea130500             call 0x458690
+004072a6 85c0                   test eax, eax
+004072a8 7513                   jne 0x4072bd
+004072aa 8b4df4                 mov ecx, dword ptr [ebp - 0xc]
+004072ad 64890d00000000         mov dword ptr fs:[0], ecx
+004072b4 5f                     pop edi
+004072b5 5e                     pop esi
+004072b6 5b                     pop ebx
+004072b7 8be5                   mov esp, ebp
+004072b9 5d                     pop ebp
+004072ba c20400                 ret 4
+004072bd 8b0d0452a400           mov ecx, dword ptr [0xa45204]
+004072c3 6a00                   push 0
+004072c5 68dc000000             push 0xdc
+004072ca e811892800             call 0x68fbe0
+004072cf 85db                   test ebx, ebx
+004072d1 6a10                   push 0x10
+004072d3 0f840d0d0000           je 0x407fe6
+004072d9 e8d2f31700             call 0x5866b0
+004072de 83c404                 add esp, 4
+004072e1 894508                 mov dword ptr [ebp + 8], eax
+004072e4 85c0                   test eax, eax
+004072e6 c745fc2b000000         mov dword ptr [ebp - 4], 0x2b
+004072ed 0f84e40c0000           je 0x407fd7
+004072f3 53                     push ebx
+004072f4 8bc8                   mov ecx, eax
+004072f6 e8456f0400             call 0x44e240
+004072fb 897dfc                 mov dword ptr [ebp - 4], edi
+004072fe a34cdda700             mov dword ptr [0xa7dd4c], eax

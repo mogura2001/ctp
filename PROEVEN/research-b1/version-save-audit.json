@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-07T20:09:08.985220+02:00",
+  "versions": [
+    {
+      "path": "CTP-proef/ctp_program/ctp/civctp.exe",
+      "sha256": "B1B5256FB0FB1A844548EB62E7B13D79A8B4F81B4499CFBE93E614BD5268AC79",
+      "timestamp": "0x37d6f702",
+      "imagebase": "0x400000",
+      "equal_OG_and_analyzed_binary": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "3025070D66FBA516E4CDD70AE332055E1E4EF5162BF1B14C163B9BD128A35D44",
+      "timestamp": "0x37b894e7",
+      "imagebase": "0x20000000",
+      "equal_OG_and_analyzed_binary": true
+    }
+  ],
+  "saves": [
+    {
+      "path": "PROEVEN/settlerquota/vaste-start/QUOTA-START-T0.sav",
+      "sha256": "8C34364200E539870E0DEA0790C98D7441925F52267D24CF0E0ADB152141AD26"
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+      "sha256": "8C34364200E539870E0DEA0790C98D7441925F52267D24CF0E0ADB152141AD26"
+    }
+  ],
+  "independent_block_checks": [
+    {
+      "file": "default.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "cleric.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "milmany.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "milfew.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "scimany.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "scifew.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "slaver.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    },
+    {
+      "file": "citywall_science.aip",
+      "outside_block_byte_equal": true,
+      "count_multiset_order_valid": true,
+      "all_tokens_resolve": true
+    }
+  ],
+  "queue_probe_include_absent": true,
+  "actual_parser_test": false,
+  "actual_runtime_activation": false,
+  "audit_correction": "Initial supplemental substring split selected a commented syntax example; final actual declaration used instead. An inline audit also had a native-shell quoting error; this file avoids command-line source quoting."
+}

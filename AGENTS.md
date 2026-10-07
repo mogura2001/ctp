@@ -10,6 +10,8 @@ Actuele mijlpaal M1/fase A: brede functionele analyse van de spelregels en AI-be
 
 ## Weekbudget
 
+Sluit de pc uitsluitend af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Het bereiken van een budgetgrens geeft geen toestemming voor een afsluitcommando: stop dan alleen projectwerk en bewaar het hervatpunt. Eerdere afsluitopdrachten zijn afgehandeld en gelden niet opnieuw.
+
 Waarschuw bij 25% of minder **resterend** accountweekbudget en stop/pauzeer alle projectwerk bij 10% of minder resterend weekbudget. Stop ook bij 5% of minder **resterend** in het vijfuurvenster; na een bevestigde reset mag zelfstandig worden hervat als het weekbudget dit toestaat. Controleer actuele limietmetadata met PROEVEN/Controleer-Weekbudget.py; projecttokens zijn geen gebruikslimiet. Zie AGENT-CTP.md voor bron, meetmomenten, onbekende/verouderde standen en stop-/hervatprocedure. Deze gebruikersgrenzen gelden voor coördinator en alle deelagents.
 
 ## Bestaande AI eerst

@@ -1,0 +1,402 @@
+{
+  "binary_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "scope": "Original regard/treaty and bombard request functions and two explicitly bounded fragments; no full diplomacy pass/pathfinder/order/game",
+  "checks": [
+    {
+      "name": "set_regard_fields",
+      "got": [
+        67.0,
+        28.0,
+        -9.0,
+        -9.0
+      ],
+      "expected": [
+        67,
+        28,
+        -9,
+        -9
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_attack",
+      "got": [
+        19.0,
+        19.0,
+        0.0,
+        0.0,
+        0
+      ],
+      "expected": [
+        19,
+        19,
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "CRT ftol preserving caller FPCW"
+      ]
+    },
+    {
+      "name": "hot_attack_low",
+      "got": [
+        12.0,
+        12.0,
+        0.0,
+        0.0,
+        0
+      ],
+      "expected": [
+        12,
+        12,
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "CRT ftol preserving caller FPCW"
+      ]
+    },
+    {
+      "name": "cease_broken",
+      "got": [
+        15.0,
+        15.0,
+        0.0,
+        25.0,
+        0
+      ],
+      "expected": [
+        15,
+        15,
+        0,
+        25,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cease_exact20",
+      "got": [
+        15.0,
+        20.0,
+        0.0,
+        25.0,
+        0
+      ],
+      "expected": [
+        15,
+        20,
+        0,
+        25,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "alliance_broken",
+      "got": [
+        19.0,
+        19.0,
+        25.0,
+        25.0,
+        0
+      ],
+      "expected": [
+        19,
+        19,
+        25,
+        25,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "alliance_low",
+      "got": [
+        12.0,
+        12.0,
+        25.0,
+        25.0,
+        0
+      ],
+      "expected": [
+        12,
+        12,
+        25,
+        25,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "broken_treaty_other",
+      "got": 3.0,
+      "expected": 3,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "broken_treaty_self",
+      "got": 2.0,
+      "expected": 2,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "broken_treaty_missing",
+      "got": 2.0,
+      "expected": 2,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_zero_preserves",
+      "got": [
+        80.0,
+        0.0
+      ],
+      "expected": [
+        80,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_five_preserves",
+      "got": [
+        80.0,
+        0.0
+      ],
+      "expected": [
+        80,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_six_replaces",
+      "got": [
+        6.0,
+        0.0
+      ],
+      "expected": [
+        6,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_35_replaces",
+      "got": [
+        35.0,
+        0.0
+      ],
+      "expected": [
+        35,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_over100_clamps",
+      "got": [
+        100.0,
+        0.0
+      ],
+      "expected": [
+        100,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "unit_regard_negative_input_floor",
+      "got": [
+        11.0,
+        0.0
+      ],
+      "expected": [
+        11,
+        0
+      ],
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "transport_treaty_cost_active20",
+      "got": 90.0,
+      "expected": 90,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_active80",
+      "got": 90.0,
+      "expected": 90,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_below20",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_no_agreement",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_global_disabled",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_owner_zero",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_owner32",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "transport_treaty_cost_unknown_foreigner",
+      "got": 10.0,
+      "expected": 10,
+      "passed": true,
+      "external_mocks": [
+        "World tile-owner query"
+      ]
+    },
+    {
+      "name": "bombard_request_ineligible",
+      "got": [
+        0,
+        []
+      ],
+      "expected": [
+        0,
+        []
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Goal position getter",
+        "Player bombard target query +19c",
+        "Player bombard action +198"
+      ]
+    },
+    {
+      "name": "bombard_request_accepted",
+      "got": [
+        1,
+        [
+          [
+            17,
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ]
+      ],
+      "expected": [
+        1,
+        [
+          [
+            17,
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Goal position getter",
+        "Player bombard target query +19c",
+        "Player bombard action +198"
+      ]
+    },
+    {
+      "name": "bombard_request_engine_rejected",
+      "got": [
+        0,
+        [
+          [
+            17,
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ]
+      ],
+      "expected": [
+        0,
+        [
+          [
+            17,
+            [
+              3,
+              4,
+              0
+            ]
+          ]
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Goal position getter",
+        "Player bombard target query +19c",
+        "Player bombard action +198"
+      ]
+    }
+  ],
+  "passed": 27,
+  "total": 27,
+  "fixtures": "Synthetic Foreigner/AiMain/frame; in-memory ftol stub only where declared; FPCW 0x37f, actual game controlword unknown"
+}

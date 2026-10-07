@@ -1,0 +1,24 @@
+gov candidate; verify alignment and parser linkage
+0045ae55 83c40c add esp, 0xc
+0045ae58 85c0 test eax, eax
+0045ae5a 0f8407010000 je 0x45af67
+0045ae60 8d8f90010000 lea ecx, [edi + 0x190]
+0045ae66 51 push ecx
+0045ae67 68fd010000 push 0x1fd
+0045ae6c 56 push esi
+0045ae6d e8be740c00 call 0x522330
+0045ae72 83c40c add esp, 0xc
+0045ae75 85c0 test eax, eax
+0045ae77 0f84ea000000 je 0x45af67
+gov candidate; verify alignment and parser linkage
+0045ae72 83c40c add esp, 0xc
+0045ae75 85c0 test eax, eax
+0045ae77 0f84ea000000 je 0x45af67
+0045ae7d 8d9794010000 lea edx, [edi + 0x194]
+0045ae83 52 push edx
+0045ae84 68fe010000 push 0x1fe
+0045ae89 56 push esi
+0045ae8a e8a1740c00 call 0x522330
+0045ae8f 83c40c add esp, 0xc
+0045ae92 85c0 test eax, eax
+0045ae94 0f84cd000000 je 0x45af67

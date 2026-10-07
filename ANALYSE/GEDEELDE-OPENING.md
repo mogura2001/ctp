@@ -1,5 +1,7 @@
 # Technische uitwerking van de gezamenlijke opening
 
+**Status7 oktober2026:** historisch voorlopig ontwerp. Fase B is nu formeel gestart op basis van [OVERDRACHT-A-NAAR-B](OVERDRACHT-A-NAAR-B.md); de ontwerper herbeoordeelt dit document met de nieuwere [fuzzy](FUZZY-BELEID-EN-DEFUZZIFICATIE.md), [quota/ruimte](RUIMTE-BUREN-TRANSPORT.md), [regering](ONDERZOEK-EN-REGERINGSKEUZE.md) en [diplomatie/marine](DIPLOMATIE-EN-MARINEVEILIGHEID.md)-bevindingen. Negatieve-quotaformules zijn inmiddels onderbouwd; de oudere onbewezen-hypotheseformuleringen hieronder zijn historisch. De kandidaatgrens30 en vereenvoudigde overgang op alleen stadsantal zijn geen definitief gekozen beleid. Geen gameplaywijziging uitgevoerd en geen vrijgave voor toepassing van dit voorlopige ontwerp.
+
 ## Vastgestelde bedoeling
 
 Alle normale AI-persoonlijkheden volgen eerst snelle uitbreiding naar 25–30 steden, Religion → Theocracy, beperkte noodzakelijke legerlast en alleen nuttige vroege bouwkeuzes. Daarna krijgen hun eigen voorkeuren meer invloed. Barbaren vallen buiten deze gezamenlijke strategie. Dit document is een uitvoerbaar onderzoeks- en wijzigingsontwerp; de genoemde nieuwe bestanden bestaan nog niet en er is geen gameplay gewijzigd.

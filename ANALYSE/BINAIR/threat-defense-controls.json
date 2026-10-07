@@ -1,0 +1,123 @@
+{
+  "binary_sha256": [
+    "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+    "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+  ],
+  "scope": "Original hot/cold predicates and map lookup, synthetic state, no external mocks or game turn",
+  "checks": [
+    {
+      "name": "hot_19.99",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_19.99",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_20.0",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_20.0",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_20.01",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_20.01",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_39.99",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_39.99",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_40.0",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_40.0",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_40.01",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "cold_40.01",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "hot_sum_components",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "first_cell",
+      "got": 11.0,
+      "expected": 11,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "second_cell",
+      "got": 22.0,
+      "expected": 22,
+      "passed": true,
+      "external_mocks": []
+    },
+    {
+      "name": "layer1",
+      "got": 77.0,
+      "expected": 77,
+      "passed": true,
+      "external_mocks": []
+    }
+  ],
+  "passed": 16,
+  "total": 16
+}

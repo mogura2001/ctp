@@ -1,0 +1,18 @@
+Actual Resource interface table 745050 from constructor5310f0; no engine map.
+SLOT 0c -> 005311c0
+005311c0 55 push ebp
+005311c1 8bec mov ebp, esp
+005311c3 8b450c mov eax, dword ptr [ebp + 0xc]
+005311c6 8b0dd0dda700 mov ecx, dword ptr [0xa7ddd0]
+005311cc 50 push eax
+005311cd e86e53f2ff call 0x456540
+005311d2 8b4030 mov eax, dword ptr [eax + 0x30]
+005311d5 5d pop ebp
+005311d6 c20800 ret 8
+SLOT 14 -> 005311e0
+005311e0 55 push ebp
+005311e1 8bec mov ebp, esp
+005311e3 a1d0dda700 mov eax, dword ptr [0xa7ddd0]
+005311e8 8b00 mov eax, dword ptr [eax]
+005311ea 5d pop ebp
+005311eb c20400 ret 4

@@ -1,0 +1,312 @@
+{
+  "binary_sha256": [
+    "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+    "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+  ],
+  "scope": "Original engine/DLL instructions, synthetic records/state; external callbacks named; no actual orders/pathfinding/full scheduler",
+  "checks": [
+    {
+      "name": "small_land",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "no_carry_flag",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "medium_land",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "small_air",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "capacity_getter_0",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "capacity_getter_2",
+      "got": 2,
+      "expected": 2,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "capacity_getter_5",
+      "got": 5,
+      "expected": 5,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "one_fits",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "two_fit",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "three_do_not_fit",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "wrong_cargo_type",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup"
+      ]
+    },
+    {
+      "name": "one_empty",
+      "got": [
+        1,
+        0,
+        2
+      ],
+      "expected": [
+        1,
+        0,
+        2
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "one_loaded",
+      "got": [
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "two_carriers",
+      "got": [
+        1,
+        1,
+        3
+      ],
+      "expected": [
+        1,
+        1,
+        3
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "represented_state_1",
+      "got": [
+        1,
+        0,
+        2
+      ],
+      "expected": [
+        1,
+        0,
+        2
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "no_carrier",
+      "got": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "excluded_state_17",
+      "got": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "UnitDB record lookup",
+        "Player army-type query"
+      ]
+    },
+    {
+      "name": "cannot_move",
+      "got": [],
+      "expected": [],
+      "passed": true,
+      "external_mocks": [
+        "Player boarding request"
+      ]
+    },
+    {
+      "name": "same_tile_accepted",
+      "got": [
+        [
+          23,
+          17
+        ]
+      ],
+      "expected": [
+        [
+          23,
+          17
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player boarding request"
+      ]
+    },
+    {
+      "name": "same_tile_rejected",
+      "got": [
+        [
+          23,
+          17
+        ]
+      ],
+      "expected": [
+        [
+          23,
+          17
+        ]
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player boarding request"
+      ]
+    },
+    {
+      "name": "different_tile",
+      "got": [],
+      "expected": [],
+      "passed": true,
+      "external_mocks": [
+        "Player boarding request"
+      ]
+    },
+    {
+      "name": "settle_request_0",
+      "got": [
+        [
+          17
+        ],
+        0
+      ],
+      "expected": [
+        [
+          17
+        ],
+        0
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player settlement request"
+      ]
+    },
+    {
+      "name": "settle_request_1",
+      "got": [
+        [
+          17
+        ],
+        1
+      ],
+      "expected": [
+        [
+          17
+        ],
+        1
+      ],
+      "passed": true,
+      "external_mocks": [
+        "Player settlement request"
+      ]
+    }
+  ],
+  "passed": 23,
+  "total": 23
+}

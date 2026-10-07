@@ -72,6 +72,8 @@ Dit is een afspraak voor actief werk, geen los ingestelde timer of geplande taak
 
 ## Gebruiksbudget: waarschuwing, stop en hervatten
 
+Actuele gebruikersafspraak: sluit de pc alleen af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Een budgetgrens stopt uitsluitend het projectwerk; bewaar het hervatpunt en laat de pc aan. De eerdere afsluitopdrachten van 5 en 7 oktober zijn afgehandeld en vormen geen doorlopende toestemming. Roep PROEVEN/Sluit-PC-Bij-Budgetstop.ps1 niet aan vanuit budgetbewaking of automatische doelopvolging. De helper vereist bovendien de expliciete vlag UserRequestedShutdown, die uitsluitend bij zo'n nieuwe gebruikersopdracht mag worden meegegeven. Geen achtergrondtimer of automatische herstart ingesteld.
+
 Gebruikersafspraken van 4 oktober 2026: waarschuw bij **25% of minder resterend weekbudget**; stop alle projectwerk bij **10% of minder resterend weekbudget**. Stop daarnaast bij **5% of minder resterend in het vijfuurvenster**. Na een bevestigde vijfuurreset mag het project zelfstandig hervatten, mits het weekbudget boven zijn stopgrens staat. Dit betreft accountgebruik, geen contextcapaciteit of projecttokensteller.
 
 De coördinator controleert de actuele `token_count.rate_limits`-melding van de hoofdsessie met `PROEVEN/Controleer-Weekbudget.py --thread 01a0f7b4-4751-7513-b510-3835ce43f47d`. De helper leest alleen limietmetadata uit de sessielog, onderscheidt 10080 minuten (week) en 300 minuten (vijf uur) en rekent `100 - used_percent`. Oudere meldingen dan 120 seconden of ontbrekende vensters geven `unknown`; een reeds bekende stopgrens blijft leidend. Presenteer oude metingen niet als actuele stand. Bij hervatten in een andere hoofdsessie moet het thread-ID worden aangepast.

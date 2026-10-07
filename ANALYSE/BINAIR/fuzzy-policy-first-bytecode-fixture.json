@@ -1,0 +1,232 @@
+{
+  "ai_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "limitations": "Original FLI shape, section initialization and rule-to-output instructions.\n\nSynthetic parsed records/bytecode; not a text parser or full civilization turn.\nOnly function-index lookup, clock and logging are callbacks. Output procedures,\nstacks, forms, centroid, counters and linked-value writes execute real code.\nPreallocated output arrays avoid allocator branches; original instructions on\ndisk are never changed. FTOL is a fixture-only CRT substitute.\n",
+  "checks": [
+    {
+      "name": "shape_(0, 3)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "shape_(0, 4)",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true
+    },
+    {
+      "name": "shape_(0, 5)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "shape_(1, 5)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "shape_(1, 6)",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true
+    },
+    {
+      "name": "shape_(1, 7)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "shape_(2, 4)",
+      "got": 0.5,
+      "expected": 0.5,
+      "passed": true
+    },
+    {
+      "name": "shape_(2, 5)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "shape_(2, 7)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "shape_(3, 4.5)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "shape_(3, 4.75)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "shape_(3, 5)",
+      "got": 1.0,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "shape_(4, 5)",
+      "got": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "section_(False, True)",
+      "got": [
+        3.0,
+        0
+      ],
+      "expected": [
+        3,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "section_(True, True)",
+      "got": [
+        3.0,
+        0
+      ],
+      "expected": [
+        3,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "section_(False, False)",
+      "got": [
+        7.0,
+        0
+      ],
+      "expected": [
+        7,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "section_(True, False)",
+      "got": [
+        7.0,
+        0
+      ],
+      "expected": [
+        7,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "rule_single",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.25,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_and",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.25,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_or",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.75,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_not",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.75,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_very",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.0625,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_kinda",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0.4375,
+        8,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "name": "rule_zero",
+      "got": [
+        0.0,
+        7.0,
+        0
+      ],
+      "expected": [
+        0,
+        7,
+        1
+      ],
+      "passed": false
+    }
+  ],
+  "passed": 17,
+  "total": 24
+}

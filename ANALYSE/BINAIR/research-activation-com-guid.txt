@@ -1,0 +1,58 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 2000fc00 ?QueryInterface@IC3RobotCom@@UAGJABU_GUID@@PAPAX@Z END 2000fc70
+2000fc00 55                     push     ebp
+2000fc01 8bec                   mov      ebp, esp
+2000fc03 8b5510                 mov      edx, dword ptr [ebp + 0x10]
+2000fc06 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+2000fc09 53                     push     ebx
+2000fc0a 56                     push     esi
+2000fc0b 57                     push     edi
+2000fc0c b910000000             mov      ecx, 0x10
+2000fc11 bf20b70820             mov      edi, 0x2008b720 ; _IID_IUnknown
+2000fc16 8bf0                   mov      esi, eax
+2000fc18 33db                   xor      ebx, ebx
+2000fc1a c70200000000           mov      dword ptr [edx], 0
+2000fc20 f3a6                   repe cmpsb byte ptr [esi], byte ptr es:[edi]
+2000fc22 7514                   jne      0x2000fc38
+2000fc24 8b4508                 mov      eax, dword ptr [ebp + 8]
+2000fc27 8902                   mov      dword ptr [edx], eax
+2000fc29 50                     push     eax
+2000fc2a 8b08                   mov      ecx, dword ptr [eax]
+2000fc2c ff5104                 call     dword ptr [ecx + 4]
+2000fc2f 33c0                   xor      eax, eax
+2000fc31 5f                     pop      edi
+2000fc32 5e                     pop      esi
+2000fc33 5b                     pop      ebx
+2000fc34 5d                     pop      ebp
+2000fc35 c20c00                 ret      0xc
+2000fc38 8bf0                   mov      esi, eax
+2000fc3a b910000000             mov      ecx, 0x10
+2000fc3f bfa8960820             mov      edi, 0x200896a8 ; _CLSID_IRobot
+2000fc44 33c0                   xor      eax, eax
+2000fc46 f3a6                   repe cmpsb byte ptr [esi], byte ptr es:[edi]
+2000fc48 7514                   jne      0x2000fc5e
+2000fc4a 8b4508                 mov      eax, dword ptr [ebp + 8]
+2000fc4d 8902                   mov      dword ptr [edx], eax
+2000fc4f 50                     push     eax
+2000fc50 8b08                   mov      ecx, dword ptr [eax]
+2000fc52 ff5104                 call     dword ptr [ecx + 4]
+2000fc55 33c0                   xor      eax, eax
+2000fc57 5f                     pop      edi
+2000fc58 5e                     pop      esi
+2000fc59 5b                     pop      ebx
+2000fc5a 5d                     pop      ebp
+2000fc5b c20c00                 ret      0xc
+2000fc5e 5f                     pop      edi
+2000fc5f 5e                     pop      esi
+2000fc60 b802400080             mov      eax, 0x80004002
+2000fc65 5b                     pop      ebx
+2000fc66 5d                     pop      ebp
+2000fc67 c20c00                 ret      0xc
+2000fc6a 90                     nop      
+2000fc6b 90                     nop      
+2000fc6c 90                     nop      
+2000fc6d 90                     nop      
+2000fc6e 90                     nop      
+2000fc6f 90                     nop      

@@ -1,0 +1,74 @@
+[
+  {
+    "token": 85,
+    "name": "CAN_CARRY_LARGE_WATER",
+    "dispatch_index": 21,
+    "target": "0x46b9a9",
+    "instructions": [
+      "0046b9a9 mov eax, dword ptr [ebx + 0x48]",
+      "0046b9ac or ah, 1",
+      "0046b9af mov dword ptr [ebx + 0x48], eax",
+      "0046b9b2 jmp 0x46ca86"
+    ]
+  },
+  {
+    "token": 103,
+    "name": "IS_TRADER",
+    "dispatch_index": 36,
+    "target": "0x46bb01",
+    "instructions": [
+      "0046bb01 mov eax, dword ptr [ebx + 0x34]",
+      "0046bb04 or ah, 1",
+      "0046bb07 mov dword ptr [ebx + 0x34], eax",
+      "0046bb0a jmp 0x46ca86"
+    ]
+  },
+  {
+    "token": 114,
+    "name": "VISIBILITY_CLASS_8",
+    "dispatch_index": 47,
+    "target": "0x46bba7",
+    "instructions": [
+      "0046bba7 mov eax, dword ptr [ebx + 0x8c]",
+      "0046bbad or ah, 1",
+      "0046bbb0 mov dword ptr [ebx + 0x8c], eax",
+      "0046bbb6 jmp 0x46ca86"
+    ]
+  },
+  {
+    "token": 123,
+    "name": "VISIBILITY_CAN_SEE_8",
+    "dispatch_index": 56,
+    "target": "0x46bc53",
+    "instructions": [
+      "0046bc53 mov eax, dword ptr [ebx + 0x90]",
+      "0046bc59 or ah, 1",
+      "0046bc5c mov dword ptr [ebx + 0x90], eax",
+      "0046bc62 jmp 0x46ca86"
+    ]
+  },
+  {
+    "token": 129,
+    "name": "NEEDS_NO_SUPPORT",
+    "dispatch_index": 62,
+    "target": "0x46bd4b",
+    "instructions": [
+      "0046bd4b mov eax, dword ptr [ebx + 0x34]",
+      "0046bd4e or ah, 0x10",
+      "0046bd51 mov dword ptr [ebx + 0x34], eax",
+      "0046bd54 jmp 0x46ca86"
+    ]
+  },
+  {
+    "token": 230,
+    "name": "IS_SPECIAL_FORCES",
+    "dispatch_index": 163,
+    "target": "0x46c8b0",
+    "instructions": [
+      "0046c8b0 mov eax, dword ptr [ebx + 0x40]",
+      "0046c8b3 or ah, 1",
+      "0046c8b6 mov dword ptr [ebx + 0x40], eax",
+      "0046c8b9 jmp 0x46ca86"
+    ]
+  }
+]

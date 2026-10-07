@@ -174,6 +174,8 @@ Grenzen: de parser heeft niet echte AIP-bestanden voor deze voorbeelden ingeleze
 
 ## 10. Resterende vragen en noodzakelijke actualisaties
 
+Vervolg6 oktober: [FUZZY-BELEID-EN-DEFUZZIFICATIE](FUZZY-BELEID-EN-DEFUZZIFICATIE.md) sluit de laatste centroid-/leeg-outputstap met4 controles. Dit is geen volledige rulepass/profieluitkomst; de eerste open vraag hieronder blijft gericht vervolgwerk. Advance-/governmentkeuze en bouwdoelroutes zijn inmiddels apart onderbouwd in de specifieke rapporten; oude suggesties om die eerste routes opnieuw te onderzoeken zijn achterhaald.
+
 Dit onderzoek sluit de belangrijkste vraag 'gedeeltelijke vervanging of samenvoeging?' voor de normale AIP-route. Het lost nog niet op:
 
 - Welke fuzzy waarden en baseloads een specifieke beschaving op een specifieke beurt krijgt; rulevolgorde, defuzzificatie en sectionstatus zijn nog geen volledig model.

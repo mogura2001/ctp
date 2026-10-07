@@ -1,0 +1,217 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "checks": [
+    {
+      "name": "unused_0_0",
+      "got": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "unused_1_0",
+      "got": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "unused_1_1",
+      "got": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "unused_1_3",
+      "got": -2,
+      "expected": -2,
+      "passed": true
+    },
+    {
+      "name": "unused_10_4",
+      "got": 6,
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "name": "free_no_wonder",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "mocks": "CRT64shift only; record/known getters original"
+    },
+    {
+      "name": "free_active",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "mocks": "CRT64shift only; record/known getters original"
+    },
+    {
+      "name": "free_foreign_obsoletes",
+      "got": 1,
+      "expected": 0,
+      "passed": false,
+      "mocks": "CRT64shift only; record/known getters original"
+    },
+    {
+      "name": "free_no_obsolete",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "mocks": "CRT64shift only; record/known getters original"
+    },
+    {
+      "name": "charge_last_ordinary",
+      "got": [
+        123,
+        1,
+        false
+      ],
+      "expected": [
+        123,
+        1,
+        false
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "charge_ordinary_overflow",
+      "got": [
+        0,
+        1,
+        true
+      ],
+      "expected": [
+        0,
+        1,
+        true
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "charge_free_overflow",
+      "got": [
+        123,
+        2,
+        false
+      ],
+      "expected": [
+        123,
+        2,
+        false
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "charge_free_without_caravan",
+      "got": [
+        123,
+        1,
+        false
+      ],
+      "expected": [
+        123,
+        1,
+        false
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "charge_foreign_obsolete_blocks",
+      "got": [
+        123,
+        1,
+        false
+      ],
+      "expected": [
+        0,
+        0,
+        true
+      ],
+      "passed": false,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "charge_inactive_route",
+      "got": [
+        0,
+        0,
+        true
+      ],
+      "expected": [
+        0,
+        0,
+        true
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI/notification/delete; original free predicate and routecost"
+    },
+    {
+      "name": "release_matching",
+      "got": [
+        2,
+        1
+      ],
+      "expected": [
+        2,
+        1
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI only; original routecost"
+    },
+    {
+      "name": "release_other_payer",
+      "got": [
+        3,
+        1
+      ],
+      "expected": [
+        3,
+        1
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI only; original routecost"
+    },
+    {
+      "name": "release_guarded",
+      "got": [
+        3,
+        1
+      ],
+      "expected": [
+        3,
+        1
+      ],
+      "passed": true,
+      "mocks": "route-pool/UI only; original routecost"
+    },
+    {
+      "name": "trader_capacity_1.0",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "mocks": "recordlookup; executes actual post-trader-segment only, not full createunit"
+    },
+    {
+      "name": "trader_capacity_2.0",
+      "got": 2,
+      "expected": 2,
+      "passed": true,
+      "mocks": "recordlookup; executes actual post-trader-segment only, not full createunit"
+    },
+    {
+      "name": "trader_capacity_0.0",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "mocks": "recordlookup; executes actual post-trader-segment only, not full createunit"
+    }
+  ],
+  "passed": 19,
+  "total": 21,
+  "runtime_limit": "synthetic objects; no scheduler/game turns/network/cityroute eligibility",
+  "x87": "PC64 nearest; CW-preserving FTOL; integer routecost1"
+}

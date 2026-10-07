@@ -1,0 +1,184 @@
+{
+  "hashes": [
+    "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44"
+  ],
+  "checks": [
+    {
+      "name": "city_size4",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_size8",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_size10",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_production400",
+      "got": 1,
+      "expected": 1,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_both",
+      "got": 2,
+      "expected": 2,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_factory",
+      "got": 4,
+      "expected": 4,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_recycler_clamp",
+      "got": 0,
+      "expected": 0,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_tech_modifiers",
+      "got": 4,
+      "expected": 4,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_government3",
+      "got": 6,
+      "expected": 6,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "city_additional_food",
+      "got": 7,
+      "expected": 7,
+      "passed": true,
+      "mocks": "wonder/history/cleaner; real buildingbonus/techsum/government/formula; before AI pact"
+    },
+    {
+      "name": "AI_success",
+      "got": [
+        1,
+        0,
+        0,
+        9
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        9
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    },
+    {
+      "name": "AI_reserve_short",
+      "got": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    },
+    {
+      "name": "AI_dirty_threshold",
+      "got": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    },
+    {
+      "name": "AI_request_fails",
+      "got": [
+        1,
+        1,
+        1,
+        9
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        9
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    },
+    {
+      "name": "AI_legal_state_blocks",
+      "got": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        null
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    },
+    {
+      "name": "AI_random_parameter4",
+      "got": [
+        1,
+        0,
+        0,
+        4
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        4
+      ],
+      "passed": true,
+      "mocks": "Playerbudget/Worldowner/random/Improvementcost/legalstate/action/delete"
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "limits": "local pollution field only before AI pacts; synthetics and explicit inputs/actions; no completed cleanup or world catastrophe",
+  "x87": "PC64 nearest/CW-preserving FTOL"
+}

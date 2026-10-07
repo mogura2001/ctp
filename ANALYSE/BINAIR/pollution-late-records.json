@@ -1,0 +1,580 @@
+{
+  "CTP-og": {
+    "Advance.txt": [
+      {
+        "record": "ADVANCE_OIL_REFINING",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t1"
+        ]
+      },
+      {
+        "record": "ADVANCE_MASS_PRODUCTION",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t0.5",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t0.5"
+        ]
+      },
+      {
+        "record": "ADVANCE_ENVIRONMENTALISM",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_INTELLIGENT_MATERIALS",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t1"
+        ]
+      },
+      {
+        "record": "ADVANCE_NANOASSEMBLY",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_GAIA_THEORY",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_TELEPORTATION0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL3",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL6",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_SEA0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS3",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS6",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS8",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS9",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      }
+    ],
+    "improve.txt": [
+      {
+        "record": "IMPROVE_FACTORY",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_INDUSTRIAL_REVOLUTION",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_OIL_REFINERY",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_OIL_REFINING",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t2"
+        ]
+      },
+      {
+        "record": "IMPROVE_AIRPORT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_AERODYNAMICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_NUCLEAR_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t45",
+          "ENABLING_ADVANCE \tADVANCE_QUANTUM_MECHANICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-0.5"
+        ]
+      },
+      {
+        "record": "IMPROVE_RECYCLING_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t5",
+          "ENABLING_ADVANCE \tADVANCE_ENVIRONMENTALISM",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-2"
+        ]
+      },
+      {
+        "record": "IMPROVE_ROBOTIC_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t45",
+          "ENABLING_ADVANCE \tADVANCE_ROBOTICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_POPULATION_MONITOR",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t10",
+          "ENABLING_ADVANCE \tADVANCE_AI_SURVEILLANCE",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-1"
+        ]
+      },
+      {
+        "record": "IMPROVE_ZERO_EMISSION_VEHICLES",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t15",
+          "ENABLING_ADVANCE \tADVANCE_FUEL_CELLS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-2"
+        ]
+      },
+      {
+        "record": "IMPROVE_FUSION_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t30",
+          "ENABLING_ADVANCE \tADVANCE_FUSION",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-1"
+        ]
+      }
+    ],
+    "govern.txt": [
+      {
+        "record": "GOVERNMENT_ANARCHY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tNULL"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_TYRANNY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tNULL"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_MONARCHY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tADVANCE_MONARCHY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_THEOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tADVANCE_THEOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_CITY_STATE",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_CITY_STATE"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_DEMOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_DEMOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_COMMUNISM",
+        "relevant": [
+          "POLLUTION_COEF\t3",
+          "POLLUTION_UNHAPPY_COEF\t0.02",
+          "ENABLING_ADVANCE \tADVANCE_COMMUNISM"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_FASCISM",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_FASCISM"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_ECOTOPIA",
+        "relevant": [
+          "POLLUTION_COEF\t0.25",
+          "POLLUTION_UNHAPPY_COEF\t0.08",
+          "ENABLING_ADVANCE \tADVANCE_ECOTOPIA"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_MULTINATIONAL_REPUBLIC",
+        "relevant": [
+          "POLLUTION_COEF\t2",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_MULTINATIONAL_REPUBLIC"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_TECHNOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_TECHNOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_VIRTUAL_DEMOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_VIRTUAL_DEMOCRACY"
+        ]
+      }
+    ],
+    "Terrain.txt": []
+  },
+  "CTP-AAIP": {
+    "Advance.txt": [
+      {
+        "record": "ADVANCE_OIL_REFINING",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t1"
+        ]
+      },
+      {
+        "record": "ADVANCE_MASS_PRODUCTION",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t0.5",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t0.5"
+        ]
+      },
+      {
+        "record": "ADVANCE_ENVIRONMENTALISM",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_INTELLIGENT_MATERIALS",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t1"
+        ]
+      },
+      {
+        "record": "ADVANCE_NANOASSEMBLY",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_GAIA_THEORY",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_TELEPORTATION0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL3",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL6",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_CULTURAL0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_SEA0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS3",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS6",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS8",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS9",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      },
+      {
+        "record": "ADVANCE_PHYSICS0",
+        "relevant": [
+          "ADVANCE_POLLUTION_SIZE_MODIFIER\t-1",
+          "ADVANCE_POLLUTION_PRODUCTION_MODIFIER\t-1"
+        ]
+      }
+    ],
+    "improve.txt": [
+      {
+        "record": "IMPROVE_FACTORY",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_INDUSTRIAL_REVOLUTION",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_OIL_REFINERY",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_OIL_REFINING",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t2"
+        ]
+      },
+      {
+        "record": "IMPROVE_AIRPORT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t20",
+          "ENABLING_ADVANCE \tADVANCE_AERODYNAMICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_NUCLEAR_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t45",
+          "ENABLING_ADVANCE \tADVANCE_QUANTUM_MECHANICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-0.5"
+        ]
+      },
+      {
+        "record": "IMPROVE_RECYCLING_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t5",
+          "ENABLING_ADVANCE \tADVANCE_ENVIRONMENTALISM",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-2"
+        ]
+      },
+      {
+        "record": "IMPROVE_ROBOTIC_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t45",
+          "ENABLING_ADVANCE \tADVANCE_ROBOTICS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t1"
+        ]
+      },
+      {
+        "record": "IMPROVE_POPULATION_MONITOR",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t10",
+          "ENABLING_ADVANCE \tADVANCE_AI_SURVEILLANCE",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-1"
+        ]
+      },
+      {
+        "record": "IMPROVE_ZERO_EMISSION_VEHICLES",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t15",
+          "ENABLING_ADVANCE \tADVANCE_FUEL_CELLS",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-2"
+        ]
+      },
+      {
+        "record": "IMPROVE_FUSION_PLANT",
+        "relevant": [
+          "IMPROVEMENT_UPKEEP\t30",
+          "ENABLING_ADVANCE \tADVANCE_FUSION",
+          "IMPROVEMENT_FLAG_POLLUTION_BONUS\t-1"
+        ]
+      }
+    ],
+    "govern.txt": [
+      {
+        "record": "GOVERNMENT_ANARCHY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tNULL"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_TYRANNY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tNULL"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_MONARCHY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tADVANCE_MONARCHY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_THEOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0",
+          "ENABLING_ADVANCE \tADVANCE_THEOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_CITY_STATE",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_CITY_STATE"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_DEMOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_DEMOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_COMMUNISM",
+        "relevant": [
+          "POLLUTION_COEF\t3",
+          "POLLUTION_UNHAPPY_COEF\t0.02",
+          "ENABLING_ADVANCE \tADVANCE_COMMUNISM"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_FASCISM",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_FASCISM"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_ECOTOPIA",
+        "relevant": [
+          "POLLUTION_COEF\t0.25",
+          "POLLUTION_UNHAPPY_COEF\t0.08",
+          "ENABLING_ADVANCE \tADVANCE_ECOTOPIA"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_MULTINATIONAL_REPUBLIC",
+        "relevant": [
+          "POLLUTION_COEF\t2",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_MULTINATIONAL_REPUBLIC"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_TECHNOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_TECHNOCRACY"
+        ]
+      },
+      {
+        "record": "GOVERNMENT_VIRTUAL_DEMOCRACY",
+        "relevant": [
+          "POLLUTION_COEF\t1",
+          "POLLUTION_UNHAPPY_COEF\t0.04",
+          "ENABLING_ADVANCE \tADVANCE_VIRTUAL_DEMOCRACY"
+        ]
+      }
+    ],
+    "Terrain.txt": []
+  }
+}

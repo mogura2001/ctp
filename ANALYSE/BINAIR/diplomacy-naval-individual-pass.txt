@@ -1,0 +1,28 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20037650 ?Serialize@FSFuzzyDiplomacy@@UAEXAAVCivArchive@@@Z END 20037660
+20037650 55                     push     ebp
+20037651 8bec                   mov      ebp, esp
+20037653 5d                     pop      ebp
+20037654 c20400                 ret      4
+20037657 90                     nop      
+20037658 90                     nop      
+20037659 90                     nop      
+2003765a 90                     nop      
+2003765b 90                     nop      
+2003765c 90                     nop      
+2003765d 90                     nop      
+2003765e 90                     nop      
+2003765f 90                     nop      
+
+FUNCTION 20037660 ?Execute@FSFuzzyDiplomacy@@UAEHPAVAiMain@@AAJPAU_iobuf@@@Z END 20037670
+20037660 55                     push     ebp
+20037661 8bec                   mov      ebp, esp
+20037663 b801000000             mov      eax, 1
+20037668 5d                     pop      ebp
+20037669 c20c00                 ret      0xc
+2003766c 90                     nop      
+2003766d 90                     nop      
+2003766e 90                     nop      
+2003766f 90                     nop      

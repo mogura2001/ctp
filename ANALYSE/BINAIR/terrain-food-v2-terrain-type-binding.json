@@ -1,0 +1,194 @@
+[
+  {
+    "name": "TERRAIN_TYPE_FOREST",
+    "token": 968,
+    "case": "0x467ca7",
+    "store": [
+      "00467cb2 mov dword ptr [eax + 0xb0], 0"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_PLAINS",
+    "token": 969,
+    "case": "0x467cc1",
+    "store": [
+      "00467ccc mov dword ptr [eax + 0xb0], 1"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_TUNDRA",
+    "token": 970,
+    "case": "0x467cdb",
+    "store": [
+      "00467ce6 mov dword ptr [eax + 0xb0], 2"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_GLACIER",
+    "token": 971,
+    "case": "0x467cf5",
+    "store": [
+      "00467d00 mov dword ptr [eax + 0xb0], 3"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_GRASSLAND",
+    "token": 972,
+    "case": "0x467d0f",
+    "store": [
+      "00467d1a mov dword ptr [eax + 0xb0], 4"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_DESERT",
+    "token": 973,
+    "case": "0x467d29",
+    "store": [
+      "00467d34 mov dword ptr [eax + 0xb0], 5"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_SWAMP",
+    "token": 974,
+    "case": "0x467d43",
+    "store": [
+      "00467d4e mov dword ptr [eax + 0xb0], 6"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_JUNGLE",
+    "token": 975,
+    "case": "0x467d5d",
+    "store": [
+      "00467d68 mov dword ptr [eax + 0xb0], 7"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_MOUNTAIN",
+    "token": 976,
+    "case": "0x467d77",
+    "store": [
+      "00467d82 mov dword ptr [eax + 0xb0], 8"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_HILL",
+    "token": 977,
+    "case": "0x467d91",
+    "store": [
+      "00467d9c mov dword ptr [eax + 0xb0], 9"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_SHALLOW",
+    "token": 978,
+    "case": "0x467dab",
+    "store": [
+      "00467db6 mov dword ptr [eax + 0xb0], 0xa"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_DEEP",
+    "token": 979,
+    "case": "0x467dc5",
+    "store": [
+      "00467dd0 mov dword ptr [eax + 0xb0], 0xb"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_RIFT",
+    "token": 980,
+    "case": "0x467ddf",
+    "store": [
+      "00467dea mov dword ptr [eax + 0xb0], 0x11"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_TRENCH",
+    "token": 981,
+    "case": "0x467df9",
+    "store": [
+      "00467e04 mov dword ptr [eax + 0xb0], 0x10"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_VOLCANO",
+    "token": 984,
+    "case": "0x467e47",
+    "store": [
+      "00467e52 mov dword ptr [eax + 0xb0], 0xc"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_BEACH",
+    "token": 982,
+    "case": "0x467e2d",
+    "store": [
+      "00467e38 mov dword ptr [eax + 0xb0], 0xe"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WATER_SHELF",
+    "token": 983,
+    "case": "0x467e13",
+    "store": [
+      "00467e1e mov dword ptr [eax + 0xb0], 0xf"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_SPACE",
+    "token": 985,
+    "case": "0x467e61",
+    "store": [
+      "00467e6c mov dword ptr [eax + 0xb0], 0xd"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_DEAD",
+    "token": 986,
+    "case": "0x467e7b",
+    "store": [
+      "00467e86 mov dword ptr [eax + 0xb0], 0x12"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_DEAD_HILL",
+    "token": 987,
+    "case": "0x467eee",
+    "store": [
+      "00467ef9 mov dword ptr [eax + 0xb0], 0x17"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_BROWN_HILL",
+    "token": 988,
+    "case": "0x467e92",
+    "store": [
+      "00467e9d mov dword ptr [eax + 0xb0], 0x13"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_BROWN_MOUNTAIN",
+    "token": 989,
+    "case": "0x467ea9",
+    "store": [
+      "00467eb4 mov dword ptr [eax + 0xb0], 0x14"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WHITE_HILL",
+    "token": 990,
+    "case": "0x467ec0",
+    "store": [
+      "00467ecb mov dword ptr [eax + 0xb0], 0x15"
+    ]
+  },
+  {
+    "name": "TERRAIN_TYPE_WHITE_MOUNTAIN",
+    "token": 991,
+    "case": "0x467ed7",
+    "store": [
+      "00467ee2 mov dword ptr [eax + 0xb0], 0x16"
+    ]
+  }
+]

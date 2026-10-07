@@ -1,0 +1,737 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 2000b960 ?UpdateMiscInfo@Foreigner@@QAEXPAVAiMain@@@Z END 2000bbd0
+2000b960 55                     push     ebp
+2000b961 8bec                   mov      ebp, esp
+2000b963 83ec10                 sub      esp, 0x10
+2000b966 53                     push     ebx
+2000b967 56                     push     esi
+2000b968 8b7508                 mov      esi, dword ptr [ebp + 8]
+2000b96b 57                     push     edi
+2000b96c 8bf9                   mov      edi, ecx
+2000b96e 8b4628                 mov      eax, dword ptr [esi + 0x28]
+2000b971 8b17                   mov      edx, dword ptr [edi]
+2000b973 8b08                   mov      ecx, dword ptr [eax]
+2000b975 52                     push     edx
+2000b976 50                     push     eax
+2000b977 ff5174                 call     dword ptr [ecx + 0x74]
+2000b97a 8b17                   mov      edx, dword ptr [edi]
+2000b97c 894728                 mov      dword ptr [edi + 0x28], eax
+2000b97f 8b4628                 mov      eax, dword ptr [esi + 0x28]
+2000b982 52                     push     edx
+2000b983 50                     push     eax
+2000b984 8b08                   mov      ecx, dword ptr [eax]
+2000b986 ff5178                 call     dword ptr [ecx + 0x78]
+2000b989 dd9f08010000           fstp     qword ptr [edi + 0x108]
+2000b98f 8d4dfc                 lea      ecx, [ebp - 4]
+2000b992 e809af0100             call     0x200268a0 ; ??0BSetID@@QAE@XZ
+2000b997 8b4f08                 mov      ecx, dword ptr [edi + 8]
+2000b99a 33db                   xor      ebx, ebx
+2000b99c 899f10010000           mov      dword ptr [edi + 0x110], ebx
+2000b9a2 899f14010000           mov      dword ptr [edi + 0x114], ebx
+2000b9a8 8b4108                 mov      eax, dword ptr [ecx + 8]
+2000b9ab 3bc3                   cmp      eax, ebx
+2000b9ad 7528                   jne      0x2000b9d7
+2000b9af 8b4110                 mov      eax, dword ptr [ecx + 0x10]
+2000b9b2 c74118ffffffff         mov      dword ptr [ecx + 0x18], 0xffffffff
+2000b9b9 8d55f8                 lea      edx, [ebp - 8]
+2000b9bc 895df8                 mov      dword ptr [ebp - 8], ebx
+2000b9bf 8918                   mov      dword ptr [eax], ebx
+2000b9c1 8b4914                 mov      ecx, dword ptr [ecx + 0x14]
+2000b9c4 52                     push     edx
+2000b9c5 c70101000000           mov      dword ptr [ecx], 1
+2000b9cb 8d4dfc                 lea      ecx, [ebp - 4]
+2000b9ce e81daf0100             call     0x200268f0 ; ??4BSetID@@QAEAAV0@ABH@Z
+2000b9d3 33c0                   xor      eax, eax
+2000b9d5 eb1a                   jmp      0x2000b9f1
+2000b9d7 8b5110                 mov      edx, dword ptr [ecx + 0x10]
+2000b9da 895918                 mov      dword ptr [ecx + 0x18], ebx
+2000b9dd 8902                   mov      dword ptr [edx], eax
+2000b9df 8b4118                 mov      eax, dword ptr [ecx + 0x18]
+2000b9e2 8b5114                 mov      edx, dword ptr [ecx + 0x14]
+2000b9e5 891c82                 mov      dword ptr [edx + eax*4], ebx
+2000b9e8 8d45fc                 lea      eax, [ebp - 4]
+2000b9eb 50                     push     eax
+2000b9ec e85f1f0000             call     0x2000d950 ; ?Next@?$BSet@VForeignAgent@@@@QAEPAVForeignAgent@@AAVBSetID@@@Z
+2000b9f1 8b4f08                 mov      ecx, dword ptr [edi + 8]
+2000b9f4 395918                 cmp      dword ptr [ecx + 0x18], ebx
+2000b9f7 0f8cf3000000           jl       0x2000baf0
+2000b9fd 8d55f0                 lea      edx, [ebp - 0x10]
+2000ba00 8bc8                   mov      ecx, eax
+2000ba02 52                     push     edx
+2000ba03 e8186b0100             call     0x20022520 ; ?GetPos@ForeignAgent@@QAEXAAUMapPointData@@@Z
+2000ba08 8b462c                 mov      eax, dword ptr [esi + 0x2c]
+2000ba0b 8d55f0                 lea      edx, [ebp - 0x10]
+2000ba0e 52                     push     edx
+2000ba0f 50                     push     eax
+2000ba10 8b08                   mov      ecx, dword ptr [eax]
+2000ba12 ff917c010000           call     dword ptr [ecx + 0x17c]
+2000ba18 3bc3                   cmp      eax, ebx
+2000ba1a 7e1f                   jle      0x2000ba3b
+2000ba1c dd8710010000           fld      qword ptr [edi + 0x110]
+2000ba22 83f801                 cmp      eax, 1
+2000ba25 7e08                   jle      0x2000ba2f
+2000ba27 dc2590910820           fsub     qword ptr [0x20089190] ; constant=-1
+2000ba2d eb06                   jmp      0x2000ba35
+2000ba2f dc2598910820           fsub     qword ptr [0x20089198] ; constant=-2
+2000ba35 dd9f10010000           fstp     qword ptr [edi + 0x110]
+2000ba3b 8b7708                 mov      esi, dword ptr [edi + 8]
+2000ba3e 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+2000ba41 3bcb                   cmp      ecx, ebx
+2000ba43 0f8c96000000           jl       0x2000badf
+2000ba49 8b5614                 mov      edx, dword ptr [esi + 0x14]
+2000ba4c 8d048d00000000         lea      eax, [ecx*4]
+2000ba53 8b1410                 mov      edx, dword ptr [eax + edx]
+2000ba56 83fa03                 cmp      edx, 3
+2000ba59 7779                   ja       0x2000bad4
+2000ba5b ff2495b8bb0020         jmp      dword ptr [edx*4 + 0x2000bbb8]
+2000ba62 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+2000ba65 8b1408                 mov      edx, dword ptr [eax + ecx]
+2000ba68 395a04                 cmp      dword ptr [edx + 4], ebx
+2000ba6b 0f8414010000           je       0x2000bb85
+2000ba71 8bce                   mov      ecx, esi
+2000ba73 e838280000             call     0x2000e2b0 ; ?TestStackSize@?$BSet@VCityAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VForeignAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VArmyAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VForeignCity@@@@AAEXXZ
+2000ba78 8b4618                 mov      eax, dword ptr [esi + 0x18]
+2000ba7b 8b4e14                 mov      ecx, dword ptr [esi + 0x14]
+2000ba7e c7048102000000         mov      dword ptr [ecx + eax*4], 2
+2000ba85 8b4618                 mov      eax, dword ptr [esi + 0x18]
+2000ba88 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+2000ba8b 8b1481                 mov      edx, dword ptr [ecx + eax*4]
+2000ba8e 8b5204                 mov      edx, dword ptr [edx + 4]
+2000ba91 89548104               mov      dword ptr [ecx + eax*4 + 4], edx
+2000ba95 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+2000ba98 41                     inc      ecx
+2000ba99 894e18                 mov      dword ptr [esi + 0x18], ecx
+2000ba9c 8bc1                   mov      eax, ecx
+2000ba9e 8b4e14                 mov      ecx, dword ptr [esi + 0x14]
+2000baa1 891c81                 mov      dword ptr [ecx + eax*4], ebx
+2000baa4 8b5618                 mov      edx, dword ptr [esi + 0x18]
+2000baa7 8b4610                 mov      eax, dword ptr [esi + 0x10]
+2000baaa 8b0c90                 mov      ecx, dword ptr [eax + edx*4]
+2000baad 51                     push     ecx
+2000baae 8d4dfc                 lea      ecx, [ebp - 4]
+2000bab1 e86aae0100             call     0x20026920 ; ??4BSetID@@QAEAAV0@ABV0@@Z
+2000bab6 eb1c                   jmp      0x2000bad4
+2000bab8 8b5610                 mov      edx, dword ptr [esi + 0x10]
+2000babb 8b0402                 mov      eax, dword ptr [edx + eax]
+2000babe 395808                 cmp      dword ptr [eax + 8], ebx
+2000bac1 740d                   je       0x2000bad0
+2000bac3 8d4dfc                 lea      ecx, [ebp - 4]
+2000bac6 51                     push     ecx
+2000bac7 8bce                   mov      ecx, esi
+2000bac9 e802260000             call     0x2000e0d0 ; ?NextGreater@?$BSet@VForeignCity@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VArmyAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VForeignAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VCityAgent@@@@AAEXAAVBSetID@@@Z
+2000bace eb04                   jmp      0x2000bad4
+2000bad0 49                     dec      ecx
+2000bad1 894e18                 mov      dword ptr [esi + 0x18], ecx
+2000bad4 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+2000bad7 3bcb                   cmp      ecx, ebx
+2000bad9 0f8d6affffff           jge      0x2000ba49
+2000badf 33c0                   xor      eax, eax
+2000bae1 8b4f08                 mov      ecx, dword ptr [edi + 8]
+2000bae4 8b7508                 mov      esi, dword ptr [ebp + 8]
+2000bae7 395918                 cmp      dword ptr [ecx + 0x18], ebx
+2000baea 0f8d0dffffff           jge      0x2000b9fd
+2000baf0 8b462c                 mov      eax, dword ptr [esi + 0x2c]
+2000baf3 8d4d08                 lea      ecx, [ebp + 8]
+2000baf6 c7450807000000         mov      dword ptr [ebp + 8], 7
+2000bafd 51                     push     ecx
+2000bafe 8b10                   mov      edx, dword ptr [eax]
+2000bb00 57                     push     edi
+2000bb01 50                     push     eax
+2000bb02 ff92c4010000           call     dword ptr [edx + 0x1c4]
+2000bb08 3bc3                   cmp      eax, ebx
+2000bb0a 7523                   jne      0x2000bb2f
+2000bb0c 8b8ea0000000           mov      ecx, dword ptr [esi + 0xa0]
+2000bb12 8b462c                 mov      eax, dword ptr [esi + 0x2c]
+2000bb15 51                     push     ecx
+2000bb16 8b0f                   mov      ecx, dword ptr [edi]
+2000bb18 8b10                   mov      edx, dword ptr [eax]
+2000bb1a 51                     push     ecx
+2000bb1b 50                     push     eax
+2000bb1c ff9264020000           call     dword ptr [edx + 0x264]
+2000bb22 dc1da0910820           fcomp    qword ptr [0x200891a0] ; constant=0
+2000bb28 dfe0                   fnstsw   ax
+2000bb2a f6c441                 test     ah, 0x41
+2000bb2d 750c                   jne      0x2000bb3b
+2000bb2f 8b5778                 mov      edx, dword ptr [edi + 0x78]
+2000bb32 8b477c                 mov      eax, dword ptr [edi + 0x7c]
+2000bb35 895770                 mov      dword ptr [edi + 0x70], edx
+2000bb38 894774                 mov      dword ptr [edi + 0x74], eax
+2000bb3b 8b462c                 mov      eax, dword ptr [esi + 0x2c]
+2000bb3e 8b17                   mov      edx, dword ptr [edi]
+2000bb40 52                     push     edx
+2000bb41 50                     push     eax
+2000bb42 8b08                   mov      ecx, dword ptr [eax]
+2000bb44 ff9174020000           call     dword ptr [ecx + 0x274]
+2000bb4a 898700020000           mov      dword ptr [edi + 0x200], eax
+2000bb50 8b462c                 mov      eax, dword ptr [esi + 0x2c]
+2000bb53 8d5508                 lea      edx, [ebp + 8]
+2000bb56 c7450805000000         mov      dword ptr [ebp + 8], 5
+2000bb5d 8b08                   mov      ecx, dword ptr [eax]
+2000bb5f 52                     push     edx
+2000bb60 57                     push     edi
+2000bb61 50                     push     eax
+2000bb62 ff91c4010000           call     dword ptr [ecx + 0x1c4]
+2000bb68 3bc3                   cmp      eax, ebx
+2000bb6a 898704020000           mov      dword ptr [edi + 0x204], eax
+2000bb70 740a                   je       0x2000bb7c
+2000bb72 c7863c01000001000000   mov      dword ptr [esi + 0x13c], 1
+2000bb7c 5f                     pop      edi
+2000bb7d 5e                     pop      esi
+2000bb7e 5b                     pop      ebx
+2000bb7f 8be5                   mov      esp, ebp
+2000bb81 5d                     pop      ebp
+2000bb82 c20400                 ret      4
+2000bb85 8b5618                 mov      edx, dword ptr [esi + 0x18]
+2000bb88 8b4614                 mov      eax, dword ptr [esi + 0x14]
+2000bb8b c7049001000000         mov      dword ptr [eax + edx*4], 1
+2000bb92 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+2000bb95 8b5610                 mov      edx, dword ptr [esi + 0x10]
+2000bb98 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+2000bb9b 8d4dfc                 lea      ecx, [ebp - 4]
+2000bb9e 50                     push     eax
+2000bb9f e87cad0100             call     0x20026920 ; ??4BSetID@@QAEAAV0@ABV0@@Z
+2000bba4 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+2000bba7 8b5610                 mov      edx, dword ptr [esi + 0x10]
+2000bbaa 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+2000bbad 8b400c                 mov      eax, dword ptr [eax + 0xc]
+2000bbb0 e92cffffff             jmp      0x2000bae1
+2000bbb5 8d4900                 lea      ecx, [ecx]
+2000bbb8 62ba0020b8ba           bound    edi, qword ptr [edx - 0x4547e000]
+2000bbbe 0020                   add      byte ptr [eax], ah
+2000bbc0 85bb0020d0ba           test     dword ptr [ebx - 0x452fe000], edi
+2000bbc6 0020                   add      byte ptr [eax], ah
+2000bbc8 90                     nop      
+2000bbc9 90                     nop      
+2000bbca 90                     nop      
+2000bbcb 90                     nop      
+2000bbcc 90                     nop      
+2000bbcd 90                     nop      
+2000bbce 90                     nop      
+2000bbcf 90                     nop      
+
+FUNCTION 2000c6d0 ?AttackedByMe@Foreigner@@QAEXXZ END 2000c720
+2000c6d0 dd05a8910820           fld      qword ptr [0x200891a8] ; constant=20
+2000c6d6 8b4120                 mov      eax, dword ptr [ecx + 0x20]
+2000c6d9 33d2                   xor      edx, edx
+2000c6db dc5960                 fcomp    qword ptr [ecx + 0x60]
+2000c6de 40                     inc      eax
+2000c6df 894120                 mov      dword ptr [ecx + 0x20], eax
+2000c6e2 dfe0                   fnstsw   ax
+2000c6e4 f6c441                 test     ah, 0x41
+2000c6e7 740a                   je       0x2000c6f3
+2000c6e9 895160                 mov      dword ptr [ecx + 0x60], edx
+2000c6ec c7416400003340         mov      dword ptr [ecx + 0x64], 0x40330000
+2000c6f3 dd05a8910820           fld      qword ptr [0x200891a8] ; constant=20
+2000c6f9 dc5968                 fcomp    qword ptr [ecx + 0x68]
+2000c6fc dfe0                   fnstsw   ax
+2000c6fe f6c441                 test     ah, 0x41
+2000c701 740a                   je       0x2000c70d
+2000c703 895168                 mov      dword ptr [ecx + 0x68], edx
+2000c706 c7416c00003340         mov      dword ptr [ecx + 0x6c], 0x40330000
+2000c70d 899104020000           mov      dword ptr [ecx + 0x204], edx
+2000c713 c3                     ret      
+2000c714 90                     nop      
+2000c715 90                     nop      
+2000c716 90                     nop      
+2000c717 90                     nop      
+2000c718 90                     nop      
+2000c719 90                     nop      
+2000c71a 90                     nop      
+2000c71b 90                     nop      
+2000c71c 90                     nop      
+2000c71d 90                     nop      
+2000c71e 90                     nop      
+2000c71f 90                     nop      
+
+FUNCTION 20036a10 ?UpdateGeneralDiplomacy@FSFuzzyBeginTurnDiplomacy@@AAEXPAVAiMain@@@Z END 20037110
+20036a10 55                     push     ebp
+20036a11 8bec                   mov      ebp, esp
+20036a13 83ec5c                 sub      esp, 0x5c
+20036a16 53                     push     ebx
+20036a17 894dcc                 mov      dword ptr [ebp - 0x34], ecx
+20036a1a 56                     push     esi
+20036a1b 57                     push     edi
+20036a1c 8d4dfc                 lea      ecx, [ebp - 4]
+20036a1f e87cfefeff             call     0x200268a0 ; ??0BSetID@@QAE@XZ
+20036a24 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20036a27 c705f8600c2000000000   mov      dword ptr [0x200c60f8], 0 ; ?fz_longest_war@@3NA
+20036a31 c705fc600c2000000000   mov      dword ptr [0x200c60fc], 0
+20036a3b c705406a0c2000000000   mov      dword ptr [0x200c6a40], 0 ; ?fz_shortest_peace@@3NA
+20036a45 c705446a0c200088c340   mov      dword ptr [0x200c6a44], 0x40c38800
+20036a4f 8b472c                 mov      eax, dword ptr [edi + 0x2c]
+20036a52 8b97a0000000           mov      edx, dword ptr [edi + 0xa0]
+20036a58 c745e4ffffffff         mov      dword ptr [ebp - 0x1c], 0xffffffff
+20036a5f 8b08                   mov      ecx, dword ptr [eax]
+20036a61 52                     push     edx
+20036a62 50                     push     eax
+20036a63 ff5168                 call     dword ptr [ecx + 0x68]
+20036a66 8b472c                 mov      eax, dword ptr [edi + 0x2c]
+20036a69 8b97a0000000           mov      edx, dword ptr [edi + 0xa0]
+20036a6f dd9fe8000000           fstp     qword ptr [edi + 0xe8]
+20036a75 8b08                   mov      ecx, dword ptr [eax]
+20036a77 52                     push     edx
+20036a78 50                     push     eax
+20036a79 ff516c                 call     dword ptr [ecx + 0x6c]
+20036a7c dd97f0000000           fst      qword ptr [edi + 0xf0]
+20036a82 dd87e8000000           fld      qword ptr [edi + 0xe8]
+20036a88 dc0d609f0820           fmul     qword ptr [0x20089f60] ; constant=-0.2
+20036a8e d8e9                   fsubr    st(1)
+20036a90 dd9fe0000000           fstp     qword ptr [edi + 0xe0]
+20036a96 c705d05c0c2000000000   mov      dword ptr [0x200c5cd0], 0 ; ?fz_at_war_count@@3NA
+20036aa0 c705d45c0c2000000000   mov      dword ptr [0x200c5cd4], 0
+20036aaa c70528630c2000000000   mov      dword ptr [0x200c6328], 0 ; ?fz_min_distance_to_capitol@@3NA
+20036ab4 c7052c630c2000409f40   mov      dword ptr [0x200c632c], 0x409f4000
+20036abe c705686c0c2000000000   mov      dword ptr [0x200c6c68], 0 ; ?fz_num_players_in_game@@3NA
+20036ac8 c7056c6c0c200000f03f   mov      dword ptr [0x200c6c6c], 0x3ff00000
+20036ad2 c70580640c2000000000   mov      dword ptr [0x200c6480], 0 ; ?fz_total_military_incursions@@3NA
+20036adc c70584640c2000000000   mov      dword ptr [0x200c6484], 0
+20036ae6 c70550650c2000000000   mov      dword ptr [0x200c6550], 0 ; ?fz_distance_to_nearest_human_capitol@@3NA
+20036af0 c70554650c2000409f40   mov      dword ptr [0x200c6554], 0x409f4000
+20036afa 8b4728                 mov      eax, dword ptr [edi + 0x28]
+20036afd 50                     push     eax
+20036afe 8b08                   mov      ecx, dword ptr [eax]
+20036b00 ddd8                   fstp     st(0)
+20036b02 ff9180000000           call     dword ptr [ecx + 0x80]
+20036b08 894508                 mov      dword ptr [ebp + 8], eax
+20036b0b c70500640c2000000000   mov      dword ptr [0x200c6400], 0 ; ?fz_most_human_adv_known_delta@@3NA
+20036b15 db4508                 fild     dword ptr [ebp + 8]
+20036b18 c70504640c2000000000   mov      dword ptr [0x200c6404], 0
+20036b22 33db                   xor      ebx, ebx
+20036b24 895dec                 mov      dword ptr [ebp - 0x14], ebx
+20036b27 895df0                 mov      dword ptr [ebp - 0x10], ebx
+20036b2a dd1d48600c20           fstp     qword ptr [0x200c6048] ; ?fz_turns_to_disaster@@3NA
+20036b30 8b4744                 mov      eax, dword ptr [edi + 0x44]
+20036b33 8b4f20                 mov      ecx, dword ptr [edi + 0x20]
+20036b36 51                     push     ecx
+20036b37 50                     push     eax
+20036b38 8b10                   mov      edx, dword ptr [eax]
+20036b3a 895df4                 mov      dword ptr [ebp - 0xc], ebx
+20036b3d ff5258                 call     dword ptr [edx + 0x58]
+20036b40 8b9720010000           mov      edx, dword ptr [edi + 0x120]
+20036b46 8945d4                 mov      dword ptr [ebp - 0x2c], eax
+20036b49 be01000000             mov      esi, 1
+20036b4e 895de8                 mov      dword ptr [ebp - 0x18], ebx
+20036b51 8b4264                 mov      eax, dword ptr [edx + 0x64]
+20036b54 895dac                 mov      dword ptr [ebp - 0x54], ebx
+20036b57 8945d0                 mov      dword ptr [ebp - 0x30], eax
+20036b5a 895db0                 mov      dword ptr [ebp - 0x50], ebx
+20036b5d 895db4                 mov      dword ptr [ebp - 0x4c], ebx
+20036b60 895db8                 mov      dword ptr [ebp - 0x48], ebx
+20036b63 895dbc                 mov      dword ptr [ebp - 0x44], ebx
+20036b66 895dc0                 mov      dword ptr [ebp - 0x40], ebx
+20036b69 895df8                 mov      dword ptr [ebp - 8], ebx
+20036b6c 897508                 mov      dword ptr [ebp + 8], esi
+20036b6f 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036b75 8b04b1                 mov      eax, dword ptr [ecx + esi*4]
+20036b78 3bc3                   cmp      eax, ebx
+20036b7a 0f84f3030000           je       0x20036f73
+20036b80 8998c8000000           mov      dword ptr [eax + 0xc8], ebx
+20036b86 8998cc000000           mov      dword ptr [eax + 0xcc], ebx
+20036b8c dd05686c0c20           fld      qword ptr [0x200c6c68] ; ?fz_num_players_in_game@@3NA
+20036b92 dc25489f0820           fsub     qword ptr [0x20089f48] ; constant=-1
+20036b98 8d55bc                 lea      edx, [ebp - 0x44]
+20036b9b 8d45b4                 lea      eax, [ebp - 0x4c]
+20036b9e 52                     push     edx
+20036b9f 8d4dac                 lea      ecx, [ebp - 0x54]
+20036ba2 50                     push     eax
+20036ba3 51                     push     ecx
+20036ba4 dd1d686c0c20           fstp     qword ptr [0x200c6c68] ; ?fz_num_players_in_game@@3NA
+20036baa 8b97a8000000           mov      edx, dword ptr [edi + 0xa8]
+20036bb0 8b0cb2                 mov      ecx, dword ptr [edx + esi*4]
+20036bb3 e82867fdff             call     0x2000d2e0 ; ?GetUnitAge@Foreigner@@QAEXAAN00@Z
+20036bb8 dd45bc                 fld      qword ptr [ebp - 0x44]
+20036bbb dc1d689f0820           fcomp    qword ptr [0x20089f68] ; constant=0.9
+20036bc1 dfe0                   fnstsw   ax
+20036bc3 f6c441                 test     ah, 0x41
+20036bc6 7514                   jne      0x20036bdc
+20036bc8 c705d05f0c2000000000   mov      dword ptr [0x200c5fd0], 0 ; ?fz_someone_built_wormhole@@3NA
+20036bd2 c705d45f0c200000f03f   mov      dword ptr [0x200c5fd4], 0x3ff00000
+20036bdc dd45b4                 fld      qword ptr [ebp - 0x4c]
+20036bdf dc1d689f0820           fcomp    qword ptr [0x20089f68] ; constant=0.9
+20036be5 dfe0                   fnstsw   ax
+20036be7 f6c441                 test     ah, 0x41
+20036bea 7514                   jne      0x20036c00
+20036bec c705e8630c2000000000   mov      dword ptr [0x200c63e8], 0 ; ?fz_someone_built_space@@3NA
+20036bf6 c705ec630c200000f03f   mov      dword ptr [0x200c63ec], 0x3ff00000
+20036c00 dd45ac                 fld      qword ptr [ebp - 0x54]
+20036c03 dc1d689f0820           fcomp    qword ptr [0x20089f68] ; constant=0.9
+20036c09 dfe0                   fnstsw   ax
+20036c0b f6c441                 test     ah, 0x41
+20036c0e 7514                   jne      0x20036c24
+20036c10 c705306a0c2000000000   mov      dword ptr [0x200c6a30], 0 ; ?fz_someone_built_undersea@@3NA
+20036c1a c705346a0c200000f03f   mov      dword ptr [0x200c6a34], 0x3ff00000
+20036c24 8b87a8000000           mov      eax, dword ptr [edi + 0xa8]
+20036c2a 57                     push     edi
+20036c2b 8b0cb0                 mov      ecx, dword ptr [eax + esi*4]
+20036c2e e83d62fdff             call     0x2000ce70 ; ?UpdateDiplomaticState@Foreigner@@QAEXPAVAiMain@@@Z
+20036c33 c70580640c2000000000   mov      dword ptr [0x200c6480], 0 ; ?fz_total_military_incursions@@3NA
+20036c3d c70584640c2000000000   mov      dword ptr [0x200c6484], 0
+20036c47 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036c4d 8b14b1                 mov      edx, dword ptr [ecx + esi*4]
+20036c50 8b7208                 mov      esi, dword ptr [edx + 8]
+20036c53 8b4608                 mov      eax, dword ptr [esi + 8]
+20036c56 3bc3                   cmp      eax, ebx
+20036c58 0f85e0030000           jne      0x2003703e
+20036c5e 8b4610                 mov      eax, dword ptr [esi + 0x10]
+20036c61 c74618ffffffff         mov      dword ptr [esi + 0x18], 0xffffffff
+20036c68 8d55e0                 lea      edx, [ebp - 0x20]
+20036c6b 895de0                 mov      dword ptr [ebp - 0x20], ebx
+20036c6e 8918                   mov      dword ptr [eax], ebx
+20036c70 8b4e14                 mov      ecx, dword ptr [esi + 0x14]
+20036c73 52                     push     edx
+20036c74 c70101000000           mov      dword ptr [ecx], 1
+20036c7a 8d4dfc                 lea      ecx, [ebp - 4]
+20036c7d e86efcfeff             call     0x200268f0 ; ??4BSetID@@QAEAAV0@ABH@Z
+20036c82 33c9                   xor      ecx, ecx
+20036c84 395e18                 cmp      dword ptr [esi + 0x18], ebx
+20036c87 0f8c04010000           jl       0x20036d91
+20036c8d 8d55a4                 lea      edx, [ebp - 0x5c]
+20036c90 52                     push     edx
+20036c91 e88ab8feff             call     0x20022520 ; ?GetPos@ForeignAgent@@QAEXAAUMapPointData@@@Z
+20036c96 8b4730                 mov      eax, dword ptr [edi + 0x30]
+20036c99 8d55a4                 lea      edx, [ebp - 0x5c]
+20036c9c 52                     push     edx
+20036c9d 50                     push     eax
+20036c9e 8b08                   mov      ecx, dword ptr [eax]
+20036ca0 ff5154                 call     dword ptr [ecx + 0x54]
+20036ca3 3b4720                 cmp      eax, dword ptr [edi + 0x20]
+20036ca6 7512                   jne      0x20036cba
+20036ca8 dd0580640c20           fld      qword ptr [0x200c6480] ; ?fz_total_military_incursions@@3NA
+20036cae dc25489f0820           fsub     qword ptr [0x20089f48] ; constant=-1
+20036cb4 dd1d80640c20           fstp     qword ptr [0x200c6480] ; ?fz_total_military_incursions@@3NA
+20036cba 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20036cbd 3bcb                   cmp      ecx, ebx
+20036cbf 0f8cc1000000           jl       0x20036d86
+20036cc5 8b5614                 mov      edx, dword ptr [esi + 0x14]
+20036cc8 8d048d00000000         lea      eax, [ecx*4]
+20036ccf 8b1402                 mov      edx, dword ptr [edx + eax]
+20036cd2 83fa03                 cmp      edx, 3
+20036cd5 7775                   ja       0x20036d4c
+20036cd7 ff2495e4700320         jmp      dword ptr [edx*4 + 0x200370e4]
+20036cde 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+20036ce1 8b1401                 mov      edx, dword ptr [ecx + eax]
+20036ce4 395a04                 cmp      dword ptr [edx + 4], ebx
+20036ce7 7470                   je       0x20036d59
+20036ce9 8bce                   mov      ecx, esi
+20036ceb e8c075fdff             call     0x2000e2b0 ; ?TestStackSize@?$BSet@VCityAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VForeignAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VArmyAgent@@@@AAEXXZ / ?TestStackSize@?$BSet@VForeignCity@@@@AAEXXZ
+20036cf0 8b4618                 mov      eax, dword ptr [esi + 0x18]
+20036cf3 8b4e14                 mov      ecx, dword ptr [esi + 0x14]
+20036cf6 c7048102000000         mov      dword ptr [ecx + eax*4], 2
+20036cfd 8b4618                 mov      eax, dword ptr [esi + 0x18]
+20036d00 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+20036d03 8b1481                 mov      edx, dword ptr [ecx + eax*4]
+20036d06 8b5204                 mov      edx, dword ptr [edx + 4]
+20036d09 89548104               mov      dword ptr [ecx + eax*4 + 4], edx
+20036d0d 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20036d10 41                     inc      ecx
+20036d11 894e18                 mov      dword ptr [esi + 0x18], ecx
+20036d14 8bc1                   mov      eax, ecx
+20036d16 8b4e14                 mov      ecx, dword ptr [esi + 0x14]
+20036d19 891c81                 mov      dword ptr [ecx + eax*4], ebx
+20036d1c 8b5618                 mov      edx, dword ptr [esi + 0x18]
+20036d1f 8b4610                 mov      eax, dword ptr [esi + 0x10]
+20036d22 8b0c90                 mov      ecx, dword ptr [eax + edx*4]
+20036d25 51                     push     ecx
+20036d26 8d4dfc                 lea      ecx, [ebp - 4]
+20036d29 e8f2fbfeff             call     0x20026920 ; ??4BSetID@@QAEAAV0@ABV0@@Z
+20036d2e eb1c                   jmp      0x20036d4c
+20036d30 8b5610                 mov      edx, dword ptr [esi + 0x10]
+20036d33 8b0402                 mov      eax, dword ptr [edx + eax]
+20036d36 395808                 cmp      dword ptr [eax + 8], ebx
+20036d39 740d                   je       0x20036d48
+20036d3b 8d4dfc                 lea      ecx, [ebp - 4]
+20036d3e 51                     push     ecx
+20036d3f 8bce                   mov      ecx, esi
+20036d41 e88a73fdff             call     0x2000e0d0 ; ?NextGreater@?$BSet@VForeignCity@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VArmyAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VForeignAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VCityAgent@@@@AAEXAAVBSetID@@@Z
+20036d46 eb04                   jmp      0x20036d4c
+20036d48 49                     dec      ecx
+20036d49 894e18                 mov      dword ptr [esi + 0x18], ecx
+20036d4c 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20036d4f 3bcb                   cmp      ecx, ebx
+20036d51 0f8d6effffff           jge      0x20036cc5
+20036d57 eb2d                   jmp      0x20036d86
+20036d59 8b5618                 mov      edx, dword ptr [esi + 0x18]
+20036d5c 8b4614                 mov      eax, dword ptr [esi + 0x14]
+20036d5f c7049001000000         mov      dword ptr [eax + edx*4], 1
+20036d66 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20036d69 8b5610                 mov      edx, dword ptr [esi + 0x10]
+20036d6c 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+20036d6f 8d4dfc                 lea      ecx, [ebp - 4]
+20036d72 50                     push     eax
+20036d73 e8a8fbfeff             call     0x20026920 ; ??4BSetID@@QAEAAV0@ABV0@@Z
+20036d78 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20036d7b 8b5610                 mov      edx, dword ptr [esi + 0x10]
+20036d7e 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+20036d81 8b480c                 mov      ecx, dword ptr [eax + 0xc]
+20036d84 eb02                   jmp      0x20036d88
+20036d86 33c9                   xor      ecx, ecx
+20036d88 395e18                 cmp      dword ptr [esi + 0x18], ebx
+20036d8b 0f8dfcfeffff           jge      0x20036c8d
+20036d91 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036d97 8b7508                 mov      esi, dword ptr [ebp + 8]
+20036d9a 57                     push     edi
+20036d9b 8b0cb1                 mov      ecx, dword ptr [ecx + esi*4]
+20036d9e e87d63fdff             call     0x2000d120 ; ?GetLengthOfWarWithHim@Foreigner@@QAENPAVAiMain@@@Z
+20036da3 dd05f8600c20           fld      qword ptr [0x200c60f8] ; ?fz_longest_war@@3NA
+20036da9 d8d9                   fcomp    st(1)
+20036dab dfe0                   fnstsw   ax
+20036dad f6c401                 test     ah, 1
+20036db0 7408                   je       0x20036dba
+20036db2 dd1df8600c20           fstp     qword ptr [0x200c60f8] ; ?fz_longest_war@@3NA
+20036db8 eb02                   jmp      0x20036dbc
+20036dba ddd8                   fstp     st(0)
+20036dbc 8b97a8000000           mov      edx, dword ptr [edi + 0xa8]
+20036dc2 57                     push     edi
+20036dc3 8b0cb2                 mov      ecx, dword ptr [edx + esi*4]
+20036dc6 e8b563fdff             call     0x2000d180 ; ?GetLengthOfPeaceWithHim@Foreigner@@QAENPAVAiMain@@@Z
+20036dcb dd05406a0c20           fld      qword ptr [0x200c6a40] ; ?fz_shortest_peace@@3NA
+20036dd1 d8d9                   fcomp    st(1)
+20036dd3 dfe0                   fnstsw   ax
+20036dd5 f6c441                 test     ah, 0x41
+20036dd8 7508                   jne      0x20036de2
+20036dda dd1d406a0c20           fstp     qword ptr [0x200c6a40] ; ?fz_shortest_peace@@3NA
+20036de0 eb02                   jmp      0x20036de4
+20036de2 ddd8                   fstp     st(0)
+20036de4 8b4720                 mov      eax, dword ptr [edi + 0x20]
+20036de7 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036ded 50                     push     eax
+20036dee 57                     push     edi
+20036def 8b0cb1                 mov      ecx, dword ptr [ecx + esi*4]
+20036df2 e8995ffdff             call     0x2000cd90 ; ?UpdateWar@Foreigner@@QAENPAVAiMain@@J@Z
+20036df7 dc1d009f0820           fcomp    qword ptr [0x20089f00] ; constant=0
+20036dfd dfe0                   fnstsw   ax
+20036dff f6c440                 test     ah, 0x40
+20036e02 7512                   jne      0x20036e16
+20036e04 dd05d05c0c20           fld      qword ptr [0x200c5cd0] ; ?fz_at_war_count@@3NA
+20036e0a dc25489f0820           fsub     qword ptr [0x20089f48] ; constant=-1
+20036e10 dd1dd05c0c20           fstp     qword ptr [0x200c5cd0] ; ?fz_at_war_count@@3NA
+20036e16 8b97a8000000           mov      edx, dword ptr [edi + 0xa8]
+20036e1c 8b04b2                 mov      eax, dword ptr [edx + esi*4]
+20036e1f dd80d8000000           fld      qword ptr [eax + 0xd8]
+20036e25 dc1528630c20           fcom     qword ptr [0x200c6328] ; ?fz_min_distance_to_capitol@@3NA
+20036e2b dd55c4                 fst      qword ptr [ebp - 0x3c]
+20036e2e dfe0                   fnstsw   ax
+20036e30 f6c401                 test     ah, 1
+20036e33 7441                   je       0x20036e76
+20036e35 8b45e4                 mov      eax, dword ptr [ebp - 0x1c]
+20036e38 dd1d28630c20           fstp     qword ptr [0x200c6328] ; ?fz_min_distance_to_capitol@@3NA
+20036e3e 83f8ff                 cmp      eax, -1
+20036e41 7415                   je       0x20036e58
+20036e43 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036e49 8b1481                 mov      edx, dword ptr [ecx + eax*4]
+20036e4c 899ac8000000           mov      dword ptr [edx + 0xc8], ebx
+20036e52 899acc000000           mov      dword ptr [edx + 0xcc], ebx
+20036e58 8b87a8000000           mov      eax, dword ptr [edi + 0xa8]
+20036e5e 8975e4                 mov      dword ptr [ebp - 0x1c], esi
+20036e61 8b0cb0                 mov      ecx, dword ptr [eax + esi*4]
+20036e64 8999c8000000           mov      dword ptr [ecx + 0xc8], ebx
+20036e6a c781cc0000000000f03f   mov      dword ptr [ecx + 0xcc], 0x3ff00000
+20036e74 eb02                   jmp      0x20036e78
+20036e76 ddd8                   fstp     st(0)
+20036e78 8b97a8000000           mov      edx, dword ptr [edi + 0xa8]
+20036e7e 8b0cb2                 mov      ecx, dword ptr [edx + esi*4]
+20036e81 51                     push     ecx
+20036e82 57                     push     edi
+20036e83 e8b85ffdff             call     0x2000ce40 ; ?GetPlayerType@Foreigner@@QAEJPAVAiMain@@PAV1@@Z
+20036e88 8945e0                 mov      dword ptr [ebp - 0x20], eax
+20036e8b db45e0                 fild     dword ptr [ebp - 0x20]
+20036e8e dc15109f0820           fcom     qword ptr [0x20089f10] ; constant=1
+20036e94 dd55dc                 fst      qword ptr [ebp - 0x24]
+20036e97 dfe0                   fnstsw   ax
+20036e99 f6c440                 test     ah, 0x40
+20036e9c 7535                   jne      0x20036ed3
+20036e9e dd45c4                 fld      qword ptr [ebp - 0x3c]
+20036ea1 dc1d009f0820           fcomp    qword ptr [0x20089f00] ; constant=0
+20036ea7 dfe0                   fnstsw   ax
+20036ea9 f6c440                 test     ah, 0x40
+20036eac 0f855e010000           jne      0x20037010
+20036eb2 dd0550650c20           fld      qword ptr [0x200c6550] ; ?fz_distance_to_nearest_human_capitol@@3NA
+20036eb8 dc5dc4                 fcomp    qword ptr [ebp - 0x3c]
+20036ebb dfe0                   fnstsw   ax
+20036ebd f6c441                 test     ah, 0x41
+20036ec0 7511                   jne      0x20036ed3
+20036ec2 8b45c4                 mov      eax, dword ptr [ebp - 0x3c]
+20036ec5 8b4dc8                 mov      ecx, dword ptr [ebp - 0x38]
+20036ec8 a350650c20             mov      dword ptr [0x200c6550], eax ; ?fz_distance_to_nearest_human_capitol@@3NA
+20036ecd 890d54650c20           mov      dword ptr [0x200c6554], ecx
+20036ed3 dc1d109f0820           fcomp    qword ptr [0x20089f10] ; constant=1
+20036ed9 dfe0                   fnstsw   ax
+20036edb f6c440                 test     ah, 0x40
+20036ede 7527                   jne      0x20036f07
+20036ee0 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036ee6 8b4744                 mov      eax, dword ptr [edi + 0x44]
+20036ee9 8b0cb1                 mov      ecx, dword ptr [ecx + esi*4]
+20036eec 8b10                   mov      edx, dword ptr [eax]
+20036eee 8b09                   mov      ecx, dword ptr [ecx]
+20036ef0 51                     push     ecx
+20036ef1 50                     push     eax
+20036ef2 ff5254                 call     dword ptr [edx + 0x54]
+20036ef5 3b45ec                 cmp      eax, dword ptr [ebp - 0x14]
+20036ef8 7e03                   jle      0x20036efd
+20036efa 8945ec                 mov      dword ptr [ebp - 0x14], eax
+20036efd 8b7508                 mov      esi, dword ptr [ebp + 8]
+20036f00 c745f801000000         mov      dword ptr [ebp - 8], 1
+20036f07 8b8fa8000000           mov      ecx, dword ptr [edi + 0xa8]
+20036f0d 8b4744                 mov      eax, dword ptr [edi + 0x44]
+20036f10 8b0cb1                 mov      ecx, dword ptr [ecx + esi*4]
+20036f13 8b10                   mov      edx, dword ptr [eax]
+20036f15 8b09                   mov      ecx, dword ptr [ecx]
+20036f17 51                     push     ecx
+20036f18 50                     push     eax
+20036f19 ff5258                 call     dword ptr [edx + 0x58]
+20036f1c 8bc8                   mov      ecx, eax
+20036f1e 8b45f0                 mov      eax, dword ptr [ebp - 0x10]
+20036f21 3bc8                   cmp      ecx, eax
+20036f23 7e03                   jle      0x20036f28
+20036f25 894df0                 mov      dword ptr [ebp - 0x10], ecx
+20036f28 dd45dc                 fld      qword ptr [ebp - 0x24]
+20036f2b dc1d109f0820           fcomp    qword ptr [0x20089f10] ; constant=1
+20036f31 dfe0                   fnstsw   ax
+20036f33 f6c440                 test     ah, 0x40
+20036f36 7538                   jne      0x20036f70
+20036f38 3b4df4                 cmp      ecx, dword ptr [ebp - 0xc]
+20036f3b 7e03                   jle      0x20036f40
+20036f3d 894df4                 mov      dword ptr [ebp - 0xc], ecx
+20036f40 8b97a8000000           mov      edx, dword ptr [edi + 0xa8]
+20036f46 8b4508                 mov      eax, dword ptr [ebp + 8]
+20036f49 8b0c82                 mov      ecx, dword ptr [edx + eax*4]
+20036f4c 8b4730                 mov      eax, dword ptr [edi + 0x30]
+20036f4f 8b11                   mov      edx, dword ptr [ecx]
+20036f51 8955d8                 mov      dword ptr [ebp - 0x28], edx
+20036f54 8b08                   mov      ecx, dword ptr [eax]
+20036f56 8d55d8                 lea      edx, [ebp - 0x28]
+20036f59 52                     push     edx
+20036f5a 50                     push     eax
+20036f5b ff917c010000           call     dword ptr [ecx + 0x17c]
+20036f61 3b45e8                 cmp      eax, dword ptr [ebp - 0x18]
+20036f64 7e03                   jle      0x20036f69
+20036f66 8945e8                 mov      dword ptr [ebp - 0x18], eax
+20036f69 c745f801000000         mov      dword ptr [ebp - 8], 1
+20036f70 8b7508                 mov      esi, dword ptr [ebp + 8]
+20036f73 395df8                 cmp      dword ptr [ebp - 8], ebx
+20036f76 7446                   je       0x20036fbe
+20036f78 db45d4                 fild     dword ptr [ebp - 0x2c]
+20036f7b db45f0                 fild     dword ptr [ebp - 0x10]
+20036f7e db45f4                 fild     dword ptr [ebp - 0xc]
+20036f81 8b45ec                 mov      eax, dword ptr [ebp - 0x14]
+20036f84 8b4dd0                 mov      ecx, dword ptr [ebp - 0x30]
+20036f87 2bc1                   sub      eax, ecx
+20036f89 d8fa                   fdivr    st(2)
+20036f8b d9c9                   fxch     st(1)
+20036f8d 894508                 mov      dword ptr [ebp + 8], eax
+20036f90 d8fa                   fdivr    st(2)
+20036f92 db45e8                 fild     dword ptr [ebp - 0x18]
+20036f95 db4508                 fild     dword ptr [ebp + 8]
+20036f98 d9cb                   fxch     st(3)
+20036f9a dd1dc0680c20           fstp     qword ptr [0x200c68c0] ; ?fz_ratio_advance_cost_me_to_best_human@@3NA
+20036fa0 dc2db05e0c20           fsubr    qword ptr [0x200c5eb0] ; ?fz_num_cities@@3NA
+20036fa6 d9ca                   fxch     st(2)
+20036fa8 dd1d00640c20           fstp     qword ptr [0x200c6400] ; ?fz_most_human_adv_known_delta@@3NA
+20036fae dd1d48640c20           fstp     qword ptr [0x200c6448] ; ?fz_ratio_advance_cost_me_to_best_other@@3NA
+20036fb4 dd1d685d0c20           fstp     qword ptr [0x200c5d68] ; ?fz_most_human_city_delta@@3NA
+20036fba ddd8                   fstp     st(0)
+20036fbc eb57                   jmp      0x20037015
+20036fbe c705685d0c2000000000   mov      dword ptr [0x200c5d68], 0 ; ?fz_most_human_city_delta@@3NA
+20036fc8 c7056c5d0c2000000000   mov      dword ptr [0x200c5d6c], 0
+20036fd2 c70500640c2000000000   mov      dword ptr [0x200c6400], 0 ; ?fz_most_human_adv_known_delta@@3NA
+20036fdc c70504640c2000000000   mov      dword ptr [0x200c6404], 0
+20036fe6 c705c0680c2000000000   mov      dword ptr [0x200c68c0], 0 ; ?fz_ratio_advance_cost_me_to_best_human@@3NA
+20036ff0 c705c4680c200000f03f   mov      dword ptr [0x200c68c4], 0x3ff00000
+20036ffa c70548640c2000000000   mov      dword ptr [0x200c6448], 0 ; ?fz_ratio_advance_cost_me_to_best_other@@3NA
+20037004 c7054c640c200000f03f   mov      dword ptr [0x200c644c], 0x3ff00000
+2003700e eb05                   jmp      0x20037015
+20037010 8b7508                 mov      esi, dword ptr [ebp + 8]
+20037013 ddd8                   fstp     st(0)
+20037015 46                     inc      esi
+20037016 83fe20                 cmp      esi, 0x20
+20037019 897508                 mov      dword ptr [ebp + 8], esi
+2003701c 0f8c4dfbffff           jl       0x20036b6f
+20037022 8b75cc                 mov      esi, dword ptr [ebp - 0x34]
+20037025 57                     push     edi
+20037026 8bce                   mov      ecx, esi
+20037028 e883030000             call     0x200373b0 ; ?ComputeNormalizedStr@FSFuzzyBeginTurnDiplomacy@@AAEXPAVAiMain@@@Z
+2003702d 57                     push     edi
+2003702e 8bce                   mov      ecx, esi
+20037030 e8db000000             call     0x20037110 ; ?ComputeRelativeStrongestEnemyStr@FSFuzzyBeginTurnDiplomacy@@AAEXPAVAiMain@@@Z
+20037035 5f                     pop      edi
+20037036 5e                     pop      esi
+20037037 5b                     pop      ebx
+20037038 8be5                   mov      esp, ebp
+2003703a 5d                     pop      ebp
+2003703b c20400                 ret      4
+2003703e 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+20037041 895e18                 mov      dword ptr [esi + 0x18], ebx
+20037044 8901                   mov      dword ptr [ecx], eax
+20037046 8b5618                 mov      edx, dword ptr [esi + 0x18]
+20037049 8b4614                 mov      eax, dword ptr [esi + 0x14]
+2003704c 891c90                 mov      dword ptr [eax + edx*4], ebx
+2003704f 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+20037052 3bcb                   cmp      ecx, ebx
+20037054 0f8c28fcffff           jl       0x20036c82
+2003705a 8b5614                 mov      edx, dword ptr [esi + 0x14]
+2003705d 8d048d00000000         lea      eax, [ecx*4]
+20037064 8b1402                 mov      edx, dword ptr [edx + eax]
+20037067 83fa03                 cmp      edx, 3
+2003706a 773b                   ja       0x200370a7
+2003706c ff2495f4700320         jmp      dword ptr [edx*4 + 0x200370f4]
+20037073 8b4e10                 mov      ecx, dword ptr [esi + 0x10]
+20037076 8b1401                 mov      edx, dword ptr [ecx + eax]
+20037079 395a04                 cmp      dword ptr [edx + 4], ebx
+2003707c 7435                   je       0x200370b3
+2003707e 8d45fc                 lea      eax, [ebp - 4]
+20037081 8bce                   mov      ecx, esi
+20037083 50                     push     eax
+20037084 e85715fdff             call     0x200085e0 ; ?NextLesser@?$BSet@VArmyAgent@@@@AAEXAAVBSetID@@@Z / ?NextLesser@?$BSet@VForeignCity@@@@AAEXAAVBSetID@@@Z / ?NextLesser@?$BSet@VCityAgent@@@@AAEXAAVBSetID@@@Z / ?NextLesser@?$BSet@VForeignAgent@@@@AAEXAAVBSetID@@@Z
+20037089 eb1c                   jmp      0x200370a7
+2003708b 8b5610                 mov      edx, dword ptr [esi + 0x10]
+2003708e 8b0402                 mov      eax, dword ptr [edx + eax]
+20037091 395808                 cmp      dword ptr [eax + 8], ebx
+20037094 740d                   je       0x200370a3
+20037096 8d4dfc                 lea      ecx, [ebp - 4]
+20037099 51                     push     ecx
+2003709a 8bce                   mov      ecx, esi
+2003709c e82f70fdff             call     0x2000e0d0 ; ?NextGreater@?$BSet@VForeignCity@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VArmyAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VForeignAgent@@@@AAEXAAVBSetID@@@Z / ?NextGreater@?$BSet@VCityAgent@@@@AAEXAAVBSetID@@@Z
+200370a1 eb04                   jmp      0x200370a7
+200370a3 49                     dec      ecx
+200370a4 894e18                 mov      dword ptr [esi + 0x18], ecx
+200370a7 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+200370aa 3bcb                   cmp      ecx, ebx
+200370ac 7dac                   jge      0x2003705a
+200370ae e9cffbffff             jmp      0x20036c82
+200370b3 8b5618                 mov      edx, dword ptr [esi + 0x18]
+200370b6 8b4614                 mov      eax, dword ptr [esi + 0x14]
+200370b9 c7049001000000         mov      dword ptr [eax + edx*4], 1
+200370c0 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+200370c3 8b5610                 mov      edx, dword ptr [esi + 0x10]
+200370c6 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+200370c9 8d4dfc                 lea      ecx, [ebp - 4]
+200370cc 50                     push     eax
+200370cd e84ef8feff             call     0x20026920 ; ??4BSetID@@QAEAAV0@ABV0@@Z
+200370d2 8b4e18                 mov      ecx, dword ptr [esi + 0x18]
+200370d5 8b5610                 mov      edx, dword ptr [esi + 0x10]
+200370d8 8b048a                 mov      eax, dword ptr [edx + ecx*4]
+200370db 8b480c                 mov      ecx, dword ptr [eax + 0xc]
+200370de e9a1fbffff             jmp      0x20036c84
+200370e3 90                     nop      
+200370e4 de6c0320               fisubr   word ptr [ebx + eax + 0x20]
+200370e8 306d03                 xor      byte ptr [ebp + 3], ch
+200370eb 20596d                 and      byte ptr [ecx + 0x6d], bl
+200370ee 0320                   add      esp, dword ptr [eax]
+200370f0 48                     dec      eax
+200370f1 6d                     insd     dword ptr es:[edi], dx
+200370f2 0320                   add      esp, dword ptr [eax]
+200370f4 7370                   jae      0x20037166
+200370f6 0320                   add      esp, dword ptr [eax]
+200370f8 8b7003                 mov      esi, dword ptr [eax + 3]
+200370fb 20b3700320a3           and      byte ptr [ebx - 0x5cdffc90], dh
+20037101 7003                   jo       0x20037106
+20037103 209090909090           and      byte ptr [eax - 0x6f6f6f70], dl
+20037109 90                     nop      
+2003710a 90                     nop      
+2003710b 90                     nop      
+2003710c 90                     nop      
+2003710d 90                     nop      
+2003710e 90                     nop      
+2003710f 90                     nop      

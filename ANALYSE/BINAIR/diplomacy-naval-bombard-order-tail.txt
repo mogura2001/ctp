@@ -1,0 +1,128 @@
+﻿Engine SHA256: b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+Imagebase 00400000; timestamp 37d6f702; no engine map addresses used
+
+RANGE 00485730:60
+00485730 55                     push     ebp
+00485731 8bec                   mov      ebp, esp
+00485733 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00485736 8b5508                 mov      edx, dword ptr [ebp + 8]
+00485739 6a00                   push     0
+0048573b 50                     push     eax
+0048573c 6a00                   push     0
+0048573e 52                     push     edx
+0048573f e8fc010000             call     0x485940
+00485744 5d                     pop      ebp
+00485745 c20800                 ret      8
+00485748 90                     nop      
+00485749 90                     nop      
+0048574a 90                     nop      
+0048574b 90                     nop      
+0048574c 90                     nop      
+0048574d 90                     nop      
+0048574e 90                     nop      
+0048574f 90                     nop      
+00485750 55                     push     ebp
+00485751 8bec                   mov      ebp, esp
+00485753 8b5508                 mov      edx, dword ptr [ebp + 8]
+00485756 8d415c                 lea      eax, [ecx + 0x5c]
+00485759 6a00                   push     0
+0048575b 50                     push     eax
+0048575c 6a00                   push     0
+0048575e 52                     push     edx
+0048575f e8dc010000             call     0x485940
+00485764 5d                     pop      ebp
+00485765 c20400                 ret      4
+00485768 90                     nop      
+00485769 90                     nop      
+0048576a 90                     nop      
+0048576b 90                     nop      
+0048576c 90                     nop      
+0048576d 90                     nop      
+0048576e 90                     nop      
+0048576f 90                     nop      
+00485770 55                     push     ebp
+00485771 8bec                   mov      ebp, esp
+00485773 6aff                   push     -1
+00485775 682a847200             push     0x72842a
+0048577a 64a100000000           mov      eax, dword ptr fs:[0]
+00485780 50                     push     eax
+00485781 64892500000000         mov      dword ptr fs:[0], esp
+00485788 83ec08                 sub      esp, 8
+0048578b a100fc9d00             mov      eax, dword ptr [0x9dfc00]
+
+RANGE 00479a50:90
+00479a50 55                     push     ebp
+00479a51 8bec                   mov      ebp, esp
+00479a53 8b5528                 mov      edx, dword ptr [ebp + 0x28]
+00479a56 8bc1                   mov      eax, ecx
+00479a58 52                     push     edx
+00479a59 8b5524                 mov      edx, dword ptr [ebp + 0x24]
+00479a5c 52                     push     edx
+00479a5d 8b5520                 mov      edx, dword ptr [ebp + 0x20]
+00479a60 52                     push     edx
+00479a61 8b551c                 mov      edx, dword ptr [ebp + 0x1c]
+00479a64 52                     push     edx
+00479a65 8b5518                 mov      edx, dword ptr [ebp + 0x18]
+00479a68 52                     push     edx
+00479a69 8b5514                 mov      edx, dword ptr [ebp + 0x14]
+00479a6c 52                     push     edx
+00479a6d 8b5510                 mov      edx, dword ptr [ebp + 0x10]
+00479a70 8b00                   mov      eax, dword ptr [eax]
+00479a72 8b0d78dda700           mov      ecx, dword ptr [0xa7dd78]
+00479a78 52                     push     edx
+00479a79 8b550c                 mov      edx, dword ptr [ebp + 0xc]
+00479a7c 52                     push     edx
+00479a7d 8b5508                 mov      edx, dword ptr [ebp + 8]
+00479a80 52                     push     edx
+00479a81 50                     push     eax
+00479a82 e819890300             call     0x4b23a0
+00479a87 8bc8                   mov      ecx, eax
+00479a89 e882d80000             call     0x487310
+00479a8e 5d                     pop      ebp
+00479a8f c22400                 ret      0x24
+00479a92 90                     nop      
+00479a93 90                     nop      
+00479a94 90                     nop      
+00479a95 90                     nop      
+00479a96 90                     nop      
+00479a97 90                     nop      
+00479a98 90                     nop      
+00479a99 90                     nop      
+00479a9a 90                     nop      
+00479a9b 90                     nop      
+00479a9c 90                     nop      
+00479a9d 90                     nop      
+00479a9e 90                     nop      
+00479a9f 90                     nop      
+00479aa0 8bc1                   mov      eax, ecx
+00479aa2 8b0d78dda700           mov      ecx, dword ptr [0xa7dd78]
+00479aa8 8b00                   mov      eax, dword ptr [eax]
+00479aaa 50                     push     eax
+00479aab e8f0880300             call     0x4b23a0
+00479ab0 8bc8                   mov      ecx, eax
+00479ab2 e9891c0100             jmp      0x48b740
+00479ab7 90                     nop      
+00479ab8 90                     nop      
+00479ab9 90                     nop      
+00479aba 90                     nop      
+00479abb 90                     nop      
+00479abc 90                     nop      
+00479abd 90                     nop      
+00479abe 90                     nop      
+00479abf 90                     nop      
+00479ac0 8bc1                   mov      eax, ecx
+00479ac2 8b0d78dda700           mov      ecx, dword ptr [0xa7dd78]
+00479ac8 8b00                   mov      eax, dword ptr [eax]
+00479aca 50                     push     eax
+00479acb e8d0880300             call     0x4b23a0
+00479ad0 8bc8                   mov      ecx, eax
+00479ad2 e9b91d0100             jmp      0x48b890
+00479ad7 90                     nop      
+00479ad8 90                     nop      
+00479ad9 90                     nop      
+00479ada 90                     nop      
+00479adb 90                     nop      
+00479adc 90                     nop      
+00479add 90                     nop      
+00479ade 90                     nop      
+00479adf 90                     nop      

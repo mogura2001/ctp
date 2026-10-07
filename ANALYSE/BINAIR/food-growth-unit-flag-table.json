@@ -1,0 +1,23 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "parser": "46b7f0",
+  "token_subtraction": 10,
+  "byte_table": "46d108",
+  "target_table": "46ce28",
+  "cases": [
+    {
+      "token": 235,
+      "name": "BUILDING_REMOVES_A_POP",
+      "byte_case": 168,
+      "target": "0x46c8f5",
+      "first_32_bytes": "8b434080cc40894340e9830100008b434080cc80894340e975010000814b4000"
+    },
+    {
+      "token": 244,
+      "name": "CITY_GROWTH_MODIFIER",
+      "byte_case": 177,
+      "target": "0x46ca1e",
+      "first_32_bytes": "8bcfe86b510b0083f8030f85b40300008d93a00200008bcf52e8b4570b00eb48"
+    }
+  ]
+}
