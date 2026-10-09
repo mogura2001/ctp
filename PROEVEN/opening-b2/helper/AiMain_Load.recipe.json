@@ -1,0 +1,41 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov edx,('ecx', 224)",
+      "bytes": "8b91e0000000"
+    },
+    {
+      "offset": 6,
+      "asm": "inc ('edx', 4)",
+      "bytes": "ff8204000000"
+    },
+    {
+      "offset": 12,
+      "asm": "mov eax,('ecx', 240)",
+      "bytes": "8b81f0000000"
+    },
+    {
+      "offset": 18,
+      "asm": "mov ('ecx', 196),eax",
+      "bytes": "8981c4000000"
+    },
+    {
+      "offset": 24,
+      "asm": "mov eax,('edx', 8)",
+      "bytes": "8b8208000000"
+    },
+    {
+      "offset": 30,
+      "asm": "cmp eax,eax",
+      "bytes": "3bc0"
+    },
+    {
+      "offset": 32,
+      "asm": "ret8",
+      "bytes": "c20800"
+    }
+  ],
+  "fixups": []
+}

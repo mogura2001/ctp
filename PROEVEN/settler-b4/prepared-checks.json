@@ -1,0 +1,37 @@
+{
+  "stage": "STATIC CHECKED PREPARED; native integration acceptance pending",
+  "variants": [
+    {
+      "name": "BASELINE-N25",
+      "sha256": "3b1a0ce1023ee041ea08c3ba6132e353e720a1d851ce841027ed8482b12f8519",
+      "deterministic": true,
+      "declared_PE_diff_CFG": true,
+      "B4_decoded_instructions": 0
+    },
+    {
+      "name": "B4-N25",
+      "sha256": "3bab9d23486ce79e9c12170415a039847be77093e145893d4b4e42d883484b98",
+      "deterministic": true,
+      "declared_PE_diff_CFG": true,
+      "B4_decoded_instructions": 2010
+    },
+    {
+      "name": "BASELINE-N30",
+      "sha256": "be2368421c9e4ee709e674b3e22eb5d5f548b41f67623d7ce53b927b44b867d3",
+      "deterministic": true,
+      "declared_PE_diff_CFG": true,
+      "B4_decoded_instructions": 0
+    },
+    {
+      "name": "B4-N30",
+      "sha256": "5812b6d882e7f26f806f02f2818a2f275a2b354459626c3b7ad8cc90446a6a79",
+      "deterministic": true,
+      "declared_PE_diff_CFG": true,
+      "B4_decoded_instructions": 2010
+    }
+  ],
+  "native_acceptance": false,
+  "installed": false,
+  "gameplay_measured": false,
+  "production_N_chosen": false
+}

@@ -1,0 +1,6 @@
+0000 8b942404000000           mov edx, dword ptr [esp + 4]
+0007 8b8200000000             mov eax, dword ptr [edx]
+000d 898100000000             mov dword ptr [ecx], eax
+0013 8b8204000000             mov eax, dword ptr [edx + 4]
+0019 898104000000             mov dword ptr [ecx + 4], eax
+001f c20400                   ret 4

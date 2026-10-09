@@ -1,0 +1,133 @@
+{
+  "labels": {
+    "save_no_move": 78
+  },
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov edx,('ecx', 224)",
+      "bytes": "8b91e0000000"
+    },
+    {
+      "offset": 6,
+      "asm": "inc ('edx', 0)",
+      "bytes": "ff8200000000"
+    },
+    {
+      "offset": 12,
+      "asm": "mov eax,('ecx', 228)",
+      "bytes": "8b81e4000000"
+    },
+    {
+      "offset": 18,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 20,
+      "asm": "jz save_no_move",
+      "bytes": "0f8434000000"
+    },
+    {
+      "offset": 26,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 27,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 28,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 29,
+      "asm": "mov ebx,('esp', 16)",
+      "bytes": "8b9c2410000000"
+    },
+    {
+      "offset": 36,
+      "asm": "mov esi,('ebx', 20)",
+      "bytes": "8bb314000000"
+    },
+    {
+      "offset": 42,
+      "asm": "mov edi,eax",
+      "bytes": "8bf8"
+    },
+    {
+      "offset": 44,
+      "asm": "mov edx,('ebx', 24)",
+      "bytes": "8b9318000000"
+    },
+    {
+      "offset": 50,
+      "asm": "sub edx,esi",
+      "bytes": "2bd6"
+    },
+    {
+      "offset": 52,
+      "asm": "mov ('ebx', 20),eax",
+      "bytes": "898314000000"
+    },
+    {
+      "offset": 58,
+      "asm": "add eax,edx",
+      "bytes": "03c2"
+    },
+    {
+      "offset": 60,
+      "asm": "mov ('ebx', 24),eax",
+      "bytes": "898318000000"
+    },
+    {
+      "offset": 66,
+      "asm": "mov ecx,('ebx', 16)",
+      "bytes": "8b8b10000000"
+    },
+    {
+      "offset": 72,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 73,
+      "asm": "rep movsb",
+      "bytes": "f3a4"
+    },
+    {
+      "offset": 75,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 76,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 77,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 78,
+      "asm": "mov eax,324478056",
+      "bytes": "b868245713"
+    },
+    {
+      "offset": 83,
+      "asm": "cmp eax,eax",
+      "bytes": "3bc0"
+    },
+    {
+      "offset": 85,
+      "asm": "ret4",
+      "bytes": "c20400"
+    }
+  ],
+  "fixups": []
+}

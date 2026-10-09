@@ -1,0 +1,163 @@
+{
+  "state": "PREPARED FROZEN INPUTS ONLY; integrated five-hook B2a candidate not built",
+  "design_sha256": "ea5140b5505c11f457bdcdc3cf41fcc023e277bf247866228ad356919c9ef40e",
+  "original_dll_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "sites": {
+    "registration": {
+      "rva": "0x413da",
+      "raw_offset": "0x407da",
+      "preimage": "e81178ffff",
+      "original_target_rva": "0x38bf0",
+      "return_rva": "0x413df",
+      "disassembly": [
+        "call 0x20038bf0"
+      ]
+    },
+    "beginturn": {
+      "rva": "0x3625b",
+      "raw_offset": "0x3565b",
+      "preimage": "e8902d0000",
+      "original_target_rva": "0x38ff0",
+      "return_rva": "0x36260",
+      "disassembly": [
+        "call 0x20038ff0"
+      ]
+    },
+    "save": {
+      "rva": "0xfe2d",
+      "raw_offset": "0xf22d",
+      "preimage": "e88e29ffff",
+      "original_target_rva": "0x27c0",
+      "return_rva": "0xfe32",
+      "disassembly": [
+        "call 0x200027c0"
+      ]
+    },
+    "load": {
+      "rva": "0xfe51",
+      "raw_offset": "0xf251",
+      "preimage": "e8fa2dffff",
+      "original_target_rva": "0x2c50",
+      "return_rva": "0xfe56",
+      "disassembly": [
+        "call 0x20002c50"
+      ]
+    },
+    "reload_entry": {
+      "rva": "0x61f0",
+      "raw_offset": "0x55f0",
+      "preimage": "558bec5356",
+      "original_target_rva": null,
+      "return_rva": "0x61f5",
+      "disassembly": [
+        "push ebp",
+        "mov ebp, esp",
+        "push ebx",
+        "push esi"
+      ]
+    }
+  },
+  "engine_base": "0x400000",
+  "engine_timestamp": "0x37d6f702",
+  "engine_relocations": false,
+  "existing_PE": {
+    "section_count": 4,
+    "file_alignment": 512,
+    "section_alignment": 4096,
+    "image_size": "0xd4000",
+    "append_raw": "0xa1400",
+    "append_rva": "0xd4000"
+  },
+  "functions": {
+    "AddSymbol": "0x38bf0",
+    "GetSymbol": "0x389e0",
+    "RegisterInit": "0x3bf50",
+    "SetValue": "0x3b790",
+    "FireRules": "0x38ff0",
+    "AiMain_Save": "0x27c0",
+    "AiMain_Load": "0x2c50",
+    "ReloadFuzzyLogic": "0x61f0"
+  },
+  "AiMain_fields": {
+    "civ": 32,
+    "PlayerInterface": 44,
+    "cities_object": 140,
+    "FliEngine": 196
+  },
+  "symbol_fields": {
+    "double": 8,
+    "external_pointer": 0,
+    "section_init_mask": 104,
+    "section_input_mask": 194,
+    "section_bit": 4,
+    "external_pointer_correction_evidence": "constructor2003b6a2 and SetValue2003b7b3 bind +0; previous checkpointlabel +4 was wrong"
+  },
+  "archive_contract": {
+    "vtable_rva": "0x3462a8",
+    "Store_slot": 12,
+    "Load_slot": 16,
+    "IsStoring_slot": 20,
+    "mode_byte": 8,
+    "capacity_u32": 12,
+    "size_u32": 16,
+    "buffer_pointer": 20,
+    "cursor_pointer": 24,
+    "Store_rva": "0x186930",
+    "Load_rva": "0x1869f0",
+    "IsStoring_rva": "0x186c70",
+    "bounds": "checked unsigned32; size<=capacity; buffer interval no overflow; buffer<=cursor; offset<=size"
+  },
+  "record": {
+    "marker_hex": "4354503142324f50454e535441544521",
+    "version": 1,
+    "length": 36,
+    "civ_offset": 24,
+    "completed_offset": 28,
+    "N_offset": 32,
+    "fixture_parameters": [
+      25,
+      30
+    ],
+    "production_N_chosen": false
+  },
+  "fault_contract": {
+    "Load": "EAX0, ret8; RobotCom preservesresult; manager zero branch calls401560 before next civ",
+    "Save": "void; verified host only cdecl title/format to401560, unexpectedreturn UD2; no success continuation",
+    "unknown_host": "no concrete enginememory or handlercall"
+  },
+  "fingerprints": {
+    "archive_store": {
+      "rva": "0x186930",
+      "size": 32,
+      "bytes": "558bec518b45088b551053568b580c578b78108bca03cf3bcb726e33c08d0c1a",
+      "sha256": "050a6edec2fdd46282b5425e633eca7259e5d484aeb94d038c72783e30e8ac1e"
+    },
+    "archive_load": {
+      "rva": "0x1869f0",
+      "size": 32,
+      "bytes": "558bec8b55108b45088bca53568b70188bd9578b7d0cc1e902f3a58bcb83e103",
+      "sha256": "5effe29d895f7e5abf2b3b04c1ce2279b030411a704905a65868c632abfd51bf"
+    },
+    "archive_mode": {
+      "rva": "0x186c70",
+      "size": 16,
+      "bytes": "558bec8b4d0833c08a41085dc2040090",
+      "sha256": "867fcb2276d21d032b740f4b02950464177b36c9cb3ec2cfca4bd7e81f173ae3"
+    },
+    "fatal_handler": {
+      "rva": "0x1560",
+      "size": 71,
+      "bytes": "558bec81ec040100008b4d0c8d4510508d95fcfeffff5152ff15803274008b4d0883c40c8d85fcfeffff5051e80f02000083c40833c06aff8900ff158432740083c4048be55dc3",
+      "sha256": "c908293ea8befe774581063d09cd45cc8248567bc6b634c76a8643b7a1691e09"
+    },
+    "load_manager_zero_branch": {
+      "rva": "0x12dec8",
+      "size": 22,
+      "bytes": "85c07512688c0ba20068a40ba200e88536edff83c408",
+      "sha256": "9b4d16de1ec1efc760d304b690725037ad15b2101e7902809086be0282cf3e88"
+    }
+  },
+  "scope": "B2a only; no FLI/AIP consequents/actions, H3 combination, installation, GUI/livegame/export/real fatal handler",
+  "remaining": "emit and integrate registration/beginturn/Save/Load/reloadtrampoline; archiveguard/boundedpeek/record/latch; exact native fixturesN25+N30 with explicit fatal stubs; independent PE/ABI/CFG/loader/rebase/inventory checks"
+}

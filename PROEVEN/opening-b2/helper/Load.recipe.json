@@ -1,0 +1,121 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "mov ebx,('ebp', 8)",
+      "bytes": "8b9d08000000"
+    },
+    {
+      "offset": 18,
+      "asm": "mov ecx,('ebp', 16)",
+      "bytes": "8b8d10000000"
+    },
+    {
+      "offset": 24,
+      "asm": "mov edx,('ebx', 28)",
+      "bytes": "8b931c000000"
+    },
+    {
+      "offset": 30,
+      "asm": "inc ('edx', 20)",
+      "bytes": "ff8214000000"
+    },
+    {
+      "offset": 36,
+      "asm": "mov esi,('ebx', 24)",
+      "bytes": "8bb318000000"
+    },
+    {
+      "offset": 42,
+      "asm": "mov edi,('ebp', 12)",
+      "bytes": "8bbd0c000000"
+    },
+    {
+      "offset": 48,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 49,
+      "asm": "rep movsb",
+      "bytes": "f3a4"
+    },
+    {
+      "offset": 51,
+      "asm": "mov eax,('ebp', 16)",
+      "bytes": "8b8510000000"
+    },
+    {
+      "offset": 57,
+      "asm": "add ('ebx', 24),eax",
+      "bytes": "018318000000"
+    },
+    {
+      "offset": 63,
+      "asm": "mov eax,0",
+      "bytes": "b800000000"
+    },
+    {
+      "offset": 68,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 74,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 75,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 76,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 77,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 78,
+      "asm": "ret 12",
+      "bytes": "c20c00"
+    }
+  ],
+  "fixups": []
+}

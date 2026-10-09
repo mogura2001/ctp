@@ -1,0 +1,114 @@
+﻿AI SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+Engine SHA256: b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+AI timestamp 37b894e7; engine timestamp 37d6f702
+_CLSID_IC3Player a03f13b64bc9d11185a70060083a4082 engine locations ['0x744f48']
+Candidate Player table 00744660; QueryInterface 005271c0
+SLOT 000 -> 005271c0
+005271c0 55                     push     ebp
+005271c1 8bec                   mov      ebp, esp
+005271c3 8b5510                 mov      edx, dword ptr [ebp + 0x10]
+005271c6 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+005271c9 53                     push     ebx
+005271ca 56                     push     esi
+005271cb 57                     push     edi
+005271cc b910000000             mov      ecx, 0x10
+005271d1 bf20a87500             mov      edi, 0x75a820
+005271d6 8bf0                   mov      esi, eax
+005271d8 33db                   xor      ebx, ebx
+005271da c70200000000           mov      dword ptr [edx], 0
+005271e0 f3a6                   repe cmpsb byte ptr [esi], byte ptr es:[edi]
+005271e2 7514                   jne      0x5271f8
+005271e4 8b4508                 mov      eax, dword ptr [ebp + 8]
+005271e7 8902                   mov      dword ptr [edx], eax
+005271e9 50                     push     eax
+005271ea 8b08                   mov      ecx, dword ptr [eax]
+005271ec ff5104                 call     dword ptr [ecx + 4]
+005271ef 33c0                   xor      eax, eax
+005271f1 5f                     pop      edi
+005271f2 5e                     pop      esi
+005271f3 5b                     pop      ebx
+005271f4 5d                     pop      ebp
+005271f5 c20c00                 ret      0xc
+005271f8 8bf0                   mov      esi, eax
+005271fa b910000000             mov      ecx, 0x10
+005271ff bf484f7400             mov      edi, 0x744f48
+00527204 33c0                   xor      eax, eax
+00527206 f3a6                   repe cmpsb byte ptr [esi], byte ptr es:[edi]
+00527208 7514                   jne      0x52721e
+0052720a 8b4508                 mov      eax, dword ptr [ebp + 8]
+0052720d 8902                   mov      dword ptr [edx], eax
+0052720f 50                     push     eax
+00527210 8b08                   mov      ecx, dword ptr [eax]
+00527212 ff5104                 call     dword ptr [ecx + 4]
+00527215 33c0                   xor      eax, eax
+00527217 5f                     pop      edi
+00527218 5e                     pop      esi
+00527219 5b                     pop      ebx
+0052721a 5d                     pop      ebp
+0052721b c20c00                 ret      0xc
+0052721e 5f                     pop      edi
+0052721f 5e                     pop      esi
+00527220 b802400080             mov      eax, 0x80004002
+00527225 5b                     pop      ebx
+00527226 5d                     pop      ebp
+00527227 c20c00                 ret      0xc
+0052722a 90                     nop      
+0052722b 90                     nop      
+0052722c 90                     nop      
+0052722d 90                     nop      
+0052722e 90                     nop      
+0052722f 90                     nop      
+00527230 55                     push     ebp
+00527231 8bec                   mov      ebp, esp
+00527233 8b4508                 mov      eax, dword ptr [ebp + 8]
+00527236 8b4804                 mov      ecx, dword ptr [eax + 4]
+00527239 41                     inc      ecx
+0052723a 894804                 mov      dword ptr [eax + 4], ecx
+0052723d 8bc1                   mov      eax, ecx
+0052723f 5d                     pop      ebp
+SLOT 004 -> 00527230
+00527230 55                     push     ebp
+00527231 8bec                   mov      ebp, esp
+00527233 8b4508                 mov      eax, dword ptr [ebp + 8]
+00527236 8b4804                 mov      ecx, dword ptr [eax + 4]
+00527239 41                     inc      ecx
+0052723a 894804                 mov      dword ptr [eax + 4], ecx
+0052723d 8bc1                   mov      eax, ecx
+0052723f 5d                     pop      ebp
+00527240 c20400                 ret      4
+SLOT 008 -> 00527250
+00527250 55                     push     ebp
+00527251 8bec                   mov      ebp, esp
+00527253 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+00527256 8b4104                 mov      eax, dword ptr [ecx + 4]
+00527259 48                     dec      eax
+0052725a 894104                 mov      dword ptr [ecx + 4], eax
+0052725d 750b                   jne      0x52726a
+0052725f 51                     push     ecx
+00527260 e87bf40500             call     0x5866e0
+00527265 83c404                 add      esp, 4
+00527268 33c0                   xor      eax, eax
+0052726a 5d                     pop      ebp
+0052726b c20400                 ret      4
+SLOT 00c -> 005273a0
+005273a0 55                     push     ebp
+005273a1 8bec                   mov      ebp, esp
+005273a3 83ec08                 sub      esp, 8
+005273a6 8b4d0c                 mov      ecx, dword ptr [ebp + 0xc]
+005273a9 8b5508                 mov      edx, dword ptr [ebp + 8]
+005273ac 56                     push     esi
+005273ad 8b7510                 mov      esi, dword ptr [ebp + 0x10]
+005273b0 8d45f8                 lea      eax, [ebp - 8]
+005273b3 50                     push     eax
+005273b4 56                     push     esi
+005273b5 c70600000000           mov      dword ptr [esi], 0
+005273bb 51                     push     ecx
+005273bc 8b4a08                 mov      ecx, dword ptr [edx + 8]
+005273bf e85c05faff             call     0x4c7920
+005273c4 833e00                 cmp      dword ptr [esi], 0
+005273c7 7409                   je       0x5273d2
+005273c9 33c0                   xor      eax, eax
+005273cb 5e                     pop      esi
+005273cc 8be5                   mov      esp, ebp
+005273ce 5d                     pop      ebp
+005273cf c21000                 ret      0x10

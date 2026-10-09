@@ -1,0 +1,533 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20012b60 ?ActionBidToSettle@ArmyAgent@@QAENPAVAiMain@@PAVGoalSettle@@H@Z END 20012fa0
+20012b60 55                     push     ebp
+20012b61 8bec                   mov      ebp, esp
+20012b63 83ec38                 sub      esp, 0x38
+20012b66 53                     push     ebx
+20012b67 56                     push     esi
+20012b68 8bf1                   mov      esi, ecx
+20012b6a 57                     push     edi
+20012b6b c745d000000000         mov      dword ptr [ebp - 0x30], 0
+20012b72 c745d400000000         mov      dword ptr [ebp - 0x2c], 0
+20012b79 8b4640                 mov      eax, dword ptr [esi + 0x40]
+20012b7c 83c0f3                 add      eax, -0xd
+20012b7f 83f80b                 cmp      eax, 0xb
+20012b82 770f                   ja       0x20012b93
+20012b84 33c9                   xor      ecx, ecx
+20012b86 8a88882f0120           mov      cl, byte ptr [eax + 0x20012f88]
+20012b8c ff248d782f0120         jmp      dword ptr [ecx*4 + 0x20012f78]
+20012b93 8b5d0c                 mov      ebx, dword ptr [ebp + 0xc]
+20012b96 8d45e8                 lea      eax, [ebp - 0x18]
+20012b99 50                     push     eax
+20012b9a 8bcb                   mov      ecx, ebx
+20012b9c 8b13                   mov      edx, dword ptr [ebx]
+20012b9e ff525c                 call     dword ptr [edx + 0x5c]
+20012ba1 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20012ba4 8d4de8                 lea      ecx, [ebp - 0x18]
+20012ba7 51                     push     ecx
+20012ba8 57                     push     edi
+20012ba9 8bce                   mov      ecx, esi
+20012bab e830050000             call     0x200130e0 ; ?PretestSettle@ArmyAgent@@QAENPAVAiMain@@AAUMapPointData@@@Z
+20012bb0 dc1dd8980820           fcomp    qword ptr [0x200898d8] ; constant=-1e+09
+20012bb6 dfe0                   fnstsw   ax
+20012bb8 f6c441                 test     ah, 0x41
+20012bbb 740f                   je       0x20012bcc
+20012bbd dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012bc3 5f                     pop      edi
+20012bc4 5e                     pop      esi
+20012bc5 5b                     pop      ebx
+20012bc6 8be5                   mov      esp, ebp
+20012bc8 5d                     pop      ebp
+20012bc9 c20c00                 ret      0xc
+20012bcc 8b4640                 mov      eax, dword ptr [esi + 0x40]
+20012bcf 83f801                 cmp      eax, 1
+20012bd2 7405                   je       0x20012bd9
+20012bd4 83f802                 cmp      eax, 2
+20012bd7 751b                   jne      0x20012bf4
+20012bd9 8b4e44                 mov      ecx, dword ptr [esi + 0x44]
+20012bdc e84f970000             call     0x2001c330 ; ?GetQueueLen@CityAgent@@QBEJXZ
+20012be1 85c0                   test     eax, eax
+20012be3 7e0f                   jle      0x20012bf4
+20012be5 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012beb 5f                     pop      edi
+20012bec 5e                     pop      esi
+20012bed 5b                     pop      ebx
+20012bee 8be5                   mov      esp, ebp
+20012bf0 5d                     pop      ebp
+20012bf1 c20c00                 ret      0xc
+20012bf4 8d55e8                 lea      edx, [ebp - 0x18]
+20012bf7 8bce                   mov      ecx, esi
+20012bf9 52                     push     edx
+20012bfa 6a05                   push     5
+20012bfc 57                     push     edi
+20012bfd e86e1c0000             call     0x20014870 ; ?PretestBid@ArmyAgent@@QAENPAVAiMain@@W4GOAL_TYPE@@AAUMapPointData@@@Z
+20012c02 dc1de8980820           fcomp    qword ptr [0x200898e8] ; constant=-1e+09
+20012c08 dfe0                   fnstsw   ax
+20012c0a f6c401                 test     ah, 1
+20012c0d 740f                   je       0x20012c1e
+20012c0f dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012c15 5f                     pop      edi
+20012c16 5e                     pop      esi
+20012c17 5b                     pop      ebx
+20012c18 8be5                   mov      esp, ebp
+20012c1a 5d                     pop      ebp
+20012c1b c20c00                 ret      0xc
+20012c1e 8d45c8                 lea      eax, [ebp - 0x38]
+20012c21 8d4dfc                 lea      ecx, [ebp - 4]
+20012c24 50                     push     eax
+20012c25 8d55d8                 lea      edx, [ebp - 0x28]
+20012c28 51                     push     ecx
+20012c29 8b4d10                 mov      ecx, dword ptr [ebp + 0x10]
+20012c2c 8d45e8                 lea      eax, [ebp - 0x18]
+20012c2f 52                     push     edx
+20012c30 50                     push     eax
+20012c31 51                     push     ecx
+20012c32 57                     push     edi
+20012c33 8bce                   mov      ecx, esi
+20012c35 e816480000             call     0x20017450 ; ?BidDistance@ArmyAgent@@QAENPAVAiMain@@HAAUMapPointData@@AANAAJ2@Z
+20012c3a dc1de0980820           fcomp    qword ptr [0x200898e0] ; constant=0
+20012c40 dfe0                   fnstsw   ax
+20012c42 f6c401                 test     ah, 1
+20012c45 740f                   je       0x20012c56
+20012c47 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012c4d 5f                     pop      edi
+20012c4e 5e                     pop      esi
+20012c4f 5b                     pop      ebx
+20012c50 8be5                   mov      esp, ebp
+20012c52 5d                     pop      ebp
+20012c53 c20c00                 ret      0xc
+20012c56 8b55dc                 mov      edx, dword ptr [ebp - 0x24]
+20012c59 8b45d8                 mov      eax, dword ptr [ebp - 0x28]
+20012c5c 52                     push     edx
+20012c5d 50                     push     eax
+20012c5e 57                     push     edi
+20012c5f 8bce                   mov      ecx, esi
+20012c61 e8ba580000             call     0x20018520 ; ?MovePoints2Rounds@ArmyAgent@@QAEJPAVAiMain@@N@Z
+20012c66 dd05b05d0c20           fld      qword ptr [0x200c5db0] ; ?fz_time@@3NA
+20012c6c dc1df0980820           fcomp    qword ptr [0x200898f0] ; constant=5
+20012c72 8bc8                   mov      ecx, eax
+20012c74 894d10                 mov      dword ptr [ebp + 0x10], ecx
+20012c77 dfe0                   fnstsw   ax
+20012c79 f6c441                 test     ah, 0x41
+20012c7c 7435                   je       0x20012cb3
+20012c7e db4510                 fild     dword ptr [ebp + 0x10]
+20012c81 dc1df0980820           fcomp    qword ptr [0x200898f0] ; constant=5
+20012c87 dfe0                   fnstsw   ax
+20012c89 f6c441                 test     ah, 0x41
+20012c8c 750f                   jne      0x20012c9d
+20012c8e dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012c94 5f                     pop      edi
+20012c95 5e                     pop      esi
+20012c96 5b                     pop      ebx
+20012c97 8be5                   mov      esp, ebp
+20012c99 5d                     pop      ebp
+20012c9a c20c00                 ret      0xc
+20012c9d 8b9794000000           mov      edx, dword ptr [edi + 0x94]
+20012ca3 41                     inc      ecx
+20012ca4 894d10                 mov      dword ptr [ebp + 0x10], ecx
+20012ca7 db4510                 fild     dword ptr [ebp + 0x10]
+20012caa dcbaf0010000           fdivr    qword ptr [edx + 0x1f0]
+20012cb0 dd5dd0                 fstp     qword ptr [ebp - 0x30]
+20012cb3 837dfc32               cmp      dword ptr [ebp - 4], 0x32
+20012cb7 7e0f                   jle      0x20012cc8
+20012cb9 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012cbf 5f                     pop      edi
+20012cc0 5e                     pop      esi
+20012cc1 5b                     pop      ebx
+20012cc2 8be5                   mov      esp, ebp
+20012cc4 5d                     pop      ebp
+20012cc5 c20c00                 ret      0xc
+20012cc8 8b4664                 mov      eax, dword ptr [esi + 0x64]
+20012ccb 8b4dec                 mov      ecx, dword ptr [ebp - 0x14]
+20012cce c745e000000000         mov      dword ptr [ebp - 0x20], 0
+20012cd5 c745e400000000         mov      dword ptr [ebp - 0x1c], 0
+20012cdc 668b4004               mov      ax, word ptr [eax + 4]
+20012ce0 6685c0                 test     ax, ax
+20012ce3 0f8508010000           jne      0x20012df1
+20012ce9 6685c9                 test     cx, cx
+20012cec 0f85ff000000           jne      0x20012df1
+20012cf2 8d4d10                 lea      ecx, [ebp + 0x10]
+20012cf5 8d5508                 lea      edx, [ebp + 8]
+20012cf8 51                     push     ecx
+20012cf9 8b8fac000000           mov      ecx, dword ptr [edi + 0xac]
+20012cff 8d45e8                 lea      eax, [ebp - 0x18]
+20012d02 52                     push     edx
+20012d03 50                     push     eax
+20012d04 57                     push     edi
+20012d05 e826b30600             call     0x2007e030 ; ?GetContinent@Continents@@QAEHPAVAiMain@@AAUMapPointData@@AAJAAH@Z
+20012d0a 85c0                   test     eax, eax
+20012d0c 750f                   jne      0x20012d1d
+20012d0e dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012d14 5f                     pop      edi
+20012d15 5e                     pop      esi
+20012d16 5b                     pop      ebx
+20012d17 8be5                   mov      esp, ebp
+20012d19 5d                     pop      ebp
+20012d1a c20c00                 ret      0xc
+20012d1d 8b4640                 mov      eax, dword ptr [esi + 0x40]
+20012d20 83f801                 cmp      eax, 1
+20012d23 7405                   je       0x20012d2a
+20012d25 83f802                 cmp      eax, 2
+20012d28 7524                   jne      0x20012d4e
+20012d2a 0fbf4e6c               movsx    ecx, word ptr [esi + 0x6c]
+20012d2e 51                     push     ecx
+20012d2f 8b8fac000000           mov      ecx, dword ptr [edi + 0xac]
+20012d35 e856b40600             call     0x2007e190 ; ?GetLandSettlers@Continents@@QBEJJ@Z
+20012d3a 83f80a                 cmp      eax, 0xa
+20012d3d 7c0f                   jl       0x20012d4e
+20012d3f dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012d45 5f                     pop      edi
+20012d46 5e                     pop      esi
+20012d47 5b                     pop      ebx
+20012d48 8be5                   mov      esp, ebp
+20012d4a 5d                     pop      ebp
+20012d4b c20c00                 ret      0xc
+20012d4e f6868800000001         test     byte ptr [esi + 0x88], 1
+20012d55 743b                   je       0x20012d92
+20012d57 0fbf566c               movsx    edx, word ptr [esi + 0x6c]
+20012d5b 8b8fac000000           mov      ecx, dword ptr [edi + 0xac]
+20012d61 52                     push     edx
+20012d62 e8a9b70600             call     0x2007e510 ; ?LandGotSpaceLauncher@Continents@@QAEHJ@Z
+20012d67 85c0                   test     eax, eax
+20012d69 7527                   jne      0x20012d92
+20012d6b 8b8f20010000           mov      ecx, dword ptr [edi + 0x120]
+20012d71 e8ea300100             call     0x20025e60 ; ?HasWaterMove@ScienceAgent@@QBEHXZ
+20012d76 85c0                   test     eax, eax
+20012d78 7518                   jne      0x20012d92
+20012d7a 0fbf466c               movsx    eax, word ptr [esi + 0x6c]
+20012d7e 3b4508                 cmp      eax, dword ptr [ebp + 8]
+20012d81 740f                   je       0x20012d92
+20012d83 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012d89 5f                     pop      edi
+20012d8a 5e                     pop      esi
+20012d8b 5b                     pop      ebx
+20012d8c 8be5                   mov      esp, ebp
+20012d8e 5d                     pop      ebp
+20012d8f c20c00                 ret      0xc
+20012d92 8b4660                 mov      eax, dword ptr [esi + 0x60]
+20012d95 85c0                   test     eax, eax
+20012d97 741d                   je       0x20012db6
+20012d99 750d                   jne      0x20012da8
+20012d9b 33c0                   xor      eax, eax
+20012d9d 33c9                   xor      ecx, ecx
+20012d9f 85c0                   test     eax, eax
+20012da1 0f9fc1                 setg     cl
+20012da4 8bc1                   mov      eax, ecx
+20012da6 eb10                   jmp      0x20012db8
+20012da8 8b4008                 mov      eax, dword ptr [eax + 8]
+20012dab 33c9                   xor      ecx, ecx
+20012dad 85c0                   test     eax, eax
+20012daf 0f9fc1                 setg     cl
+20012db2 8bc1                   mov      eax, ecx
+20012db4 eb02                   jmp      0x20012db8
+20012db6 33c0                   xor      eax, eax
+20012db8 85c0                   test     eax, eax
+20012dba 7479                   je       0x20012e35
+20012dbc 8d55e8                 lea      edx, [ebp - 0x18]
+20012dbf 8bce                   mov      ecx, esi
+20012dc1 52                     push     edx
+20012dc2 57                     push     edi
+20012dc3 e8585c0000             call     0x20018a20 ; ?BoatCanReachShore@ArmyAgent@@QAEHPAVAiMain@@AAUMapPointData@@@Z
+20012dc8 85c0                   test     eax, eax
+20012dca 750f                   jne      0x20012ddb
+20012dcc dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012dd2 5f                     pop      edi
+20012dd3 5e                     pop      esi
+20012dd4 5b                     pop      ebx
+20012dd5 8be5                   mov      esp, ebp
+20012dd7 5d                     pop      ebp
+20012dd8 c20c00                 ret      0xc
+20012ddb 837b6003               cmp      dword ptr [ebx + 0x60], 3
+20012ddf 7554                   jne      0x20012e35
+20012de1 c745e000000000         mov      dword ptr [ebp - 0x20], 0
+20012de8 c745e400408f40         mov      dword ptr [ebp - 0x1c], 0x408f4000
+20012def eb44                   jmp      0x20012e35
+20012df1 6685c0                 test     ax, ax
+20012df4 0f8523010000           jne      0x20012f1d
+20012dfa 6683f901               cmp      cx, 1
+20012dfe 0f8519010000           jne      0x20012f1d
+20012e04 33db                   xor      ebx, ebx
+20012e06 66395e48               cmp      word ptr [esi + 0x48], bx
+20012e0a 7e29                   jle      0x20012e35
+20012e0c 8d7e4a                 lea      edi, [esi + 0x4a]
+20012e0f 8b4508                 mov      eax, dword ptr [ebp + 8]
+20012e12 0fbf17                 movsx    edx, word ptr [edi]
+20012e15 8b4038                 mov      eax, dword ptr [eax + 0x38]
+20012e18 52                     push     edx
+20012e19 50                     push     eax
+20012e1a 8b08                   mov      ecx, dword ptr [eax]
+20012e1c ff91d8000000           call     dword ptr [ecx + 0xd8]
+20012e22 85c0                   test     eax, eax
+20012e24 7464                   je       0x20012e8a
+20012e26 0fbf4648               movsx    eax, word ptr [esi + 0x48]
+20012e2a 43                     inc      ebx
+20012e2b 83c702                 add      edi, 2
+20012e2e 3bd8                   cmp      ebx, eax
+20012e30 7cdd                   jl       0x20012e0f
+20012e32 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20012e35 dd45d8                 fld      qword ptr [ebp - 0x28]
+20012e38 dc0d00990820           fmul     qword ptr [0x20089900] ; constant=-0.01
+20012e3e dc6dc8                 fsubr    qword ptr [ebp - 0x38]
+20012e41 d9c0                   fld      st(0)
+20012e43 dec9                   fmulp    st(1)
+20012e45 dc2d105c0c20           fsubr    qword ptr [0x200c5c10] ; ?fz_settle_patience@@3NA
+20012e4b dc35105c0c20           fdiv     qword ptr [0x200c5c10] ; ?fz_settle_patience@@3NA
+20012e51 dd55f0                 fst      qword ptr [ebp - 0x10]
+20012e54 dc1d08990820           fcomp    qword ptr [0x20089908] ; constant=0.5
+20012e5a dfe0                   fnstsw   ax
+20012e5c f6c401                 test     ah, 1
+20012e5f 740e                   je       0x20012e6f
+20012e61 c745f000000000         mov      dword ptr [ebp - 0x10], 0
+20012e68 c745f40000e03f         mov      dword ptr [ebp - 0xc], 0x3fe00000
+20012e6f 8b4d0c                 mov      ecx, dword ptr [ebp + 0xc]
+20012e72 57                     push     edi
+20012e73 8b11                   mov      edx, dword ptr [ecx]
+20012e75 ff5234                 call     dword ptr [edx + 0x34]
+20012e78 dc4df0                 fmul     qword ptr [ebp - 0x10]
+20012e7b dc45e0                 fadd     qword ptr [ebp - 0x20]
+20012e7e dc45d0                 fadd     qword ptr [ebp - 0x30]
+20012e81 5f                     pop      edi
+20012e82 5e                     pop      esi
+20012e83 5b                     pop      ebx
+20012e84 8be5                   mov      esp, ebp
+20012e86 5d                     pop      ebp
+20012e87 c20c00                 ret      0xc
+20012e8a 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20012e8d 8d55f8                 lea      edx, [ebp - 8]
+20012e90 52                     push     edx
+20012e91 8d55f4                 lea      edx, [ebp - 0xc]
+20012e94 8b4730                 mov      eax, dword ptr [edi + 0x30]
+20012e97 52                     push     edx
+20012e98 8b5664                 mov      edx, dword ptr [esi + 0x64]
+20012e9b 8b08                   mov      ecx, dword ptr [eax]
+20012e9d 52                     push     edx
+20012e9e 50                     push     eax
+20012e9f ff516c                 call     dword ptr [ecx + 0x6c]
+20012ea2 85c0                   test     eax, eax
+20012ea4 745e                   je       0x20012f04
+20012ea6 8d45f8                 lea      eax, [ebp - 8]
+20012ea9 8d4d10                 lea      ecx, [ebp + 0x10]
+20012eac 50                     push     eax
+20012ead e80e3a0100             call     0x200268c0 ; ??0BSetID@@QAE@ABK@Z
+20012eb2 8b878c000000           mov      eax, dword ptr [edi + 0x8c]
+20012eb8 8b7008                 mov      esi, dword ptr [eax + 8]
+20012ebb 85f6                   test     esi, esi
+20012ebd 743a                   je       0x20012ef9
+20012ebf 8d4d10                 lea      ecx, [ebp + 0x10]
+20012ec2 51                     push     ecx
+20012ec3 8bce                   mov      ecx, esi
+20012ec5 e8863a0100             call     0x20026950 ; ??8BSetID@@QBEHABV0@@Z
+20012eca 85c0                   test     eax, eax
+20012ecc 751f                   jne      0x20012eed
+20012ece 56                     push     esi
+20012ecf 8d4d10                 lea      ecx, [ebp + 0x10]
+20012ed2 e8b93a0100             call     0x20026990 ; ??MBSetID@@QBEHABV0@@Z
+20012ed7 85c0                   test     eax, eax
+20012ed9 7409                   je       0x20012ee4
+20012edb 8b7604                 mov      esi, dword ptr [esi + 4]
+20012ede 85f6                   test     esi, esi
+20012ee0 7417                   je       0x20012ef9
+20012ee2 ebdb                   jmp      0x20012ebf
+20012ee4 8b7608                 mov      esi, dword ptr [esi + 8]
+20012ee7 85f6                   test     esi, esi
+20012ee9 740e                   je       0x20012ef9
+20012eeb ebd2                   jmp      0x20012ebf
+20012eed 8b760c                 mov      esi, dword ptr [esi + 0xc]
+20012ef0 8bce                   mov      ecx, esi
+20012ef2 e859d70000             call     0x20020650 ; ?HasSpaceLauncher@CityAgent@@QBEHXZ
+20012ef7 eb0d                   jmp      0x20012f06
+20012ef9 33f6                   xor      esi, esi
+20012efb 8bce                   mov      ecx, esi
+20012efd e84ed70000             call     0x20020650 ; ?HasSpaceLauncher@CityAgent@@QBEHXZ
+20012f02 eb02                   jmp      0x20012f06
+20012f04 33c0                   xor      eax, eax
+20012f06 85c0                   test     eax, eax
+20012f08 0f8524ffffff           jne      0x20012e32
+20012f0e dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012f14 5f                     pop      edi
+20012f15 5e                     pop      esi
+20012f16 5b                     pop      ebx
+20012f17 8be5                   mov      esp, ebp
+20012f19 5d                     pop      ebp
+20012f1a c20c00                 ret      0xc
+20012f1d 663d0100               cmp      ax, 1
+20012f21 0f850effffff           jne      0x20012e35
+20012f27 6685c9                 test     cx, cx
+20012f2a 0f8505ffffff           jne      0x20012e35
+20012f30 33db                   xor      ebx, ebx
+20012f32 66395e48               cmp      word ptr [esi + 0x48], bx
+20012f36 0f8ef6feffff           jle      0x20012e32
+20012f3c 8d7e4a                 lea      edi, [esi + 0x4a]
+20012f3f 8b5508                 mov      edx, dword ptr [ebp + 8]
+20012f42 8b4238                 mov      eax, dword ptr [edx + 0x38]
+20012f45 0fbf17                 movsx    edx, word ptr [edi]
+20012f48 8b08                   mov      ecx, dword ptr [eax]
+20012f4a 52                     push     edx
+20012f4b 50                     push     eax
+20012f4c ff91dc000000           call     dword ptr [ecx + 0xdc]
+20012f52 85c0                   test     eax, eax
+20012f54 7411                   je       0x20012f67
+20012f56 0fbf4648               movsx    eax, word ptr [esi + 0x48]
+20012f5a 43                     inc      ebx
+20012f5b 83c702                 add      edi, 2
+20012f5e 3bd8                   cmp      ebx, eax
+20012f60 7cdd                   jl       0x20012f3f
+20012f62 e9cbfeffff             jmp      0x20012e32
+20012f67 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+20012f6d 5f                     pop      edi
+20012f6e 5e                     pop      esi
+20012f6f 5b                     pop      ebx
+20012f70 8be5                   mov      esp, ebp
+20012f72 5d                     pop      ebp
+20012f73 c20c00                 ret      0xc
+20012f76 8bff                   mov      edi, edi
+20012f78 672f                   das      
+20012f7a 0120                   add      dword ptr [eax], esp
+20012f7c 672f                   das      
+20012f7e 0120                   add      dword ptr [eax], esp
+20012f80 672f                   das      
+20012f82 0120                   add      dword ptr [eax], esp
+20012f84 93                     xchg     ebx, eax
+20012f85 2b01                   sub      eax, dword ptr [ecx]
+20012f87 2000                   and      byte ptr [eax], al
+20012f89 0003                   add      byte ptr [ebx], al
+20012f8b 0301                   add      eax, dword ptr [ecx]
+20012f8d 0101                   add      dword ptr [ecx], eax
+20012f8f 0101                   add      dword ptr [ecx], eax
+20012f91 0103                   add      dword ptr [ebx], eax
+20012f93 029090909090           add      dl, byte ptr [eax - 0x6f6f6f70]
+20012f99 90                     nop      
+20012f9a 90                     nop      
+20012f9b 90                     nop      
+20012f9c 90                     nop      
+20012f9d 90                     nop      
+20012f9e 90                     nop      
+20012f9f 90                     nop      
+
+FUNCTION 200130e0 ?PretestSettle@ArmyAgent@@QAENPAVAiMain@@AAUMapPointData@@@Z END 20013200
+200130e0 55                     push     ebp
+200130e1 8bec                   mov      ebp, esp
+200130e3 51                     push     ecx
+200130e4 53                     push     ebx
+200130e5 8b5d08                 mov      ebx, dword ptr [ebp + 8]
+200130e8 56                     push     esi
+200130e9 57                     push     edi
+200130ea 8b83a0000000           mov      eax, dword ptr [ebx + 0xa0]
+200130f0 8bf9                   mov      edi, ecx
+200130f2 85c0                   test     eax, eax
+200130f4 0f84ce000000           je       0x200131c8
+200130fa 8b4740                 mov      eax, dword ptr [edi + 0x40]
+200130fd 48                     dec      eax
+200130fe 83f812                 cmp      eax, 0x12
+20013101 7738                   ja       0x2001313b
+20013103 33c9                   xor      ecx, ecx
+20013105 8a88e4310120           mov      cl, byte ptr [eax + 0x200131e4]
+2001310b ff248dd8310120         jmp      dword ptr [ecx*4 + 0x200131d8]
+20013112 0fbf4f4a               movsx    ecx, word ptr [edi + 0x4a]
+20013116 8b5b2c                 mov      ebx, dword ptr [ebx + 0x2c]
+20013119 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+2001311c 50                     push     eax
+2001311d 51                     push     ecx
+2001311e 8b13                   mov      edx, dword ptr [ebx]
+20013120 53                     push     ebx
+20013121 ff5234                 call     dword ptr [edx + 0x34]
+20013124 85c0                   test     eax, eax
+20013126 0f849c000000           je       0x200131c8
+2001312c dd0510990820           fld      qword ptr [0x20089910] ; constant=1
+20013132 5f                     pop      edi
+20013133 5e                     pop      esi
+20013134 5b                     pop      ebx
+20013135 8be5                   mov      esp, ebp
+20013137 5d                     pop      ebp
+20013138 c20800                 ret      8
+2001313b 8b4d0c                 mov      ecx, dword ptr [ebp + 0xc]
+2001313e 8b432c                 mov      eax, dword ptr [ebx + 0x2c]
+20013141 51                     push     ecx
+20013142 8d4dfc                 lea      ecx, [ebp - 4]
+20013145 8b10                   mov      edx, dword ptr [eax]
+20013147 51                     push     ecx
+20013148 8b4f0c                 mov      ecx, dword ptr [edi + 0xc]
+2001314b 51                     push     ecx
+2001314c 50                     push     eax
+2001314d ff523c                 call     dword ptr [edx + 0x3c]
+20013150 85c0                   test     eax, eax
+20013152 740f                   je       0x20013163
+20013154 dd0510990820           fld      qword ptr [0x20089910] ; constant=1
+2001315a 5f                     pop      edi
+2001315b 5e                     pop      esi
+2001315c 5b                     pop      ebx
+2001315d 8be5                   mov      esp, ebp
+2001315f 5d                     pop      ebp
+20013160 c20800                 ret      8
+20013163 8b4760                 mov      eax, dword ptr [edi + 0x60]
+20013166 85c0                   test     eax, eax
+20013168 7419                   je       0x20013183
+2001316a 750b                   jne      0x20013177
+2001316c 33f6                   xor      esi, esi
+2001316e 33c9                   xor      ecx, ecx
+20013170 85f6                   test     esi, esi
+20013172 0f9fc1                 setg     cl
+20013175 eb0e                   jmp      0x20013185
+20013177 8b7008                 mov      esi, dword ptr [eax + 8]
+2001317a 33c9                   xor      ecx, ecx
+2001317c 85f6                   test     esi, esi
+2001317e 0f9fc1                 setg     cl
+20013181 eb02                   jmp      0x20013185
+20013183 33c9                   xor      ecx, ecx
+20013185 33f6                   xor      esi, esi
+20013187 3bce                   cmp      ecx, esi
+20013189 743d                   je       0x200131c8
+2001318b 3bc6                   cmp      eax, esi
+2001318d 7505                   jne      0x20013194
+2001318f 897508                 mov      dword ptr [ebp + 8], esi
+20013192 eb06                   jmp      0x2001319a
+20013194 8b5008                 mov      edx, dword ptr [eax + 8]
+20013197 895508                 mov      dword ptr [ebp + 8], edx
+2001319a 8b4508                 mov      eax, dword ptr [ebp + 8]
+2001319d 85c0                   test     eax, eax
+2001319f 7e27                   jle      0x200131c8
+200131a1 8b550c                 mov      edx, dword ptr [ebp + 0xc]
+200131a4 8b4338                 mov      eax, dword ptr [ebx + 0x38]
+200131a7 52                     push     edx
+200131a8 8b5760                 mov      edx, dword ptr [edi + 0x60]
+200131ab 8b08                   mov      ecx, dword ptr [eax]
+200131ad 8b520c                 mov      edx, dword ptr [edx + 0xc]
+200131b0 8b14b2                 mov      edx, dword ptr [edx + esi*4]
+200131b3 52                     push     edx
+200131b4 50                     push     eax
+200131b5 ff5120                 call     dword ptr [ecx + 0x20]
+200131b8 85c0                   test     eax, eax
+200131ba 0f856cffffff           jne      0x2001312c
+200131c0 8b4508                 mov      eax, dword ptr [ebp + 8]
+200131c3 46                     inc      esi
+200131c4 3bf0                   cmp      esi, eax
+200131c6 7cd9                   jl       0x200131a1
+200131c8 dd05d8980820           fld      qword ptr [0x200898d8] ; constant=-1e+09
+200131ce 5f                     pop      edi
+200131cf 5e                     pop      esi
+200131d0 5b                     pop      ebx
+200131d1 8be5                   mov      esp, ebp
+200131d3 5d                     pop      ebp
+200131d4 c20800                 ret      8
+200131d7 90                     nop      
+200131d8 1231                   adc      dh, byte ptr [ecx]
+200131da 0120                   add      dword ptr [eax], esp
+200131dc c8310120               enter    0x131, 0x20
+200131e0 3b31                   cmp      esi, dword ptr [ecx]
+200131e2 0120                   add      dword ptr [eax], esp
+200131e4 0000                   add      byte ptr [eax], al
+200131e6 0202                   add      al, byte ptr [edx]
+200131e8 0202                   add      al, byte ptr [edx]
+200131ea 0202                   add      al, byte ptr [edx]
+200131ec 0202                   add      al, byte ptr [edx]
+200131ee 0202                   add      al, byte ptr [edx]
+200131f0 0202                   add      al, byte ptr [edx]
+200131f2 0202                   add      al, byte ptr [edx]
+200131f4 0101                   add      dword ptr [ecx], eax
+200131f6 019090909090           add      dword ptr [eax - 0x6f6f6f70], edx
+200131fc 90                     nop      
+200131fd 90                     nop      
+200131fe 90                     nop      
+200131ff 90                     nop      

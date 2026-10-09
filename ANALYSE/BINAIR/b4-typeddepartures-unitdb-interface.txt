@@ -1,0 +1,68 @@
+Engine SHA256 b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+Engine base00400000/timestamp37d6f702; inherited native UnitDBvtable745098 binding; no civctp.map
+TABLE00745098 SLOTc pointerbytes70175300 TARGET00531770
+00531770 55                     push     ebp
+00531771 8bec                   mov      ebp, esp
+00531773 a118dda700             mov      eax, dword ptr [0xa7dd18]
+00531778 8b00                   mov      eax, dword ptr [eax]
+0053177a 48                     dec      eax
+0053177b 5d                     pop      ebp
+0053177c c20400                 ret      4
+TABLE00745098 SLOT40 pointerbytes501a5300 TARGET00531a50
+00531a50 55                     push     ebp
+00531a51 8bec                   mov      ebp, esp
+00531a53 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00531a56 8b0d18dda700           mov      ecx, dword ptr [0xa7dd18]
+00531a5c 50                     push     eax
+00531a5d e87e28f2ff             call     0x4542e0
+00531a62 8b4034                 mov      eax, dword ptr [eax + 0x34]
+00531a65 240f                   and      al, 0xf
+00531a67 f6d8                   neg      al
+00531a69 1bc0                   sbb      eax, eax
+00531a6b f7d8                   neg      eax
+00531a6d 5d                     pop      ebp
+00531a6e c20800                 ret      8
+TABLE00745098 SLOT44 pointerbytesc01d5300 TARGET00531dc0
+00531dc0 55                     push     ebp
+00531dc1 8bec                   mov      ebp, esp
+00531dc3 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00531dc6 8b0d18dda700           mov      ecx, dword ptr [0xa7dd18]
+00531dcc 50                     push     eax
+00531dcd e80e25f2ff             call     0x4542e0
+00531dd2 8b4034                 mov      eax, dword ptr [eax + 0x34]
+00531dd5 83e008                 and      eax, 8
+00531dd8 5d                     pop      ebp
+00531dd9 c20800                 ret      8
+TABLE00745098 SLOT48 pointerbytese01d5300 TARGET00531de0
+00531de0 55                     push     ebp
+00531de1 8bec                   mov      ebp, esp
+00531de3 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00531de6 8b0d18dda700           mov      ecx, dword ptr [0xa7dd18]
+00531dec 50                     push     eax
+00531ded e8ee24f2ff             call     0x4542e0
+00531df2 8b4034                 mov      eax, dword ptr [eax + 0x34]
+00531df5 83e002                 and      eax, 2
+00531df8 5d                     pop      ebp
+00531df9 c20800                 ret      8
+TABLE00745098 SLOTd8 pointerbytes20205300 TARGET00532020
+00532020 55                     push     ebp
+00532021 8bec                   mov      ebp, esp
+00532023 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00532026 8b0d18dda700           mov      ecx, dword ptr [0xa7dd18]
+0053202c 50                     push     eax
+0053202d e8ae22f2ff             call     0x4542e0
+00532032 8b4034                 mov      eax, dword ptr [eax + 0x34]
+00532035 83e010                 and      eax, 0x10
+00532038 5d                     pop      ebp
+00532039 c20800                 ret      8
+TABLE00745098 SLOTdc pointerbytes40205300 TARGET00532040
+00532040 55                     push     ebp
+00532041 8bec                   mov      ebp, esp
+00532043 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00532046 8b0d18dda700           mov      ecx, dword ptr [0xa7dd18]
+0053204c 50                     push     eax
+0053204d e88e22f2ff             call     0x4542e0
+00532052 8b4034                 mov      eax, dword ptr [eax + 0x34]
+00532055 83e020                 and      eax, 0x20
+00532058 5d                     pop      ebp
+00532059 c20800                 ret      8

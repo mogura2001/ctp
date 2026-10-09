@@ -1,0 +1,71 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov ecx,('esp', 4)",
+      "bytes": "8b8c2404000000"
+    },
+    {
+      "offset": 7,
+      "asm": "mov ecx,('ecx', 4)",
+      "bytes": "8b8904000000"
+    },
+    {
+      "offset": 13,
+      "asm": "inc ('ecx', 20)",
+      "bytes": "ff8114000000"
+    },
+    {
+      "offset": 19,
+      "asm": "inc ('ecx', 64)",
+      "bytes": "ff8140000000"
+    },
+    {
+      "offset": 25,
+      "asm": "mov edx,('esp', 8)",
+      "bytes": "8b942408000000"
+    },
+    {
+      "offset": 32,
+      "asm": "zx16 eax,('edx', 0)",
+      "bytes": "0fb78200000000"
+    },
+    {
+      "offset": 39,
+      "asm": "shl eax,2",
+      "bytes": "c1e002"
+    },
+    {
+      "offset": 42,
+      "asm": "add eax,ecx",
+      "bytes": "03c1"
+    },
+    {
+      "offset": 44,
+      "asm": "mov eax,('eax', 1280)",
+      "bytes": "8b8000050000"
+    },
+    {
+      "offset": 50,
+      "asm": "mov edx,('esp', 12)",
+      "bytes": "8b94240c000000"
+    },
+    {
+      "offset": 57,
+      "asm": "mov ('edx', 0),eax",
+      "bytes": "898200000000"
+    },
+    {
+      "offset": 63,
+      "asm": "mov eax,('ecx', 16)",
+      "bytes": "8b8110000000"
+    },
+    {
+      "offset": 69,
+      "asm": "ret0ch",
+      "bytes": "c20c00"
+    }
+  ],
+  "fixups": []
+}

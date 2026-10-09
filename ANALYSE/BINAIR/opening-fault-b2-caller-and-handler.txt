@@ -1,0 +1,38 @@
+Read-only B2 fault-path follow-up; no game process or handler executed.
+engine SHA256 b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+base 00400000; timestamp 37d6f702
+
+Existing manager Load caller: ANALYSE/BINAIR/opening-memory-b2-engine-ai-boundary.txt, 0052dec5-0052dedb.
+Load result EAX is tested; zero calls 00401560 before any next-civ increment.
+
+00a20b8c b'Could not restore AI'
+00a20ba4 b'AI'
+00401560 55                     push ebp
+00401561 8bec                   mov ebp, esp
+00401563 81ec04010000           sub esp, 0x104
+00401569 8b4d0c                 mov ecx, dword ptr [ebp + 0xc]
+0040156c 8d4510                 lea eax, [ebp + 0x10]
+0040156f 50                     push eax
+00401570 8d95fcfeffff           lea edx, [ebp - 0x104]
+00401576 51                     push ecx
+00401577 52                     push edx
+00401578 ff1580327400           call dword ptr [0x743280]
+0040157e 8b4d08                 mov ecx, dword ptr [ebp + 8]
+00401581 83c40c                 add esp, 0xc
+00401584 8d85fcfeffff           lea eax, [ebp - 0x104]
+0040158a 50                     push eax
+0040158b 51                     push ecx
+0040158c e80f020000             call 0x4017a0
+00401591 83c408                 add esp, 8
+00401594 33c0                   xor eax, eax
+00401596 6aff                   push -1
+00401598 8900                   mov dword ptr [eax], eax
+0040159a ff1584327400           call dword ptr [0x743284]
+004015a0 83c404                 add esp, 4
+004015a3 8be5                   mov esp, ebp
+004015a5 5d                     pop ebp
+004015a6 c3                     ret 
+
+Interpretation: variadic cdecl title/format arguments; formats message, calls 004017a0, then deliberately writes to NULL at00401598.
+Fatal failure, not a demonstrated graceful return to menu. No original error handler was executed.
+Save is void (RobotCom wrapper ret8), so a synthetic status cannot propagate there. Any explicit Save failure thunk needs a design choice and exact host-bound target.

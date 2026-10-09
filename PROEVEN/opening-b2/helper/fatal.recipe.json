@@ -1,0 +1,81 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov edx,context",
+      "bytes": "ba00000000"
+    },
+    {
+      "offset": 5,
+      "asm": "inc ('edx', 64)",
+      "bytes": "ff8240000000"
+    },
+    {
+      "offset": 11,
+      "asm": "mov eax,('esp', 4)",
+      "bytes": "8b842404000000"
+    },
+    {
+      "offset": 18,
+      "asm": "mov ('edx', 68),eax",
+      "bytes": "898244000000"
+    },
+    {
+      "offset": 24,
+      "asm": "mov eax,('esp', 8)",
+      "bytes": "8b842408000000"
+    },
+    {
+      "offset": 31,
+      "asm": "mov ('edx', 72),eax",
+      "bytes": "898248000000"
+    },
+    {
+      "offset": 37,
+      "asm": "mov esp,('edx', 40)",
+      "bytes": "8ba228000000"
+    },
+    {
+      "offset": 43,
+      "asm": "mov ebx,324508639",
+      "bytes": "bbdf9b5713"
+    },
+    {
+      "offset": 48,
+      "asm": "mov esi,('edx', 120)",
+      "bytes": "8bb278000000"
+    },
+    {
+      "offset": 54,
+      "asm": "mov edi,1985229328",
+      "bytes": "bf10325476"
+    },
+    {
+      "offset": 59,
+      "asm": "mov ebp,1437217740",
+      "bytes": "bdcc33aa55"
+    },
+    {
+      "offset": 64,
+      "asm": "mov eax,-1",
+      "bytes": "b8ffffffff"
+    },
+    {
+      "offset": 69,
+      "asm": "jmp own shim postcall",
+      "bytes": "ffa27c000000"
+    },
+    {
+      "offset": 75,
+      "asm": "ud2 no fixture fatal return",
+      "bytes": "0f0b"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 1,
+      "context_offset": 0
+    }
+  ]
+}

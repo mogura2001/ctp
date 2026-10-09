@@ -1,0 +1,13 @@
+0000 8b4c2404                 mov ecx, dword ptr [esp + 4]
+0004 8b4904                   mov ecx, dword ptr [ecx + 4]
+0007 ff4140                   inc dword ptr [ecx + 0x40]
+000a 8b442404                 mov eax, dword ptr [esp + 4]
+000e 894148                   mov dword ptr [ecx + 0x48], eax
+0011 8b442408                 mov eax, dword ptr [esp + 8]
+0015 89414c                   mov dword ptr [ecx + 0x4c], eax
+0018 8b44240c                 mov eax, dword ptr [esp + 0xc]
+001c 894150                   mov dword ptr [ecx + 0x50], eax
+001f 8b442410                 mov eax, dword ptr [esp + 0x10]
+0023 894154                   mov dword ptr [ecx + 0x54], eax
+0026 8b01                     mov eax, dword ptr [ecx]
+0028 c21000                   ret 0x10

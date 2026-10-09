@@ -1,0 +1,112 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20010bd0 ?GetID@Agent@@QBE?AVBSetID@@XZ END 20010bf0
+20010bd0 55                     push     ebp
+20010bd1 8bec                   mov      ebp, esp
+20010bd3 56                     push     esi
+20010bd4 8b7508                 mov      esi, dword ptr [ebp + 8]
+20010bd7 83c10c                 add      ecx, 0xc
+20010bda 51                     push     ecx
+20010bdb 8bce                   mov      ecx, esi
+20010bdd e8fe5c0100             call     0x200268e0 ; ??0BSetID@@QAE@ABV0@@Z
+20010be2 8bc6                   mov      eax, esi
+20010be4 5e                     pop      esi
+20010be5 5d                     pop      ebp
+20010be6 c20400                 ret      4
+20010be9 90                     nop      
+20010bea 90                     nop      
+20010beb 90                     nop      
+20010bec 90                     nop      
+20010bed 90                     nop      
+20010bee 90                     nop      
+20010bef 90                     nop      
+
+FUNCTION 20011bc0 ?GetPos@ArmyAgent@@QBEHPAVAiMain@@AAUMapPointData@@@Z END 20011be0
+20011bc0 55                     push     ebp
+20011bc1 8bec                   mov      ebp, esp
+20011bc3 8b4964                 mov      ecx, dword ptr [ecx + 0x64]
+20011bc6 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+20011bc9 8b11                   mov      edx, dword ptr [ecx]
+20011bcb 8910                   mov      dword ptr [eax], edx
+20011bcd 8b4904                 mov      ecx, dword ptr [ecx + 4]
+20011bd0 894804                 mov      dword ptr [eax + 4], ecx
+20011bd3 b801000000             mov      eax, 1
+20011bd8 5d                     pop      ebp
+20011bd9 c20800                 ret      8
+20011bdc 90                     nop      
+20011bdd 90                     nop      
+20011bde 90                     nop      
+20011bdf 90                     nop      
+
+FUNCTION 2001a970 ?GetUnitCount@ArmyAgent@@QBEJXZ END 2001a980
+2001a970 0fbf4148               movsx    eax, word ptr [ecx + 0x48]
+2001a974 c3                     ret      
+2001a975 90                     nop      
+2001a976 90                     nop      
+2001a977 90                     nop      
+2001a978 90                     nop      
+2001a979 90                     nop      
+2001a97a 90                     nop      
+2001a97b 90                     nop      
+2001a97c 90                     nop      
+2001a97d 90                     nop      
+2001a97e 90                     nop      
+2001a97f 90                     nop      
+
+FUNCTION 2001a980 ?GetUnitTypeByNumber@ArmyAgent@@QBEJABH@Z END 2001a9a0
+2001a980 55                     push     ebp
+2001a981 8bec                   mov      ebp, esp
+2001a983 8b4508                 mov      eax, dword ptr [ebp + 8]
+2001a986 8b10                   mov      edx, dword ptr [eax]
+2001a988 0fbf44514a             movsx    eax, word ptr [ecx + edx*2 + 0x4a]
+2001a98d 5d                     pop      ebp
+2001a98e c20400                 ret      4
+2001a991 90                     nop      
+2001a992 90                     nop      
+2001a993 90                     nop      
+2001a994 90                     nop      
+2001a995 90                     nop      
+2001a996 90                     nop      
+2001a997 90                     nop      
+2001a998 90                     nop      
+2001a999 90                     nop      
+2001a99a 90                     nop      
+2001a99b 90                     nop      
+2001a99c 90                     nop      
+2001a99d 90                     nop      
+2001a99e 90                     nop      
+2001a99f 90                     nop      
+
+FUNCTION 2001c380 ?GetPos@CityAgent@@QBEXAAUMapPointData@@@Z END 2001c3a0
+2001c380 55                     push     ebp
+2001c381 8bec                   mov      ebp, esp
+2001c383 8b8910020000           mov      ecx, dword ptr [ecx + 0x210]
+2001c389 8b4508                 mov      eax, dword ptr [ebp + 8]
+2001c38c 8b11                   mov      edx, dword ptr [ecx]
+2001c38e 8910                   mov      dword ptr [eax], edx
+2001c390 8b4904                 mov      ecx, dword ptr [ecx + 4]
+2001c393 894804                 mov      dword ptr [eax + 4], ecx
+2001c396 5d                     pop      ebp
+2001c397 c20400                 ret      4
+2001c39a 90                     nop      
+2001c39b 90                     nop      
+2001c39c 90                     nop      
+2001c39d 90                     nop      
+2001c39e 90                     nop      
+2001c39f 90                     nop      
+
+FUNCTION 2001cd50 ?What_Army_Am_I_Building@CityAgent@@QAEJPAVAiMain@@@Z END 2001cd70
+2001cd50 55                     push     ebp
+2001cd51 8bec                   mov      ebp, esp
+2001cd53 8b81f0010000           mov      eax, dword ptr [ecx + 0x1f0]
+2001cd59 85c0                   test     eax, eax
+2001cd5b 7c09                   jl       0x2001cd66
+2001cd5d 83b9f401000001         cmp      dword ptr [ecx + 0x1f4], 1
+2001cd64 7403                   je       0x2001cd69
+2001cd66 83c8ff                 or       eax, 0xffffffff
+2001cd69 5d                     pop      ebp
+2001cd6a c20400                 ret      4
+2001cd6d 90                     nop      
+2001cd6e 90                     nop      
+2001cd6f 90                     nop      

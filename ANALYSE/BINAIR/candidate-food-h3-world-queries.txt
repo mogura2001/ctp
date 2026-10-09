@@ -1,0 +1,34 @@
+Engine SHA256 b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79
+Real World vtable7452e0; no civctp.map
+
+World+b8 -> 00534340
+00534340 55                     push     ebp
+00534341 8bec                   mov      ebp, esp
+00534343 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00534346 b920e3a700             mov      ecx, 0xa7e320
+0053434b 50                     push     eax
+0053434c e8affbfcff             call     0x503f00
+00534351 8b0d70dda700           mov      ecx, dword ptr [0xa7dd70]
+00534357 6820e3a700             push     0xa7e320
+0053435c e80fccfdff             call     0x510f70
+00534361 8b4d10                 mov      ecx, dword ptr [ebp + 0x10]
+00534364 8901                   mov      dword ptr [ecx], eax
+00534366 b801000000             mov      eax, 1
+0053436b 5d                     pop      ebp
+0053436c c20c00                 ret      0xc
+
+World+bc -> 00534370
+00534370 55                     push     ebp
+00534371 8bec                   mov      ebp, esp
+00534373 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+00534376 b920e3a700             mov      ecx, 0xa7e320
+0053437b 50                     push     eax
+0053437c e87ffbfcff             call     0x503f00
+00534381 8b0d70dda700           mov      ecx, dword ptr [0xa7dd70]
+00534387 6820e3a700             push     0xa7e320
+0053438c e83fccfdff             call     0x510fd0
+00534391 8b4d10                 mov      ecx, dword ptr [ebp + 0x10]
+00534394 8901                   mov      dword ptr [ecx], eax
+00534396 b801000000             mov      eax, 1
+0053439b 5d                     pop      ebp
+0053439c c20c00                 ret      0xc

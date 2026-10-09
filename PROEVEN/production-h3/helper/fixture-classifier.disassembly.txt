@@ -1,0 +1,19 @@
+0000 55                       push ebp
+0001 8bec                     mov ebp, esp
+0003 53                       push ebx
+0004 56                       push esi
+0005 57                       push edi
+0006 81ec00000000             sub esp, 0
+000c 6800000000               push 0
+0011 ffb514000000             push dword ptr [ebp + 0x14]
+0017 ffb510000000             push dword ptr [ebp + 0x10]
+001d ffb50c000000             push dword ptr [ebp + 0xc]
+0023 ffb508000000             push dword ptr [ebp + 8]
+0029 b800000000               mov eax, 0
+002e ffd0                     call eax
+0030 81c400000000             add esp, 0
+0036 5f                       pop edi
+0037 5e                       pop esi
+0038 5b                       pop ebx
+0039 5d                       pop ebp
+003a c21000                   ret 0x10

@@ -1,0 +1,40 @@
+{
+    "mode":  "fixture",
+    "bitness":  32,
+    "helper_pid":  20376,
+    "candidate_sha256":  "f93be3629decd38a94117ba774aac3673db2cd2b9e1a0d8a1dde42f7b8e4fd9c",
+    "payload_sha256":  "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf",
+    "actual_rebase":  true,
+    "module_base":  "0x085f0000",
+    "measured_peak_extra_direct_world_calls":  43,
+    "measured_peak_total_direct_world_calls":  44,
+    "negative_mine_delta_valid_finalfood":  {
+                                                "pending_S":  56,
+                                                "mine_S":  53,
+                                                "mine_margin":  13,
+                                                "crime_numerator":  13,
+                                                "crime_denominator":  53,
+                                                "delta":  -1
+                                            },
+    "insufficient_pending_mines":  {
+                                       "pending_S":  36,
+                                       "mine_S":  33,
+                                       "mine_margin":  -7,
+                                       "crime_numerator":  -7,
+                                       "crime_denominator":  33
+                                   },
+    "native_cases":  82,
+    "stack_register_x87_result_canaries":  true,
+    "direct_world_calls_max_allowed_extra":  43,
+    "direct_world_calls_max_allowed_total":  44,
+    "explicit_fixture_binding_only_own_allocations":  true,
+    "production_wronghost_fallback":  true,
+    "synthetic_header_fingerprint_checks_owncopy_baseguard_only":  true,
+    "original_validator_acceptance_in_real_engine_unmeasured":  true,
+    "development_pending_mines_queried_separately":  true,
+    "candidate_pair_saturation_checks":  true,
+    "mapped_candidate_restored_unchanged":  true,
+    "gameplay_measured":  false,
+    "runtime_performance_accepted":  false,
+    "pass":  true
+}

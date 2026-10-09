@@ -1,0 +1,25 @@
+0000 55                       push ebp
+0001 8bec                     mov ebp, esp
+0003 53                       push ebx
+0004 56                       push esi
+0005 57                       push edi
+0006 81ec00000000             sub esp, 0
+000c 8bb508000000             mov esi, dword ptr [ebp + 8]
+0012 8bb604000000             mov esi, dword ptr [esi + 4]
+0018 ff8614000000             inc dword ptr [esi + 0x14]
+001e ff8638000000             inc dword ptr [esi + 0x38]
+0024 8b8604000000             mov eax, dword ptr [esi + 4]
+002a 8b9514000000             mov edx, dword ptr [ebp + 0x14]
+0030 898200000000             mov dword ptr [edx], eax
+0036 8bbd18000000             mov edi, dword ptr [ebp + 0x18]
+003c 81c600020000             add esi, 0x200
+0042 b928000000               mov ecx, 0x28
+0047 fc                       cld 
+0048 f3a5                     rep movsd dword ptr es:[edi], dword ptr [esi]
+004a b8ffffff7f               mov eax, 0x7fffffff
+004f 81c400000000             add esp, 0
+0055 5f                       pop edi
+0056 5e                       pop esi
+0057 5b                       pop ebx
+0058 5d                       pop ebp
+0059 c21400                   ret 0x14

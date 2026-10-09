@@ -1,0 +1,46 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov ecx,('esp', 4)",
+      "bytes": "8b8c2404000000"
+    },
+    {
+      "offset": 7,
+      "asm": "mov ecx,('ecx', 4)",
+      "bytes": "8b8904000000"
+    },
+    {
+      "offset": 13,
+      "asm": "inc ('ecx', 100)",
+      "bytes": "ff8164000000"
+    },
+    {
+      "offset": 19,
+      "asm": "mov edx,('esp', 20)",
+      "bytes": "8b942414000000"
+    },
+    {
+      "offset": 26,
+      "asm": "mov eax,('ecx', 120)",
+      "bytes": "8b8178000000"
+    },
+    {
+      "offset": 32,
+      "asm": "mov ('edx', 0),eax",
+      "bytes": "898200000000"
+    },
+    {
+      "offset": 38,
+      "asm": "mov eax,('ecx', 116)",
+      "bytes": "8b8174000000"
+    },
+    {
+      "offset": 44,
+      "asm": "ret14h",
+      "bytes": "c21400"
+    }
+  ],
+  "fixups": []
+}

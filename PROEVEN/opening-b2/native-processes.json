@@ -1,0 +1,34 @@
+{
+  "helper_executable": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "per_process_timeout_seconds": 45,
+  "processes": [
+    {
+      "N": 25,
+      "mode": "fixture",
+      "exit_code": 0,
+      "elapsed_seconds": 0.922,
+      "timeout": false
+    },
+    {
+      "N": 25,
+      "mode": "loader",
+      "exit_code": 0,
+      "elapsed_seconds": 0.766,
+      "timeout": false
+    },
+    {
+      "N": 30,
+      "mode": "fixture",
+      "exit_code": 0,
+      "elapsed_seconds": 0.75,
+      "timeout": false
+    },
+    {
+      "N": 30,
+      "mode": "loader",
+      "exit_code": 0,
+      "elapsed_seconds": 0.828,
+      "timeout": false
+    }
+  ]
+}

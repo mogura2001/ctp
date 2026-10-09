@@ -22,8 +22,12 @@ Maak onderscheid tussen bestandsfeit, machinecodebevinding, hypothese en
 daadwerkelijk gemeten gameplay. Documentatie alleen is geen verbeterde AI.
 
 CTP-og blijft ongewijzigd. CTP-AAIP is een leermodel. Werkversie: CTP-proef.
-De actuele mijlpaal is eerst de brede functionele analyse van game en AI.
-Tijdens deze analysemijlpaal geen spelstarts, GUI-bediening of binarypatches.
+De brede functionele analyse is afgerond. PROJECTSTATUS bepaalt de werkstap.
+Wijs alleen gerichte aanvullende analyse toe: gameplaydoel, wijzigingsvraag,
+blokkerende kennislacune en oplevercriterium. Draag over zodra voldoende bekend
+is hoe en waar de wijziging kan plaatsvinden; geen volledige gamereconstructie
+als voorwaarde. Stel niet-blokkerende onzekerheden uit. Analyse blijft zonder
+spelstarts, GUI-bediening of binarypatches; uitvoering volgt na ontwerp.
 Bescherm bestaande saves en gebruikerswijzigingen. Bewaar voldoende bewijs om
 een wijziging te kunnen reproduceren en terugdraaien.
 

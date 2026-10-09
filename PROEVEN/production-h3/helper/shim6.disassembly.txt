@@ -1,0 +1,34 @@
+0000 55                       push ebp
+0001 53                       push ebx
+0002 56                       push esi
+0003 57                       push edi
+0004 0fae0500000000           fxsave [0]
+000b dbe3                     fninit 
+000d d9e8                     fld1 
+000f d9eb                     fldpi 
+0011 0fae0500000000           fxsave [0]
+0018 892500000000             mov dword ptr [0], esp
+001e bbdf9b5713               mov ebx, 0x13579bdf
+0023 bee0ac6824               mov esi, 0x2468ace0
+0028 bf10325476               mov edi, 0x76543210
+002d bdcc33aa55               mov ebp, 0x55aa33cc
+0032 ff3500000000             push dword ptr [0]
+0038 ff3500000000             push dword ptr [0]
+003e ff3500000000             push dword ptr [0]
+0044 ff3500000000             push dword ptr [0]
+004a ff3500000000             push dword ptr [0]
+0050 ff3500000000             push dword ptr [0]
+0056 ff1500000000             call dword ptr [0]
+005c a300000000               mov dword ptr [0], eax
+0061 892500000000             mov dword ptr [0], esp
+0067 891d00000000             mov dword ptr [0], ebx
+006d 893500000000             mov dword ptr [0], esi
+0073 893d00000000             mov dword ptr [0], edi
+0079 892d00000000             mov dword ptr [0], ebp
+007f 0fae0500000000           fxsave [0]
+0086 0fae0d00000000           fxrstor [0]
+008d 5f                       pop edi
+008e 5e                       pop esi
+008f 5b                       pop ebx
+0090 5d                       pop ebp
+0091 c3                       ret 

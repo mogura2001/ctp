@@ -1,0 +1,97 @@
+{
+  "candidates": [
+    {
+      "variant": "H1-I",
+      "sha256": "59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0",
+      "PE_checksum": "0xa2e3f",
+      "payload_bytes": 87,
+      "instructions": 32,
+      "branches": [
+        [
+          "0xd4045",
+          "0xd404a"
+        ]
+      ],
+      "callsites": [
+        "0x784bb",
+        "0x78517",
+        "0x7aa35"
+      ],
+      "all_cfg_paths_stack_balanced": true,
+      "changed_original_bytes": 32,
+      "old_sections_directories_unchanged": true,
+      "new_absolute_relocations_required": false
+    },
+    {
+      "variant": "H1-M",
+      "sha256": "e13e00762d3de4662e1c24af8524ef06780ef3f5a612a1c5ca0306b3c23c152f",
+      "PE_checksum": "0xa652e",
+      "payload_bytes": 215,
+      "instructions": 63,
+      "branches": [
+        [
+          "0xd4048",
+          "0xd40ca"
+        ],
+        [
+          "0xd4062",
+          "0xd40ca"
+        ],
+        [
+          "0xd406b",
+          "0xd40ca"
+        ],
+        [
+          "0xd4075",
+          "0xd40ca"
+        ],
+        [
+          "0xd4083",
+          "0xd40ca"
+        ],
+        [
+          "0xd40a3",
+          "0xd40ca"
+        ],
+        [
+          "0xd40af",
+          "0xd40c7"
+        ],
+        [
+          "0xd40b8",
+          "0xd40c7"
+        ],
+        [
+          "0xd40c1",
+          "0xd40ca"
+        ]
+      ],
+      "callsites": [
+        "0x784bb",
+        "0x78517",
+        "0x7aa35"
+      ],
+      "all_cfg_paths_stack_balanced": true,
+      "changed_original_bytes": 32,
+      "old_sections_directories_unchanged": true,
+      "new_absolute_relocations_required": false
+    }
+  ],
+  "helpers": {
+    "shim": {
+      "bytes": 134,
+      "sha256": "ca18757a2dd52a9234a09ffefd0901b421448a7a903b08c4fa6e21ecc66a24a9",
+      "ret": "plain ret"
+    },
+    "score-callback": {
+      "bytes": 43,
+      "sha256": "fc2528167f64042e184bca42f1f03f6de09f41a54723a3af476ffd8914409dcb",
+      "ret": "0x10"
+    },
+    "terrain-callback": {
+      "bytes": 63,
+      "sha256": "dad6d019d6848cf77c29e388f09a44138a7822e0ccf94a3113a3b4b1eaee0273",
+      "ret": "0xc"
+    }
+  }
+}

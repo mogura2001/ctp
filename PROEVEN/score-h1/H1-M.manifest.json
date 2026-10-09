@@ -1,0 +1,385 @@
+{
+  "variant": "H1-M",
+  "original_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "design_sha256": "02ac9a121906022314a3204f69a4700d5854b5b680722a352c693d31f3802668",
+  "candidate_sha256": "e13e00762d3de4662e1c24af8524ef06780ef3f5a612a1c5ca0306b3c23c152f",
+  "payload_sha256": "06af44baeb5c3c67ddc1596225083ef6bee36edfc03273f8435434006bce19b3",
+  "payload_size": 215,
+  "payload_rva": "0xd4000",
+  "payload_raw": "0xa1400",
+  "changes": [
+    {
+      "offset": "0x778bb",
+      "before": "ff9168010000",
+      "after": "e840bb050090",
+      "reason": "call adapter RVA d4000 from 784bb; NOP fallthrough"
+    },
+    {
+      "offset": "0x77917",
+      "before": "ff9168010000",
+      "after": "e8e4ba050090",
+      "reason": "call adapter RVA d4000 from 78517; NOP fallthrough"
+    },
+    {
+      "offset": "0x79e35",
+      "before": "ff9168010000",
+      "after": "e8c695050090",
+      "reason": "call adapter RVA d4000 from 7aa35; NOP fallthrough"
+    },
+    {
+      "offset": "0x250",
+      "before": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after": "2e68310000000000d700000000400d000002000000140a0000000000000000000000000020000060",
+      "reason": "new RX section"
+    },
+    {
+      "offset": "0xbe",
+      "before": "0400",
+      "after": "0500",
+      "reason": "section count"
+    },
+    {
+      "offset": "0x108",
+      "before": "00400d00",
+      "after": "00500d00",
+      "reason": "image size"
+    },
+    {
+      "offset": "0xd4",
+      "before": "00760800",
+      "after": "00780800",
+      "reason": "code size"
+    },
+    {
+      "offset": "0x110",
+      "before": "00000000",
+      "after": "2e650a00",
+      "reason": "PE checksum"
+    }
+  ],
+  "labels": {
+    "L": 83,
+    "mountain": 199,
+    "done": 202
+  },
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,20h",
+      "bytes": "83ec20"
+    },
+    {
+      "offset": 9,
+      "asm": "mov ebx,[ebp+8]",
+      "bytes": "8b5d08"
+    },
+    {
+      "offset": 12,
+      "asm": "movsx eax,word [ebp+0xc]",
+      "bytes": "0fbf450c"
+    },
+    {
+      "offset": 16,
+      "asm": "mov [ebp-0x14],eax",
+      "bytes": "8945ec"
+    },
+    {
+      "offset": 19,
+      "asm": "mov [ebp-0x28],ax",
+      "bytes": "668945d8"
+    },
+    {
+      "offset": 23,
+      "asm": "movsx eax,word [ebp+0x10]",
+      "bytes": "0fbf4510"
+    },
+    {
+      "offset": 27,
+      "asm": "mov [ebp-0x18],eax",
+      "bytes": "8945e8"
+    },
+    {
+      "offset": 30,
+      "asm": "mov [ebp-0x26],ax",
+      "bytes": "668945da"
+    },
+    {
+      "offset": 34,
+      "asm": "movsx eax,word [ebp+0x14]",
+      "bytes": "0fbf4514"
+    },
+    {
+      "offset": 38,
+      "asm": "mov [ebp-0x1c],eax",
+      "bytes": "8945e4"
+    },
+    {
+      "offset": 41,
+      "asm": "mov [ebp-0x24],ax",
+      "bytes": "668945dc"
+    },
+    {
+      "offset": 45,
+      "asm": "push [ebp-1ch]",
+      "bytes": "ff75e4"
+    },
+    {
+      "offset": 48,
+      "asm": "push [ebp-18h]",
+      "bytes": "ff75e8"
+    },
+    {
+      "offset": 51,
+      "asm": "push [ebp-14h]",
+      "bytes": "ff75ec"
+    },
+    {
+      "offset": 54,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 55,
+      "asm": "mov ecx,[ebx]",
+      "bytes": "8b0b"
+    },
+    {
+      "offset": 57,
+      "asm": "call [ecx+168h]",
+      "bytes": "ff9168010000"
+    },
+    {
+      "offset": 63,
+      "asm": "movsx eax,ax",
+      "bytes": "0fbfc0"
+    },
+    {
+      "offset": 66,
+      "asm": "mov [ebp-10h],eax",
+      "bytes": "8945f0"
+    },
+    {
+      "offset": 69,
+      "asm": "cmp eax,1",
+      "bytes": "83f801"
+    },
+    {
+      "offset": 72,
+      "asm": "jle done",
+      "bytes": "0f8e7c000000"
+    },
+    {
+      "offset": 78,
+      "asm": "call L",
+      "bytes": "e800000000"
+    },
+    {
+      "offset": 83,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 84,
+      "asm": "sub esi,RVA(L)",
+      "bytes": "81ee53400d00"
+    },
+    {
+      "offset": 90,
+      "asm": "mov edi,[esi+c6fb4h]",
+      "bytes": "8bbeb46f0c00"
+    },
+    {
+      "offset": 96,
+      "asm": "test edi,edi",
+      "bytes": "85ff"
+    },
+    {
+      "offset": 98,
+      "asm": "jz done",
+      "bytes": "0f8462000000"
+    },
+    {
+      "offset": 104,
+      "asm": "cmp [edi+30h],ebx",
+      "bytes": "395f30"
+    },
+    {
+      "offset": 107,
+      "asm": "jne done",
+      "bytes": "0f8559000000"
+    },
+    {
+      "offset": 113,
+      "asm": "cmp dword [ebp-1ch],0",
+      "bytes": "837de400"
+    },
+    {
+      "offset": 117,
+      "asm": "jne done",
+      "bytes": "0f854f000000"
+    },
+    {
+      "offset": 123,
+      "asm": "cmp word [esi+c6fb0h],0",
+      "bytes": "6683beb06f0c0000"
+    },
+    {
+      "offset": 131,
+      "asm": "jne done",
+      "bytes": "0f8541000000"
+    },
+    {
+      "offset": 137,
+      "asm": "mov [ebp-20h],-1",
+      "bytes": "c745e0ffffffff"
+    },
+    {
+      "offset": 144,
+      "asm": "lea eax,[ebp-20h]",
+      "bytes": "8d45e0"
+    },
+    {
+      "offset": 147,
+      "asm": "push eax",
+      "bytes": "50"
+    },
+    {
+      "offset": 148,
+      "asm": "lea eax,[ebp-28h]",
+      "bytes": "8d45d8"
+    },
+    {
+      "offset": 151,
+      "asm": "push eax",
+      "bytes": "50"
+    },
+    {
+      "offset": 152,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 153,
+      "asm": "mov ecx,[ebx]",
+      "bytes": "8b0b"
+    },
+    {
+      "offset": 155,
+      "asm": "call [ecx+a8h]",
+      "bytes": "ff91a8000000"
+    },
+    {
+      "offset": 161,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 163,
+      "asm": "jz done",
+      "bytes": "0f8421000000"
+    },
+    {
+      "offset": 169,
+      "asm": "mov eax,[ebp-20h]",
+      "bytes": "8b45e0"
+    },
+    {
+      "offset": 172,
+      "asm": "cmp eax,8",
+      "bytes": "83f808"
+    },
+    {
+      "offset": 175,
+      "asm": "je mountain",
+      "bytes": "0f8412000000"
+    },
+    {
+      "offset": 181,
+      "asm": "cmp eax,20",
+      "bytes": "83f814"
+    },
+    {
+      "offset": 184,
+      "asm": "je mountain",
+      "bytes": "0f8409000000"
+    },
+    {
+      "offset": 190,
+      "asm": "cmp eax,22",
+      "bytes": "83f816"
+    },
+    {
+      "offset": 193,
+      "asm": "jne done",
+      "bytes": "0f8503000000"
+    },
+    {
+      "offset": 199,
+      "asm": "dec [ebp-10h]",
+      "bytes": "ff4df0"
+    },
+    {
+      "offset": 202,
+      "asm": "mov eax,[ebp-10h]",
+      "bytes": "8b45f0"
+    },
+    {
+      "offset": 205,
+      "asm": "add esp,20h",
+      "bytes": "83c420"
+    },
+    {
+      "offset": 208,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 209,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 210,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 211,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 212,
+      "asm": "ret10h",
+      "bytes": "c21000"
+    }
+  ],
+  "appended_bytes": 512,
+  "checksum": "0xa652e",
+  "scope": "candidate only; not installed; gameplay unmeasured"
+}

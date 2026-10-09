@@ -1,0 +1,32 @@
+000d4000 55                       push     ebp
+000d4001 8bec                     mov      ebp, esp
+000d4003 53                       push     ebx
+000d4004 56                       push     esi
+000d4005 57                       push     edi
+000d4006 83ec20                   sub      esp, 0x20
+000d4009 8b5d08                   mov      ebx, dword ptr [ebp + 8]
+000d400c 0fbf450c                 movsx    eax, word ptr [ebp + 0xc]
+000d4010 8945ec                   mov      dword ptr [ebp - 0x14], eax
+000d4013 668945d8                 mov      word ptr [ebp - 0x28], ax
+000d4017 0fbf4510                 movsx    eax, word ptr [ebp + 0x10]
+000d401b 8945e8                   mov      dword ptr [ebp - 0x18], eax
+000d401e 668945da                 mov      word ptr [ebp - 0x26], ax
+000d4022 0fbf4514                 movsx    eax, word ptr [ebp + 0x14]
+000d4026 8945e4                   mov      dword ptr [ebp - 0x1c], eax
+000d4029 668945dc                 mov      word ptr [ebp - 0x24], ax
+000d402d ff75e4                   push     dword ptr [ebp - 0x1c]
+000d4030 ff75e8                   push     dword ptr [ebp - 0x18]
+000d4033 ff75ec                   push     dword ptr [ebp - 0x14]
+000d4036 53                       push     ebx
+000d4037 8b0b                     mov      ecx, dword ptr [ebx]
+000d4039 ff9168010000             call     dword ptr [ecx + 0x168]
+000d403f 0fbfc0                   movsx    eax, ax
+000d4042 8945f0                   mov      dword ptr [ebp - 0x10], eax
+000d4045 e900000000               jmp      0xd404a
+000d404a 8b45f0                   mov      eax, dword ptr [ebp - 0x10]
+000d404d 83c420                   add      esp, 0x20
+000d4050 5f                       pop      edi
+000d4051 5e                       pop      esi
+000d4052 5b                       pop      ebx
+000d4053 5d                       pop      ebp
+000d4054 c21000                   ret      0x10

@@ -1,0 +1,52 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 200246d0 ?GetUnitSettleWaterWorth@ScienceAgent@@QAENPAVAiMain@@PANJJ@Z END 20024700
+200246d0 55                     push     ebp
+200246d1 8bec                   mov      ebp, esp
+200246d3 8b4508                 mov      eax, dword ptr [ebp + 8]
+200246d6 8b5514                 mov      edx, dword ptr [ebp + 0x14]
+200246d9 52                     push     edx
+200246da 8b4038                 mov      eax, dword ptr [eax + 0x38]
+200246dd 50                     push     eax
+200246de 8b08                   mov      ecx, dword ptr [eax]
+200246e0 ff5148                 call     dword ptr [ecx + 0x48]
+200246e3 85c0                   test     eax, eax
+200246e5 740a                   je       0x200246f1
+200246e7 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+200246ea dd4028                 fld      qword ptr [eax + 0x28]
+200246ed 5d                     pop      ebp
+200246ee c21000                 ret      0x10
+200246f1 dd05e89b0820           fld      qword ptr [0x20089be8] ; constant=0
+200246f7 5d                     pop      ebp
+200246f8 c21000                 ret      0x10
+200246fb 90                     nop      
+200246fc 90                     nop      
+200246fd 90                     nop      
+200246fe 90                     nop      
+200246ff 90                     nop      
+
+FUNCTION 20024700 ?GetUnitSettleSpaceWorth@ScienceAgent@@QAENPAVAiMain@@PANJJ@Z END 20024730
+20024700 55                     push     ebp
+20024701 8bec                   mov      ebp, esp
+20024703 8b4508                 mov      eax, dword ptr [ebp + 8]
+20024706 8b5514                 mov      edx, dword ptr [ebp + 0x14]
+20024709 52                     push     edx
+2002470a 8b4038                 mov      eax, dword ptr [eax + 0x38]
+2002470d 50                     push     eax
+2002470e 8b08                   mov      ecx, dword ptr [eax]
+20024710 ff5144                 call     dword ptr [ecx + 0x44]
+20024713 85c0                   test     eax, eax
+20024715 740a                   je       0x20024721
+20024717 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+2002471a dd4030                 fld      qword ptr [eax + 0x30]
+2002471d 5d                     pop      ebp
+2002471e c21000                 ret      0x10
+20024721 dd05e89b0820           fld      qword ptr [0x20089be8] ; constant=0
+20024727 5d                     pop      ebp
+20024728 c21000                 ret      0x10
+2002472b 90                     nop      
+2002472c 90                     nop      
+2002472d 90                     nop      
+2002472e 90                     nop      
+2002472f 90                     nop      

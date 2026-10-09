@@ -1,0 +1,209 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 200084d0 ?RecurseSerialize@?$BSet@VCityAgent@@@@QAEXPAUIC3CivArchive@@PAV?$BSetNode@VCityAgent@@@@@Z END 20008510
+200084d0 55                     push     ebp
+200084d1 8bec                   mov      ebp, esp
+200084d3 53                     push     ebx
+200084d4 56                     push     esi
+200084d5 8b750c                 mov      esi, dword ptr [ebp + 0xc]
+200084d8 57                     push     edi
+200084d9 8b7d08                 mov      edi, dword ptr [ebp + 8]
+200084dc 8bd9                   mov      ebx, ecx
+200084de 57                     push     edi
+200084df 8bce                   mov      ecx, esi
+200084e1 e8dae50100             call     0x20026ac0 ; ?Serialize@BSetID@@QAEXPAUIC3CivArchive@@@Z
+200084e6 8b4e0c                 mov      ecx, dword ptr [esi + 0xc]
+200084e9 57                     push     edi
+200084ea e8313a0100             call     0x2001bf20 ; ?Serialize@CityAgent@@QAEXPAUIC3CivArchive@@@Z
+200084ef 8b4604                 mov      eax, dword ptr [esi + 4]
+200084f2 85c0                   test     eax, eax
+200084f4 7409                   je       0x200084ff
+200084f6 50                     push     eax
+200084f7 57                     push     edi
+200084f8 8bcb                   mov      ecx, ebx
+200084fa e8d1ffffff             call     0x200084d0 ; ?RecurseSerialize@?$BSet@VCityAgent@@@@QAEXPAUIC3CivArchive@@PAV?$BSetNode@VCityAgent@@@@@Z
+200084ff 8b7608                 mov      esi, dword ptr [esi + 8]
+20008502 85f6                   test     esi, esi
+20008504 75d8                   jne      0x200084de
+20008506 5f                     pop      edi
+20008507 5e                     pop      esi
+20008508 5b                     pop      ebx
+20008509 5d                     pop      ebp
+2000850a c20800                 ret      8
+2000850d 90                     nop      
+2000850e 90                     nop      
+2000850f 90                     nop      
+
+FUNCTION 20075870 ?Still_Can_Act@Squad@@QAEKXZ END 20075a00
+20075870 55                     push     ebp
+20075871 8bec                   mov      ebp, esp
+20075873 83ec0c                 sub      esp, 0xc
+20075876 53                     push     ebx
+20075877 8bd9                   mov      ebx, ecx
+20075879 895df8                 mov      dword ptr [ebp - 8], ebx
+2007587c 8b4344                 mov      eax, dword ptr [ebx + 0x44]
+2007587f 85c0                   test     eax, eax
+20075881 7f07                   jg       0x2007588a
+20075883 33c0                   xor      eax, eax
+20075885 5b                     pop      ebx
+20075886 8be5                   mov      esp, ebp
+20075888 5d                     pop      ebp
+20075889 c3                     ret      
+2007588a 56                     push     esi
+2007588b 33f6                   xor      esi, esi
+2007588d 85c0                   test     eax, eax
+2007588f 8945fc                 mov      dword ptr [ebp - 4], eax
+20075892 0f8e56010000           jle      0x200759ee
+20075898 57                     push     edi
+20075899 85f6                   test     esi, esi
+2007589b 0f8c05010000           jl       0x200759a6
+200758a1 8b4b44                 mov      ecx, dword ptr [ebx + 0x44]
+200758a4 3bf1                   cmp      esi, ecx
+200758a6 0f8dfa000000           jge      0x200759a6
+200758ac 8b5334                 mov      edx, dword ptr [ebx + 0x34]
+200758af 8d42ff                 lea      eax, [edx - 1]
+200758b2 3bf0                   cmp      esi, eax
+200758b4 7513                   jne      0x200758c9
+200758b6 8b4b38                 mov      ecx, dword ptr [ebx + 0x38]
+200758b9 8b4908                 mov      ecx, dword ptr [ecx + 8]
+200758bc 897334                 mov      dword ptr [ebx + 0x34], esi
+200758bf 894b38                 mov      dword ptr [ebx + 0x38], ecx
+200758c2 8b39                   mov      edi, dword ptr [ecx]
+200758c4 e9df000000             jmp      0x200759a8
+200758c9 8d4201                 lea      eax, [edx + 1]
+200758cc 3bf0                   cmp      esi, eax
+200758ce 7513                   jne      0x200758e3
+200758d0 8b4b38                 mov      ecx, dword ptr [ebx + 0x38]
+200758d3 8b4904                 mov      ecx, dword ptr [ecx + 4]
+200758d6 897334                 mov      dword ptr [ebx + 0x34], esi
+200758d9 894b38                 mov      dword ptr [ebx + 0x38], ecx
+200758dc 8b39                   mov      edi, dword ptr [ecx]
+200758de e9c5000000             jmp      0x200759a8
+200758e3 8d41ff                 lea      eax, [ecx - 1]
+200758e6 3bf0                   cmp      esi, eax
+200758e8 7510                   jne      0x200758fa
+200758ea 8b4b40                 mov      ecx, dword ptr [ebx + 0x40]
+200758ed 897334                 mov      dword ptr [ebx + 0x34], esi
+200758f0 894b38                 mov      dword ptr [ebx + 0x38], ecx
+200758f3 8b39                   mov      edi, dword ptr [ecx]
+200758f5 e9ae000000             jmp      0x200759a8
+200758fa 8bc6                   mov      eax, esi
+200758fc 2bce                   sub      ecx, esi
+200758fe 2bc2                   sub      eax, edx
+20075900 49                     dec      ecx
+20075901 85c0                   test     eax, eax
+20075903 8bd1                   mov      edx, ecx
+20075905 8bf8                   mov      edi, eax
+20075907 7d02                   jge      0x2007590b
+20075909 f7df                   neg      edi
+2007590b 33c9                   xor      ecx, ecx
+2007590d 3bf7                   cmp      esi, edi
+2007590f 0f9cc1                 setl     cl
+20075912 33db                   xor      ebx, ebx
+20075914 3bf2                   cmp      esi, edx
+20075916 0f9cc3                 setl     bl
+20075919 85c0                   test     eax, eax
+2007591b 895df4                 mov      dword ptr [ebp - 0xc], ebx
+2007591e 8bf8                   mov      edi, eax
+20075920 7d02                   jge      0x20075924
+20075922 f7df                   neg      edi
+20075924 33db                   xor      ebx, ebx
+20075926 3bfa                   cmp      edi, edx
+20075928 0f9cc3                 setl     bl
+2007592b 85c9                   test     ecx, ecx
+2007592d 8b4df4                 mov      ecx, dword ptr [ebp - 0xc]
+20075930 8bfb                   mov      edi, ebx
+20075932 7420                   je       0x20075954
+20075934 85c9                   test     ecx, ecx
+20075936 7420                   je       0x20075958
+20075938 8b5df8                 mov      ebx, dword ptr [ebp - 8]
+2007593b 85f6                   test     esi, esi
+2007593d 8b4b3c                 mov      ecx, dword ptr [ebx + 0x3c]
+20075940 7e5a                   jle      0x2007599c
+20075942 8bc6                   mov      eax, esi
+20075944 8b4904                 mov      ecx, dword ptr [ecx + 4]
+20075947 48                     dec      eax
+20075948 75fa                   jne      0x20075944
+2007594a 897334                 mov      dword ptr [ebx + 0x34], esi
+2007594d 894b38                 mov      dword ptr [ebx + 0x38], ecx
+20075950 8b39                   mov      edi, dword ptr [ecx]
+20075952 eb54                   jmp      0x200759a8
+20075954 85c9                   test     ecx, ecx
+20075956 751e                   jne      0x20075976
+20075958 85ff                   test     edi, edi
+2007595a 751a                   jne      0x20075976
+2007595c 8b5df8                 mov      ebx, dword ptr [ebp - 8]
+2007595f 85d2                   test     edx, edx
+20075961 8b4b40                 mov      ecx, dword ptr [ebx + 0x40]
+20075964 7436                   je       0x2007599c
+20075966 8b4908                 mov      ecx, dword ptr [ecx + 8]
+20075969 4a                     dec      edx
+2007596a 75fa                   jne      0x20075966
+2007596c 897334                 mov      dword ptr [ebx + 0x34], esi
+2007596f 894b38                 mov      dword ptr [ebx + 0x38], ecx
+20075972 8b39                   mov      edi, dword ptr [ecx]
+20075974 eb32                   jmp      0x200759a8
+20075976 8b5df8                 mov      ebx, dword ptr [ebp - 8]
+20075979 85c0                   test     eax, eax
+2007597b 8b4b38                 mov      ecx, dword ptr [ebx + 0x38]
+2007597e 7d14                   jge      0x20075994
+20075980 f7d8                   neg      eax
+20075982 7418                   je       0x2007599c
+20075984 8b4908                 mov      ecx, dword ptr [ecx + 8]
+20075987 48                     dec      eax
+20075988 75fa                   jne      0x20075984
+2007598a 897334                 mov      dword ptr [ebx + 0x34], esi
+2007598d 894b38                 mov      dword ptr [ebx + 0x38], ecx
+20075990 8b39                   mov      edi, dword ptr [ecx]
+20075992 eb14                   jmp      0x200759a8
+20075994 7e06                   jle      0x2007599c
+20075996 8b4904                 mov      ecx, dword ptr [ecx + 4]
+20075999 48                     dec      eax
+2007599a 75fa                   jne      0x20075996
+2007599c 897334                 mov      dword ptr [ebx + 0x34], esi
+2007599f 894b38                 mov      dword ptr [ebx + 0x38], ecx
+200759a2 8b39                   mov      edi, dword ptr [ecx]
+200759a4 eb02                   jmp      0x200759a8
+200759a6 33ff                   xor      edi, edi
+200759a8 8bcf                   mov      ecx, edi
+200759aa e841b2f9ff             call     0x20010bf0 ; ?GetType@Agent@@QBE?AW4AGENT_TYPE@@XZ
+200759af 48                     dec      eax
+200759b0 7411                   je       0x200759c3
+200759b2 48                     dec      eax
+200759b3 752c                   jne      0x200759e1
+200759b5 8bcf                   mov      ecx, edi
+200759b7 e87469faff             call     0x2001c330 ; ?GetQueueLen@CityAgent@@QBEJXZ
+200759bc 83f801                 cmp      eax, 1
+200759bf 7c20                   jl       0x200759e1
+200759c1 eb1b                   jmp      0x200759de
+200759c3 dd4770                 fld      qword ptr [edi + 0x70]
+200759c6 dc1df0b50820           fcomp    qword ptr [0x2008b5f0] ; constant=16
+200759cc dfe0                   fnstsw   ax
+200759ce f6c401                 test     ah, 1
+200759d1 750b                   jne      0x200759de
+200759d3 8bcf                   mov      ecx, edi
+200759d5 e816d0f9ff             call     0x200129f0 ; ?IsWaitState@ArmyAgent@@QAEHXZ
+200759da 85c0                   test     eax, eax
+200759dc 7403                   je       0x200759e1
+200759de ff4dfc                 dec      dword ptr [ebp - 4]
+200759e1 8b4344                 mov      eax, dword ptr [ebx + 0x44]
+200759e4 46                     inc      esi
+200759e5 3bf0                   cmp      esi, eax
+200759e7 0f8cacfeffff           jl       0x20075899
+200759ed 5f                     pop      edi
+200759ee 8b45fc                 mov      eax, dword ptr [ebp - 4]
+200759f1 5e                     pop      esi
+200759f2 5b                     pop      ebx
+200759f3 8be5                   mov      esp, ebp
+200759f5 5d                     pop      ebp
+200759f6 c3                     ret      
+200759f7 90                     nop      
+200759f8 90                     nop      
+200759f9 90                     nop      
+200759fa 90                     nop      
+200759fb 90                     nop      
+200759fc 90                     nop      
+200759fd 90                     nop      
+200759fe 90                     nop      
+200759ff 90                     nop      

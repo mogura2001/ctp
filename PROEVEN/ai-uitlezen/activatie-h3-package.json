@@ -1,0 +1,38 @@
+{
+  "status": "offline observer package checked; no liveprocessread or installation",
+  "passed": 52,
+  "previous_H1_H3_package_files_unchanged": 120,
+  "design_sha256": "e281459dde34043e19af5026be83cca683180b8b91cdd448e0bd45cf951c8de3",
+  "files": {
+    "Lees-Onderzoeksactivatie.py": {
+      "size": 24716,
+      "sha256": "ff43655e52ddc2a9c593ff64ef564c6cda54a2c11e04cc364cfbd5fface69365"
+    },
+    "Controleer-Decoder.py": {
+      "size": 11977,
+      "sha256": "448c5d3de04cb12e26ff6718c25719ac6314fa1b2c10037c3a636dcc0368635e"
+    },
+    "activatie-h3-binding.json": {
+      "size": 621464,
+      "sha256": "c4348ec5481f7c1bf28c8886464411498644ef16f5757a0ab10d57a13d284dc2"
+    },
+    "activatie-h3-decoder-results.json": {
+      "size": 2313,
+      "sha256": "e0bf4aaa5303d126eaa8908c59f8a1dddcf91a28a700bd92dc8be2cfce336441"
+    },
+    "activatie-h3-observer.before.bin": {
+      "size": 8700,
+      "sha256": "b4270deecf27ac3dbcd6e1a2c08988e474c6d950a0de7f0ce961979852f71b2d"
+    },
+    "activatie-h3-resultaten.md": {
+      "size": 4896,
+      "sha256": "1caedd3b3fff21d2114c5fb62f93a86625214b014b6becb3e3b1b1373ccb6ccb"
+    }
+  },
+  "open": [
+    "real newgoal visibility",
+    "real comparator/goalcall and heapordering",
+    "real AI overhead<=1.10xH1-I"
+  ],
+  "actorfilter_review_fix": "decode_h3 and compare excludeciv0; observeASTunchanged; pureciv0Q=B+1notaccepted"
+}

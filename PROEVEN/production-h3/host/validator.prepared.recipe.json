@@ -1,0 +1,725 @@
+{
+  "status": "PREPARED UNINTEGRATED; not native-tested",
+  "binding_size": 24,
+  "labels": {
+    "unknown": 768,
+    "done": 781
+  },
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "mov edi,[ebp+10h]",
+      "bytes": "8b7d10"
+    },
+    {
+      "offset": 9,
+      "asm": "xor eax,eax",
+      "bytes": "33c0"
+    },
+    {
+      "offset": 11,
+      "asm": "mov ecx,6",
+      "bytes": "b906000000"
+    },
+    {
+      "offset": 16,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 17,
+      "asm": "rep stosd",
+      "bytes": "f3ab"
+    },
+    {
+      "offset": 19,
+      "asm": "mov edi,[ebp+10h]",
+      "bytes": "8b7d10"
+    },
+    {
+      "offset": 22,
+      "asm": "mov ebx,[ebp+0ch]",
+      "bytes": "8b5d0c"
+    },
+    {
+      "offset": 25,
+      "asm": "test ebx,ebx",
+      "bytes": "85db"
+    },
+    {
+      "offset": 27,
+      "asm": "jz unknown",
+      "bytes": "0f84df020000"
+    },
+    {
+      "offset": 33,
+      "asm": "mov edx,[ebp+8]",
+      "bytes": "8b5508"
+    },
+    {
+      "offset": 36,
+      "asm": "test edx,edx",
+      "bytes": "85d2"
+    },
+    {
+      "offset": 38,
+      "asm": "jz unknown",
+      "bytes": "0f84d4020000"
+    },
+    {
+      "offset": 44,
+      "asm": "cmp [edx+30h],ebx",
+      "bytes": "395a30"
+    },
+    {
+      "offset": 47,
+      "asm": "jne unknown",
+      "bytes": "0f85cb020000"
+    },
+    {
+      "offset": 53,
+      "asm": "mov ecx,[ebx]",
+      "bytes": "8b0b"
+    },
+    {
+      "offset": 55,
+      "asm": "test ecx,ecx",
+      "bytes": "85c9"
+    },
+    {
+      "offset": 57,
+      "asm": "jz unknown",
+      "bytes": "0f84c1020000"
+    },
+    {
+      "offset": 63,
+      "asm": "mov esi,[ecx+b8h]",
+      "bytes": "8bb1b8000000"
+    },
+    {
+      "offset": 69,
+      "asm": "sub esi,134340h",
+      "bytes": "81ee40431300"
+    },
+    {
+      "offset": 75,
+      "asm": "cmp esi,400000h",
+      "bytes": "81fe00004000"
+    },
+    {
+      "offset": 81,
+      "asm": "jne unknown",
+      "bytes": "0f85a9020000"
+    },
+    {
+      "offset": 87,
+      "asm": "lea eax,[esi+1342e0h]",
+      "bytes": "8d86e0421300"
+    },
+    {
+      "offset": 93,
+      "asm": "cmp [ecx+a8h],eax",
+      "bytes": "3981a8000000"
+    },
+    {
+      "offset": 99,
+      "asm": "jne unknown",
+      "bytes": "0f8597020000"
+    },
+    {
+      "offset": 105,
+      "asm": "cmp word [esi],MZ",
+      "bytes": "66813e4d5a"
+    },
+    {
+      "offset": 110,
+      "asm": "jne unknown",
+      "bytes": "0f858c020000"
+    },
+    {
+      "offset": 116,
+      "asm": "mov eax,[esi+3ch]",
+      "bytes": "8b463c"
+    },
+    {
+      "offset": 119,
+      "asm": "cmp eax,40h",
+      "bytes": "83f840"
+    },
+    {
+      "offset": 122,
+      "asm": "jb unknown",
+      "bytes": "0f8280020000"
+    },
+    {
+      "offset": 128,
+      "asm": "cmp eax,400h",
+      "bytes": "3d00040000"
+    },
+    {
+      "offset": 133,
+      "asm": "ja unknown",
+      "bytes": "0f8775020000"
+    },
+    {
+      "offset": 139,
+      "asm": "add eax,esi",
+      "bytes": "03c6"
+    },
+    {
+      "offset": 141,
+      "asm": "cmp [eax],PE",
+      "bytes": "813850450000"
+    },
+    {
+      "offset": 147,
+      "asm": "jne unknown",
+      "bytes": "0f8567020000"
+    },
+    {
+      "offset": 153,
+      "asm": "cmp word [eax+4],14ch",
+      "bytes": "668178044c01"
+    },
+    {
+      "offset": 159,
+      "asm": "jne unknown",
+      "bytes": "0f855b020000"
+    },
+    {
+      "offset": 165,
+      "asm": "cmp [eax+8],37d6f702h",
+      "bytes": "81780802f7d637"
+    },
+    {
+      "offset": 172,
+      "asm": "jne unknown",
+      "bytes": "0f854e020000"
+    },
+    {
+      "offset": 178,
+      "asm": "cmp word [eax+18h],10bh",
+      "bytes": "668178180b01"
+    },
+    {
+      "offset": 184,
+      "asm": "jne unknown",
+      "bytes": "0f8542020000"
+    },
+    {
+      "offset": 190,
+      "asm": "cmp [eax+34h],400000h",
+      "bytes": "81783400004000"
+    },
+    {
+      "offset": 197,
+      "asm": "jne unknown",
+      "bytes": "0f8535020000"
+    },
+    {
+      "offset": 203,
+      "asm": "test word [eax+5eh],40h",
+      "bytes": "66f7405e4000"
+    },
+    {
+      "offset": 209,
+      "asm": "jnz unknown",
+      "bytes": "0f8529020000"
+    },
+    {
+      "offset": 215,
+      "asm": "cmp [eax+a0h],0",
+      "bytes": "83b8a000000000"
+    },
+    {
+      "offset": 222,
+      "asm": "jne unknown",
+      "bytes": "0f851c020000"
+    },
+    {
+      "offset": 228,
+      "asm": "cmp [eax+a4h],0",
+      "bytes": "83b8a400000000"
+    },
+    {
+      "offset": 235,
+      "asm": "jne unknown",
+      "bytes": "0f850f020000"
+    },
+    {
+      "offset": 241,
+      "asm": "cmp dword [esi+1342e0],original terrain",
+      "bytes": "81bee0421300558bec8b"
+    },
+    {
+      "offset": 251,
+      "asm": "jne unknown",
+      "bytes": "0f85ff010000"
+    },
+    {
+      "offset": 257,
+      "asm": "cmp dword [esi+1342e4],original terrain",
+      "bytes": "81bee4421300450cb920"
+    },
+    {
+      "offset": 267,
+      "asm": "jne unknown",
+      "bytes": "0f85ef010000"
+    },
+    {
+      "offset": 273,
+      "asm": "cmp dword [esi+1342e8],original terrain",
+      "bytes": "81bee8421300e3a70050"
+    },
+    {
+      "offset": 283,
+      "asm": "jne unknown",
+      "bytes": "0f85df010000"
+    },
+    {
+      "offset": 289,
+      "asm": "cmp dword [esi+1342ec],original terrain",
+      "bytes": "81beec421300e80ffcfc"
+    },
+    {
+      "offset": 299,
+      "asm": "jne unknown",
+      "bytes": "0f85cf010000"
+    },
+    {
+      "offset": 305,
+      "asm": "cmp dword [esi+1342f0],original terrain",
+      "bytes": "81bef0421300ff8b0d70"
+    },
+    {
+      "offset": 315,
+      "asm": "jne unknown",
+      "bytes": "0f85bf010000"
+    },
+    {
+      "offset": 321,
+      "asm": "cmp dword [esi+1342f4],original terrain",
+      "bytes": "81bef4421300dda70068"
+    },
+    {
+      "offset": 331,
+      "asm": "jne unknown",
+      "bytes": "0f85af010000"
+    },
+    {
+      "offset": 337,
+      "asm": "cmp dword [esi+1342f8],original terrain",
+      "bytes": "81bef842130020e3a700"
+    },
+    {
+      "offset": 347,
+      "asm": "jne unknown",
+      "bytes": "0f859f010000"
+    },
+    {
+      "offset": 353,
+      "asm": "cmp dword [esi+1342fc],original terrain",
+      "bytes": "81befc421300e86f08fe"
+    },
+    {
+      "offset": 363,
+      "asm": "jne unknown",
+      "bytes": "0f858f010000"
+    },
+    {
+      "offset": 369,
+      "asm": "cmp dword [esi+134300],original terrain",
+      "bytes": "81be00431300ff8b4d10"
+    },
+    {
+      "offset": 379,
+      "asm": "jne unknown",
+      "bytes": "0f857f010000"
+    },
+    {
+      "offset": 385,
+      "asm": "cmp dword [esi+134304],original terrain",
+      "bytes": "81be044313008901b801"
+    },
+    {
+      "offset": 395,
+      "asm": "jne unknown",
+      "bytes": "0f856f010000"
+    },
+    {
+      "offset": 401,
+      "asm": "cmp dword [esi+134308],original terrain",
+      "bytes": "81be084313000000005d"
+    },
+    {
+      "offset": 411,
+      "asm": "jne unknown",
+      "bytes": "0f855f010000"
+    },
+    {
+      "offset": 417,
+      "asm": "cmp byte [esi+13430c],original terrain",
+      "bytes": "80be0c431300c2"
+    },
+    {
+      "offset": 424,
+      "asm": "jne unknown",
+      "bytes": "0f8552010000"
+    },
+    {
+      "offset": 430,
+      "asm": "cmp byte [esi+13430d],original terrain",
+      "bytes": "80be0d4313000c"
+    },
+    {
+      "offset": 437,
+      "asm": "jne unknown",
+      "bytes": "0f8545010000"
+    },
+    {
+      "offset": 443,
+      "asm": "cmp byte [esi+13430e],original terrain",
+      "bytes": "80be0e43130000"
+    },
+    {
+      "offset": 450,
+      "asm": "jne unknown",
+      "bytes": "0f8538010000"
+    },
+    {
+      "offset": 456,
+      "asm": "cmp dword [esi+134340],original food",
+      "bytes": "81be40431300558bec8b"
+    },
+    {
+      "offset": 466,
+      "asm": "jne unknown",
+      "bytes": "0f8528010000"
+    },
+    {
+      "offset": 472,
+      "asm": "cmp dword [esi+134344],original food",
+      "bytes": "81be44431300450cb920"
+    },
+    {
+      "offset": 482,
+      "asm": "jne unknown",
+      "bytes": "0f8518010000"
+    },
+    {
+      "offset": 488,
+      "asm": "cmp dword [esi+134348],original food",
+      "bytes": "81be48431300e3a70050"
+    },
+    {
+      "offset": 498,
+      "asm": "jne unknown",
+      "bytes": "0f8508010000"
+    },
+    {
+      "offset": 504,
+      "asm": "cmp dword [esi+13434c],original food",
+      "bytes": "81be4c431300e8affbfc"
+    },
+    {
+      "offset": 514,
+      "asm": "jne unknown",
+      "bytes": "0f85f8000000"
+    },
+    {
+      "offset": 520,
+      "asm": "cmp dword [esi+134350],original food",
+      "bytes": "81be50431300ff8b0d70"
+    },
+    {
+      "offset": 530,
+      "asm": "jne unknown",
+      "bytes": "0f85e8000000"
+    },
+    {
+      "offset": 536,
+      "asm": "cmp dword [esi+134354],original food",
+      "bytes": "81be54431300dda70068"
+    },
+    {
+      "offset": 546,
+      "asm": "jne unknown",
+      "bytes": "0f85d8000000"
+    },
+    {
+      "offset": 552,
+      "asm": "cmp dword [esi+134358],original food",
+      "bytes": "81be5843130020e3a700"
+    },
+    {
+      "offset": 562,
+      "asm": "jne unknown",
+      "bytes": "0f85c8000000"
+    },
+    {
+      "offset": 568,
+      "asm": "cmp dword [esi+13435c],original food",
+      "bytes": "81be5c431300e80fccfd"
+    },
+    {
+      "offset": 578,
+      "asm": "jne unknown",
+      "bytes": "0f85b8000000"
+    },
+    {
+      "offset": 584,
+      "asm": "cmp dword [esi+134360],original food",
+      "bytes": "81be60431300ff8b4d10"
+    },
+    {
+      "offset": 594,
+      "asm": "jne unknown",
+      "bytes": "0f85a8000000"
+    },
+    {
+      "offset": 600,
+      "asm": "cmp dword [esi+134364],original food",
+      "bytes": "81be644313008901b801"
+    },
+    {
+      "offset": 610,
+      "asm": "jne unknown",
+      "bytes": "0f8598000000"
+    },
+    {
+      "offset": 616,
+      "asm": "cmp dword [esi+134368],original food",
+      "bytes": "81be684313000000005d"
+    },
+    {
+      "offset": 626,
+      "asm": "jne unknown",
+      "bytes": "0f8588000000"
+    },
+    {
+      "offset": 632,
+      "asm": "cmp byte [esi+13436c],original food",
+      "bytes": "80be6c431300c2"
+    },
+    {
+      "offset": 639,
+      "asm": "jne unknown",
+      "bytes": "0f857b000000"
+    },
+    {
+      "offset": 645,
+      "asm": "cmp byte [esi+13436d],original food",
+      "bytes": "80be6d4313000c"
+    },
+    {
+      "offset": 652,
+      "asm": "jne unknown",
+      "bytes": "0f856e000000"
+    },
+    {
+      "offset": 658,
+      "asm": "cmp byte [esi+13436e],original food",
+      "bytes": "80be6e43130000"
+    },
+    {
+      "offset": 665,
+      "asm": "jne unknown",
+      "bytes": "0f8561000000"
+    },
+    {
+      "offset": 671,
+      "asm": "mov [edi],esi",
+      "bytes": "8937"
+    },
+    {
+      "offset": 673,
+      "asm": "mov eax,[esi+67dd70h]",
+      "bytes": "8b8670dd6700"
+    },
+    {
+      "offset": 679,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 681,
+      "asm": "jz unknown",
+      "bytes": "0f8451000000"
+    },
+    {
+      "offset": 687,
+      "asm": "mov [edi+4],eax",
+      "bytes": "894704"
+    },
+    {
+      "offset": 690,
+      "asm": "mov eax,[esi+67dd3ch]",
+      "bytes": "8b863cdd6700"
+    },
+    {
+      "offset": 696,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 698,
+      "asm": "jz unknown",
+      "bytes": "0f8440000000"
+    },
+    {
+      "offset": 704,
+      "asm": "mov [edi+8],eax",
+      "bytes": "894708"
+    },
+    {
+      "offset": 707,
+      "asm": "mov eax,[edx+2ch]",
+      "bytes": "8b422c"
+    },
+    {
+      "offset": 710,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 712,
+      "asm": "jz unknown",
+      "bytes": "0f8432000000"
+    },
+    {
+      "offset": 718,
+      "asm": "mov eax,[eax+8]",
+      "bytes": "8b4008"
+    },
+    {
+      "offset": 721,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 723,
+      "asm": "jz unknown",
+      "bytes": "0f8427000000"
+    },
+    {
+      "offset": 729,
+      "asm": "mov [edi+0ch],eax",
+      "bytes": "89470c"
+    },
+    {
+      "offset": 732,
+      "asm": "mov eax,[eax+1318h]",
+      "bytes": "8b8018130000"
+    },
+    {
+      "offset": 738,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 740,
+      "asm": "jz unknown",
+      "bytes": "0f8416000000"
+    },
+    {
+      "offset": 746,
+      "asm": "mov [edi+10h],eax",
+      "bytes": "894710"
+    },
+    {
+      "offset": 749,
+      "asm": "lea eax,[esi+103f00h]",
+      "bytes": "8d86003f1000"
+    },
+    {
+      "offset": 755,
+      "asm": "mov [edi+14h],eax",
+      "bytes": "894714"
+    },
+    {
+      "offset": 758,
+      "asm": "mov eax,1",
+      "bytes": "b801000000"
+    },
+    {
+      "offset": 763,
+      "asm": "jmp done",
+      "bytes": "e90d000000"
+    },
+    {
+      "offset": 768,
+      "asm": "mov edi,[ebp+10h]",
+      "bytes": "8b7d10"
+    },
+    {
+      "offset": 771,
+      "asm": "xor eax,eax",
+      "bytes": "33c0"
+    },
+    {
+      "offset": 773,
+      "asm": "mov ecx,6",
+      "bytes": "b906000000"
+    },
+    {
+      "offset": 778,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 779,
+      "asm": "rep stosd",
+      "bytes": "f3ab"
+    },
+    {
+      "offset": 781,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 782,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 783,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 784,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 785,
+      "asm": "ret0ch",
+      "bytes": "c20c00"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20008510 ?RawInsert@?$BSet@VForeignCity@@@@QAE?AVBSetID@@PAV?$BSetNode@VForeignCity@@@@0@Z / ?RawInsert@?$BSet@VArmyAgent@@@@QAE?AVBSetID@@PAV?$BSetNode@VArmyAgent@@@@0@Z / ?RawInsert@?$BSet@VForeignAgent@@@@QAE?AVBSetID@@PAV?$BSetNode@VForeignAgent@@@@0@Z / ?RawInsert@?$BSet@VCityAgent@@@@QAE?AVBSetID@@PAV?$BSetNode@VCityAgent@@@@0@Z END 200085a0
+20008510 55                     push     ebp
+20008511 8bec                   mov      ebp, esp
+20008513 56                     push     esi
+20008514 8b750c                 mov      esi, dword ptr [ebp + 0xc]
+20008517 57                     push     edi
+20008518 8b7d10                 mov      edi, dword ptr [ebp + 0x10]
+2000851b 56                     push     esi
+2000851c 8bcf                   mov      ecx, edi
+2000851e e86de40100             call     0x20026990 ; ??MBSetID@@QBEHABV0@@Z
+20008523 85c0                   test     eax, eax
+20008525 740b                   je       0x20008532
+20008527 8b4604                 mov      eax, dword ptr [esi + 4]
+2000852a 85c0                   test     eax, eax
+2000852c 741b                   je       0x20008549
+2000852e 8bf0                   mov      esi, eax
+20008530 ebe9                   jmp      0x2000851b
+20008532 57                     push     edi
+20008533 8bce                   mov      ecx, esi
+20008535 e856e40100             call     0x20026990 ; ??MBSetID@@QBEHABV0@@Z
+2000853a 85c0                   test     eax, eax
+2000853c 7437                   je       0x20008575
+2000853e 8b4608                 mov      eax, dword ptr [esi + 8]
+20008541 85c0                   test     eax, eax
+20008543 741a                   je       0x2000855f
+20008545 8bf0                   mov      esi, eax
+20008547 ebd2                   jmp      0x2000851b
+20008549 897e04                 mov      dword ptr [esi + 4], edi
+2000854c 8b7508                 mov      esi, dword ptr [ebp + 8]
+2000854f 57                     push     edi
+20008550 8bce                   mov      ecx, esi
+20008552 e889e30100             call     0x200268e0 ; ??0BSetID@@QAE@ABV0@@Z
+20008557 8bc6                   mov      eax, esi
+20008559 5f                     pop      edi
+2000855a 5e                     pop      esi
+2000855b 5d                     pop      ebp
+2000855c c20c00                 ret      0xc
+2000855f 897e08                 mov      dword ptr [esi + 8], edi
+20008562 8b7508                 mov      esi, dword ptr [ebp + 8]
+20008565 57                     push     edi
+20008566 8bce                   mov      ecx, esi
+20008568 e873e30100             call     0x200268e0 ; ??0BSetID@@QAE@ABV0@@Z
+2000856d 8bc6                   mov      eax, esi
+2000856f 5f                     pop      edi
+20008570 5e                     pop      esi
+20008571 5d                     pop      ebp
+20008572 c20c00                 ret      0xc
+20008575 8b7508                 mov      esi, dword ptr [ebp + 8]
+20008578 8d4510                 lea      eax, [ebp + 0x10]
+2000857b 50                     push     eax
+2000857c 8bce                   mov      ecx, esi
+2000857e c7451000000000         mov      dword ptr [ebp + 0x10], 0
+20008585 e826e30100             call     0x200268b0 ; ??0BSetID@@QAE@ABH@Z
+2000858a 8bc6                   mov      eax, esi
+2000858c 5f                     pop      edi
+2000858d 5e                     pop      esi
+2000858e 5d                     pop      ebp
+2000858f c20c00                 ret      0xc
+20008592 90                     nop      
+20008593 90                     nop      
+20008594 90                     nop      
+20008595 90                     nop      
+20008596 90                     nop      
+20008597 90                     nop      
+20008598 90                     nop      
+20008599 90                     nop      
+2000859a 90                     nop      
+2000859b 90                     nop      
+2000859c 90                     nop      
+2000859d 90                     nop      
+2000859e 90                     nop      
+2000859f 90                     nop      
+
+FUNCTION 20026950 ??8BSetID@@QBEHABV0@@Z END 20026970
+20026950 55                     push     ebp
+20026951 8bec                   mov      ebp, esp
+20026953 8b5508                 mov      edx, dword ptr [ebp + 8]
+20026956 8b01                   mov      eax, dword ptr [ecx]
+20026958 56                     push     esi
+20026959 33c9                   xor      ecx, ecx
+2002695b 8b32                   mov      esi, dword ptr [edx]
+2002695d 3bc6                   cmp      eax, esi
+2002695f 5e                     pop      esi
+20026960 0f94c1                 sete     cl
+20026963 8bc1                   mov      eax, ecx
+20026965 5d                     pop      ebp
+20026966 c20400                 ret      4
+20026969 90                     nop      
+2002696a 90                     nop      
+2002696b 90                     nop      
+2002696c 90                     nop      
+2002696d 90                     nop      
+2002696e 90                     nop      
+2002696f 90                     nop      
+
+FUNCTION 20026970 ??9BSetID@@QBEHABV0@@Z END 20026990
+20026970 55                     push     ebp
+20026971 8bec                   mov      ebp, esp
+20026973 8b5508                 mov      edx, dword ptr [ebp + 8]
+20026976 8b01                   mov      eax, dword ptr [ecx]
+20026978 56                     push     esi
+20026979 33c9                   xor      ecx, ecx
+2002697b 8b32                   mov      esi, dword ptr [edx]
+2002697d 3bc6                   cmp      eax, esi
+2002697f 5e                     pop      esi
+20026980 0f95c1                 setne    cl
+20026983 8bc1                   mov      eax, ecx
+20026985 5d                     pop      ebp
+20026986 c20400                 ret      4
+20026989 90                     nop      
+2002698a 90                     nop      
+2002698b 90                     nop      
+2002698c 90                     nop      
+2002698d 90                     nop      
+2002698e 90                     nop      
+2002698f 90                     nop      
+
+FUNCTION 20026990 ??MBSetID@@QBEHABV0@@Z END 200269b0
+20026990 55                     push     ebp
+20026991 8bec                   mov      ebp, esp
+20026993 8b01                   mov      eax, dword ptr [ecx]
+20026995 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+20026998 3b01                   cmp      eax, dword ptr [ecx]
+2002699a 1bc0                   sbb      eax, eax
+2002699c f7d8                   neg      eax
+2002699e 5d                     pop      ebp
+2002699f c20400                 ret      4
+200269a2 90                     nop      
+200269a3 90                     nop      
+200269a4 90                     nop      
+200269a5 90                     nop      
+200269a6 90                     nop      
+200269a7 90                     nop      
+200269a8 90                     nop      
+200269a9 90                     nop      
+200269aa 90                     nop      
+200269ab 90                     nop      
+200269ac 90                     nop      
+200269ad 90                     nop      
+200269ae 90                     nop      
+200269af 90                     nop      
+
+FUNCTION 200269b0 ??NBSetID@@QBEHABV0@@Z END 200269d0
+200269b0 55                     push     ebp
+200269b1 8bec                   mov      ebp, esp
+200269b3 8b01                   mov      eax, dword ptr [ecx]
+200269b5 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+200269b8 3901                   cmp      dword ptr [ecx], eax
+200269ba 1bc0                   sbb      eax, eax
+200269bc 40                     inc      eax
+200269bd 5d                     pop      ebp
+200269be c20400                 ret      4
+200269c1 90                     nop      
+200269c2 90                     nop      
+200269c3 90                     nop      
+200269c4 90                     nop      
+200269c5 90                     nop      
+200269c6 90                     nop      
+200269c7 90                     nop      
+200269c8 90                     nop      
+200269c9 90                     nop      
+200269ca 90                     nop      
+200269cb 90                     nop      
+200269cc 90                     nop      
+200269cd 90                     nop      
+200269ce 90                     nop      
+200269cf 90                     nop      
+
+FUNCTION 200269d0 ??OBSetID@@QBEHABV0@@Z END 200269f0
+200269d0 55                     push     ebp
+200269d1 8bec                   mov      ebp, esp
+200269d3 8b01                   mov      eax, dword ptr [ecx]
+200269d5 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+200269d8 3901                   cmp      dword ptr [ecx], eax
+200269da 1bc0                   sbb      eax, eax
+200269dc f7d8                   neg      eax
+200269de 5d                     pop      ebp
+200269df c20400                 ret      4
+200269e2 90                     nop      
+200269e3 90                     nop      
+200269e4 90                     nop      
+200269e5 90                     nop      
+200269e6 90                     nop      
+200269e7 90                     nop      
+200269e8 90                     nop      
+200269e9 90                     nop      
+200269ea 90                     nop      
+200269eb 90                     nop      
+200269ec 90                     nop      
+200269ed 90                     nop      
+200269ee 90                     nop      
+200269ef 90                     nop      
+
+FUNCTION 200269f0 ??PBSetID@@QBEHABV0@@Z END 20026a10
+200269f0 55                     push     ebp
+200269f1 8bec                   mov      ebp, esp
+200269f3 8b01                   mov      eax, dword ptr [ecx]
+200269f5 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+200269f8 3b01                   cmp      eax, dword ptr [ecx]
+200269fa 1bc0                   sbb      eax, eax
+200269fc 40                     inc      eax
+200269fd 5d                     pop      ebp
+200269fe c20400                 ret      4
+20026a01 90                     nop      
+20026a02 90                     nop      
+20026a03 90                     nop      
+20026a04 90                     nop      
+20026a05 90                     nop      
+20026a06 90                     nop      
+20026a07 90                     nop      
+20026a08 90                     nop      
+20026a09 90                     nop      
+20026a0a 90                     nop      
+20026a0b 90                     nop      
+20026a0c 90                     nop      
+20026a0d 90                     nop      
+20026a0e 90                     nop      
+20026a0f 90                     nop      

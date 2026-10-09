@@ -1,0 +1,401 @@
+{
+  "scope": "Built and independent offline/own native checked; NOT INSTALLED; real engine acceptance and AI activation/performance/gameplay UNMEASURED",
+  "design_sha256": "be16e3844ca7ae0396bd31ac28478855ff906c4091b529605e0bd91a41a71248",
+  "original_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "candidate_sha256": "f93be3629decd38a94117ba774aac3673db2cd2b9e1a0d8a1dde42f7b8e4fd9c",
+  "payload_sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf",
+  "candidate": "candidates/H3-SCORE_CURRENT/robotcom.dll",
+  "control_H1_I_sha256": "59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0",
+  "protected_files": 3090,
+  "protected_before_after_identical": true,
+  "B1_constant_proof_files": {
+    "default": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "size": 47674,
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c"
+    },
+    "cleric": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "size": 40166,
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee"
+    },
+    "milmany": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "size": 40057,
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf"
+    },
+    "milfew": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "size": 39995,
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5"
+    },
+    "scimany": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "size": 40005,
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b"
+    },
+    "scifew": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "size": 39953,
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c"
+    },
+    "slaver": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "size": 40227,
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6"
+    },
+    "citywall_science": {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "size": 3655,
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606"
+    }
+  },
+  "fixed_T0_paths": [
+    "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+    "PROEVEN/settlerquota/vaste-start/QUOTA-START-T0.sav"
+  ],
+  "native_cases": 82,
+  "measured_extra_direct_world_calls": 43,
+  "measured_total_direct_world_calls": 44,
+  "top4_plan_comparison_upper_bound": 376,
+  "negative_mine_delta_valid_finalfood": {
+    "pending_S": 56,
+    "mine_S": 53,
+    "mine_margin": 13,
+    "crime_numerator": 13,
+    "crime_denominator": 53,
+    "delta": -1
+  },
+  "insufficient_pending_mines": {
+    "pending_S": 36,
+    "mine_S": 33,
+    "mine_margin": -7,
+    "crime_numerator": -7,
+    "crime_denominator": 33
+  },
+  "header_fixture_limit": "Original production wronghost/basis/context rejection tested; own headercopy changes only400000 baseguardliteral because400000 was occupied; no production fixture fallback",
+  "representational_limit": "Development delta must be finite exact int32; negative delta supported when finalfood is nonnegative; fractional/overflow/negative finalfood UNKNOWN",
+  "rollback": "No installation; preserve original backup and actual later chosen baseline, only restore that DLL in closed proof installation, unchangedB1/T0/users/saves",
+  "artifacts": {
+    "backup/robotcom.original.dll": {
+      "size": 660480,
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44"
+    },
+    "build-current.py": {
+      "size": 5951,
+      "sha256": "0fdb1c66e29c0ea511e435baf3cdd6cc0a3fc7be6b7769fd74e34e041c41e245"
+    },
+    "build-inputs.json": {
+      "size": 3837,
+      "sha256": "a851f3e706db11a168fd254d72b8a5edd6dd1c749191181aa623e37fb91b389d"
+    },
+    "candidates/H3-SCORE_CURRENT/robotcom.dll": {
+      "size": 669184,
+      "sha256": "f93be3629decd38a94117ba774aac3673db2cd2b9e1a0d8a1dde42f7b8e4fd9c"
+    },
+    "components.py": {
+      "size": 8855,
+      "sha256": "6b433fa50e5723d59f98649a3013432b5b15b488ccc7aa5569f8d2bb8f50e092"
+    },
+    "development.py": {
+      "size": 9898,
+      "sha256": "2b0523659d8047e229e3511920c41d09dc41d7e7d89b0d6320dec1a27617eefe"
+    },
+    "finalize.py": {
+      "size": 3148,
+      "sha256": "f709f7b32cdf368a5173212c6170573e7592029adc7a6bc996782b9ad67211c1"
+    },
+    "fixture-recipes.py": {
+      "size": 3977,
+      "sha256": "6dc004f1743a9764697c2e5316951d3de00f036067b777100648baddf0006e10"
+    },
+    "H3-SCORE_CURRENT.disassembly.txt": {
+      "size": 90399,
+      "sha256": "42511578d976e4b93286d2a4c1e0213050587dc32f95a270f820cb2ed8d71ef9"
+    },
+    "H3-SCORE_CURRENT.manifest.json": {
+      "size": 157363,
+      "sha256": "a4eb2b27da3caf0b5d39fbaff71485a15ef7b829a50e08930feb40b13c2bc238"
+    },
+    "H3-SCORE_CURRENT.native-fixture.json": {
+      "size": 2004,
+      "sha256": "d62b4457b8f5d09a0cdaf74c50902b4beda30aa14c2cea0e04dcafcbb9de8c0d"
+    },
+    "H3-SCORE_CURRENT.native-fixture.log": {
+      "size": 2041,
+      "sha256": "10e7ac2c125c0060f0d5e43200ff0c2c5c618ac6a13ea67613a6c2460753ea17"
+    },
+    "H3-SCORE_CURRENT.native-loader.json": {
+      "size": 371,
+      "sha256": "fbec944db3d171d4b01f8f8d985701a9e2ecaf64654aac329f5e0f0382c9a027"
+    },
+    "H3-SCORE_CURRENT.native-loader.log": {
+      "size": 378,
+      "sha256": "81d6f308c16ee46cec74b69183ce36ec4f9bc7b8e1248f3b6602afe721010aa0"
+    },
+    "H3-SCORE_CURRENT.payload.bin": {
+      "size": 8640,
+      "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+    },
+    "helper/available.bin": {
+      "size": 28,
+      "sha256": "289575c5f19896ac0e9979f6c61080c5eb9386b9f88a103ff91b6499e903613a"
+    },
+    "helper/available.disassembly.txt": {
+      "size": 278,
+      "sha256": "9efc738c435fd46188a06c2012b3e7b8357b573531b6d45163d77b64d70137d9"
+    },
+    "helper/available.recipe.json": {
+      "size": 553,
+      "sha256": "6688f2cfa577f2171fada9e7d7a42ed6e0d46f7cd1bb2aa3679e5d358292b5d6"
+    },
+    "helper/convert.bin": {
+      "size": 34,
+      "sha256": "d0a4c66efc832a545b2784b4fe590a7aff30b08124bb81376a3ec1649a4e2e96"
+    },
+    "helper/convert.disassembly.txt": {
+      "size": 329,
+      "sha256": "fc4e4bae2dbadd128003d8a950603fa1f809ca206b858e1fc33fe996b9fd61cb"
+    },
+    "helper/convert.recipe.json": {
+      "size": 657,
+      "sha256": "bc8c95407bdaf303a808401c98b9af9fe5fca6863d216451f438b13d8c9766e1"
+    },
+    "helper/delta.bin": {
+      "size": 43,
+      "sha256": "d45c6a5803eb747d0b60f32b24ce6aa9eb5fe8d6c879af4aa83a9b334f91f397"
+    },
+    "helper/delta.disassembly.txt": {
+      "size": 428,
+      "sha256": "bb4ce30b5cba31f6b8645ebeeb56b3cda7197795d1e379fed33da08e4360c3b0"
+    },
+    "helper/delta.recipe.json": {
+      "size": 865,
+      "sha256": "384a501bcc4e2027918d7a8c070eba5f360271746044e21eec9aa43204adfbfe"
+    },
+    "helper/fixture-classifier.bin": {
+      "size": 61,
+      "sha256": "667d9ef656be6dbeb4dafeaddc4bc99fed417e844cb9bcafa2557db1d79ee966"
+    },
+    "helper/fixture-classifier.disassembly.txt": {
+      "size": 836,
+      "sha256": "19d88eb3fd7bc47a9878569608aa0321f8163129dd3002ee1500f7d2ecff4e07"
+    },
+    "helper/fixture-classifier.recipe.json": {
+      "size": 1894,
+      "sha256": "b152e27f9696469400733c65c7cd2af9832a7490ed94fddd1a75dbdb8021a637"
+    },
+    "helper/food.bin": {
+      "size": 72,
+      "sha256": "9a9b48efe1adb7c1f0dd7766c6ac00b6a1731ec34e51ba09e53b6be9d0b5b1b0"
+    },
+    "helper/food.disassembly.txt": {
+      "size": 723,
+      "sha256": "f5c641b5e6e99d0e0e17c069ddb9a2fcb9df634ad531e00d099d5da60313740b"
+    },
+    "helper/food.recipe.json": {
+      "size": 1356,
+      "sha256": "36382ec0054b670e8ad92922970c164d6ed6e98775d39ae6ead488839ddad527"
+    },
+    "helper/gate.bin": {
+      "size": 34,
+      "sha256": "77059a21abb145f8099cd78bbf25d4b7e3aada20f69d96fc84006e106831024e"
+    },
+    "helper/gate.disassembly.txt": {
+      "size": 333,
+      "sha256": "bacc944dccde9bff774f83d0431dce1c97582df1c9973933a381be3183f8eba4"
+    },
+    "helper/gate.recipe.json": {
+      "size": 651,
+      "sha256": "ce7ea157bfe1abb4b56b94a5bee754e5a3f56f8c9a5c0b5e96194827471bbaf4"
+    },
+    "helper/Native.cs": {
+      "size": 24234,
+      "sha256": "e91e803b8c76e3883ac04bfb9c691490051e5dc27238eabbdc91c58c3d6cd586"
+    },
+    "helper/native.ps1": {
+      "size": 741,
+      "sha256": "fcc024750ad8c509653dec3ca807d2cffd319a4c9491723dbae57ec1a68997db"
+    },
+    "helper/open.bin": {
+      "size": 92,
+      "sha256": "c8eaa4e991d447fc93400965f6ec5154a3afab985c5b78085d47161c29d0e7ed"
+    },
+    "helper/open.disassembly.txt": {
+      "size": 1217,
+      "sha256": "88aa7e02daa61e34ace2210fcbff820740d8191da26d4c62cbe1ac7fecd3af8d"
+    },
+    "helper/open.recipe.json": {
+      "size": 2348,
+      "sha256": "fc4eaa4f64c6e0045d7be8b1fbf5219a869337f8c34ffd55482817d3c56499b1"
+    },
+    "helper/position.bin": {
+      "size": 47,
+      "sha256": "34fd22b0d78ed48308f83149a899baa700e88efeacfedc0d606f89bf2000df94"
+    },
+    "helper/position.disassembly.txt": {
+      "size": 463,
+      "sha256": "72522a20a37b384a6e365863ee26640d6caddaa7721f3780fb2a498491864e30"
+    },
+    "helper/position.recipe.json": {
+      "size": 870,
+      "sha256": "cb7598b499f1ab9a96c89204a95f66d2b8e58119f99dacc7be1880126f172933"
+    },
+    "helper/score.bin": {
+      "size": 34,
+      "sha256": "6b87bac579bd3ac56c823ba0fc5191b9ea853cdf839cab1eeddb92f40f7b5fb5"
+    },
+    "helper/score.disassembly.txt": {
+      "size": 332,
+      "sha256": "bc2d6d8b09f7e077d17035a97e7ac84c3024daccada0d622ace52fc00f0499b4"
+    },
+    "helper/score.recipe.json": {
+      "size": 653,
+      "sha256": "1aa458d129e885cd3c3d57526bb215982c9f9c0c500b0993e7b0668cff4e5cef"
+    },
+    "helper/shim3.bin": {
+      "size": 128,
+      "sha256": "b61a2b1a6381fa0aba657e9bdd72232145b33dcb5f9531d97338f6b525d15fd4"
+    },
+    "helper/shim3.disassembly.txt": {
+      "size": 1417,
+      "sha256": "a38427127cbee7b9b1d6e3bcffd3554cdbf7b8ed82df7ef97d566c8111f75ebf"
+    },
+    "helper/shim3.recipe.json": {
+      "size": 3804,
+      "sha256": "71493969c1bec63e11c728ab99974c4c80610ff3704ea64354eedbbbaaccf8d6"
+    },
+    "helper/shim4.bin": {
+      "size": 134,
+      "sha256": "ca18757a2dd52a9234a09ffefd0901b421448a7a903b08c4fa6e21ecc66a24a9"
+    },
+    "helper/shim4.disassembly.txt": {
+      "size": 1467,
+      "sha256": "fdb4bc72adcefd08411a0b0e90be6c014fac59cfb65309d518837234af178b0e"
+    },
+    "helper/shim4.recipe.json": {
+      "size": 3962,
+      "sha256": "7830b8f498d01e969bb8fbddcbab95963f195e60ef3307cf82dd5aa233c3d6c9"
+    },
+    "helper/shim5.bin": {
+      "size": 140,
+      "sha256": "216f808b8a5c7553eea5f7419aeb8978bfe61893426aa6e9cd658ea171123243"
+    },
+    "helper/shim5.disassembly.txt": {
+      "size": 1517,
+      "sha256": "7eec7ead96b399bf80cd0f464ebbc3fa2b89afc1728011c17fe85a2a38d7df6a"
+    },
+    "helper/shim5.recipe.json": {
+      "size": 4120,
+      "sha256": "a88a057c4349b960b6a47f90ba26f71a2062db31a9b8928862d397581ea0da98"
+    },
+    "helper/shim6.bin": {
+      "size": 146,
+      "sha256": "50957249f81b6166801477f518fb501bae37fcbc4916a9e6ed950b700efd5d7d"
+    },
+    "helper/shim6.disassembly.txt": {
+      "size": 1567,
+      "sha256": "c664faf35eb04d78521cbf3946359db89598c685e14d02e6dc3ec711be9d3458"
+    },
+    "helper/shim6.recipe.json": {
+      "size": 4278,
+      "sha256": "5b21535db9bc0586023c48f8976c9bdfba6b73c3d33ec78a30e7db332d6ae6a8"
+    },
+    "helper/shim7.bin": {
+      "size": 152,
+      "sha256": "95aaa5fc4a8d4686e122c8f8ee1891d62b40f3a157d8574dbeb60cc4fa7deb2e"
+    },
+    "helper/shim7.disassembly.txt": {
+      "size": 1617,
+      "sha256": "be8417bacce43a9320cc825283186a8ddd0348960d262cd6357d8564f3562f1a"
+    },
+    "helper/shim7.recipe.json": {
+      "size": 4436,
+      "sha256": "6bb2cab80466fa88309d6c5cce3f15b1302ad45357f7524395228fa145a6a26c"
+    },
+    "helper/terrain.bin": {
+      "size": 72,
+      "sha256": "d3bb5399c57de522f03a2f1a12a0d29c7f5e6c1e6e2e853ac50fdfae9d2418ee"
+    },
+    "helper/terrain.disassembly.txt": {
+      "size": 722,
+      "sha256": "1c75849ac029de48fa974ec06adf64f0cf707d7bec6d84a4dc4a47a7267a3942"
+    },
+    "helper/terrain.recipe.json": {
+      "size": 1356,
+      "sha256": "2ec22d2e547587689f96de36f8d348bbc315f63152221e81b079ddd2500a6035"
+    },
+    "host/food-wrapper.original.bin": {
+      "size": 47,
+      "sha256": "01de5bcc6fccddfc883d28478d451c9a1b7fd4507273d7b59d2aafd55503e6c4"
+    },
+    "host/terrain-wrapper.original.bin": {
+      "size": 47,
+      "sha256": "cc103d3cdd26fd9c91d4da6e1e72fb7d646bcb48ea1d7fb60be9d6c5b3a7ca7c"
+    },
+    "host/validator.prepared.bin": {
+      "size": 788,
+      "sha256": "e6fdf2a5188f6020424af709ca642958b95ec96850ba9b7fed0cca1184c8c78b"
+    },
+    "host/validator.prepared.disassembly.txt": {
+      "size": 7487,
+      "sha256": "c98709ca11eed6250c6a105841735254130ea9ce7628dbcb529661473a900456"
+    },
+    "host/validator.prepared.recipe.json": {
+      "size": 14749,
+      "sha256": "1670cc4af31a70de876c3dbbd3f44f20e129360402296af24d92cad46e2384f9"
+    },
+    "host-validator.py": {
+      "size": 4634,
+      "sha256": "cc12a6789f81d38c8897c854fe75a52b4f8926cc764a127844b1fea3292f0df8"
+    },
+    "layout.py": {
+      "size": 2265,
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    "model.py": {
+      "size": 9406,
+      "sha256": "1a98227588e528ab9024a83ae09573d28bb0a2e2f08f408a4ad5a9a0ebeabf21"
+    },
+    "native-processes.json": {
+      "size": 397,
+      "sha256": "b04777ff910f75fe2708ad767ae9d4dad3d823395de7ad1270d37deebf0759b7"
+    },
+    "offline-results.json": {
+      "size": 11294,
+      "sha256": "4c77d0b9a111feacd0c2821e99d3531f5071399ecd0dc1228db9f3f1bc6a94b9"
+    },
+    "prepare.py": {
+      "size": 4985,
+      "sha256": "13892653b350bb28e45d24794751392a3f3e09584631f5f955e0b918202fe68e"
+    },
+    "protected-after-native.json": {
+      "size": 510431,
+      "sha256": "db32abf48c1eaa3d4deb86c1b2e51f58e5ec2725317a05937e506e4477a2f523"
+    },
+    "protected-before.json": {
+      "size": 498069,
+      "sha256": "bceb37b75c446dc0ffab70c6dc62cbb087fb42db511e859e2e7beee7ba6ea207"
+    },
+    "RESULTATEN.md": {
+      "size": 13185,
+      "sha256": "ca702bdf98ca114fcee46eda906833784442e58e019b52bf4260c4b73f908110"
+    },
+    "run-native.py": {
+      "size": 1316,
+      "sha256": "9b7a7f72470d13e96d2b53e1163dc794b8fc908eb16788fd05dfe72eb8147499"
+    },
+    "verify.py": {
+      "size": 10271,
+      "sha256": "7677eeb400abe9660e4cb07c4452a7eb55f0a1f06faef8e7697b1865cd05bf3f"
+    },
+    "VOORTGANG-UITVOERDER.md": {
+      "size": 7209,
+      "sha256": "450ad91e5b18c59c365befa3fa5469be35cfac05d8c093d4ba85bbb016d43c86"
+    },
+    "x86.py": {
+      "size": 3577,
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22"
+    }
+  }
+}

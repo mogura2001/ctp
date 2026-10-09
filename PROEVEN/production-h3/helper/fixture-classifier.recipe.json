@@ -1,0 +1,110 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "push explicit FixtureHostBinding",
+      "bytes": "6800000000"
+    },
+    {
+      "offset": 17,
+      "asm": "push ('ebp', 20)",
+      "bytes": "ffb514000000"
+    },
+    {
+      "offset": 23,
+      "asm": "push ('ebp', 16)",
+      "bytes": "ffb510000000"
+    },
+    {
+      "offset": 29,
+      "asm": "push ('ebp', 12)",
+      "bytes": "ffb50c000000"
+    },
+    {
+      "offset": 35,
+      "asm": "push ('ebp', 8)",
+      "bytes": "ffb508000000"
+    },
+    {
+      "offset": 41,
+      "asm": "mov eax,own modelentry",
+      "bytes": "b800000000"
+    },
+    {
+      "offset": 46,
+      "asm": "call eax",
+      "bytes": "ffd0"
+    },
+    {
+      "offset": 48,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 54,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 55,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 56,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 57,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 58,
+      "asm": "ret 16",
+      "bytes": "c21000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "kind": "host"
+    },
+    {
+      "at": 42,
+      "kind": "model"
+    }
+  ]
+}

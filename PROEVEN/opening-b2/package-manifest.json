@@ -1,0 +1,326 @@
+{
+  "status": "B2a offline candidate package checked; not installed or measured in gameplay",
+  "production_N_chosen": false,
+  "variants": [
+    {
+      "variant": "B2a-N25-TECHNICAL",
+      "N_fixture": 25,
+      "candidate_sha256": "9553d440365b029d47cd5b6c0717e6e96a6c2aeac3b1052bb80293736d35667a",
+      "payload_bytes": 4348,
+      "decoded_instructions": 813,
+      "native_cases": 88,
+      "deterministic": true,
+      "PE_diff_CFG_ABI": true
+    },
+    {
+      "variant": "B2a-N30-TECHNICAL",
+      "N_fixture": 30,
+      "candidate_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "payload_bytes": 4348,
+      "decoded_instructions": 813,
+      "native_cases": 88,
+      "deterministic": true,
+      "PE_diff_CFG_ABI": true
+    }
+  ],
+  "protected_files_unchanged": 3090,
+  "previous_package_files_unchanged": 120,
+  "files": {
+    "B2a-N25-TECHNICAL.disassembly.txt": {
+      "size": 43016,
+      "sha256": "1ccc0099476013a318e0d1400ef34302451f38b768a6cc9de5a52378558366c5"
+    },
+    "B2a-N25-TECHNICAL.manifest.json": {
+      "size": 85177,
+      "sha256": "5c93525382dd53a7d0bc23c004261dd0247c519382a608bb209d30cd760ac198"
+    },
+    "B2a-N25-TECHNICAL.native-fixture.json": {
+      "size": 554,
+      "sha256": "7f7be12e74c9a5041346e2e7b390c67c79b0a484194b80d8b18b2f245b9d957e"
+    },
+    "B2a-N25-TECHNICAL.native-fixture.log": {
+      "size": 566,
+      "sha256": "99f53e548c10e727b60b109a45d38128076186002bc142390733860760d7def5"
+    },
+    "B2a-N25-TECHNICAL.native-loader.json": {
+      "size": 335,
+      "sha256": "c61200e784affbbb12ef76d191b22f2648e9c771558257f00c0e3a4c9758056c"
+    },
+    "B2a-N25-TECHNICAL.native-loader.log": {
+      "size": 343,
+      "sha256": "5c4243b8b41855ad6930d05d410e165e6023df8c8d474a5191ad8e44a7882ba5"
+    },
+    "B2a-N25-TECHNICAL.payload.bin": {
+      "size": 4348,
+      "sha256": "021b7546b50dfbb9bd7650a88ebeb389b148fcde9fb63f760b466cb0c2337b9e"
+    },
+    "B2a-N30-TECHNICAL.disassembly.txt": {
+      "size": 43016,
+      "sha256": "e3706dbfedc3c84dfe1881bf7a48a07aef83b7dff9b8eeb43a0fd50991208603"
+    },
+    "B2a-N30-TECHNICAL.manifest.json": {
+      "size": 85177,
+      "sha256": "34562e21a9539cccae059a4746ed246039266b6ac8238ff4968c591307fe96ef"
+    },
+    "B2a-N30-TECHNICAL.native-fixture.json": {
+      "size": 553,
+      "sha256": "29ccd596d3f2462b793ec9b58e140d7c4c19d74cd677df01bd99b62a55d716bc"
+    },
+    "B2a-N30-TECHNICAL.native-fixture.log": {
+      "size": 565,
+      "sha256": "2f16314466ae01945ccda9981c165d02689a294de61e32040323e344766c8e6a"
+    },
+    "B2a-N30-TECHNICAL.native-loader.json": {
+      "size": 335,
+      "sha256": "f36b4109923831f07fbd8c1b388856ab959b2cce234ffa4efd2764948a4766df"
+    },
+    "B2a-N30-TECHNICAL.native-loader.log": {
+      "size": 343,
+      "sha256": "1547ac448fd979a98b948bbe7658899adbd3c0e6a1d3b2b39a0219627c44d60e"
+    },
+    "B2a-N30-TECHNICAL.payload.bin": {
+      "size": 4348,
+      "sha256": "7825bac0a7d2684b977201c47b8d7c8042b8f28e980520ee537625d68fbeab8b"
+    },
+    "backup/robotcom.original.dll": {
+      "size": 660480,
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44"
+    },
+    "build-inputs.json": {
+      "size": 5354,
+      "sha256": "8b965e12c005758d69dfd5ce37f90cffa6124092c04b990b70b311538edc032c"
+    },
+    "build.py": {
+      "size": 15650,
+      "sha256": "e91792bb8da24cf67ada4da93a9a4e443f843e4bf45ea72b82f89ff85d99b56f"
+    },
+    "candidates/B2a-N25-TECHNICAL/robotcom.dll": {
+      "size": 665088,
+      "sha256": "9553d440365b029d47cd5b6c0717e6e96a6c2aeac3b1052bb80293736d35667a"
+    },
+    "candidates/B2a-N30-TECHNICAL/robotcom.dll": {
+      "size": 665088,
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    "finalize.py": {
+      "size": 1008,
+      "sha256": "8e8d794f0d74c6e3a8141823c0c7d4cc802e8d3441331060e3c7f25a56923064"
+    },
+    "fixture-recipes.py": {
+      "size": 6265,
+      "sha256": "75f2794ec90b57dd104f8bb9caadedfd0ce3ac670551580e7ab9ee2b477229fb"
+    },
+    "helper/AddSymbol.bin": {
+      "size": 174,
+      "sha256": "7a4f6b3580d785a9a9a0fa0d76dc16f1b766ad93b92603812dd1c9fe953fd443"
+    },
+    "helper/AddSymbol.recipe.json": {
+      "size": 3656,
+      "sha256": "d76ad8fd8544c77b7945eda76d89d0a28a9e32e4c1bcff244e51a30b246b2a5b"
+    },
+    "helper/AiMain_Load.bin": {
+      "size": 35,
+      "sha256": "16c20503989eeceb172d34fff1221f416eeb3193e99a70491558dd2abb6758d5"
+    },
+    "helper/AiMain_Load.recipe.json": {
+      "size": 745,
+      "sha256": "40d638118f7eec4248ecc6317cad048640ebdd3cd32c5ce927c08d04e2b5c5d5"
+    },
+    "helper/AiMain_Save.bin": {
+      "size": 88,
+      "sha256": "9ca4f12175c8dcef95dbbfcb59e523b36d2e2d4530cd32f84d6771b23dfef378"
+    },
+    "helper/AiMain_Save.recipe.json": {
+      "size": 2403,
+      "sha256": "309526b32978df47c48bbabc76fdb2adf630fd99b7035444059f5d5e9de37b2d"
+    },
+    "helper/fatal.bin": {
+      "size": 77,
+      "sha256": "cad6379f2a670deaa3629fddd40675e6ec03920d55bc42ebbc759b3fbc0ae2d1"
+    },
+    "helper/fatal.recipe.json": {
+      "size": 1548,
+      "sha256": "671eef485e9bd6548418f10753acbf5853805eac7de9bd338d340bafabe4b8bc"
+    },
+    "helper/FireRules.bin": {
+      "size": 17,
+      "sha256": "e86867450463d8ca52ad7af49f87a13d8156af607208e91bd93fa4502733b5eb"
+    },
+    "helper/FireRules.recipe.json": {
+      "size": 431,
+      "sha256": "b2c43f6b7532dab931f54fa351c4b6cf385fa39cdc269a3516a8798aae27fa6f"
+    },
+    "helper/GetSymbol.bin": {
+      "size": 46,
+      "sha256": "ff7a3ac2070810c281b325f4a9a50f985db35b30f14412d67ba298e9e56e60e0"
+    },
+    "helper/GetSymbol.recipe.json": {
+      "size": 896,
+      "sha256": "821bc8422d35f0116f6b9ef5b1eb5b01476ed873da49eec74fde1c75081587d0"
+    },
+    "helper/government.bin": {
+      "size": 16,
+      "sha256": "2af83be5b53d6b7bc6f852b852517008cf197d1d5c62a044af974bdce7080717"
+    },
+    "helper/government.recipe.json": {
+      "size": 348,
+      "sha256": "d01d19df733a73318ac65453d782340b06ca220cf3db561bee894b553ab20013"
+    },
+    "helper/Load.bin": {
+      "size": 81,
+      "sha256": "e6f84a930f7f01ffaeb824b755d168f68d5042e0e3c95e45e711247369098852"
+    },
+    "helper/Load.recipe.json": {
+      "size": 2157,
+      "sha256": "51051487a31bba85280db425fdecf8d03c195d38c06dd1205f5c62a4e50164f4"
+    },
+    "helper/manager.bin": {
+      "size": 98,
+      "sha256": "4a0d392fbe4c2c04faf88eff34ac5390eb3080cc0bddb054bf30badfd9891bf9"
+    },
+    "helper/manager.recipe.json": {
+      "size": 2767,
+      "sha256": "af3605eed3d4897518afb08831856baa0dd1c68eba49aa3f5e5c00cad480c58c"
+    },
+    "helper/Native.cs": {
+      "size": 19080,
+      "sha256": "a2579ab8b0c94bfed1df7b37240cafcd34c231e0bfd250a20dd50b9ecbf5e52e"
+    },
+    "helper/native.ps1": {
+      "size": 790,
+      "sha256": "43ee2ccd1b04d1995a4f901aef8055cd3c0060920a932e746dd5f5c045bbfb33"
+    },
+    "helper/reload_rest.bin": {
+      "size": 37,
+      "sha256": "05eafebdb99b0157675064eae57b82dcb5e79af8cd8091638acf4438dd2ed2c3"
+    },
+    "helper/reload_rest.recipe.json": {
+      "size": 981,
+      "sha256": "73729d9593780e2c8485753bbcec0c16a93b756723bbed14e29ae160b41c0ab5"
+    },
+    "helper/shim0.bin": {
+      "size": 124,
+      "sha256": "fa82ce9964ce913551706b29b00b4cc68681d8f6fb3f81cb0c7cb3f6f45e9e6b"
+    },
+    "helper/shim0.recipe.json": {
+      "size": 3904,
+      "sha256": "cf1623cf6688c77db64a65cd587a5fea2de9633fec63dc6b1fdf3b44d963f630"
+    },
+    "helper/shim1.bin": {
+      "size": 130,
+      "sha256": "915766ea00cb00e6f5e23b6e8374ae0deba052f0746471465f58c7e226b211c8"
+    },
+    "helper/shim1.recipe.json": {
+      "size": 4063,
+      "sha256": "c117f036286548c8945cb5d35865e9ae0649625d383893b3b235aa6415e27c6c"
+    },
+    "helper/shim2.bin": {
+      "size": 136,
+      "sha256": "13ebbbb448e26e10e5b97f25a997e692581673fa1736977fe666944665d4c686"
+    },
+    "helper/shim2.recipe.json": {
+      "size": 4221,
+      "sha256": "1d5d43744465cd329d216fc01e07970cdb1665e5a8f96c72a45da2307a4078fe"
+    },
+    "helper/shim3.bin": {
+      "size": 142,
+      "sha256": "939d2eee4ce3dac0cfd6daab7527254f873a22dc1ebc9e4ef471936634211e69"
+    },
+    "helper/shim3.recipe.json": {
+      "size": 4379,
+      "sha256": "4f60f3134002e54d0d2e62aa511ce997eb12254f621705e24f6bc6176fd4897a"
+    },
+    "helper/shim4.bin": {
+      "size": 148,
+      "sha256": "5bfd233983035b75616a87e5575afcfdc8932ef1afdef2f66579eec7113262ac"
+    },
+    "helper/shim4.recipe.json": {
+      "size": 4537,
+      "sha256": "832835c3993a9092d097a302283297a332b285f889920cc3233ef988fdefe679"
+    },
+    "helper/shim5.bin": {
+      "size": 154,
+      "sha256": "d569053f05fb5ab90ea48e5405289af86fa6977a13eb41915367675473d88064"
+    },
+    "helper/shim5.recipe.json": {
+      "size": 4695,
+      "sha256": "b82498de183ada602540fcdc88f55c1e4bc0b577da75b0ca7fb1021eecda1644"
+    },
+    "helper/Store.bin": {
+      "size": 87,
+      "sha256": "c26166b4e2864b1762764d9a404cf3b3936bd39f96880b2bc04c88d1900f47ed"
+    },
+    "helper/Store.recipe.json": {
+      "size": 2261,
+      "sha256": "4aca35e3a4a6663d8742c46c932154e9603909932ad1f3c89efc9f8105ce36ed"
+    },
+    "host/archive-vtable.original.bin": {
+      "size": 24,
+      "sha256": "6b059f943e1a5a5471f5f591e36f2b6d17e38b922a89593c2cbff217961aa3d9"
+    },
+    "host/archive_load.original.bin": {
+      "size": 32,
+      "sha256": "5effe29d895f7e5abf2b3b04c1ce2279b030411a704905a65868c632abfd51bf"
+    },
+    "host/archive_mode.original.bin": {
+      "size": 16,
+      "sha256": "867fcb2276d21d032b740f4b02950464177b36c9cb3ec2cfca4bd7e81f173ae3"
+    },
+    "host/archive_store.original.bin": {
+      "size": 32,
+      "sha256": "050a6edec2fdd46282b5425e633eca7259e5d484aeb94d038c72783e30e8ac1e"
+    },
+    "host/fatal_handler.original.bin": {
+      "size": 71,
+      "sha256": "c908293ea8befe774581063d09cd45cc8248567bc6b634c76a8643b7a1691e09"
+    },
+    "host/load_manager_zero_branch.original.bin": {
+      "size": 22,
+      "sha256": "9b4d16de1ec1efc760d304b690725037ad15b2101e7902809086be0282cf3e88"
+    },
+    "native-processes.json": {
+      "size": 701,
+      "sha256": "61805e6677b8663b114ac6eabeda28dec5e583b2e64834b08928997d6f82f390"
+    },
+    "offline-results.json": {
+      "size": 1183,
+      "sha256": "1fb5ce3fb49b154d85bd059d3fc65dac95cfb9e27c88a0c90139342544feaaba"
+    },
+    "prepare.py": {
+      "size": 6460,
+      "sha256": "ad2d2b1c88d3e87275428a0c139be4b7191994a94d6f136029af69413e391a0e"
+    },
+    "previous-packages-before.json": {
+      "size": 18570,
+      "sha256": "6a5a96e124bdfa5a011053439b39fe0ba6fc921fe239469013ec51eb29d852af"
+    },
+    "protected-after-native.json": {
+      "size": 510431,
+      "sha256": "db32abf48c1eaa3d4deb86c1b2e51f58e5ec2725317a05937e506e4477a2f523"
+    },
+    "protected-after-preparation.json": {
+      "size": 498069,
+      "sha256": "bceb37b75c446dc0ffab70c6dc62cbb087fb42db511e859e2e7beee7ba6ea207"
+    },
+    "protected-before.json": {
+      "size": 498069,
+      "sha256": "bceb37b75c446dc0ffab70c6dc62cbb087fb42db511e859e2e7beee7ba6ea207"
+    },
+    "RESULTATEN.md": {
+      "size": 9258,
+      "sha256": "26358a07ecbbb64d61495befea17724d089ccccb2fdb16ed734fce16e7c6fb69"
+    },
+    "run-native.py": {
+      "size": 1347,
+      "sha256": "5ef1e5b9f71f5907a116756f17571ea54b29282c16d6f0278c60d1160ad4ffe5"
+    },
+    "verify.py": {
+      "size": 7464,
+      "sha256": "6709ce4d9e6c4d80c4fcbc5e73dea78e023c9b5093d0f28c932fa84a5c362caa"
+    },
+    "VOORTGANG.md": {
+      "size": 3053,
+      "sha256": "ab82088f886e05e213ff5cc4511c6f2f1b0e56c8bde27a9ea36445e699aaff96"
+    }
+  }
+}

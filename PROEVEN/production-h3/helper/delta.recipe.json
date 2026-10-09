@@ -1,0 +1,46 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov ecx,('esp', 4)",
+      "bytes": "8b8c2404000000"
+    },
+    {
+      "offset": 7,
+      "asm": "mov ecx,('ecx', 4)",
+      "bytes": "8b8904000000"
+    },
+    {
+      "offset": 13,
+      "asm": "inc ('ecx', 104)",
+      "bytes": "ff8168000000"
+    },
+    {
+      "offset": 19,
+      "asm": "mov eax,('esp', 8)",
+      "bytes": "8b842408000000"
+    },
+    {
+      "offset": 26,
+      "asm": "imul eax,eax,8",
+      "bytes": "69c008000000"
+    },
+    {
+      "offset": 32,
+      "asm": "add eax,ecx",
+      "bytes": "03c1"
+    },
+    {
+      "offset": 34,
+      "asm": "fld actual fixture delta ('eax', 256)",
+      "bytes": "dd8000010000"
+    },
+    {
+      "offset": 40,
+      "asm": "ret0ch",
+      "bytes": "c20c00"
+    }
+  ],
+  "fixups": []
+}

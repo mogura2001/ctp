@@ -1,0 +1,131 @@
+{
+  "stage": "PREPARED EMISSION; native acceptance pending; not installed",
+  "variant": "H3-B2-COMPOSITION-BASELINE",
+  "N": 30,
+  "N_policy": "pending; technical fixture only",
+  "original_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "design_sha256": "6e310ea5c15f7b3cc42ad75f586bab6bdf14bdee6e63a6639ac7c5f9b2717501",
+  "candidate_sha256": "be2368421c9e4ee709e674b3e22eb5d5f548b41f67623d7ce53b927b44b867d3",
+  "payload_sha256": "7aea72699f6dbf2596bd6ca34513e011a68714741830e21494bd6c79e75c31b2",
+  "components": {
+    "H3": {
+      "rva": "0xd4000",
+      "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+    },
+    "B2": {
+      "rva": "0xd7000",
+      "sha256": "c898e467e3f2a2cba8f0c6e479d430b856afbd8b54b00f5e98ef55ed483ab039"
+    },
+    "B4": {
+      "rva": "0xd9000",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_rva": "0xd9000"
+  },
+  "changes": [
+    {
+      "offset": "0x778bb",
+      "before": "ff9168010000",
+      "after": "e840bb050090",
+      "reason": "unchanged H3 score adapter"
+    },
+    {
+      "offset": "0x77917",
+      "before": "ff9168010000",
+      "after": "e8e4ba050090",
+      "reason": "unchanged H3 score adapter"
+    },
+    {
+      "offset": "0x79e35",
+      "before": "ff9168010000",
+      "after": "e8c695050090",
+      "reason": "unchanged H3 score adapter"
+    },
+    {
+      "offset": "0x407da",
+      "before": "e81178ffff",
+      "after": "e8215c0900",
+      "reason": "relocated B2 registration"
+    },
+    {
+      "offset": "0x3565b",
+      "before": "e8902d0000",
+      "after": "e8af0e0a00",
+      "reason": "relocated B2 beginturn"
+    },
+    {
+      "offset": "0xf22d",
+      "before": "e88e29ffff",
+      "after": "e8f1730c00",
+      "reason": "relocated B2 save"
+    },
+    {
+      "offset": "0xf251",
+      "before": "e8fa2dffff",
+      "after": "e86f750c00",
+      "reason": "relocated B2 load"
+    },
+    {
+      "offset": "0x55f0",
+      "before": "558bec5356",
+      "after": "e917130d00",
+      "reason": "relocated B2 reload_entry"
+    },
+    {
+      "offset": "0x250",
+      "before": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after": "2e62346300000000fc40000000400d000042000000140a0000000000000000000000000020000060",
+      "reason": "RX declared component composition"
+    },
+    {
+      "offset": "0xbe",
+      "before": "0400",
+      "after": "0500",
+      "reason": "section count"
+    },
+    {
+      "offset": "0x108",
+      "before": "00400d00",
+      "after": "00900d00",
+      "reason": "declared mapped extent"
+    },
+    {
+      "offset": "0xd4",
+      "before": "00760800",
+      "after": "00b80800",
+      "reason": "RX size"
+    },
+    {
+      "offset": "0x110",
+      "before": "00000000",
+      "after": "344e0b00",
+      "reason": "PE checksum"
+    }
+  ],
+  "labels": {
+    "SchedulerUpdate": -428544,
+    "GroundBuild": -388992,
+    "Desired": -472672,
+    "AIPUpdate": -468112,
+    "Choose": -472832,
+    "ArmyCount": -779920,
+    "ArmyType": -779904,
+    "IsWait": -812560,
+    "ArmyPos": -816192,
+    "CityPos": -773248,
+    "CityWhat": -770736,
+    "CanBuild": -761040,
+    "GetThreat": -349424,
+    "GetContinent": -372688,
+    "H3Classifier": -20151,
+    "H3Host": -12628,
+    "H3PosCompare": -18015,
+    "B2Host": -6149,
+    "B2Symbols": -6650,
+    "B2Bit": -6356,
+    "pass_state": 0,
+    "generation": 346112
+  },
+  "recipe": [],
+  "scope": "production-only technical; gameplay/science/monopoly/transport unmeasured"
+}

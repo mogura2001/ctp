@@ -1,0 +1,123 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 200073f0 ?RegisterSetBuildFront@AiMain@@QAEXKJJ@Z END 20007460
+200073f0 55                     push     ebp
+200073f1 8bec                   mov      ebp, esp
+200073f3 51                     push     ecx
+200073f4 56                     push     esi
+200073f5 8bf1                   mov      esi, ecx
+200073f7 8d4508                 lea      eax, [ebp + 8]
+200073fa 8d4dfc                 lea      ecx, [ebp - 4]
+200073fd 50                     push     eax
+200073fe e8bdf40100             call     0x200268c0 ; ??0BSetID@@QAE@ABK@Z
+20007403 8bb68c000000           mov      esi, dword ptr [esi + 0x8c]
+20007409 8b7608                 mov      esi, dword ptr [esi + 8]
+2000740c 85f6                   test     esi, esi
+2000740e 7433                   je       0x20007443
+20007410 8d4dfc                 lea      ecx, [ebp - 4]
+20007413 51                     push     ecx
+20007414 8bce                   mov      ecx, esi
+20007416 e835f50100             call     0x20026950 ; ??8BSetID@@QBEHABV0@@Z
+2000741b 85c0                   test     eax, eax
+2000741d 751f                   jne      0x2000743e
+2000741f 56                     push     esi
+20007420 8d4dfc                 lea      ecx, [ebp - 4]
+20007423 e868f50100             call     0x20026990 ; ??MBSetID@@QBEHABV0@@Z
+20007428 85c0                   test     eax, eax
+2000742a 7409                   je       0x20007435
+2000742c 8b7604                 mov      esi, dword ptr [esi + 4]
+2000742f 85f6                   test     esi, esi
+20007431 7410                   je       0x20007443
+20007433 ebdb                   jmp      0x20007410
+20007435 8b7608                 mov      esi, dword ptr [esi + 8]
+20007438 85f6                   test     esi, esi
+2000743a 7407                   je       0x20007443
+2000743c ebd2                   jmp      0x20007410
+2000743e 8b4e0c                 mov      ecx, dword ptr [esi + 0xc]
+20007441 eb02                   jmp      0x20007445
+20007443 33c9                   xor      ecx, ecx
+20007445 85c9                   test     ecx, ecx
+20007447 740d                   je       0x20007456
+20007449 8b5510                 mov      edx, dword ptr [ebp + 0x10]
+2000744c 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+2000744f 52                     push     edx
+20007450 50                     push     eax
+20007451 e8fa540100             call     0x2001c950 ; ?RegisterSetBuildFront@CityAgent@@QAEXJJ@Z
+20007456 5e                     pop      esi
+20007457 8be5                   mov      esp, ebp
+20007459 5d                     pop      ebp
+2000745a c20c00                 ret      0xc
+2000745d 90                     nop      
+2000745e 90                     nop      
+2000745f 90                     nop      
+
+FUNCTION 20010970 ?RegisterSetBuildFront@IC3RobotCom@@UAGXKJJ@Z END 20010990
+20010970 55                     push     ebp
+20010971 8bec                   mov      ebp, esp
+20010973 8b4514                 mov      eax, dword ptr [ebp + 0x14]
+20010976 8b4d10                 mov      ecx, dword ptr [ebp + 0x10]
+20010979 8b550c                 mov      edx, dword ptr [ebp + 0xc]
+2001097c 50                     push     eax
+2001097d 8b4508                 mov      eax, dword ptr [ebp + 8]
+20010980 51                     push     ecx
+20010981 52                     push     edx
+20010982 8b4808                 mov      ecx, dword ptr [eax + 8]
+20010985 e8666affff             call     0x200073f0 ; ?RegisterSetBuildFront@AiMain@@QAEXKJJ@Z
+2001098a 5d                     pop      ebp
+2001098b c21000                 ret      0x10
+2001098e 90                     nop      
+2001098f 90                     nop      
+
+FUNCTION 20010bf0 ?GetType@Agent@@QBE?AW4AGENT_TYPE@@XZ END 20010c00
+20010bf0 8b4104                 mov      eax, dword ptr [ecx + 4]
+20010bf3 c3                     ret      
+20010bf4 90                     nop      
+20010bf5 90                     nop      
+20010bf6 90                     nop      
+20010bf7 90                     nop      
+20010bf8 90                     nop      
+20010bf9 90                     nop      
+20010bfa 90                     nop      
+20010bfb 90                     nop      
+20010bfc 90                     nop      
+20010bfd 90                     nop      
+20010bfe 90                     nop      
+20010bff 90                     nop      
+
+FUNCTION 2001c950 ?RegisterSetBuildFront@CityAgent@@QAEXJJ@Z END 2001c970
+2001c950 55                     push     ebp
+2001c951 8bec                   mov      ebp, esp
+2001c953 8b450c                 mov      eax, dword ptr [ebp + 0xc]
+2001c956 8b5508                 mov      edx, dword ptr [ebp + 8]
+2001c959 8981f0010000           mov      dword ptr [ecx + 0x1f0], eax
+2001c95f 8991f4010000           mov      dword ptr [ecx + 0x1f4], edx
+2001c965 5d                     pop      ebp
+2001c966 c20800                 ret      8
+2001c969 90                     nop      
+2001c96a 90                     nop      
+2001c96b 90                     nop      
+2001c96c 90                     nop      
+2001c96d 90                     nop      
+2001c96e 90                     nop      
+2001c96f 90                     nop      
+
+FUNCTION 200268c0 ??0BSetID@@QAE@ABK@Z END 200268d0
+200268c0 55                     push     ebp
+200268c1 8bec                   mov      ebp, esp
+200268c3 8bc1                   mov      eax, ecx
+200268c5 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+200268c8 8b11                   mov      edx, dword ptr [ecx]
+200268ca 8910                   mov      dword ptr [eax], edx
+200268cc 5d                     pop      ebp
+200268cd c20400                 ret      4
+
+FUNCTION 200268e0 ??0BSetID@@QAE@ABV0@@Z END 200268f0
+200268e0 55                     push     ebp
+200268e1 8bec                   mov      ebp, esp
+200268e3 8bc1                   mov      eax, ecx
+200268e5 8b4d08                 mov      ecx, dword ptr [ebp + 8]
+200268e8 8b11                   mov      edx, dword ptr [ecx]
+200268ea 8910                   mov      dword ptr [eax], edx
+200268ec 5d                     pop      ebp
+200268ed c20400                 ret      4

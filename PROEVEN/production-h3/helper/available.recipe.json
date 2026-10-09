@@ -1,0 +1,31 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov ecx,('esp', 4)",
+      "bytes": "8b8c2404000000"
+    },
+    {
+      "offset": 7,
+      "asm": "mov ecx,('ecx', 4)",
+      "bytes": "8b8904000000"
+    },
+    {
+      "offset": 13,
+      "asm": "inc ('ecx', 96)",
+      "bytes": "ff8160000000"
+    },
+    {
+      "offset": 19,
+      "asm": "mov eax,('ecx', 112)",
+      "bytes": "8b8170000000"
+    },
+    {
+      "offset": 25,
+      "asm": "ret8",
+      "bytes": "c20800"
+    }
+  ],
+  "fixups": []
+}

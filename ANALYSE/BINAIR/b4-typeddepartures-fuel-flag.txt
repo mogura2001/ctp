@@ -1,0 +1,80 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20019fe0 ?UpdateUsesFuel@ArmyAgent@@QAEXPAVAiMain@@@Z END 2001a0b0
+20019fe0 55                     push     ebp
+20019fe1 8bec                   mov      ebp, esp
+20019fe3 51                     push     ecx
+20019fe4 53                     push     ebx
+20019fe5 56                     push     esi
+20019fe6 8bf1                   mov      esi, ecx
+20019fe8 57                     push     edi
+20019fe9 c745fc00000000         mov      dword ptr [ebp - 4], 0
+20019ff0 66837e4800             cmp      word ptr [esi + 0x48], 0
+20019ff5 7e2c                   jle      0x2001a023
+20019ff7 8b5d08                 mov      ebx, dword ptr [ebp + 8]
+20019ffa 8d7e4a                 lea      edi, [esi + 0x4a]
+20019ffd 0fbf17                 movsx    edx, word ptr [edi]
+2001a000 8b4338                 mov      eax, dword ptr [ebx + 0x38]
+2001a003 52                     push     edx
+2001a004 50                     push     eax
+2001a005 8b08                   mov      ecx, dword ptr [eax]
+2001a007 ff91d0000000           call     dword ptr [ecx + 0xd0]
+2001a00d 85c0                   test     eax, eax
+2001a00f 7522                   jne      0x2001a033
+2001a011 8b45fc                 mov      eax, dword ptr [ebp - 4]
+2001a014 83c702                 add      edi, 2
+2001a017 0fbf4e48               movsx    ecx, word ptr [esi + 0x48]
+2001a01b 40                     inc      eax
+2001a01c 3bc1                   cmp      eax, ecx
+2001a01e 8945fc                 mov      dword ptr [ebp - 4], eax
+2001a021 7cda                   jl       0x20019ffd
+2001a023 80a688000000f7         and      byte ptr [esi + 0x88], 0xf7
+2001a02a 5f                     pop      edi
+2001a02b 5e                     pop      esi
+2001a02c 5b                     pop      ebx
+2001a02d 8be5                   mov      esp, ebp
+2001a02f 5d                     pop      ebp
+2001a030 c20400                 ret      4
+2001a033 8a8e88000000           mov      cl, byte ptr [esi + 0x88]
+2001a039 66c78680000000ff7f     mov      word ptr [esi + 0x80], 0x7fff
+2001a042 80c908                 or       cl, 8
+2001a045 66837e4800             cmp      word ptr [esi + 0x48], 0
+2001a04a 888e88000000           mov      byte ptr [esi + 0x88], cl
+2001a050 c7450800000000         mov      dword ptr [ebp + 8], 0
+2001a057 7ed1                   jle      0x2001a02a
+2001a059 0fbf5508               movsx    edx, word ptr [ebp + 8]
+2001a05d 8b4338                 mov      eax, dword ptr [ebx + 0x38]
+2001a060 8d7c564a               lea      edi, [esi + edx*2 + 0x4a]
+2001a064 8b08                   mov      ecx, dword ptr [eax]
+2001a066 0fbf17                 movsx    edx, word ptr [edi]
+2001a069 52                     push     edx
+2001a06a 50                     push     eax
+2001a06b ff91d0000000           call     dword ptr [ecx + 0xd0]
+2001a071 85c0                   test     eax, eax
+2001a073 7420                   je       0x2001a095
+2001a075 0fbf17                 movsx    edx, word ptr [edi]
+2001a078 8b4338                 mov      eax, dword ptr [ebx + 0x38]
+2001a07b 52                     push     edx
+2001a07c 50                     push     eax
+2001a07d 8b08                   mov      ecx, dword ptr [eax]
+2001a07f ff91d4000000           call     dword ptr [ecx + 0xd4]
+2001a085 663b8680000000         cmp      ax, word ptr [esi + 0x80]
+2001a08c 7d07                   jge      0x2001a095
+2001a08e 66898680000000         mov      word ptr [esi + 0x80], ax
+2001a095 8b4508                 mov      eax, dword ptr [ebp + 8]
+2001a098 40                     inc      eax
+2001a099 663b4648               cmp      ax, word ptr [esi + 0x48]
+2001a09d 894508                 mov      dword ptr [ebp + 8], eax
+2001a0a0 7cb7                   jl       0x2001a059
+2001a0a2 5f                     pop      edi
+2001a0a3 5e                     pop      esi
+2001a0a4 5b                     pop      ebx
+2001a0a5 8be5                   mov      esp, ebp
+2001a0a7 5d                     pop      ebp
+2001a0a8 c20400                 ret      4
+2001a0ab 90                     nop      
+2001a0ac 90                     nop      
+2001a0ad 90                     nop      
+2001a0ae 90                     nop      
+2001a0af 90                     nop      

@@ -10,17 +10,17 @@ De hoofdagent coördineert, bewaakt PROJECTSTATUS.md en draagt werk tussen de ro
 
 | Fase / rol | Verantwoordelijkheid | Oplevering |
 | --- | --- | --- |
-| A — ctp_analist | Bestaande regels, code, profielen en gedrag verklaren | Beslisketens, afhankelijkheden, bewijzen en dekkingsmatrix met kennislacunes |
+| A — ctp_analist | Vaststellen hoe en waar onze gameplaydoelen technisch kunnen worden gerealiseerd | Per doel: huidige werking, concrete ingreeppunten, uitvoerbare route, noodzakelijke afhankelijkheden, bewijs en blokkades |
 | B — ctp_ontwerper | Verbeteringen voorstellen vanuit die analyse en onze doelen | Huidig/gewenst gedrag, exacte ingreep, uitleg, neveneffecten en test-/herstelplan |
 | C — ctp_uitvoerder | Een uitgewerkt overgedragen voorstel toepassen en testen | Reproduceerbare wijziging, controles, vergelijkende metingen en conclusie |
 
-De huidige fase A blijft analyse vóór nieuwe spelstarts. Gamebediening volgt later de projectafspraken en PROEVEN/AUTOMATISERING.md. Een gewijzigde DLL/engine vereist eerst een onderbouwde technische route en een herstelbare proefkopie; de analysetools veranderen de binaries niet.
+De brede fase A is op 7 oktober overgedragen; PROJECTSTATUS.md bepaalt de actuele werkstap. Aanvullende analyse blijft alleen-lezen en zonder spelstarts. Gamebediening volgt in de uitvoeringsfase de projectafspraken en PROEVEN/AUTOMATISERING.md. Een gewijzigde DLL/engine vereist eerst een onderbouwde technische route en een herstelbare proefkopie; de analysetools veranderen de binaries niet.
 
 Vraag de gebruiker alleen wanneer een ontbrekend gegeven of strategische keuze de voortgang werkelijk bepaalt. Gebruik open keuzes zoals 25 versus 30 steden niet als reden om alle overige werkzaamheden te stoppen. Onderzoek onafhankelijk werk terwijl een benodigde gebruikersreactie pending is; neem een benodigde reactie niet aan op basis van stilte.
 
 ## Analysebreedte en bewijs
 
-De gebruiker vraagt om een volledige analyse als fundament, niet alleen een wijziging aan de locatiescore. Breng daarom de volgende samenhangende onderwerpen in kaart:
+Het analysedoel is voldoende kennis om te bepalen hoe en waar wijzigingen voor PROJECTDOELEN.md moeten worden gedaan. De volgende onderwerpen zijn een checklist om doelen en relevante afhankelijkheden niet te missen, geen opdracht om iedere keten volledig te reconstrueren. Hergebruik de afgeronde brede analyse:
 
 - Bestandsopbouw, spelinitialisatie, Deity-regels en laden/saven.
 - Persoonlijkheden, begin-/eindbeurten, fuzzy inputs/outputs en profieloverrides.
@@ -36,6 +36,8 @@ De gebruiker vraagt om een volledige analyse als fundament, niet alleen een wijz
 
 Beschrijf per keten wat de AI ziet, wat zij wil, hoe prioriteiten concurreren en welke actie volgt. Geef aan of een conclusie uit tekstbestanden, machinecode, ontwikkelaarscommentaar, modclaims of spelwaarnemingen komt. AAIP wordt gekoppeld aan werkelijke diffs en mogelijke effecten.
 
+**Begrenzing van iedere vervolgopdracht:** benoem vooraf het gameplaydoel, de concrete te beantwoorden wijzigingsvraag en welk ontbrekend antwoord het ontwerp of de uitvoering blokkeert. Lever de relevante bestanden/velden/functies, huidige werking, mogelijke aanpassingsroute en noodzakelijke voorwaarden op. Onderzoek save/caches, callers en nevenketens alleen voor zover die deze ingreep werkelijk beïnvloeden. Tools en offline controles moeten een benoemde twijfel oplossen; geen extra emulatie of observer bouwen als documentatie van het ingreeppunt volstaat. Stop zodra de ontwerper een onderbouwd voorstel kan maken, of beschrijf een concreet aangetoonde technische blokkade. Onzekerheden die de volgende wijziging niet blokkeren gaan op de backlog en houden de overdracht niet tegen.
+
 Een scan van CTP-og en CTP-AAIP vindt in gangbare C/C++-bron-/projectextensies alleen Aipdef.h. De implementaties staan hoofdzakelijk in executable/DLL; hun oorspronkelijke C/C++-project is niet aanwezig. Dit bewijst niet dat de broncode nergens verkrijgbaar is. 'Volledig begrip' betekent hier brede functionele dekking van de beslissingen en spelregels die onze doelen bepalen, met expliciete open punten. Claim geen honderd procent begrip van iedere engine-instructie of volledig gedecompileerde broncode.
 
 ## Werklus en overdracht
@@ -47,7 +49,7 @@ Een scan van CTP-og en CTP-AAIP vindt in gangbare C/C++-bron-/projectextensies a
 5. Controleer passend bij het resultaat. Geen nieuwe gameplay-runs tijdens fase A; geen stapels tests voor alleen tekstwijzigingen.
 6. Werk PROJECTSTATUS.md en relevante analyses bij en volg binnen een actieve opdracht de volgende stap zelfstandig op.
 
-**A naar B:** de afgesproken onderwerpen zijn geïnventariseerd en hun relevante beslisketens zijn onderbouwd. Voor de te verbeteren mechanismen zijn essentiële kennislacunes opgelost of als aantoonbare technische beperking beschreven. Een lijst van functienamen alleen volstaat niet. Leg resterende open punten en hun impact vast; besteed geen eindeloze analyse aan details zonder invloed op onze doelen.
+**A naar B:** voor het toegewezen gameplaydoel is voldoende onderbouwd wat het huidige gedrag veroorzaakt, waar het wordt gestuurd en via welke technisch aannemelijke route het kan veranderen. De noodzakelijke afhankelijkheden en blokkades zijn benoemd, zodat de ontwerper een concreet voorstel kan uitwerken. Volledige reconstructie van alle spelmechanismen is geen overdrachtsvoorwaarde. Een lijst van functienamen alleen volstaat niet; onderbouw het relevante ingreeppunt. Een implementatie waarvan de route nog niet is bewezen krijgt een gerichte technische vraag vóór uitvoering, zonder andere uitvoerbare voorstellen te blokkeren. De bestaande brede A-overdracht blijft geldig.
 
 **B naar C:** het voorstel is schriftelijk uitgewerkt en aan de gebruiker uitgelegd. Het bevat oorzaak, concrete aanpassing, technische uitvoerbaarheid, afhankelijkheden, meetlat en herstelroute. Geen uitvoering van een puur idee of onbewezen hook. Routinekeuzes binnen de bestaande opdracht vereisen niet opnieuw toestemming; afwijkende strategieën of noodzakelijke open keuzes worden wel voorgelegd voordat afhankelijk werk wordt uitgevoerd. De uitvoerder mag zo'n keuze niet zelf stilzwijgend vervangen.
 
@@ -72,7 +74,9 @@ Dit is een afspraak voor actief werk, geen los ingestelde timer of geplande taak
 
 ## Gebruiksbudget: waarschuwing, stop en hervatten
 
-Actuele gebruikersafspraak: sluit de pc alleen af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Een budgetgrens stopt uitsluitend het projectwerk; bewaar het hervatpunt en laat de pc aan. De eerdere afsluitopdrachten van 5 en 7 oktober zijn afgehandeld en vormen geen doorlopende toestemming. Roep PROEVEN/Sluit-PC-Bij-Budgetstop.ps1 niet aan vanuit budgetbewaking of automatische doelopvolging. De helper vereist bovendien de expliciete vlag UserRequestedShutdown, die uitsluitend bij zo'n nieuwe gebruikersopdracht mag worden meegegeven. Geen achtergrondtimer of automatische herstart ingesteld.
+Actuele gebruikersafspraak: sluit de pc alleen af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Een budgetgrens op zichzelf stopt uitsluitend het projectwerk; bewaar het hervatpunt en laat de pc aan. Eerdere afgehandelde afsluitopdrachten vormen geen doorlopende toestemming. De helper PROEVEN/Sluit-PC-Bij-Budgetstop.ps1 vereist de expliciete vlag UserRequestedShutdown, die uitsluitend bij een nieuwe gebruikersopdracht mag worden meegegeven. Geen achtergrondtimer of automatische herstart ingesteld.
+
+**Laatste gebruikersinstructie 9 oktober 2026:** 'wil je stoppen met het afsluiten van mn pc' en 'dit niet meer hoeft, behalve als ik het zeg'. De eerdere eenmalige opdracht is afgehandeld; alle resterende oude afsluittoestemmingen zijn ingetrokken. Laat de pc aan bij budgetstops, resets, hervatting en automatische doelcontinuaties. Stop uitsluitend projectwerk/agents en bewaar het hervatpunt. Roep geen afsluithelper, afsluitcommando of afsluitplanning aan zonder een nieuwe, expliciete afsluitopdracht van de gebruiker. De oude vlag UserRequestedShutdown en het oude opdrachtrecord zijn geen actuele toestemming. Registratie: PROEVEN/AFSLUITOPDRACHT-2026-10-09.json markeert de opdracht verbruikt en ingetrokken. Geen achtergrondafsluiting instellen.
 
 Gebruikersafspraken van 4 oktober 2026: waarschuw bij **25% of minder resterend weekbudget**; stop alle projectwerk bij **10% of minder resterend weekbudget**. Stop daarnaast bij **5% of minder resterend in het vijfuurvenster**. Na een bevestigde vijfuurreset mag het project zelfstandig hervatten, mits het weekbudget boven zijn stopgrens staat. Dit betreft accountgebruik, geen contextcapaciteit of projecttokensteller.
 
@@ -107,7 +111,7 @@ De officiële documentatie beschrijft projectagents in `.codex/agents/` en doelm
 Eenmalige startopdracht voor zelfstandige opvolging van het project:
 
 ```text
-/goal Voer dit CTP I-project zelfstandig uit volgens PROJECTDOELEN.md, LOCATIESELECTIE.md, AGENTS.md en AGENT-CTP.md. Gebruik eerst ctp_analist voor de brede functionele analyse van code en game; daarna ctp_ontwerper voor wijzigingsvoorstellen met uitleg; pas daarna ctp_uitvoerder voor toepassen en testen. Bewaak de overdrachtscriteria en hervat vanuit PROJECTSTATUS.md. Respecteer de huidige analysefase zonder spelstarts of gameplaywijzigingen. Volg tussenstappen zelf op, zonder voor iedere vervolgstap toestemming te vragen. Werk naar een reproduceerbare CTP-proef-versie met aantoonbare verbeteringen volgens de projectdoelen. Houd bewezen gedrag, voorbereid werk en onzekerheden apart. Vraag alleen bij noodzakelijke ontbrekende informatie of beslissingen buiten de afspraken. Rond het totale doel pas af wanneer de afgesproken verbeteringen in de vaste benchmark zijn aangetoond en versies/installatie zijn vastgelegd; beschrijf onoplosbare technische grenzen met bewijs.
+/goal Voer dit CTP I-project zelfstandig uit volgens PROJECTDOELEN.md, LOCATIESELECTIE.md, AGENTS.md en AGENT-CTP.md. Hergebruik de afgeronde analyse. Gebruik ctp_analist alleen voor een concrete kennislacune die een gameplaywijziging blokkeert; ctp_ontwerper werkt voldoende onderbouwde ingreeppunten uit; ctp_uitvoerder past overgedragen voorstellen toe en test ze. Bewaak de overdrachtscriteria en hervat vanuit PROJECTSTATUS.md. Volg de actuele fase in PROJECTSTATUS.md; tijdens gerichte analyse geen spelstarts of gameplaywijzigingen. Volg tussenstappen zelf op, zonder voor iedere vervolgstap toestemming te vragen. Werk naar een reproduceerbare CTP-proef-versie met aantoonbare verbeteringen volgens de projectdoelen. Houd bewezen gedrag, voorbereid werk en onzekerheden apart. Vraag alleen bij noodzakelijke ontbrekende informatie of beslissingen buiten de afspraken. Rond het totale doel pas af wanneer de afgesproken verbeteringen in de vaste benchmark zijn aangetoond en versies/installatie zijn vastgelegd; beschrijf onoplosbare technische grenzen met bewijs.
 ```
 
 Deze tekst is voorbereid; daarmee is geen doel of geplande taak automatisch geactiveerd. Open strategische keuzes of ontbrekende spelmetingen kunnen later concrete gebruikersinput vereisen; dat is geen reden om onafhankelijke stappen te laten liggen. Houd de workspace beschikbaar tijdens lokaal doelwerk. Een actieve run blijft afhankelijk van de toegangsrechten en runtimegrenzen.

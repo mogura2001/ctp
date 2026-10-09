@@ -1,0 +1,227 @@
+﻿robotcom.dll SHA256: 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44
+PE imagebase: 20000000; timestamp 37b894e7
+
+FUNCTION 20011c50 ?UpdatePosition@ArmyAgent@@QAEXPAVAiMain@@@Z END 20011cb0
+20011c50 55                     push     ebp
+20011c51 8bec                   mov      ebp, esp
+20011c53 83ec08                 sub      esp, 8
+20011c56 56                     push     esi
+20011c57 8bf1                   mov      esi, ecx
+20011c59 57                     push     edi
+20011c5a 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20011c5d 8b4640                 mov      eax, dword ptr [esi + 0x40]
+20011c60 85c0                   test     eax, eax
+20011c62 7e20                   jle      0x20011c84
+20011c64 83f802                 cmp      eax, 2
+20011c67 7e0d                   jle      0x20011c76
+20011c69 83f811                 cmp      eax, 0x11
+20011c6c 7516                   jne      0x20011c84
+20011c6e 5f                     pop      edi
+20011c6f 5e                     pop      esi
+20011c70 8be5                   mov      esp, ebp
+20011c72 5d                     pop      ebp
+20011c73 c20400                 ret      4
+20011c76 8b4e44                 mov      ecx, dword ptr [esi + 0x44]
+20011c79 8d45f8                 lea      eax, [ebp - 8]
+20011c7c 50                     push     eax
+20011c7d e8fea60000             call     0x2001c380 ; ?GetPos@CityAgent@@QBEXAAUMapPointData@@@Z
+20011c82 eb15                   jmp      0x20011c99
+20011c84 8b472c                 mov      eax, dword ptr [edi + 0x2c]
+20011c87 8d55f8                 lea      edx, [ebp - 8]
+20011c8a 52                     push     edx
+20011c8b 8d5508                 lea      edx, [ebp + 8]
+20011c8e 8b08                   mov      ecx, dword ptr [eax]
+20011c90 52                     push     edx
+20011c91 8b560c                 mov      edx, dword ptr [esi + 0xc]
+20011c94 52                     push     edx
+20011c95 50                     push     eax
+20011c96 ff510c                 call     dword ptr [ecx + 0xc]
+20011c99 8d45f8                 lea      eax, [ebp - 8]
+20011c9c 8bce                   mov      ecx, esi
+20011c9e 50                     push     eax
+20011c9f 57                     push     edi
+20011ca0 e80b000000             call     0x20011cb0 ; ?UpdatePosition@ArmyAgent@@QAEXPAVAiMain@@PAUMapPointData@@@Z
+20011ca5 5f                     pop      edi
+20011ca6 5e                     pop      esi
+20011ca7 8be5                   mov      esp, ebp
+20011ca9 5d                     pop      ebp
+20011caa c20400                 ret      4
+20011cad 90                     nop      
+20011cae 90                     nop      
+20011caf 90                     nop      
+
+FUNCTION 20011cb0 ?UpdatePosition@ArmyAgent@@QAEXPAVAiMain@@PAUMapPointData@@@Z END 20011e30
+20011cb0 55                     push     ebp
+20011cb1 8bec                   mov      ebp, esp
+20011cb3 56                     push     esi
+20011cb4 8bf1                   mov      esi, ecx
+20011cb6 8b550c                 mov      edx, dword ptr [ebp + 0xc]
+20011cb9 57                     push     edi
+20011cba 0fbf462c               movsx    eax, word ptr [esi + 0x2c]
+20011cbe 8b4e30                 mov      ecx, dword ptr [esi + 0x30]
+20011cc1 8d04c1                 lea      eax, [ecx + eax*8]
+20011cc4 668b08                 mov      cx, word ptr [eax]
+20011cc7 663b0a                 cmp      cx, word ptr [edx]
+20011cca 741b                   je       0x20011ce7
+20011ccc 668b4802               mov      cx, word ptr [eax + 2]
+20011cd0 663b4a02               cmp      cx, word ptr [edx + 2]
+20011cd4 7411                   je       0x20011ce7
+20011cd6 668b4004               mov      ax, word ptr [eax + 4]
+20011cda 663b4204               cmp      ax, word ptr [edx + 4]
+20011cde 7407                   je       0x20011ce7
+20011ce0 b901000000             mov      ecx, 1
+20011ce5 eb02                   jmp      0x20011ce9
+20011ce7 33c9                   xor      ecx, ecx
+20011ce9 8a8688000000           mov      al, byte ptr [esi + 0x88]
+20011cef 80e101                 and      cl, 1
+20011cf2 24fd                   and      al, 0xfd
+20011cf4 d0e1                   shl      cl, 1
+20011cf6 0ac1                   or       al, cl
+20011cf8 8b4e64                 mov      ecx, dword ptr [esi + 0x64]
+20011cfb 888688000000           mov      byte ptr [esi + 0x88], al
+20011d01 668b39                 mov      di, word ptr [ecx]
+20011d04 663b3a                 cmp      di, word ptr [edx]
+20011d07 7571                   jne      0x20011d7a
+20011d09 668b7902               mov      di, word ptr [ecx + 2]
+20011d0d 663b7a02               cmp      di, word ptr [edx + 2]
+20011d11 7567                   jne      0x20011d7a
+20011d13 668b7904               mov      di, word ptr [ecx + 4]
+20011d17 663b7a04               cmp      di, word ptr [edx + 4]
+20011d1b 755d                   jne      0x20011d7a
+20011d1d 6685ff                 test     di, di
+20011d20 7544                   jne      0x20011d66
+20011d22 8d550c                 lea      edx, [ebp + 0xc]
+20011d25 8d4508                 lea      eax, [ebp + 8]
+20011d28 52                     push     edx
+20011d29 50                     push     eax
+20011d2a 8b4508                 mov      eax, dword ptr [ebp + 8]
+20011d2d 51                     push     ecx
+20011d2e 50                     push     eax
+20011d2f 8b88ac000000           mov      ecx, dword ptr [eax + 0xac]
+20011d35 e8f6c20600             call     0x2007e030 ; ?GetContinent@Continents@@QAEHPAVAiMain@@AAUMapPointData@@AAJAAH@Z
+20011d3a 8b7d0c                 mov      edi, dword ptr [ebp + 0xc]
+20011d3d 8a8688000000           mov      al, byte ptr [esi + 0x88]
+20011d43 33d2                   xor      edx, edx
+20011d45 668b4d08               mov      cx, word ptr [ebp + 8]
+20011d49 83ff01                 cmp      edi, 1
+20011d4c 66894e6c               mov      word ptr [esi + 0x6c], cx
+20011d50 0f94c2                 sete     dl
+20011d53 32d0                   xor      dl, al
+20011d55 80e201                 and      dl, 1
+20011d58 32d0                   xor      dl, al
+20011d5a 889688000000           mov      byte ptr [esi + 0x88], dl
+20011d60 5f                     pop      edi
+20011d61 5e                     pop      esi
+20011d62 5d                     pop      ebp
+20011d63 c20800                 ret      8
+20011d66 24fe                   and      al, 0xfe
+20011d68 66c7466cffff           mov      word ptr [esi + 0x6c], 0xffff
+20011d6e 888688000000           mov      byte ptr [esi + 0x88], al
+20011d74 5f                     pop      edi
+20011d75 5e                     pop      esi
+20011d76 5d                     pop      ebp
+20011d77 c20800                 ret      8
+20011d7a 8b02                   mov      eax, dword ptr [edx]
+20011d7c 8901                   mov      dword ptr [ecx], eax
+20011d7e 8b5204                 mov      edx, dword ptr [edx + 4]
+20011d81 895104                 mov      dword ptr [ecx + 4], edx
+20011d84 8b4640                 mov      eax, dword ptr [esi + 0x40]
+20011d87 85c0                   test     eax, eax
+20011d89 7e17                   jle      0x20011da2
+20011d8b 83f802                 cmp      eax, 2
+20011d8e 7f12                   jg       0x20011da2
+20011d90 8b4668                 mov      eax, dword ptr [esi + 0x68]
+20011d93 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20011d96 8b4e44                 mov      ecx, dword ptr [esi + 0x44]
+20011d99 50                     push     eax
+20011d9a 57                     push     edi
+20011d9b e800a60000             call     0x2001c3a0 ; ?GetXYPos@CityAgent@@QAEXPAVAiMain@@AAUMapPointData@@@Z
+20011da0 eb1c                   jmp      0x20011dbe
+20011da2 8b5668                 mov      edx, dword ptr [esi + 0x68]
+20011da5 8b7d08                 mov      edi, dword ptr [ebp + 8]
+20011da8 52                     push     edx
+20011da9 8d5508                 lea      edx, [ebp + 8]
+20011dac 8b472c                 mov      eax, dword ptr [edi + 0x2c]
+20011daf 52                     push     edx
+20011db0 8b560c                 mov      edx, dword ptr [esi + 0xc]
+20011db3 8b08                   mov      ecx, dword ptr [eax]
+20011db5 52                     push     edx
+20011db6 8b5720                 mov      edx, dword ptr [edi + 0x20]
+20011db9 52                     push     edx
+20011dba 50                     push     eax
+20011dbb ff5110                 call     dword ptr [ecx + 0x10]
+20011dbe 8b4664                 mov      eax, dword ptr [esi + 0x64]
+20011dc1 6683780400             cmp      word ptr [eax + 4], 0
+20011dc6 7541                   jne      0x20011e09
+20011dc8 8d4d0c                 lea      ecx, [ebp + 0xc]
+20011dcb 8d5508                 lea      edx, [ebp + 8]
+20011dce 51                     push     ecx
+20011dcf 8b8fac000000           mov      ecx, dword ptr [edi + 0xac]
+20011dd5 52                     push     edx
+20011dd6 50                     push     eax
+20011dd7 57                     push     edi
+20011dd8 e853c20600             call     0x2007e030 ; ?GetContinent@Continents@@QAEHPAVAiMain@@AAUMapPointData@@AAJAAH@Z
+20011ddd 8b7d0c                 mov      edi, dword ptr [ebp + 0xc]
+20011de0 668b4508               mov      ax, word ptr [ebp + 8]
+20011de4 33c9                   xor      ecx, ecx
+20011de6 83ff01                 cmp      edi, 1
+20011de9 6689466c               mov      word ptr [esi + 0x6c], ax
+20011ded 8a8688000000           mov      al, byte ptr [esi + 0x88]
+20011df3 0f94c1                 sete     cl
+20011df6 32c8                   xor      cl, al
+20011df8 80e101                 and      cl, 1
+20011dfb 32c8                   xor      cl, al
+20011dfd 888e88000000           mov      byte ptr [esi + 0x88], cl
+20011e03 5f                     pop      edi
+20011e04 5e                     pop      esi
+20011e05 5d                     pop      ebp
+20011e06 c20800                 ret      8
+20011e09 8a8688000000           mov      al, byte ptr [esi + 0x88]
+20011e0f 66c7466cffff           mov      word ptr [esi + 0x6c], 0xffff
+20011e15 24fe                   and      al, 0xfe
+20011e17 5f                     pop      edi
+20011e18 888688000000           mov      byte ptr [esi + 0x88], al
+20011e1e 5e                     pop      esi
+20011e1f 5d                     pop      ebp
+20011e20 c20800                 ret      8
+20011e23 90                     nop      
+20011e24 90                     nop      
+20011e25 90                     nop      
+20011e26 90                     nop      
+20011e27 90                     nop      
+20011e28 90                     nop      
+20011e29 90                     nop      
+20011e2a 90                     nop      
+20011e2b 90                     nop      
+20011e2c 90                     nop      
+20011e2d 90                     nop      
+20011e2e 90                     nop      
+20011e2f 90                     nop      
+
+FUNCTION 200129f0 ?IsWaitState@ArmyAgent@@QAEHXZ END 20012a30
+200129f0 8b4940                 mov      ecx, dword ptr [ecx + 0x40]
+200129f3 8d41f3                 lea      eax, [ecx - 0xd]
+200129f6 83f80b                 cmp      eax, 0xb
+200129f9 7715                   ja       0x20012a10
+200129fb 33c9                   xor      ecx, ecx
+200129fd 8a88242a0120           mov      cl, byte ptr [eax + 0x20012a24]
+20012a03 ff248d142a0120         jmp      dword ptr [ecx*4 + 0x20012a14]
+20012a0a b801000000             mov      eax, 1
+20012a0f c3                     ret      
+20012a10 33c0                   xor      eax, eax
+20012a12 c3                     ret      
+20012a13 90                     nop      
+20012a14 0a2a                   or       ch, byte ptr [edx]
+20012a16 0120                   add      dword ptr [eax], esp
+20012a18 0a2a                   or       ch, byte ptr [edx]
+20012a1a 0120                   add      dword ptr [eax], esp
+20012a1c 0a2a                   or       ch, byte ptr [edx]
+20012a1e 0120                   add      dword ptr [eax], esp
+20012a20 102a                   adc      byte ptr [edx], ch
+20012a22 0120                   add      dword ptr [eax], esp
+20012a24 0000                   add      byte ptr [eax], al
+20012a26 0303                   add      eax, dword ptr [ebx]
+20012a28 0101                   add      dword ptr [ecx], eax
+20012a2a 0101                   add      dword ptr [ecx], eax
+20012a2c 0101                   add      dword ptr [ecx], eax
+20012a2e 0302                   add      eax, dword ptr [edx]

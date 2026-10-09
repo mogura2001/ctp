@@ -1,0 +1,18 @@
+{
+    "variant":  "H1-I",
+    "mode":  "fixture",
+    "bitness":  32,
+    "helper_pid":  20380,
+    "module_base":  "0x08660000",
+    "preferred_base_reserved":  true,
+    "actual_rebase":  true,
+    "identity_AX_patterns":  65536,
+    "native_cases":  66158,
+    "stack_register_x87_memory_canaries":  true,
+    "context_branches":  true,
+    "signed16_highbits_positions":  true,
+    "global_z_WORD_highbits":  true,
+    "alternating_civ_context":  true,
+    "mapped_module_restored_unchanged":  true,
+    "pass":  true
+}

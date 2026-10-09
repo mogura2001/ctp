@@ -1,0 +1,22 @@
+{
+  "authorized_on": "2026-10-09",
+  "user_instruction": "je mag de pc dit keer uitzetten als het window is bereikt",
+  "expected_five_hour_reset_at_unix": 1791565859,
+  "remaining_percent_threshold": 5,
+  "single_use": true,
+  "requires_fresh_budget_metadata": true,
+  "requires_checkpoint_and_agents_stopped": true,
+  "force_apps": false,
+  "helper": "PROEVEN/Sluit-PC-Bij-Budgetstop.ps1",
+  "execution_record": "PROEVEN/budget-shutdown-window-1791565859.json",
+  "expires_on_window_reset": true,
+  "background_timer_installed": false,
+  "authorization_consumed": true,
+  "helper_command_accepted": true,
+  "helper_recorded_at_utc": "2026-10-09T13:44:57.6796452Z",
+  "physical_shutdown_verified": false,
+  "authorization_revoked": true,
+  "revoked_on": "2026-10-09",
+  "latest_user_instruction": "Stop met het afsluiten van mijn pc; alleen na een nieuwe expliciete opdracht.",
+  "future_budget_shutdown_allowed": false
+}

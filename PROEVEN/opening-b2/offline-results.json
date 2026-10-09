@@ -1,0 +1,35 @@
+{
+  "status": "OFFLINE CHECKED; candidate only, not installed or gameplay measured",
+  "variants": [
+    {
+      "variant": "B2a-N25-TECHNICAL",
+      "N_fixture": 25,
+      "candidate_sha256": "9553d440365b029d47cd5b6c0717e6e96a6c2aeac3b1052bb80293736d35667a",
+      "payload_bytes": 4348,
+      "decoded_instructions": 813,
+      "native_cases": 88,
+      "deterministic": true,
+      "PE_diff_CFG_ABI": true
+    },
+    {
+      "variant": "B2a-N30-TECHNICAL",
+      "N_fixture": 30,
+      "candidate_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "payload_bytes": 4348,
+      "decoded_instructions": 813,
+      "native_cases": 88,
+      "deterministic": true,
+      "PE_diff_CFG_ABI": true
+    }
+  ],
+  "protected_files_unchanged": 3090,
+  "previous_package_files_unchanged": 120,
+  "five_hook_preimages_and_targets": true,
+  "concrete_Load0_parent_fatal_branch": true,
+  "save_cdecl_fatal_no_success_return": true,
+  "legacy_cursor_native_fixtures": true,
+  "original_T0_unchanged": true,
+  "actual_engine_T0_load_or_active_Theocracy_binding_measured": false,
+  "production_N_chosen": false,
+  "pass": true
+}

@@ -1,0 +1,26 @@
+{
+  "labels": {},
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov edx,('ecx', 24)",
+      "bytes": "8b9118000000"
+    },
+    {
+      "offset": 6,
+      "asm": "inc ('edx', 0)",
+      "bytes": "ff8200000000"
+    },
+    {
+      "offset": 12,
+      "asm": "cmp eax,eax",
+      "bytes": "3bc0"
+    },
+    {
+      "offset": 14,
+      "asm": "ret4",
+      "bytes": "c20400"
+    }
+  ],
+  "fixups": []
+}
