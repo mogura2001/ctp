@@ -1,0 +1,7 @@
+# Rootreview Doel3-werkversie v1
+
+12 oktober 2026 17:28. Alle gewijzigde controllerhunks gelezen: unieke drie proeflabels, nieuwe toegestane InstallOnly-actie, dezelfde bestaande preflight/installbranch en een korte result/exitbranch onmiddellijk na CheckInstalled/Budget/count0 en vóór timers/Start. Geen spelstart in deze actie. RestoreNoStart met echte backups, afwijkingscontrole en versie-savearchivering blijft ongewijzigd.
+
+Controller SHA256 b96c810731e879df5bc8a98cff3fc56b0891bfe716bd34d335aaa28ce27d2443 bevestigd. Reader/core/manifest/deelnemers plus19variant/17baseline/17backupbestanden zijn door root opnieuw bytegewijs gelijk bevonden (57checks). Gameplaybytes zijn exact de gepaarde en herlaadgeteste versie. Syntax0 en actuele118werkpins/3manifesten door uitvoerder gemeten; de bestaande preflight moet deze direct vóór installatie opnieuw controleren. Onverwachte wijzigingen worden niet teruggedraaid.
+
+Vrijgave: één InstallOnly -Arm variant, geen nieuwe partij; postflight19variant-hashes en beschermde bestanden/saves/profiel plus CountZero/result controleren. Geteste kandidaat blijft daarna in CTP-proef geïnstalleerd. Alleen bij concrete fout passende bestaande RestoreNoStart na CountZero en bewijs van eigeninstallatie, geen automatische herstart/forceclose. Uitvoerder maakt korte feitelijke geïnstalleerde README; root beheert centrale doelacceptatie/versie/status. Pc aan.

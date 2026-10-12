@@ -1,0 +1,175 @@
+{
+  "state": "PREPARED_ONLY_NOT_INSTALLED",
+  "created_at": "2026-10-11T16:00:35.653428+02:00",
+  "design_sha256": "ea5140b5505c11f457bdcdc3cf41fcc023e277bf247866228ad356919c9ef40e",
+  "direct_b2b_manifest": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/manifest.json",
+  "direct_b2b_manifest_sha256": "e1bacd6b0fbed849563fb167b2aae6f9b2cdf01878ddc03a3756698f97e2c5a1",
+  "existing_protected_manifest": "PROEVEN/opening-b2/protected-before.json",
+  "existing_protected_manifest_sha256": "bceb37b75c446dc0ffab70c6dc62cbb087fb42db511e859e2e7beee7ba6ea207",
+  "checked_existing_sources": 118,
+  "candidate_files": [
+    {
+      "candidate": "inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "size": 15146,
+      "mode": "B2B_UNCHANGED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/inputs.fli",
+      "direct_baseline_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a"
+    },
+    {
+      "candidate": "set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "size": 67,
+      "mode": "B2B_UNCHANGED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/set_govern_opening.fli",
+      "direct_baseline_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2"
+    },
+    {
+      "candidate": "set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "size": 4201,
+      "mode": "B2B_UNCHANGED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/set_govern_after_opening.fli",
+      "direct_baseline_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707"
+    },
+    {
+      "candidate": "beginturnCleric.fli",
+      "sha256": "1b94b2ba48ed367e359461d9dff31a034e5c05a998370bf24a27f196db7ea91a",
+      "size": 818,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnCleric.fli",
+      "direct_baseline_sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e"
+    },
+    {
+      "candidate": "beginturnSlaver.fli",
+      "sha256": "4801d411dc763a87bfe7a8518709d6432d69870cb06795557b485438b9181eb6",
+      "size": 774,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnSlaver.fli",
+      "direct_baseline_sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa"
+    },
+    {
+      "candidate": "beginturnSciFew.fli",
+      "sha256": "5f9b84f2cb4ebc7e128fe7d755a0cdff4a650e8ffb54e754299276e2b845018e",
+      "size": 765,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnSciFew.fli",
+      "direct_baseline_sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652"
+    },
+    {
+      "candidate": "beginturnSciMany.fli",
+      "sha256": "47f39420522f34d196ca32992bc723a4e6e8798b4b0a84a56fcaae6a044fba92",
+      "size": 774,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnSciMany.fli",
+      "direct_baseline_sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e"
+    },
+    {
+      "candidate": "beginturnWarFew.fli",
+      "sha256": "eb532abfd0d07d851ceb8b42d225772fdfad543d10d9535a7be8cb17f67db93f",
+      "size": 767,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnWarFew.fli",
+      "direct_baseline_sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b"
+    },
+    {
+      "candidate": "beginturnWarMany.fli",
+      "sha256": "ffdab51510c571d6e4aada43a6c28f8d454ef95db4a3a35ee93abefaffb4b303",
+      "size": 763,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturnWarMany.fli",
+      "direct_baseline_sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a"
+    },
+    {
+      "candidate": "beginturn.fli",
+      "sha256": "f04252dc010bf339605ceb60550d1aa3b9de1ed7959ec4fee3d5b3e9703649b9",
+      "size": 621,
+      "mode": "B2C_MODIFIED",
+      "direct_baseline": "PROEVEN/opening-b2/regering-b2b/20261010T180801159/candidate/beginturn.fli",
+      "direct_baseline_sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103"
+    },
+    {
+      "candidate": "AIPs/opening_research.aip",
+      "sha256": "4a1c2122423a9c4f39e855a1c29837213e25181db414ea7213179e7320226c01",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_default.aip",
+      "sha256": "4a1c2122423a9c4f39e855a1c29837213e25181db414ea7213179e7320226c01",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_cleric.aip",
+      "sha256": "1cc0f759bbbd16ae292c439bf7d47ca5b9e647878685e4ccd087fc94c02c997a",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_slaver.aip",
+      "sha256": "42b83a4781ee12d8cae5e2368fefbe515fe45fe9ba8a87afde3b052533b1dc90",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_scifew.aip",
+      "sha256": "91accb25bd397dee941bf43ff7f726e8a7b75eaf3dacc88adc501c7898adc289",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_scimany.aip",
+      "sha256": "12f5f1196591505449efa63a4db74bb0c5ddb76fbe68b23838110b95956af87b",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_milfew.aip",
+      "sha256": "27e5bde88f3215933ccefe7e6a81dc71b3126d0ad1f99c647608acd9f18b4a47",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "AIPs/opening_restore_milmany.aip",
+      "sha256": "c14bd7644f7ae61b79eb5e78745d94abf1a156fd9ca7f853e0b57ddad2b6a096",
+      "size": 2866,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    },
+    {
+      "candidate": "load_opening_research.fli",
+      "sha256": "4c97bd103b73265c8211b689ada7d022b70a72dd7e532f6dad84d7b7412b4eae",
+      "size": 67,
+      "mode": "B2C_NEW",
+      "direct_baseline": null,
+      "direct_baseline_sha256": null
+    }
+  ],
+  "combined_candidate_count": 19,
+  "b2c_changed_or_new_count": 16,
+  "byte_identical_carried_b2b_count": 3,
+  "direct_backup_count": 18,
+  "selected_N": null,
+  "workversion_changed": false,
+  "native_changed": false,
+  "native_parser": "NOT_TESTED",
+  "native_action_pass": "NOT_TESTED",
+  "research_selection": "NOT_TESTED",
+  "real_game": "NOT_TESTED"
+}

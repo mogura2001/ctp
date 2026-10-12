@@ -1,0 +1,29 @@
+--- previous-approved/Doel3.ps1
++++ baseline2/Doel3.ps1
+@@ -76,7 +76,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'N30'}else{'ORIGINAL'}
+- $labelPath=Join-Path $saveDir ('DOEL3-20261012T122000-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('DOEL3-20261012T165300-baseline2-'+$version+'-AUTOSAVE')
+  if(Test-Path -LiteralPath $labelPath){throw 'Owned visible autosave label already exists; do not overwrite.'}
+  $exists=Test-Path -LiteralPath $autoPath;$hash=$null
+  if($exists){$hash=Hash $autoPath;Copy-Item -LiteralPath $autoPath -Destination (Join-Path $armDir 'AUTOSAVE.before');if((Hash (Join-Path $armDir 'AUTOSAVE.before')) -ne $hash){throw 'Pre-run autosave backup mismatch.'}}
+@@ -90,7 +90,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'N30'}else{'ORIGINAL'}
+- $labelPath=Join-Path $saveDir ('DOEL3-20261012T122000-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('DOEL3-20261012T165300-baseline2-'+$version+'-AUTOSAVE')
+  if($before.path -cne $autoPath -or $before.visible_label -cne $labelPath -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($autoPath)) -cne $saveDir -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($labelPath)) -cne $saveDir){throw 'Exact autosave/label targets escaped the named save directory.'}
+  $present=Test-Path -LiteralPath $autoPath;$current=if($present){Hash $autoPath}else{$null}
+  if($present -eq $before.existed -and $current -eq $before.sha256){JsonFile @{status='UNCHANGED_DEFAULT';before_sha256=$before.sha256;after_sha256=$current;named_saves_not_reverted=$true} 'autosave-archive.json';return}
+@@ -138,7 +138,7 @@
+  $oldErrorAction=$ErrorActionPreference
+  try{
+   $ErrorActionPreference='Continue'
+-  $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012T122000-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
++  $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012T165300-baseline2-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
+   $readerCode=$LASTEXITCODE
+  }finally{$ErrorActionPreference=$oldErrorAction}
+  $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8

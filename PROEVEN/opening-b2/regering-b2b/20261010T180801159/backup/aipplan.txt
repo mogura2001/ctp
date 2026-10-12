@@ -1,0 +1,33 @@
+1) Step 1 -- personality
+	beginturn_sci_big.fli -- Settle wide plus higher buildings and defense -- 10-20% PW -- 5 Turn to Adv
+	beginturn_sci_many.fli -- Settle near plus higher buildings and defense -- 5 Turn to Adv
+	beginturn_mil_big.fli -- Settle wide plus military units, no walls -- 10-20% PW -- 8 Turn to Adv
+	beginturn_mil_many.fli -- Settle near plus military units, no walls -- 8 Turns to Adv
+
+	personality_sci_big.fli -- loads proper aips, flis
+	personality_sci_many.fli -- loads proper aips, flis
+	personality_mil_big.fli -- loads proper aips, flis
+	personality_mil_many.fli -- loads proper aips, flis
+
+1a) Step 1a -- avoid duplicate code
+	Each fli now consists of a number of included fli files. This avoids any code dupication.
+	The files are:
+
+	input.fli -- all input data for beginturn
+	output.fli -- all output data for beginturn
+
+	selectpop.fli -- place workers based on how many resources are incoming
+
+	food_or_prod.fli -- rules to divide workers between food and production tiles based on city size.
+
+	budget.fli -- rules to set Wages
+
+	aiploader.fli -- rules to load aips for war, peace, islands
+
+	
+2) Step 2 -- AIPs
+	early_science.AIP -- rush to University, ratio attack:defense 1:5 units
+	early_mil.aip -- rush to Knight, ratio attack:defense 2:1 units
+
+3) Step 3 -- Profile
+	Change the profile to support the four personalities.

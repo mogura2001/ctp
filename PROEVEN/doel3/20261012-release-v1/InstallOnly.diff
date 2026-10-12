@@ -1,0 +1,128 @@
+--- accepted-baseline2/Doel3.ps1
++++ release-v1/Doel3.ps1
+@@ -1,14 +1,14 @@
+ param(
+- [Parameter(Mandatory=$true)][ValidateSet('InstallStart','Guard','Capture','Read','Pass','Finish','RestoreNoStart')][string]$Action,
++ [Parameter(Mandatory=$true)][ValidateSet('InstallStart','InstallOnly','Guard','Capture','Read','Pass','Finish','RestoreNoStart')][string]$Action,
+  [ValidateSet('variant','baseline')][string]$Arm='variant',
+  [int]$Turn=0,[string]$Previous='', [string]$Label='checkpoint'
+ )
+ $ErrorActionPreference='Stop'
+ $workspace='C:\GIT\ctp';$package=$PSScriptRoot;$armDir=Join-Path $package $Arm
+ $exe=Join-Path $workspace 'CTP-proef\ctp_program\ctp\civctp.exe'
+ $tool=Join-Path $workspace 'PROEVEN\Bedien-CTP.ps1'
+ $python='C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe'
+ $manifest=Get-Content (Join-Path $package 'manifest.json') -Raw -Encoding utf8|ConvertFrom-Json
+ $toolHash='d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74'
+ $variant=if($Arm -eq 'variant'){'B2a-N30-TECHNICAL'}else{'original'}
+ if(!(Test-Path -LiteralPath $armDir)){New-Item -ItemType Directory -Path $armDir|Out-Null}
+@@ -67,39 +67,39 @@
+  }
+  foreach($entry in $manifest.files){
+   $expected=$entry.("${Arm}_sha256");$target=Join-Path $workspace $entry.path
+   if($null -eq $expected){if(Test-Path -LiteralPath $target){throw 'New FLI unexpectedly present in baseline.'}}
+   elseif((Hash $target) -ne $expected){throw "Installed changed-file mismatch: $($entry.path)"}
+  }
+ }
+ function SaveAutosaveBefore {
+  CountZero
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'N30'}else{'ORIGINAL'}
+- $labelPath=Join-Path $saveDir ('DOEL3-20261012T165300-baseline2-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('DOEL3-20261012-release-v1-'+$version+'-AUTOSAVE')
+  if(Test-Path -LiteralPath $labelPath){throw 'Owned visible autosave label already exists; do not overwrite.'}
+  $exists=Test-Path -LiteralPath $autoPath;$hash=$null
+  if($exists){$hash=Hash $autoPath;Copy-Item -LiteralPath $autoPath -Destination (Join-Path $armDir 'AUTOSAVE.before');if((Hash (Join-Path $armDir 'AUTOSAVE.before')) -ne $hash){throw 'Pre-run autosave backup mismatch.'}}
+  JsonFile @{path=$autoPath;existed=$exists;sha256=$hash;visible_label=$labelPath;version=$version} 'autosave-before.json'
+ }
+ function ArchiveAndRestoreAutosave {
+  CountZero
+  $beforePath=Join-Path $armDir 'autosave-before.json'
+  if(!(Test-Path -LiteralPath $beforePath)){throw 'Missing real pre-run autosave record; no restore.'}
+  $before=Get-Content -LiteralPath $beforePath -Raw -Encoding utf8|ConvertFrom-Json
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'N30'}else{'ORIGINAL'}
+- $labelPath=Join-Path $saveDir ('DOEL3-20261012T165300-baseline2-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('DOEL3-20261012-release-v1-'+$version+'-AUTOSAVE')
+  if($before.path -cne $autoPath -or $before.visible_label -cne $labelPath -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($autoPath)) -cne $saveDir -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($labelPath)) -cne $saveDir){throw 'Exact autosave/label targets escaped the named save directory.'}
+  $present=Test-Path -LiteralPath $autoPath;$current=if($present){Hash $autoPath}else{$null}
+  if($present -eq $before.existed -and $current -eq $before.sha256){JsonFile @{status='UNCHANGED_DEFAULT';before_sha256=$before.sha256;after_sha256=$current;named_saves_not_reverted=$true} 'autosave-archive.json';return}
+  if(!$present){throw 'Default autosave unexpectedly absent; preserve state, no DLL restoration.'}
+  if(Test-Path -LiteralPath $labelPath){throw 'Visible autosave label exists; do not overwrite.'}
+  $archive=Join-Path $armDir ('AUTOSAVE.after-'+$version)
+  Copy-Item -LiteralPath $autoPath -Destination $archive
+  if((Hash $archive) -ne $current -or (Hash $autoPath) -ne $current){throw 'Own autosave archive/source changed; no default restore.'}
+  Copy-Item -LiteralPath $autoPath -Destination $labelPath
+  if((Hash $labelPath) -ne $current -or (Hash $autoPath) -ne $current){throw 'Visible versioned autosave copy/source mismatch.'}
+  JsonFile @{status='ARCHIVED_BOTH_COPIES_BEFORE_DEFAULT_RESTORE';before_sha256=$before.sha256;generated_sha256=$current;archive=$archive;visible_label=$labelPath;version=$version;required_dll_sha256=if($Arm -eq 'variant'){'eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'}else{'3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44'};named_saves_not_reverted=$true} 'autosave-archive.json'
+  CountZero
+@@ -129,61 +129,65 @@
+   elseif(Test-Path -LiteralPath $target){Remove-Item -LiteralPath $target}
+  }
+  $checks=@(foreach($entry in $manifest.files){$target=Join-Path $workspace $entry.path;$present=Test-Path -LiteralPath $target;$hash=if($present){Hash $target}else{$null};@{path=$entry.path;present=$present;sha256=$hash;match=($present -eq $entry.existed -and $hash -eq $entry.before_sha256)}})
+  JsonFile @{at=(Get-Date).ToString('o');mode='OWN_INSTALLATION_COUNT0_RESTORE';all_civctp_count=0;files=$checks;profile_sha256=(Hash (Join-Path $workspace 'CTP-proef\ctp_program\ctp\userprofile.txt'));autosave_report=(Join-Path $armDir 'autosave-archive.json');save_bytes_preserved_in_original_and_versioned_archives=$true;named_saves_not_reverted=$true} 'restore.json'
+  if(@($checks|Where-Object{!$_.match}).Count){throw 'Restoration mismatch.'}
+ }
+ function ReadSnapshot($started,$name,$turn){
+  OwnState $started -BindWindow|Out-Null
+  $output=Join-Path $armDir $name
+  $oldErrorAction=$ErrorActionPreference
+  try{
+   $ErrorActionPreference='Continue'
+-  $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012T165300-baseline2-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
++  $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012-release-v1-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
+   $readerCode=$LASTEXITCODE
+  }finally{$ErrorActionPreference=$oldErrorAction}
+  $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+  if($readerCode -ne 0){
+   if(Test-Path -LiteralPath $output){$rejected=Get-Content -LiteralPath $output -Raw -Encoding utf8|ConvertFrom-Json;if($rejected.status -ceq 'rejected' -and $rejected.error -ceq 'Unstable complete snapshot; no turn acceptance'){throw 'UNSTABLE_DATASET_RETRY_ONLY'}}
+   throw 'Fatal snapshot rejection; no turn acceptance/retry.'
+  }
+  $value=Get-Content $output -Raw -Encoding utf8|ConvertFrom-Json
+  if($value.instance.pid -ne $started.pid -or [Math]::Floor(([decimal]$value.instance.creationtime_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms){throw 'Reader process creationtime mismatch.'}
+  OwnState $started -BindWindow|Out-Null
+  return $value
+ }
+ Budget
+ if((Hash $tool) -ne $toolHash){throw 'Reviewed Bedien-CTP changed.'}
+ if($Action -eq 'RestoreNoStart'){RestoreOwnInstallation;exit}
+-if($Action -eq 'InstallStart'){
++if($Action -in @('InstallStart','InstallOnly')){
+  if(Test-Path -LiteralPath (Join-Path $armDir 'execution.json')){throw 'Arm already attempted; no automatic retry/start.'}
+  CountZero
+  if((Hash (Join-Path $workspace 'ONTWERP\DOEL3-GAMEPLAYBEWIJS.md')) -ne $manifest.proposal_sha256){throw 'Reviewed goal3 proposal changed.'}
+  foreach($pin in $manifest.input_manifests){if((Hash (Join-Path $workspace $pin.path)) -ne $pin.sha256){throw 'Pinned B1/B2a/B2b input manifest changed.'}}
+  foreach($savePath in $manifest.T0_paths){if((Hash (Join-Path $workspace $savePath)) -ne $manifest.T0_sha256){throw 'Fixed T0 changed; no install/start.'}}
+  foreach($pin in $manifest.protected){if((Hash (Join-Path $workspace $pin.path)) -ne $pin.sha256){throw 'Pre-run protected/current pin changed; no install.'}}
+  foreach($entry in $manifest.files){
+   $target=Join-Path $workspace $entry.path
+   if($entry.existed){if((Hash $target) -ne $entry.before_sha256 -or (Hash (Join-Path (Join-Path $package 'backups') $entry.path)) -ne $entry.before_sha256){throw 'True pre-run/backup identity changed.'}}
+   elseif(Test-Path -LiteralPath $target){throw 'Previously absent FLI now exists; no overwrite.'}
+   $expected=$entry.("${Arm}_sha256");if($null -ne $expected){$source=Join-Path (Join-Path $package ('candidate\'+$Arm)) $entry.path;if((Hash $source) -ne $expected){throw 'Candidate changed before any installation.'}}
+  }
+  SaveAutosaveBefore
+  JsonFile @{at=(Get-Date).ToString('o');install_attempted=$true;arm=$Arm} 'execution.json'
+  CountZero
+  foreach($entry in $manifest.files){
+   $source=Join-Path (Join-Path $package ('candidate\'+$Arm)) $entry.path;$target=Join-Path $workspace $entry.path;$expected=$entry.("${Arm}_sha256")
+   if($null -ne $expected){if((Hash $source) -ne $expected){throw 'Prepared candidate hash changed.'};Copy-Item -LiteralPath $source -Destination $target}
+  }
+  CheckInstalled;Budget;CountZero
++ if($Action -eq 'InstallOnly'){
++  JsonFile @{at=(Get-Date).ToString('o');state='INSTALLED_ONLY_NOT_STARTED';arm=$Arm;variant=$variant;N=30;installed_file_count=19;all_civctp_count=0;start_called=$false;restore_action='RestoreNoStart'} 'install-result.json'
++  Write-Output 'Installed the reviewed goal3 files only; no game Start.';exit
++ }
+  $ticks=[Diagnostics.Stopwatch]::GetTimestamp()
+  $result=& powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $tool -Action Start 2>&1;$code=$LASTEXITCODE
+  $result|Set-Content -LiteralPath (Join-Path $armDir 'start-stdout.txt') -Encoding utf8
+  $match=[regex]::Match(($result -join "`n"),'process (\d+)\.')
+  if($code -ne 0 -or !$match.Success){throw 'Start failed; no retry. Preserve install state for reviewed cleanup.'}
+  $targetPid=[int]$match.Groups[1].Value;$rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop)
+  if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $targetPid -or $rows[0].ExecutablePath -cne $exe){throw 'Immediate start binding failed.'}
+  $started=[ordered]@{pid=$targetPid;exe=$exe;creation_utc_ms=([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds();start_monotonic_ticks=$ticks;monotonic_frequency=[Diagnostics.Stopwatch]::Frequency;handle=0}
+  JsonFile $started 'start-record.json'
+  # Intro is already known to take about180s; no input/focus tricks during it.
+  $until=[DateTime]::UtcNow.AddSeconds(210);$stable=$null;$stableSince=$null;$lastBudget=[DateTime]::UtcNow
+  while([DateTime]::UtcNow -lt $until){

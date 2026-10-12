@@ -59,6 +59,10 @@ Voortgang naar de gebruiker bestaat uit korte relevante bevindingen. Eindig niet
 
 ## Voortgang: minstens iedere tien minuten
 
+Gebruik [TUSSENDOELEN.md](TUSSENDOELEN.md) voor acceptatiegrenzen en het vaste voortgangsblok: tussendoel/checkpoint, bevestigde rol/runtime, aantoonbaar af, concrete open punten, volgende reviewbare oplevering/blokkade. Iedere gerichte analistopdracht krijgt vooraf een eindige lijst beslisvragen; rapporteer beantwoorde versus resterende vragen, geen verzonnen totaalpercentage. Analyse gereed, voorstel gereed, technisch gecontroleerd en gameplay aangetoond blijven afzonderlijke opleveringen.
+
+Aanvulling9 oktober: geef aan het einde van iedere werkperiode, ook bij onderbreking/budgetstop, een zelf-contained eindrapport per betrokken tussendoel: geboekte voortgang sinds begin, huidige acceptatiestatus, relevante bewijsbestanden, concrete resterende punten en eerstvolgende oplevering. Bij stagnatie expliciet geen voortgang en de oorzaak melden; geef aan welk werk nog draait of gestopt is. Budgetgrenzen geven uitsluitend opdracht tot projectstop/checkpoint, nooit tot pc-afsluiting. Alle oude afsluittoestemmingen zijn ingetrokken; pc blijft aan zonder een nieuwe expliciete opdracht.
+
 De gebruiker wil tijdens actieve agentruns minstens iedere tien minuten feedback, ook wanneer er geen nieuwe conclusie is. Deze afspraak geldt voor analist, ontwerper, uitvoerder en coördinator.
 
 - Meld bij de start welke concrete taak je uitvoert. Controleer de verstreken kloktijd tijdens het werk; niet alleen het aantal stappen of tokens.
@@ -73,6 +77,8 @@ De gebruiker wil tijdens actieve agentruns minstens iedere tien minuten feedback
 Dit is een afspraak voor actief werk, geen los ingestelde timer of geplande taak. Een gestopte sessie kan geen periodieke status versturen. Claim geen lopende activiteit uitsluitend op basis van een oud voortgangsbestand; controleer de runtime. Doelmodus of scheduling wordt niet geactiveerd door het schrijven van deze afspraak.
 
 ## Gebruiksbudget: waarschuwing, stop en hervatten
+
+**Actuele afspraak:** de laatst aangeleverde AGENTS.md-instructie trekt alle eerdere afsluittoestemmingen in. Ook [het opdrachtrecord van 10 oktober](PROEVEN/AFSLUITOPDRACHT-2026-10-10.json) is daarom ingetrokken zonder uitvoering. Bij iedere budgetgrens uitsluitend projectwerk/agents stoppen en hervatpunt bewaren; pc aanlaten. Geen afsluithelper, commando of planning zonder een nieuwe expliciete afsluitopdracht.
 
 Actuele gebruikersafspraak: sluit de pc alleen af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Een budgetgrens op zichzelf stopt uitsluitend het projectwerk; bewaar het hervatpunt en laat de pc aan. Eerdere afgehandelde afsluitopdrachten vormen geen doorlopende toestemming. De helper PROEVEN/Sluit-PC-Bij-Budgetstop.ps1 vereist de expliciete vlag UserRequestedShutdown, die uitsluitend bij een nieuwe gebruikersopdracht mag worden meegegeven. Geen achtergrondtimer of automatische herstart ingesteld.
 

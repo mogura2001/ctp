@@ -1,0 +1,150 @@
+﻿diff --git "a/C:\\GIT\\ctp\\PROEVEN\\hoststart-controle\\2026-10-10\\original-menu-focus-20261010T121931869\\Bedien-CTP.before.ps1" "b/C:\\GIT\\ctp\\PROEVEN\\Bedien-CTP.ps1"
+index d2032b5..5e39b39 100644
+--- "a/C:\\GIT\\ctp\\PROEVEN\\hoststart-controle\\2026-10-10\\original-menu-focus-20261010T121931869\\Bedien-CTP.before.ps1"
++++ "b/C:\\GIT\\ctp\\PROEVEN\\Bedien-CTP.ps1"
+@@ -7,9 +7,24 @@ param(
+     [int]$ToY,
+     [Nullable[int]]$FromX,
+     [Nullable[int]]$FromY,
+-    [switch]$ResetCursor
++    [switch]$ResetCursor,
++    [switch]$CaptureWaitForForeground,
++    [ValidateRange(1,30000)][int]$CaptureWaitTimeoutMs = 30000,
++    [int]$ExpectedProcessId,
++    [long]$ExpectedCreationUtcMs,
++    [long]$ExpectedWindowHandle
+ )
+ $ErrorActionPreference = 'Stop'
++$captureParameterNames = @('CaptureWaitForForeground','CaptureWaitTimeoutMs','ExpectedProcessId','ExpectedCreationUtcMs','ExpectedWindowHandle')
++$boundCaptureParameters = @($captureParameterNames | Where-Object { $PSBoundParameters.ContainsKey($_) })
++if ($boundCaptureParameters.Count -gt 0) {
++    if ($Action -ne 'Capture') { throw 'Capture wait parameters require Action Capture.' }
++    if (-not $CaptureWaitForForeground) { throw 'Capture binding/timeout parameters require CaptureWaitForForeground.' }
++    foreach ($bindingName in @('ExpectedProcessId','ExpectedCreationUtcMs','ExpectedWindowHandle')) {
++        if (-not $PSBoundParameters.ContainsKey($bindingName)) { throw "Capture wait requires $bindingName." }
++    }
++    if ($ExpectedProcessId -le 0 -or $ExpectedWindowHandle -eq 0) { throw 'Capture wait requires a positive PID and nonzero window handle.' }
++}
+ $probeRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../CTP-proef'))
+ $exePath = Join-Path $probeRoot 'ctp_program/ctp/civctp.exe'
+ $outputRoot = Join-Path $PSScriptRoot 'automatisering'
+@@ -52,11 +67,18 @@ if ($Action -eq 'Start') {
+     Write-Output "Started probe installation, process $($newProcess.Id)."
+     exit
+ }
+-$candidates = @(Get-Process civctp -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $exePath })
+-if ($candidates.Count -ne 1) { throw 'Expected exactly one running civctp from CTP-proef.' }
+-$gameProcess = $candidates[0]
+-$gameProcess.Refresh()
+-$windowHandle = $gameProcess.MainWindowHandle
++try {
++    $candidates = @(Get-Process civctp -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $exePath })
++    if ($candidates.Count -ne 1) { throw 'Expected exactly one running civctp from CTP-proef.' }
++    $gameProcess = $candidates[0]
++    $gameProcess.Refresh()
++    $windowHandle = $gameProcess.MainWindowHandle
++} catch {
++    if ($CaptureWaitForForeground) {
++        Write-Output ('CaptureForegroundTrace ' + ([ordered]@{expected_pid=$ExpectedProcessId;expected_creation_utc_ms=$ExpectedCreationUtcMs;expected_window_handle=$ExpectedWindowHandle;checked_at_utc=[DateTime]::UtcNow.ToString('o');result='REJECTED';error=$_.Exception.Message} | ConvertTo-Json -Compress))
++    }
++    throw
++}
+ if ($Action -eq 'DismissError') {
+     [CtpWindow]::EnumWindows({ param($h,$p)
+         $ownerPid = [uint32]0
+@@ -93,6 +115,95 @@ if ($Action -eq 'Status') {
+     }, [IntPtr]::Zero) | Out-Null
+     exit
+ }
++if ($CaptureWaitForForeground) {
++    $waitClock = [Diagnostics.Stopwatch]::StartNew()
++    $waitBeginUtc = [DateTime]::UtcNow
++    $captureTrace = [ordered]@{
++        expected_pid=$ExpectedProcessId; expected_creation_utc_ms=$ExpectedCreationUtcMs
++        expected_exe=$exePath; expected_window_handle=$ExpectedWindowHandle
++        wait_begin_utc=$waitBeginUtc.ToString('o'); deadline_utc=$waitBeginUtc.AddMilliseconds($CaptureWaitTimeoutMs).ToString('o')
++        timeout_ms=$CaptureWaitTimeoutMs; samples=[Collections.Generic.List[object]]::new()
++        bounds=$null; result='REJECTED'; error=$null
++    }
++    $checkCaptureDeadline = {
++        if ($waitClock.Elapsed.TotalMilliseconds -ge $CaptureWaitTimeoutMs) { throw 'Capture foreground deadline exceeded.' }
++    }
++    $readCaptureBinding = {
++        param([string]$Stage)
++        & $checkCaptureDeadline
++        $sample = [ordered]@{stage=$Stage;at_utc=[DateTime]::UtcNow.ToString('o');elapsed_ms=$waitClock.Elapsed.TotalMilliseconds}
++        $captureTrace.samples.Add($sample)
++        $metadata = @(Get-CimInstance Win32_Process -Filter "ProcessId=$ExpectedProcessId" -ErrorAction Stop)
++        if ($metadata.Count -ne 1) { throw 'Original capture PID is absent or ambiguous.' }
++        $creationMs = ([DateTimeOffset]$metadata[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds()
++        $sample.pid = [int]$metadata[0].ProcessId
++        $sample.creation_utc_ms = $creationMs
++        $sample.exe = $metadata[0].ExecutablePath
++        if ($sample.pid -ne $ExpectedProcessId -or $creationMs -ne $ExpectedCreationUtcMs -or $sample.exe -cne $exePath) { throw 'Original capture process identity changed.' }
++        $gameProcess.Refresh()
++        $sample.process_object_pid = $gameProcess.Id
++        $sample.process_object_exe = $gameProcess.Path
++        $sample.window_handle = $gameProcess.MainWindowHandle.ToInt64()
++        if ($gameProcess.Id -ne $ExpectedProcessId -or $sample.process_object_exe -cne $exePath -or $sample.window_handle -eq 0 -or $sample.window_handle -ne $ExpectedWindowHandle) { throw 'Original capture main-window binding changed.' }
++        $ownerPid = [uint32]0
++        $ownerThread = [CtpWindow]::GetWindowThreadProcessId($gameProcess.MainWindowHandle, [ref]$ownerPid)
++        $sample.owner_matches = ($ownerThread -ne 0 -and $ownerPid -eq $ExpectedProcessId)
++        if (-not $sample.owner_matches) { throw 'Original capture window owner changed or is unreadable.' }
++        $sample.foreground_handle = [CtpWindow]::GetForegroundWindow().ToInt64()
++        $sample.completed_at_utc = [DateTime]::UtcNow.ToString('o')
++        $sample.completed_elapsed_ms = $waitClock.Elapsed.TotalMilliseconds
++        & $checkCaptureDeadline
++        return $sample.foreground_handle
++    }
++    try {
++        if ($gameProcess.Id -ne $ExpectedProcessId -or $windowHandle.ToInt64() -ne $ExpectedWindowHandle) { throw 'Selected probe is not the original capture binding.' }
++        while ((& $readCaptureBinding 'poll') -ne $ExpectedWindowHandle) {
++            $remainingMs = [Math]::Floor($CaptureWaitTimeoutMs - $waitClock.Elapsed.TotalMilliseconds)
++            if ($remainingMs -lt 1) { throw 'Capture foreground deadline exceeded.' }
++            Start-Sleep -Milliseconds ([int][Math]::Min(100, $remainingMs))
++        }
++        if (($CaptureWaitTimeoutMs - $waitClock.Elapsed.TotalMilliseconds) -lt 350) { throw 'Capture deadline leaves insufficient time for 350ms foreground settling.' }
++        $captureTrace.settle_begin_elapsed_ms = $waitClock.Elapsed.TotalMilliseconds
++        Start-Sleep -Milliseconds 350
++        if ((& $readCaptureBinding 'after-350ms') -ne $ExpectedWindowHandle) { throw 'Original capture window lost foreground during settling.' }
++        $bounds = New-Object CtpWindow+Rect
++        if (-not [CtpWindow]::GetWindowRect($windowHandle, [ref]$bounds)) { throw 'Cannot read original capture window bounds.' }
++        $width = $bounds.Right - $bounds.Left
++        $height = $bounds.Bottom - $bounds.Top
++        $captureTrace.bounds = [ordered]@{left=$bounds.Left;top=$bounds.Top;right=$bounds.Right;bottom=$bounds.Bottom;width=$width;height=$height;at_utc=[DateTime]::UtcNow.ToString('o');elapsed_ms=$waitClock.Elapsed.TotalMilliseconds}
++        & $checkCaptureDeadline
++        if ($width -le 0 -or $height -le 0) { throw 'Invalid original capture window size.' }
++        $bitmap = New-Object Drawing.Bitmap($width, $height)
++        $graphics = $null
++        try {
++            $graphics = [Drawing.Graphics]::FromImage($bitmap)
++            if ((& $readCaptureBinding 'before-copy') -ne $ExpectedWindowHandle) { throw 'Original capture window is not foreground before copy.' }
++            $graphics.CopyFromScreen($bounds.Left, $bounds.Top, 0, 0, $bitmap.Size)
++            $captureTrace.after_copy_foreground = [ordered]@{handle=[CtpWindow]::GetForegroundWindow().ToInt64();at_utc=[DateTime]::UtcNow.ToString('o');elapsed_ms=$waitClock.Elapsed.TotalMilliseconds}
++            if ($captureTrace.after_copy_foreground.handle -ne $ExpectedWindowHandle) { throw 'Original capture window lost foreground during copy; capture rejected.' }
++            if ((& $readCaptureBinding 'after-copy') -ne $ExpectedWindowHandle) { throw 'Original capture window lost foreground during copy; capture rejected.' }
++            & $checkCaptureDeadline
++            $capturePath = Join-Path $outputRoot 'ctp-window.png'
++            $bitmap.Save($capturePath, [Drawing.Imaging.ImageFormat]::Png)
++            & $checkCaptureDeadline
++            $captureTrace.result = 'CAPTURE_SAVED_REQUIRES_IMAGE_REVIEW'
++            $captureTrace.capture_path = $capturePath
++            Write-Output $capturePath
++        } finally {
++            if ($null -ne $graphics) { $graphics.Dispose() }
++            $bitmap.Dispose()
++        }
++    } catch {
++        $captureTrace.error = $_.Exception.Message
++        throw
++    } finally {
++        $captureTrace.finished_at_utc = [DateTime]::UtcNow.ToString('o')
++        $captureTrace.elapsed_ms = $waitClock.Elapsed.TotalMilliseconds
++        $waitClock.Stop()
++        Write-Output ('CaptureForegroundTrace ' + ($captureTrace | ConvertTo-Json -Depth 8 -Compress))
++    }
++    exit
++}
+ if ($windowHandle -eq [IntPtr]::Zero) { throw 'The probe process has no main window.' }
+ if ([CtpWindow]::GetForegroundWindow() -ne $windowHandle) {
+     if (-not [CtpWindow]::SetForegroundWindow($windowHandle)) { throw 'Unable to foreground the game window.' }

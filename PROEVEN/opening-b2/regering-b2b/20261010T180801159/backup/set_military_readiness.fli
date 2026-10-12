@@ -1,0 +1,60 @@
+// set the military readiness 
+
+// war count is broken so I'm going to permanent war
+if(	zero_at_war 
+	and not yes_survival_mode_aip
+	and not hot_war_prep_with_most_hostile
+	and not a0to5_peace )
+	{
+		peace_military_readiness
+	}
+
+if(	zero_at_war
+	and a0to5_peace)
+	{
+		ready_military_readiness
+	}
+
+if( zero_at_war 
+	and hot_war_prep_with_most_hostile)
+	{
+		war_military_readiness
+	}
+
+if(	not zero_at_war)
+	{
+		war_military_readiness
+	}
+
+if(	yes_survival_mode_aip 
+	and zero_at_war)
+{
+	ready_military_readiness
+}
+
+// barbarians are always at war
+if(	zero_at_war 
+	and yes_barbarian)
+	{
+		war_military_readiness
+	}
+if(	not zero_at_war 
+	and yes_barbarian)
+	{
+		war_military_readiness
+	}
+
+// always be at war readiness for first 80 turns
+// to protect cities against barbarian raids
+// and to slow down 
+if ( yes_opening_gambit_time )
+	{
+		war_military_readiness
+	}
+
+if ( dangerously_low_unit_to_city_ratio
+	 and not a0to150_turns )
+	 {
+		yes_focus_on_units
+	}
+		

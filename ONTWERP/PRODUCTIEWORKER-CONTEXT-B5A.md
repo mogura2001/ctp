@@ -1,0 +1,31 @@
+# B5a — ontbrekende Happy90/a8-context, eerst gerichte statische binding
+
+Fase B, 10 oktober 2026, 19:15 Europe/Amsterdam. Gerichte aanvulling op [workerplan](PRODUCTIESTAD-WORKERPLAN-B5A.md); geen B5-implementatievrijgave. Doel blijft de ontwikkelde productiestad met drie unieke mijnbergen en één werkelijk voldoende voedselplek, inclusief gewone bonussen, groei naar4, extra bevolking en latere gezamenlijke bergketen-/kust-/queue-integratie. Geen beperking tot nulbonussteden om de gate te omzeilen.
+
+## Besluit en oorzaak
+
+Kies **eerst één kleine A-terugvraag naar ontbrekende statische writes en caller-volgorde**. [Crime-A](../ANALYSE/PRODUCTIEWORKER-CRIME-B5A.md), SHA `aa8860fae086a4d34b6b1863ecf94a6baa58cb92c545ab51f57bcebb6cdf0ea5`, en [cache-A](../ANALYSE/PRODUCTIEWORKER-CACHEBINDING-B5A.md), SHA `77a3e665dd370ed404a44f181c6dabe4c2f7a16e59198e60d2e9bf6d49a64554`, zijn analysebewijs, geen waargenomen epoch. De actuele a0-rekening is gebonden; guarded4aa7d0 vernieuwt +30 maar leest Happy+90. Projectie1/advance0 behoudt a8; projectie1/advance1 vernieuwt a8 evenmin. Native0/1 telt durationbijdragen vóór verwijderen en bewaart vervolgens de som: lijst opnieuw optellen kan de geldige laatste-roundbijdrage verliezen. Daarom geen fictieve verse cache, extra advance, actorreset of oude crime als nieuwe kandidaatcrime behandelen.
+
+Normale happiness-/crime-cache- en detailupdates zijn toegestaan mits hun echte mutaties, citybinding en epoch op deze grens gebonden zijn. Het normale snapshot/projectie/restoreprotocol en eventvrije a0-rekening blijven de beoogde vervolgrichting; geen nieuw foodbeleid of framework. Nog te bepalen is welke echte 90/a8-context de bestaande allocatie en relevante foodupdate gebruiken.
+
+## Eindige A-vraag; daarna stoppen
+
+1. **Happy+90-provenance:** identificeer de echte stores naar het Happy-object, inclusief initialisatie/load/assignment voor zover zij deze waarde leveren of vervangen; koppel hun base aan dezelfde City+5cc, niet alleen een willekeurige `[reg+90]`. Leg writerbytes/adressen, bronwaarde/ABI, City/owner/centrum/actorinputs en directe caller(s) vast. Geef welke concrete wijziging aan die inputs een normale refresh veroorzaakt, of toon precies de ontbrekende call-edge. Geen complete Happy-, afstands- of PlayerRoundsreconstructie.
+2. **a8-epoch:** vertrek uitsluitend van bewezen4ab0f0, stores4ab2f9/+2ff en nativecaller4926b4→4ab410(0,1). Bind overige daadwerkelijke a8-stores/copies die tussen die advance en allocatie kunnen komen, inclusief load/init als relevante oorsprong. Volg alleen de noodzakelijke directe caller-edge(s) om same-city volgorde te onderscheiden tegenover FSAllocatePopulation2002a820, de grens na20020f56/vóór20020fa9 en494970. Een aangetroffen caller is geen bewijs dat hij vóór deze allocatie loopt; geef branch-/round-/cityloopvoorwaarden of markeer de edge onbekend.
+3. **Gezamenlijke geldigheidsgrens:** lever per echt pad of90/a8 op allocatie bij dezelfde CityData/Happy/owner/centrum/actorcontext horen, en of vóór de relevante494970-foodupdate nog een gewone advance/contextwijziging tussenkomt. Eindproduct is een kleine write/caller-/ordermatrix met bewezen en ontbrekende edges. Geen gelijke bytes of ongewijzigde cache alleen als actualiteitsbewijs. Stop zodra de invariant onderbouwd is of precies de resterende runtimeonderscheiding is aangewezen.
+
+Onderzoek alleen de twee ontbrekende inputs en de relevante alloc→food-edge. Bestaande formule/getters/snapshot/workerallocatie niet herhalen. Ontbrekende orde mag als uitkomst worden overgedragen; geen algemene analyse om statische volledigheid af te dwingen. Kosten: eindige bodies/callerwindows, nul spelstarts en nul nieuwe observerbouw in deze stap.
+
+## Alleen als statische binding onvoldoende is
+
+Dan volgt **een afzonderlijk trace-B-besluit**, geen trace-C-vrijgave uit dit document. Minimale natuurlijke meetpunten:4ab0f0-entry/echte sumstore4ab2f9/+2ff, de door A nog te identificeren90-store, AI20020fa9 vóór minimumfood en relevante494970-entry. Alleen werkelijke native flags/writes/volgorde met sequence/thread/callnesting en dezelfde cityID/CityData/Happy/owner/centrum/actorcontext tellen; cachegelijkheid alleen bewijst geen actualiteit. Een echte last-roundentry vóór nativeverwijdering observeren, niet achteraf reconstrueren. Geen extra refresh/advance/Hwrite/actorreset/workerpreview.
+
+Tracevoorwaarden voor dat latere voorstel: exacte90-writerbytes en callretours uit A (nu onbekend), alle pinregisters/ABI/leesbounds, één ononderbroken PID/CreationDate/exe/modulebinding en exact gekozen variant. Engine SHA b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79/base400000/timestamp37d6f702; originele AI SHA3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44/base20000000/timestamp37b894e7. Adressen modulebase+RVA; andere baselinevariant apart pinnen. Bestaand H3-readerpakket bewijst geen Happy/epoch-ondersteuning. Geen nieuwe observerbouw of volledig protocol nu.
+
+## Acceptatie, herstel en overdracht
+
+Statische acceptatie vereist gebonden echte90-writerinputs, a8-origins en de relevante caller-/branchvolgorde. Alleen bewezen invariant levert materiaal voor een kleine B-inputaanvulling. Een eventuele beperkte trace bewijst uitsluitend haar gevolgde pad/epoch; ontbrekende events/gewijzigde identiteit of context geven UNKNOWN. Geen één-passmeting verheffen tot garantie voor alle load/advance/event/government/owner/centrum/actorveranderingen; ongedekte gevallen blijven dependencies, geen kleinere eindstrategie.
+
+De afgewikkelde H1-I-proef geeft geen volgende Start/T0/traceautorisatie. Latere trace-C vereist afzonderlijke rootreview/autorisatie, dezelfde vaste Deity-start/knowninputs/15pins/tool/profielevidence en begrensde éénpass, verse budget/count0/backup, vooraf klaarliggende normale close+observatie/herstel met sluitreserve. Geen retry/succeszoekrun; afwezige geschikte context is NOT_OBSERVABLE. Exact baselineherstel uitsluitend bij count0; open/unknown handoff zonder midprocess-copy. Geen code/tests/emitter/patch/gameactie in deze B-stap.
+
+**Checkpoint:** kleinste volgende stap is de gerichte statische write/caller-matrix.90/a8-epoch nog onbekend; geen B5-gate/implementatie- of gameplayvrijgave. Alleen bij aantoonbaar ontbrekende statische orde nieuw trace-B-besluit. Ontwerper stopt.

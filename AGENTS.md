@@ -10,6 +10,8 @@ De brede analyse M1/fase A is afgerond en overgedragen. PROJECTSTATUS.md bepaalt
 
 ## Weekbudget
 
+**Actuele instructie:** de laatst aangeleverde AGENTS.md-instructie trekt alle eerdere afsluittoestemmingen in. Ook [het ongebruikte record van 10 oktober](PROEVEN/AFSLUITOPDRACHT-2026-10-10.json) is ingetrokken zonder uitvoering. Bij iedere budgetgrens uitsluitend projectwerk stoppen en hervatpunt bewaren; pc aanlaten. Geen afsluithelper, commando of planning zonder een nieuwe expliciete afsluitopdracht.
+
 Sluit de pc uitsluitend af na een nieuwe, expliciete afsluitopdracht van de gebruiker. Het bereiken van een budgetgrens geeft geen toestemming voor een afsluitcommando: stop dan alleen projectwerk en bewaar het hervatpunt. Eerdere afsluitopdrachten zijn afgehandeld en gelden niet opnieuw.
 
 Laatste gebruikersinstructie9okt2026: stop met het afsluiten van de pc. De eenmalige opdracht is afgehandeld en alle eerdere afsluittoestemmingen zijn vervallen/ingetrokken. Bij iedere budgetgrens uitsluitend projectwerk stoppen en hervatpunt bewaren; pc aanlaten. Geen afsluithelper, afsluitcommando of afsluitplanning uitvoeren zonder een nieuwe, expliciete afsluitopdracht van de gebruiker. Een doelcontinuatie, reset of hervatting geeft die toestemming niet.
@@ -19,6 +21,8 @@ Waarschuw bij 25% of minder **resterend** accountweekbudget en stop/pauzeer alle
 ## Bestaande AI eerst
 
 Tijdens actief agentwerk geeft iedere rol minstens elke tien minuten korte voortgang, ook bij stagnatie. Vermeld afgerond werk, huidige activiteit, volgende uitkomst en blokkades; werk het eigen voortgangsbestand met tijdstip bij. Meld starten, afronden, onderbreken en wachten direct. De coördinerende agent geeft agentupdates tijdens een actieve run door aan de gebruiker. Zie AGENT-CTP.md voor de rapportageafspraak; dit activeert geen timer of planning wanneer geen agent draait.
+
+Rapporteer aan het einde van iedere werkperiode per tussendoel welke voortgang daadwerkelijk is geboekt, met huidige acceptatiestatus, bewijs, open punten en volgende concrete oplevering. Vermeld of werk nog actief is of gestopt. Bij budgetstop pc aanlaten; alle eerdere afsluittoestemmingen zijn ingetrokken. Zie TUSSENDOELEN.md voor het eindrapport.
 
 Lees ANALYSE/ARCHITECTUUR.md voor de bestandsopbouw en ANALYSE/AAIP-LESSEN.md voor de vergelijking. ANALYSE/INVENTARIS bevat de volledige bestandsvergelijking van default/aidata en default/gamedata, declaraties en diffs. PROEVEN/Inventariseer-AI.ps1 kan de kerninventaris opnieuw opbouwen.
 

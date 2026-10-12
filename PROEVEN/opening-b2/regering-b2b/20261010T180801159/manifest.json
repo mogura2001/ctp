@@ -1,0 +1,96 @@
+{
+  "state": "PREPARED_OFFLINE_TEXT_ONLY_NOT_INSTALLED",
+  "created_at": "2026-10-10T18:09:01.417772+02:00",
+  "design_sha256": "ea5140b5505c11f457bdcdc3cf41fcc023e277bf247866228ad356919c9ef40e",
+  "baseline_manifest": "PROEVEN/opening-b2/protected-before.json",
+  "baseline_manifest_sha256": "bceb37b75c446dc0ffab70c6dc62cbb087fb42db511e859e2e7beee7ba6ea207",
+  "baseline_file_count": 116,
+  "candidate_files": [
+    {
+      "candidate": "inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "size": 15146,
+      "baseline_source": "inputs.fli",
+      "baseline_sha256": "ff4670b60160b52652f16d50c8a53682e907b253bc81210383b2041784a67032",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "size": 67,
+      "baseline_source": null,
+      "baseline_sha256": null,
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "size": 4201,
+      "baseline_source": "set_govern.fli",
+      "baseline_sha256": "332cad2e6449b028f75e3834dc51f160e1e65283cdc556a6c3e22c78bea9633c",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+      "size": 707,
+      "baseline_source": "beginturnCleric.fli",
+      "baseline_sha256": "39a112c502ccc9c33482adac10c818f31eb0595bdf8a429c2f2432a579238715",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+      "size": 663,
+      "baseline_source": "beginturnSlaver.fli",
+      "baseline_sha256": "d07b02240d33e0b15ef514cedc93a1690a74c991b64f21ba9499f3cc8929fd9b",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+      "size": 654,
+      "baseline_source": "beginturnSciFew.fli",
+      "baseline_sha256": "62118192bdc0a136225def1c181c3ca2b24a1c088951b2450f545cb9119e58f8",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+      "size": 662,
+      "baseline_source": "beginturnSciMany.fli",
+      "baseline_sha256": "a75b676f2fa9c0fc266281f98aa938177be3669202917a8a0c1f383b97b19027",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+      "size": 656,
+      "baseline_source": "beginturnWarFew.fli",
+      "baseline_sha256": "baa98177f060cbdc59d12e00bf9e46d2ea76d9459571b9ea1c642b7d5573bf82",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+      "size": 651,
+      "baseline_source": "beginturnWarMany.fli",
+      "baseline_sha256": "87e66bd5b3b0de027bd06f1696fd8da4c0deb4c1f439c5b9b4870037fbb4ec9b",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    },
+    {
+      "candidate": "beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+      "size": 509,
+      "baseline_source": "beginturn.fli",
+      "baseline_sha256": "2101c5f4372cb79255887d6c6e3b3e664c7a9c90ce0f46b1c0060312ff46d2c0",
+      "encoding": "Original byte text; CRLF; inserted bytes ASCII"
+    }
+  ],
+  "selected_N": null,
+  "native_changed": false,
+  "workversion_changed": false,
+  "parser_acceptance": "NOT_TESTED",
+  "native_effective_ranks": "NOT_TESTED",
+  "real_game": "NOT_TESTED"
+}

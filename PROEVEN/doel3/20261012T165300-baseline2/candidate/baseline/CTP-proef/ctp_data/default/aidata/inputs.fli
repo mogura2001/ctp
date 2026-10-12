@@ -1,0 +1,347 @@
+// inputs.fli
+
+	////////////////////////////////////////////////////////////////
+	////////// WHERE IS HUMAN?  ///////////
+	////////////////////////////////////////////////////////////////
+
+input my_current_savings
+	right gazoodles_of_current_savings (my_current_savings, 10000.0, 0.5)
+
+input desired_farm_pw
+	tri zero_desired_farm_pw (desired_farm_pw, 25.0, 25.0)
+
+input desired_road_pw
+	tri zero_desired_road_pw (desired_road_pw, 25.0, 25.0)
+
+input desired_mine_pw
+	tri zero_desired_mine_pw (desired_mine_pw, 25.0, 25.0)
+
+
+input current_military_readiness
+	tri war_footing( current_military_readiness, 2.0, 0.5)
+	tri peace_footing( current_military_readiness, 0.0, 0.5)
+	tri ready_footing( current_military_readiness, 0.0, 0.5)
+
+input unit_to_city_best_human_ratio
+	tri a2to3unit_to_city_best_human_ratio(unit_to_city_best_human_ratio, 2.5, 0.5)
+	right aover3unit_to_city_best_human_ratio(unit_to_city_best_human_ratio, 3.0, 0.1)
+	right aover4unit_to_city_best_human_ratio(unit_to_city_best_human_ratio, 4.0, 0.1)
+
+input unit_to_city_ratio
+	left dangerously_low_unit_to_city_ratio(unit_to_city_ratio, 3.0, 0.1)
+	
+input i_agreed_to_stop_polluting
+	tri yes_i_agreed_to_stop_polluting(i_agreed_to_stop_polluting, 1.0, 0.5)
+
+input i_can_build_wormhole_probe
+	tri yes_i_can_build_wormhole_probe(i_can_build_wormhole_probe, 1.0, 0.5)
+
+input can_space_settle
+	tri yes_can_space_settle(can_space_settle, 1.0, 0.5)
+
+input can_sea_settle
+	tri yes_can_sea_settle(can_space_settle, 1.0, 0.5)
+
+input diff_level
+	tri chieftain(diff_level, 0.0, 0.5)
+	tri warlord(diff_level, 1.0, 0.5)
+	tri prince(diff_level, 2.0, 0.5)
+	tri king(diff_level, 3.0, 0.5)
+	tri emporer(diff_level, 4.0, 0.5)
+	tri diety(diff_level, 5.0, 0.5)
+
+output chieftain_test[0.0, 2.0] =0.0
+	tri yes_chieftain(chieftain_test, 1.0, 0.5)
+
+output diety_test[0.0, 2.0] =0.0
+	tri yes_diety(chieftain_test, 1.0, 0.5)
+
+if(chieftain)
+{
+	yes_chieftain
+}
+
+input most_human_city_delta
+	tri my_cities_equal_to_human(most_human_city_delta, 0.0, 3.0)
+	right i_have_two_or_more_cities_than_human(most_human_city_delta, 2.0, 0.5)
+	right i_have_four_or_more_cities_than_human(most_human_city_delta, 4.0, 0.5)
+	right i_have_six_or_more_cities_than_human(most_human_city_delta, 6.0, 0.5)
+	right i_have_eight_or_more_cities_than_human(most_human_city_delta, 8.0, 0.5)
+	right i_have_ten_or_more_cities_than_human(most_human_city_delta, 10.0, 0.5)
+
+input highest_enemy_strength_ratio
+	tri i_am_weaker_4x_plus_than_strongest(highest_enemy_strength_ratio, 0.15, 0.15)
+	tri i_am_weaker_2x_to_4x_than_strongest(highest_enemy_strength_ratio, 0.5, 0.3)
+	tri i_am_equal_to_strongest(highest_enemy_strength_ratio, 1.5, 0.6)
+	tri i_am_stronger_2x_to_4x_than_strongest(highest_enemy_strength_ratio, 3.0, 1.0)
+	right i_am_stronger_4x_plus_than_strongest(highest_enemy_strength_ratio, 5.0, 1.0)
+
+input highest_human_enemy_strength_ratio
+	tri i_am_weaker_4x_plus_than_strongest_human(highest_human_enemy_strength_ratio, 0.15, 0.15)
+	tri i_am_weaker_2x_to_4x_than_strongest_human(highest_human_enemy_strength_ratio, 0.5, 0.3)
+	tri i_am_equal_to_strongest_human(highest_human_enemy_strength_ratio, 1.5, 0.6)
+	tri i_am_stronger_2x_to_4x_than_strongest_human(highest_human_enemy_strength_ratio, 3.0, 1.0)
+	right i_am_stronger_4x_plus_than_strongest_human(highest_human_enemy_strength_ratio, 5.0, 1.0)
+
+input total_enemy_strength_ratio
+	tri i_am_weaker_4x_plus_than_total_enemies(total_enemy_strength_ratio, 0.15, 0.15)
+	tri i_am_weaker_2x_to_4x_than_total_enemies(total_enemy_strength_ratio, 0.5, 0.3)
+	tri i_am_equal_to_total_enemies(total_enemy_strength_ratio, 1.5, 0.6)
+	tri i_am_stronger_2x_to_4x_than_total_enemies(total_enemy_strength_ratio, 3.0, 1.0)
+	right i_am_stronger_4x_plus_than_total_enemies(total_enemy_strength_ratio, 5.0, 1.0)
+
+input allies_vs_enemies_strength_ratio
+	tri allies_weaker_4x_plus_than_total_enemies(allies_vs_enemies_strength_ratio, 0.15, 0.15)
+	tri allies_weaker_2x_to_4x_than_total_enemies(allies_vs_enemies_strength_ratio, 0.5, 0.3)
+	tri allies_equal_to_total_enemies(allies_vs_enemies_strength_ratio, 1.5, 0.6)
+	tri allies_stronger_2x_to_4x_than_total_enemies(allies_vs_enemies_strength_ratio, 3.0, 1.0)
+	right allies_stronger_4x_plus_than_total_enemies(allies_vs_enemies_strength_ratio, 5.0, 1.0)
+
+input most_human_adv_known_delta
+	tri i_know_5plus_more_than_human(most_human_adv_known_delta, -50.0, 45.0)
+	tri i_know_5plus_less_than_human(most_human_adv_known_delta, 50.5, 45.0)
+
+input ratio_advance_cost_me_to_best_human
+	tri lots_more_advanced_than_best_human(ratio_advance_cost_me_to_best_human, 4.0, 1.0)
+	tri more_advanced_than_best_human(ratio_advance_cost_me_to_best_human, 2.5, 1.0)
+	tri equally_advanced_to_best_human(ratio_advance_cost_me_to_best_human, 1.2, 0.3)
+	tri less_advanced_than_best_human(ratio_advance_cost_me_to_best_human, 0.6, 0.3)
+	tri lots_less_advanced_than_best_human(ratio_advance_cost_me_to_best_human, 0.15, 0.15)
+
+input ratio_advance_cost_me_to_best_other
+	tri lots_more_advanced_than_best_other(ratio_advance_cost_me_to_best_other, 4.0, 1.0)
+	tri more_advanced_than_best_other(ratio_advance_cost_me_to_best_other, 2.5, 1.0)
+	tri equally_advanced_to_best_other(ratio_advance_cost_me_to_best_other, 1.2, 0.3)
+	tri less_advanced_than_best_other(ratio_advance_cost_me_to_best_other, 0.6, 0.3)
+	tri lots_less_advanced_than_best_other(ratio_advance_cost_me_to_best_other, 0.15, 0.15)
+
+input distance_to_nearest_human_capitol
+	tri human_capitol_ten_or_less(distance_to_nearest_human_capitol, 5.0, 4.5)
+	tri human_capitol_ten_to_fifteen(distance_to_nearest_human_capitol, 11.5, 4.0)
+	right human_capitol_twenty_or_more(distance_to_nearest_human_capitol, 20.0, 1.0)
+
+input public_works
+	left asub500_public_works(public_works, 500.0, 10.0)
+	tri	a100to300_public_works(public_works, 200.0, 100.0)
+	tri	a250to500_public_works(public_works, 375.0, 125.0)
+	tri	a500to1000_public_works(public_works, 750.0, 250.0)
+	tri	a1000to1500_public_works(public_works, 1250.0, 250.0)
+	tri	a1400to2400_public_works(public_works, 1900.0, 500.0)
+	tri	a2000to4000_public_works(public_works, 3000.0, 1000.0)
+	tri	a3000to6000_public_works(public_works, 4500.0, 1500.0)
+	right aover5000_public_works(public_works, 5100.0, 150.0)
+	right aover10000_public_works(public_works, 10100.0, 150.0)
+
+input count
+	tri low_count(count, 5.0, 5.0)
+	tri med_count(count, 10.0, 5.0)
+	tri high_count(count, 15.0, 5.0)
+	tri reddog1_count(count, 3.0, 0.5)
+	tri reddog2_count(count, 7.0, 0.5)
+	tri reddog3_count(count, 10.0, 0.5)
+	tri reddog4_count(count, 19.0, 0.5)
+	tri farm_count(count, 10.0, 0.5)
+	
+input longest_war
+	tri start_war(longest_war, 2.5, 2.0)
+	tri phase1_war(longest_war, 2.5, 2.5) // gather
+	tri phase2_war(longest_war, 15.0, 10.0) // attack
+	tri phase3_war(longest_war, 45.0, 10.0) // retreat
+	tri phase4_war(longest_war, 65.0, 10.0) // attack
+	tri phase5_war(longest_war, 85.0, 10.0) // retreat
+	right endless_war(longest_war, 90.0, 5.0) // go back to more standard tactics
+
+input shortest_peace
+	tri zero_length_peace(shortest_peace, 0.0, 0.5)
+	tri a0to5_peace(shortest_peace, 5.0, 5.0)
+	tri a5to15_peace(shortest_peace, 10.0, 5.0)
+	tri a10to20_peace(shortest_peace, 15.0, 5.0)
+	right a20plus_peace(shortest_peace, 20.0, 5.0)
+
+input lowest_unit_regard
+	tri hot_war_with_most_hostile(lowest_unit_regard, 10.0, 9.0)
+	tri hot_war_prep_with_most_hostile(lowest_unit_regard, 23.5, 3.0)
+	tri cold_war_with_most_hostile(lowest_unit_regard, 30.0, 9.5)
+	tri cold_war_prep_with_most_hostile(lowest_unit_regard, 43.5, 3.0)
+	tri peace_parital_with_most_hostile(lowest_unit_regard, 55.0, 15.0)
+	tri peace_with_most_hostile(lowest_unit_regard, 90.0, 15)
+
+input total_military_incursions
+	tri no_incursions(total_military_incursions, 0.0, 0.1)
+	tri one_incursion(total_military_incursions, 1.0, 0.1)
+	tri few_incursions(total_military_incursions, 3.0, 1.9)
+	right many_incursions(total_military_incursions, 6.0, 1.0)
+
+// set the military readiness costs
+input percent_cost_readiness
+	tri cheap_army_pcr(percent_cost_readiness, 0.10, 0.1)
+	tri getting_costly_army_pcr(percent_cost_readiness, 0.20, 0.1)
+	tri costly_army_pcr(percent_cost_readiness, 0.30, 0.1)
+	right ouch_army_pcr(percent_cost_readiness, 0.4, 0.1)
+
+// how many people am I fighting
+input at_war_count
+	tri zero_at_war(at_war_count, 0.0, 0.5)
+	tri one_at_war(at_war_count, 1.0, 0.5)
+	tri two_at_war(at_war_count, 2.0, 0.5)
+	tri three_at_war(at_war_count, 3.0, 0.5)
+	tri four_at_war(at_war_count, 4.0, 0.5)
+	tri five_at_war(at_war_count, 5.0, 0.5)
+	tri six_at_war(at_war_count, 6.0, 0.5)
+
+input land_continents_full
+	left empty_continent(land_continents_full, 0.1, 0.3)
+	tri average_continent(land_continents_full, 0.4, 0.2)
+	right full_continent(land_continents_full, 0.75, 0.1)
+
+input land_continents_full_of_friends
+	left empty_continent_except_friends(land_continents_full_of_friends, 0.1, 0.3)
+	tri average_continent_except_friends(land_continents_full_of_friends, 0.4, 0.2)
+	right full_continent_except_friends(land_continents_full_of_friends, 0.75, 0.1)
+
+input percent_wages_needed_content
+	tri zero_percent_wages_needed_content(percent_wages_needed_content, 0.0, 0.05)
+	tri ten_percent_wages_needed_content(percent_wages_needed_content, 0.1, 0.05)
+	tri twenty_percent_wages_needed_content(percent_wages_needed_content, 0.2, 0.05)
+	tri thirty_percent_wages_needed_content(percent_wages_needed_content, 0.3, 0.05)
+	tri fourty_percent_wages_needed_content(percent_wages_needed_content, 0.4, 0.05)
+	tri fifty_percent_wages_needed_content(percent_wages_needed_content, 0.5, 0.05)
+	tri sixty_percent_wages_needed_content(percent_wages_needed_content, 0.6, 0.05)
+	tri seventy_percent_wages_needed_content(percent_wages_needed_content, 0.7, 0.05)
+	tri eighty_percent_wages_needed_content(percent_wages_needed_content, 0.8, 0.05)
+	tri ninety_percent_wages_needed_content(percent_wages_needed_content, 0.9, 0.05)
+	right max_percent_wages_needed_content(percent_wages_needed_content, 1.0, 0.05)
+
+input city_delta
+	tri neg3minus_city_delta(city_delta, -15.0, 12.0)
+	tri neg3toneg1_city_delta(city_delta, -2.0, 1.0)
+	tri neg3topos3_city_delta(city_delta, 0.0, 3.0)
+	tri neg2topos2_city_delta(city_delta, 0.0, 2.0)
+	tri neg2topos4_city_delta(city_delta, 1.0, 3.0)
+	right pos3plus_city_delta(city_delta, 20.0, 17.0)
+
+input num_cities
+	left no_num_cities(num_cities, 0.0, 1.0)
+	tri a1_num_cities(num_cities, 1.0, 0.5)
+	tri a2to3_num_cities(num_cities, 2.5, 0.6)
+	tri a2_num_cities(num_cities, 2.0, 0.5)
+	tri a1to5_num_cities(num_cities, 3.0, 2.5)
+	tri a1to7_num_cities(num_cities, 4.0, 3.5)
+	tri a3to5_num_cities(num_cities, 4.0, 1.5)
+	tri a3to7_num_cities(num_cities, 5.0, 2.0)
+	tri a5to9_num_cities(num_cities, 7.0, 2.0)
+	tri a7to11_num_cities(num_cities, 9.0, 2.0)
+	tri a9to13_num_cities(num_cities, 11.0, 2.0)
+	tri a11to15_num_cities(num_cities, 13.0, 2.0)
+	tri a13to17_num_cities(num_cities, 15.0, 2.0)
+	tri a15to19_num_cities(num_cities, 17.0, 2.0)
+	tri a17to21_num_cities(num_cities, 19.0, 2.0)
+	tri a19to23_num_cities(num_cities, 21.0, 2.0)
+	tri a21to25_num_cities(num_cities, 23.0, 2.0)
+	tri a23to27_num_cities(num_cities, 25.0, 2.0)
+	right averybig_num_cities(num_cities, 27.0, 2.0)
+	tri a5to25_num_cities(num_cities, 15, 10.0)
+	tri a10to25_num_cities(num_cities, 17.5, 7.5)
+	tri a1to9_num_cities(num_cities, 5.0, 4.5)
+	right giant_num_cities(num_cities, 30.0, 5.0)
+
+input time
+	tri first_turn(time, 0.0, 0.1)
+	left ancient_time(time, 40.0, 40.0) 
+	right future_time(time, 250, 5.0)
+	tri a0to15_turns(time, 7.5, 7.5)
+	right a35_or_more_turns(time, 35.0, 0.1)
+	tri a0to100_turns(time, 50.0, 50.0)
+	tri a0to200_turns(time, 100.0, 101.0)
+	tri a0to150_turns(time, 75.0, 75.0)
+	tri a100to200_turns(time, 150.0, 50.0)
+	tri a100to150_turns(time, 125.0, 25.0)
+	tri a150to200_turns(time, 175.0, 25.0)
+	tri a0to50_turns(time, 25.0, 25.0)
+	tri a50to200_turns(time, 125.0, 75.0)
+	tri a200to300_turns(time, 250.0, 50.0)
+	tri a175to275_turns(time, 225, 75.0)
+	tri medieval_time(time, 120.0, 45.0) 
+	tri renaissance_time(time, 200, 45.0) 
+	tri industrial_time(time, 280, 45.0) 
+	tri information_time(time, 360, 45.0)
+	tri genetic_time(time, 300, 75.0) 
+	right aover300_turns(time, 310, 10.0)
+	right a200plus_turns(time, 210.0, 10.0)
+	right diamond_time(time, 400, 50.0)
+	right not_ancient_time(time, 100, 5.0)
+
+output opening_gambit_time[0.0, 2.0] = 0.0
+	tri yes_opening_gambit_time(opening_gambit_time, 1.0, 0.5)
+
+	if(ancient_time)
+	{
+		yes_opening_gambit_time
+	}
+
+input size_of_world
+	tri a24_48_map(size_of_world, 1152, 250.0)
+	tri a32_64_map(size_of_world, 2048, 250.0)
+	tri a48_96_map(size_of_world, 4608, 250.0)
+	tri a64_128_map(size_of_world, 1152, 250.0)
+	tri a70_140_map(size_of_world, 8192, 250.0)
+
+input wgf_prod_setting
+input wgf_gold_setting 
+
+input wgf_food_setting
+	tri lowest_wgf_food(wgf_food_setting, -2.0, 0.5)
+	tri low_wgf_food(wgf_food_setting, -1.0, 0.5)
+	tri average_wgf_food(wgf_food_setting, 0.0, 0.5)
+	tri high_wgf_food(wgf_food_setting, 1.0, 0.5)
+	tri highest_wgf_food(wgf_food_setting, 2.0, 0.5)
+
+input income_expense_cleric
+input income_expense_crime
+input income_expense_maintenance
+input income_expense_wages
+input income_expense_science
+input income_expense_savings 
+	tri dangerously_low_income_expense_savings(income_expense_savings, 0.15, 0.15)
+
+input gold_and_wage_percent_cost
+	right dangerously_high_gold_and_wages_cost(gold_and_wage_percent_cost, 0.8, 0.1)
+
+input save_expense_overtime
+input sci_ave_turns_to_advance 
+
+input overall_threat
+input income_expense_cleric
+input income_expense_crime
+input income_expense_maintenance
+input income_expense_wages
+input income_expense_science
+input income_expense_savings 
+input save_expense_overtime
+
+input sci_ave_turns_to_advance 
+	left fast_fast_science (sci_ave_turns_to_advance, 1.0, 1.0)
+	tri fast_science (sci_ave_turns_to_advance, 3.0, 1.5)
+	tri ave_science (sci_ave_turns_to_advance, 4.0, 1.5)
+	tri slow_science (sci_ave_turns_to_advance, 6.0, 1.5)
+	right slow_slow_science (sci_ave_turns_to_advance, 9.0, 2.0)
+
+input power_ratio 
+	tri strong_strong_power_ratio(power_ratio, 0.3, 0.2)
+	tri strong_power_ratio(power_ratio, 0.4, 0.4)
+	tri even_power_ratio(power_ratio, 1.0, 0.4)
+	tri pretty_even_power_ratio(power_ratio, 2.0, 1.0)
+	tri weak_power_ratio(power_ratio, 4.0, 2.0)
+	right weak_weak_power_ratio(power_ratio, 6.0, 2.0)
+
+input total_pop_size
+	tri one_total_pop(total_pop_size, 1.0, 0.25)
+	tri two_total_pop(total_pop_size, 2.0, 0.25)
+
+input num_players_in_game
+	tri three_players(num_players_in_game, 3.0, 0.5)
+	tri four_players(num_players_in_game, 4.0, 0.5)
+	tri five_players(num_players_in_game, 5.0, 0.5)
+	tri six_players(num_players_in_game, 6.0, 0.5)
+	tri seven_players(num_players_in_game, 7.0, 0.5)
+	tri eight_players(num_players_in_game, 8.0, 0.5)

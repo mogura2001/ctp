@@ -1,0 +1,752 @@
+{
+  "scope": "118 protected workpins and six original saves including restored default AUTOSAVE; generated N30 saved separately",
+  "protected": [
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/aiploader.fli",
+      "expected": "b96ecd87c1e996c6617beb15dc3eca777096fa8a78d443b7be4d2a7bfde18af0",
+      "actual": "b96ecd87c1e996c6617beb15dc3eca777096fa8a78d443b7be4d2a7bfde18af0",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/aipplan.txt",
+      "expected": "8a0c7a1f04e080034705421e56e188612602f93d87031b101f351ff676ff011f",
+      "actual": "8a0c7a1f04e080034705421e56e188612602f93d87031b101f351ff676ff011f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "expected": "2101c5f4372cb79255887d6c6e3b3e664c7a9c90ce0f46b1c0060312ff46d2c0",
+      "actual": "2101c5f4372cb79255887d6c6e3b3e664c7a9c90ce0f46b1c0060312ff46d2c0",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnBarbarians.fli",
+      "expected": "fd01559a6e8e611389de6fba14412a62414f93e8d0c1a9c4763145926a4fdf1c",
+      "actual": "fd01559a6e8e611389de6fba14412a62414f93e8d0c1a9c4763145926a4fdf1c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "expected": "39a112c502ccc9c33482adac10c818f31eb0595bdf8a429c2f2432a579238715",
+      "actual": "39a112c502ccc9c33482adac10c818f31eb0595bdf8a429c2f2432a579238715",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "expected": "62118192bdc0a136225def1c181c3ca2b24a1c088951b2450f545cb9119e58f8",
+      "actual": "62118192bdc0a136225def1c181c3ca2b24a1c088951b2450f545cb9119e58f8",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "expected": "a75b676f2fa9c0fc266281f98aa938177be3669202917a8a0c1f383b97b19027",
+      "actual": "a75b676f2fa9c0fc266281f98aa938177be3669202917a8a0c1f383b97b19027",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "expected": "d07b02240d33e0b15ef514cedc93a1690a74c991b64f21ba9499f3cc8929fd9b",
+      "actual": "d07b02240d33e0b15ef514cedc93a1690a74c991b64f21ba9499f3cc8929fd9b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "expected": "baa98177f060cbdc59d12e00bf9e46d2ea76d9459571b9ea1c642b7d5573bf82",
+      "actual": "baa98177f060cbdc59d12e00bf9e46d2ea76d9459571b9ea1c642b7d5573bf82",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "expected": "87e66bd5b3b0de027bd06f1696fd8da4c0deb4c1f439c5b9b4870037fbb4ec9b",
+      "actual": "87e66bd5b3b0de027bd06f1696fd8da4c0deb4c1f439c5b9b4870037fbb4ec9b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_science_fast.fli",
+      "expected": "3c428516b22c841ae119f7c713c93905130a70670a51490a90f7815b8644901b",
+      "actual": "3c428516b22c841ae119f7c713c93905130a70670a51490a90f7815b8644901b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_science_slow.fli",
+      "expected": "3c428516b22c841ae119f7c713c93905130a70670a51490a90f7815b8644901b",
+      "actual": "3c428516b22c841ae119f7c713c93905130a70670a51490a90f7815b8644901b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_settle_dense.fli",
+      "expected": "ee6daddcf99c97af694a3ce125503dbffc6d9bf10ab3dce126a26d8eeff867bf",
+      "actual": "ee6daddcf99c97af694a3ce125503dbffc6d9bf10ab3dce126a26d8eeff867bf",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_settle_loose.fli",
+      "expected": "208c321f3b1e3e0f017adee0e19ee159aaaefc8c7c8c171a0598331323577bf8",
+      "actual": "208c321f3b1e3e0f017adee0e19ee159aaaefc8c7c8c171a0598331323577bf8",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_who_barbarian.fli",
+      "expected": "b4fae3057c8e77f6442f5f392fdb40899ee1cf2092a74468b5e2e4af94999e29",
+      "actual": "b4fae3057c8e77f6442f5f392fdb40899ee1cf2092a74468b5e2e4af94999e29",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_who_cleric.fli",
+      "expected": "d66ebee25ec3767e406e5bbc57e7284a8441250f9a8691d6d4cb925ed337a563",
+      "actual": "d66ebee25ec3767e406e5bbc57e7284a8441250f9a8691d6d4cb925ed337a563",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_who_scientist.fli",
+      "expected": "90a1a0df6ab8b0d3b79b10623dbbef89014e721fb068801d69ed0bee81604a3d",
+      "actual": "90a1a0df6ab8b0d3b79b10623dbbef89014e721fb068801d69ed0bee81604a3d",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_who_slaver.fli",
+      "expected": "0551e026d5b7ab5e3dcce5ff96c13838b56225299c0bc3740adea56b3aa18f1c",
+      "actual": "0551e026d5b7ab5e3dcce5ff96c13838b56225299c0bc3740adea56b3aa18f1c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/def_personality_who_warrior.fli",
+      "expected": "d6312cfd855f69510362d9b01987aab2fa46f3b23cb23e9f3d3f1e4805ca1dcf",
+      "actual": "d6312cfd855f69510362d9b01987aab2fa46f3b23cb23e9f3d3f1e4805ca1dcf",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy.fli",
+      "expected": "017d8e1542625c36fc7643a3fb81559f72225a84e3bb2351a411f09cf3deb57e",
+      "actual": "017d8e1542625c36fc7643a3fb81559f72225a84e3bb2351a411f09cf3deb57e",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacyBarbarians.fli",
+      "expected": "5f9d70593e1acfde1e989110e67f22b84ea6dad14c6565979578702096940e8a",
+      "actual": "5f9d70593e1acfde1e989110e67f22b84ea6dad14c6565979578702096940e8a",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacypeacebackstab.fli",
+      "expected": "f1aadeba0acb0f88cb4c72397a8400b7dcb829a97661a4d1ba5f16d60dc12250",
+      "actual": "f1aadeba0acb0f88cb4c72397a8400b7dcb829a97661a4d1ba5f16d60dc12250",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacypeaceloyal.fli",
+      "expected": "fae2d5810f8ed312a9b162035064587bf834963f308c6218715cbfc7e8e20cc1",
+      "actual": "fae2d5810f8ed312a9b162035064587bf834963f308c6218715cbfc7e8e20cc1",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacywarbackstab.fli",
+      "expected": "940f3bcb1f66dde7090ab38644147c01e7964b16b7994190db2691344596fb90",
+      "actual": "940f3bcb1f66dde7090ab38644147c01e7964b16b7994190db2691344596fb90",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacywarloyal.fli",
+      "expected": "bdc69d9d3bf42142f5d6cec7c56c44800d5bfedfef3a32c833412e88882d9549",
+      "actual": "bdc69d9d3bf42142f5d6cec7c56c44800d5bfedfef3a32c833412e88882d9549",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_accepted.fli",
+      "expected": "967cfa0ff5d09eec68bc0bd64a9776414b77eaa510626646f602153c34ceffdd",
+      "actual": "967cfa0ff5d09eec68bc0bd64a9776414b77eaa510626646f602153c34ceffdd",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_begin.fli",
+      "expected": "97dfff204d7fdc842a4801715627a7966ec206cc3e5bb9aeb5253098af9242b6",
+      "actual": "97dfff204d7fdc842a4801715627a7966ec206cc3e5bb9aeb5253098af9242b6",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_pre_incoming.fli",
+      "expected": "8d58c17a5af5e9137b513712eb0b16c113a994fb1452dc8bca5dcd436d1540b4",
+      "actual": "8d58c17a5af5e9137b513712eb0b16c113a994fb1452dc8bca5dcd436d1540b4",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_pre_outgoing.fli",
+      "expected": "94d8a196302d5f65387645b25580494af137b3fb0ce24f90091ec458c62c00f1",
+      "actual": "94d8a196302d5f65387645b25580494af137b3fb0ce24f90091ec458c62c00f1",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_rejected.fli",
+      "expected": "949dd309dae7700b93ecc965fe41b8d99e787cb622a05653456ac8bcb317f6b3",
+      "actual": "949dd309dae7700b93ecc965fe41b8d99e787cb622a05653456ac8bcb317f6b3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_average_trust.fli",
+      "expected": "15392b9ee397f85876890de4ebd32b819b5c5f204faebd1dc80de4349f42ca12",
+      "actual": "15392b9ee397f85876890de4ebd32b819b5c5f204faebd1dc80de4349f42ca12",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_backstab.fli",
+      "expected": "3b64a9b7f035a17d3907093b6ab5731fcb7f3bd6b5ae7e8b0bbb1001fdb36cf3",
+      "actual": "3b64a9b7f035a17d3907093b6ab5731fcb7f3bd6b5ae7e8b0bbb1001fdb36cf3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_loyal.fli",
+      "expected": "0cca6260189d1f7e897b5b381d04c111f7216c048ad8e191376522cc95e999d0",
+      "actual": "0cca6260189d1f7e897b5b381d04c111f7216c048ad8e191376522cc95e999d0",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_opportunist.fli",
+      "expected": "ea11dc3ae8492516d3f8fd46811177dc42c193797aa86ddb866141c07a075b6b",
+      "actual": "ea11dc3ae8492516d3f8fd46811177dc42c193797aa86ddb866141c07a075b6b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_peace.fli",
+      "expected": "2e208ef70f88b06575ef066fb12b914e7e4af7a7f56b4a4651f88adcbc2f6349",
+      "actual": "2e208ef70f88b06575ef066fb12b914e7e4af7a7f56b4a4651f88adcbc2f6349",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/diplomacy_set_war.fli",
+      "expected": "8c58078d1a5af2cdbe0195f64a844a714ac97f1c30015de84ea46d2dffd6ab65",
+      "actual": "8c58078d1a5af2cdbe0195f64a844a714ac97f1c30015de84ea46d2dffd6ab65",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/endturn.fli",
+      "expected": "0f9620040d171fa4368e1275e320c7730e3551558a3c369222fb045aab0ff9f5",
+      "actual": "0f9620040d171fa4368e1275e320c7730e3551558a3c369222fb045aab0ff9f5",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/init.fli",
+      "expected": "00ce11993109227e48b1bba55d46bf55809cf8cdd69a4b2d16b5c6de51431122",
+      "actual": "00ce11993109227e48b1bba55d46bf55809cf8cdd69a4b2d16b5c6de51431122",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "expected": "ff4670b60160b52652f16d50c8a53682e907b253bc81210383b2041784a67032",
+      "actual": "ff4670b60160b52652f16d50c8a53682e907b253bc81210383b2041784a67032",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/inputs_dip_incoming_mess.txt",
+      "expected": "faa4fe0a5e1e4431a6eed1f359735d61ba59ad5677874bd3c348ac07498c527e",
+      "actual": "faa4fe0a5e1e4431a6eed1f359735d61ba59ad5677874bd3c348ac07498c527e",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/input_deals.fli",
+      "expected": "0011688ad858976cd8be5357140e7007c68be25d05be3ea65c8b6b7ecd3e7e62",
+      "actual": "0011688ad858976cd8be5357140e7007c68be25d05be3ea65c8b6b7ecd3e7e62",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/input_responses.fli",
+      "expected": "c3ad71ffe40a2b01a412ec41a697a70fdee21dcc671976964848609daf5adf86",
+      "actual": "c3ad71ffe40a2b01a412ec41a697a70fdee21dcc671976964848609daf5adf86",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/main.fli",
+      "expected": "270ddb6a6645709cae9ea304018ff4837ccccd32ed5bfd69afcbf8625a1d14dc",
+      "actual": "270ddb6a6645709cae9ea304018ff4837ccccd32ed5bfd69afcbf8625a1d14dc",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainBarbarians.fli",
+      "expected": "f06e3dea44958c4547ff9c4f8e8f9d5d1744c5d5347f2d4b7af4a0c6f052dc2f",
+      "actual": "f06e3dea44958c4547ff9c4f8e8f9d5d1744c5d5347f2d4b7af4a0c6f052dc2f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainCleric.fli",
+      "expected": "f1cb8b64a60311b1df7ade56df4f95b54fbb398cffe56ba5c7d53a69c004e966",
+      "actual": "f1cb8b64a60311b1df7ade56df4f95b54fbb398cffe56ba5c7d53a69c004e966",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainSciFew.fli",
+      "expected": "4a0c1df3846f668ea84f94ae5c8cd9f698193c1f9826cc82188150416bc7f2ed",
+      "actual": "4a0c1df3846f668ea84f94ae5c8cd9f698193c1f9826cc82188150416bc7f2ed",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainSciMany.fli",
+      "expected": "3b219449758744ca45ef774e9641a7d4846ea623d27bda42482ff651ca82a8bd",
+      "actual": "3b219449758744ca45ef774e9641a7d4846ea623d27bda42482ff651ca82a8bd",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainSlaver.fli",
+      "expected": "e6fa041304cc14965547c37c9c9690edd28d4c4c526c98c84509341590e7401b",
+      "actual": "e6fa041304cc14965547c37c9c9690edd28d4c4c526c98c84509341590e7401b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainWarFew.fli",
+      "expected": "d5c28d8a93c8ac2403dfc81f2f88b451963bb2a7c174193078bfe40a0052bac3",
+      "actual": "d5c28d8a93c8ac2403dfc81f2f88b451963bb2a7c174193078bfe40a0052bac3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/mainWarMany.fli",
+      "expected": "de9a8f7a0eeac4dbf34c534d8465913311c9620a9b2415376038c9d98cae4e07",
+      "actual": "de9a8f7a0eeac4dbf34c534d8465913311c9620a9b2415376038c9d98cae4e07",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/outputs.fli",
+      "expected": "49ce079c79b0ede5de09bd9e110e985ea86d1a56daa7e3b09865dd450165aad3",
+      "actual": "49ce079c79b0ede5de09bd9e110e985ea86d1a56daa7e3b09865dd450165aad3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/output_aipnames.fli",
+      "expected": "cc21a8048372562029e1f318cafea8bb3c6091aa7880c2b4f684451e1314dcd9",
+      "actual": "cc21a8048372562029e1f318cafea8bb3c6091aa7880c2b4f684451e1314dcd9",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personality.fli",
+      "expected": "21072de755f06191899194bec95453e21b87b3fdda3e67f415b99622235642eb",
+      "actual": "21072de755f06191899194bec95453e21b87b3fdda3e67f415b99622235642eb",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalityBarbarians.fli",
+      "expected": "acc5b259e1741c7fe08f55b77f8d5103c5a5072490559de0397f92f74a3d9ecb",
+      "actual": "acc5b259e1741c7fe08f55b77f8d5103c5a5072490559de0397f92f74a3d9ecb",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalityCleric.fli",
+      "expected": "0f99bd95ebc1cabad849f7a722c9f7d1e2fd1b77b4591b2a160f5d3aecdceaba",
+      "actual": "0f99bd95ebc1cabad849f7a722c9f7d1e2fd1b77b4591b2a160f5d3aecdceaba",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalityDefault.fli",
+      "expected": "21072de755f06191899194bec95453e21b87b3fdda3e67f415b99622235642eb",
+      "actual": "21072de755f06191899194bec95453e21b87b3fdda3e67f415b99622235642eb",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalitySciFew.fli",
+      "expected": "c2aa542da73d5127f6eec16009af5f3a2f5bbd44e6497a914698cb023ca4d187",
+      "actual": "c2aa542da73d5127f6eec16009af5f3a2f5bbd44e6497a914698cb023ca4d187",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalitySciMany.fli",
+      "expected": "56afa379b79ba5d56ebdb28befceb135a4be025262256be8a7256ff2ebe7569b",
+      "actual": "56afa379b79ba5d56ebdb28befceb135a4be025262256be8a7256ff2ebe7569b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalitySlaver.fli",
+      "expected": "c8b637705f345dff8eecd49bd2fd6512f4803a7f95153a9c1dd8e13b4883e53f",
+      "actual": "c8b637705f345dff8eecd49bd2fd6512f4803a7f95153a9c1dd8e13b4883e53f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalityWarFew.fli",
+      "expected": "53d03aabf8984edc13fa74767cb13ceb6c4530e31dda373529aa9a5d40571c39",
+      "actual": "53d03aabf8984edc13fa74767cb13ceb6c4530e31dda373529aa9a5d40571c39",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/personalityWarMany.fli",
+      "expected": "bd3e60d1fb405e2fe945102bea2436e54a796ac8f5cbfbe4e85a96d6154ea5d4",
+      "actual": "bd3e60d1fb405e2fe945102bea2436e54a796ac8f5cbfbe4e85a96d6154ea5d4",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/README.txt",
+      "expected": "6246ea27a4bd9ef775d5979bf1fd6c3b5371316b5533765d413dd33dfe14846a",
+      "actual": "6246ea27a4bd9ef775d5979bf1fd6c3b5371316b5533765d413dd33dfe14846a",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_budget.fli",
+      "expected": "26cc7113803f27768b4442a447dfe3b13070d85f7cb0ec3798186917bcb88bfe",
+      "actual": "26cc7113803f27768b4442a447dfe3b13070d85f7cb0ec3798186917bcb88bfe",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_food_or_prod.fli",
+      "expected": "362b3c68ea51d66bac6d6ca88bbe67ce68d52159b1c78dacc66f1a0f405c4cfe",
+      "actual": "362b3c68ea51d66bac6d6ca88bbe67ce68d52159b1c78dacc66f1a0f405c4cfe",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern.fli",
+      "expected": "332cad2e6449b028f75e3834dc51f160e1e65283cdc556a6c3e22c78bea9633c",
+      "actual": "332cad2e6449b028f75e3834dc51f160e1e65283cdc556a6c3e22c78bea9633c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_inst_priority.fli",
+      "expected": "469f747127b417a5d92b519e31a9ba42848168d1a99a8edaf547df27b864023c",
+      "actual": "469f747127b417a5d92b519e31a9ba42848168d1a99a8edaf547df27b864023c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_military_readiness.fli",
+      "expected": "e7f74d37b552d40076a07f94be7e7ac6e6776d7e5ba891ecc310a375bd3abb8e",
+      "actual": "e7f74d37b552d40076a07f94be7e7ac6e6776d7e5ba891ecc310a375bd3abb8e",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_pw.fli",
+      "expected": "131c7788e390af9a0f2074622032955c0a8a74750a4f55ee21ea9b550f718f3f",
+      "actual": "131c7788e390af9a0f2074622032955c0a8a74750a4f55ee21ea9b550f718f3f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_resource_desire.fli",
+      "expected": "fe231bc8ff33a54f7452c9f2451d603e5555e9c1216743876d8934ecda707bd5",
+      "actual": "fe231bc8ff33a54f7452c9f2451d603e5555e9c1216743876d8934ecda707bd5",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_science_speed.fli",
+      "expected": "c647c5694f408a27db86a5419e70f0a19cd8aef771ed80a8eebad4bc4b41fe40",
+      "actual": "c647c5694f408a27db86a5419e70f0a19cd8aef771ed80a8eebad4bc4b41fe40",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_settle_density.fli",
+      "expected": "e2e88619665d57fec487ce85b67c8432e7daf89a52a012c7347d553d8490e497",
+      "actual": "e2e88619665d57fec487ce85b67c8432e7daf89a52a012c7347d553d8490e497",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_wgf.fli",
+      "expected": "894f9a0488bc63ad70b6411b82f7d82fcfc47ee2dcc68d0d2c59315251ac1f47",
+      "actual": "894f9a0488bc63ad70b6411b82f7d82fcfc47ee2dcc68d0d2c59315251ac1f47",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/strategic_AI_config.txt",
+      "expected": "18176e1be70928ff316f2ddbf78a2cd50e0e563fc83cd3eedd02e21f17d2ba2a",
+      "actual": "18176e1be70928ff316f2ddbf78a2cd50e0e563fc83cd3eedd02e21f17d2ba2a",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/Aipdef.h",
+      "expected": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+      "actual": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/barbarian.aip",
+      "expected": "48567dc929abd611ab9cd72e680cfaa28d26e9430e95071ca841b14fdaa389f1",
+      "actual": "48567dc929abd611ab9cd72e680cfaa28d26e9430e95071ca841b14fdaa389f1",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/build_troops_off.aip",
+      "expected": "7f0fd257aa753b98fcec1de533d184f21d28f810269531b13c4c766a988fa47e",
+      "actual": "7f0fd257aa753b98fcec1de533d184f21d28f810269531b13c4c766a988fa47e",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/build_troops_on.aip",
+      "expected": "371f6623c2f19058dd6eeb7ede4ab13844052cc1034e43a996b3be1b6d972870",
+      "actual": "371f6623c2f19058dd6eeb7ede4ab13844052cc1034e43a996b3be1b6d972870",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall.aip",
+      "expected": "2d8d27dc660d2dedd8f8719e4ab30f738f58d119c0f3abe73a97e86b1bf83b7b",
+      "actual": "2d8d27dc660d2dedd8f8719e4ab30f738f58d119c0f3abe73a97e86b1bf83b7b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "expected": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "actual": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/clean-aips.pl",
+      "expected": "87a9e5cff9ca689cf0ba6b784797b346250aadbd0b98f9361831ca288d540769",
+      "actual": "87a9e5cff9ca689cf0ba6b784797b346250aadbd0b98f9361831ca288d540769",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "expected": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "actual": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric_on.aip",
+      "expected": "4ad3abeafd1f095bedf975be63a1120a5ed0a764dad9381028c61fe9a3a7acae",
+      "actual": "4ad3abeafd1f095bedf975be63a1120a5ed0a764dad9381028c61fe9a3a7acae",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "expected": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "actual": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/defend_normal.aip",
+      "expected": "53933c8d3d05a67dff674f956115559e559315f53dd8ce5e3423144ace42de1f",
+      "actual": "53933c8d3d05a67dff674f956115559e559315f53dd8ce5e3423144ace42de1f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/fallback.aip",
+      "expected": "72461f8d2c27c1fcbf9e62dfe84422b5c5f724b37a9188345c82c6544dfcfdf0",
+      "actual": "72461f8d2c27c1fcbf9e62dfe84422b5c5f724b37a9188345c82c6544dfcfdf0",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/gather.aip",
+      "expected": "979a201926d3f00a168c244e3c7cfa017168f0296e577868b11321e22b11c6d3",
+      "actual": "979a201926d3f00a168c244e3c7cfa017168f0296e577868b11321e22b11c6d3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/getarmy.aip",
+      "expected": "c2d89f47c927ab06dcede9cf978ebc6ee93cdbff4c8007d7c40a0fb3d9bbcb48",
+      "actual": "c2d89f47c927ab06dcede9cf978ebc6ee93cdbff4c8007d7c40a0fb3d9bbcb48",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/green_me.aip",
+      "expected": "c4b678c5de3b11df406096496e3a79fb784e476253041510847d201bfd46a44f",
+      "actual": "c4b678c5de3b11df406096496e3a79fb784e476253041510847d201bfd46a44f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/highdist.aip",
+      "expected": "08fb86729d548442a0081d7c271c27d85768a2e1e0c7509d44a516745f2b7c55",
+      "actual": "08fb86729d548442a0081d7c271c27d85768a2e1e0c7509d44a516745f2b7c55",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/improvement_build_normal.aip",
+      "expected": "c36c29e433ad2a12887a437174a54cecae57f1288fd6b5b93284252e00af44bf",
+      "actual": "c36c29e433ad2a12887a437174a54cecae57f1288fd6b5b93284252e00af44bf",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/lowdist.aip",
+      "expected": "8fcf37abb4827025b4efcabce95ddbf896f0241e35039cba3420b4e333e9db02",
+      "actual": "8fcf37abb4827025b4efcabce95ddbf896f0241e35039cba3420b4e333e9db02",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/masssettle.aip",
+      "expected": "ec663240f3310086e0f99ec1bde87c9d4d89bad6f12b0bad8ecc26d803f17426",
+      "actual": "ec663240f3310086e0f99ec1bde87c9d4d89bad6f12b0bad8ecc26d803f17426",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/masssettle_sandbag.aip",
+      "expected": "374dd19d786d42615b3b465f2ba1edafcd15df87980b4b164a171a63b3e35757",
+      "actual": "374dd19d786d42615b3b465f2ba1edafcd15df87980b4b164a171a63b3e35757",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "expected": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "actual": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "expected": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "actual": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/naval.aip",
+      "expected": "34baa345fe5d0e7b7abc04599b13ed1be07011f0e8833b959a9b8f9a06410b1d",
+      "actual": "34baa345fe5d0e7b7abc04599b13ed1be07011f0e8833b959a9b8f9a06410b1d",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/normal_explore.aip",
+      "expected": "4ff465de27c9b8ba20a14755cc2efeaad2fc9b14f08f7b6d816e0b32885e9057",
+      "actual": "4ff465de27c9b8ba20a14755cc2efeaad2fc9b14f08f7b6d816e0b32885e9057",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/nosally.aip",
+      "expected": "8ab275f865e55d644c985dc303d0819317f0e68b670009694d4c20cf5bd99fa8",
+      "actual": "8ab275f865e55d644c985dc303d0819317f0e68b670009694d4c20cf5bd99fa8",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/noscience.aip",
+      "expected": "d053b2ba1ef9dae783ca76e39d69aa33f275daa9627d02680fad939d59462df8",
+      "actual": "d053b2ba1ef9dae783ca76e39d69aa33f275daa9627d02680fad939d59462df8",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/no_settle.aip",
+      "expected": "1b79b057675224e221ee7cae4b27bf28e11ce83e6989ffc642f4e16c0ac4022f",
+      "actual": "1b79b057675224e221ee7cae4b27bf28e11ce83e6989ffc642f4e16c0ac4022f",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/one_explore.aip",
+      "expected": "810dbd3a73c56e1d2ef194d8df7660b1ce29038ad5fed0f8f25c072002403088",
+      "actual": "810dbd3a73c56e1d2ef194d8df7660b1ce29038ad5fed0f8f25c072002403088",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/pull_units_into_city.aip",
+      "expected": "dbcbb4d022f06dfb2025facb5ee49938779c8658d335e4f64d481993da566011",
+      "actual": "dbcbb4d022f06dfb2025facb5ee49938779c8658d335e4f64d481993da566011",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/README.txt",
+      "expected": "3c92ad36e2aea9047575716f6b6595b7de80845e897e7bd4d7839f5cb6507b74",
+      "actual": "3c92ad36e2aea9047575716f6b6595b7de80845e897e7bd4d7839f5cb6507b74",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/sally.aip",
+      "expected": "271285608fa425d04b1d4bae51a752edc1038b7f8b036c1613daf2e1b7b65613",
+      "actual": "271285608fa425d04b1d4bae51a752edc1038b7f8b036c1613daf2e1b7b65613",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "expected": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "actual": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "expected": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "actual": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/siege_off.aip",
+      "expected": "cd92999ad21d29f8e88dc42a19e843ce9db310cbf3e9eb306304a63ea1b46619",
+      "actual": "cd92999ad21d29f8e88dc42a19e843ce9db310cbf3e9eb306304a63ea1b46619",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "expected": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "actual": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slave_on.aip",
+      "expected": "5e6b0793667c326c8ce8b3098b5b88a61327145b7cddafbe553cf4830232c91a",
+      "actual": "5e6b0793667c326c8ce8b3098b5b88a61327145b7cddafbe553cf4830232c91a",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/special_attacks_off.aip",
+      "expected": "5ec7698c49960bd84c3e31ff63d0dd477974da3a348fbcee56f7ae7c91f30ef7",
+      "actual": "5ec7698c49960bd84c3e31ff63d0dd477974da3a348fbcee56f7ae7c91f30ef7",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/supernaval.aip",
+      "expected": "7895bbacc6844d6d9203ac2798ac2c7748a97be2b465b71211764e9b71c71ec2",
+      "actual": "7895bbacc6844d6d9203ac2798ac2c7748a97be2b465b71211764e9b71c71ec2",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/survival_mode.aip",
+      "expected": "a5f3cd0d53dd50f8f5b58008a75f7db7b8be43276f6503a3d17e022b8173e3bd",
+      "actual": "a5f3cd0d53dd50f8f5b58008a75f7db7b8be43276f6503a3d17e022b8173e3bd",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/takecity.aip",
+      "expected": "eb9bd55e2d5b35ddd01b807f5d2d9f4715fc1e4a6a118e92ecc67a32bcc10eea",
+      "actual": "eb9bd55e2d5b35ddd01b807f5d2d9f4715fc1e4a6a118e92ecc67a32bcc10eea",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/two_explore.aip",
+      "expected": "d3d7895fbc97b3827b0b2e443acfa550e8a3259e22c75b43ec7493c3ca9d2f49",
+      "actual": "d3d7895fbc97b3827b0b2e443acfa550e8a3259e22c75b43ec7493c3ca9d2f49",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/unit_focus.aip",
+      "expected": "9511c76e35d0afd588f7ee4370b8e952cf224168496e1fdd8cf72135440fa944",
+      "actual": "9511c76e35d0afd588f7ee4370b8e952cf224168496e1fdd8cf72135440fa944",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/yes_settle.aip",
+      "expected": "78118c5d12fd9852ff7a867a0b46e4f720fce9cda1e5d39fd42dd86e6b807fda",
+      "actual": "78118c5d12fd9852ff7a867a0b46e4f720fce9cda1e5d39fd42dd86e6b807fda",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/civctp.exe",
+      "expected": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "actual": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/userprofile.txt",
+      "expected": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+      "actual": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+      "match": true
+    }
+  ],
+  "preexisting_saves": [
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Alexan/AUTOSAVE-Alexan",
+      "expected": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+      "actual": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+      "expected": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+      "actual": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-+20-T60",
+      "expected": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+      "actual": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota--20-T60",
+      "expected": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+      "actual": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-normal-T60",
+      "expected": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+      "actual": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+      "expected": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "actual": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "match": true
+    }
+  ],
+  "H1_reader_unchanged": true
+}

@@ -1,0 +1,3153 @@
+﻿{
+  "instance": {
+    "pid": 10224,
+    "creationtime_filetime": 134362728525989059,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "loaded_checks": {
+    "headers_sections_sizes": true,
+    "all_three_scorecalls": true,
+    "payload_and_original_ranges": true,
+    "only_original_HIGHLOW_relocation_adjustment": true
+  },
+  "state": {
+    "advance_count": 138,
+    "civilizations": [
+      {
+        "civ_id": 2,
+        "ai_actor": "0xb8f2418",
+        "effective_aip": "0xbac1528",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "engine_current": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "settlement": {
+          "civ_id": 2,
+          "ai_actor": "0xb8f2418",
+          "planner": "0xbac1508",
+          "scheduler": "0xbacc0e0",
+          "aimap": "0xbafea10",
+          "world_interface": "0x1470fb10",
+          "next_id": 63,
+          "count": 0,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0xbac1f98",
+          "id_array": "0xbac25e0",
+          "all_goal_ids": [],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": []
+        },
+        "player": "0xb9dc718"
+      },
+      {
+        "civ_id": 3,
+        "ai_actor": "0xb8f3378",
+        "effective_aip": "0x147b3050",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "engine_current": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "settlement": {
+          "civ_id": 3,
+          "ai_actor": "0xb8f3378",
+          "planner": "0x147b3030",
+          "scheduler": "0x14770cf8",
+          "aimap": "0xbafe560",
+          "world_interface": "0x14826928",
+          "next_id": 78,
+          "count": 0,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x147b3ac0",
+          "id_array": "0x147b4108",
+          "all_goal_ids": [],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": []
+        },
+        "player": "0xb9f9b90"
+      },
+      {
+        "civ_id": 4,
+        "ai_actor": "0xb8f2560",
+        "effective_aip": "0x14962518",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "engine_current": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "settlement": {
+          "civ_id": 4,
+          "ai_actor": "0xb8f2560",
+          "planner": "0x149624f8",
+          "scheduler": "0x1485a158",
+          "aimap": "0xbafee48",
+          "world_interface": "0x1495e340",
+          "next_id": 230,
+          "count": 0,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x14858018",
+          "id_array": "0x14858660",
+          "all_goal_ids": [],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": []
+        },
+        "player": "0xba02ff0"
+      },
+      {
+        "civ_id": 5,
+        "ai_actor": "0xb8f30e8",
+        "effective_aip": "0x14a7ef98",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 18,
+          "name": "Theocracy"
+        },
+        "engine_current": {
+          "index": 18,
+          "name": "Theocracy"
+        },
+        "settlement": {
+          "civ_id": 5,
+          "ai_actor": "0xb8f30e8",
+          "planner": "0x14a7ef78",
+          "scheduler": "0x14a88388",
+          "aimap": "0xbaff2f8",
+          "world_interface": "0x1499eaf8",
+          "next_id": 187,
+          "count": 0,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x14a7fa08",
+          "id_array": "0x14a80050",
+          "all_goal_ids": [],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": []
+        },
+        "player": "0xba19e30"
+      },
+      {
+        "civ_id": 6,
+        "ai_actor": "0xb8f27f0",
+        "effective_aip": "0x14b0df88",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "engine_current": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "settlement": {
+          "civ_id": 6,
+          "ai_actor": "0xb8f27f0",
+          "planner": "0x14b0df68",
+          "scheduler": "0x14ad98d0",
+          "aimap": "0x14a84e50",
+          "world_interface": "0x14be0bb0",
+          "next_id": 239,
+          "count": 2,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x14a80d08",
+          "id_array": "0x14a81998",
+          "all_goal_ids": [
+            237,
+            238
+          ],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": [
+            {
+              "id": 237,
+              "pointer": "0xb610950",
+              "vtable": "0x2008ac70",
+              "type": 1,
+              "settle": false
+            },
+            {
+              "id": 238,
+              "pointer": "0xb610e20",
+              "vtable": "0x2008af68",
+              "type": 24,
+              "settle": false
+            }
+          ]
+        },
+        "player": "0xba23290"
+      },
+      {
+        "civ_id": 7,
+        "ai_actor": "0xb8f34c0",
+        "effective_aip": "0x14d0ff10",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 18,
+          "name": "Theocracy"
+        },
+        "engine_current": {
+          "index": 18,
+          "name": "Theocracy"
+        },
+        "settlement": {
+          "civ_id": 7,
+          "ai_actor": "0xb8f34c0",
+          "planner": "0x14d0fef0",
+          "scheduler": "0x14d11658",
+          "aimap": "0x14a849a0",
+          "world_interface": "0x14c225c8",
+          "next_id": 195,
+          "count": 2,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x14a806c0",
+          "id_array": "0x14a83f48",
+          "all_goal_ids": [
+            193,
+            194
+          ],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": [
+            {
+              "id": 193,
+              "pointer": "0xb604280",
+              "vtable": "0x2008ac70",
+              "type": 1,
+              "settle": false
+            },
+            {
+              "id": 194,
+              "pointer": "0xb603b10",
+              "vtable": "0x2008af68",
+              "type": 24,
+              "settle": false
+            }
+          ]
+        },
+        "player": "0xba420d8"
+      },
+      {
+        "civ_id": 8,
+        "ai_actor": "0x14e63d10",
+        "effective_aip": "0x14d89e28",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "engine_current": {
+          "index": 12,
+          "name": "Religion"
+        },
+        "settlement": {
+          "civ_id": 8,
+          "ai_actor": "0x14e63d10",
+          "planner": "0x14d89e08",
+          "scheduler": "0x14d8e8a0",
+          "aimap": "0x14a850a8",
+          "world_interface": "0x14e62790",
+          "next_id": 97,
+          "count": 0,
+          "capacities": [
+            400,
+            400,
+            400
+          ],
+          "goal_array": "0x14a83900",
+          "id_array": "0x14a832b8",
+          "all_goal_ids": [],
+          "cache_context": {
+            "external_world": "0xb8ffef0",
+            "dimensions": [
+              70,
+              140,
+              2
+            ],
+            "bounds_source": "engine serializer52dd31..52ddaf World+14/16/18",
+            "ground_only": true,
+            "cache_layers": "0xb99fb78"
+          },
+          "goals": []
+        },
+        "player": "0xba43530"
+      }
+    ],
+    "manager": "0xba62378"
+  },
+  "run_id": "h1-20261012-115257",
+  "snapshot_label": "B",
+  "turn": 1,
+  "pass_label": "T0-to-T1",
+  "variant": "H1-I",
+  "binding": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0",
+    "manifest_sha256": "77b1ad5b88343c18ecf7b67de6b2402900b0b39f7edcd0bbd53e1b2bbac7f49e",
+    "package_sha256": "cf334df116b5d22aa480f73fab4e715418a2a02da375c7196d65ed7006914a24"
+  },
+  "stable_twice": true,
+  "save_identity_proven": false,
+  "atomic_snapshot_proven": false,
+  "comparison": {
+    "status": "not-observable-at-this-moment",
+    "new_goal_settle": [],
+    "unconditional_bonus_proven": false,
+    "new_heap_ordering_proven": false,
+    "real_AI_overhead_proven": false,
+    "save_identity_proven": false
+  }
+}

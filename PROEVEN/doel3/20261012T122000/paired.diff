@@ -1,0 +1,491 @@
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/default.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/default.aip
+@@ -1298,13 +1298,14 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_BRONZE_WORKING"; 
+  "ADVANCE_STONE_WORKING"; 
+  "ADVANCE_TOOLMAKING"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_TRADE"; 
+  "ADVANCE_WRITING"; 
+@@ -1394,6 +1395,5 @@
+  "ADVANCE_LIFE_EXTENSION"; 
+  "ADVANCE_COMMUNISM"; 
+  "ADVANCE_ECOTOPIA"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_CLOAKING"; 
+ #END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip
+@@ -1110,8 +1110,8 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
+  "ADVANCE_THEOCRACY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_AGRICULTURE"; 
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip
+@@ -1108,13 +1108,14 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_BRONZE_WORKING"; 
+  "ADVANCE_STONE_WORKING"; 
+  "ADVANCE_TOOLMAKING"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_TRADE"; 
+  "ADVANCE_WRITING"; 
+@@ -1204,6 +1205,5 @@
+  "ADVANCE_LIFE_EXTENSION"; 
+  "ADVANCE_COMMUNISM"; 
+  "ADVANCE_ECOTOPIA"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_CLOAKING"; 
+ #END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip
+@@ -1106,6 +1106,8 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_STONE_WORKING"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_ALCHEMY"; 
+@@ -1117,7 +1119,6 @@
+  "ADVANCE_STIRRUP"; 
+  "ADVANCE_DOMESTICATION"; 
+  "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_PHILOSOPHY"; 
+  "ADVANCE_JURISPRUDENCE"; 
+  "ADVANCE_WRITING"; 
+@@ -1203,5 +1204,4 @@
+  "ADVANCE_COMMUNISM"; 
+  "ADVANCE_VIRTUAL_DEMOCRACY"; 
+  "ADVANCE_ECOTOPIA"; 
+- "ADVANCE_THEOCRACY"; 
+-#END_DATA  
++#END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip
+@@ -1107,6 +1107,8 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_SPACE_COLONIES"; 
+  "ADVANCE_INTELLIGENT_MATERIALS"; 
+  "ADVANCE_ARCOLOGIES"; 
+@@ -1121,7 +1123,6 @@
+  "ADVANCE_PHILOSOPHY"; 
+  "ADVANCE_GEOMETRY"; 
+  "ADVANCE_JURISPRUDENCE"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_DOMESTICATION"; 
+  "ADVANCE_BUREAUCRACY"; 
+  "ADVANCE_CITY_STATE"; 
+@@ -1202,7 +1203,6 @@
+  "ADVANCE_ECOTOPIA"; 
+  "ADVANCE_WILDERNESS_PRESERVATION_ACT"; 
+  "ADVANCE_SUBNEURAL_ADS"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_FASCISM"; 
+  "ADVANCE_GAIA_THEORY"; 
+ #END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip
+@@ -1105,13 +1105,14 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_SEA_COLONIES"; 
+  "ADVANCE_ARCOLOGIES"; 
+  "ADVANCE_ADVANCED_COMPOSITES"; 
+  "ADVANCE_FUEL_CELLS"; 
+  "ADVANCE_SUPERCONDUCTOR"; 
+  "ADVANCE_ASTRONOMY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_TOOLMAKING"; 
+@@ -1201,6 +1202,5 @@
+  "ADVANCE_WILDERNESS_PRESERVATION_ACT"; 
+  "ADVANCE_GLOBAL_DEFENSE_INITIATIVE"; 
+  "ADVANCE_CLOAKING"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_ECOTOPIA"; 
+ #END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip
+@@ -1113,6 +1113,8 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_TOOLMAKING"; 
+  "ADVANCE_MINING"; 
+@@ -1125,13 +1127,11 @@
+  "ADVANCE_GEOMETRY"; 
+  "ADVANCE_MONARCHY"; 
+  "ADVANCE_IRON_WORKING"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_CITY_STATE"; 
+  "ADVANCE_PHILOSOPHY"; 
+  "ADVANCE_TRADE"; 
+  "ADVANCE_BUREAUCRACY"; 
+  "ADVANCE_ASTRONOMY"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_BANKING"; 
+  "ADVANCE_STIRRUP"; 
+  "ADVANCE_ENGINEERING"; 
+--- baseline/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip
++++ variant/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip
+@@ -21,13 +21,14 @@
+ #DATA  
+ //  
+ //--------------------------------------------------------------------  
++ "ADVANCE_RELIGION"; 
++ "ADVANCE_THEOCRACY"; 
+  "ADVANCE_STONE_WORKING"; 
+  "ADVANCE_BRONZE_WORKING"; 
+  "ADVANCE_TOOLMAKING"; 
+  "ADVANCE_SHIP_BUILDING"; 
+  "ADVANCE_MINING"; 
+  "ADVANCE_MONARCHY"; 
+- "ADVANCE_RELIGION"; 
+  "ADVANCE_AGRICULTURE"; 
+  "ADVANCE_TRADE"; 
+  "ADVANCE_WRITING"; 
+@@ -117,6 +118,5 @@
+  "ADVANCE_LIFE_EXTENSION"; 
+  "ADVANCE_COMMUNISM"; 
+  "ADVANCE_ECOTOPIA"; 
+- "ADVANCE_THEOCRACY"; 
+  "ADVANCE_CLOAKING"; 
+ #END_DATA  
+--- baseline/CTP-proef/ctp_data/default/aidata/inputs.fli
++++ variant/CTP-proef/ctp_data/default/aidata/inputs.fli
+@@ -1,4 +1,9 @@
+ // inputs.fli
++
++input opening_completed
++input opening_required
++	tri yes_opening_required(opening_required, 1.0, 0.5)
++	tri no_opening_required(opening_required, 0.0, 0.5)
+ 
+ 	////////////////////////////////////////////////////////////////
+ 	////////// WHERE IS HUMAN?  ///////////
+--- baseline/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli
++++ variant/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli
+@@ -0,0 +1,5 @@
++if (yes_opening_required)
++{
++	gov_theocracy_1
++	gov_tyranny_2
++}
+--- baseline/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli
++++ variant/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli
+@@ -0,0 +1,196 @@
++// govern.fli
++
++	/////////////////////////////////////////////////////////////////////////
++	//
++	// pick rank ordering of governments to select
++	//
++	/////////////////////////////////////////////////////////////////////////
++
++	// always be in tyranny with less than 5 cities
++	if ((no_num_cities or 
++		a1to5_num_cities) and no_opening_required)
++	{
++		gov_tyranny_1
++	}
++
++    // Warrior at war
++	if ((not zero_at_war and 
++		yes_warrior and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{
++	    // good for war
++	    gov_technocracy_1
++	    gov_fascism_2
++	    gov_monarchy_3
++
++        // good for peace
++	    gov_multicorp_4
++        gov_democracy_5
++	    gov_republic_6
++    }
++  	
++
++    // Cleric at war
++	if ((not zero_at_war and 
++	    yes_cleric and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units ) and no_opening_required)
++	{
++	    // good for war
++	    gov_ecotopia_1
++        // good for peace
++	    gov_multicorp_2
++		// good for war or peace
++	    gov_theocracy_3
++	}
++
++    // Slaver at war
++	if ((	not zero_at_war and 
++		yes_slaver and
++	    	not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{	
++	    // good for war
++	    gov_ecotopia_1
++	    gov_fascism_2
++	    gov_monarchy_3
++
++        // good for peace
++	    gov_multicorp_4
++        gov_democracy_5
++	    gov_republic_6
++	}	
++
++    // Scientist at war
++	if ((not zero_at_war and 
++		yes_scientist and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{
++	    // good for war
++		gov_technocracy_1
++		gov_communism_2
++		gov_monarchy_3
++
++	    // good for peace
++		gov_virtual_d_4
++		gov_multicorp_5
++        gov_democracy_6
++        gov_republic_7
++	}
++
++
++    // Warrior at peace
++	if ((zero_at_war and 
++		yes_warrior and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{
++        // good for peace
++	    gov_multicorp_1
++        gov_democracy_2
++	    gov_republic_3
++
++	    // good for war
++	    gov_technocracy_4
++	    gov_fascism_5
++	    gov_monarchy_6
++    }
++  	
++
++    // Cleric at peace
++	if ((zero_at_war and 
++	    yes_cleric and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{
++        // good for peace
++	    gov_multicorp_1
++
++		// good for war or peace
++	    gov_theocracy_2
++
++	    // good for war
++	    gov_ecotopia_3
++	}
++
++    // Slaver at peace
++	if ((zero_at_war and 
++		yes_slaver and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{	
++        // good for peace
++	    gov_multicorp_1
++        gov_democracy_2
++	    gov_republic_3
++
++	    // good for war
++	    gov_ecotopia_4
++	    gov_fascism_5
++	    gov_monarchy_6
++	}	
++
++    // Scientist at peace
++	if ((zero_at_war and 
++		yes_scientist and
++	    not a1to5_num_cities
++		and not yes_i_can_build_wormhole_probe
++		and not yes_focus_on_units) and no_opening_required)
++	{
++	    // good for peace
++		gov_virtual_d_1
++		gov_multicorp_2
++        gov_democracy_3
++        gov_republic_4
++
++	    // good for war
++		gov_technocracy_5
++		gov_communism_6
++		gov_monarchy_7
++	}
++
++	if ((yes_i_can_build_wormhole_probe) and no_opening_required)
++	{
++	    // good for prod
++		gov_technocracy_1
++		gov_communism_2
++		gov_multicorp_3
++        gov_democracy_4
++		gov_monarchy_5
++		gov_virtual_d_6
++        gov_republic_7
++	}
++
++	if((	yes_focus_on_units 
++		and not yes_cleric) and no_opening_required)
++	{
++	    // good for prod
++		gov_technocracy_1
++		gov_communism_2
++		gov_multicorp_3
++        gov_democracy_4
++		gov_monarchy_5
++		gov_virtual_d_6
++        gov_republic_7
++	}
++    // Cleric at war
++	if ((yes_focus_on_units 
++		and yes_cleric ) and no_opening_required)
++	{
++		gov_technocracy_1
++	    gov_multicorp_2
++		// good for war or peace
++	    gov_theocracy_3	    // good for war
++	    gov_ecotopia_4
++        // good for peace
++
++	}--- baseline/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli
+@@ -14,7 +14,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli
+@@ -14,7 +14,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli
+@@ -13,7 +13,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/CTP-proef/ctp_data/default/aidata/beginturn.fli
++++ variant/CTP-proef/ctp_data/default/aidata/beginturn.fli
+@@ -5,6 +5,7 @@
+ 
+ #include "inputs.fli"
+ #include "outputs.fli"
++#include "set_govern_opening.fli"
+ 
+ //#include "set_settle_dense.fli"
+ //#include "set_science_speed_slow.fli"
+Binary CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll baseline 3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44 variant eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890

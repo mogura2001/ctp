@@ -14,6 +14,7 @@ sys.path.insert(0,str(ROOT/'PROEVEN/hulpmiddelen/python'))
 import pefile
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 import native,integration
+pins_spec=importlib.util.spec_from_file_location('b4_frozen_input_pins',OUT/'input-pins.py');pins_mod=importlib.util.module_from_spec(pins_spec);pins_spec.loader.exec_module(pins_mod)
 sha=lambda b:hashlib.sha256(b).hexdigest()
 align=lambda n,a:(n+a-1)//a*a
 DESIGN='6e310ea5c15f7b3cc42ad75f586bab6bdf14bdee6e63a6639ac7c5f9b2717501'
@@ -78,7 +79,7 @@ def compose(N,enabled):
  data.extend(code);data.extend(bytes(raw-len(code)))
  if enabled:data.extend(bytes(rwsize))
  checksum=pefile.PE(data=data).generate_checksum();change(p.OPTIONAL_HEADER.get_field_absolute_offset('CheckSum'),struct.pack('<I',checksum),'PE checksum')
- manifest=dict(stage='PREPARED EMISSION; native acceptance pending; not installed',variant=('B4-DIRECT-PRODUCTION-TECHNICAL' if enabled else 'H3-B2-COMPOSITION-BASELINE'),N=N,N_policy='pending; technical fixture only',original_sha256=ORIGINAL,design_sha256=DESIGN,candidate_sha256=sha(data),payload_sha256=sha(code),components=dict(H3=dict(rva=hex(0xd4000),sha256=sha(hcode)),B2=dict(rva=hex(b2base),sha256=sha(bcode)),B4=dict(rva=hex(b4base),sha256=sha(b4code)),state_rva=hex(statebase)),changes=changes,labels=r.labels,recipe=r.rows,scope='production-only technical; gameplay/science/monopoly/transport unmeasured')
+ manifest=dict(stage='PREPARED EMISSION; see separate offline results/root review; not installed',variant=('B4-DIRECT-PRODUCTION-TECHNICAL' if enabled else 'H3-B2-COMPOSITION-BASELINE'),N=N,N_policy='pending; technical fixture only',original_sha256=ORIGINAL,design_sha256=DESIGN,candidate_sha256=sha(data),payload_sha256=sha(code),components=dict(H3=dict(rva=hex(0xd4000),sha256=sha(hcode)),B2=dict(rva=hex(b2base),sha256=sha(bcode)),B4=dict(rva=hex(b4base),sha256=sha(b4code)),state_rva=hex(statebase)),input_pins=pins_mod.pins() if enabled else None,changes=changes,labels=r.labels,recipe=r.rows,scope='production-only technical; gameplay/science/monopoly/transport unmeasured')
  return bytes(data),code,manifest
 
 def main():

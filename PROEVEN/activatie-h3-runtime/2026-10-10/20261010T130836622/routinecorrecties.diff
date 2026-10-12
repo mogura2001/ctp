@@ -1,0 +1,131 @@
+﻿
+diff --git "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Guard-H1-T0.ps1" "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\Guard-H1-T0.ps1"
+index 4cfe1e6..fe821ab 100644
+--- "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Guard-H1-T0.ps1"
++++ "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\Guard-H1-T0.ps1"
+@@ -22,6 +22,9 @@ if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $started.pid -or $rows[0].Execut
+ $own=[Diagnostics.Process]::GetProcessById([int]$started.pid)
+ try{
+     $own.Refresh();$owner=[uint32]0
++    $processPath=$own.MainModule.FileName
++    $processCreationMs=([DateTimeOffset]$own.StartTime.ToUniversalTime()).ToUnixTimeMilliseconds()
++    if($started.exe -cne 'C:\GIT\ctp\CTP-proef\ctp_program\ctp\civctp.exe' -or $processPath -cne $started.exe -or $processCreationMs -ne $started.creation_utc_ms){throw 'Retained Process path/start differs from original start-record; no further action.'}
+     if($own.MainWindowHandle.ToInt64() -ne $final.sample.handle -or [H1T0GuardWindow]::GetWindowThreadProcessId($own.MainWindowHandle,[ref]$owner) -eq 0 -or $owner -ne $started.pid -or [H1T0GuardWindow]::GetForegroundWindow() -ne $own.MainWindowHandle){throw 'Original HWND/owner/foreground guard failed.'}
+     $elapsed=([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency
+     if($elapsed -ge 470000){throw 'Late guard result; no further action.'}
+diff --git "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Read-H1-Snapshot.ps1" "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\Read-H1-Snapshot.ps1"
+index d785f05..2db2a87 100644
+--- "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Read-H1-Snapshot.ps1"
++++ "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\Read-H1-Snapshot.ps1"
+@@ -7,7 +7,7 @@ if((Get-FileHash -LiteralPath $reader -Algorithm SHA256).Hash.ToLowerInvariant()
+ $aPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261010-h1-A.json'
+ $bPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261010-h1-B.json'
+ $output=$aPath;$turn=0
+-if($SnapshotLabel -eq 'B'){$output=$bPath;$turn=1;if(-not (Test-Path -LiteralPath $aPath)){throw 'Own A source missing; no B.'}}
++if($SnapshotLabel -eq 'B'){$output=$bPath;$turn=1;if(-not (Test-Path -LiteralPath $aPath)){throw 'Own A source missing; no B.'};$aAcceptance=Get-Content -LiteralPath (Join-Path $armDir 'A-archive.json') -Raw -Encoding utf8|ConvertFrom-Json;if($aAcceptance.instance_verified -ne $true){throw 'Own A instance rejected/unverified; no B.'}}
+ if(Test-Path -LiteralPath $output){throw 'Snapshot output exists; no overwrite/retry.'}
+ & powershell.exe -NoProfile -File (Join-Path $armDir 'Guard-H1-T0.ps1') -Purpose Read 2>&1|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-guard.txt") -Encoding utf8
+ if($LASTEXITCODE -ne 0){throw 'Original binding/deadline/budget guard failed; no reader.'}
+@@ -16,10 +16,16 @@ if($LASTEXITCODE -ne 0){throw 'Original binding/deadline/budget guard failed; no
+ $readerArgs=@($reader,'--pid',[string]$started.pid,'--variant','H1-I','--run-id','h1-20261010','--snapshot-label',$SnapshotLabel,'--turn',[string]$turn,'--pass-label','T0-to-T1','--output',$output)
+ if($SnapshotLabel -eq 'B'){$readerArgs+=@('--before',$aPath)}
+ [ordered]@{at=(Get-Date).ToString('o');executable='C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe';argv=$readerArgs;labels_are_external_procedure_labels=$true}|ConvertTo-Json -Depth 4|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-command.json") -Encoding utf8
+-$readerCode=$null;$readerError=$null
++$readerCode=$null;$readerError=$null;$instanceVerified=$false;$instanceCreationMs=$null
+ try{
+     & 'C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe' @readerArgs 2>&1|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-trace.txt") -Encoding utf8
+     $readerCode=$LASTEXITCODE
++    if($readerCode -eq 0){
++        $snapshot=Get-Content -LiteralPath $output -Raw -Encoding utf8|ConvertFrom-Json
++        $instanceCreationMs=([DateTimeOffset][DateTime]::FromFileTimeUtc([long]$snapshot.instance.creationtime_filetime)).ToUnixTimeMilliseconds()
++        if($started.exe -cne 'C:\GIT\ctp\CTP-proef\ctp_program\ctp\civctp.exe' -or $snapshot.instance.pid -ne $started.pid -or $instanceCreationMs -ne $started.creation_utc_ms -or $snapshot.instance.executable -cne $started.exe){throw 'Snapshot instance differs from original PID/creation/executable; procedure rejected, no n/B.'}
++        $instanceVerified=$true
++    }
+ }catch{$readerError=$_.Exception.Message;throw}
+ finally{
+     if(Test-Path -LiteralPath $output){
+@@ -27,7 +33,7 @@ finally{
+         if(Test-Path -LiteralPath $archive){throw 'Archive exists; no overwrite.'}
+         Copy-Item -LiteralPath $output -Destination $archive
+         $sourceHash=(Get-FileHash -LiteralPath $output -Algorithm SHA256).Hash.ToLowerInvariant();$archiveHash=(Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+-        [ordered]@{copied_at=(Get-Date).ToString('o');source=$output;archive=$archive;source_sha256=$sourceHash;archive_sha256=$archiveHash;byte_match=($sourceHash -eq $archiveHash);reader_exit_code=$readerCode;reader_error=$readerError}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-archive.json") -Encoding utf8
++        [ordered]@{copied_at=(Get-Date).ToString('o');source=$output;archive=$archive;source_sha256=$sourceHash;archive_sha256=$archiveHash;byte_match=($sourceHash -eq $archiveHash);reader_exit_code=$readerCode;reader_error=$readerError;instance_verified=$instanceVerified;instance_creation_utc_ms=$instanceCreationMs;procedure_accepted=($readerCode -eq 0 -and $instanceVerified -and $null -eq $readerError)}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-archive.json") -Encoding utf8
+         if($sourceHash -ne $archiveHash){throw 'Snapshot archive mismatch.'}
+     }
+ }
+diff --git "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Finish-H1-T0.ps1" "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\close-mainwindow\\Finish-H1-T0.ps1"
+index 30fabdd..ba7839e 100644
+--- "a/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\routinecorrecties-before-20261010T180100\\Finish-H1-T0.ps1"
++++ "b/C:\\GIT\\ctp\\PROEVEN\\activatie-h3-runtime\\2026-10-10\\20261010T130836622\\H1-I\\close-mainwindow\\Finish-H1-T0.ps1"
+@@ -41,13 +41,24 @@ function Read-PinnedFiles {
+     }
+ }
+ 
++function Assert-ObservationDeadline {
++    param($State)
++    $State.live_elapsed_ms=([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency
++    $State.request_elapsed_ms=$clock.Elapsed.TotalMilliseconds
++    $State.late_os_return=($State.live_elapsed_ms -ge 480000 -or $State.request_elapsed_ms -ge 10000)
++    if($State.late_os_return){$summary.late_query_return=$true;throw 'Late observation query: no exit acceptance outside480s/10s.'}
++}
++
+ function Read-OwnBinding {
+     param([string]$Stage)
+     if(-not $request.attempted -and (([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency) -ge 470000){throw 'Insufficient10s reserve within480s; no request.'}
+     $state = [ordered]@{stage=$Stage;query_started_at=(Get-Date).ToString('o');query_succeeded=$false;original_pid_absent=$false}
+     $checks.Add($state)
++    if($request.attempted){Assert-ObservationDeadline $state}
+     $row = @(Get-CimInstance Win32_Process -Filter "ProcessId=$targetPid" -ErrorAction Stop)
++    if($request.attempted){Assert-ObservationDeadline $state}
+     $all = @(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop)
++    if($request.attempted){Assert-ObservationDeadline $state}
+     $state.query_succeeded = $true
+     $state.query_completed_at = (Get-Date).ToString('o')
+     $state.original_pid_count = $row.Count
+@@ -89,6 +100,7 @@ function Read-OwnBinding {
+     $state.own_visible_count = $visible.Count
+     if ($visible.Count -ne 1 -or $visible[0].handle -ne $expectedHandle -or [string]::IsNullOrWhiteSpace($visible[0].title) -or $visible[0].title -match 'Error|CD-ROM|Call to Power CD') { throw 'Possible modal, extra visible own window or unreadable main-window state.' }
+     $state.binding_completed_at = (Get-Date).ToString('o')
++    if($request.attempted){Assert-ObservationDeadline $state}
+     return $state
+ }
+ 
+@@ -125,6 +137,7 @@ try {
+         } else {
+             $clock = [Diagnostics.Stopwatch]::StartNew()
+             $request.called_at = (Get-Date).ToString('o')
++            if((([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency) -ge 470000){throw 'Late binding: no10s reserve directly before CloseMainWindow.'}
+             $request.attempted = $true
+             $request.call_count = 1
+             try { $request.bool_return=$ownProcess.CloseMainWindow() }
+@@ -143,15 +156,20 @@ try {
+                 $observed.request_elapsed_ms = $clock.Elapsed.TotalMilliseconds
+                 $observed.late_os_return = ($observed.request_elapsed_ms -gt 10000)
+                 if ($observed.original_pid_absent) {
++                    Assert-ObservationDeadline $observed
+                     $ownProcess.Refresh()
++                    Assert-ObservationDeadline $observed
+                     $observed.has_exited = $ownProcess.HasExited
++                    Assert-ObservationDeadline $observed
+                     $summary.has_exited = $observed.has_exited
+                     if ($observed.has_exited) {
+                         try { $observed.exit_code=$ownProcess.ExitCode;$summary.exit_code=$observed.exit_code }
+                         catch { $observed.exit_code_error=$_.Exception.Message }
++                        Assert-ObservationDeadline $observed
+                     }
+                     $observed.request_elapsed_ms = $clock.Elapsed.TotalMilliseconds
+                     $observed.late_os_return = ($observed.request_elapsed_ms -gt 10000)
++                    Assert-ObservationDeadline $observed
+                     if (-not $observed.late_os_return -and $observed.all_civctp_count -eq 0 -and $observed.has_exited) {
+                         $summary.exit_confirmed=$true
+                         $summary.outcome='EXIT_CONFIRMED_CAUSE_UNKNOWN'
+@@ -199,7 +217,9 @@ try {
+             if($freshCode -ne 0 -and $freshCode -ne 25){throw 'Budget stop/unknown: no restore mutation.'}
+             $dll=Join-Path $workspace 'CTP-proef\ctp_program\ctp\dll\ai\robotcom.dll';$backup=Join-Path $armDir 'robotcom.before.dll'
+             if((Get-FileHash -LiteralPath $dll -Algorithm SHA256).Hash.ToLowerInvariant() -ne '59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0' -or (Get-FileHash -LiteralPath $backup -Algorithm SHA256).Hash.ToLowerInvariant() -ne '3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44'){throw 'Restore candidate/backup mismatch.'}
++            if((([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency) -ge 480000){throw 'Live480s reached before restore query; no mutation.'}
+             $fresh=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop);$restore.query_at=(Get-Date).ToString('o');$restore.all_civctp_count=$fresh.Count
++            if((([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)*1000.0/[long]$started.monotonic_frequency) -ge 480000){$restore.late_query_return=$true;throw 'Late restore query beyond480s; no mutation.'}
+             if($fresh.Count -ne 0){throw 'Fresh restoration gate not count0.'}
+             $restore.attempted=$true;Copy-Item -LiteralPath $backup -Destination $dll;$restore.sha256=(Get-FileHash -LiteralPath $dll -Algorithm SHA256).Hash.ToLowerInvariant()
+             if($restore.sha256 -ne '3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44'){throw 'Restored original mismatch.'};$restore.restored=$true

@@ -1,0 +1,196 @@
+// govern.fli
+
+	/////////////////////////////////////////////////////////////////////////
+	//
+	// pick rank ordering of governments to select
+	//
+	/////////////////////////////////////////////////////////////////////////
+
+	// always be in tyranny with less than 5 cities
+	if (no_num_cities or 
+		a1to5_num_cities)
+	{
+		gov_tyranny_1
+	}
+
+    // Warrior at war
+	if (not zero_at_war and 
+		yes_warrior and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{
+	    // good for war
+	    gov_technocracy_1
+	    gov_fascism_2
+	    gov_monarchy_3
+
+        // good for peace
+	    gov_multicorp_4
+        gov_democracy_5
+	    gov_republic_6
+    }
+  	
+
+    // Cleric at war
+	if (not zero_at_war and 
+	    yes_cleric and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units )
+	{
+	    // good for war
+	    gov_ecotopia_1
+        // good for peace
+	    gov_multicorp_2
+		// good for war or peace
+	    gov_theocracy_3
+	}
+
+    // Slaver at war
+	if (	not zero_at_war and 
+		yes_slaver and
+	    	not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{	
+	    // good for war
+	    gov_ecotopia_1
+	    gov_fascism_2
+	    gov_monarchy_3
+
+        // good for peace
+	    gov_multicorp_4
+        gov_democracy_5
+	    gov_republic_6
+	}	
+
+    // Scientist at war
+	if (not zero_at_war and 
+		yes_scientist and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{
+	    // good for war
+		gov_technocracy_1
+		gov_communism_2
+		gov_monarchy_3
+
+	    // good for peace
+		gov_virtual_d_4
+		gov_multicorp_5
+        gov_democracy_6
+        gov_republic_7
+	}
+
+
+    // Warrior at peace
+	if (zero_at_war and 
+		yes_warrior and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{
+        // good for peace
+	    gov_multicorp_1
+        gov_democracy_2
+	    gov_republic_3
+
+	    // good for war
+	    gov_technocracy_4
+	    gov_fascism_5
+	    gov_monarchy_6
+    }
+  	
+
+    // Cleric at peace
+	if (zero_at_war and 
+	    yes_cleric and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{
+        // good for peace
+	    gov_multicorp_1
+
+		// good for war or peace
+	    gov_theocracy_2
+
+	    // good for war
+	    gov_ecotopia_3
+	}
+
+    // Slaver at peace
+	if (zero_at_war and 
+		yes_slaver and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{	
+        // good for peace
+	    gov_multicorp_1
+        gov_democracy_2
+	    gov_republic_3
+
+	    // good for war
+	    gov_ecotopia_4
+	    gov_fascism_5
+	    gov_monarchy_6
+	}	
+
+    // Scientist at peace
+	if (zero_at_war and 
+		yes_scientist and
+	    not a1to5_num_cities
+		and not yes_i_can_build_wormhole_probe
+		and not yes_focus_on_units)
+	{
+	    // good for peace
+		gov_virtual_d_1
+		gov_multicorp_2
+        gov_democracy_3
+        gov_republic_4
+
+	    // good for war
+		gov_technocracy_5
+		gov_communism_6
+		gov_monarchy_7
+	}
+
+	if (yes_i_can_build_wormhole_probe)
+	{
+	    // good for prod
+		gov_technocracy_1
+		gov_communism_2
+		gov_multicorp_3
+        gov_democracy_4
+		gov_monarchy_5
+		gov_virtual_d_6
+        gov_republic_7
+	}
+
+	if(	yes_focus_on_units 
+		and not yes_cleric)
+	{
+	    // good for prod
+		gov_technocracy_1
+		gov_communism_2
+		gov_multicorp_3
+        gov_democracy_4
+		gov_monarchy_5
+		gov_virtual_d_6
+        gov_republic_7
+	}
+    // Cleric at war
+	if (yes_focus_on_units 
+		and yes_cleric )
+	{
+		gov_technocracy_1
+	    gov_multicorp_2
+		// good for war or peace
+	    gov_theocracy_3	    // good for war
+	    gov_ecotopia_4
+        // good for peace
+
+	}

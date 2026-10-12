@@ -17,19 +17,19 @@ Verbeter de gameplay van de computergestuurde beschavingen in het eerste Civiliz
 
 ### Gezamenlijke opening voor alle persoonlijkheden
 
-Alle normale AI-beschavingen volgen eerst dezelfde strategische basis: snelle uitbreiding naar 25–30 steden, Religion → Theocracy en een overstap naar Theocracy zodra beschikbaar en zinvol, beperkte noodzakelijke legerproductie en gebouwen die uitbreiding ondersteunen. Een geschikte productiestad kan voor Labyrinth worden vrijgesteld. De barbarenroute behandelen we afzonderlijk.
+Alle normale AI-beschavingen volgen eerst dezelfde strategische basis: snelle uitbreiding naar 30 steden, Religion → Theocracy en een overstap naar Theocracy zodra beschikbaar en zinvol, beperkte noodzakelijke legerproductie en gebouwen die uitbreiding ondersteunen. Een geschikte productiestad kan voor Labyrinth worden vrijgesteld. De barbarenroute behandelen we afzonderlijk.
 
 De bestaande persoonlijkheid blijft ingesteld, maar mag deze gezamenlijke opening niet verdringen. Na de opening krijgen wetenschappelijke, militaire en andere voorkeuren meer invloed. Goede locatiekeuze, stadsspecialisatie en het vermijden van nutteloze gebouwen blijven voor iedereen gelden.
 
-De gewenste overgang wordt gekoppeld aan de toestand van het rijk: doelomvang bereikt en Theocracy actief, niet aan een vaste beurt. De exacte grens binnen 25–30 wordt nog gekozen. Concrete dreiging, gebrek aan vestigingsruimte of ernstige gelukproblemen kunnen tijdelijk afwijkend gedrag noodzakelijk maken. Dit is geen automatische vrijbrief om de opening definitief te verlaten.
+De gewenste overgang wordt gekoppeld aan de toestand van het rijk: minstens 30 steden en actieve Theocracy, niet aan een vaste beurt. Deze grens is door de gebruiker gekozen. Daarna mogen settlers en nieuwe steden blijven worden gemaakt voor goede, bereikbare en veilige locaties, tot het beleidsmaximum van 40 steden onder Theocracy. Concrete dreiging, gebrek aan vestigingsruimte of ernstige gelukproblemen kunnen tijdelijk afwijkend gedrag noodzakelijk maken. Dit is geen automatische vrijbrief om de opening definitief te verlaten.
 
 Onderzoek een gedeeld openingsprofiel via bestaande FLI/AIP-aansturing. Laat tijdelijke defensie-, oorlogs- en onderzoeksprofielen ermee samenwerken, zodat ze de afgesproken opening niet onbedoeld vervangen. Technische uitvoering en effect zijn nog niet bewezen.
 
 ### 1. Snelle vroege uitbreiding
 
-Bereik in de early game min of meer zo snel mogelijk 25–30 steden. Groei is tijdens deze fase ondersteunend aan kolonistenproductie; pas daarna krijgt bevolkingsgroei de hoofdprioriteit.
+Bereik in de early game min of meer zo snel mogelijk 30 steden. Groei is tijdens deze fase ondersteunend aan kolonistenproductie; pas daarna krijgt bevolkingsgroei de hoofdprioriteit.
 
-Een goede productiestad kan worden vrijgesteld van kolonistenproductie om bijvoorbeeld Labyrinth te bouwen. Onderzoek de afweging tussen wonderopbrengst en gemiste uitbreiding. De exacte omschakeling binnen de bandbreedte 25–30 en noodzakelijke uitzonderingen worden nog uitgewerkt.
+Een goede productiestad kan worden vrijgesteld van kolonistenproductie om bijvoorbeeld Labyrinth te bouwen. Onderzoek de afweging tussen wonderopbrengst en gemiste uitbreiding. De openingsgrens is 30 steden plus actieve Theocracy; noodzakelijke uitzonderingen worden nog uitgewerkt.
 
 ### 1a. Opening aanpassen aan ruimte en buren
 
@@ -38,7 +38,7 @@ Settlerproductie moet op de uitvoerbare uitbreidingsbehoefte reageren. Tijdens s
 - Vraag extra settlers aan zolang er voldoende goede, bereikbare en veilige vestigingslocaties zijn. Bestaande settlers en settlers in productie tellen mee.
 - Rem nieuwe productie af en pauzeer haar wanneer de aanwezige settlers de uitvoerbare vestigingsopdrachten al kunnen afdekken. Voorkom ophoping zonder nuttige bestemming.
 - Onderscheid werkelijk gebrek aan locaties van locaties waarvoor eerst transport nodig is. In het laatste geval krijgt de transportoplossing voorrang op nog meer ongebruikte settlers.
-- Stop de extra settleraanvraag voor de opening wanneer de gekozen doelomvang binnen 25–30 steden is bereikt. De precieze grens blijft open; verdere kolonisatie kan later opnieuw worden beoordeeld.
+- Beëindig de extra openingsaanvraag bij 30 steden, maar blijf settlers aanvragen voor nuttige, bereikbare en veilige locaties tot maximaal 40 steden onder Theocracy. De openingsgrens is geen algemeen verbod op verdere vestiging.
 - Herbeoordeel een tijdelijke pauze wanneer nieuwe ruimte, transport of veiligere omstandigheden beschikbaar komen.
 
 Dit beschrijft gewenst beleid, geen al beschikbare FLI-regels. Onderzoek eerst welke bestaande signalen en plannermechanismen deze afstemming mogelijk maken. De standaard primary-vraag is geen bovengrens voor alle settlerproductie: andere bouwklassen kunnen aanvullende vraag leveren.
@@ -49,7 +49,7 @@ De gezamenlijke opening is geen onvoorwaardelijke rabbit-strategie. De AI moet h
 - Op een klein eiland met weinig resterende locaties moet uitbreiding over water worden voorbereid: passend onderzoek, kustproductie en bruikbaar transport. Voorkom dat een blijvend hoge settlervraag de daarvoor benodigde schepen verdringt of settlers laat ophopen.
 - Bij gedeeld land met andere AI-beschavingen krijgen verdediging van steden en bescherming van uitbreiding eerder gewicht. Schakel over van vrijwel uitsluitend uitbreiden naar uitbreiding met passende verdediging, ook vóór een formele oorlog. De mate hangt af van nabijheid, concurrentie en dreiging; aanwezigheid van een buur rechtvaardigt geen onbeperkte legerproductie of volledige vestigingsstop.
 
-Deze omstandigheden kunnen tegelijk gelden. Uitbreiding naar 25–30 bruikbare steden blijft het strategische doel waar de kaart en veiligheid dit toelaten. De omstandigheden bepalen hoe we daar komen, niet de persoonlijkheid alleen. Concrete detectie, grenzen en bestaande FLI/AIP/DLL-aanknopingspunten moeten eerst worden geanalyseerd.
+Deze omstandigheden kunnen tegelijk gelden. Uitbreiding naar 30 bruikbare steden blijft het openingsdoel waar de kaart en veiligheid dit toelaten; daarna blijven goede locaties relevant tot maximaal 40 steden onder Theocracy. De omstandigheden bepalen hoe we daar komen, niet de persoonlijkheid alleen. Concrete detectie, grenzen en bestaande FLI/AIP/DLL-aanknopingspunten moeten eerst worden geanalyseerd.
 
 ### 2. Beperkte vroege legerlast
 
@@ -127,7 +127,7 @@ Maak een vaste vroege Deity-save die iedere versie vanaf dezelfde omstandigheden
 | Meetmoment | Beoordeling |
 | --- | --- |
 | Turn 25 | Uitbreidingstempo, steden en kolonisten in voorbereiding |
-| Turn 50 | Voortgang naar 25–30 steden en oorzaken van vertraging |
+| Turn 50 | Voortgang naar 30 steden en oorzaken van vertraging |
 | Turn 100 | Omzetting van uitbreiding naar groei, productie en wetenschap |
 | Doorlopend | Beurt waarop stad 25 en stad 30 worden gesticht |
 
@@ -155,7 +155,12 @@ Concrete streefwaarden per meetmoment worden na een uitgangsmeting en met de geb
 - Precieze onderzoeksvolgorde en overheidsovergang.
 - Optimale granary-timing en kolonistencyclus.
 - Minimumverdediging en reactie op dreiging.
-- Keuze tussen 25 en 30 steden en omstandigheden om eerder of later te stoppen.
+- Concrete uitzonderingen op de gekozen openingsgrens van 30 steden en actieve Theocracy; nuttige verdere vestiging tot maximaal 40 steden onder Theocracy.
 - Benchmarkinstellingen en numerieke streefwaarden.
 
 Er zijn voor deze vastlegging geen spelbestanden aangepast.
+
+
+## Resultaatgrens: drie werksessies
+
+Gebruikersinstructie van12okt: binnen drie werksessies moet minstens een oorspronkelijk gameplaydoel aantoonbaar afgerond zijn, of met concrete onderbouwing bewezen technisch niet haalbaar. Technische helpers, offline kandidaten en voorstellen tellen niet als afgerond gameplaydoel. De huidige hervatte werkperiode telt als sessie1; automatische budgethercontroles tellen niet als extra werksessie. Eerst focus op doel3: Religion?Theocracy en werkelijk naar Theocracy overschakelen bij alle normale AI's. Zie FOCUS-DRIE-SESSIES.md voor bewijsgrens en eindrapport. Alle overige projectdoelen blijven gelden.

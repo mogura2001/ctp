@@ -1,0 +1,797 @@
+{
+  "state": "VARIANT_GAMEPLAY_OUTCOME_ALL7_MET_T26_BASELINE_AND_SAVE_RELOAD_PENDING",
+  "T0_screen": "4000BC",
+  "T25_screen": "2750BC",
+  "T26_screen_label": "T26-allTheocracy.png (image captured; date requires own/root viewing)",
+  "instance": {
+    "pid": 1744,
+    "creationtime_filetime": 134362760474446522,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "civ_ids": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "all_snapshots_stable": true,
+  "all27_loaded_N30": true,
+  "one_native_round_per_n": true,
+  "all_Religion_Theocracy_known_active3": true,
+  "baseline_run": false,
+  "save_reload_test": false,
+  "exit_code": "UNKNOWN/null; HasExited true and count0 confirmed",
+  "rows": [
+    {
+      "civ_id": 2,
+      "first_Religion_known": 6,
+      "first_Theocracy_known": 13,
+      "first_request_government3": 13,
+      "first_active_government3": 14,
+      "first_Theocracy_current": 6,
+      "T26_cities": 3,
+      "T0_current": "Iron Working",
+      "initial_Religion_known": false,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 13,
+      "active3_native_round": 13,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "current": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 6,
+          "processed_round": 5,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 13,
+          "processed_round": 12,
+          "request": {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          "current": {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 13
+        },
+        {
+          "turn": 19,
+          "processed_round": 18,
+          "request": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "current": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 13
+        },
+        {
+          "turn": 22,
+          "processed_round": 21,
+          "request": {
+            "index": 15,
+            "name": "Trade"
+          },
+          "current": {
+            "index": 15,
+            "name": "Trade"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 13
+        },
+        {
+          "turn": 26,
+          "processed_round": 25,
+          "request": {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          "current": {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 13
+        }
+      ]
+    },
+    {
+      "civ_id": 3,
+      "first_Religion_known": 5,
+      "first_Theocracy_known": 16,
+      "first_request_government3": 16,
+      "first_active_government3": 20,
+      "first_Theocracy_current": 5,
+      "T26_cities": 3,
+      "T0_current": "Writing",
+      "initial_Religion_known": false,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 19,
+      "active3_native_round": 19,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "current": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 5,
+          "processed_round": 4,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 16,
+          "processed_round": 15,
+          "request": {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          "current": {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 19
+        },
+        {
+          "turn": 25,
+          "processed_round": 24,
+          "request": {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          "current": {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 19
+        }
+      ]
+    },
+    {
+      "civ_id": 4,
+      "first_Religion_known": 6,
+      "first_Theocracy_known": 23,
+      "first_request_government3": 23,
+      "first_active_government3": 26,
+      "first_Theocracy_current": 6,
+      "T26_cities": 3,
+      "T0_current": "Shipbuilding",
+      "initial_Religion_known": false,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 25,
+      "active3_native_round": 25,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "current": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 6,
+          "processed_round": 5,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 23,
+          "processed_round": 22,
+          "request": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "current": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 25
+        }
+      ]
+    },
+    {
+      "civ_id": 5,
+      "first_Religion_known": 0,
+      "first_Theocracy_known": 10,
+      "first_request_government3": 10,
+      "first_active_government3": 12,
+      "first_Theocracy_current": 1,
+      "T26_cities": 3,
+      "T0_current": "Monarchy",
+      "initial_Religion_known": true,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 11,
+      "active3_native_round": 11,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 10,
+          "processed_round": 9,
+          "request": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "current": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 11
+        },
+        {
+          "turn": 13,
+          "processed_round": 12,
+          "request": {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          "current": {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 11
+        },
+        {
+          "turn": 17,
+          "processed_round": 16,
+          "request": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 11
+        },
+        {
+          "turn": 21,
+          "processed_round": 20,
+          "request": {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          "current": {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 11
+        },
+        {
+          "turn": 25,
+          "processed_round": 24,
+          "request": {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          "current": {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 11
+        }
+      ]
+    },
+    {
+      "civ_id": 6,
+      "first_Religion_known": 4,
+      "first_Theocracy_known": 12,
+      "first_request_government3": 12,
+      "first_active_government3": 16,
+      "first_Theocracy_current": 4,
+      "T26_cities": 2,
+      "T0_current": "Writing",
+      "initial_Religion_known": false,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 15,
+      "active3_native_round": 15,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "current": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 4,
+          "processed_round": 3,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 12,
+          "processed_round": 11,
+          "request": {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          "current": {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 15
+        },
+        {
+          "turn": 20,
+          "processed_round": 19,
+          "request": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 15
+        },
+        {
+          "turn": 25,
+          "processed_round": 24,
+          "request": {
+            "index": 15,
+            "name": "Trade"
+          },
+          "current": {
+            "index": 15,
+            "name": "Trade"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 15
+        }
+      ]
+    },
+    {
+      "civ_id": 7,
+      "first_Religion_known": 0,
+      "first_Theocracy_known": 12,
+      "first_request_government3": 12,
+      "first_active_government3": 13,
+      "first_Theocracy_current": 1,
+      "T26_cities": 3,
+      "T0_current": "Writing",
+      "initial_Religion_known": true,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 12,
+      "active3_native_round": 12,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 12,
+          "processed_round": 11,
+          "request": {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          "current": {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 12
+        },
+        {
+          "turn": 22,
+          "processed_round": 21,
+          "request": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "current": {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 12
+        },
+        {
+          "turn": 25,
+          "processed_round": 24,
+          "request": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 3,
+          "requested_government": 3,
+          "deadline": 12
+        }
+      ]
+    },
+    {
+      "civ_id": 8,
+      "first_Religion_known": 5,
+      "first_Theocracy_known": 20,
+      "first_request_government3": 20,
+      "first_active_government3": 24,
+      "first_Theocracy_current": 5,
+      "T26_cities": 3,
+      "T0_current": "Writing",
+      "initial_Religion_known": false,
+      "initial_Theocracy_known": false,
+      "active3_deadline": 23,
+      "active3_native_round": 23,
+      "native_deadline_met": true,
+      "target_changes": [
+        {
+          "turn": 0,
+          "processed_round": -1,
+          "request": {
+            "index": -1,
+            "name": null
+          },
+          "current": {
+            "index": 8,
+            "name": "Writing"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 1,
+          "processed_round": 0,
+          "request": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "current": {
+            "index": 12,
+            "name": "Religion"
+          },
+          "Religion_known": false,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 5,
+          "processed_round": 4,
+          "request": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "current": {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          "Religion_known": true,
+          "Theocracy_known": false,
+          "government": 1,
+          "requested_government": 1,
+          "deadline": -1
+        },
+        {
+          "turn": 20,
+          "processed_round": 19,
+          "request": {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          "current": {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          "Religion_known": true,
+          "Theocracy_known": true,
+          "government": 0,
+          "requested_government": 3,
+          "deadline": 23
+        }
+      ]
+    }
+  ]
+}

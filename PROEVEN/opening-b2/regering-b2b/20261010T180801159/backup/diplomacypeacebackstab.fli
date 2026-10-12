@@ -1,0 +1,66 @@
+//////////////////////////////////////////////
+//////// BEGIN TURN DIPLOMACY ////////////////
+//////////////////////////////////////////////	
+
+fuzzy_begin_diplomacy {
+
+// set my peacefulness
+
+#include "diplomacy_set_backstab.fli"
+#include "diplomacy_set_peace.fli"
+#include "diplomacy_begin.fli"
+}
+
+//////////////////////////////////////////////
+//////// PRE INCOMING DIPLOMACY //////////////
+//////////////////////////////////////////////	
+
+fuzzy_pre_incoming_diplomacy diplomacy_label { 
+// this determines whether or not AI accepts messages
+
+#include "diplomacy_set_backstab.fli"
+#include "diplomacy_set_peace.fli"
+#include "diplomacy_pre_incoming.fli"
+}
+//end fuzzy_pre_incoming_diplomacy diplomacy_label
+
+//////////////////////////////////////
+//BEGIN FUZZY_PRE_OUTGOING_DIPLOMACY//
+//////////////////////////////////////
+
+fuzzy_pre_outgoing_diplomacy {
+
+#include "diplomacy_set_peace.fli"
+#include "diplomacy_pre_outgoing.fli"
+}
+//end fuzzy_pre_outgoing_diplomacy
+
+
+////////////////////////////////
+//BEGIN FUZZY_REJECTED_MESSAGE//
+////////////////////////////////
+
+fuzzy_rejected_message {
+
+#include "diplomacy_set_backstab.fli"
+#include "diplomacy_set_peace.fli"
+#include "diplomacy_rejected.fli"
+
+}
+//end fuzzy rejected message
+
+
+////////////////////////////////
+//BEGIN FUZZY_ACCEPTED_MESSAGE//
+////////////////////////////////
+
+fuzzy_accepted_message {
+
+#include "diplomacy_set_backstab.fli"
+#include "diplomacy_set_peace.fli"
+#include "diplomacy_accepted.fli"
+
+}
+//end fuzzy_accepted_message
+
+//END DIPLOMACYPEACE.FLI

@@ -1,0 +1,115 @@
+{
+  "reported_at_utc": "2026-10-09T19:09:24.357460+00:00",
+  "variants": [
+    {
+      "name": "BASELINE-N25",
+      "sha256": "3b1a0ce1023ee041ea08c3ba6132e353e720a1d851ce841027ed8482b12f8519",
+      "payload_sha256": "e2e8b1e4d5614ab834a3d09fe4bc7fdd7b20cc192ef974ccb9ea363dbd203d67",
+      "stage": "OFFLINE COMPOSITION/LOADER CHECKS",
+      "components": {
+        "H3": {
+          "rva": "0xd4000",
+          "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+        },
+        "B2": {
+          "rva": "0xd7000",
+          "sha256": "f721cd92febd725f03e3028fc281fd6317ff67596fd335b344322a38d7824ab3"
+        },
+        "B4": {
+          "rva": "0xd9000",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "state_rva": "0xd9000"
+      }
+    },
+    {
+      "name": "B4-N25",
+      "sha256": "2528673643259ae7fd870834edda404407cd04f328c48fb424e003ba2faf1326",
+      "payload_sha256": "3d697b2b8dab11b61891ee056bce81f1c7911e7609e6c45c656c13133337bf1a",
+      "stage": "COMPLETE OFFLINE FIXTURE/LOADER CHECKS; ROOT REVIEW PENDING",
+      "components": {
+        "H3": {
+          "rva": "0xd4000",
+          "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+        },
+        "B2": {
+          "rva": "0xd7000",
+          "sha256": "f721cd92febd725f03e3028fc281fd6317ff67596fd335b344322a38d7824ab3"
+        },
+        "B4": {
+          "rva": "0xd9000",
+          "sha256": "e7c29043641f53309d6b4ddd6a0081dd294cce6fec2d403c1bf556b1766ff6db"
+        },
+        "state_rva": "0xdd000"
+      }
+    },
+    {
+      "name": "BASELINE-N30",
+      "sha256": "be2368421c9e4ee709e674b3e22eb5d5f548b41f67623d7ce53b927b44b867d3",
+      "payload_sha256": "7aea72699f6dbf2596bd6ca34513e011a68714741830e21494bd6c79e75c31b2",
+      "stage": "OFFLINE COMPOSITION/LOADER CHECKS",
+      "components": {
+        "H3": {
+          "rva": "0xd4000",
+          "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+        },
+        "B2": {
+          "rva": "0xd7000",
+          "sha256": "c898e467e3f2a2cba8f0c6e479d430b856afbd8b54b00f5e98ef55ed483ab039"
+        },
+        "B4": {
+          "rva": "0xd9000",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "state_rva": "0xd9000"
+      }
+    },
+    {
+      "name": "B4-N30",
+      "sha256": "004dcad1f67a7594d83bb015e1f7c4ef8ff329b8815301ab4453f2c3b1855c23",
+      "payload_sha256": "96ef21f01d1936811e3ea32b8f4455b77d7801e734c239cd35333bf90db8515a",
+      "stage": "COMPLETE OFFLINE FIXTURE/LOADER CHECKS; ROOT REVIEW PENDING",
+      "components": {
+        "H3": {
+          "rva": "0xd4000",
+          "sha256": "21873cb38dcbcd39e5ca2f64a2473fe33d3daf11cae4d415c7831704afa65dbf"
+        },
+        "B2": {
+          "rva": "0xd7000",
+          "sha256": "c898e467e3f2a2cba8f0c6e479d430b856afbd8b54b00f5e98ef55ed483ab039"
+        },
+        "B4": {
+          "rva": "0xd9000",
+          "sha256": "669a60607b6cdeeca22dca1ddfb1de15ee661903c3b0e7397c682ce1806691a4"
+        },
+        "state_rva": "0xdd000"
+      }
+    }
+  ],
+  "native_calls_per_N": 109,
+  "independent_inputguard_cases_per_N": 22,
+  "native_helpers_exit0": 10,
+  "prepared": true,
+  "installed": false,
+  "offline_checked": true,
+  "root_accepted": false,
+  "real_host_accepted": false,
+  "gameplay_measured": false,
+  "performance_accepted": false,
+  "production_N_chosen": false,
+  "protected_snapshot": {
+    "checked_at_utc": "2026-10-09T19:08:00.883698+00:00",
+    "baseline": [
+      "PROEVEN/opening-b2/protected-after-native.json",
+      "PROEVEN/opening-b2/previous-packages-before.json"
+    ],
+    "installation_files": 3090,
+    "previous_package_files": 120,
+    "files": 3210,
+    "deltas": [],
+    "pass_": true,
+    "scope": "existing protected installation/save/user changes and H1/H3 paths; exact installation membership; no modifications"
+  },
+  "scope": "actual emitted producer/H3-current and fivewrapper chain with explicit controlled native inputs; standalone real15body6slot guard; original native Actual/Choose/Desired/AIPUpdate retained with intended hooks; ordinary loader/rebase; no engine/gameplay acceptance",
+  "pass_": true
+}

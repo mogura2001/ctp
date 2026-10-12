@@ -1,0 +1,184 @@
+{
+  "created_at": "2026-10-11T16:38:48.688925+02:00",
+  "state": "PREPARED_STATIC_ONLY_NOT_INSTALLED_NOT_NATIVE_TESTED",
+  "scope": "C1 only",
+  "old_package": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803",
+  "source_pins": {
+    "ONTWERP/B2C-HEADER-EN-PARSER.md": "333f90383c016c5811fd0f5a101a34ded2b875194b48898c7b16e58b0b96bf0a",
+    "ONTWERP/GEZAMENLIJKE-OPENING-B2.md": "ea5140b5505c11f457bdcdc3cf41fcc023e277bf247866228ad356919c9ef40e",
+    "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/manifest.json": "017c57960864d7675f4b7ae500007f0b24e104e19ca917a272d9ed54c5af183a",
+    "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/category-blocks.json": "61a757510d1d738f02c3e443373a98966d6020c304f1cf4bc02c1da3c068d07a",
+    "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/routing.json": "476b112c19cfd4db169e20bdba665680464c55a514ec6edcc352afdbd992eb37",
+    "CTP-proef/ctp_data/default/aidata/AIPs/aipdef.h": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47"
+  },
+  "protected_source_count": 168,
+  "candidate_files": [
+    {
+      "candidate": "inputs.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/inputs.fli",
+      "source_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "size": 15146,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "set_govern_opening.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/set_govern_opening.fli",
+      "source_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "size": 67,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "set_govern_after_opening.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/set_govern_after_opening.fli",
+      "source_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "size": 4201,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnCleric.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnCleric.fli",
+      "source_sha256": "1b94b2ba48ed367e359461d9dff31a034e5c05a998370bf24a27f196db7ea91a",
+      "sha256": "1b94b2ba48ed367e359461d9dff31a034e5c05a998370bf24a27f196db7ea91a",
+      "size": 818,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnSlaver.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnSlaver.fli",
+      "source_sha256": "4801d411dc763a87bfe7a8518709d6432d69870cb06795557b485438b9181eb6",
+      "sha256": "4801d411dc763a87bfe7a8518709d6432d69870cb06795557b485438b9181eb6",
+      "size": 774,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnSciFew.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnSciFew.fli",
+      "source_sha256": "5f9b84f2cb4ebc7e128fe7d755a0cdff4a650e8ffb54e754299276e2b845018e",
+      "sha256": "5f9b84f2cb4ebc7e128fe7d755a0cdff4a650e8ffb54e754299276e2b845018e",
+      "size": 765,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnSciMany.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnSciMany.fli",
+      "source_sha256": "47f39420522f34d196ca32992bc723a4e6e8798b4b0a84a56fcaae6a044fba92",
+      "sha256": "47f39420522f34d196ca32992bc723a4e6e8798b4b0a84a56fcaae6a044fba92",
+      "size": 774,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnWarFew.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnWarFew.fli",
+      "source_sha256": "eb532abfd0d07d851ceb8b42d225772fdfad543d10d9535a7be8cb17f67db93f",
+      "sha256": "eb532abfd0d07d851ceb8b42d225772fdfad543d10d9535a7be8cb17f67db93f",
+      "size": 767,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturnWarMany.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturnWarMany.fli",
+      "source_sha256": "ffdab51510c571d6e4aada43a6c28f8d454ef95db4a3a35ee93abefaffb4b303",
+      "sha256": "ffdab51510c571d6e4aada43a6c28f8d454ef95db4a3a35ee93abefaffb4b303",
+      "size": 763,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "beginturn.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/beginturn.fli",
+      "source_sha256": "f04252dc010bf339605ceb60550d1aa3b9de1ed7959ec4fee3d5b3e9703649b9",
+      "sha256": "f04252dc010bf339605ceb60550d1aa3b9de1ed7959ec4fee3d5b3e9703649b9",
+      "size": 621,
+      "mode": "BYTE_UNCHANGED"
+    },
+    {
+      "candidate": "AIPs/opening_research.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_research.aip",
+      "source_sha256": "4a1c2122423a9c4f39e855a1c29837213e25181db414ea7213179e7320226c01",
+      "sha256": "ca1a7da1da8eba8b4a363f89d7d0b100f0c8499e5822220f5af2283763d5a829",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_default.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_default.aip",
+      "source_sha256": "4a1c2122423a9c4f39e855a1c29837213e25181db414ea7213179e7320226c01",
+      "sha256": "ca1a7da1da8eba8b4a363f89d7d0b100f0c8499e5822220f5af2283763d5a829",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_cleric.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_cleric.aip",
+      "source_sha256": "1cc0f759bbbd16ae292c439bf7d47ca5b9e647878685e4ccd087fc94c02c997a",
+      "sha256": "8cf907fde8c9b0ac81ee37bb2b89585780b631abfea64eec502f99b43b870e98",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_slaver.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_slaver.aip",
+      "source_sha256": "42b83a4781ee12d8cae5e2368fefbe515fe45fe9ba8a87afde3b052533b1dc90",
+      "sha256": "64e4af08a19e8974e6a45979ca73472619911a50c0f2da1da96efc6847091561",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_scifew.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_scifew.aip",
+      "source_sha256": "91accb25bd397dee941bf43ff7f726e8a7b75eaf3dacc88adc501c7898adc289",
+      "sha256": "cdacad5163f6526cbc70c1481d32133b3328090b1bf7c3b8a40897606d4166cf",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_scimany.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_scimany.aip",
+      "source_sha256": "12f5f1196591505449efa63a4db74bb0c5ddb76fbe68b23838110b95956af87b",
+      "sha256": "97c2d4c72bd8e93420bffe6d8394eb3e558e389d9a93ae389e9dd33a8ea97f73",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_milfew.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_milfew.aip",
+      "source_sha256": "27e5bde88f3215933ccefe7e6a81dc71b3126d0ad1f99c647608acd9f18b4a47",
+      "sha256": "63c208aa5d632d5f3bde95c8a0ae956ddd03b53faeec26e239ad7d500069a6da",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "AIPs/opening_restore_milmany.aip",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/AIPs/opening_restore_milmany.aip",
+      "source_sha256": "c14bd7644f7ae61b79eb5e78745d94abf1a156fd9ca7f853e0b57ddad2b6a096",
+      "sha256": "4cff1ab65753149da633737509b0adc3c4145c56b128f671d27ed8f14eb59a04",
+      "size": 2887,
+      "mode": "HEADER_PREFIX_ONLY"
+    },
+    {
+      "candidate": "load_opening_research.fli",
+      "source": "PROEVEN/opening-b2/onderzoek-b2c/20261011T155803/candidate/load_opening_research.fli",
+      "source_sha256": "4c97bd103b73265c8211b689ada7d022b70a72dd7e532f6dad84d7b7412b4eae",
+      "sha256": "4c97bd103b73265c8211b689ada7d022b70a72dd7e532f6dad84d7b7412b4eae",
+      "size": 67,
+      "mode": "BYTE_UNCHANGED"
+    }
+  ],
+  "header": {
+    "path": "staging/AIPs/aipdef.h",
+    "source": "CTP-proef/ctp_data/default/aidata/AIPs/aipdef.h",
+    "sha256": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+    "size": 1846,
+    "byte_copy_verified": true
+  },
+  "artifact_hashes": {
+    "candidate.diff": "7aaa12c8b127ff092a8be022cb80e252be6e5a3eb5fe5ffebd89f7f540421f6a",
+    "category-blocks.json": "61a757510d1d738f02c3e443373a98966d6020c304f1cf4bc02c1da3c068d07a",
+    "routing.json": "476b112c19cfd4db169e20bdba665680464c55a514ec6edcc352afdbd992eb37",
+    "static-checks.json": "ee155eabb32a2b0220a1bae1e9eca83d991dfee2ab0de2c934ae75490adba1aa",
+    "protected-before.json": "06b1e5b50e9f3be13b5f093912d6fefee79eba28749432c144953aece6761b1c",
+    "protected-after.json": "18060d4837c03b7a78e89ef49dac452a7ca14a14feef43016f57ac3a86b65b8b"
+  }
+}

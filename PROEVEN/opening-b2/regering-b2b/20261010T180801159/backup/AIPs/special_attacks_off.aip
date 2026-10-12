@@ -1,0 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////// // special_attacks_off.aip
+//  
+//  special_attacks_off.aip
+//  
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"   
+#define MAX_EXEC_CONVERT_CITY_GOALS 0 
+#define MAX_EXEC_CAUSE_UNHAPPINESS_GOALS 0 
+#define MAX_EXEC_ENSLAVE_GOALS 0 

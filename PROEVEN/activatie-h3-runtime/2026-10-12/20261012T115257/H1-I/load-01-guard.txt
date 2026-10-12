@@ -1,0 +1,35 @@
+{
+    "purpose":  "Gui",
+    "checked_at":  "2026-10-12T12:04:26.8621389+02:00",
+    "pid":  10224,
+    "creation_utc_ms":  1791799252598,
+    "handle":  853538,
+    "elapsed_ms":  215799.568,
+    "remaining_ms":  264200.43200000003,
+    "foreground_verified":  true,
+    "budget":  {
+                   "reported_at_utc":  "2026-10-12T10:04:18.206Z",
+                   "checked_at_utc":  "2026-10-12T10:04:26.579553+00:00",
+                   "age_seconds":  8.4,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  82.0,
+                                                     "used_percent":  18.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1791816641
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  82.0,
+                                                  "used_percent":  18.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1792331729
+                                              }
+                               },
+                   "stop_reasons":  [
+
+                                    ],
+                   "weekly_remaining_percent":  82.0,
+                   "five_hour_remaining_percent":  82.0,
+                   "state":  "ok"
+               }
+}

@@ -1,0 +1,61 @@
+{
+  "state": "MATCHED_EXACT_T0_OBSERVABLES_ALL7",
+  "checked_fields": [
+    "known",
+    "active_government",
+    "government_requested",
+    "government_deadline",
+    "processed_round",
+    "round_flag",
+    "city_count",
+    "engine_current",
+    "last_ai_request",
+    "research_list"
+  ],
+  "rows": [
+    {
+      "civ_id": 2,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 3,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 4,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 5,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 6,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 7,
+      "all_measured_start_fields_equal": true
+    },
+    {
+      "civ_id": 8,
+      "all_measured_start_fields_equal": true
+    }
+  ],
+  "baseline_instance": {
+    "pid": 9656,
+    "creationtime_filetime": 134362905969437750,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "loaded_original": {
+    "headers_sections_sizes": true,
+    "all_three_scorecalls": true,
+    "payload_and_original_ranges": true,
+    "only_original_HIGHLOW_relocation_adjustment": true,
+    "all_five_B2_or_original_hookwindows": true,
+    "N30_bound": false
+  }
+}

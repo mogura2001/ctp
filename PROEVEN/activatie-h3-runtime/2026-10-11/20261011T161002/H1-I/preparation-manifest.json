@@ -1,0 +1,179 @@
+{
+  "state": "PREPARED_ONLY_NOT_AUTHORIZED_NOT_EXECUTED",
+  "created_at": "2026-10-11T16:11:33.412553+02:00",
+  "proposal": "ONTWERP/H3-T0-HERVATTING.md",
+  "proposal_sha256": "21fcf7cadf2c459f99ed45047f612aba11fe98a0234d1d898c496d3e2f64ecec",
+  "arm": "H1-I",
+  "run_id": "h1-20261011-161002",
+  "scripts": [
+    {
+      "script": "Start-H1-T0.ps1",
+      "source": "PROEVEN/activatie-h3-runtime/2026-10-10/20261010T130836622/H1-I/Start-H1-T0.ps1",
+      "source_sha256": "add21943b503b72c96acf148292f41fc0d655772b816d4c6c19d63245e540677",
+      "source_copy_sha256": "add21943b503b72c96acf148292f41fc0d655772b816d4c6c19d63245e540677",
+      "prepared_sha256": "d8c2dd20dc1a4808e473dfc3b4c8b4d75efb6eeba22a466833d165a4d9503c71",
+      "byte_identical": false,
+      "size": 27610
+    },
+    {
+      "script": "Guard-H1-T0.ps1",
+      "source": "PROEVEN/activatie-h3-runtime/2026-10-10/20261010T130836622/H1-I/Guard-H1-T0.ps1",
+      "source_sha256": "250c38402d22b54c872c4aed6c77a6b51f583d593b39b7d7f6731617c3886bdc",
+      "source_copy_sha256": "250c38402d22b54c872c4aed6c77a6b51f583d593b39b7d7f6731617c3886bdc",
+      "prepared_sha256": "250c38402d22b54c872c4aed6c77a6b51f583d593b39b7d7f6731617c3886bdc",
+      "byte_identical": true,
+      "size": 3073
+    },
+    {
+      "script": "Read-H1-Snapshot.ps1",
+      "source": "PROEVEN/activatie-h3-runtime/2026-10-10/20261010T130836622/H1-I/Read-H1-Snapshot.ps1",
+      "source_sha256": "dcb6ea8de597cef4d1c8fd10eabed7c233e06206a1ed89b026d3a4f8655cc242",
+      "source_copy_sha256": "dcb6ea8de597cef4d1c8fd10eabed7c233e06206a1ed89b026d3a4f8655cc242",
+      "prepared_sha256": "84db77245d41952c70d8662b265032fe120ae8d1bac8abfc9efe6a7ca808d5fc",
+      "byte_identical": false,
+      "size": 4226
+    },
+    {
+      "script": "close-mainwindow/Finish-H1-T0.ps1",
+      "source": "PROEVEN/activatie-h3-runtime/2026-10-10/20261010T130836622/H1-I/close-mainwindow/Finish-H1-T0.ps1",
+      "source_sha256": "31d0d33a5c7f58b5386c40735e9c1f582f098151d2c3274ed394acb27d921728",
+      "source_copy_sha256": "31d0d33a5c7f58b5386c40735e9c1f582f098151d2c3274ed394acb27d921728",
+      "prepared_sha256": "31d0d33a5c7f58b5386c40735e9c1f582f098151d2c3274ed394acb27d921728",
+      "byte_identical": true,
+      "size": 20203
+    }
+  ],
+  "output_parent": "C:/GIT/ctp/PROEVEN/ai-uitlezen",
+  "output_names": [
+    "activatie-h3-runtime-20261011-161002-h1-A.json",
+    "activatie-h3-runtime-20261011-161002-h1-B.json",
+    "activatie-h3-runtime-20261011-161002-h3-A.json",
+    "activatie-h3-runtime-20261011-161002-h3-B.json"
+  ],
+  "output_names_currently_absent": true,
+  "h3_names_reserved_only_no_release": true,
+  "arm_created_new": true,
+  "old_source_scripts_unchanged": true,
+  "pins": [
+    {
+      "name": "engine",
+      "path": "CTP-proef/ctp_program/ctp/civctp.exe",
+      "sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "expected": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "match": true
+    },
+    {
+      "name": "dll",
+      "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+      "expected": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+      "match": true
+    },
+    {
+      "name": "T0",
+      "path": "PROEVEN/settlerquota/vaste-start/QUOTA-START-T0.sav",
+      "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "expected": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "match": true
+    },
+    {
+      "name": "H1-I",
+      "path": "PROEVEN/score-h1/candidates/H1-I/robotcom.dll",
+      "sha256": "59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0",
+      "expected": "59ed9310f0e5aa9bba0902cc4436f1db6fba9ecab79cb8d5fe49683f869da2d0",
+      "match": true
+    },
+    {
+      "name": "H3",
+      "path": "PROEVEN/production-h3/candidates/H3-SCORE_CURRENT/robotcom.dll",
+      "sha256": "f93be3629decd38a94117ba774aac3673db2cd2b9e1a0d8a1dde42f7b8e4fd9c",
+      "expected": "f93be3629decd38a94117ba774aac3673db2cd2b9e1a0d8a1dde42f7b8e4fd9c",
+      "match": true
+    },
+    {
+      "name": "observer_package",
+      "path": "PROEVEN/ai-uitlezen/activatie-h3-package.json",
+      "sha256": "8786005d046b0a99fc6907af6b99b1e134ecb90668e021494beac8e5b1ad7564",
+      "expected": "8786005d046b0a99fc6907af6b99b1e134ecb90668e021494beac8e5b1ad7564",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "expected": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "expected": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "expected": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "expected": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "expected": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "expected": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "expected": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "match": true
+    },
+    {
+      "name": "B1",
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "expected": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "match": true
+    },
+    {
+      "name": "menu_T0",
+      "path": "CTP-proef\\ctp_program\\ctp\\save\\games\\Julius\\QUOTA-START-T0",
+      "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "expected": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+      "match": true
+    }
+  ],
+  "extra_pins": {
+    "PROEVEN/Bedien-CTP.ps1": "d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74",
+    "PROEVEN/ai-uitlezen/Lees-Onderzoeksactivatie.py": "ff43655e52ddc2a9c593ff64ef564c6cda54a2c11e04cc364cfbd5fface69365",
+    "PROEVEN/ai-uitlezen/activatie-h3-package.json": "8786005d046b0a99fc6907af6b99b1e134ecb90668e021494beac8e5b1ad7564"
+  },
+  "current_profile_sha256_read_only": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+  "changes": "Only four Start output names, two Read output paths and one Read run-ID; all other bytes unchanged.",
+  "permission": "NEW_EXPLICIT_USER_PERMISSION_REQUIRED_BEFORE_INSTALLATION_START",
+  "installed": false,
+  "start_count": 0,
+  "gui_actions": 0,
+  "live_reads": 0,
+  "passes": 0,
+  "close_calls": 0,
+  "work_dll_backup_created": false
+}

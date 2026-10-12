@@ -1,0 +1,13 @@
+# Eén N30-herlaadcontrole
+
+12 oktober 2026 17:09. Vervolg van de al geaccepteerde Doel3 save/load-test, na gepaarde baseline en rootcontrole van afwikkeling. Geen bronwijziging: gebruik de nog ongebruikte `variant`-arm van dit pakket en dezelfde controller/reader/kandidaten. De oorspronkelijke variantarm in het oude pakket en beide baseline execution records blijven intact.
+
+Laad uitsluitend `CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T122000-N30-AUTOSAVE`, SHA256 `7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558`. Gelijk archief: `PROEVEN/doel3/20261012T122000/variant/AUTOSAVE.after-N30`. Vereiste DLL: B2a-N30 SHA256 `eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890`. Beide savehashes vóór installatie en na afwikkeling toetsen. De autosave heeft nog geen bewezen beurtlabel; niet vooraf als T26 benoemen.
+
+Procedure: verse proces/budget/current-pinpoort; ene `InstallStart -Arm variant`; automatische intro en eigen HWND/bounds; normale Load Game-route met exacte zichtbare doelkeuze en geladen datum vastgelegd. Niet T0 laden. Rustige reader na laden, geladen N30-vijfhooks/4348-bytepayload/enginebinding en alle zeven vaste deelnemers controleren. Gebruik native `processed_round + 1` als voorlopig beurtlabel; pas de werkelijke datum en semanticavergelijking bewijzen de herlaadstand.
+
+Vergelijk per civ de vooraf gekozen velden `civ_id`, `known`, `active_government`, `government_requested`, `government_deadline`, `processed_round`, `city_count` en `engine_current` met de reeds gevalideerde oorspronkelijke variant T0..T26. Alle zeven moeten gezamenlijk exact bij hetzelfde oude snapshot passen; geen losse per-civ beurtkeuze. Adressen/nieuwe processidentiteit en opnieuw opgebouwde caches zijn geen opgeslagen semantiek. Een verschil in deze gekozen velden is een echte afwijking; niet achteraf velden schrappen om PASS te krijgen.
+
+Na rustige herlaaduitlezing eerst rootreview. Alleen bij overeenstemming precies één gewone Pass naar de volgende native ronde; alle zeven native+1 en bekende technologie/regeringsuitkomst opnieuw uitlezen. Geen kunstmatige tech, stadsplaatsing, regeringswijziging of menselijke actie. Alleen opgeslagen toestand + één normale vervolgbeurt testen; geen tweede nieuwe start.
+
+Normale Finish, bewezen exit/count0, defaultautosave en pre-run19toestanden herstellen, nieuwe N30-autosave uniek archiveren, oude geladen save intact houden. Bestaande 30minarm/budget-/afwikkelreserve gelden. Deze proef bewijst gewone herlaadbaarheid van deze save en voortzetting van Doel3; de openingslatch bij30steden is hier niet bereikt en wordt hiermee niet als echte gameplayovergang bewezen. Bij modal/crash/binding-/semantiekfout stoppen en afwikkelen/bewijs behouden. Pc aan.

@@ -1,0 +1,22 @@
+﻿{
+    "checks":  [
+                   {
+                       "query_started_at":  "2026-10-10T12:00:47.8814866+02:00",
+                       "query_completed_at":  "2026-10-10T12:00:48.8479954+02:00",
+                       "query_succeeded":  true,
+                       "filter":  "ProcessId=20536",
+                       "count":  0,
+                       "processes":  [
+
+                                     ]
+                   }
+               ],
+    "post_request_observation_performed":  false,
+    "reason":  "No request; original PID already absent",
+    "has_exited_obtained":  false,
+    "exit_code_obtained":  false,
+    "exit_code":  null,
+    "application_events_queried":  false,
+    "event_reason":  "No request/observation window; historical exit cause not investigated",
+    "all_civctp_query_performed":  false
+}

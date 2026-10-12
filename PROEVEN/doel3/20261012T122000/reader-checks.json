@@ -1,0 +1,25 @@
+{
+  "scope": "PURE FIXTURES ONLY; no actual loaded process/gameplay",
+  "cases": [
+    {
+      "case": "original relocated hooks/payload/ranges",
+      "passed": true
+    },
+    {
+      "case": "B2a-N30-TECHNICAL relocated hooks/payload/ranges",
+      "passed": true
+    },
+    {
+      "case": "Changed fifth original/load hook is rejected",
+      "passed": true
+    },
+    {
+      "case": "Dynamic names, nonzero known byte, govt/deadline/round/cities",
+      "passed": true
+    },
+    {
+      "case": "Null known pointer is rejected",
+      "passed": true
+    }
+  ]
+}

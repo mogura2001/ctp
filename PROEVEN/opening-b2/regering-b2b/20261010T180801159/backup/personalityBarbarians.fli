@@ -1,0 +1,61 @@
+// A personality file
+#include "mainBarbarians.fli"
+// These things can be set for diplomatic uses and act as the final modifier
+// on utility functions for the given message
+// GREETING_coeff
+// DEMAND_ADVANCE_coeff
+// DEMAND_CITY_coeff
+// DEMAND_MAP_coeff
+// DEMAND_GOLD_coeff
+// DEMAND_STOP_TRADE_coeff
+// DEMAND_ATTACK_ENEMY_coeff
+// DEMAND_LEAVE_OUR_LANDS_coeff
+// DEMAND_REDUCE_POLLUTION_coeff
+// DEMAND_LOWER_TARIFFS_coeff
+// OFFER_ADVANCE_coeff
+// OFFER_CITY_coeff
+// OFFER_MAP_coeff
+// OFFER_GOLD_coeff
+// OFFER_CEASE_FIRE_coeff
+// OFFER_PERMANENT_ALLIANCE_coeff
+// OFFER_PACT_CAPTURE_CITY_coeff
+// OFFER_PACT_END_GLOBAL_WARMING_coeff
+// OFFER_PACT_END_OZONE_LOSS_coeff
+// EXCHANGE_ADVANCE_coeff
+// EXCHANGE_CITY_coeff
+// EXCHANGE_MAP_coeff
+	
+fuzzy_pre_outgoing_diplomacy {
+	//
+	// These are intended mainly as constants to be set once per personality,
+	// but there's nothing stopping you from using them as regular outputs if
+	// you want.
+	//
+	output demand_city_coeff[0,10000] = 0
+	output demand_map_coeff[0,100000] = 1000
+	output demand_gold_coeff[0,100000]= 10000
+	output demand_advance_coeff[0,100000] = 5000
+
+	// Barbarians never give or trade
+	output GREETING_coeff[-1000,100000] = -1000
+	output DEMAND_STOP_TRADE_coeff[-1000,100000] = -1000
+	output DEMAND_ATTACK_ENEMY_coeff[-1000,100000] = -1000
+	output DEMAND_LEAVE_OUR_LANDS_coeff[-1000,100000] = -1000
+	output DEMAND_REDUCE_POLLUTION_coeff[-1000,100000] = -1000
+	output OFFER_ADVANCE_coeff[-1000,100000] = -1000
+	output OFFER_CITY_coeff[-1000,100000] = -1000
+	output OFFER_MAP_coeff[-1000,100000] = -1000
+	output OFFER_GOLD_coeff[-1000,100000] = -1000
+	output OFFER_CEASE_FIRE_coeff[-1000,100000] = -1000
+	output OFFER_PERMANENT_ALLIANCE_coeff[-1000,100000] = -1000
+	output OFFER_PACT_CAPTURE_CITY_coeff[-1000,100000] = -1000
+	output OFFER_PACT_END_GLOBAL_WARMING_coeff[-1000,100000] = -1000
+	output OFFER_PACT_END_OZONE_LOSS_coeff[-1000,100000] = -1000
+	output EXCHANGE_ADVANCE_coeff[-1000,100000] = -1000
+	output EXCHANGE_CITY_coeff[-1000,100000] = -1000
+	output EXCHANGE_MAP_coeff[-1000,100000] = -1000
+ 	output give_advance[-1000,100000] = 0
+	
+	// Won't send the same message more often than this many turns
+	output diplomatic_persistence[0, 10000] = 5
+}

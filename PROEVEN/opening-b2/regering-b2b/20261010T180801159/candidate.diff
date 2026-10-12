@@ -1,0 +1,256 @@
+--- baseline/inputs.fli
++++ candidate/inputs.fli
+@@ -1,4 +1,9 @@
+ // inputs.fli
++
++input opening_completed
++input opening_required
++	tri yes_opening_required(opening_required, 1.0, 0.5)
++	tri no_opening_required(opening_required, 0.0, 0.5)
+ 
+ 	////////////////////////////////////////////////////////////////
+ 	////////// WHERE IS HUMAN?  ///////////
+--- baseline/set_govern_opening.fli
++++ candidate/set_govern_opening.fli
+@@ -0,0 +1,5 @@
++if (yes_opening_required)
++{
++	gov_theocracy_1
++	gov_tyranny_2
++}
+--- baseline/set_govern.fli
++++ candidate/set_govern_after_opening.fli
+@@ -7,18 +7,18 @@
+ 	/////////////////////////////////////////////////////////////////////////
+ 
+ 	// always be in tyranny with less than 5 cities
+-	if (no_num_cities or 
+-		a1to5_num_cities)
++	if ((no_num_cities or 
++		a1to5_num_cities) and no_opening_required)
+ 	{
+ 		gov_tyranny_1
+ 	}
+ 
+     // Warrior at war
+-	if (not zero_at_war and 
++	if ((not zero_at_war and 
+ 		yes_warrior and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{
+ 	    // good for war
+ 	    gov_technocracy_1
+@@ -33,11 +33,11 @@
+   	
+ 
+     // Cleric at war
+-	if (not zero_at_war and 
++	if ((not zero_at_war and 
+ 	    yes_cleric and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units )
++		and not yes_focus_on_units ) and no_opening_required)
+ 	{
+ 	    // good for war
+ 	    gov_ecotopia_1
+@@ -48,11 +48,11 @@
+ 	}
+ 
+     // Slaver at war
+-	if (	not zero_at_war and 
++	if ((	not zero_at_war and 
+ 		yes_slaver and
+ 	    	not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{	
+ 	    // good for war
+ 	    gov_ecotopia_1
+@@ -66,11 +66,11 @@
+ 	}	
+ 
+     // Scientist at war
+-	if (not zero_at_war and 
++	if ((not zero_at_war and 
+ 		yes_scientist and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{
+ 	    // good for war
+ 		gov_technocracy_1
+@@ -86,11 +86,11 @@
+ 
+ 
+     // Warrior at peace
+-	if (zero_at_war and 
++	if ((zero_at_war and 
+ 		yes_warrior and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{
+         // good for peace
+ 	    gov_multicorp_1
+@@ -105,11 +105,11 @@
+   	
+ 
+     // Cleric at peace
+-	if (zero_at_war and 
++	if ((zero_at_war and 
+ 	    yes_cleric and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{
+         // good for peace
+ 	    gov_multicorp_1
+@@ -122,11 +122,11 @@
+ 	}
+ 
+     // Slaver at peace
+-	if (zero_at_war and 
++	if ((zero_at_war and 
+ 		yes_slaver and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{	
+         // good for peace
+ 	    gov_multicorp_1
+@@ -140,11 +140,11 @@
+ 	}	
+ 
+     // Scientist at peace
+-	if (zero_at_war and 
++	if ((zero_at_war and 
+ 		yes_scientist and
+ 	    not a1to5_num_cities
+ 		and not yes_i_can_build_wormhole_probe
+-		and not yes_focus_on_units)
++		and not yes_focus_on_units) and no_opening_required)
+ 	{
+ 	    // good for peace
+ 		gov_virtual_d_1
+@@ -158,7 +158,7 @@
+ 		gov_monarchy_7
+ 	}
+ 
+-	if (yes_i_can_build_wormhole_probe)
++	if ((yes_i_can_build_wormhole_probe) and no_opening_required)
+ 	{
+ 	    // good for prod
+ 		gov_technocracy_1
+@@ -170,8 +170,8 @@
+         gov_republic_7
+ 	}
+ 
+-	if(	yes_focus_on_units 
+-		and not yes_cleric)
++	if((	yes_focus_on_units 
++		and not yes_cleric) and no_opening_required)
+ 	{
+ 	    // good for prod
+ 		gov_technocracy_1
+@@ -183,8 +183,8 @@
+         gov_republic_7
+ 	}
+     // Cleric at war
+-	if (yes_focus_on_units 
+-		and yes_cleric )
++	if ((yes_focus_on_units 
++		and yes_cleric ) and no_opening_required)
+ 	{
+ 		gov_technocracy_1
+ 	    gov_multicorp_2
+--- baseline/beginturnCleric.fli
++++ candidate/beginturnCleric.fli
+@@ -14,7 +14,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturnSlaver.fli
++++ candidate/beginturnSlaver.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturnSciFew.fli
++++ candidate/beginturnSciFew.fli
+@@ -14,7 +14,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturnSciMany.fli
++++ candidate/beginturnSciMany.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturnWarFew.fli
++++ candidate/beginturnWarFew.fli
+@@ -15,7 +15,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturnWarMany.fli
++++ candidate/beginturnWarMany.fli
+@@ -13,7 +13,8 @@
+ #include "set_resource_desire.fli"
+ #include "set_food_or_prod.fli"
+ #include "set_budget.fli"
+-#include "set_govern.fli"
++#include "set_govern_opening.fli"
++#include "set_govern_after_opening.fli"
+ #include "set_wgf.fli"
+ #include "set_military_readiness.fli"
+ #include "set_inst_priority.fli"
+--- baseline/beginturn.fli
++++ candidate/beginturn.fli
+@@ -5,6 +5,7 @@
+ 
+ #include "inputs.fli"
+ #include "outputs.fli"
++#include "set_govern_opening.fli"
+ 
+ //#include "set_settle_dense.fli"
+ //#include "set_science_speed_slow.fli"

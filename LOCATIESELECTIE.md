@@ -114,3 +114,8 @@ Valideer later met kandidaatparen waarvan het gewenste onderscheid duidelijk is:
 Voeg kandidaatlocaties toe die de afwegingen zichtbaar maken: dichte maar nuttige vestiging, productiearme toekomstige science-locatie, berglocatie voor wonderproductie, rivierbos/jungle als alternatief, en goods die een bestaande verzameling aanvullen.
 
 Registreer per gestichte stad de beurt, locatie, beschikbare middelen, verwachte functie en daadwerkelijke productie/wetenschap/handel. Meet ook wanneer een geschikte wonderstad beschikbaar is, hoeveel dezelfde goods zijn aangesloten en welke uitgestelde locaties later worden gekozen. Hoge stadsaantallen alleen bewijzen geen goede locatiekeuze.
+
+
+## Uitbreiding na de opening
+
+Gebruiker heeft de openingsgrens op30steden vastgesteld. Die grens verbiedt geen nieuwe settlers/steden. Goede, bereikbare en veilige locaties blijven aanleiding tot verdere kolonisatie, tot maximaal40steden onderTheocracy. Scheid het historische openingsvoltooiingsbit (30steden+actieveTheocracy) van de actuele uitbreidingsbehoefte en de regeringsgebonden bovengrens. Bestaande settlers en settlers inproductie blijven aftrekken van nuttige vraag; geen nutteloos voorraadquotum tot40.

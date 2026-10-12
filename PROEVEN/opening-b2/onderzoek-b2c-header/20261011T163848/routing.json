@@ -1,0 +1,1247 @@
+{
+  "method": "Static include expansion and textual action order; NOT native execution",
+  "routes": [
+    {
+      "route": "Cleric",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnCleric.fli",
+        "def_personality_science_fast.fli",
+        "def_personality_settle_dense.fli",
+        "def_personality_who_cleric.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_backstab.fli",
+        "diplomacy_set_peace.fli",
+        "diplomacypeacebackstab.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainCleric.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalityCleric.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_cleric.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "Slaver",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnSlaver.fli",
+        "def_personality_science_fast.fli",
+        "def_personality_settle_dense.fli",
+        "def_personality_who_slaver.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_backstab.fli",
+        "diplomacy_set_war.fli",
+        "diplomacywarbackstab.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainSlaver.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalitySlaver.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_slaver.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "SciFew",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnSciFew.fli",
+        "def_personality_science_fast.fli",
+        "def_personality_settle_loose.fli",
+        "def_personality_who_scientist.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_loyal.fli",
+        "diplomacy_set_peace.fli",
+        "diplomacypeaceloyal.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainSciFew.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalitySciFew.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_scifew.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "SciMany",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnSciMany.fli",
+        "def_personality_science_fast.fli",
+        "def_personality_settle_dense.fli",
+        "def_personality_who_scientist.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_loyal.fli",
+        "diplomacy_set_peace.fli",
+        "diplomacypeaceloyal.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainSciMany.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalitySciMany.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_scimany.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "WarFew",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnWarFew.fli",
+        "def_personality_science_slow.fli",
+        "def_personality_settle_loose.fli",
+        "def_personality_who_warrior.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_loyal.fli",
+        "diplomacy_set_war.fli",
+        "diplomacywarloyal.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainWarFew.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalityWarFew.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_milfew.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "WarMany",
+      "active_include_reachability": [
+        "aiploader.fli",
+        "beginturnWarMany.fli",
+        "def_personality_science_slow.fli",
+        "def_personality_settle_dense.fli",
+        "def_personality_who_warrior.fli",
+        "diplomacy_accepted.fli",
+        "diplomacy_begin.fli",
+        "diplomacy_pre_incoming.fli",
+        "diplomacy_pre_outgoing.fli",
+        "diplomacy_rejected.fli",
+        "diplomacy_set_backstab.fli",
+        "diplomacy_set_war.fli",
+        "diplomacywarbackstab.fli",
+        "endturn.fli",
+        "init.fli",
+        "input_deals.fli",
+        "input_responses.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "mainWarMany.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalityWarMany.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern_after_opening.fli",
+        "set_govern_opening.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_pw.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_milmany.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "sally.aip",
+          "condition": "red_dog_test > 0.9"
+        },
+        {
+          "aip": "nosally.aip",
+          "condition": "red_dog_test < 0.9"
+        },
+        {
+          "aip": "lowdist.aip",
+          "condition": "count < 5"
+        },
+        {
+          "aip": "highdist.aip",
+          "condition": "count > 5"
+        },
+        {
+          "aip": "masssettle.aip",
+          "condition": "mass_settle_aip > 0.8"
+        },
+        {
+          "aip": "masssettle_sandbag.aip",
+          "condition": "mass_settle_sandbag_aip > 0.8"
+        },
+        {
+          "aip": "slaver.aip",
+          "condition": "slaver_aip > 0.5"
+        },
+        {
+          "aip": "milmany.aip",
+          "condition": "milmany_aip > 0.5"
+        },
+        {
+          "aip": "milfew.aip",
+          "condition": "milfew_aip > 0.5"
+        },
+        {
+          "aip": "scimany.aip",
+          "condition": "scimany_aip > 0.5"
+        },
+        {
+          "aip": "scifew.aip",
+          "condition": "scifew_aip > 0.5"
+        },
+        {
+          "aip": "cleric.aip",
+          "condition": "cleric_aip > 0.5"
+        },
+        {
+          "aip": "improvement_build_normal.aip",
+          "condition": "improvement_build_normal_aip > 0.8"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "survival_mode.aip",
+          "condition": "survival_mode_aip > 0.9"
+        },
+        {
+          "aip": "naval.aip",
+          "condition": "land_continents_full_of_friends > 0.65"
+        },
+        {
+          "aip": "supernaval.aip",
+          "condition": "land_continents_full_of_friends > 0.9"
+        },
+        {
+          "aip": "getarmy.aip",
+          "condition": "getarmy_aip > 0.75"
+        },
+        {
+          "aip": "gather.aip",
+          "condition": "gather_aip > 0.75"
+        },
+        {
+          "aip": "takecity.aip",
+          "condition": "takecity_aip > 0.75"
+        },
+        {
+          "aip": "fallback.aip",
+          "condition": "fallback_aip > 0.75"
+        },
+        {
+          "aip": "citywall.aip",
+          "condition": "citywall_aip > 0.9"
+        },
+        {
+          "aip": "siege_off.aip",
+          "condition": " siege_off_aip > 0.75"
+        },
+        {
+          "aip": "no_settle.aip",
+          "condition": "no_settling_aip > 0.75"
+        },
+        {
+          "aip": "yes_settle.aip",
+          "condition": "yes_settling_aip > 0.75"
+        },
+        {
+          "aip": "one_explore.aip",
+          "condition": "one_explore_aip > 0.75"
+        },
+        {
+          "aip": "two_explore.aip",
+          "condition": "two_explore_aip > 0.75"
+        },
+        {
+          "aip": "normal_explore.aip",
+          "condition": "normal_explore_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_off.aip",
+          "condition": "build_troops_off_aip > 0.75"
+        },
+        {
+          "aip": "build_troops_on.aip",
+          "condition": "build_troops_off_aip < 0.75"
+        },
+        {
+          "aip": "pull_units_into_city.aip",
+          "condition": " pull_units_into_city_aip > 0.8"
+        },
+        {
+          "aip": "defend_normal.aip",
+          "condition": "pull_units_into_city_aip < 0.9"
+        },
+        {
+          "aip": "special_attacks_off.aip",
+          "condition": "special_actions_off_test > 0.75"
+        },
+        {
+          "aip": "cleric_on.aip",
+          "condition": "cleric_on_test > 0.75"
+        },
+        {
+          "aip": "slave_on.aip",
+          "condition": "slave_on_test > 0.75"
+        },
+        {
+          "aip": "unit_focus.aip",
+          "condition": "unit_focus_test > 0.75"
+        },
+        {
+          "aip": "citywall_science.aip",
+          "condition": "citywall_science_aip > 0.75"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "Default",
+      "active_include_reachability": [
+        "beginturn.fli",
+        "diplomacy.fli",
+        "endturn.fli",
+        "init.fli",
+        "inputs.fli",
+        "load_opening_research.fli",
+        "main.fli",
+        "outputs.fli",
+        "personalityDefault.fli",
+        "set_govern_opening.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "opening_restore_default.aip",
+          "condition": "opening_required < 0.5"
+        },
+        {
+          "aip": "opening_research.aip",
+          "condition": "opening_required > 0.5"
+        }
+      ]
+    },
+    {
+      "route": "Barbarians",
+      "active_include_reachability": [
+        "beginturnBarbarians.fli",
+        "def_personality_science_slow.fli",
+        "def_personality_settle_dense.fli",
+        "def_personality_who_barbarian.fli",
+        "diplomacyBarbarians.fli",
+        "endturn.fli",
+        "init.fli",
+        "inputs.fli",
+        "mainBarbarians.fli",
+        "output_aipnames.fli",
+        "outputs.fli",
+        "personalityBarbarians.fli",
+        "set_budget.fli",
+        "set_food_or_prod.fli",
+        "set_govern.fli",
+        "set_inst_priority.fli",
+        "set_military_readiness.fli",
+        "set_resource_desire.fli",
+        "set_science_speed.fli",
+        "set_settle_density.fli",
+        "set_wgf.fli"
+      ],
+      "begin_action_order": [
+        {
+          "aip": "barbarian.aip",
+          "condition": "num_cities < 50.0"
+        }
+      ]
+    }
+  ],
+  "ordinary_action_sequence_unchanged": true,
+  "barbarian_old_government_and_load_unchanged": true,
+  "default_template_remains_disabled": true
+}

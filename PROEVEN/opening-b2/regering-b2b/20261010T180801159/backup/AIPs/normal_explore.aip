@@ -1,0 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////// // normal_explore.aip
+// // 
+// // normal_explore.aip
+// // 
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"   
+double explore_priority = 393000.0; 
+#define MAX_EVAL_EXPLORE_GOALS -15 
+#define MAX_EXEC_EXPLORE_GOALS 0.25; 

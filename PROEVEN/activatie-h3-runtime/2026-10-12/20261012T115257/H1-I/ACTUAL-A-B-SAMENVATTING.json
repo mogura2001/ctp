@@ -1,0 +1,399 @@
+{
+  "arm": "H1-I",
+  "run_id": "h1-20261012-115257",
+  "pid": 10224,
+  "creation_utc_ms": 1791799252598,
+  "loaded_checks_A": {
+    "headers_sections_sizes": true,
+    "all_three_scorecalls": true,
+    "payload_and_original_ranges": true,
+    "only_original_HIGHLOW_relocation_adjustment": true
+  },
+  "loaded_checks_B": {
+    "headers_sections_sizes": true,
+    "all_three_scorecalls": true,
+    "payload_and_original_ranges": true,
+    "only_original_HIGHLOW_relocation_adjustment": true
+  },
+  "stable_twice_A": true,
+  "stable_twice_B": true,
+  "reader_save_identity_proven": false,
+  "reader_atomic_snapshot_proven": false,
+  "external_save_evidence": [
+    "load-03-julius.png",
+    "load-04-selected-T0.png",
+    "load-06-4000BC.png",
+    "preflight.json",
+    "close-mainwindow/eindhashes.json"
+  ],
+  "one_pass_evidence": [
+    "pass-called-at.txt",
+    "pass-n.txt",
+    "pass-3950BC.png"
+  ],
+  "civilizations": [
+    {
+      "civ_id": 2,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_engine": {
+        "index": 11,
+        "name": "Iron Working"
+      },
+      "B_engine": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 63,
+      "B_all_goals": 0,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 3,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_engine": {
+        "index": 8,
+        "name": "Writing"
+      },
+      "B_engine": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 78,
+      "B_all_goals": 0,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 4,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_engine": {
+        "index": 7,
+        "name": "Shipbuilding"
+      },
+      "B_engine": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 230,
+      "B_all_goals": 0,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 5,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 18,
+        "name": "Theocracy"
+      },
+      "A_engine": {
+        "index": 10,
+        "name": "Monarchy"
+      },
+      "B_engine": {
+        "index": 18,
+        "name": "Theocracy"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 187,
+      "B_all_goals": 0,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 6,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_engine": {
+        "index": 8,
+        "name": "Writing"
+      },
+      "B_engine": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 239,
+      "B_all_goals": 2,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 7,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 18,
+        "name": "Theocracy"
+      },
+      "A_engine": {
+        "index": 8,
+        "name": "Writing"
+      },
+      "B_engine": {
+        "index": 18,
+        "name": "Theocracy"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 195,
+      "B_all_goals": 2,
+      "B_settle_goals": 0
+    },
+    {
+      "civ_id": 8,
+      "research_count": 98,
+      "A_prefix": [
+        {
+          "index": 4,
+          "name": "Bronze Working"
+        },
+        {
+          "index": 5,
+          "name": "Stone Working"
+        }
+      ],
+      "B_prefix": [
+        {
+          "index": 12,
+          "name": "Religion"
+        },
+        {
+          "index": 18,
+          "name": "Theocracy"
+        }
+      ],
+      "A_last_request": {
+        "index": -1,
+        "name": null
+      },
+      "B_last_request": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_engine": {
+        "index": 8,
+        "name": "Writing"
+      },
+      "B_engine": {
+        "index": 12,
+        "name": "Religion"
+      },
+      "A_rechoose": 1,
+      "B_rechoose": 0,
+      "same_player": true,
+      "same_planner": true,
+      "same_scheduler": true,
+      "scheduler_next_before": 0,
+      "scheduler_next_after": 97,
+      "B_all_goals": 0,
+      "B_settle_goals": 0
+    }
+  ],
+  "settlement_comparison": {
+    "status": "not-observable-at-this-moment",
+    "new_goal_settle": [],
+    "unconditional_bonus_proven": false,
+    "new_heap_ordering_proven": false,
+    "real_AI_overhead_proven": false,
+    "save_identity_proven": false
+  },
+  "close_outcome": "EXIT_CONFIRMED_NO_CRASH_OBSERVED",
+  "exit_code": 0,
+  "restore": {
+    "attempted": true,
+    "restored": true,
+    "reason": null,
+    "query_at": "2026-10-12T12:08:32.4983147+02:00",
+    "all_civctp_count": 0,
+    "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44"
+  },
+  "all_fifteen_pins_match": true,
+  "profile_bytes_equal": true
+}

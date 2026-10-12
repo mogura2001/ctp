@@ -1,0 +1,33 @@
+--- reviewed-20261010/Start-H1-T0.ps1
++++ prepared-20261011/Start-H1-T0.ps1
+@@ -95,7 +95,7 @@
+ 
+ try {
+     Check-Budget 'budget-preflight'
+-    foreach($name in @('activatie-h3-runtime-20261010-h1-A.json','activatie-h3-runtime-20261010-h1-B.json','activatie-h3-runtime-20261010-h3-A.json','activatie-h3-runtime-20261010-h3-B.json')){if(Test-Path -LiteralPath (Join-Path $workspace ('PROEVEN\ai-uitlezen\'+$name))){throw 'Existing observer output; no overwrite/start.'}}
++    foreach($name in @('activatie-h3-runtime-20261011-161002-h1-A.json','activatie-h3-runtime-20261011-161002-h1-B.json','activatie-h3-runtime-20261011-161002-h3-A.json','activatie-h3-runtime-20261011-161002-h3-B.json')){if(Test-Path -LiteralPath (Join-Path $workspace ('PROEVEN\ai-uitlezen\'+$name))){throw 'Existing observer output; no overwrite/start.'}}
+     if((Get-FileHash -LiteralPath (Join-Path $workspace 'PROEVEN\ai-uitlezen\Lees-Onderzoeksactivatie.py') -Algorithm SHA256).Hash.ToLowerInvariant() -ne 'ff43655e52ddc2a9c593ff64ef564c6cda54a2c11e04cc364cfbd5fface69365' -or (Get-FileHash -LiteralPath (Join-Path $workspace 'PROEVEN\ai-uitlezen\activatie-h3-package.json') -Algorithm SHA256).Hash.ToLowerInvariant() -ne '8786005d046b0a99fc6907af6b99b1e134ecb90668e021494beac8e5b1ad7564'){throw 'Observer/package pin mismatch.'}
+ 
+     if((Get-FileHash -LiteralPath (Join-Path $workspace 'ONTWERP\H3-T0-HERVATTING.md') -Algorithm SHA256).Hash.ToLowerInvariant() -ne $designHash -or (Get-FileHash -LiteralPath $toolPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $toolHash){throw 'Frozen design/tool hash mismatch.'}
+--- reviewed-20261010/Read-H1-Snapshot.ps1
++++ prepared-20261011/Read-H1-Snapshot.ps1
+@@ -4,8 +4,8 @@
+ $started=Get-Content -LiteralPath (Join-Path $armDir 'start-record.json') -Raw -Encoding utf8|ConvertFrom-Json
+ $reader='C:\GIT\ctp\PROEVEN\ai-uitlezen\Lees-Onderzoeksactivatie.py'
+ if((Get-FileHash -LiteralPath $reader -Algorithm SHA256).Hash.ToLowerInvariant() -ne 'ff43655e52ddc2a9c593ff64ef564c6cda54a2c11e04cc364cfbd5fface69365'){throw 'Frozen observer changed; no read.'}
+-$aPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261010-h1-A.json'
+-$bPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261010-h1-B.json'
++$aPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261011-161002-h1-A.json'
++$bPath='C:\GIT\ctp\PROEVEN\ai-uitlezen\activatie-h3-runtime-20261011-161002-h1-B.json'
+ $output=$aPath;$turn=0
+ if($SnapshotLabel -eq 'B'){$output=$bPath;$turn=1;if(-not (Test-Path -LiteralPath $aPath)){throw 'Own A source missing; no B.'};$aAcceptance=Get-Content -LiteralPath (Join-Path $armDir 'A-archive.json') -Raw -Encoding utf8|ConvertFrom-Json;if($aAcceptance.instance_verified -ne $true){throw 'Own A instance rejected/unverified; no B.'}}
+ if(Test-Path -LiteralPath $output){throw 'Snapshot output exists; no overwrite/retry.'}
+@@ -13,7 +13,7 @@
+ if($LASTEXITCODE -ne 0){throw 'Original binding/deadline/budget guard failed; no reader.'}
+ # A only after proven loaded4000BC; B only after proven sole n/pass→3950BC.
+ # Procedure evidence is reviewed separately; CLI labels do not prove these facts.
+-$readerArgs=@($reader,'--pid',[string]$started.pid,'--variant','H1-I','--run-id','h1-20261010','--snapshot-label',$SnapshotLabel,'--turn',[string]$turn,'--pass-label','T0-to-T1','--output',$output)
++$readerArgs=@($reader,'--pid',[string]$started.pid,'--variant','H1-I','--run-id','h1-20261011-161002','--snapshot-label',$SnapshotLabel,'--turn',[string]$turn,'--pass-label','T0-to-T1','--output',$output)
+ if($SnapshotLabel -eq 'B'){$readerArgs+=@('--before',$aPath)}
+ [ordered]@{at=(Get-Date).ToString('o');executable='C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe';argv=$readerArgs;labels_are_external_procedure_labels=$true}|ConvertTo-Json -Depth 4|Set-Content -LiteralPath (Join-Path $armDir "$SnapshotLabel-command.json") -Encoding utf8
+ $readerCode=$null;$readerError=$null;$instanceVerified=$false;$instanceCreationMs=$null

@@ -1,0 +1,68 @@
+class ModuleInfo(C.Structure):
+    _fields_ = [('base', C.c_void_p), ('size', W.DWORD), ('entry', C.c_void_p)]
+
+def main():
+    parser=argparse.ArgumentParser(description='Read-only fixed-T0 goal3 snapshots; no game starts/writes/callbacks')
+    parser.add_argument('--pid',type=int,required=True)
+    parser.add_argument('--variant',choices=('original','B2a-N30-TECHNICAL'),required=True)
+    parser.add_argument('--run-id',required=True);parser.add_argument('--snapshot-label',required=True)
+    parser.add_argument('--turn',type=int,required=True);parser.add_argument('--pass-label',required=True)
+    parser.add_argument('--manifest',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args()
+    output=args.output.resolve()
+    if not output.is_relative_to(FOLDER) or output.suffix!='.json' or output.exists():raise ValueError('Output outside own package or already exists')
+    participants=json.loads(args.manifest.read_text(encoding='utf-8-sig'))
+    if participants['civ_ids']!=list(range(2,9)):raise ValueError('Unexpected fixed-T0 participants')
+    binding=trusted_binding(args.variant)
+    for file,key in ((EXE,'engine'),(DLL,'ai')):
+        if hashlib.sha256(file.read_bytes()).hexdigest()!=binding[key]['sha256']:raise ValueError('Actual proof diskhash mismatch')
+    k,p=C.WinDLL('kernel32',use_last_error=True),C.WinDLL('psapi',use_last_error=True)
+    k.OpenProcess.argtypes,k.OpenProcess.restype=[W.DWORD,W.BOOL,W.DWORD],W.HANDLE
+    k.CloseHandle.argtypes=[W.HANDLE]
+    k.QueryFullProcessImageNameW.argtypes=[W.HANDLE,W.DWORD,W.LPWSTR,C.POINTER(W.DWORD)]
+    k.ReadProcessMemory.argtypes=[W.HANDLE,C.c_void_p,C.c_void_p,C.c_size_t,C.POINTER(C.c_size_t)]
+    k.GetProcessTimes.argtypes=[W.HANDLE,C.POINTER(W.FILETIME),C.POINTER(W.FILETIME),C.POINTER(W.FILETIME),C.POINTER(W.FILETIME)]
+    p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+    p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+    p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+    handle=k.OpenProcess(0x410,False,args.pid) # QUERY_INFORMATION|VM_READ only
+    if not handle:raise OSError('Cannot open exact authorized proof process readhandle')
+    def read(address,size):
+        data,actual=C.create_string_buffer(size),C.c_size_t()
+        if not k.ReadProcessMemory(handle,address,data,size,C.byref(actual)) or actual.value!=size:raise OSError('Incomplete RPM read')
+        return data.raw
+    read=bounded(read)
+    def sample():
+        for file,key in ((EXE,'engine'),(DLL,'ai')):
+            if hashlib.sha256(file.read_bytes()).hexdigest()!=binding[key]['sha256']:raise ValueError('Actual proof diskhash changed')
+        name,length=C.create_unicode_buffer(32768),W.DWORD(32768)
+        if not k.QueryFullProcessImageNameW(handle,0,name,C.byref(length)) or Path(name.value).resolve()!=EXE.resolve():raise ValueError('Exact proof readhandle identity mismatch')
+        times=[W.FILETIME() for _ in range(4)]
+        if not k.GetProcessTimes(handle,*[C.byref(t) for t in times]):raise OSError('Cannot bind process creationtime')
+        if times[1].dwLowDateTime or times[1].dwHighDateTime:raise ValueError('Process exited during snapshot')
+        modules,needed=(W.HMODULE*1024)(),W.DWORD()
+        if not p.EnumProcessModulesEx(handle,modules,C.sizeof(modules),C.byref(needed),3) or needed.value>C.sizeof(modules) or needed.value%C.sizeof(W.HMODULE):raise OSError('Incomplete module enumeration')
+        found={}
+        for module in modules[:needed.value//C.sizeof(W.HMODULE)]:
+            filename=C.create_unicode_buffer(32768)
+            if not p.GetModuleFileNameExW(handle,module,filename,32768):raise OSError('Cannot confirm module path')
+            path=Path(filename.value).resolve()
+            if path in (EXE.resolve(),DLL.resolve()):
+                info=ModuleInfo()
+                if path in found or not p.GetModuleInformation(handle,module,C.byref(info),C.sizeof(info)):raise ValueError('Ambiguous/unreadable trusted module')
+                found[path]=(int(info.base),int(info.size))
+        if set(found)!={EXE.resolve(),DLL.resolve()}:raise ValueError('Exact proof engine/AI modulepaths missing')
+        eb,es=found[EXE.resolve()];ab,az=found[DLL.resolve()]
+        checks=verify_loaded(read,binding,eb,ab,{'engine':es,'ai':az})
+        state=observe_goal3(read,eb,ab,participants)
+        return {'instance':{'pid':args.pid,'creationtime_filetime':(times[0].dwHighDateTime<<32)|times[0].dwLowDateTime,'executable':str(EXE.resolve()),'ai_module':str(DLL.resolve()),'engine_base':eb,'ai_base':ab},'loaded_checks':checks,'state':state}
+    try:
+        result=stable_sample(sample)
+        result.update(run_id=args.run_id,snapshot_label=args.snapshot_label,turn=args.turn,pass_label=args.pass_label,variant=args.variant,binding={'engine_sha256':binding['engine']['sha256'],'ai_sha256':binding['ai']['sha256'],'manifest_sha256':binding['manifest_sha256'],'package_sha256':binding['package_sha256']},stable_twice=True,save_identity_proven=False,atomic_snapshot_proven=False)
+        output.write_text(json.dumps(result,indent=2)+'\n')
+        print(json.dumps(result,indent=2))
+    except Exception as error:
+        output.write_text(json.dumps({'status':'rejected','error':str(error),'variant':args.variant,'run_id':args.run_id,'snapshot_label':args.snapshot_label,'comparison_accepted':False},indent=2)+'\n')
+        raise
+    finally:k.CloseHandle(handle)
+

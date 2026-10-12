@@ -1,0 +1,27 @@
+﻿{
+    "checked_at":  "2026-10-10T18:04:40.6940160+02:00",
+    "outcome":  "AUTOMATIC_APPROVAL_REJECTED_BEFORE_CREATEPROCESS",
+    "start_executed":  false,
+    "session_created":  false,
+    "start_record_exists":  false,
+    "dll_sha256":  "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+    "outputs":  [
+                    {
+                        "exists":  false,
+                        "path":  "C:\\GIT\\ctp\\PROEVEN\\ai-uitlezen\\activatie-h3-runtime-20261010-h1-A.json"
+                    },
+                    {
+                        "exists":  false,
+                        "path":  "C:\\GIT\\ctp\\PROEVEN\\ai-uitlezen\\activatie-h3-runtime-20261010-h1-B.json"
+                    },
+                    {
+                        "exists":  false,
+                        "path":  "C:\\GIT\\ctp\\PROEVEN\\ai-uitlezen\\activatie-h3-runtime-20261010-h3-A.json"
+                    },
+                    {
+                        "exists":  false,
+                        "path":  "C:\\GIT\\ctp\\PROEVEN\\ai-uitlezen\\activatie-h3-runtime-20261010-h3-B.json"
+                    }
+                ],
+    "reason":  "Automatic approval reviewer rejected exact Start-H1-T0 execution: live experiment with temporary AI DLL and runtime/save side effects, no trusted explicit user authorization recognized; no bypass permitted."
+}

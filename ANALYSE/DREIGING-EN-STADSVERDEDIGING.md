@@ -1,5 +1,7 @@
 # Dreiging en stadsverdediging
 
+Aanvulling 12 oktober 2026, gebruikersvraag over fog of war: algemene alwetendheid van de AI is niet aangetoond. In de originele DLL roept `Update_Explored_Territory` (200838e0) op 200839c3 World-vtable+28 aan en markeert alleen bij een ware uitkomst de kaartcel als verkend (200839c8..200839dd). De bestaande engine-analyse bindt deze route aan World 00533580, Player 004bbd50 en diens kaartveld+1304. `GetVisibleForeigners` (20079580) verwerkt informatie via World-vtable+74 op 20079657 en voorwaardelijke foreign-army/city-branches vanaf 200796eb. Hiermee zijn spelerspecifieke kaartinformatie en zichtbaarheid relevante schakels; identieke beperkingen aan de mens, alle bijzondere informatiebronnen en Deity-uitzonderingen zijn niet bewezen. Alleen-lezen hercontrole via `Analyseer-AI-DLL.py Update_Explored_Territory GetVisibleForeigners`; originele DLL/map SHA en timestamp gecontroleerd. Dit heropent geen brede analyse.
+
 Fase A, 5 oktober 2026. Klein alleen-lezen pakket; geen spelstarts/game-/binarywijzigingen. Hergebruik [lokale dreiging en gedeeld land](RUIMTE-BUREN-TRANSPORT.md), [bouwconcurrentie](BOUWDOELEN-EN-QUEUE.md) en [transportuitvoering](TRANSPORT-EN-VESTIGINGSACTIES.md). Marine-invasie en volledige militaire scheduler blijven buiten dit pakket.
 
 ## Kernresultaat

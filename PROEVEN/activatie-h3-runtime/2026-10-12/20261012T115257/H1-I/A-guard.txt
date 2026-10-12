@@ -1,0 +1,35 @@
+﻿{
+    "purpose":  "Read",
+    "checked_at":  "2026-10-12T12:07:39.6324514+02:00",
+    "pid":  10224,
+    "creation_utc_ms":  1791799252598,
+    "handle":  853538,
+    "elapsed_ms":  408569.6517,
+    "remaining_ms":  71430.348300000012,
+    "foreground_verified":  true,
+    "budget":  {
+                   "reported_at_utc":  "2026-10-12T10:07:01.406Z",
+                   "checked_at_utc":  "2026-10-12T10:07:39.320874+00:00",
+                   "age_seconds":  37.9,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  73.0,
+                                                     "used_percent":  27.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1791816641
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  80.0,
+                                                  "used_percent":  20.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1792331729
+                                              }
+                               },
+                   "stop_reasons":  [
+
+                                    ],
+                   "weekly_remaining_percent":  80.0,
+                   "five_hour_remaining_percent":  73.0,
+                   "state":  "ok"
+               }
+}

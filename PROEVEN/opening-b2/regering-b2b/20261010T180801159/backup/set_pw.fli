@@ -1,0 +1,84 @@
+// set_pw.fli
+
+// sets my public works
+
+
+if  (	a50to200_turns	
+		and 
+		(	
+			a2000to4000_public_works
+			or a3000to6000_public_works
+			or aover5000_public_works
+		)
+	)
+	{
+		yes_too_much_renaissance_pw
+		yes_enough_pw
+	}
+	
+if(	a200to300_turns and
+	aover5000_public_works)
+	{
+		yes_too_much_modern_pw
+		yes_enough_pw
+	}
+
+
+if(	aover300_turns
+	and aover10000_public_works)
+	{
+		yes_too_much_genetic_pw
+		yes_enough_pw
+	}
+	
+if(	zero_at_war 
+	and yes_enough_pw
+	and not yes_opening_game_strategy )
+	{
+		super_zero_production_tax
+	}
+
+if (not zero_at_war 
+	and yes_enough_pw
+	and not yes_opening_game_strategy )
+	{
+		super_zero_production_tax
+	}
+
+if(	zero_at_war 
+	and not yes_enough_pw
+	and not yes_opening_game_strategy)
+	{
+		super_high_production_tax
+	}
+
+if (not zero_at_war 
+	and not yes_enough_pw
+	and not yes_opening_game_strategy
+	)
+	{
+		med_production_tax
+	}
+
+if (yes_i_can_build_wormhole_probe)
+{
+	super_zero_production_tax
+}
+
+if (yes_focus_on_units)
+{
+	super_zero_production_tax
+}
+
+if (not yes_enough_pw
+	and dangerously_high_gold_and_wages_cost 
+	and not yes_focus_on_units)
+	{
+		very super_high_production_tax
+	}
+
+//if (two_thousand_plus_desired_mine_pw)
+//{
+//	super_max_production_tax
+//}
+

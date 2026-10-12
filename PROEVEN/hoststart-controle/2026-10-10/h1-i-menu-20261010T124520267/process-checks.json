@@ -1,0 +1,109 @@
+﻿[
+    {
+        "stage":  "close-preflight",
+        "at":  "2026-10-10T12:59:29.9060323+02:00",
+        "elapsed_ms":  184222.707,
+        "query_succeeded":  true,
+        "all_civctp_count":  1,
+        "original_pid_count":  1,
+        "original_pid_absent":  false,
+        "pid":  15464,
+        "creation_utc_ms":  1791629786118,
+        "exe":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_path":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_start_utc_ms":  1791629786118,
+        "handle":  6489958,
+        "foreground_handle":  6489958,
+        "owner_matches":  true,
+        "bounds":  {
+                       "left":  0,
+                       "top":  0,
+                       "right":  1920,
+                       "bottom":  1080,
+                       "width":  1920,
+                       "height":  1080
+                   },
+        "own_windows":  [
+                            {
+                                "handle":  6489958,
+                                "visible":  true,
+                                "title":  "CivCTP"
+                            },
+                            {
+                                "handle":  2361192,
+                                "visible":  false,
+                                "title":  "MSCTFIME UI"
+                            },
+                            {
+                                "handle":  1180448,
+                                "visible":  false,
+                                "title":  "Default IME"
+                            }
+                        ],
+        "window_enumeration_succeeded":  true,
+        "own_visible_count":  1,
+        "completed_at":  "2026-10-10T12:59:29.9809807+02:00",
+        "completed_elapsed_ms":  184298.0107
+    },
+    {
+        "stage":  "immediately-before-close",
+        "at":  "2026-10-10T12:59:30.0463317+02:00",
+        "elapsed_ms":  184363.1527,
+        "query_succeeded":  true,
+        "all_civctp_count":  1,
+        "original_pid_count":  1,
+        "original_pid_absent":  false,
+        "pid":  15464,
+        "creation_utc_ms":  1791629786118,
+        "exe":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_path":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_start_utc_ms":  1791629786118,
+        "handle":  6489958,
+        "foreground_handle":  6489958,
+        "owner_matches":  true,
+        "bounds":  {
+                       "left":  0,
+                       "top":  0,
+                       "right":  1920,
+                       "bottom":  1080,
+                       "width":  1920,
+                       "height":  1080
+                   },
+        "own_windows":  [
+                            {
+                                "handle":  6489958,
+                                "visible":  true,
+                                "title":  "CivCTP"
+                            },
+                            {
+                                "handle":  2361192,
+                                "visible":  false,
+                                "title":  "MSCTFIME UI"
+                            },
+                            {
+                                "handle":  1180448,
+                                "visible":  false,
+                                "title":  "Default IME"
+                            }
+                        ],
+        "window_enumeration_succeeded":  true,
+        "own_visible_count":  1,
+        "completed_at":  "2026-10-10T12:59:30.0763359+02:00",
+        "completed_elapsed_ms":  184392.96360000002
+    },
+    {
+        "stage":  "after-close-1000-ms",
+        "at":  "2026-10-10T12:59:31.1348746+02:00",
+        "elapsed_ms":  185452.1016,
+        "query_succeeded":  true,
+        "all_civctp_count":  0,
+        "original_pid_count":  0,
+        "original_pid_absent":  true,
+        "has_exited":  true,
+        "exit_code":  0,
+        "completed_at":  "2026-10-10T12:59:31.1408945+02:00",
+        "completed_elapsed_ms":  185458.3311,
+        "late_os_return":  false,
+        "close_elapsed_ms":  1067.9038
+    }
+]

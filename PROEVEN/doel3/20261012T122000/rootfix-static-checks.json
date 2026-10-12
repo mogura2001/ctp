@@ -1,0 +1,25 @@
+{
+  "scope": "Static source checks only; not execution/RPM/gameplay",
+  "checks": [
+    {
+      "check": "All three private powershell childcalls use explicit NonInteractive/Bypass",
+      "pass": true
+    },
+    {
+      "check": "Polling catch retries only explicit unstable dataset; otherwise throws",
+      "pass": true
+    },
+    {
+      "check": "Restore validates full own installation before first mutation; count0 before/after validation",
+      "pass": true
+    },
+    {
+      "check": "Every candidate checked before execution record and installation loop",
+      "pass": true
+    },
+    {
+      "check": "OwnState after successful RPM",
+      "pass": true
+    }
+  ]
+}

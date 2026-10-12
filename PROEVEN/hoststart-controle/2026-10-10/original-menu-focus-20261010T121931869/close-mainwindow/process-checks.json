@@ -1,0 +1,87 @@
+﻿[
+    {
+        "stage":  "preflight-binding",
+        "query_started_at":  "2026-10-10T12:40:56.6712813+02:00",
+        "query_succeeded":  true,
+        "original_pid_absent":  false,
+        "query_completed_at":  "2026-10-10T12:40:56.8380039+02:00",
+        "original_pid_count":  1,
+        "all_civctp_count":  1,
+        "pid":  14288,
+        "creation_utc_ms":  1791628012889,
+        "exe":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_path":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_start_utc_ms":  1791628012889,
+        "main_window_handle":  984984,
+        "owner_matches":  true,
+        "window_enumeration_succeeded":  true,
+        "own_windows":  [
+                            {
+                                "handle":  984984,
+                                "visible":  true,
+                                "title":  "CivCTP"
+                            },
+                            {
+                                "handle":  1181580,
+                                "visible":  false,
+                                "title":  "MSCTFIME UI"
+                            },
+                            {
+                                "handle":  1967898,
+                                "visible":  false,
+                                "title":  "Default IME"
+                            }
+                        ],
+        "own_visible_count":  1,
+        "binding_completed_at":  "2026-10-10T12:40:56.9606512+02:00"
+    },
+    {
+        "stage":  "immediately-before-request",
+        "query_started_at":  "2026-10-10T12:40:56.9630520+02:00",
+        "query_succeeded":  true,
+        "original_pid_absent":  false,
+        "query_completed_at":  "2026-10-10T12:40:57.0600434+02:00",
+        "original_pid_count":  1,
+        "all_civctp_count":  1,
+        "pid":  14288,
+        "creation_utc_ms":  1791628012889,
+        "exe":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_path":  "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "process_start_utc_ms":  1791628012889,
+        "main_window_handle":  984984,
+        "owner_matches":  true,
+        "window_enumeration_succeeded":  true,
+        "own_windows":  [
+                            {
+                                "handle":  984984,
+                                "visible":  true,
+                                "title":  "CivCTP"
+                            },
+                            {
+                                "handle":  1181580,
+                                "visible":  false,
+                                "title":  "MSCTFIME UI"
+                            },
+                            {
+                                "handle":  1967898,
+                                "visible":  false,
+                                "title":  "Default IME"
+                            }
+                        ],
+        "own_visible_count":  1,
+        "binding_completed_at":  "2026-10-10T12:40:57.1155027+02:00"
+    },
+    {
+        "stage":  "after-request-around-1000-ms",
+        "query_started_at":  "2026-10-10T12:40:58.1327422+02:00",
+        "query_succeeded":  true,
+        "original_pid_absent":  true,
+        "query_completed_at":  "2026-10-10T12:40:58.2735526+02:00",
+        "original_pid_count":  0,
+        "all_civctp_count":  0,
+        "request_elapsed_ms":  1165.3633,
+        "late_os_return":  false,
+        "has_exited":  true,
+        "exit_code":  0
+    }
+]

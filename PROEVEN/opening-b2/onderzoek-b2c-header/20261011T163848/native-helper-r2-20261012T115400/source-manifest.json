@@ -1,0 +1,130 @@
+{
+  "state": "C2_CLI_R2_SOURCE_PREPARED_NOT_EXECUTED",
+  "created_at": "2026-10-12T11:53:42.076536+02:00",
+  "source_pins": [
+    {
+      "path": "cases.json",
+      "sha256": "67e3aeb8a059cfeb3e08b1152beb9cb35c97015bb803f1ab5006cd4a266a5deb",
+      "size": 111385
+    },
+    {
+      "path": "Native.cs",
+      "sha256": "9c75d0464f3a9e46519128aae917fb7b6f31dfd03eb5571261d9a7ef3877cc8c",
+      "size": 17449
+    },
+    {
+      "path": "native.ps1",
+      "sha256": "9a37e749315e4129f8385017ceaea08059db7c53663500ab0835c12f234dfef8",
+      "size": 2924
+    },
+    {
+      "path": "run-native.py",
+      "sha256": "6c1fcdbb736b052c00495e5e84b3221f93963c70916945bb7990ea445f9bb75a",
+      "size": 3866
+    },
+    {
+      "path": "shim-provenance.json",
+      "sha256": "188ce96f3f240ef6b32d350414c1bbff26b1ea93d333d1dfcd0fc48b78ec0329",
+      "size": 829
+    },
+    {
+      "path": "shim1.bin",
+      "sha256": "915766ea00cb00e6f5e23b6e8374ae0deba052f0746471465f58c7e226b211c8",
+      "size": 130
+    },
+    {
+      "path": "shim1.recipe.json",
+      "sha256": "c117f036286548c8945cb5d35865e9ae0649625d383893b3b235aa6415e27c6c",
+      "size": 4063
+    },
+    {
+      "path": "shim2.bin",
+      "sha256": "13ebbbb448e26e10e5b97f25a997e692581673fa1736977fe666944665d4c686",
+      "size": 136
+    },
+    {
+      "path": "shim2.recipe.json",
+      "sha256": "1d5d43744465cd329d216fc01e07970cdb1665e5a8f96c72a45da2307a4078fe",
+      "size": 4221
+    },
+    {
+      "path": "source-syntax.json",
+      "sha256": "79c62f6a3a22cd6a183979396bbe4f8d358ce32c1c11653c1b916b0009fd0509",
+      "size": 294
+    },
+    {
+      "path": "staging/headerless/AIPs/aipdef.h",
+      "sha256": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+      "size": 1846
+    },
+    {
+      "path": "staging/headerless/AIPs/opening_research.aip",
+      "sha256": "4a1c2122423a9c4f39e855a1c29837213e25181db414ea7213179e7320226c01",
+      "size": 2866
+    },
+    {
+      "path": "staging/missing-header/AIPs/opening_research.aip",
+      "sha256": "ca1a7da1da8eba8b4a363f89d7d0b100f0c8499e5822220f5af2283763d5a829",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/aipdef.h",
+      "sha256": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+      "size": 1846
+    },
+    {
+      "path": "staging/positive/AIPs/opening_research.aip",
+      "sha256": "ca1a7da1da8eba8b4a363f89d7d0b100f0c8499e5822220f5af2283763d5a829",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_cleric.aip",
+      "sha256": "8cf907fde8c9b0ac81ee37bb2b89585780b631abfea64eec502f99b43b870e98",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_default.aip",
+      "sha256": "ca1a7da1da8eba8b4a363f89d7d0b100f0c8499e5822220f5af2283763d5a829",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_milfew.aip",
+      "sha256": "63c208aa5d632d5f3bde95c8a0ae956ddd03b53faeec26e239ad7d500069a6da",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_milmany.aip",
+      "sha256": "4cff1ab65753149da633737509b0adc3c4145c56b128f671d27ed8f14eb59a04",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_scifew.aip",
+      "sha256": "cdacad5163f6526cbc70c1481d32133b3328090b1bf7c3b8a40897606d4166cf",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_scimany.aip",
+      "sha256": "97c2d4c72bd8e93420bffe6d8394eb3e558e389d9a93ae389e9dd33a8ea97f73",
+      "size": 2887
+    },
+    {
+      "path": "staging/positive/AIPs/opening_restore_slaver.aip",
+      "sha256": "64e4af08a19e8974e6a45979ca73472619911a50c0f2da1da96efc6847091561",
+      "size": 2887
+    },
+    {
+      "path": "staging/unknown-name/AIPs/aipdef.h",
+      "sha256": "26dc25bc4f086ad6e355323fc8818680a1d81531148b6b41710c12d6571a2f47",
+      "size": 1846
+    },
+    {
+      "path": "staging/unknown-name/AIPs/opening_research.aip",
+      "sha256": "3c786bd9e481dd1de2bd5a94267a5e6b8d1833450023fe44ca531ed3bd8fa8f9",
+      "size": 2898
+    }
+  ],
+  "native_execution_count": 0,
+  "C3_approval_exists": true,
+  "C3_approval_active": false,
+  "predecessor_manifest_sha256": "f68dfa1647304b3ebaa6b8072485f172e1074d165ca3905120661ac53fe5cbbf"
+}

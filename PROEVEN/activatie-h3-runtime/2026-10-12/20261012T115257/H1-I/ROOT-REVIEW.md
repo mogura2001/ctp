@@ -1,0 +1,5 @@
+# H1-I 12okt rootcodevrijgave
+
+Voorbereiding/diff vollediggelezen, onafhankelijk4scripthashes/omvang eninversevervangingexact11oktbron. Guard/Finishbytegelijk, alleen7naam/runliterals, manifest27d913bdba41d039dddff0362da43f27ec72b58c141d83d136f3b1b355243406/diff1d274633ac8d09f65290983a74d8efda9503698987778392f3ba70f920cc6d12bevestigd. Bestaande480s/470s/proces/focus/budget/15pins/save/loadedbytes/exit/count0/herstelregelsbehouden.
+
+Rootvrijgave12okt12:00: uitsluitendeneH1-Iarm/eenStart/vasteT0/A/eenbeurt/B/normalClose/exit+count0/origineelherstel. Nieuwewerkelijkeusergoedkeuring11oktvooreneproefenclosuremeldinggeldt, geen hernieuwdevraag. VoorStartactueelallcount0/freshbudgetrevalideren. Parserworkeralleenvoorbereid/gestopt, geenanderegamefilesmuteren. Rootversebudget11:59:39week83/vijf89stateok. Doel3/3sessiesfocus: dezeH1bedieningspoortisGEENafgerondgameplaydoel. GeenH3/B2/B4/B5/restart/forcedclose/pcafsluiting.

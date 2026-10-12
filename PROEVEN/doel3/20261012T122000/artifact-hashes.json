@@ -1,0 +1,375 @@
+{
+  "state": "PREPARED_NOT_EXECUTED_ROOTFIX_3",
+  "artifacts": [
+    {
+      "path": "Controleer-Reader.py",
+      "sha256": "a2321f5eb2e459ba519f3cc9d2f49520636ec096b95d9c9f10911ab49c720bdb",
+      "bytes": 3078
+    },
+    {
+      "path": "controller-rootfix.diff",
+      "sha256": "d5fa3df4cabfdde9691a7fbff34f7a783250fd88a4a3325c012eaba9fe80d6dd",
+      "bytes": 12026
+    },
+    {
+      "path": "Doel3.ps1",
+      "sha256": "90997d1201f9d7ccd26440adf0547e9642374e1e14296185d8bcac3132bcc994",
+      "bytes": 17573
+    },
+    {
+      "path": "Lees-Doel3.py",
+      "sha256": "e6164a7c7837cf3b1644eb030237fb6ef1e434ee3ffc8ec82cc46c47d6c4068d",
+      "bytes": 11046
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "3ee74baaa993793465975e9c996f03c699e334e24b297aa22fbbc5ba189806d4",
+      "bytes": 29636
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "345cb0059ce4514b0c90cb8a134a04f9ec6ea56e230b45e370b11bd32eee4a77",
+      "bytes": 11397
+    },
+    {
+      "path": "paired.diff",
+      "sha256": "5992ace0de0916832dacdc1bb7954b4f720ecd2dfa22cba749c788a4c2d7263d",
+      "bytes": 14049
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "bytes": 405
+    },
+    {
+      "path": "powershell-syntax.json",
+      "sha256": "71348bcd27a466993feaddea812614268bee37129215de90de047df175ccbf9d",
+      "bytes": 104
+    },
+    {
+      "path": "protected-checks.json",
+      "sha256": "565028bbeaa15711ed70f1dde596f96983206717a35b72c323e871e9f890dd6b",
+      "bytes": 12926
+    },
+    {
+      "path": "python-syntax.json",
+      "sha256": "7465857050f8bd905311b267a6123f79d21ea144f81e10d1ab2a43e3fa4ad502",
+      "bytes": 210
+    },
+    {
+      "path": "reader-checks.json",
+      "sha256": "64b3aec555b293c30082aeb66d86714123417dd76d0ab80dc6787e1566909d1f",
+      "bytes": 595
+    },
+    {
+      "path": "reader-core.diff",
+      "sha256": "43c58fa439ce645bf871bc7af82df99f8764ac84f03c153e6ef300ee2ab23d40",
+      "bytes": 14761
+    },
+    {
+      "path": "RESULTATEN.md",
+      "sha256": "63958efa818df8cc2423b113c1d6a266a25b47b894316550b6a89ff4de2288f6",
+      "bytes": 5726
+    },
+    {
+      "path": "rootfix-static-checks.json",
+      "sha256": "3e1a4b1cf575887a1bdddc5130b23d9d33a088e2bd2979c7af85b9990ed52da4",
+      "bytes": 704
+    },
+    {
+      "path": "_main_source.txt",
+      "sha256": "1ed7c50b31a1cfc8e5ccc0aafb071443a81eced7ba0ba8afe7417d6cccdf6198",
+      "bytes": 5611
+    },
+    {
+      "path": "source-copies/artifact-hashes.before-rootfix.json",
+      "sha256": "812b8e4b6354bda4d2bceba26ed85ebfa9738f80e9df854245258b928d31017d",
+      "bytes": 13723
+    },
+    {
+      "path": "source-copies/Doel3.before-rootfix.ps1",
+      "sha256": "5b2a024318e94a40fb6f04e92bf47c81d10a7a17d788495fee065461a1aad8e8",
+      "bytes": 15643
+    },
+    {
+      "path": "source-copies/Lees-Onderzoeksactivatie.py",
+      "sha256": "ff43655e52ddc2a9c593ff64ef564c6cda54a2c11e04cc364cfbd5fface69365",
+      "bytes": 24716
+    },
+    {
+      "path": "__pycache__/Lees-Doel3.cpython-312.pyc",
+      "sha256": "def7474a501a31748ef7fc3a7d4274e8121f86803c1033d933013a304961452e",
+      "bytes": 20797
+    },
+    {
+      "path": "__pycache__/original_core.cpython-312.pyc",
+      "sha256": "cc245d94f7b57fc88505a7676f413431780ccbee1991587590df408a62912bb4",
+      "bytes": 17344
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "2101c5f4372cb79255887d6c6e3b3e664c7a9c90ce0f46b1c0060312ff46d2c0",
+      "bytes": 474
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "39a112c502ccc9c33482adac10c818f31eb0595bdf8a429c2f2432a579238715",
+      "bytes": 658
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "62118192bdc0a136225def1c181c3ca2b24a1c088951b2450f545cb9119e58f8",
+      "bytes": 605
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "a75b676f2fa9c0fc266281f98aa938177be3669202917a8a0c1f383b97b19027",
+      "bytes": 613
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "d07b02240d33e0b15ef514cedc93a1690a74c991b64f21ba9499f3cc8929fd9b",
+      "bytes": 614
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "baa98177f060cbdc59d12e00bf9e46d2ea76d9459571b9ea1c642b7d5573bf82",
+      "bytes": 607
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "87e66bd5b3b0de027bd06f1696fd8da4c0deb4c1f439c5b9b4870037fbb4ec9b",
+      "bytes": 602
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "ff4670b60160b52652f16d50c8a53682e907b253bc81210383b2041784a67032",
+      "bytes": 14986
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "bytes": 3655
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "bytes": 40166
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "bytes": 47674
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "bytes": 39995
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "bytes": 40057
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "bytes": 39953
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "bytes": 40005
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "bytes": 40227
+    },
+    {
+      "path": "backups/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+      "bytes": 660480
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "2101c5f4372cb79255887d6c6e3b3e664c7a9c90ce0f46b1c0060312ff46d2c0",
+      "bytes": 474
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "39a112c502ccc9c33482adac10c818f31eb0595bdf8a429c2f2432a579238715",
+      "bytes": 658
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "62118192bdc0a136225def1c181c3ca2b24a1c088951b2450f545cb9119e58f8",
+      "bytes": 605
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "a75b676f2fa9c0fc266281f98aa938177be3669202917a8a0c1f383b97b19027",
+      "bytes": 613
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "d07b02240d33e0b15ef514cedc93a1690a74c991b64f21ba9499f3cc8929fd9b",
+      "bytes": 614
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "baa98177f060cbdc59d12e00bf9e46d2ea76d9459571b9ea1c642b7d5573bf82",
+      "bytes": 607
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "87e66bd5b3b0de027bd06f1696fd8da4c0deb4c1f439c5b9b4870037fbb4ec9b",
+      "bytes": 602
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "ff4670b60160b52652f16d50c8a53682e907b253bc81210383b2041784a67032",
+      "bytes": 14986
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "d2e43dc222c1790091ed95117c62f6ca5a3d31aaff3fdfb81d40e50bc18b3d00",
+      "bytes": 3655
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "8233c6a2bce248db6ebb45b7a1d632a8eb7440a5cc00b6aa21dffe15cf59e614",
+      "bytes": 40166
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "3d5952ea609be591114259596454af9d7b275c4afcc105e09fd30477dc4ff2f6",
+      "bytes": 47674
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "a8e6437fb5e2a9b874fd0cfad6f2a6ae616c4e2df781fcf3be8cc6fc0937a8ee",
+      "bytes": 39995
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "ff86787824c048d5af5e2066cc075601908d34539bce936c53311b42808dc57f",
+      "bytes": 40057
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "6ba72adbccc47a6e1e74b4a8e43fb4700101422ac4574f08cd6785cf8a555acf",
+      "bytes": 39953
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "c34809e7d68a3debb3df974316b149466c4408fdb2dc6341a259f8fd4394c155",
+      "bytes": 40005
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "016f0baad708d347327c221687a4bfa018cb02cbf5a0a790605196c629344e84",
+      "bytes": 40227
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+      "bytes": 660480
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+      "bytes": 509
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+      "bytes": 707
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+      "bytes": 654
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+      "bytes": 662
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+      "bytes": 663
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+      "bytes": 656
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+      "bytes": 651
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "bytes": 15146
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "bytes": 4201
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "bytes": 67
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "bytes": 3655
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "bytes": 40166
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "bytes": 47674
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "bytes": 39995
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "bytes": 40057
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "bytes": 39953
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "bytes": 40005
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "bytes": 40227
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "bytes": 665088
+    }
+  ]
+}

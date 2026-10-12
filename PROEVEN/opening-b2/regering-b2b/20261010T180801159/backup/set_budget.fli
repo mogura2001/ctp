@@ -1,0 +1,93 @@
+// budget.fli
+
+// just set the wages to what we need to make the population content
+// there is some round off error because WGF is so course
+
+	if (zero_percent_wages_needed_content) 
+	{
+		zero_budget_income_wages
+	} elseif (ten_percent_wages_needed_content) { 
+		thirty_budget_income_wages	                // times three wages
+	} elseif (twenty_percent_wages_needed_content) { 
+		fourty_budget_income_wages	                // double wages
+	} elseif (thirty_percent_wages_needed_content) { 
+		sixty_budget_income_wages	                // double wages
+	} elseif (fourty_percent_wages_needed_content) { 
+		eighty_budget_income_wages	                // double wages
+	} elseif (fifty_percent_wages_needed_content) { 
+		fifty_budget_income_wages	
+	} elseif (sixty_percent_wages_needed_content) { 
+		sixty_budget_income_wages	
+	} elseif (seventy_percent_wages_needed_content) { 
+		seventy_budget_income_wages	
+	} elseif (eighty_percent_wages_needed_content) { 
+		eighty_budget_income_wages	
+	} elseif (ninety_percent_wages_needed_content) { 
+		ninety_budget_income_wages	
+	} elseif (max_percent_wages_needed_content) { 
+		max_budget_income_wages	
+	}
+
+	/////////////////////////////////////////////////////////////////
+	//
+	// Set the base and special action gold reserve levels
+	// for each personality type and age.
+	//
+	/////////////////////////////////////////////////////////////////
+
+	// small base gold reserve until future times
+
+	if (not future_time)
+    {
+		small_base_gold_reserve
+    }
+
+	// increase to default gold reserve in modern times
+
+	if (industrial_time or 
+	    information_time or
+	    genetic_time or
+        diamond_time)
+    {
+	    default_base_gold_reserve
+    }
+
+	// only cleric and slaver need special action reserve
+	// in ancient times and medieval times
+
+	if ((yes_cleric or 
+	     yes_slaver) and
+	    ancient_time )
+	{
+		small_special_action_gold_reserve
+	}
+	
+	if (not yes_cleric and
+	    not yes_slaver and
+	    ancient_time)
+	{
+		no_special_action_gold_reserve
+	}
+
+	// all personalities need default special action reserve
+	// in modern times
+
+	if (future_time)
+	{
+		default_special_action_gold_reserve
+	}
+
+	// in genetic and diamond age we need large special action buffer
+	
+	if (genetic_time or 
+	    diamond_time)
+	{
+		large_special_action_gold_reserve
+	}
+
+	// If we have more than 10,000 gold, we should rushbuy anything.
+	// Otherwise our default is to only rushbuy buildings.
+	if ( gazoodles_of_current_savings )
+	{
+		buy_anything_rushbuy_max_utility
+	}

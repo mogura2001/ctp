@@ -1,0 +1,149 @@
+--- before-root-review/Doel3.ps1
++++ rootfixed/Doel3.ps1
+@@ -1,5 +1,5 @@
+ param(
+- [Parameter(Mandatory=$true)][ValidateSet('InstallStart','Guard','Capture','Read','Pass','Finish')][string]$Action,
++ [Parameter(Mandatory=$true)][ValidateSet('InstallStart','Guard','Capture','Read','Pass','Finish','RestoreNoStart')][string]$Action,
+  [ValidateSet('variant','baseline')][string]$Arm='variant',
+  [int]$Turn=0,[string]$Previous='', [string]$Label='checkpoint'
+ )
+@@ -36,8 +36,9 @@
+ }
+ '@
+ function Elapsed($started){([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)/[double]$started.monotonic_frequency}
+-function OwnState($started,[switch]$RequireFocus,[switch]$BindWindow){
+- if((Elapsed $started) -ge 1785){throw '30min arm deadline; retain15s normal-close reserve.'}
++function OwnState($started,[switch]$RequireFocus,[switch]$BindWindow,[switch]$ForClose){
++ $limit=if($ForClose){1790}else{1785}
++ if((Elapsed $started) -ge $limit){throw '30min arm deadline; retain normal-close reserve.'}
+  $rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop)
+  if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $started.pid -or $rows[0].ExecutablePath -cne $exe -or ([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms){throw 'Exact own process identity/unique civctp changed.'}
+  $own=[Diagnostics.Process]::GetProcessById([int]$started.pid)
+@@ -54,7 +55,7 @@
+   },[IntPtr]::Zero)){throw 'Own-window enumeration failed.'}
+   if($windows.Count -ne 1 -or $windows[0].handle -ne $h.ToInt64() -or !$windows[0].title -or $windows[0].title -match 'Error|CD-ROM|Call to Power CD'){throw 'Modal/error/extra own window; stop.'}
+   $r=New-Object Goal3Window+Rect;if(-not [Goal3Window]::GetWindowRect($h,[ref]$r)){throw 'Bounds unreadable.'}
+-  if((Elapsed $started) -ge 1785){throw 'Late OS query; no next action.'}
++  if((Elapsed $started) -ge $limit){throw 'Late OS query; no next action.'}
+   return [ordered]@{pid=$started.pid;handle=$h.ToInt64();creation_utc_ms=$started.creation_utc_ms;foreground_handle=[Goal3Window]::GetForegroundWindow().ToInt64();elapsed_seconds=(Elapsed $started);bounds=@{left=$r.Left;top=$r.Top;right=$r.Right;bottom=$r.Bottom;width=$r.Right-$r.Left;height=$r.Bottom-$r.Top};title=$windows[0].title}
+  }finally{$own.Dispose()}
+ }
+@@ -70,18 +71,51 @@
+   elseif((Hash $target) -ne $expected){throw "Installed changed-file mismatch: $($entry.path)"}
+  }
+ }
++function RestoreOwnInstallation {
++ $execution=Join-Path $armDir 'execution.json'
++ if(!(Test-Path -LiteralPath $execution)){throw 'No own recorded installation attempt; no restoration.'}
++ $record=Get-Content -LiteralPath $execution -Raw -Encoding utf8|ConvertFrom-Json
++ if(!$record.install_attempted -or $record.arm -cne $Arm){throw 'Installation record is not this arm.'}
++ CountZero;Budget
++ # Validate every current file and true backup before the first restore mutation.
++ foreach($entry in $manifest.files){
++  $target=Join-Path $workspace $entry.path;$present=Test-Path -LiteralPath $target
++  $armHash=$entry.("${Arm}_sha256");$current=if($present){Hash $target}else{$null}
++  if($current -ne $entry.before_sha256 -and $current -ne $armHash){throw "User/unexpected file change; preserve: $($entry.path)"}
++  if($entry.existed){$backup=Join-Path (Join-Path $package 'backups') $entry.path;if((Hash $backup) -ne $entry.before_sha256){throw 'True restore backup changed.'}}
++ }
++ CountZero
++ foreach($entry in $manifest.files){
++  $target=Join-Path $workspace $entry.path
++  if($entry.existed){Copy-Item -LiteralPath (Join-Path (Join-Path $package 'backups') $entry.path) -Destination $target}
++  elseif(Test-Path -LiteralPath $target){Remove-Item -LiteralPath $target}
++ }
++ $checks=@(foreach($entry in $manifest.files){$target=Join-Path $workspace $entry.path;$present=Test-Path -LiteralPath $target;$hash=if($present){Hash $target}else{$null};@{path=$entry.path;present=$present;sha256=$hash;match=($present -eq $entry.existed -and $hash -eq $entry.before_sha256)}})
++ JsonFile @{at=(Get-Date).ToString('o');mode='OWN_INSTALLATION_COUNT0_RESTORE';all_civctp_count=0;files=$checks;profile_sha256=(Hash (Join-Path $workspace 'CTP-proef\ctp_program\ctp\userprofile.txt'));saves_preserved=$true} 'restore.json'
++ if(@($checks|Where-Object{!$_.match}).Count){throw 'Restoration mismatch.'}
++}
+ function ReadSnapshot($started,$name,$turn){
+  OwnState $started -BindWindow|Out-Null
+  $output=Join-Path $armDir $name
+- $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012T122000-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output
++ $oldErrorAction=$ErrorActionPreference
++ try{
++  $ErrorActionPreference='Continue'
++  $result=& $python -X utf8 (Join-Path $package 'Lees-Doel3.py') --pid $started.pid --variant $variant --run-id ('doel3-20261012T122000-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
++  $readerCode=$LASTEXITCODE
++ }finally{$ErrorActionPreference=$oldErrorAction}
+  $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+- if($LASTEXITCODE -ne 0){throw 'Snapshot rejected; no turn acceptance.'}
++ if($readerCode -ne 0){
++  if(Test-Path -LiteralPath $output){$rejected=Get-Content -LiteralPath $output -Raw -Encoding utf8|ConvertFrom-Json;if($rejected.status -ceq 'rejected' -and $rejected.error -ceq 'Unstable complete snapshot; no turn acceptance'){throw 'UNSTABLE_DATASET_RETRY_ONLY'}}
++  throw 'Fatal snapshot rejection; no turn acceptance/retry.'
++ }
+  $value=Get-Content $output -Raw -Encoding utf8|ConvertFrom-Json
+  if($value.instance.pid -ne $started.pid -or [Math]::Floor(([decimal]$value.instance.creationtime_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms){throw 'Reader process creationtime mismatch.'}
++ OwnState $started -BindWindow|Out-Null
+  return $value
+ }
+ Budget
+ if((Hash $tool) -ne $toolHash){throw 'Reviewed Bedien-CTP changed.'}
++if($Action -eq 'RestoreNoStart'){RestoreOwnInstallation;exit}
+ if($Action -eq 'InstallStart'){
+  if(Test-Path -LiteralPath (Join-Path $armDir 'execution.json')){throw 'Arm already attempted; no automatic retry/start.'}
+  CountZero
+@@ -103,7 +137,7 @@
+  }
+  CheckInstalled;Budget;CountZero
+  $ticks=[Diagnostics.Stopwatch]::GetTimestamp()
+- $result=& powershell.exe -NoProfile -File $tool -Action Start 2>&1;$code=$LASTEXITCODE
++ $result=& powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $tool -Action Start 2>&1;$code=$LASTEXITCODE
+  $result|Set-Content -LiteralPath (Join-Path $armDir 'start-stdout.txt') -Encoding utf8
+  $match=[regex]::Match(($result -join "`n"),'process (\d+)\.')
+  if($code -ne 0 -or !$match.Success){throw 'Start failed; no retry. Preserve install state for reviewed cleanup.'}
+@@ -127,24 +161,18 @@
+ $started=Get-Content (Join-Path $armDir 'start-record.json') -Raw -Encoding utf8|ConvertFrom-Json
+ if($Action -eq 'Finish'){
+  if(Test-Path -LiteralPath (Join-Path $armDir 'close-request.json')){throw 'One normal-close request already attempted; no retry.'}
+- OwnState $started -BindWindow|Out-Null;CheckInstalled
++ $live=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop)
++ if($live.Count -eq 0){RestoreOwnInstallation;exit}
++ OwnState $started -BindWindow -ForClose|Out-Null;CheckInstalled
+  $own=[Diagnostics.Process]::GetProcessById([int]$started.pid)
+  try {
+-  if((Elapsed $started) -ge 1785){throw 'No normal-close reserve.'}
++  if((Elapsed $started) -ge 1790){throw 'No10s normal-close reserve.'}
+   $own.Refresh();if($own.MainModule.FileName -cne $exe -or ([DateTimeOffset]$own.StartTime.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms -or $own.MainWindowHandle.ToInt64() -ne $started.handle){throw 'Direct-before-close identity mismatch.'}
+   $clock=[Diagnostics.Stopwatch]::StartNew();$ok=$own.CloseMainWindow();JsonFile @{called_at=(Get-Date).ToString('o');bool_return=$ok;call_count=1} 'close-request.json'
+   if(!$ok){throw 'CloseMainWindow false; no force/retry.'}
+   while($clock.Elapsed.TotalSeconds -lt 10){$own.Refresh();if($own.HasExited){break};Start-Sleep -Milliseconds 100}
+   $own.Refresh();if(!$own.HasExited){throw 'No normal exit within10s; leave original process/files.'}
+-  $exitCode=$own.ExitCode;CountZero;Budget
+-  foreach($entry in $manifest.files){
+-   $target=Join-Path $workspace $entry.path
+-   if($entry.existed){$backup=Join-Path (Join-Path $package 'backups') $entry.path;if((Hash $backup) -ne $entry.before_sha256){throw 'Restore backup changed.'};Copy-Item -LiteralPath $backup -Destination $target}
+-   else{if(Test-Path -LiteralPath $target){if((Hash $target) -ne $entry.variant_sha256){throw 'New FLI changed; preserve.'};Remove-Item -LiteralPath $target}}
+-  }
+-  $checks=@(foreach($entry in $manifest.files){$target=Join-Path $workspace $entry.path;$present=Test-Path -LiteralPath $target;$hash=if($present){Hash $target}else{$null};@{path=$entry.path;present=$present;sha256=$hash;match=($present -eq $entry.existed -and $hash -eq $entry.before_sha256)}})
+-  JsonFile @{at=(Get-Date).ToString('o');exit_code=$exitCode;all_civctp_count=0;files=$checks;profile_sha256=(Hash (Join-Path $workspace 'CTP-proef\ctp_program\ctp\userprofile.txt'));saves_preserved=$true} 'restore.json'
+-  if(@($checks|Where-Object{!$_.match}).Count){throw 'Restoration mismatch.'}
++  $exitCode=$own.ExitCode;JsonFile @{at=(Get-Date).ToString('o');has_exited=$true;exit_code=$exitCode} 'exit.json';RestoreOwnInstallation
+  }finally{$own.Dispose()};exit
+ }
+ CheckInstalled
+@@ -152,7 +180,7 @@
+ switch($Action){
+  'Guard'{OwnState $started -BindWindow -RequireFocus|ConvertTo-Json -Depth 6}
+  'Capture'{
+-  $result=& powershell.exe -NoProfile -File $tool -Action Capture
++  $result=& powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $tool -Action Capture
+   if($LASTEXITCODE -ne 0){throw 'Capture failed.'}
+   Copy-Item -LiteralPath (Join-Path $workspace 'PROEVEN\automatisering\ctp-window.png') -Destination (Join-Path $armDir ($Label+'.png'))
+  }
+@@ -163,13 +191,14 @@
+   $before=Get-Content -LiteralPath $path -Raw -Encoding utf8|ConvertFrom-Json
+   if(!$before.stable_twice -or $before.instance.pid -ne $started.pid -or $before.variant -cne $variant -or $Turn -ne $before.turn+1){throw 'Previous instance/variant/turn mismatch.'}
+   OwnState $started -BindWindow -RequireFocus|Out-Null
+-  $inputResult=& powershell.exe -NoProfile -File $tool -Action Key -Keys n
++  $inputResult=& powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $tool -Action Key -Keys n
+   $inputResult|Set-Content -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt')) -Encoding utf8
+   if($LASTEXITCODE -ne 0){throw 'n input failed; no retry.'}
+   $poll=[Diagnostics.Stopwatch]::StartNew();$attempt=0;$accepted=$false
+   while($poll.Elapsed.TotalSeconds -lt 30){
++   Budget;OwnState $started -BindWindow|Out-Null
+    Start-Sleep -Milliseconds 400;$attempt++
+-   try{$after=ReadSnapshot $started ('T'+$Turn+'-poll'+$attempt+'.json') $Turn}catch{continue}
++   try{$after=ReadSnapshot $started ('T'+$Turn+'-poll'+$attempt+'.json') $Turn}catch{if($_.Exception.Message -ceq 'UNSTABLE_DATASET_RETRY_ONLY'){continue};throw}
+    $complete=$true
+    foreach($old in $before.state.civilizations){$new=@($after.state.civilizations|Where-Object{$_.civ_id -eq $old.civ_id});if($new.Count -ne 1 -or $new[0].processed_round -ne $old.processed_round+1){$complete=$false}}
+    if($complete){Copy-Item -LiteralPath (Join-Path $armDir ('T'+$Turn+'-poll'+$attempt+'.json')) -Destination (Join-Path $armDir ('T'+$Turn+'.json'));$accepted=$true;break}

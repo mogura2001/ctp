@@ -1,0 +1,22 @@
+﻿{
+    "reviewed_at":  "2026-10-10T12:22:05.3710852+02:00",
+    "method":  "Read-only source/diff review; no helper invocation",
+    "original_suffix_default_capture_and_input_actions_byte_text_equal":  true,
+    "original_setup_and_start_restart_text_retained":  true,
+    "original_status_and_dismiss_text_retained":  true,
+    "source_utf8_without_bom":  true,
+    "original_crlf":  0,
+    "new_crlf":  0,
+    "new_unpaired_lf":  281,
+    "manual_checks":  [
+                          "Five opt-in parameters; timeout1..30000/default30000",
+                          "Explicit new parameters rejected before output directory/Add-Type/action handling unless Capture+enabled switch+all bindings",
+                          "Existing selection remains exactly one probe; opt-in catches selection failures for stdout",
+                          "Each poll: exact expected PID+CIM UTCcreation+exe+same original Process+HWND+owner, then foreground",
+                          "No SetForegroundWindow or input in new opt-in branch",
+                          "Single Stopwatch deadline; \u003c=100ms remaining-clamped poll sleeps;350ms and bounds/pre/post/save checks share deadline",
+                          "Positive GetWindowRect bounds; foreground immediately after CopyFromScreen plus identity recheck",
+                          "One compact stdout trace in wait finally, with error/stages/times/bounds; no other-app PID/title",
+                          "Original screenshot output path/format retained; no screenshot read/write performed in C0"
+                      ]
+}

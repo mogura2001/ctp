@@ -142,7 +142,7 @@ def safety(r):
  iface(r,P['player'],[m('ebx',P['t']),'edi'],0x2c);r.test('eax','eax');r.j('jz','safe_foreign')
  r.mov('ecx',m('ebx',P['owner']));r.mov('ecx',m('ecx',0xac));r.test('ecx','ecx');r.j('jz','safe_unknown');r.mov(m('ebp',-128),-1);r.mov(m('ebp',-132),-1);r.lea('eax',m('ebp',-132));r.push('eax');r.lea('eax',m('ebp',-128));r.push('eax');r.push('edi');r.push(m('ebx',P['owner']));original(r,'GetContinent');r.alu('cmp','eax',1);r.j('jne','safe_unknown');r.alu('cmp',m('ebp',-128),0);r.j('jl','safe_unknown');r.alu('cmp',m('ebp',-132),1);r.j('jne','safe_foreign')
  iface(r,P['world'],['edi'],0x54);r.push(m('ebx',P['civ']));r.push('eax');original(r,'owner_gate');r.alu('cmp','eax',1);r.j('je','safe_presence');r.alu('cmp','eax',2);r.j('je','safe_foreign');r.j('jmp','safe_unknown')
- r.label('safe_presence');r.lea('eax',m('ebp',-88));r.zero('eax',36);r.mov(m('ebp',-92),0x1abc2345);r.mov(m('ebp',-52),0x6bcd3456)
+ r.label('safe_presence');r.lea('eax',m('ebp',-88));r.zero('eax',36);r.mov('edi',m('ebp',12));r.mov(m('ebp',-92),0x1abc2345);r.mov(m('ebp',-52),0x6bcd3456)
  # Same nine output slots/pushes as InsertBestSettleGoal, with own storage.
  for off in range(-56,-89,-4):r.lea('eax',m('ebp',off));r.push('eax')
  r.push('edi');r.mov('eax',m('ebx',P['world']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',0x78))

@@ -1,0 +1,5 @@
+// set_personality_slow_science.fli
+
+output science_speed[0.0, 3.0] = 2.0
+	tri want_slow_science(science_speed, 1.0, 0.1)
+	tri want_fast_science(science_speed, 2.0, 0.1)

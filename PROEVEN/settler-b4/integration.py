@@ -6,6 +6,8 @@ and invalidated on AIP return. It is not an engine allocation or save record.
 """
 import struct
 import native as n
+import importlib.util
+from pathlib import Path
 from x86 import mem as m
 
 def plan(r,name):
@@ -26,7 +28,27 @@ def host(r):
  r.mov('edx',m('ebx',n.P['player']));r.mov('eax',m('edx',8));r.alu('cmp','eax',m('ebx',156));r.j('jne','bind_bad');r.mov('edx',m('ebx',n.P['path']));r.alu('cmp',m('edx',0x7c),'eax');r.j('jne','bind_bad')
  for vtable,slot,target in ((0x3452e0,0x54,0x133880),(0x344660,0xc,0x1273a0),(0x346220,0xc,0x1826a0)):
   n.engine(r,'edx',vtable);n.engine(r,'eax',target);r.alu('cmp',m('edx',slot),'eax');r.j('jne','bind_bad')
+ invoke(r,'bind_inputs');r.test('eax','eax');r.j('jz','bind_bad')
  r.mov('eax',1);r.j('jmp','bind_done');r.label('bind_bad');n.unknown(r,30);n.result(r,'bind_done',80)
+
+def input_guard(r):
+ # These fingerprints use frozen binary bytes; original AI relocations are
+ # compared as loaded-module-relative values, never literal20000000 VAs.
+ spec=importlib.util.spec_from_file_location('b4_input_pins',Path(__file__).with_name('input-pins.py'));pinmod=importlib.util.module_from_spec(spec);spec.loader.exec_module(pinmod);pins=pinmod.pins()
+ n.entry(r,'bind_inputs',32);n.pc(r,'inputs_pc');r.mov('edi',m('ebx',n.P['host']))
+ for row in pins['bodies']:
+  raw=bytes.fromhex(row['bytes']);base='edi' if row['kind']=='engine' else 'esi';at=row['rva'];off=0
+  while off<len(raw):
+   if off in row['relocations']:
+    value=int.from_bytes(raw[off:off+4],'little');r.lea('eax',m('esi',value-0x20000000));r.alu('cmp',m(base,at+off),'eax');off+=4
+   elif off+4<=len(raw) and not any(off<q<off+4 for q in row['relocations']):
+    r.alu('cmp',m(base,at+off),int.from_bytes(raw[off:off+4],'little'));off+=4
+   else:
+    r.load('eax',m(base,at+off),'sx8');r.alu('and','eax',255);r.alu('cmp','eax',raw[off]);off+=1
+   r.j('jne','inputs_bad')
+ for row in pins['slots']:
+  r.lea('eax',m('edi',row['rva']));r.alu('cmp',m('edi',0x345098+row['slot']),'eax');r.j('jne','inputs_bad')
+ r.mov('eax',1);r.j('jmp','inputs_done');r.label('inputs_bad');n.unknown(r,36);n.result(r,'inputs_done',32)
 
 def hints(r):
  # Reciprocal identities are copied before cleanup. Squad->unit membership
@@ -76,7 +98,7 @@ def quota(r,b2):
  r.label('quota_restore');b2.restore(r);r.fp('fld one quota return','dd',0,m('ebp',-40));b2.end(r,8)
 
 def emit(r,b2,N):
- for f in (host,hints):f(r)
+ for f in (host,input_guard,hints):f(r)
  finalize(r,N);wrappers(r,b2)
  for f in (n.resolve_type,n.owner_gate,n.key,n.preview,n.dfs,n.departures,n.safety,n.path,n.capture,n.roles,n.ordering,n.conflicts,n.path_cache,n.selection):f(r)
  r.label('settler_name');r.op('constant exact loaded token',b'UNIT_SETTLER\0')

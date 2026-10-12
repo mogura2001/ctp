@@ -1,0 +1,95 @@
+{
+  "state": "EXACT_JOINT_MATCH",
+  "ex_ante_fields": [
+    "civ_id",
+    "known",
+    "active_government",
+    "government_requested",
+    "government_deadline",
+    "processed_round",
+    "city_count",
+    "engine_current"
+  ],
+  "all_seven_joint_old_T": [
+    26
+  ],
+  "native_rounds": [
+    25
+  ],
+  "provisional_native_turn": 26,
+  "loaded_screen": "2700BC (actually seen)",
+  "loaded_sha256": "f0cbe23d9ec0217bdfb1662ecff3191c0f7743aad972ac2adf5f5f2da8fc4c7f",
+  "candidate_differences": [
+    {
+      "turn": 26,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "turn": 25,
+      "difference_count": 9,
+      "differences": [
+        {
+          "civ_id": 2,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 2,
+          "field": "engine_current",
+          "loaded": {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          "old": {
+            "index": 15,
+            "name": "Trade"
+          }
+        },
+        {
+          "civ_id": 3,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 4,
+          "field": "active_government",
+          "loaded": 3,
+          "old": 0
+        },
+        {
+          "civ_id": 4,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 5,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 6,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 7,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        },
+        {
+          "civ_id": 8,
+          "field": "processed_round",
+          "loaded": 25,
+          "old": 24
+        }
+      ]
+    }
+  ]
+}

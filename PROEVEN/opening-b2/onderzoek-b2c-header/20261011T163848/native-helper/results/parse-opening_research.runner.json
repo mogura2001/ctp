@@ -1,0 +1,65 @@
+{
+  "case": "parse-opening_research",
+  "pass": false,
+  "own_subprocess_only": true,
+  "timeout_seconds": 20,
+  "byte_limit_each_output": 4194304,
+  "budget_before": {
+    "reported_at_utc": "2026-10-11T14:53:57.035Z",
+    "checked_at_utc": "2026-10-11T14:53:57.820932+00:00",
+    "age_seconds": 0.8,
+    "windows": {
+      "five_hour": {
+        "remaining_percent": 7.0,
+        "used_percent": 93.0,
+        "window_minutes": 300,
+        "reset_at_unix": 1791744929
+      },
+      "weekly": {
+        "remaining_percent": 85.0,
+        "used_percent": 15.0,
+        "window_minutes": 10080,
+        "reset_at_unix": 1792331729
+      }
+    },
+    "stop_reasons": [],
+    "weekly_remaining_percent": 85.0,
+    "five_hour_remaining_percent": 7.0,
+    "state": "ok"
+  },
+  "command": [
+    "C:\\WINDOWS\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "-NoProfile",
+    "-File",
+    "C:\\GIT\\ctp\\PROEVEN\\opening-b2\\onderzoek-b2c-header\\20261011T163848\\native-helper\\native.ps1",
+    "-CaseId",
+    "parse-opening_research"
+  ],
+  "own_created_pid": 26432,
+  "exit_code": 1,
+  "elapsed_seconds": 0.42199999999138527,
+  "native_case_pass": false,
+  "budget_after": {
+    "reported_at_utc": "2026-10-11T14:53:57.035Z",
+    "checked_at_utc": "2026-10-11T14:53:58.319999+00:00",
+    "age_seconds": 1.3,
+    "windows": {
+      "five_hour": {
+        "remaining_percent": 7.0,
+        "used_percent": 93.0,
+        "window_minutes": 300,
+        "reset_at_unix": 1791744929
+      },
+      "weekly": {
+        "remaining_percent": 85.0,
+        "used_percent": 15.0,
+        "window_minutes": 10080,
+        "reset_at_unix": 1792331729
+      }
+    },
+    "stop_reasons": [],
+    "weekly_remaining_percent": 85.0,
+    "five_hour_remaining_percent": 7.0,
+    "state": "ok"
+  }
+}

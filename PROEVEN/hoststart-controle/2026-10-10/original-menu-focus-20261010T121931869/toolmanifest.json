@@ -1,0 +1,56 @@
+﻿{
+    "recorded_at":  "2026-10-10T12:23:08.8244730+02:00",
+    "phase":  "C0",
+    "status":  "APPLIED_STATIC_CHECKED_PENDING_ROOT_REVIEW",
+    "original_tool_sha256":  "3594e4f32b26265cfc3fa900fcd61f245656940929968b231b19315a734b5f1d",
+    "new_tool_path":  "PROEVEN/Bedien-CTP.ps1",
+    "new_tool_sha256":  "d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74",
+    "design_path":  "ONTWERP/FOCUS-CAPTURE-CONTROLE.md",
+    "design_sha256":  "baa078b80cbabd55db9de34d63e85bc0d9fafe2c0e58eeb93885f88a826333c1",
+    "parser_errors":  0,
+    "runtime_executed":  false,
+    "capture_path_touched":  false,
+    "root_c0_review":  "pending",
+    "artifacts":  [
+                      {
+                          "name":  "Bedien-CTP.before.ps1",
+                          "sha256":  "3594e4f32b26265cfc3fa900fcd61f245656940929968b231b19315a734b5f1d",
+                          "length":  8783
+                      },
+                      {
+                          "name":  "budget-preflight.json",
+                          "sha256":  "627827e5a3b90c1af5375a57048add9e50999e040e1037d8340d6419aa33354b",
+                          "length":  587
+                      },
+                      {
+                          "name":  "C0-preflight.json",
+                          "sha256":  "4b4c4dd64b3194d4a9b3083d47c506f08f17020acb6d12bac0243ab098c03eae",
+                          "length":  638
+                      },
+                      {
+                          "name":  "parser.json",
+                          "sha256":  "84346777a9a6868a1bd5da9668429f0982c7111af85a29fb34fcf035cc912663",
+                          "length":  994
+                      },
+                      {
+                          "name":  "patch.diff",
+                          "sha256":  "b900042adefcd677ecc8fe748bfdacfcc2386e4726f8e76cbe7cbb6f1c469ce6",
+                          "length":  9866
+                      },
+                      {
+                          "name":  "diff-review.json",
+                          "sha256":  "03bc1b9f0392426f12ae16ba47a48d8063e23893690603af30f614ff38e43e18",
+                          "length":  1601
+                      },
+                      {
+                          "name":  "budget-final.json",
+                          "sha256":  "dd4f56cb34f1576f4570172d4c940ccf1690cf338890859533dc6b7e979bb734",
+                          "length":  588
+                      },
+                      {
+                          "name":  "C0-RESULTATEN.md",
+                          "sha256":  "6c85c860670bc2fec1e3f7b5fbf7b7c6e37155401a289ab10e08ef434986c952",
+                          "length":  4042
+                      }
+                  ]
+}
