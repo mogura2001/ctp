@@ -1,0 +1,63 @@
+{
+  "status": "ONE_NATIVE_ROUND_TYPE_RESOLVER_PASSED_DOWNSTREAM_REASON23",
+  "at_utc": "2026-10-16T11:00:57.106372+00:00",
+  "instance": {
+    "pid": 31068,
+    "creationtime_filetime": 134366217290718841,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "binding": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62",
+    "manifest_sha256": "fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27",
+    "package_sha256": null
+  },
+  "T0_sha256": "fff62c3c4d50f8ac8ac92444c40cb59468d61d81e47e3eed0881c2b238d45e21",
+  "T1_sha256": "1a9238841706c8f591281e121b70537b7aa3c934f1364434f80dbae60de7d86f",
+  "seven_rounds_before": -1,
+  "seven_rounds_after": 0,
+  "n_calls": 1,
+  "last_pass": {
+    "status": 5,
+    "reason": 23,
+    "owner": 0,
+    "civ": 8,
+    "generation": 7,
+    "scope": 0,
+    "raw_t": 4,
+    "raw_types": 73,
+    "raw_d8": 0,
+    "remaining": 30,
+    "desired": 5,
+    "path_queries": 0,
+    "Dorig": 5,
+    "Gcert": 0,
+    "policy": 1,
+    "government": 1,
+    "engine_count": 0,
+    "path_points": 0,
+    "cutoff": 0,
+    "context": 1,
+    "classified": 1,
+    "only_last_pass_buffer": true,
+    "all_seven_telemetry_available": false,
+    "certificate_not_attributed_to_other_civs": true,
+    "raw_type_values_certified": false,
+    "raw_type_values_note": "UNCERTIFIED intermediate values; zero may be initialization, not evidence of a completed resolver write",
+    "raw_record": {
+      "certified": false,
+      "record30": 2281836545,
+      "record34": 3141,
+      "land_bit": true,
+      "space_lander_bit": false,
+      "space_launcher_bit": false,
+      "note": "UNCERTIFIED later bounded database read; does not prove resolver write or pass-time values"
+    }
+  },
+  "save_identity_proven": false,
+  "atomic_snapshot_proven": false,
+  "gameplay_expansion_proven": false
+}

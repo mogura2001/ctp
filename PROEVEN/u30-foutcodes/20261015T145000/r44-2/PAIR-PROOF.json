@@ -1,0 +1,49 @@
+{
+  "status": "ONE_NATIVE_ROUND_DIAGNOSTIC_ACCEPTED",
+  "at_utc": "2026-10-15T17:30:11.716373+00:00",
+  "instance": {
+    "pid": 19464,
+    "creationtime_filetime": 134365586287596801,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "binding": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17",
+    "manifest_sha256": "6bf3d57db8aa1f9c36ae5407292cfd597175420c22e16996a5d593737f8f3437",
+    "package_sha256": null
+  },
+  "T0_sha256": "b9a80e3a0883f3ee5382f25a88d229f07827a64cff474bd7319535a8d9796d9a",
+  "T1_sha256": "95389ee546b88d45db1289b2d786989b91f62c409047c9b8659ed13c8c654c1f",
+  "seven_rounds_before": -1,
+  "seven_rounds_after": 0,
+  "n_calls": 1,
+  "last_pass": {
+    "status": 5,
+    "reason": 10,
+    "owner": 0,
+    "civ": 8,
+    "generation": 7,
+    "scope": 0,
+    "remaining": 30,
+    "desired": 0,
+    "path_queries": 0,
+    "Dorig": 0,
+    "Gcert": 0,
+    "policy": 1,
+    "government": 1,
+    "engine_count": 0,
+    "path_points": 0,
+    "cutoff": 0,
+    "context": 0,
+    "classified": 0,
+    "only_last_pass_buffer": true,
+    "all_seven_telemetry_available": false,
+    "certificate_not_attributed_to_other_civs": true
+  },
+  "save_identity_proven": false,
+  "atomic_snapshot_proven": false,
+  "gameplay_expansion_proven": false
+}

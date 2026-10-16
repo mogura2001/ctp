@@ -1,0 +1,540 @@
+--- checkpoint-v1/science_model.py
++++ C1-v2/science_model.py
+@@ -13,8 +13,49 @@
+ def bit(r,offset):
+  r.mov('ecx',m('ebp',-220));r.ins('bts own mask,index','0fab',1,m('edi',offset))
+ 
++def top3(r,kind,selected_base,selected_offset,food_offset,required):
++ # Emit two separate deterministic ranks; future never replaces current keys.
++ for i in range(3):r.mov(m(selected_base,selected_offset+4*i),-1)
++ r.mov(m('ebp',-220),0)
++ r.label(kind+'_sort_loop');r.mov('eax',m('ebp',-220));r.alu('cmp','eax',m('edi',16));r.j('jge',kind+'_sort_done');ptr(r,'eax');r.mov('eax',m('esi',20));r.alu('and','eax',required);r.alu('cmp','eax',required);r.j('jne',kind+'_sort_next')
++ for index in range(3):
++  off=selected_offset+4*index;label=kind+'_insert_'+str(index);skip=kind+'_insert_skip_'+str(index)
++  r.mov('eax',m(selected_base,off));r.alu('cmp','eax',-1);r.j('je',label);ptr(r,'eax','edx');r.mov('eax',m('esi',food_offset));r.alu('cmp','eax',m('edx',food_offset));r.j('jg',label);r.j('jl',skip)
++  r.push('edx');r.push('esi');r.j('call','H3PosCompare');r.test('eax','eax');r.j('jge',skip);r.label(label)
++  for target in range(2,index,-1):r.mov('eax',m(selected_base,selected_offset+4*(target-1)));r.mov(m(selected_base,selected_offset+4*target),'eax')
++  r.mov('eax',m('ebp',-220));r.mov(m(selected_base,off),'eax');r.j('jmp',kind+'_sort_next');r.label(skip)
++ r.label(kind+'_sort_next');r.unary('inc',m('ebp',-220));r.j('jmp',kind+'_sort_loop');r.label(kind+'_sort_done')
++
++def scenarios(r,kind,selected_base,selected_offset,food_offset,publish_current):
++ # All n1/2/3 are calculated even if an earlier margin fails. S3/margin3 stay
++ # true current diagnostics. Future scenario is stack-only, never current out.
++ r.mov(m('ebp',-540),1);r.mov('eax',m('edi',72));r.mov('edx',m('edi',76));r.mov(m('ebp',-240),'eax');r.mov(m('ebp',-236),'edx')
++ for n in range(1,4):
++  ptr(r,m(selected_base,selected_offset+4*(n-1)),'ecx');r.mov('eax',m('ecx',food_offset));r.alu('add',m('ebp',-240),'eax');r.alu('adc',m('ebp',-236),0);r.j('jo','science_bad')
++  r.mov('eax',m('ebp',-240));r.mov('edx',m('ebp',-236));r.alu('add','eax','eax');r.alu('adc','edx','edx');r.j('jo','science_bad');r.mov(m('ebp',-248),'eax');r.mov(m('ebp',-244),'edx')
++  r.mov('eax',m('edi',56));r.mov('ecx',5*n);r.ins('imul signed64 halfconsumption','f7',5,'ecx');r.alu('add','eax',20*n);r.alu('adc','edx',0);r.j('jo','science_bad')
++  r.mov('ecx',m('ebp',-248));r.mov('esi',m('ebp',-244));r.alu('sub','ecx','eax');r.alu('sbb','esi','edx');r.j('jo','science_bad');r.test('esi','esi');r.j('js',kind+'_nonpositive_'+str(n));r.j('jnz',kind+'_positive_'+str(n));r.test('ecx','ecx');r.j('jnz',kind+'_positive_'+str(n))
++  r.label(kind+'_nonpositive_'+str(n));r.mov(m('ebp',-540),0);r.label(kind+'_positive_'+str(n))
++  if n==3 and publish_current:
++   for src,dst in [(-240,80),(-236,84),(-248,104),(-244,108)]:r.mov('eax',m('ebp',src));r.mov(m('edi',dst),'eax')
++   for dst in (88,96):r.mov(m('edi',dst),'ecx');r.mov(m('edi',dst+4),'esi')
++ # Nonnegative center and sorted nonnegative food imply min(cmax1..3)=cmax3.
++
++def development_summary(r):
++ # UNKNOWN dominates PENDING, which dominates known READY/PRESENT. A mix of
++ # READY/PRESENT is explicit; all PRESENT never reports a building readiness.
++ r.mov(m('ebp',-544),0)
++ for index in range(3):
++  ptr(r,m('edi',28+4*index),'esi');r.mov('eax',m('esi',32));r.test('eax','eax');r.j('jz','science_summary_unknown');r.alu('cmp','eax',4);r.j('jg','science_summary_unknown')
++  r.alu('cmp','eax',4);r.j('je','science_summary_present_'+str(index));r.alu('cmp','eax',3);r.j('je','science_summary_ready_'+str(index));r.alu('or',m('ebp',-544),4);r.j('jmp','science_summary_next_'+str(index))
++  r.label('science_summary_present_'+str(index));r.alu('or',m('ebp',-544),2);r.j('jmp','science_summary_next_'+str(index));r.label('science_summary_ready_'+str(index));r.alu('or',m('ebp',-544),1);r.label('science_summary_next_'+str(index))
++ r.test(m('ebp',-544),4);r.j('jnz','science_summary_pending');r.mov('eax',m('ebp',-544));r.alu('cmp','eax',2);r.j('je','science_summary_all_present');r.alu('cmp','eax',1);r.j('je','science_summary_all_ready');r.mov(m('edi',60),DEV_SUMMARY_MIXED_PRESENT_READY);r.j('jmp','science_summary_done')
++ for label,state in [('unknown',DEV_SUMMARY_UNKNOWN),('pending',DEV_SUMMARY_PENDING),('all_present',DEV_SUMMARY_ALREADY_PRESENT),('all_ready',DEV_SUMMARY_READY_NOT_BUILT)]:
++  r.label('science_summary_'+label);r.mov(m('edi',60),state);r.j('jmp','science_summary_done')
++ r.label('science_summary_done')
++
+ def model(r,pins):
+- r.label('science_model');r.prologue(SCRATCH_SIZE+160)
++ r.label('science_model');r.prologue(KERNEL_FRAME_SIZE)
+  # x87 preserved, including controlword. Scratch is private to this invocation;
+  # World native scratch remains owned by serial original query callbacks.
+  r.fp('fnsave','dd',6,m('ebp',-144));r.fp('fldcw caller','d9',5,m('ebp',-144))
+@@ -27,9 +68,16 @@
+  r.test('eax','eax');r.j('jz','science_bad')
+  for off in range(0,24,4):
+   r.mov('eax',m('ebp',-208+off));r.alu('cmp','eax',m('ebx',off));r.j('jne','science_bad')
+- r.mov('esi',m('ebx'));r.mov('eax',m('ebp',12));r.mov('ecx',m('eax'))
++ r.mov('esi',m('ebx'));r.mov('eax',m('ebp',12));r.mov('ecx',m('eax'));r.lea('edx',m('esi',0x3452e0));r.alu('cmp','ecx','edx');r.j('jne','science_bad')
+  r.lea('edx',m('esi',0x133620));r.alu('cmp',m('ecx',0x34),'edx');r.j('jne','science_bad')
+  r.mov('eax',m('ebx',4));r.lea('edx',m('esi',0x344170));r.alu('cmp',m('eax'),'edx');r.j('jne','science_bad')
++ # Shared context failures must not masquerade as locally unsupported food.
++ r.mov('edx',m('eax',0x1c));r.test('edx','edx');r.j('jz','science_bad');r.mov('edx',m('edx'));r.test('edx','edx');r.j('jz','science_bad')
++ for off in (0x67df20,0x67df22):r.load('eax',m('esi',off),'zx16');r.test('eax','eax');r.j('jz','science_bad')
++ r.mov('eax',m('ebx',8));r.alu('cmp',m('eax'),0);r.j('jle','science_bad');r.mov('eax',m('eax',8));r.test('eax','eax');r.j('jz','science_bad')
++ r.mov('eax',m('ebp',8));r.mov('eax',m('eax',0x50));r.test('eax','eax');r.j('jz','science_bad');r.mov('ecx',m('eax'));r.lea('edx',m('esi',0x3445b8));r.alu('cmp','ecx','edx');r.j('jne','science_bad')
++ for slot,target in ((0x10,0x126a40),(0x20,0x126ad0),(0x48,0x126d50)):
++  r.lea('edx',m('esi',target));r.alu('cmp',m('ecx',slot),'edx');r.j('jne','science_bad')
+  # Full required slot/bodypreimages; address-valued bytes are fingerprints,
+  # never copied into new World state or executed as synthetic callbacks.
+  for row in pins:
+@@ -41,16 +89,26 @@
+  # H2 enum accepts both valid status1 and2. No mountain-count gate.
+  r.lea('eax',m('ebp',-480));r.push('eax');r.push(m('ebp',16));r.push(m('ebp',12));r.push(m('ebp',8));r.j('call','H3Capacity')
+  r.mov(m('edi',124),'eax');r.alu('cmp','eax',1);r.j('je','science_h2_ok');r.alu('cmp','eax',2);r.j('jne','science_bad')
+- r.label('science_h2_ok');r.mov('eax',m('ebp',-472));r.mov(m('edi',16),'eax')
++ r.label('science_h2_ok');r.mov('eax',m('ebp',-472));r.alu('cmp','eax',MAX_TILES);r.j('ja','science_bad');r.mov(m('edi',16),'eax')
+  # Exact actual R=1+stand/4, positive finite, original supported stand>=-3.
+- r.mov(m('edi',4),11);r.mov('esi',m('ebx',16));r.mov('eax',m('esi',72));r.mov(m('edi',56),'eax');r.alu('cmp','eax',-3);r.j('jl','science_bad')
++ r.mov(m('edi',4),11)
++ # Preserve all normal precision modes. PC24 is exact for -3..2^24-4:
++ # stand and stand+4 each fit24 significant bits, quarter is power-of-two.
++ # PC53/64 represent every int32 stand and stand+4 exactly. Reserved PC01 or
++ # unmasked exceptions are unsupported, not permission to alter caller CW.
++ r.load('eax',m('ebp',-144),'zx16');r.mov('ecx','eax');r.alu('and','ecx',0x3f);r.alu('cmp','ecx',0x3f);r.j('jne','science_bad');r.alu('and','eax',0x300);r.alu('cmp','eax',0x100);r.j('je','science_bad')
++ r.mov('esi',m('ebx',16));r.mov('eax',m('esi',72));r.mov(m('edi',56),'eax');r.alu('cmp','eax',-3);r.j('jl','science_bad')
++ r.load('ecx',m('ebp',-144),'zx16');r.alu('and','ecx',0x300);r.test('ecx','ecx');r.j('jnz','science_cw_ok');r.alu('cmp','eax',2**24-4);r.j('jg','science_bad');r.label('science_cw_ok')
+  for src,dst in [(8,64),(12,68)]:r.mov('eax',m('esi',src));r.mov(m('edi',dst),'eax')
+  r.test('eax',0x80000000);r.j('jnz','science_bad');r.alu('and','eax',0x7ff00000);r.alu('cmp','eax',0x7ff00000);r.j('je','science_bad')
+  r.mov(m('ebp',-24),0);r.mov(m('ebp',-20),0x3fd00000)
+  r.fp('fild stand','db',0,m('edi',56));r.fp('fmul quarter','dc',1,m('ebp',-24));r.op('fld1',b'\xd9\xe8');r.op('faddp',b'\xde\xc1');r.fp('fld actual R','dd',0,m('edi',64));r.op('fcompp',b'\xde\xd9');r.op('fnstsw ax',b'\xdf\xe0');r.alu('and','eax',0x4500);r.alu('cmp','eax',0x4000);r.j('jne','science_bad')
+  # Center getterfood+real citybonus once; center is outside worker enum.
+  r.push(1);r.lea('eax',m('ebp',-184));r.push('eax');r.push('ebx');r.push(m('ebp',16));r.push(m('ebp',12));r.j('call','H3FoodReader');r.test('eax','eax');r.j('jz','science_bad')
+- r.mov('eax',m('ebp',-160));r.mov('edx',m('ebp',-156));r.alu('add','eax',m('ebp',-180));r.alu('adc','edx',0);r.j('jo','science_bad');r.mov(m('edi',72),'eax');r.mov(m('edi',76),'edx')
++ r.mov('eax',m('ebp',-160));r.mov('edx',m('ebp',-156));r.alu('add','eax',m('ebp',-180));r.alu('adc','edx',0);r.j('jo','science_bad')
++ # Explicit nonnegative center makes the cmax3 minimum proof valid, even if
++ # loaded CITY_BONUS itself is negative. H3FoodReader also checks this sum.
++ r.test('edx','edx');r.j('js','science_bad');r.mov(m('edi',72),'eax');r.mov(m('edi',76),'edx')
+  r.push(m('ebp',16));r.lea('ecx',m('edi',116));r.unary('call',m('ebx',20))
+  r.mov(m('edi',4),12);r.mov(m('ebp',-220),0)
+  r.label('science_tiles');r.mov('eax',m('ebp',-220));r.alu('cmp','eax',m('edi',16));r.j('jge','science_choose')
+@@ -62,6 +120,7 @@
+  r.push(0);r.lea('eax',m('ebp',-184));r.push('eax');r.push('ebx');r.lea('eax',m('esi',8));r.push('eax');r.push(m('ebp',12));r.j('call','H3FoodReader');r.test('eax','eax');r.j('jz','science_current_unknown')
+  r.mov('eax',m('ebp',-180));r.mov(m('esi',16),'eax')
+  r.mov('eax',m('ebp',-172));r.alu('cmp','eax',m('ebp',-512));r.j('jne','science_current_unknown')
++ r.lea('edx',m('edi',116));r.push('edx');r.push('esi');r.j('call','H3PosCompare');r.test('eax','eax');r.j('jz','science_duplicate')
+  # Canonical duplicate cannot add a third unique workplace. Compare all
+  # preceding valid keys; current flag bit16 marks a trustworthy canonicalkey.
+  r.mov(m('ebp',-224),0)
+@@ -84,48 +143,36 @@
+  # Keep loaded target metadata even for PRESENT where shared routine returns
+  # before querying a replacement improvement. Never apply any extra delta.
+  for source,target in [(-516,60),(-520,64),(-524,68)]:r.mov('ecx',m('ebp',source));r.mov(m('esi',target),'ecx')
+- r.test('eax','eax');r.j('jnz','science_next');bit(r,52);r.j('jmp','science_next')
++ # Only trusted status/conditions authorize using future_food. UNKNOWN can
++ # contain an intermediate NaN/fractional/overflow delta and is never used.
++ r.test('eax','eax');r.j('jz','science_dev_invalid');r.alu('cmp','eax',4);r.j('jg','science_dev_invalid')
++ r.alu('cmp',m('esi',36),0);r.j('jne','science_dev_invalid');r.mov('ecx',m('esi',88));r.alu('cmp','ecx',m('ebp',-512));r.j('jne','science_dev_invalid')
++ r.alu('cmp',m('esi',68),-1);r.j('jl','science_dev_invalid');r.alu('cmp','eax',4);r.j('je','science_dev_present')
++ r.test(m('esi',92),8);r.j('jz','science_dev_invalid');r.alu('cmp',m('esi',56),0);r.j('jne','science_dev_invalid')
++ r.mov('ecx',m('esi',80));r.alu('sub','ecx',m('esi',84));r.j('jo','science_dev_invalid');r.alu('cmp','ecx',m('esi',16));r.j('jne','science_dev_invalid');r.j('jmp','science_dev_future_ok')
++ r.label('science_dev_present');r.alu('cmp',m('esi',56),1);r.j('jne','science_dev_invalid');r.test(m('esi',92),4);r.j('jz','science_dev_invalid');r.test(m('esi',20),STRUCT_CURRENT_LEVEL_PRESENT);r.j('jz','science_dev_invalid')
++ r.mov('ecx',m('esi',80));r.alu('cmp','ecx',m('esi',16));r.j('jne','science_dev_invalid');r.alu('cmp',m('esi',84),0);r.j('jne','science_dev_invalid')
++ r.label('science_dev_future_ok');r.alu('cmp',m('esi',80),0);r.j('jl','science_dev_invalid');r.alu('or',m('esi',20),STRUCT_FUTURE_VALID);r.j('jmp','science_next')
++ r.label('science_dev_invalid');r.mov(m('esi',32),0);r.mov(m('esi',36),22);bit(r,52);r.j('jmp','science_next')
+  r.label('science_current_unknown');bit(r,40);r.mov(m('esi',28),2);r.j('jmp','science_next')
+  r.label('science_duplicate');r.mov(m('esi',28),3);r.j('jmp','science_next')
+  r.label('science_structural_absent');r.mov(m('esi',28),4)
+  r.label('science_next');r.unary('inc',m('ebp',-220));r.j('jmp','science_tiles')
+- r.label('science_choose');r.mov(m('edi',112),1);r.mov(m('edi',4),0);r.mov(m('edi'),1)
+- r.alu('cmp',m('edi',24),3);r.j('jl','science_insufficient')
+- # Deterministic top3 currentfood descending, then canonicalxyz ascending.
+- r.mov(m('ebp',-220),0)
+- r.label('science_sort_loop');r.mov('eax',m('ebp',-220));r.alu('cmp','eax',m('edi',16));r.j('jge','science_scenarios');ptr(r,'eax');r.test(m('esi',20),STRUCT_CERTIFIABLE);r.j('jz','science_sort_next')
+- for index in range(3):
+-  off=28+4*index;label='science_insert_'+str(index);skip='science_insert_skip_'+str(index)
+-  r.mov('eax',m('edi',off));r.alu('cmp','eax',-1);r.j('je',label);ptr(r,'eax','edx');r.mov('eax',m('esi',16));r.alu('cmp','eax',m('edx',16));r.j('jg',label);r.j('jl',skip)
+-  r.push('edx');r.push('esi');r.j('call','H3PosCompare');r.test('eax','eax');r.j('jge',skip)
+-  r.label(label)
+-  for target in range(2,index,-1):r.mov('eax',m('edi',28+4*(target-1)));r.mov(m('edi',28+4*target),'eax')
+-  r.mov('eax',m('ebp',-220));r.mov(m('edi',off),'eax');r.j('jmp','science_sort_next');r.label(skip)
+- r.label('science_sort_next');r.unary('inc',m('ebp',-220));r.j('jmp','science_sort_loop')
+- r.label('science_scenarios');r.mov('eax',m('edi',72));r.mov('edx',m('edi',76));r.mov(m('ebp',-240),'eax');r.mov(m('ebp',-236),'edx')
+- for n in range(1,4):
+-  ptr(r,m('edi',28+4*(n-1)),'ecx');r.mov('eax',m('ecx',16));r.alu('add',m('ebp',-240),'eax');r.alu('adc',m('ebp',-236),0);r.j('jo','science_bad')
+-  r.mov('eax',m('ebp',-240));r.mov('edx',m('ebp',-236));r.alu('add','eax','eax');r.alu('adc','edx','edx');r.j('jo','science_bad');r.mov(m('ebp',-248),'eax');r.mov(m('ebp',-244),'edx')
+-  # 2D_n=20n+5n*stand in signed64, never floor half-integer hunger.
+-  r.mov('eax',m('edi',56));r.mov('ecx',5*n);r.ins('imul signed64 demand','f7',5,'ecx');r.alu('add','eax',20*n);r.alu('adc','edx',0);r.j('jo','science_bad')
+-  r.mov('ecx',m('ebp',-248));r.mov('esi',m('ebp',-244));r.alu('sub','ecx','eax');r.alu('sbb','esi','edx');r.j('jo','science_bad');r.test('esi','esi');r.j('js','science_no_growth');r.j('jnz','science_positive_'+str(n));r.test('ecx','ecx');r.j('jz','science_no_growth');r.label('science_positive_'+str(n))
+-  if n==3:
+-   for src,dst in [(-240,80),(-236,84),(-248,104),(-244,108)]:r.mov('eax',m('ebp',src));r.mov(m('edi',dst),'eax')
+-   r.mov(m('edi',88),'ecx');r.mov(m('edi',92),'esi')
+-  # Food sorted nonincreasing, nonnegative center: S_n/n nonincreasing,
+-  # hence cmax3 is the minimum. Each earlier strict margin still checked.
+- r.mov('eax',m('edi',88));r.mov(m('edi',96),'eax');r.mov('eax',m('edi',92));r.mov(m('edi',100),'eax');r.mov(m('edi'),STATUS_NOW)
+- # Conservative summary separate from location: pending unless each selected
+- # DEV_TILE is READY_NOT_BUILT or ALREADY_PRESENT; UNKNOWN kept independent.
+- r.mov(m('edi',60),3)
+- for index in range(3):
+-  ptr(r,m('edi',28+4*index),'esi');r.mov('eax',m('esi',32));r.test('eax','eax');r.j('jz','science_dev_unknown_'+str(index));r.alu('cmp','eax',3);r.j('jge','science_dev_continue_'+str(index));r.alu('cmp',m('edi',60),0);r.j('je','science_dev_continue_'+str(index));r.mov(m('edi',60),1);r.j('jmp','science_dev_continue_'+str(index))
+-  r.label('science_dev_unknown_'+str(index));r.mov(m('edi',60),0);r.label('science_dev_continue_'+str(index))
+- r.j('jmp','science_done')
+- # This C1 checkpoint does not claim future-positive growth before that
+- # separately ranked pending calculation is implemented/reviewed.
+- r.label('science_no_growth');r.mov(m('edi'),STATUS_NO_NOW);r.mov(m('edi',4),14);r.j('jmp','science_done')
++ r.label('science_choose');r.mov(m('edi',112),1);r.mov(m('edi',4),0);r.mov(m('edi'),STATUS_NO_NOW)
++ top3(r,'science_current','edi',28,16,STRUCT_CERTIFIABLE)
++ r.alu('cmp',m('edi',36),-1);r.j('je','science_insufficient')
++ development_summary(r)
++ scenarios(r,'science_current','edi',28,16,True)
++ r.alu('cmp',m('ebp',-540),0);r.j('je','science_no_growth');r.mov(m('edi'),STATUS_NOW);r.j('jmp','science_done')
++ r.label('science_no_growth');r.mov(m('edi',4),14);r.j('jmp','science_future')
+  r.label('science_insufficient');r.alu('cmp',m('edi',40),0);r.j('jne','science_local_unknown');r.alu('cmp',m('edi',20),3);r.j('jl','science_done');r.mov(m('edi'),STATUS_STRUCTURAL_POTENTIAL);r.j('jmp','science_done')
+  r.label('science_local_unknown');r.mov(m('edi'),STATUS_UNKNOWN);r.mov(m('edi',4),15);r.j('jmp','science_done')
+- r.label('science_bad');r.mov(m('edi'),STATUS_UNKNOWN);r.mov(m('edi',24),0)
+- r.label('science_done');r.mov('eax',m('edi'));r.fp('frstor','dd',4,m('ebp',-144));r.epilogue(SCRATCH_SIZE+160,20)
++ # Only trustworthy structural tiles and genuine validated development data.
++ # Only the current FOOD-MARGIN failure reaches here. Spacefalse keeps its
++ # original STRUCTURAL/SPATIAL_PENDING state; futurefood cannot bypass that.
++ r.label('science_future');top3(r,'science_future','ebp',-560,80,STRUCT_CANONICAL_CURRENT_VALID|STRUCT_MAIN_IRR2|STRUCT_EFFECTIVE_POSITIVE_IRR2|STRUCT_CERTIFIABLE|STRUCT_FUTURE_VALID)
++ r.alu('cmp',m('ebp',-552),-1);r.j('je','science_done')
++ scenarios(r,'science_future','ebp',-560,80,False)
++ r.alu('cmp',m('ebp',-540),0);r.j('je','science_done');r.mov(m('edi'),STATUS_PENDING_GROWTH);r.mov(m('edi',4),16);r.j('jmp','science_done')
++ r.label('science_bad');r.mov(m('edi'),STATUS_UNKNOWN);r.mov(m('edi',24),0);r.mov(m('edi',112),0)
++ r.label('science_done');r.mov('eax',m('edi'));r.fp('frstor','dd',4,m('ebp',-144));r.epilogue(KERNEL_FRAME_SIZE,20)
+--- checkpoint-v1/science_layout.py
++++ C1-v2/science_layout.py
+@@ -6,6 +6,7 @@
+ TILE_STRIDE = 96
+ MAX_TILES = 20
+ SCRATCH_SIZE = 4096
++KERNEL_FRAME_SIZE = 548 # +12 saved-register bytes covers EBP-560 exactly
+ H2_SCRATCH = 0
+ RAWFOOD_SCRATCH = 256
+ HOST_SCRATCH = 296
+@@ -43,6 +44,19 @@
+ STRUCT_CURRENT_LEVEL_PRESENT = 4
+ STRUCT_CERTIFIABLE = 8
+ STRUCT_CANONICAL_CURRENT_VALID = 16
++STRUCT_FUTURE_VALID = 32
++# Summary applies to selected CURRENT indices only. Per-tile states retain
++# development_tile's enum; mixed/pending summaries are not building permits.
++DEV_SUMMARY_UNKNOWN = 0
++DEV_SUMMARY_PENDING = 1
++DEV_SUMMARY_READY_NOT_BUILT = 3
++DEV_SUMMARY_ALREADY_PRESENT = 4
++DEV_SUMMARY_MIXED_PRESENT_READY = 5
++# Private invocation scratch, not persisted in ScienceResult or active Plan.
++STACK = dict(x87=(-144,108), rawfood=(-184,40), host=(-208,24),
++ h2=(-480,256), loop=(-220,4), dedup=(-224,4), scenario=(-248,24),
++ terrain=(-512,4), target=(-524,12), future_selected=(-560,12),
++ summary_bits=(-544,4), scenario_positive=(-540,4))
+ QUERY_BUDGETS = dict(science_calls=64, tiles=1280, spatial_calls=1280,
+  improvement_calls=3840, primary_food_readers=1344,
+  development_food_readers=1280, total_food_readers=2624)
+@@ -60,3 +74,6 @@
+ assert SCIENCE_SCRATCH+SCRATCH_SIZE == PLAN_SIZE
+ assert SCENARIO_SCRATCH+4*32 <= SCRATCH_SIZE
+ assert HOST_SCRATCH+24 <= SCENARIO_SCRATCH
++# scenario reuses H2 storage only after enumeration is copied to tile rows.
++assert all(-KERNEL_FRAME_SIZE-12 <= off and off+size <= -16 for off,size in STACK.values())
++assert not set(range(-560,-548)) & set(range(-524,-512))
+--- checkpoint-v1/science_result.py
++++ C1-v2/science_result.py
+@@ -1,11 +1,52 @@
+ """Decode caller-owned saved ScienceResult bytes only; no RPM/GUI/process tools."""
+-import struct
+-from science_layout import HEADER, TILE, RESULT_SIZE, TILE_OFFSET, TILE_STRIDE
++import struct, math
++from fractions import Fraction
++from science_layout import HEADER, TILE, RESULT_SIZE, TILE_OFFSET, TILE_STRIDE, STRUCT_FUTURE_VALID
+ from development import DEV_TILE
+ LOCATION_NAMES={0:'UNKNOWN',1:'NO_CURRENT_NOW_SCENARIO',2:'NOW',
+  3:'STRUCTURAL_POTENTIAL_SPATIAL_PENDING',4:'PENDING_GROWTH'}
+ DEVELOPMENT_NAMES={0:'UNKNOWN',1:'AVAILABILITY_PENDING',2:'PLACE_UNKNOWN',
+  3:'READY_NOT_BUILT',4:'ALREADY_PRESENT'}
++SUMMARY_NAMES={0:'UNKNOWN',1:'PENDING',3:'READY_NOT_BUILT',4:'ALREADY_PRESENT',
++ 5:'MIXED_PRESENT_READY'}
++
++def development_summary(rows):
++ if len(rows)!=3 or any(row['development']['status'] not in (1,2,3,4) for row in rows):return 0
++ states={row['development']['status'] for row in rows}
++ if states & {1,2}:return 1
++ if states=={3}:return 3
++ if states=={4}:return 4
++ return 5
++
++def valid_future(row):
++ """Do not infer validity from an intermediate future_food/delta value."""
++ dev=row['development'];flags=row['structure_flags'];state=dev['status']
++ if flags & (16|1|2|STRUCT_FUTURE_VALID)!=(16|1|2|STRUCT_FUTURE_VALID):return False
++ if state not in (1,2,3,4) or dev['reason']!=0 or dev['required_advance_id'] < -1:return False
++ current=row['current_food_i32'];future=dev['future_food_i32'];delta=dev['delta_i32']
++ if current<0 or future<0 or row['raw_spatial'] not in (0,1):return False
++ if state==4:
++  return bool(flags&4) and dev['already_present']==1 and bool(dev['conditions']&4) and future==current and delta==0 and dev['food_delta_double']==0
++ if not dev['conditions']&8 or dev['already_present']!=0:return False
++ value=dev['food_delta_double']
++ return math.isfinite(value) and value==delta and -2**31<=current+delta<2**31 and future==current+delta
++
++def scenario(header,rows,field):
++ """Computed explanation from bytes; never a native/game execution claim."""
++ if len(rows)!=3:return None
++ total=header['center_food_i64'];stand=header['ration_stand'];steps=[]
++ if total<0 or stand < -3 or not math.isfinite(header['actual_R']) or header['actual_R']!=1+stand/4:return None
++ for n,row in enumerate(rows,1):
++  food=row['current_food_i32'] if field=='current' else row['development']['future_food_i32']
++  if food<0:return None
++  total+=food;denominator=2*total;demand=20*n+5*n*stand;margin=denominator-demand
++  if not all(-2**63<=value<2**63 for value in (total,denominator,demand,margin)):return None
++  steps.append(dict(n=n,k=n,S_i64=total,demand_x2_i64=demand,margin_x2_i64=margin,crime_numerator_i64=margin,crime_denominator_i64=denominator))
++ positive=all(step['margin_x2_i64']>0 and step['crime_denominator_i64']>0 for step in steps)
++ minimum=min((Fraction(step['crime_numerator_i64'],step['crime_denominator_i64']) for step in steps if step['crime_denominator_i64']>0),default=None)
++ return dict(selected_indices=[row['index'] for row in rows],steps=steps,strict_positive_n1_n2_n3=positive,
++  minimum_crime_fraction=[minimum.numerator,minimum.denominator] if minimum is not None else None,
++  development_state_name=SUMMARY_NAMES[development_summary(rows)],conditional_only=True)
+ def decode(raw):
+  if len(raw)!=RESULT_SIZE:raise ValueError('ScienceResult must be exactly 2048 bytes')
+  def i32(off):return struct.unpack_from('<i',raw,off)[0]
+@@ -20,4 +61,24 @@
+   development={name:(struct.unpack_from('<d',raw,base+32+off)[0] if name=='food_delta_double' else i32(base+32+off)) for name,off in DEV_TILE.items()}
+   development['state_name']=DEVELOPMENT_NAMES.get(development['status'],'INVALID')
+   rows.append(dict(index=index,canonical_key=struct.unpack_from('<hhhH',raw,base),external_MapPoint=struct.unpack_from('<hhhH',raw,base+8),current_food_i32=i32(base+16),structure_flags=i32(base+20),raw_spatial=i32(base+24),spatial_reason=i32(base+28),development=development))
+- return dict(header=header,location_name=LOCATION_NAMES.get(header['location_state'],'INVALID'),tiles=rows,science_credit_enabled=False,conditional_only=True,future_growth_calculation_implemented=False)
++ current_indices=[header['selected'+str(i)] for i in range(3)]
++ if any(index < -1 or index >= count for index in current_indices):raise ValueError('Invalid current selection index')
++ current_rows=[rows[index] for index in current_indices if index!=-1]
++ if len({row['canonical_key'][:3] for row in current_rows})!=len(current_rows):raise ValueError('Duplicate current canonical selection')
++ # Future rank is independent of current indices and preserves every raw field.
++ future_rows=sorted((row for row in rows if row['structure_flags']&8 and valid_future(row)),key=lambda row:(-row['development']['future_food_i32'],row['canonical_key'][:3]))[:3]
++ trusted=header['coverage']==1
++ current=scenario(header,current_rows,'current') if trusted else None
++ future=scenario(header,future_rows,'future') if trusted else None
++ if future is not None:
++  future['conditions']=['ZERO_NEW_CITY_MODIFIERS','CONDITIONAL_CRIME','ENABLING_AND_PLACEMENT_REVALIDATED','QUERIED_IMPROVEMENTS_BUILT','UNCHANGED_CURRENT_FOOD_CONTEXT']
++  future['spatial_pending_indices']=[] # future scenario never substitutes for spatial certification
++ parity=None if not trusted else (header['location_state']==4)==bool(header['location_state']!=2 and future and future['strict_positive_n1_n2_n3'])
++ return dict(header=header,location_name=LOCATION_NAMES.get(header['location_state'],'INVALID'),
++  development_name=SUMMARY_NAMES.get(header['development_state'],'INVALID'),
++  computed_current=current,computed_future=future,tiles=rows,science_credit_enabled=False,
++  conditional_only=True,future_growth_calculation_implemented=True,
++  diagnostic_origin='arithmetic from caller-owned saved bytes; future indices were native-private stack data',
++  summary_selection='selected CURRENT indices only',
++  native_pending_parity=parity,
++  native_pending_parity_status='NOT_APPLICABLE_UNTRUSTED_COVERAGE' if parity is None else 'MATCH' if parity else 'MISMATCH')
+--- checkpoint-v1/build_candidate.py
++++ C1-v2/build_candidate.py
+@@ -24,7 +24,13 @@
+  ('spatial_external_wrapper',0x133620,0x25),('spatial_internal',0x116c40,0x83),
+  ('native_World_vtable_slot0',0x344170,4),('native_World_callback',0x1107b0,0x178),
+  ('native_scan9',0x9fdd0,0x103),('native_wrap',0x9fb20,32),
+- ('native_cellflag_predicate',0x114bc0,0x30)]
++ ('native_cellflag_predicate',0x114bc0,0x30),
++ ('improvement_availability_slot',0x3445c8,4),
++ ('improvement_place_slot',0x3445d8,4),
++ ('improvement_delta_slot',0x344600,4),
++ ('improvement_availability_body',0x126a40,0x8a),
++ ('improvement_place_body',0x126ad0,0xbf),
++ ('improvement_delta_body',0x126d50,0x4a)]
+ class Located(X86):
+  def __init__(self,base):super().__init__();self.base=base
+  def finish(self):
+@@ -36,6 +42,13 @@
+   return bytes(self.code)
+ def build():
+  for path,expected in INPUTS.items():assert sha((ROOT/path).read_bytes())==expected,path
++ shared=json.loads((OUT/'shared-copy-pins.json').read_text('utf-8-sig'))
++ for row in shared:assert sha((OUT/row['path']).read_bytes())==row['sha256'],row['path']
++ preservation=json.loads((OUT/'preservation-pins.json').read_text('utf-8-sig'))
++ for row in preservation['dependencies']+preservation['protected_files']:
++  assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
++ checkpoint=json.loads((OUT/'checkpoint-v1/archive-pins.json').read_text('utf-8-sig'))
++ for row in checkpoint:assert sha((OUT/'checkpoint-v1'/row['name']).read_bytes())==row['sha256'],row['name']
+  base=(OUT/'U30-40.control.backup.dll').read_bytes();assert sha(base)==BASE_HASH
+  assert sha((ROOT/'PROEVEN/uitbreiding-30-40/20261012T181500/U30-40.prepared.dll').read_bytes())==BASE_HASH
+  epbytes=(ROOT/'CTP-og/ctp_program/ctp/civctp.exe').read_bytes();assert sha(epbytes)==ENGINE_HASH
+@@ -44,6 +57,7 @@
+  pins=[dict(name=name,rva=rva,length=size,bytes=ep.get_data(rva,size).hex()) for name,rva,size in SPATIAL_RANGES]
+  assert pins[0]['bytes']==struct.pack('<I',0x533620).hex()
+  assert pins[3]['bytes']==struct.pack('<I',0x5107b0).hex()
++ for index,target in ((8,0x526a40),(9,0x526ad0),(10,0x526d50)):assert pins[index]['bytes']==struct.pack('<I',target).hex()
+  p=pefile.PE(data=base);rx=align(p.OPTIONAL_HEADER.SizeOfImage,0x1000);r=Located(rx)
+  cm=json.loads((ROOT/'PROEVEN/uitbreiding-30-40/20261012T181500/candidate-manifest.json').read_text('utf-8'))
+  h3=int(cm['components']['internal_H3_rva'],16)
+@@ -80,12 +94,39 @@
+  own_sources=[]
+  for path in sorted(OUT.glob('*.py')):
+   ast.parse(path.read_text('utf-8'),filename=str(path));own_sources.append(dict(path=path.name,sha256=sha(path.read_bytes()),size=path.stat().st_size))
+- manifest=dict(stage='C1_STANDALONE_PARTIAL_KERNEL_SOURCE_BUILT_CREDIT_OFF_NOT_NATIVE_NOT_INSTALLED',base_sha256=BASE_HASH,candidate_sha256=sha(data),science_credit_enabled=False,union_enabled=False,engine_sha256=ENGINE_HASH,input_pins=INPUTS,spatial_pins=pins,sources=own_sources,recipe=r.rows,labels=r.labels,payload_rva=rx,payload_size=len(code),payload_sha256=sha(code),changes=changes,existing_changed_bytes=len(changed),unexplained_changed_bytes=0,appended_bytes=len(data)-len(base),existing_sections_byteidentical=True,current_hooks_and_caps_preserved=True,b2_record_bytes=36,b2_N=30,b2_five_hooks_preserved=True,relocations_preserved=True,instructions_decoded=len(decoded),installed_release_pins=installed,planned_layout=dict(result=2048,tile=96,scratch=4096,old_plan=0x54800,future_plan=0x79800),actual_active_plan_size=0x54800,append_plan_reset_allocation_deferred_to_C2=True,pending_work=['Future-positive pending-growth calculation not implemented','Additional schema/interface reader and concrete lifetime/serial query guard review','New kernel native ABI/semantic cases not executed','Union/variable mandatory keys/query counters only C2'])
++ manifest=dict(stage='C1_SOURCE_PREPARED_OFFLINE_BUILD_ONLY_NATIVE_NOT_ACCEPTED',base_sha256=BASE_HASH,candidate_sha256=sha(data),science_credit_enabled=False,union_enabled=False,engine_sha256=ENGINE_HASH,input_pins=INPUTS,spatial_pins=pins,sources=own_sources,recipe=r.rows,labels=r.labels,payload_rva=rx,payload_size=len(code),payload_sha256=sha(code),changes=changes,existing_changed_bytes=len(changed),unexplained_changed_bytes=0,appended_bytes=len(data)-len(base),existing_sections_byteidentical=True,current_hooks_and_caps_preserved=True,b2_record_bytes=36,b2_N=30,b2_five_hooks_preserved=True,relocations_preserved=True,instructions_decoded=len(decoded),installed_release_pins=installed,planned_layout=dict(result=2048,tile=96,scratch=4096,old_plan=0x54800,future_plan=0x79800),actual_active_plan_size=0x54800,append_plan_reset_allocation_deferred_to_C2=True,pending_work=['Root source review pending; native and C2 not accepted'])
++ manifest.update(stage='C1_SOURCE_PREPARED_OFFLINE_BUILD_ONLY_NATIVE_NOT_ACCEPTED',
++  future_growth_calculation_implemented=True,
++  future_storage='private native stack; decoder arithmetic from saved tiles',
++  development_summary='selected current indices: UNKNOWN/PENDING/READY/PRESENT/MIXED',
++  per_call_limits=dict(open_tiles=20,spatial=20,development=20,improvement=60,primary_food=21,development_food=20,total_food=41),
++  pass_query_counters_active=False,active_game_caller=False,
++  shared_copy_pins=shared,protected_files_rechecked=preservation['protected_files'],
++  dependency_pins_rechecked=preservation['dependencies'],checkpoint_pins=checkpoint,
++  docs=[dict(path='SCHEMA-CONTRACT.md',sha256=sha((OUT/'SCHEMA-CONTRACT.md').read_bytes()))],
++  pending_work=['Root review of C1 source/schema/candidate',
++   'New kernel native ABI/semantic cases only after explicit root review',
++   'Union/variable mandatory keys/allocation/reset/pass query counters only C2',
++   'Actual engine activation and gameplay not measured'])
+  return bytes(data),code,manifest,decoded
+ if __name__=='__main__':
+  a=build();b=build();assert a[:3]==b[:3]
+  data,code,manifest,decoded=a
+  (OUT/'SCIENCE-C1-CREDIT-OFF.prepared.dll').write_bytes(data);(OUT/'science.payload.bin').write_bytes(code)
+  (OUT/'candidate-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n','utf-8')
++ schema=dict(result_size=layout.RESULT_SIZE,header=layout.HEADER,tile_offset=layout.TILE_OFFSET,
++  tile_stride=layout.TILE_STRIDE,max_tiles=layout.MAX_TILES,tile=layout.TILE,private_stack=layout.STACK,
++  kernel_frame_size=layout.KERNEL_FRAME_SIZE,
++  query_budgets=layout.QUERY_BUDGETS,active_plan=layout.CURRENT_PLAN_SIZE,
++  future_plan=layout.PLAN_SIZE,future_fields_stored_in_header=False)
++ (OUT/'schema.json').write_text(json.dumps(schema,indent=2)+'\n','utf-8')
++ old=json.loads((OUT/'checkpoint-v1/candidate-manifest.json').read_text('utf-8'))
++ (OUT/'checkpoint-v1/own-source-pins.json').write_text(json.dumps(old['sources'],indent=2)+'\n','utf-8')
++ diffs=[]
++ for name in ('science_model.py','science_layout.py','science_result.py','build_candidate.py'):
++  diffs.extend(difflib.unified_diff((OUT/'checkpoint-v1'/name).read_text('utf-8').splitlines(True),
++   (OUT/name).read_text('utf-8').splitlines(True),fromfile='checkpoint-v1/'+name,tofile='C1-v2/'+name))
++ diffs.extend(difflib.unified_diff([], (OUT/'SCHEMA-CONTRACT.md').read_text('utf-8').splitlines(True),fromfile='/dev/null',tofile='C1-v2/SCHEMA-CONTRACT.md'))
++ (OUT/'source-diffs.txt').write_text(''.join(diffs),'utf-8')
+  (OUT/'science.disassembly.txt').write_text('\n'.join(f'{i.address:08x} {i.bytes.hex():24} {i.mnemonic} {i.op_str}' for i in decoded)+'\n','utf-8')
+  print(json.dumps({key:manifest[key] for key in ['stage','candidate_sha256','science_credit_enabled','unexplained_changed_bytes','existing_changed_bytes','instructions_decoded','pending_work']}))
+--- /dev/null
++++ C1-v2/SCHEMA-CONTRACT.md
+@@ -0,0 +1,152 @@
++# Science C1 bron- en interfacecontract
++
++14 oktober 2026. C1 is een ongekoppelde kernel met sciencecredit UIT. Er is
++**geen actieve caller in de game**: de nieuwe `.sci1` heeft geen hook/export/union
++en verandert geen bestaande aansturing. De actieve U30 Plan blijft `0x54800`.
++Dit document beschrijft het reviewbare contract voor een latere toegestane call,
++niet een reeds waargenomen hostquery of gameplayresultaat.
++
++## Caller, ABI en lifetime
++
++`stdcall science_model(AiMain*, WorldInterface*, externalCenter8*,
++HostBinding24*, callerResult2048*)`, vijf DWORD-argumenten, `ret 20`, EAX is
++location_state. Caller levert bestaande leesbare objecten en een exclusieve
++schrijfbare resultbuffer van exact 2048 bytes, die niet met inputs overlapt.
++Geen fabricated World/city/worker of uit eerdere pass bewaarde hostpointer.
++AiMain+30 moet dezelfde World zijn; huidige HostBinding wordt opnieuw uit de
++gepinde H3-validator gelezen en alle zes woorden worden vergeleken.
++
++EBX/ESI/EDI/EBP en ESP worden behouden. EAX/ECX/EDX zijn volatile, zoals de
++bestaande helpers; arithmetic flags en DF zijn niet preserved (DF eindigt
++clear). Eigen x87 `FNSAVE108`/`FRSTOR108` omvat controlword, status, diepte en
++registers; tussentijds wordt het caller-controlword geladen. Geen nieuw
++roundingmodebeleid. Gemaskerde zes x87-exceptions zijn vereist; reserved
++precision PC01 of unmasked exceptions is UNKNOWN vóór rekenwerk/deltaqueries.
++PC24 blijft toegestaan voor stand -3..16777212 (2^24-4): zowel stand als
++stand+4 passen in24 significante bits, vermenigvuldiging met quarter verandert
++alleen de exponent. Daarom blijft `1+stand/4=(stand+4)/4` exact bij iedere
++roundingmode. Dit omvat de normale WGFstanden zonder DirectX-PC24 af te wijzen.
++PC53/64 staat iedere ondersteunde int32-stand≥-3 toe. CW blijft ongewijzigd. Private
++frame is548 bytes plus drie nonvolatile-pushes, dus laagste local EBP-560.
++Er is geen onnodige >page stackreservering zonder probe; toekomstig
++Plan-scratch4096 blijft alleen schema en wordt niet op C1-stack gereserveerd;
++concrete gebruikte offsets staan in `science_layout.STACK`. H2-buffer
++`[-480,-224)` wordt pas na alle tilekopieën hergebruikt voor de scenario-
++rekenruimte `[-248,-224)`. Future-indices `[-560,-548)` overlappen deze niet.
++
++Caller doet hoogstens één sciencecall tegelijk in dezelfde ononderbroken
++AI/Scheduler-context, op de bestaande seriële thread. Geen re-entry vanuit
++Worldcallbacks, parallelle science/productionquery, of worldmutatie tijdens
++de call. Dat is een **callerpreconditie**, geen in C1 geïmplementeerde mutex.
++World+34 gebruikt de echte native World+388/+38c-scratch en originele scan9,
++wrap/callback/installationroute. De kernel maakt daarvan geen eigen kopie.
++Result wordt bij iedere call geheel nul gemaakt; selected-currentindices gaan
++naar -1. Eigen stack verdwijnt bij return. Geen heapallocatie/free, cache,
++serialized state, GameActor-write of permanente sciencerol in C1. Caller mag
++resultbytes bewaren als uitleg, maar moet owner/civ/generation extern binden;
++result alleen geeft geen cividentiteit. Hergebruik als latere credit vereist
++een nieuwe geldige call in dezelfde geselecteerde pass.
++
++## Exact resultaatschema
++
++`science_layout.HEADER` geeft elk byte-offset/formaat van header128;
++`TILE` geeft tile96. `schema.json` bevat de mechanisch geëxporteerde mappings.
++2048 = 128 + 20×96. De eerste open_count (0..20) rows zijn betekenisvol.
++Canonical keys en external MapPoint zijn 3 signed16 + padding16; padding
++is geen onderdeel van keyidentiteit. Per tile is +32..95 de oorspronkelijke
++DEV_TILE64: status/reason/selector/raw+10/raw+20/rawstate/present/materials/
++time/advance/double-delta/futurefood/intdelta/terrain/conditions. Voor PRESENT
++worden materials/time/advance uit loaded IRR2-doelmetadata aangevuld; actual
++IRR3 blijft huidige food en krijgt delta0, geen downgrade.
++
++Structuurflags: 1 hoofd-IRR2 aanwezig, 2 effectief positief IRR2, 4 huidig
++IRR2/3, 8 ruimtelijk/current certificeerbaar, 16 canoniek/current geldig,
++32 futurefood geldig. Flag32 komt alleen na succesvolle gepinde
++development_tile-status1..4/reason0, passende terrain/currentfood en geldige
++conditions; UNKNOWN bevat soms intermediate NaN/delta/food en telt nooit.
++Status1..3 impliceert door de gedeelde functie eindige exact-int32 delta,
++overflowvrije current+delta en niet-negatieve futurefood. PRESENT gebruikt
++geverifieerde currentfood zonder extra delta. Metadata/ontwikkelfout trekt
++alleen flag32 in: een zelfstandig bewezen NOW blijft geldig.
++
++Location: 0 UNKNOWN, 1 geen huidig NOW-scenario, 2 NOW, 3 structural/spatial
++pending, 4 PENDING_GROWTH. Reason10 host/context, 11 rantsoenen, 12 centrum/
++tilefase, 13 ongeldige spatialreturn, 14 currentgroeimarge onvoldoende,
++15 lokale unknown bij onvoldoende bewezen currenttiles, 16 futuregroei
++positief. Spatialreason per tile: 1 false/pending, 2 current unsupported,
++3 duplicate, 4 ontbrekende structure, 5 ongeldige shared spatialreturn.
++Coverage1 betekent uitsluitend voltooide lokale enum; geen complete wereld,
++COMPLETE_G0, readiness of Gcert. Shared fault zet coverage0 en certcount0.
++Lokale unsupported tiles blijven apart in current_unknownmask. Alleen
++exact0/1-return is geldig; verkeerd vtable/body/World/DB/grid/dimensie/ration-
++context trekt hele locatie in. Development-UNKNOWN zit in een eigen mask.
++
++Development-summary is uitsluitend voor de drie geselecteerde CURRENT
++indices: 0 UNKNOWN (ook geen complete currentselectie), 1 PENDING (tile1/2),
++3 alle READY_NOT_BUILT, 4 alle ALREADY_PRESENT, 5 mix READY/PRESENT.
++UNKNOWN domineert PENDING; alle PRESENT is nooit een bouw-PASS. Per-tile
++status2 blijft PLACE_UNKNOWN, niet summary-state2. Decoder bewaart raw velden.
++
++## Current en future blijven apart
++
++Current rangt alleen flag8-tiles op currentfood aflopend, canonical xyz
++oplopend. Geen bergen- of World+168/B>0-gate. NOW eist drie unieke fysieke
++IRR2-tiles, World+34 exacttrue, en alle n1/2/3-marges strikt positief. +10/
+++20false blokkeert deze vroege route niet. Centrumfood is current getter plus
++echte citybonus eenmaal en expliciet signed64-nonnegative: uitsluitend het
++high-DWORD-signbit beslist, low-DWORD-MSB1 is geen negatief64-getal. Positieve
++centrumwaarden boven2^31 blijven toegestaan; ieder tilefood nonnegative.
++Daarom heeft de aflopende top3 `min(cmax1,cmax2,cmax3)=cmax3`. Consumptie is
++exact signed64 `2D_n=20n+5n×stand`; n3/stand1 is 75 halve-foodeenheden,
++niet 74. S3_current/margin3/crimebreuk blijven current, ook bij groeitekort.
++Geen volledige currentselectie laat die velden nul: betekent niet berekend.
++
++Future rangt **apart** flag32 + structure1/2/8/16 op futurefood/xyz en bewaart
++top3 alleen op private stack. Dezelfde n1/2/3-rekening bepaalt native
++PENDING_GROWTH uitsluitend bij currentfoodmargefalen met minstens drie
++ruimtelijk/current certificeerbare tiles en positieve futuregroei.
++Spatialfalse/<3current behoudt STRUCTURAL_POTENTIAL/SPATIAL_PENDING of UNKNOWN,
++ongeacht geladen toekomstige food. De per-tile futuredata blijft zichtbaar,
++maar verandert die native basestate niet. Er is geen futurefood in current rank/som/marge,
++geen tilebonus in centrum, geen scientistconsumptie weggelaten. Geen forecast
++van enabling/aanleg/PW/crime/happiness/tijd of extra scientists.
++
++Omdat result2048 exact vol is, worden future-indices/S/marges niet afzonderlijk
++in header opgeslagen. `science_result.decode` geeft `computed_future` met
++eigen indices, stappen/breuk/readiness en voorwaarden afgeleid
++uit opgeslagen tiles. Het voert geen native code uit. `native_pending_parity`
++vergelijkt deze afleiding met opgeslagen state, zonder die te vervangen.
++Bij coverage0 is parity `None` met status NOT_APPLICABLE_UNTRUSTED_COVERAGE,
++geen ongemeten MATCH/PASS; bij coverage1 is de status MATCH of MISMATCH.
++Current-summary/velden blijven ongewijzigd; future-summary staat apart in
++computed_future. Decoderarithmetic is geen runtime- of gameplaybewijs.
++
++## Querygrenzen en toekomstige C2-sites
++
++C1 per call: H2 max20 open tiles, max20 nieuwe World+34, max20 development,
++max60 directe Improvement-calls (+10/+20/+48), max21 primaire foodreaders en
++max20 development-herlezingen, dus max41 sciencefoodreaders. PRESENT doet
++minder Improvement-calls. Eén World+34 bevat max9 lokale bezoeken, dus max180
++voor deze afzonderlijke ruimtetoetsen. Native nested queries van +20/food/H2
++zijn extra werk en geen beweerde constante query-/walltimekost.
++
++Passplafonds (64 calls/1280 tiles/spatial/3840 Improvement/2624 foodreaders)
++staan als schema in QUERY_BUDGETS; **C1 heeft geen actieve passcounter**.
++De latere C2-caller moet vóór iedere call/query/write budget en actuele
++owner/generation/scope/fingerprint controleren, counters bij echte callsites
++verhogen, prefix-cutoff onderscheiden van malformedcontext en bestaande
++runtimegrens behouden. C1 wordt daarvoor niet alvast gekoppeld.
++
++Concrete C2-sites in gepinde U30-bron: `native.PLAN_SIZE`; builder.compose
++`generation=rw+PLAN_SIZE`, RW raw/virtual/SizeOfImage en zero-fill;
++`integration_base.wrappers:start_hook` zero(PlanSize)/generation/owner en
++scope-hook end status5/scope0/owner0; `policy.finalize` rolopbouw;
++`native.production_roles/plan_conflict/select_direct_plans` voor alternatieven,
++werkelijke keycount en gedeelde bronclaims. Toekomstschema Result[64]
++0x54800..0x74800, Alternatives[64×2×128] tot0x78800, Scratch4096 tot0x79800.
++De huidige generation-DWORD direct na0x54800 mag dus niet overlappen: bij C2
++moet die met het nieuwe planeinde meegaan. Geen engine-allocator voor Plan:
++het is module-owned RW; pathallocator/freecontract blijft bestaand. Bij
++scope-end worden eigen sciencebevoegdheid/status/counters ongeldig gemaakt;
++geen science-H3-resultaat/ORDER/VISITED/scratchoverlay. Al deze C2-sites
++zijn nu **ongewijzigd en nog niet geïmplementeerd/gecontroleerd**.

@@ -1,0 +1,11 @@
+--- tested-U30/integration_base.py
++++ owned-foutcodes/integration_base.py
+@@ -28,7 +28,7 @@
+  r.mov('edx',m('ebx',n.P['player']));r.mov('eax',m('edx',8));r.alu('cmp','eax',m('ebx',156));r.j('jne','bind_bad');r.mov('edx',m('ebx',n.P['path']));r.alu('cmp',m('edx',0x7c),'eax');r.j('jne','bind_bad')
+  for vtable,slot,target in ((0x3452e0,0x54,0x133880),(0x344660,0xc,0x1273a0),(0x346220,0xc,0x1826a0)):
+   n.engine(r,'edx',vtable);n.engine(r,'eax',target);r.alu('cmp',m('edx',slot),'eax');r.j('jne','bind_bad')
+- invoke(r,'bind_inputs');r.test('eax','eax');r.j('jz','bind_bad')
++ invoke(r,'bind_inputs');r.test('eax','eax');r.j('jz','bind_done')
+  r.mov('eax',1);r.j('jmp','bind_done');r.label('bind_bad');n.unknown(r,30);n.result(r,'bind_done',80)
+ 
+ def input_guard(r):

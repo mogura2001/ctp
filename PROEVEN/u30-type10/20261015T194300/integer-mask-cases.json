@@ -1,0 +1,44 @@
+[
+  {
+    "record30": "0x80000000",
+    "record34": "0x5",
+    "predicate_result": true,
+    "expected": true,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  },
+  {
+    "record30": "0x90000000",
+    "record34": "0x5",
+    "predicate_result": true,
+    "expected": true,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  },
+  {
+    "record30": "0x0",
+    "record34": "0x5",
+    "predicate_result": false,
+    "expected": false,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  },
+  {
+    "record30": "0x10000000",
+    "record34": "0x5",
+    "predicate_result": false,
+    "expected": false,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  },
+  {
+    "record30": "0x0",
+    "record34": "0x25",
+    "predicate_result": false,
+    "expected": false,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  },
+  {
+    "record30": "0x80000000",
+    "record34": "0x25",
+    "predicate_result": true,
+    "expected": true,
+    "kind": "INDEPENDENT_INTEGER_ONLY_NOT_MACHINECODE_NOT_ABI"
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "stage": "SOURCE_SCHEMA_ONLY_NOT_EMITTED",
+  "plan_size": 497664,
+  "regions": [
+    {
+      "name": "existing",
+      "begin": 0,
+      "end": 346112
+    },
+    {
+      "name": "ScienceResult64x2048",
+      "begin": 346112,
+      "end": 477184
+    },
+    {
+      "name": "Alt64x2x128",
+      "begin": 477184,
+      "end": 493568
+    },
+    {
+      "name": "scratch4096",
+      "begin": 493568,
+      "end": 497664
+    }
+  ],
+  "slot_stride": 1152,
+  "slot": {
+    "mandatory_count": 28,
+    "mandatory_keys": [
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "chosen_role": 72,
+    "prefix_result_index": 76,
+    "reason": 88,
+    "H3_result_offset": 128,
+    "H3_result_length": 1024,
+    "alternate_index": 80,
+    "conditions": 84,
+    "chosen_status": 92
+  },
+  "alt": {
+    "stride": 128,
+    "valid": 0,
+    "role": 4,
+    "mandatory_count": 8,
+    "result_index": 12,
+    "keys": [
+      16,
+      24,
+      32,
+      40,
+      48
+    ],
+    "reason": 56,
+    "conditions": 64
+  },
+  "counters": {
+    "science_calls": [
+      232,
+      64
+    ],
+    "tile_evals": [
+      236,
+      1280
+    ],
+    "spatial_calls": [
+      240,
+      1280
+    ],
+    "improvement_calls": [
+      244,
+      3840
+    ],
+    "primary_food": [
+      248,
+      1344
+    ],
+    "development_food": [
+      252,
+      1280
+    ],
+    "total_food": [
+      256,
+      2624
+    ],
+    "context_error": 260
+  },
+  "serial": {
+    "guard": 40,
+    "snapshot_owner": 493568,
+    "snapshot_generation": 493572
+  },
+  "section_layout": "Unchanged B2 in original sections; internal sharedH3 and U30+union+SCI+instrumenteddevelopment in one appended RX; only then align RW to0x1000 with PLAN_SIZE+4; no separate SCI RX after earlier RW assumption",
+  "allocation_reset": "native.PLAN_SIZE controls fullstart zero/RWraw/SizeOfImage/generation location; percenter entire1152slot+256alt cleared; SCI2048 zero in kernel; scopeends owner0/status5; no newheap/savefields",
+  "candidate_built": false
+}

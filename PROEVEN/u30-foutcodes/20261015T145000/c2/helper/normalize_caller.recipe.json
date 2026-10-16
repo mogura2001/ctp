@@ -1,0 +1,131 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "owned input state",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "mov esi,('ebp', 12)",
+      "bytes": "8bb50c000000"
+    },
+    {
+      "offset": 23,
+      "asm": "mov edi,('ebp', 16)",
+      "bytes": "8bbd10000000"
+    },
+    {
+      "offset": 29,
+      "asm": "mov eax,('ebp', 8)",
+      "bytes": "8b8508000000"
+    },
+    {
+      "offset": 35,
+      "asm": "mov edx,('ebp', 20)",
+      "bytes": "8b9514000000"
+    },
+    {
+      "offset": 41,
+      "asm": "sub esp,64",
+      "bytes": "81ec40000000"
+    },
+    {
+      "offset": 47,
+      "asm": "sub ebp,64",
+      "bytes": "81ed40000000"
+    },
+    {
+      "offset": 53,
+      "asm": "mov ('ebp', 32),edx",
+      "bytes": "899520000000"
+    },
+    {
+      "offset": 59,
+      "asm": "mov edx,('ebx', 612)",
+      "bytes": "8b9364020000"
+    },
+    {
+      "offset": 65,
+      "asm": "call edx",
+      "bytes": "ffd2"
+    },
+    {
+      "offset": 67,
+      "asm": "add ebp,64",
+      "bytes": "81c540000000"
+    },
+    {
+      "offset": 73,
+      "asm": "add esp,64",
+      "bytes": "81c440000000"
+    },
+    {
+      "offset": 79,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 85,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 86,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 87,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 88,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 89,
+      "asm": "ret 16",
+      "bytes": "c21000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {}
+}

@@ -1,0 +1,28 @@
+﻿{
+    "at":  "2026-10-14T16:13:01.1903012+02:00",
+    "parser_errors":  0,
+    "controller_executed":  false,
+    "game_input_calls":  0,
+    "RPM_calls":  0,
+    "key_command_ast_count":  0,
+    "positive_metadata_fixture_pass":  true,
+    "rejection_cases":  [
+                            {
+                                "tested":  "actual isolated CheckSnapshot",
+                                "case":  "different_run",
+                                "rejected":  true
+                            },
+                            {
+                                "tested":  "actual isolated native round loop AST",
+                                "case":  "native_overshoot",
+                                "rejected":  true
+                            },
+                            {
+                                "tested":  "actual isolated accepted-T0 condition AST; pure Hash stub",
+                                "case":  "stale_T0_hash",
+                                "rejected":  true
+                            }
+                        ],
+    "initial_audit_extraction_corrected":  "Outer If AST selected initially; replaced by exact acceptedT0 guard AST; no controller changes",
+    "scope":  "OFFLINE isolated source guards; no gameplay or native behavior claim"
+}

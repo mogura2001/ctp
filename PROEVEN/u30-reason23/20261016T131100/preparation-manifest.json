@@ -1,0 +1,335 @@
+{
+  "stage": "TYPE10_PREPARATION_ONLY_NO_INSTALL_NATIVE_OR_GAME",
+  "checked_at_utc": "2026-10-12T16:21:42.791312+00:00",
+  "release_pins": [
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "size": 47674
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "size": 40166
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "size": 40057
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "size": 39995
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "size": 40005
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "size": 39953
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "size": 40227
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "size": 3655
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "size": 15146
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "size": 67
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "size": 4201
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+      "size": 707
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+      "size": 663
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+      "size": 654
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+      "size": 662
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+      "size": 656
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+      "size": 651
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+      "size": 509
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    }
+  ],
+  "proposals": [
+    {
+      "path": "ANALYSE/UITBREIDING-30-40.md",
+      "sha256": "9144dfa2d2946ac566ae17be1649bfab378d5fe2d5d3e5a46020c8ce054f8497"
+    },
+    {
+      "path": "ONTWERP/UITBREIDING-30-40.md",
+      "sha256": "accf076e715b2aeed674b989fecd52fd608afa8a0cb739c2270265ec398bf12a"
+    },
+    {
+      "path": "ANALYSE/U30-TYPE10.md",
+      "sha256": "d4c8aee532af8cef09c9b719792dc6818d8fa0d180a8d85d440a197686982f8d"
+    },
+    {
+      "path": "ONTWERP/U30-TYPE10.md",
+      "sha256": "5c2256c673256ba77848ae9e64d8c298af380c17b42af098ed745678712d7c89"
+    }
+  ],
+  "base_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "engine_timestamp": "0x37d6f702",
+  "base_image_size": "0xd6000",
+  "base_sections": [
+    {
+      "name": ".text",
+      "rva": "0x1000",
+      "size": "0x874a5",
+      "raw": "0x400",
+      "raw_size": "0x87600"
+    },
+    {
+      "name": ".rdata",
+      "rva": "0x89000",
+      "size": "0x5ba3",
+      "raw": "0x87a00",
+      "raw_size": "0x5c00"
+    },
+    {
+      "name": ".data",
+      "rva": "0x8f000",
+      "size": "0x3d1b0",
+      "raw": "0x8d600",
+      "raw_size": "0xd000"
+    },
+    {
+      "name": ".reloc",
+      "rva": "0xcd000",
+      "size": "0x6c2a",
+      "raw": "0x9a600",
+      "raw_size": "0x6e00"
+    },
+    {
+      "name": ".b2a",
+      "rva": "0xd4000",
+      "size": "0x10fc",
+      "raw": "0xa1400",
+      "raw_size": "0x1200"
+    }
+  ],
+  "windows": [
+    {
+      "name": "start_hook",
+      "rva": "0x2b079",
+      "offset": "0x2a479",
+      "preimage": "e882550400"
+    },
+    {
+      "name": "capture_hook",
+      "rva": "0x7abac",
+      "offset": "0x79fac",
+      "preimage": "e8cff4ffff"
+    },
+    {
+      "name": "desired_hook",
+      "rva": "0x66b81",
+      "offset": "0x65f81",
+      "preimage": "e81aeeffff"
+    },
+    {
+      "name": "scope_hook",
+      "rva": "0x2b0d8",
+      "offset": "0x2a4d8",
+      "preimage": "e893ba0300"
+    },
+    {
+      "name": "quota_hook",
+      "rva": "0x65a4c",
+      "offset": "0x64e4c",
+      "preimage": "e8affeffff"
+    },
+    {
+      "name": "execute_slot",
+      "rva": "0x8a598",
+      "offset": "0x88f98",
+      "preimage": "c0430420"
+    },
+    {
+      "name": "arrival_call",
+      "rva": "0x44d11",
+      "offset": "0x44111",
+      "preimage": "ff9290000000"
+    },
+    {
+      "name": "arrival_result",
+      "rva": "0x44d17",
+      "offset": "0x44117",
+      "preimage": "b801000000"
+    },
+    {
+      "name": "normalize",
+      "rva": "0x44b27",
+      "offset": "0x43f27",
+      "preimage": "f7d81bc0f7d883c002"
+    }
+  ],
+  "execute_slot_relocation": [
+    {
+      "rva": "0x8a598",
+      "type": 3
+    }
+  ],
+  "b2_payload": {
+    "rva": "0xd4000",
+    "size": 4348,
+    "sha256": "7825bac0a7d2684b977201c47b8d7c8042b8f28e980520ee537625d68fbeab8b",
+    "record_length": 36,
+    "record_version": 1,
+    "N": 30
+  },
+  "b2_hooks": [
+    {
+      "name": "registration",
+      "rva": "0x413da",
+      "bytes": "e8212c0900",
+      "target_rva": "0xd4000"
+    },
+    {
+      "name": "beginturn",
+      "rva": "0x3625b",
+      "bytes": "e8afde0900",
+      "target_rva": "0xd410f"
+    },
+    {
+      "name": "save",
+      "rva": "0xfe2d",
+      "bytes": "e8f1430c00",
+      "target_rva": "0xd4223"
+    },
+    {
+      "name": "load",
+      "rva": "0xfe51",
+      "bytes": "e86f450c00",
+      "target_rva": "0xd43c5"
+    },
+    {
+      "name": "reload_entry",
+      "rva": "0x61f0",
+      "bytes": "e917e30c00",
+      "target_rva": "0xd450c"
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "PROEVEN/settler-b4/native.py",
+      "sha256": "a6fc3f44506d906b4e8fc6596bdc968821a95f04130fe4bc8119f169c3d38246"
+    },
+    {
+      "path": "PROEVEN/settler-b4/integration.py",
+      "sha256": "44335c3ff8825507388d138356f0305cdc7bb071065f697aea5f641754eb43aa"
+    },
+    {
+      "path": "PROEVEN/settler-b4/input-pins.py",
+      "sha256": "0ec070d25605af8df63b9df0d78ab6bd928523f7527ebcb8f039a5e6fd1580e3"
+    },
+    {
+      "path": "PROEVEN/production-h3/build-current.py",
+      "sha256": "0fdb1c66e29c0ea511e435baf3cdd6cc0a3fc7be6b7769fd74e34e041c41e245"
+    },
+    {
+      "path": "PROEVEN/opening-b2/build.py",
+      "sha256": "e91792bb8da24cf67ada4da93a9a4e443f843e4bf45ea72b82f89ff85d99b56f"
+    },
+    {
+      "path": "PROEVEN/production-h3/x86.py",
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/build_candidate.py",
+      "sha256": "f0d3ae391089817ab018bf9e96c41226fd941772ff29e03a5b89317147a0b08c",
+      "size": 9911
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/native.py",
+      "sha256": "819a675a87f5597f5117c9459747fd2953e74660dab5b9edb9eb98b14c60aade",
+      "size": 33934
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
+      "size": 11744
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/input-pins.py",
+      "sha256": "19fcf72b182586b0785487486adcc31c8a330e1311765d15fdc8399804f524a2",
+      "size": 2005
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/preparation-manifest.json",
+      "sha256": "19f7472c41dd5993240eaa5fae511255e37a12df68268dcaead6abb66f40d23e",
+      "size": 8763
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    }
+  ],
+  "recovery": "No installation. Own backup is exact tested release-v1. Any future installation/restore requires current 19 pins, closed game, protected saves/profile and separate root authorization.",
+  "binary_diff_policy": "Only these 9 windows, PE header count/size/checksum, newly declared RX/RW section headers and appended section bytes. Preserve all five B2 hooks and complete payload byte-for-byte, existing relocation directory and all unrelated original bytes. The slot40 HIGHLOW remains at original RVA with new wrapper pointer. No H3 score hooks, packing or FLI changes."
+}

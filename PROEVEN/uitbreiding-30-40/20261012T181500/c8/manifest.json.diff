@@ -1,0 +1,34 @@
+--- preserved C7/manifest.json
++++ owned C8/manifest.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "C7_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
++  "state": "C8_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
+   "N": 30,
+   "files": [
+     {
+@@ -640,6 +640,10 @@
+     {
+       "path": "ONTWERP/UI-TIJDRESERVE-U30-40-C7.md",
+       "sha256": "46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978"
++    },
++    {
++      "path": "ONTWERP/UI-HERSTART-CD-U30-40-C8.md",
++      "sha256": "6461e2f67884671528964dac1aa50e3deb38f0fbcf2a7d21993be121a5383961"
+     }
+   ],
+   "preserved_saves_before": [
+@@ -692,10 +696,11 @@
+     "source": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+     "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+     "existed_before": false,
+-    "ownership": "C7_UI_LOAD_ALIAS_ONLY",
++    "ownership": "C8_UI_LOAD_ALIAS_ONLY",
+     "create": "Only after future root release and fresh successful count0, record own preimage before copy",
+     "remove": "Only own original-hash alias after exit/count0/archival/release restore; otherwise preserve"
+   },
+   "input_mode": "HUMAN_ONE_N",
+-  "c7_proposal_sha256": "46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978"
++  "c7_proposal_sha256": "46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978",
++  "c8_proposal_sha256": "6461e2f67884671528964dac1aa50e3deb38f0fbcf2a7d21993be121a5383961"
+ }

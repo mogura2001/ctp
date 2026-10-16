@@ -1,0 +1,17 @@
+--- native-main.cs.before-attempt9
++++ native-main.cs
+@@ -13,10 +13,14 @@
+   JavaScriptSerializer serializer=null;
+   Console.WriteLine("helper_pid "+System.Diagnostics.Process.GetCurrentProcess().Id);
+   try{
++   var process=System.Diagnostics.Process.GetCurrentProcess();var module=process.MainModule;
++   Console.WriteLine("helper_mapping pid="+process.Id+" bitness="+(IntPtr.Size*8)+" path="+module.FileName+" base="+unchecked((uint)module.BaseAddress.ToInt32()).ToString("x8")+" size="+module.ModuleMemorySize.ToString("x"));Console.Out.Flush();
++   ScienceNative.BindMainModule(module.BaseAddress,module.ModuleMemorySize);
+    ScienceNative.ReserveEngineBlocks();
+    serializer=new JavaScriptSerializer();serializer.MaxJsonLength=10000000;
+    var input=(Dictionary<string,object>)serializer.DeserializeObject(File.ReadAllText(Path.Combine(root,"native-input.json")));
+    var result=ScienceNative.Run(root,Ints(input["ranges"]),Ints(input["pin_rvas"]),Strings(input["pin_hex"]),Ints(input["fix_at"]),Ints(input["fix_off"]));
++   if(!ScienceNative.CleanupOk)throw new InvalidOperationException("owned cleanup failed; see stdout");
+    File.WriteAllText(output,serializer.Serialize(result));Console.WriteLine("PASS nativecalls "+result["native_calls"]);return 0;
+   }catch(Exception ex){
+    if(serializer==null){serializer=new JavaScriptSerializer();serializer.MaxJsonLength=10000000;}

@@ -1,0 +1,31 @@
+﻿{
+    "T0_sha256":  "a0e42773610112394d58ee4d4436248d2f314feeaca23c7e4313dc3806fc6deb",
+    "at":  "2026-10-16T17:39:22.4499651+02:00",
+    "pid":  25396,
+    "budget":  {
+                   "reported_at_utc":  "2026-10-16T15:38:48.974Z",
+                   "checked_at_utc":  "2026-10-16T15:39:21.999519+00:00",
+                   "age_seconds":  33.0,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  12.0,
+                                                     "used_percent":  88.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1792177811
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  40.0,
+                                                  "used_percent":  60.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1792671348
+                                              }
+                               },
+                   "stop_reasons":  [
+
+                                    ],
+                   "weekly_remaining_percent":  40.0,
+                   "five_hour_remaining_percent":  12.0,
+                   "state":  "ok"
+               },
+    "state":  "CONSUMED_BEFORE_SINGLE_INPUT"
+}

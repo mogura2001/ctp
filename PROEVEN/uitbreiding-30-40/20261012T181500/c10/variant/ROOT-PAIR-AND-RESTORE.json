@@ -1,0 +1,238 @@
+{
+  "at_utc": "2026-10-14T15:07:01.675457+00:00",
+  "status": "LOADED_U30_SEVEN_NATIVE_SINGLE_ROUND_PROVEN_WITH_PROCEDURAL_DEVIATIONS",
+  "instance": {
+    "pid": 7896,
+    "creationtime_filetime": 134364628211441315,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "binding": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+    "manifest_sha256": "9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341",
+    "package_sha256": null
+  },
+  "T0_sha256": "9461e94b45cd68c94536dbd33556cde86d4bb8a030a62d0514b8b07e84183500",
+  "T1_sha256": "33ca2277328759f60496f8463b4b5d1165628d2eef86e8958dd2952d4b413df5",
+  "controller_n_calls": 0,
+  "human_one_n_confirmation": true,
+  "participants": [
+    {
+      "civ_id": 2,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 0,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 3,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 0,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 4,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 0,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 5,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 0,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 6,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 1,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 7,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 1,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    },
+    {
+      "civ_id": 8,
+      "before_round": -1,
+      "after_round": 0,
+      "after_city_count": 0,
+      "Gcert": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "Dorig": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN",
+      "R": "UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN"
+    }
+  ],
+  "checks": [
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Alexan/AUTOSAVE-Alexan",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T122000-N30-AUTOSAVE",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-N30-AUTOSAVE",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-ORIGINAL-AUTOSAVE",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-+20-T60",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota--20-T60",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-normal-T60",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+      "match": true
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/userprofile.txt",
+      "match": true
+    },
+    {
+      "path": "Uitbreiding.ps1",
+      "match": true
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "match": true
+    },
+    {
+      "path": "original_core.py",
+      "match": true
+    },
+    {
+      "path": "participants.json",
+      "match": true
+    },
+    {
+      "path": "manifest.json",
+      "match": true
+    }
+  ],
+  "alias_absent": true,
+  "default_autosave_restored": true,
+  "procedural_deviations": [
+    "Intro foreground stabilization failed; existing live process bound after human load without clock reset.",
+    "Black capture with hand cursor; loaded-save visual identity not proved.",
+    "Direct existing read-only reader used below controller 15% work reserve, above user 5%/10% stop limits.",
+    "Normal close performed after 690/720-second deadline; exact identity checked, one close, no force."
+  ],
+  "limitations": [
+    "No complete C7-controller workflow acceptance.",
+    "No proof of accelerated city expansion, 30/40 transition, or settler demand branch use.",
+    "Reader save_identity_proven and atomic_snapshot_proven remain false."
+  ]
+}

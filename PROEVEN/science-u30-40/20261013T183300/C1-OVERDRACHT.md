@@ -1,0 +1,21 @@
+# Science C1 ? bron/kandidaat voor rootreview
+
+2026-10-14T11:17:34+02:00 Europe/Amsterdam. Bronvoorbereiding en deterministische bouw opgeleverd; native-/gameplayacceptatie ontbreekt. Geen nativehelper, game, GUI, RPM, installatie, alias of gameplaywrite. Sciencecredit/rolunion UIT. Alleen toegewezen map geschreven.
+
+Oud checkpoint41bc... is uitsluitend gekopieerd naar checkpoint-v1 met archive-pins.json en eigen bronpins uit het oude manifest; kopie?n gelijk. Niets verplaatst/verwijderd en grote originelen niet herhaald gekopieerd.
+
+**Nieuwe bron:** aparte future-top3/scenario op priv?-stack en flag32 uitsluitend bij geldige DEV1..4/conditions/currentfood; UNKNOWN/NaN/intermediatedelta telt nooit. Currentselectie/S3/marge/crime blijven current, ook bij tekort. Decoder geeft aparte computed_future uit opgeslagen tiles, expliciet afgeleide arithmetic. PENDING_GROWTH geldt uitsluitend bij currentfoodmargefalen uit ruimtelijktrue/certifiable futuretiles; spatialfalse of minder dan3current behoudt STRUCTURAL/UNKNOWN. Nooit huidige credit uit futurefood. PRESENT/READY/MIXED/PENDING/UNKNOWN-summary is uitsluitend currentselectie, future-summary apart. Canonieke centeralias/duplicate/H2count0..20 en shared-context versus lokaal unsupported worden bewaakt. Centrum64>=0 via uitsluitend highsignbit onderbouwt mincrime=cmax3 (lowMSB1 blijft positief); decodercoverage0 parityNone/NOT_APPLICABLE en geen ongemeten MATCH; exact signed64-halfconsumptie. Caller-CW blijft behouden: PC24 exact stand -3..2^24-4, PC53/64 alle int32>=-3, reservedPC01/unmasked exceptions UNKNOWN. Shared H3-componenten ongewijzigd.
+
+**Gezaghebbende kandidaat:** SCIENCE-C1-CREDIT-OFF.prepared.dll SHA256 `622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba`. Payload SHA256 `12bb7b9ae57a7c284c929e8a8f72bb36c710c53735275a50c8806f33f1b96139`; RX .sci1 RVA0x132000/10100bytes,10240 appended incl. zeros. Tweemaal bytegelijk gebouwd; AST en1502offline-instructies gedecodeerd.20verklaarde bestaande PE-bytes/0onverklaard. Alle huidige secties/relocaties/hooks/caps/B2vijfhooks/36byteN30record identiek.29proefbestanden (19release/9saves/profiel),4sharedsources,4dependencies en A/B-pins bij iedere bouw opnieuw gelijk gecontroleerd.
+
+SCHEMA-CONTRACT.md/schema.json leggen concrete ABI/stdcall5/ret20/x87, seri?le nonreentrant callerpreconditie, echte native Worldscratch, eigen callerresult/privateframe548bytes (+12regs/laagste EBP-560), offsets/status/flags/max20/call en toekomstige C2-sites vast. **Geen gamecaller aanwezig**; actievePlan0x54800/generationDWORD blijven behouden.0x79800 is toekomstschema, geen actieve allocation/reset/passcounter. source-diffs.txt vergelijkt met checkpoint-v1; package-pins.json bindt resultaatpakket.
+
+| Tussendoel | Werkperiodedelta/acceptatie | Volgende concrete uitkomst |
+| --- | --- | --- |
+| Science Doel1/1a/5 | C1bron/model/decoder/contract plus deterministische CREDITOFF-build reviewbaar; niet native geaccepteerd | Rootreview, daarna uitsluitend relevante bestaande32bit-fixturegevallen |
+| Doel3/U30-preservatie | Secties/hooks/caps/N30/29files opnieuw byte/hashgelijk | Native combinatie en echte host/save/load later |
+| Nuttige science/uitbreiding | Geen gameplayvoortgang/aanleg/groei/wetenschap | C2-union en natuurlijke vasteT0benchmark blijven open |
+
+**Open:** rootreview laatste bron/schema/kandidaat; daarna beperkte nativecases voor earlyNOWtechfalse, aparte future-rank/positivepending/currentveldbehoud, UNKNOWN/NaN/noninteger/overflowdelta, PRESENT-IRR3/READY/mix/pending/unknown, minder dan3/centeralias/duplicate, spatialfalse/invalidreturn, sharedcontext/localunsupported, halfconsumptie/onderhoud0/centrum>2^31, coverage0-parity, PC24/53/64 en ABI/ESP/nonvolatile/x87. Nog geen van deze nieuwe gevallen uitgevoerd. Geen nieuwframework/observer/109legacyherhaling. C2 variablekeys/union/gedeeldematching/appendPlan/reset/passcounters volgen afzonderlijk; Gcert/Actual/quota/caps blijven ongewijzigd. Echte U30/science/Doel3combinatiegameplay blijven aparte poorten.
+
+Bronopdracht afgerond, geen achtergrondrun/helper/game achtergelaten; wachten op rootreview. Laatste budgetbron09:15:02UTC/leeftijd19s,vijf54/week60/stateok. Pcaan, geen afsluitactie/planning.

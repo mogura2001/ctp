@@ -1,0 +1,8 @@
+﻿2026-10-13 18:35:42 Europe/Amsterdam — C1 bronvoorbereiding actief, geenlive/native.
+Geaccepteerde A/B gelezen; eigen H3componentkopieën en exacteU30/releasebackups bewaard. Volgende resultaat: science-resultaat/layout/model/spatialbodypins, daarna creditoffcandidatebuild. Bouw nietgereed; geenPASSclaim. Budget18:34:41week72/vijf18ok. NativecallbackWorldserialscratch enhalfInt64 exactcontract uitB; unionquota uitgesloten. Pcaan.
+
+2026-10-13 18:38:58 Europe/Amsterdam — science_model.py+science_layout.py checkpoint opdisk, nogNIETgereviewd/gelinkt/nativeuitgevoerd.
+Standalone5argstdcallret20 source: capacity1/2, strictextraWorldpins+H3Host, currentfood/IRR2main+effective+realspatial, development_tileapart, canonicaldedup/top3, exact2D integer64 encrimen3-mincondition. Nativebodylink/build nogopen; meerdereconservativeunknown/developmentaggregate/futurependingdetails nogreviewen. GeenPASSclaim/geenunion. Bronbewaard vóór budgetvervolg.
+
+2026-10-13 18:46:31 Europe/Amsterdam — HARDESTOP, alleinhoudelijkwerkgestopt
+Versebron16:45:14UTC/leeftijd5.4s/vijf5/week70/stateSTOP/reset1791920823. Alleencheckpoint/eindrapport na stop; pcaan. C1PARTIAL kandidaatSHA41bc540151456b5fc449b3d971efbd857813c1eeb34688a6daed57f05229d03c/965decoded/20PEmetadata/0onverklaard, SCIENCECREDITUIT. Geen native/helper/livecalls/install/gamewrites. EigenC1-OVERDRACHT.md legt exacteopenpunten vast: rootreviewlaatstesource, futurepositivePENDING, devsummaryREADY/PRESENT, serial/lifetimealloc-reset-querycounters/schema; union/native/C2noggesloten. 19release/9saves/profilepins enoldU30/N30 behouden. Bouwprocessenexit0, geenactievegame/helper gestart. Hervatuitditcheckpointna bevestigdebudgetreset.

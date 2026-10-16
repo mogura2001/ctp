@@ -1,0 +1,56 @@
+--- frozen source checkpoint/build_candidate.py
++++ corrected C2 source/build_candidate.py
+@@ -12,6 +12,11 @@
+ import native,policy,union,science_model,science_layout
+ from pathlib import Path
+ SCIENCE_PROVENANCE=ROOT/'PROEVEN/science-u30-40/20261013T183300'
++SCIENCE_MANIFEST=SCIENCE_PROVENANCE/'candidate-manifest.json'
++# Frozen C1 package-pins.json and attempt9 preparation both record this hash.
++SCIENCE_MANIFEST_SHA256='2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387'
++C2_PROPOSAL=ROOT/'ONTWERP/SCIENCE-C2-OVERDRACHT.md'
++C2_PROPOSAL_SHA256='ebbf78ccee2922078b9086d8e4532f4e86732ebd202bc5806cfdbc44c6b7c877'
+ sha=lambda b:hashlib.sha256(b).hexdigest()
+ align=lambda n,a:(n+a-1)//a*a
+ 
+@@ -33,6 +38,7 @@
+  prep=json.loads((OUT/'preparation-manifest.json').read_text('utf-8'))
+  for row in prep['release_pins']+prep['proposals']+prep['source_pins']:
+   assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
++ assert sha(C2_PROPOSAL.read_bytes())==C2_PROPOSAL_SHA256,'C2 proposal changed'
+  original=(OUT/'release-v1.robotcom.backup.dll').read_bytes();assert sha(original)==prep['base_sha256']
+  assert sha((ROOT/'CTP-proef/ctp_program/ctp/civctp.exe').read_bytes())==prep['engine_sha256']
+  return original,prep
+@@ -50,7 +56,9 @@
+  for name,label in [('B2Host','production_host'),('B2Symbols','symbols'),('B2Bit','bit')]:r.labels[name]=0xd4000+br.labels[label]-extension
+  # Source composition only until root release. Shared H3 bodies retain their real reader bounds.
+  for name,label in [('H3Capacity','capacity'),('H3FoodReader','food_reader'),('H3PosCompare','poscmp')]:r.labels[name]=rx+hr.labels[label]-extension
+- cm=json.loads((SCIENCE_PROVENANCE/'candidate-manifest.json').read_text('utf-8'))
++ cmraw=SCIENCE_MANIFEST.read_bytes()
++ assert sha(cmraw)==SCIENCE_MANIFEST_SHA256,'frozen C1 manifest changed'
++ cm=json.loads(cmraw)
+  assert sha((SCIENCE_PROVENANCE/'SCIENCE-C1-CREDIT-OFF.prepared.dll').read_bytes())=='622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba'
+  pins=cm['spatial_pins'];engine=pefile.PE(data=(ROOT/'CTP-og/ctp_program/ctp/civctp.exe').read_bytes())
+  for row in pins:assert engine.get_data(row['rva'],row['length']).hex()==row['bytes']
+@@ -111,8 +119,13 @@
+  deps=[]
+  paths=[OUT/f for f in ['build_candidate.py','native.py','policy.py','integration_base.py','input-pins.py','bind_scheduler.py','union.py','science_model.py','science_layout.py','science_result.py','science_development.py']]
+  paths+=list((ROOT/'PROEVEN/production-h3').glob('*.py'))+[ROOT/'PROEVEN/score-h1/build.py',ROOT/'PROEVEN/opening-b2/build.py',ROOT/'PROEVEN/production-h3/host/validator.prepared.bin']
++ paths += [SCIENCE_MANIFEST,C2_PROPOSAL]
+  for path in sorted(set(paths)):deps.append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha(path.read_bytes()),size=path.stat().st_size))
+  manifest=dict(stage='C2_POSITIVE_UNION_CANDIDATE_ONLY_NOT_INSTALLED_NOT_NATIVE_NOT_GAMEPLAY',base_sha256=sha(original),candidate_sha256=sha(data),proposal_sha256=prep['proposals'][1]['sha256'],sources=deps,source_dependency_pins=prep['source_pins'],release_pins=prep['release_pins'],allowed_changes=allowed,full_diff=full,original_changed_byte_count=len(changed),appended_byte_count=len(data)-len(original),unexplained_byte_count=0,components=dict(internal_H3_rva=hex(rx),internal_H3_sha256=sha(hcode),extension_rva=hex(extension),extension_sha256=sha(ecode),state_rva=hex(rw),state_size=native.PLAN_SIZE+4),sections=[dict(name=s.Name.rstrip(b'\0').decode(),rva=s.VirtualAddress,virtual_size=s.Misc_VirtualSize,raw_offset=s.PointerToRawData,raw_size=s.SizeOfRawData,flags=s.Characteristics) for s in cp.sections],b2_preserved=dict(payload_rva='0xd4000',payload_size=len(bcode),payload_sha256=sha(bcode),all_five_hooks_unchanged=True,record_length=36,record_version=1,N=30),relocations_unchanged=True,execute_slot_HIGHLOW=(0x8a598,3),labels=r.labels,recipe=r.rows,h3_labels=hr.labels,instructions_decoded=instructions,policy='D=min(R,max(Dorig,Gcert)); incomplete union preserves native demand within managed R; completion1 other gov native; no native detachment duplication',buffers=dict(SELECTED=native.SELECTED,SELECTED_CAP=native.SELECTED_CAP,ORDER=native.ORDER,PATHCACHE=native.PATHCACHE,PLAN_SIZE=native.PLAN_SIZE),budgets=dict(candidate_copy=4096,canonical_prefix=64,departure_sources=32,path_queries=128,query_search=4096,path_entries=4096,total_path_points=4096,selected_slots=40))
++ manifest['c2_proposal_sha256']=C2_PROPOSAL_SHA256
++ manifest['science_manifest_sha256']=SCIENCE_MANIFEST_SHA256
++ manifest['source_dependency_pins']=prep['source_pins']+[dict(path=SCIENCE_MANIFEST.relative_to(ROOT).as_posix(),sha256=SCIENCE_MANIFEST_SHA256)]
++ manifest['buffers'].update(SCIENCE_RESULTS=science_layout.SCIENCE_RESULTS,ROLE_ALTERNATIVES=science_layout.ROLE_ALTERNATIVES,SCIENCE_SCRATCH=science_layout.SCIENCE_SCRATCH)
+  return bytes(data),code,manifest
+ 
+ def main():
+@@ -120,7 +133,7 @@
+  (OUT/'U30-40.prepared.dll').write_bytes(data);(OUT/'U30-40.payload.bin').write_bytes(code);(OUT/'candidate-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n','utf-8')
+  for original,own in [('native.py','native.py'),('integration.py','integration_base.py'),('input-pins.py','input-pins.py')]:
+   a=(ROOT/'PROEVEN/settler-b4'/original).read_text('utf-8').splitlines(True);b=(OUT/own).read_text('utf-8').splitlines(True)
+-  (OUT/(own+'.source-diff.txt')).write_text(''.join(difflib.unified_diff(a,b,fromfile='read-only B4/'+original,tofile='owned/'+own)),'utf-8')
++  (OUT/(own+'.candidate-source-diff.txt')).write_text(''.join(difflib.unified_diff(a,b,fromfile='read-only B4/'+original,tofile='owned/'+own)),'utf-8')
+  print(json.dumps(dict(stage=manifest['stage'],sha256=manifest['candidate_sha256'],original_changed_bytes=manifest['original_changed_byte_count'],appended_bytes=manifest['appended_byte_count'],unexplained_bytes=0,b2_unchanged=True,instructions_decoded=manifest['instructions_decoded'],components=manifest['components'])))
+ 
+ if __name__=='__main__':main()

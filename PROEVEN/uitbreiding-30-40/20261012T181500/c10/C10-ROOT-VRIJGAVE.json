@@ -1,0 +1,32 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "input_mode": "HUMAN_ONE_N",
+  "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+  "sources": [
+    {
+      "path": "Uitbreiding.ps1",
+      "sha256": "25c77b111cc888ccbc9dc7291a0d68f0881a83acb842d322f7edecd96343a910"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "sha256": "32c71de13e7b61cde06c89e3162b047a0b39778f2a6b47f4ef1398c3ee9e3740"
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "ff951b9e44b570ffc57cc87aafad2ebce8a23856efb93307365569aca2529f84"
+    }
+  ],
+  "state": "CONSUMED_CLOSED_RELEASE_RESTORED_ROOT_PAIR_SAVED",
+  "at_utc": "2026-10-14T14:46:57.055909+00:00",
+  "scope": "Same reviewed C7 human T0/T1 control, same DLL/save/cleanup; operational Start uses existing Work15 floor; user hard5/10 unchanged. No parallel helper, extra input or PC action.",
+  "consumed_at_utc": "2026-10-14T15:07:01.675457+00:00"
+}

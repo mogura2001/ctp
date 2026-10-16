@@ -1,0 +1,358 @@
+{
+  "stage": "C7_SOURCE_ONLY_ALIAS_NOT_CREATED_NO_INSTALL_START_RPM",
+  "at_utc": "2026-10-14T14:13:25.964927+00:00",
+  "proposal_sha256": "46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978",
+  "previous_source_manifest_sha256": "c10ef408483b1e03a995815ba4b21d025727195ebd4ba12ccf04ddc0739c3832",
+  "sources": [
+    {
+      "path": "alias-functions.ps1.fragment",
+      "size": 2978,
+      "sha256": "01f96e042da1a188f99ce5d124fb5714b048a921fb90b9acacff8c59fb9f8ae4"
+    },
+    {
+      "path": "check_source.py",
+      "size": 5608,
+      "sha256": "ee89f7b1d869cd6ca316e79200888fb451811f240e8fe847062cd1dfd66031f8"
+    },
+    {
+      "path": "delta.py",
+      "size": 13110,
+      "sha256": "7bb768714bcb150fdfd0ceaaacd78018b8fd669b4bbc40a829e253d79387163e"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "size": 19621,
+      "sha256": "9ead24ce0b82d604a6bb6dab1ea2cfef677e5df7bf02c3a54fe0390fe2c01e8b"
+    },
+    {
+      "path": "manifest.json",
+      "size": 31911,
+      "sha256": "4dc049e01918a2b9f69386279f1d700132430a1612640dd7481dbf38694de71c"
+    },
+    {
+      "path": "original_core.py",
+      "size": 11208,
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "participants.json",
+      "size": 405,
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "prepare.py",
+      "size": 1977,
+      "sha256": "9b72adab4a0150d0ef15926f13029e178acca5ec41d7e0dc7524d1f31df34b8d"
+    },
+    {
+      "path": "Uitbreiding.ps1",
+      "size": 35126,
+      "sha256": "47b74fb9d519be51ccb75b01843df4cf26ab1a63674a2bb58518a0d6438cf31c"
+    },
+    {
+      "path": "UITVOERINSTRUCTIE.md",
+      "size": 5913,
+      "sha256": "87b943b365e5bbefacf3e290b7a93676be56cce7b1c370249b19e63a3cecd027"
+    }
+  ],
+  "backup_pins": [
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103"
+    },
+    {
+      "path": "backups/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Alexan/AUTOSAVE-Alexan",
+      "sha256": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+      "sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T122000-N30-AUTOSAVE",
+      "sha256": "7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-N30-AUTOSAVE",
+      "sha256": "be5575f5933c01678ce4be9a2311a68e1271be6589a4c470deb3b987ab1fcd66"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-ORIGINAL-AUTOSAVE",
+      "sha256": "17a2a3ad6392d55f57bd9d3f8e7b281f887afa69aa15f73c1632973d9254d30a"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/quota-+20-T60",
+      "sha256": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/quota--20-T60",
+      "sha256": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/quota-normal-T60",
+      "sha256": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+      "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26"
+    },
+    {
+      "path": "protected-backups/CTP-proef/ctp_program/ctp/userprofile.txt",
+      "sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd"
+    }
+  ],
+  "bindings": [
+    {
+      "variant": "release-v1",
+      "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "ai_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "manifest_sha256": "9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341",
+      "sites": 8,
+      "ranges": 52
+    },
+    {
+      "variant": "U30-40",
+      "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+      "ai_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+      "manifest_sha256": "9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341",
+      "sites": 16,
+      "ranges": 54
+    }
+  ],
+  "game_alias_absent": true,
+  "release_files_and_backups": 19,
+  "existing_saves_and_backups": 9,
+  "profile_match": true,
+  "controller_execute_count": 0,
+  "RPM_calls": 0,
+  "game_file_mutations": 0,
+  "controller_n_input_calls_in_source": 0,
+  "root_gate_disabled": true,
+  "reader_business_semantics_exact_C6": true,
+  "controller_delta_exact_transform": true,
+  "live_results": null
+}

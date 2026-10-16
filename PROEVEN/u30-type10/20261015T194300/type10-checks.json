@@ -1,0 +1,22 @@
+{
+  "stage": "TYPE10_OFFLINE_STATIC_AND_INTEGER_ONLY",
+  "candidate_sha256": "b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62",
+  "manifest_sha256": "fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27",
+  "only_resolver_predicate_source_delta": true,
+  "policy_integration_and_faultcode_preservation_byte_identical": true,
+  "slot_and_full30byte_body_additive": true,
+  "reader_full30byte_and_real_slotpointer_binding": true,
+  "resolver_call_slot": "0x1c",
+  "test_mask": "0x80000000",
+  "same_type_bad_target": "0x200db24f",
+  "resolver_ret4": true,
+  "engine_body_ret8": true,
+  "integer_cases": 6,
+  "native_real_body_cases": "NOT_EXECUTED_EXISTING_FIXTURE_NO_FIXED_GLOBAL_OR_REAL_GETTER_BINDING",
+  "native_abi": "NOT_EXECUTED_STATIC_CALL_ARGUMENTS_AND_EPILOGUE_ONLY",
+  "native_calls": 0,
+  "installations": 0,
+  "game_starts": 0,
+  "RPM_reads": 0,
+  "gameplay_acceptance": false
+}

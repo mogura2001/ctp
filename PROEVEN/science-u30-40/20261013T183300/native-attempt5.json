@@ -1,0 +1,13 @@
+﻿{
+    "patches":  [
+
+                ],
+    "cases":  [
+
+              ],
+    "pass":  false,
+    "error":  "System.Management.Automation.MethodInvocationException: Exception calling \"Run\" with \"6\" argument(s): \"synthetic fixed engine block 00a70000 error487\" ---\u003e System.InvalidOperationException: synthetic fixed engine block 00a70000 error487\r\n   at ScienceNative.Assert(Boolean ok, String s)\r\n   at ScienceNative.Run(String root, Int32[] range, Int32[] pinRvas, String[] pinHex, Int32[] fixAt, Int32[] fixOff)\r\n   at CallSite.Target(Closure , CallSite , Type , Object , Object , Object , Object , Object , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "gameplay_measured":  false,
+    "bitness":  32,
+    "helper_pid":  20576
+}

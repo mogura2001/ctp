@@ -1,0 +1,222 @@
+--- readonly existing NativeProducer.cs
++++ owned C2 NativeU40.cs
+@@ -1,7 +1,7 @@
+ // Native execution of actual B4 composition in a separate owned fixture copy.
+ // Changed dependency addresses provide controlled inputs; B4/H3 model intact.
+ using System;using System.IO;using System.Runtime.InteropServices;using System.Collections.Generic;using System.Text.RegularExpressions;
+-public static class B4Producer {
++public static class U40Producer {
+  [DllImport("kernel32.dll",SetLastError=true)] static extern IntPtr VirtualAlloc(IntPtr a,UIntPtr n,uint t,uint p);
+  [DllImport("kernel32.dll")] static extern bool VirtualFree(IntPtr a,UIntPtr n,uint t);
+  [DllImport("kernel32.dll")] static extern bool VirtualProtect(IntPtr a,UIntPtr n,uint p,out uint old);
+@@ -87,132 +87,97 @@
+   for(int t=0;t<3;t++){IntPtr priority=Mem(40);W(priority,8,64);W(priority,24,Mem(64*8).ToInt32());W(priority,32,Mem(64*8).ToInt32());W(priorities,4*t,priority.ToInt32());}
+   W(state,92,Mem(3*8).ToInt32());W(state,96,2);W(state,100,2);W(state,88,1);
+  }
+- static void RuntimeInputsGuard(){
+-  string json=File.ReadAllText(Path.Combine(pack,"input-pins.json"));var rows=Regex.Matches(json,"\"kind\"\\s*:\\s*\"(engine|ai)\"\\s*,\\s*\"rva\"\\s*:\\s*(\\d+)\\s*,\\s*\"length\"\\s*:\\s*(\\d+)\\s*,\\s*\"bytes\"\\s*:\\s*\"([0-9a-f]+)\"");Check(rows.Count==15,"frozen guardrows");var saved=new Dictionary<int,byte[]>();
+-  foreach(Match row in rows){if(row.Groups[1].Value!="engine")continue;int at=Int32.Parse(row.Groups[2].Value);string hex=row.Groups[4].Value;byte[] expected=new byte[hex.Length/2];for(int i=0;i<expected.Length;i++)expected[i]=Convert.ToByte(hex.Substring(i*2,2),16);saved[at]=Read(A(engine,at),expected.Length);Marshal.Copy(expected,0,A(engine,at),expected.Length);}
+-  int[] slots={0xc,0x40,0x44,0x48,0xd8,0xdc},targets={0x131770,0x131a50,0x131dc0,0x131de0,0x132020,0x132040},previous=new int[6];for(int i=0;i<6;i++){previous[i]=R(engine,0x345098+slots[i]);W(engine,0x345098+slots[i],A(engine,targets[i]).ToInt32());}
+-  ResetPlan();Test("real inputguard original15bodies6slots pass incl loadedAIreloc",Call("bind_inputs",0,true,plan.ToInt32())==1);
+-  foreach(Match row in rows){int at=Int32.Parse(row.Groups[2].Value);IntPtr source=row.Groups[1].Value=="engine"?engine:image;byte old=Marshal.ReadByte(source,at);if(source==image)Patch(A(source,at),1);Marshal.WriteByte(source,at,(byte)(old^1));ResetPlan();Test("real inputguard body mismatch UNKNOWN "+row.Groups[1].Value+at.ToString("x"),Call("bind_inputs",0,true,plan.ToInt32())==0&&R(plan,0)==0);Marshal.WriteByte(source,at,old);}
+-  for(int i=0;i<6;i++){W(engine,0x345098+slots[i],A(engine,targets[i]+4).ToInt32());ResetPlan();Test("real inputguard slot mismatch UNKNOWN "+slots[i].ToString("x"),Call("bind_inputs",0,true,plan.ToInt32())==0&&R(plan,0)==0);W(engine,0x345098+slots[i],A(engine,targets[i]).ToInt32());}
+-  foreach(var savedBody in saved)Marshal.Copy(savedBody.Value,0,A(engine,savedBody.Key),savedBody.Value.Length);for(int i=0;i<6;i++)W(engine,0x345098+slots[i],previous[i]);
+-  // Pipeline input callbacks necessarily replace the guard's engine bytes and
+-  // slots. Only this exact guard entry is substituted in the own fixture copy;
+-  // the guard itself was independently executed above without substitutions.
+-  Dependency("bind_inputs","true4");ResetPlan();
+- }
++
+  static void Capture(int count){IntPtr map=new IntPtr(R(ai,0x80)),heap=Mem((count+1)*4);W(map,0x5c,count+1);W(map,0x60,count+1);W(map,0x64,heap.ToInt32());for(int i=0;i<count;i++){IntPtr p=Mem(8);S(p,0,(i+1)*8);W(heap,4*(i+1),p.ToInt32());}}
+- static void TypesAndDepartures(){
+-  ResetPlan();Test("loaded exact token and actual interface count",Call("resolve_type",0,true,plan.ToInt32())==1&&R(plan,44)==1&&R(plan,48)==3);
+-  W(state,60,0);ResetPlan();Test("absent loaded token UNKNOWN",Call("resolve_type",0,true,plan.ToInt32())==0&&R(plan,0)==0);W(state,60,1);
+-  W(state,56,3);int before=R(state,292);ResetPlan();Test("trailing noninterface type rejected before trait",Call("resolve_type",0,true,plan.ToInt32())==0&&R(state,292)==before);W(state,56,1);
+-  ResetPlan();Test("full class preview incl nonsettler",Call("preview_scope",0,false,plan.ToInt32())==1&&R(plan,72)==4);
+-  W(state,64,1);ResetPlan();Test("other selected settlertype wholepass UNKNOWN",Call("preview_scope",0,false,plan.ToInt32())==0&&R(plan,0)==0);W(state,64,0);
+-  ResetPlan();IntPtr aset=new IntPtr(R(ai,0x90));byte[] saved=Read(aset,32);Test("ordinary movement16 departure using original getters",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,76)==1&&R(plan,88)==1);Test("shared BSet iterator untouched",Same(saved,Read(aset,32)));
+-  foreach(int count in new int[]{0,2}){ResetPlan();S(army,0x48,count);Test("valid count outside ordinary "+count,Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,76)==0);}S(army,0x48,1);
+-  foreach(double movement in new double[]{15.999,Double.NaN,Double.PositiveInfinity}){ResetPlan();D(army,0x70,movement);int got=Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1);Test("movement branch "+movement,Double.IsNaN(movement)||Double.IsInfinity(movement)?got==0&&R(plan,0)==0:got==1&&R(plan,76)==0);}D(army,0x70,16);
+-  foreach(int flag in new int[]{8,16}){ResetPlan();Marshal.WriteByte(army,0x88,(byte)flag);Test("special movement skip "+flag,Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,76)==0);}Marshal.WriteByte(army,0x88,0);
+-  IntPtr cargo=Mem(16);W(army,0x60,cargo.ToInt32());W(cargo,8,unchecked((int)0x7fff0000));ResetPlan();Test("cargo signed16 zero accepted despite adjacentword",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,76)==1);S(cargo,8,-1);ResetPlan();Test("negative cargo UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(army,0x60,0);
+-  W(state,72,1);ResetPlan();Test("engine position mismatch UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(state,72,0);W(state,80,1);ResetPlan();Test("engine currentID invalid UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(state,80,0);
+-  IntPtr node=new IntPtr(R(aset,8));W(node,4,node.ToInt32());ResetPlan();Test("cyclic DFS UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(node,4,0);
+-  W(army,12,11);ResetPlan();Test("fresh ID mismatch UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(army,12,10);
+-  W(city,0x1f0,1);ResetPlan();Test("cityfront production one copied claim",Call("read_set",0,false,plan.ToInt32(),R(ai,0x8c),2)==1&&R(plan,52)==1&&R(plan,76)==1&&R(plan,0x18204)==3);W(city,0x1f4,0);ResetPlan();Test("front nonarmy category no production claim",Call("read_set",0,false,plan.ToInt32(),R(ai,0x8c),2)==1&&R(plan,0x18204)==2);W(city,0x1f4,1);W(city,0x1f0,-1);
+-  ResetPlan();IntPtr empty=Set(IntPtr.Zero);Test("empty DFS complete",Call("read_set",0,true,plan.ToInt32(),empty.ToInt32(),1)==1&&R(plan,92)==0);
+-  IntPtr na=Mem(0x100),nb=Mem(0x100);S(na,0x48,0);S(nb,0x48,0);IntPtr left=Node(1,11,na),right=Node(1,12,nb);W(node,4,left.ToInt32());W(node,8,right.ToInt32());ResetPlan();Test("read-only DFS both children complete",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,92)==3);W(nb,12,11);W(right,0,11);ResetPlan();Test("duplicate namespace ID UNKNOWN",Call("read_set",0,false,plan.ToInt32(),aset.ToInt32(),1)==0);W(node,4,0);W(node,8,0);
+-  W(army,4,2);ResetPlan();Test("kind mismatch UNKNOWN",Call("read_set",0,true,plan.ToInt32(),aset.ToInt32(),1)==0);W(army,4,1);S(army,0x48,-1);ResetPlan();Test("negative unitcount UNKNOWN",Call("read_set",0,true,plan.ToInt32(),aset.ToInt32(),1)==0);S(army,0x48,1);
+-  W(army,0x40,1);ResetPlan();Test("nonordinary state skip",Call("read_set",0,true,plan.ToInt32(),aset.ToInt32(),1)==1&&R(plan,76)==0);W(army,0x40,0);
+-  // Isolate the combined4096-node traversal bound with valid count0 armies,
+-  // so no earlier32-departure bound conceals it.
+-  IntPtr chain=IntPtr.Zero;for(int i=0;i<4097;i++){IntPtr aa=Mem(0x100),nn=Node(1,10000+i,aa);W(nn,8,chain.ToInt32());chain=nn;}IntPtr large=Set(chain);ResetPlan();Test("DFS4097 wholepassUNKNOWN after4096complete reads",Call("read_set",0,true,plan.ToInt32(),large.ToInt32(),1)==0&&R(plan,92)==4096&&R(plan,0)==0);
+-  chain=IntPtr.Zero;for(int i=0;i<33;i++){IntPtr aa=Mem(0x100);S(aa,0x48,1);S(aa,0x4a,1);W(aa,0x64,center.ToInt32());D(aa,0x70,16);IntPtr nn=Node(1,20000+i,aa);W(nn,8,chain.ToInt32());chain=nn;}ResetPlan();Test("departure33 UNKNOWN at32queries no partial stock",Call("read_set",0,false,plan.ToInt32(),Set(chain).ToInt32(),1)==0&&R(plan,88)==32&&R(plan,76)==32&&R(plan,0)==0);
+- }
+- static void PathsAndProducer(){
+-  ResetPlan();S(center,0,0);IntPtr destination=Mem(8);S(destination,0,8);W(state,108,0);
+-  Test("actual path20 positive with source/destination safety",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==1&&R(state,108)==1&&R(state,112)==R(state,92));
+-  int[] constants={path.ToInt32(),0,0,1,1,center.ToInt32(),destination.ToInt32(),0,0,0,0,0,1,0,0,4096,0,1,0,1};
+-  for(int i=0;i<20;i++)if(i<7||i==11||i>=12&&i!=16)Check(R(state,128+4*i)==constants[i],"path ABI slot"+(i+1));
+-  Test("path20 exact constants and pointers",R(state,128+20)==center.ToInt32()&&R(state,128+24)==destination.ToInt32());
+-  foreach(int raw in new int[]{0,7,-2,255}){ResetPlan();W(state,316,8);W(state,320,raw);int frees=R(state,108);int got=Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32());Test("destination owner pathfree "+raw,got==(raw>=0&&raw<=31?2:0)&&R(state,108)==frees+1);}W(state,316,-1);
+-  ResetPlan();W(state,88,0);int f=R(state,108);Test("native pathfailure nonnull buffer freed once UNKNOWN",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(state,108)==f+1);W(state,88,1);
+-  ResetPlan();W(plan,84,128);f=R(state,108);Test("path budget wholepass UNKNOWN without query",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(state,108)==f);
+-  ResetPlan();Capture(6);Test("real capture six canonical candidates",Call("capture_heap",0,true,plan.ToInt32())==1&&R(plan,68)==6);
+-  int gotFinal=Call("finalize_pass",0,false,plan.ToInt32());Test("true emitted producer H3-current positive G6",gotFinal==1&&R(plan,0)==4&&R(plan,60)==6&&R(plan,80)==6&&R(plan,76)==2&&R(plan,52)==1&&R(plan,88)==1);
+-  Test("claims once and reused city newbuild origins",R(plan,0x18200+16)==-1&&R(plan,0x18200+32+16)==0);
+-  Test("same typed sourcepath reused currentpass no doublequery",R(plan,84)==6&&R(plan,136)==6);
+-  W(state,332,8);ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());Test("true producer mandatoryworker conflicts give one slot",Call("finalize_pass",0,false,plan.ToInt32())==1&&R(plan,80)==6&&R(plan,60)==1);W(state,332,0);
+-  W(state,100,3);W(state,96,3);IntPtr middle=A(new IntPtr(R(state,92)),8);S(middle,0,4);W(state,316,4);W(state,320,-2);ResetPlan();f=R(state,108);Test("UNKNOWN midpath freeonce wholepass",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(plan,0)==0&&R(state,108)==f+1);W(state,316,-1);W(state,100,2);W(state,96,2);
+-  foreach(int malformed in new int[]{0,4097}){W(state,100,malformed);ResetPlan();f=R(state,108);Test("invalid pathcount UNKNOWN/free "+malformed,Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(state,108)==f+1);}W(state,100,2);
+-  W(state,324,1);ResetPlan();f=R(state,108);Test("native global cutoff UNKNOWN/free",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(state,108)==f+1);W(state,324,0);W(engine,0x6d0b94,0);
+-  W(state,316,0);W(state,320,-2);ResetPlan();f=R(state,108);Test("source owner UNKNOWN/free once",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),destination.ToInt32())==0&&R(state,108)==f+1);W(state,316,-1);
+-  W(state,100,1);W(state,96,1);ResetPlan();Test("ordinary arrival onepoint path to same position",Call("direct_path",0,false,plan.ToInt32(),destination.ToInt32(),destination.ToInt32())==1);W(state,100,2);W(state,96,2);
+-  ResetPlan();S(center,0,8);W(state,72,8);Test("arrived ordinary army fresh currentposition claim",Call("read_departure",0,false,plan.ToInt32(),1,army.ToInt32())==1&&R(plan,76)==1&&R(plan,88)==1&&R(plan,0x18208)==8);S(center,0,0);W(state,72,0);
+-  // Canonical duplicates are copied once; cap never becomes partial G.
+-  ResetPlan();Capture(2);IntPtr map=new IntPtr(R(ai,0x80)),heap=new IntPtr(R(map,0x64));IntPtr second=new IntPtr(R(heap,8));S(second,0,8);Test("duplicate centers canonical capture once",Call("capture_heap",0,true,plan.ToInt32())==1&&R(plan,68)==1);
+-  ResetPlan();Capture(65);map=new IntPtr(R(ai,0x80));heap=new IntPtr(R(map,0x64));for(int i=0;i<65;i++)S(new IntPtr(R(heap,4*(i+1))),0,i);Call("capture_heap",0,true,plan.ToInt32());Test("H3query cutoff wholepass not partialD",Call("finalize_pass",0,false,plan.ToInt32())==0&&R(plan,0)==0&&R(plan,128)==64);
+-  // Fully traversed registered CityIDs are the actual C for min(G,N-C).
+-  IntPtr oldCities=new IntPtr(R(ai,0x8c));int n=fixtureN;
+-  foreach(int cityCount in new int[]{n-2,n}){IntPtr next=IntPtr.Zero;for(int i=0;i<cityCount;i++){IntPtr ca=Mem(0x230);W(ca,0x210,center.ToInt32());W(ca,0x1f0,-1);IntPtr cn=Node(2,100+i,ca);W(cn,8,next.ToInt32());next=cn;}W(ai,0x8c,Set(next).ToInt32());ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());Test("N-C exact registered cities "+cityCount,Call("finalize_pass",0,false,plan.ToInt32())==1&&R(plan,52)==cityCount&&R(plan,60)==n-cityCount);}W(ai,0x8c,oldCities.ToInt32());
+- }
++
++
+  static IntPtr Aip(){return A(planner,0x20);}
+  static IntPtr DesiredArray(){return new IntPtr(R(new IntPtr(R(Aip(),0x7c0)),0));}
+  static IntPtr ActualArray(){return new IntPtr(R(new IntPtr(R(Aip(),0x7c8)),0));}
+  static IntPtr Priority(int t){return new IntPtr(R(new IntPtr(R(new IntPtr(R(Aip(),0x7c4)),0)),t*4));}
+- static void Wrappers(){
+-  // Actual AIP::Update, Update_Actual_Units, Choose_Unit_From_List and
+-  // Update_Desired_Units bodies execute unchanged. The unrelated goal/queue/
+-  // building mutation callees are excluded at their dependency entries.
+-  foreach(int off in new int[]{0x654c0,0x65cc0,0x668e0})Jump(A(image,off),Code("noop"));
+-  labels["Actual"]=0x655f0;
+-  W(city,0x1f0,1);W(city,0x1f4,1);ResetPlan();Call("Actual",Aip().ToInt32(),false);
+-  Test("actual loadedtype counts army and current city production",R(ActualArray(),4)==2);
+-  Capture(6);Clear(plan,0x54800);int starts=R(state,408),grounds=R(state,412);
+-  Test("START calls original once preserves EAX and ABI",Call("start_hook",scheduler.ToInt32(),true)==0x12345678&&R(state,408)==starts+1&&R(plan,0)==1&&R(plan,36)==0);
+-  Test("capture original once return and ret4",Call("capture_hook",R(ai,0x80),true,ai.ToInt32())==0x23456789&&R(state,412)==grounds+1&&R(plan,0)==2&&R(plan,68)==6);
+-  Call("scope_hook",Aip().ToInt32(),false);
+-  Test("fivehook chain G6 real desired6 priority6 nativeActual2 deficit4",BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0)==6&&R(Priority(1),0)==6&&R(ActualArray(),4)==2&&R(plan,60)==6&&R(plan,64)==6&&R(plan,168)==4);
+-  Test("nonsettler original quota remains2 entries2",BitConverter.ToDouble(Read(A(DesiredArray(),16),8),0)==2&&R(Priority(2),0)==2);
+-  Test("AIPreturn invalidates pass and owner",R(plan,0)==5&&R(plan,36)==0&&R(plan,8)==0);
+-  // Whole-pass UNKNOWN must leave all three original settler contributions.
+-  W(state,60,0);Clear(plan,0x54800);Call("start_hook",scheduler.ToInt32(),true);Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);
+-  Test("prefreeze UNKNOWN keeps all original selected settler quotas",BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0)==6&&R(Priority(1),0)==6&&R(plan,64)==0&&R(plan,168)==0&&R(plan,4)!=0);W(state,60,1);
+-  // Scoped D0: original Desired invokes quota wrapper for first/later classes;
+-  // it must produce true +0.0 and no native priorityentries.
+-  Capture(0);Clear(plan,0x54800);Call("start_hook",scheduler.ToInt32(),true);Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);
+-  Test("D0 first/later classes positivezero no entries nativeActual unchanged",Marshal.ReadInt64(DesiredArray(),8)==0&&R(Priority(1),0)==0&&R(ActualArray(),4)==2&&R(plan,60)==0&&R(plan,168)==4);
+-  // NativeActual includes unsupported-for-ordinary multiunit armies and is
+-  // never replaced by the matched-claim count or subtracted a second time.
+-  S(army,0x48,6);for(int i=0;i<6;i++)S(army,0x4a+2*i,1);Capture(6);Clear(plan,0x54800);Call("start_hook",scheduler.ToInt32(),true);Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);Test("enough nativeActual7 retains desired6 andentries6 no claim doubleaftrek",R(ActualArray(),4)==7&&BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0)==6&&R(Priority(1),0)==6&&R(plan,76)==1);S(army,0x48,1);
+-  W(state,316,16);W(state,320,-2);Capture(6);Clear(plan,0x54800);Call("start_hook",scheduler.ToInt32(),true);Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);Test("UNKNOWN after partial G1 leaks no managed quota",R(plan,60)==1&&R(plan,64)==0&&BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0)==6&&R(Priority(1),0)==6);W(state,316,-1);
+-  Clear(plan,0x54800);Call("start_hook",scheduler.ToInt32(),true);Call("scope_hook",Aip().ToInt32(),false);Test("missing capture wholepass original",R(plan,64)==0&&BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0)==6);
+-  ResetPlan();W(plan,36,0);Test("finalize outside AIPscope rejected",Call("finalize_pass",0,true,plan.ToInt32())==0&&R(plan,0)==0);
+-  IntPtr registration=AddVectoredExceptionHandler(1,handler);Check(registration!=IntPtr.Zero,"own exception audit");try{
+-   ResetPlan();int traps=R(state,336);Test("reentrant START actual UD2 candidate rejection",Call("start_hook",scheduler.ToInt32(),false)==-1&&R(state,336)==traps+1&&R(state,344)==Entry("contract_error").ToInt32());
+-   ResetPlan();W(plan,0,4);Call("preview_scope",0,false,plan.ToInt32());IntPtr list=new IntPtr(R(plan,0x8200)),selected=Mem(4);W(list,4,0);traps=R(state,336);Test("immutable previewmismatch actual UD2 rejection",Call("quota_hook",Aip().ToInt32(),false,list.ToInt32(),selected.ToInt32())==-1&&R(state,336)==traps+1);W(list,4,1);
+-  }finally{RemoveVectoredExceptionHandler(registration);GC.KeepAlive(handler);}
+- }
++
+  static void ResetPlan(){Clear(plan,0x54800);W(plan,0,2);W(plan,8,ai.ToInt32());W(plan,12,2);W(plan,16,R(ai,0x80));W(plan,20,planner.ToInt32());W(plan,24,A(planner,0x20).ToInt32());W(plan,28,scheduler.ToInt32());W(plan,32,1);W(plan,36,1);W(plan,44,1);W(plan,48,3);W(plan,100,engine.ToInt32());W(plan,104,udb.ToInt32());W(plan,108,player.ToInt32());W(plan,112,world.ToInt32());W(plan,116,path.ToInt32());W(plan,144,engine.ToInt32());}
+  static int fixtureN;
++ static IntPtr policyOut,nativePlayer,cityContainer,completeSymbol,goal,otherGoal;
++ static void PolicyInputs(){
++  nativePlayer=new IntPtr(R(player,8));W(player,12,2);IntPtr players=Mem(32*4);W(players,8,nativePlayer.ToInt32());W(engine,0x67dd80,players.ToInt32());cityContainer=Mem(16);W(nativePlayer,0x12c0,cityContainer.ToInt32());policyOut=Mem(24);completeSymbol=new IntPtr(R(new IntPtr(R(ai,0xc4)),0));
++  W(state,608,cityContainer.ToInt32());W(state,612,Entry("normalize_dispatch").ToInt32());Dependency("ExecuteOriginal","execute");
++  goal=Mem(0x100);W(goal,0,A(image,0x8a558).ToInt32());W(goal,12,5);Jump(A(image,0x487e0),Code("arrival"));otherGoal=Mem(0x100);IntPtr otherVT=Mem(0x100);W(otherVT,0x90,Code("arrival").ToInt32());W(otherGoal,0,otherVT.ToInt32());W(otherGoal,12,4);
++  labels["normalize_caller"]=Code("normalize_caller").ToInt32()-image.ToInt32();
++  // Set original stock to2 from first selected settler class, zero later
++  // settlerclasses; retain nonsettler2 contribution. Original native Choose,
++  // Actual and Desired still execute actual mapped candidate bodies.
++  IntPtr classes=new IntPtr(R(new IntPtr(R(Aip(),0x7bc)),0));for(int i=0;i<4;i++){IntPtr entry=new IntPtr(R(new IntPtr(R(classes,16*i+12)),0));D(entry,0,i==1?2:i==0?-2:0);}
++  foreach(int off in new int[]{0x654c0,0x65cc0,0x668e0})Jump(A(image,off),Code("noop"));
++  PolicyState(1,0,0);
++ }
++ static void PolicyState(int count,int government,int completed){W(cityContainer,8,count);W(nativePlayer,0x94,government);D(completeSymbol,8,completed);W(state,404,count);}
++ static void Pipeline(int candidates,bool capture){Clear(plan,0x54800);Capture(candidates);Call("start_hook",scheduler.ToInt32(),true);if(capture)Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);}
++ static double Wanted(){return BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0);}
++ static void ChangedCases(){
++  int[,] table={{29,0,0,1,1},{30,0,0,1,0},{30,3,0,1,10},{39,3,1,1,1},{40,3,1,1,0},{29,3,0,1,1},{28,3,1,1,12},{40,4,1,0,0},{41,4,1,0,0}};
++  for(int i=0;i<table.GetLength(0);i++){PolicyState(table[i,0],table[i,1],table[i,2]);int got=Call("read_policy",0,true,ai.ToInt32(),policyOut.ToInt32());Test("fresh policy C/gov/completion "+table[i,0]+"/"+table[i,1]+"/"+table[i,2],got==1&&R(policyOut,0)==table[i,3]&&R(policyOut,4)==table[i,4]&&R(policyOut,8)==table[i,0]);}
++  PolicyState(1,0,0);W(city,0x1f0,1);Pipeline(6,true);Test("new native coherent Dorig2 Gcert6 Actual2 desired6 priority6 deficit4",R(plan,184)==2&&R(plan,188)==6&&Wanted()==6&&R(Priority(1),0)==6&&R(ActualArray(),4)==2&&R(plan,64)==6);
++  Test("nonsettler original desired2 entries2",BitConverter.ToDouble(Read(A(DesiredArray(),16),8),0)==2&&R(Priority(2),0)==2);
++  Pipeline(0,true);Test("production Gcert0 incomplete union keeps Dorig2",R(plan,188)==0&&Wanted()==2&&R(Priority(1),0)==2);
++  Pipeline(6,false);Test("missing capture retains Dorig2 within current R",Wanted()==2&&R(plan,188)==0&&R(plan,4)!=0);
++  PolicyState(40,3,1);Pipeline(6,false);Test("Theo40 R0 precedes missingcapture fallback completion",Wanted()==0&&R(Priority(1),0)==0&&R(plan,56)==0);
++  PolicyState(30,0,0);Pipeline(6,false);Test("C30 nonTheo incomplete R0",Wanted()==0);
++  PolicyState(41,4,1);Pipeline(6,false);Test("completion1 later otherGov41 preserves native stock2",Wanted()==2&&R(plan,64)==0&&R(plan,192)==0);
++  PolicyState(1,0,0);ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(plan,84,127);int frees=R(state,108);Call("finalize_pass",0,false,plan.ToInt32());Test("query cutoff retains fully certified positiveprefix1 Dorig2",R(plan,188)==1&&R(plan,60)==2&&R(plan,208)==1&&R(state,108)==frees+1);
++  ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(state,316,16);W(state,320,-2);Call("finalize_pass",0,false,plan.ToInt32());Test("malformed owner after positive slot discards certificate preserves Dorig",R(plan,188)==0&&R(plan,60)==2&&R(plan,4)!=0);W(state,316,-1);
++  ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(plan,204,4094);frees=R(state,108);Call("finalize_pass",0,false,plan.ToInt32());Test("4096 total point bound retains prefix and frees cutoffbuffer once",R(plan,188)==1&&R(plan,204)==4096&&R(plan,208)==1&&R(state,108)==frees+2);
++  ResetPlan();IntPtr dest=Mem(8);S(dest,0,8);W(state,100,4097);frees=R(state,108);Test("path entries4097 budget suffix freeonce",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),dest.ToInt32())==3&&R(state,108)==frees+1&&R(plan,204)==0);W(state,100,2);
++  // Endpoint sources and directland model are controlled fixture inputs.
++  //40 actual conflict-free certificates exercise lastSELECTEDindex39; ORDER
++  // is surrounded by observed guard values after it has been populated.
++  ResetPlan();W(plan,56,40);W(plan,76,1);W(plan,80,40);IntPtr source=A(plan,0x18200);W(source,0,20);W(source,4,2);W(source,8,0);W(source,12,0);W(source,16,-1);
++  for(int i=0;i<40;i++){IntPtr slot=A(plan,0x40600+i*1152);S(slot,0,(i+1)*5);for(int j=0;j<5;j++){W(slot,32+8*j,1000+i*10+j);W(slot,36+8*j,0);}W(plan,0x526a0+i*4,i);}
++  W(plan,0x527a0,0x11223344);Call("select_direct_plans",0,false,plan.ToInt32());Test("actual SELECTED40 and ORDER nonoverlap",R(plan,60)==40&&R(plan,0x52600+39*4)==39&&R(plan,0x526a0)==0&&R(plan,0x526a0+39*4)==39&&R(plan,0x527a0)==0x11223344);
++  PolicyState(40,3,1);int starts=R(state,600);Test("entry C40 returns0 no native execute",Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==0&&R(state,600)==starts);
++  PolicyState(39,3,1);Test("entry C39 calls original exactlyonce",Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==7&&R(state,600)==starts+1);
++  // Host callback simulates synchronous city registration. This proves gate
++  // reread and no marking ondenial, never actual enginecitycreation.
++  W(goal,0x1c,0);int arrivals=R(state,604);Test("arrival39 allowed callback registers40",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(cityContainer,8)==40&&R(state,604)==arrivals+1&&R(goal,0x1c)==1);W(goal,0x1c,0);
++  Test("second serialarrival40 denied before marker",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==-1&&R(cityContainer,8)==40&&R(state,604)==arrivals+1&&R(goal,0x1c)==0);
++  Test("denial sentinel normalizes0 inherited EBP+[20]",Call("normalize_caller",0,true,-1,goal.ToInt32(),ai.ToInt32(),0)==0);
++  Test("native false0 stays transport2",Call("normalize_caller",0,true,0,goal.ToInt32(),ai.ToInt32(),0)==2);
++  Test("native true1 stays3",Call("normalize_caller",0,true,1,goal.ToInt32(),ai.ToInt32(),0)==3);
++  foreach(int subtask in new int[]{1,2}){Test("other subtask sentinel uses native bool3 "+subtask,Call("normalize_caller",0,true,-1,goal.ToInt32(),ai.ToInt32(),subtask)==3);int before=R(state,604);Test("other subtask originalarrival once "+subtask,Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,subtask)==1&&R(state,604)==before+1);}
++  Test("nonsettle sentinel preserves native bool3",Call("normalize_caller",0,true,-1,otherGoal.ToInt32(),ai.ToInt32(),0)==3);int old=R(state,604);Test("nonsettle native arrival unchanged",Call("arrival_dispatch",otherGoal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(state,604)==old+1);
++  foreach(int c in new int[]{40,41}){PolicyState(c,4,1);old=R(state,600);Test("completion1 otherGov native execute C"+c,Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==7&&R(state,600)==old+1);old=R(state,604);Test("completion1 otherGov native arrival C"+c,Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(state,604)==old+1);}
++  PolicyState(39,3,1);Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0);PolicyState(40,3,1);W(goal,0x1c,0);Test("freshcount changed betweenentry/arrival denies",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==-1&&R(goal,0x1c)==0);
++  PolicyState(39,3,1);Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0);PolicyState(41,4,1);Test("freshgovernment changes entry/arrival permits native",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1);
++  // One finite integrated real GotoTaskSolution -> FollowPathToTask -> own
++  // arrivaldispatch -> own normalizer path. Only FindPath/WithinRange/Army
++  // inCity/transport predicates are controlled callbacks. Native Execute
++  // aggregate and complete Scheduler frame are NOT executed by this case.
++  IntegratedChain();
++ }
++ static void IntegratedChain(){
++  W(state,616,A(image,0x44a70).ToInt32());W(state,620,ai.ToInt32());W(state,624,army.ToInt32());W(state,628,center.ToInt32());
++  labels["goto_caller"]=Code("goto_caller").ToInt32()-image.ToInt32();Jump(A(image,0x11f10),Code("false8"));Jump(A(image,0x76940),Code("true4"));Patch(A(image,0x8a558+0x84),8);W(image,0x8a558+0x84,Code("true24").ToInt32());W(image,0x8a558+0x88,Code("true12").ToInt32());W(goal,0x34,Mem(0x80).ToInt32());
++  PolicyState(40,3,1);W(goal,0x1c,0);int old=R(state,604);Test("actual Goto Follow arrivaldenial normalizer chain returns0 beforemark",Call("goto_caller",goal.ToInt32(),true)==0&&R(goal,0x1c)==0&&R(state,604)==old);
++ }
++
+  public static Dictionary<string,object> Run(string project,string package,string file,int[] offsets,string[] names,int size,bool expectSafetyBug){
+   root=project;pack=package;fixtureN=file.Contains("N30")?30:25;labels=new Dictionary<string,int>();for(int i=0;i<names.Length;i++)labels[names[i]]=offsets[i];imageSize=size;cases=0;passed.Clear();Check(IntPtr.Size==4,"32-bit helper");SetErrorMode(0x8003);IntPtr mapped=IntPtr.Zero;try{
+    mapped=LoadLibraryW(file);Check(mapped!=IntPtr.Zero,"ordinary DLL loader "+Marshal.GetLastWin32Error());byte[] b=Read(mapped,imageSize);image=Mem(imageSize);Marshal.Copy(b,0,image,imageSize);
+    // Apply exact PE base relocations to the self-owned complete mapped copy.
+    int nt=R(image,0x3c),rel=R(image,nt+0xa0),length=R(image,nt+0xa4),end=rel+length;
+    for(int at=rel;at<end;){int page=R(image,at),block=R(image,at+4);Check(block>=8&&at+block<=end,"reloc block");for(int k=at+8;k<at+block;k+=2){int e=(ushort)Marshal.ReadInt16(image,k);if((e>>12)==3){int dst=page+(e&4095);W(image,dst,R(image,dst)+image.ToInt32()-mapped.ToInt32());}else Check((e>>12)==0,"reloc type");}at+=block;}
+-   int[] originalBodyStarts={0x655f0,0x65900,0x659a0,0x66b70},originalBodySizes={0x2d0,0xa0,0x320,0x30};byte[][] originalBodies=new byte[4][];for(int j=0;j<4;j++)originalBodies[j]=Read(A(image,originalBodyStarts[j]),originalBodySizes[j]);byte[] h3Core=Read(A(image,0xd4000),labels["H3Host"]-0xd4000);
+-   Setup();RX(image,labels["pass_state"]);RuntimeInputsGuard();byte[] b4Before=Read(Entry("bind_host"),labels["settler_name"]-labels["bind_host"]+13);
+-   int result=Call("safe_point",0,false,plan.ToInt32(),center.ToInt32());
+-   bool correct=R(state,4)==center.ToInt32()&&R(state,8)==center.ToInt32()&&R(state,12)==R(center,0)&&R(state,16)==R(center,4);
+-   if(expectSafetyBug){Test("old emission passes wrong position to World78 and Player14",!correct);return new Dictionary<string,object>{{"cases",cases},{"old_emission_rejected",true},{"expected_position",center.ToInt32()},{"World78_position",R(state,4)},{"Player14_position",R(state,8)},{"result",result},{"pass",true},{"gameplay_measured",false}};}
+-   Test("World78 and Player14 exact externalpointer and xyz",correct&&result==1);
+-   for(int i=1;i<9;i++)Check(R(state,208+4*i)==R(state,208)+4*i,"World nine outputpointer slot"+i);Test("World nine distinct contiguous outputs canaries intact",result==1);
+-   foreach(int raw in new int[]{2,-1,0,7,-2,255}){ResetPlan();W(state,0,raw);int got=Call("safe_point",0,false,plan.ToInt32(),center.ToInt32());Test("safe owner fullsigned "+raw,got==((raw==2||raw==-1)?1:(raw>=0&&raw<=31)?2:0));}
+-   W(state,0,-1);ResetPlan();D(state,32,1);Test("positive threat rejects",Call("safe_point",0,false,plan.ToInt32(),center.ToInt32())==2);D(state,32,Double.NaN);ResetPlan();Test("nonfinite threat wholepassUNKNOWN",Call("safe_point",0,false,plan.ToInt32(),center.ToInt32())==0&&R(plan,0)==0);D(state,32,0);
+-   foreach(int field in new int[]{24,28}){W(state,field,1);ResetPlan();Test("foreign presence rejects slotfield"+field,Call("safe_point",0,false,plan.ToInt32(),center.ToInt32())==2);W(state,field,0);}
+-   // Controlled producer input construction retains real emitted H3 role and
+-   // B4 producer bodies. No scalar G provider or mocked producer is introduced.
+-   ProducerInputs();TypesAndDepartures();PathsAndProducer();Wrappers();
+-   Test("B4 emitted body intact except separately tested bind_inputs entry",Same(b4Before,Read(Entry("bind_host"),b4Before.Length)));
+-   for(int j=0;j<4;j++)Test("original body retained from mapped candidate "+originalBodyStarts[j].ToString("x"),Same(originalBodies[j],Read(A(image,originalBodyStarts[j]),originalBodySizes[j])));Test("H3core classifier/currentmodel/roles intact",Same(h3Core,Read(A(image,0xd4000),h3Core.Length)));
+-   return new Dictionary<string,object>{{"cases",cases},{"checks",passed.ToArray()},{"fixture_only",true},{"B4_body_unchanged_except_bind_inputs_entry",true},{"inputguard_actual_emitted_independent_cases",22},{"guard_substitution_only_in_owned_pipeline_fixture",true},{"fatal_rejection_recovery_FPU_not_claimed",true},{"full_producer_acceptance",false},{"gameplay_measured",false},{"pass",true}};
++   int loadedExecute=R(mapped,0x8a598),copiedExecute=R(image,0x8a598);
++   Test("actual mapped HIGHLOWslot execute bound",loadedExecute==A(mapped,labels["execute_gate"]).ToInt32());
++   Test("own full mappedcopy relocated HIGHLOWslot execute bound",copiedExecute==Entry("execute_gate").ToInt32()&&image!=mapped);
++   byte[] disk=File.ReadAllBytes(file);int b2size=File.ReadAllBytes(Path.Combine(root,"PROEVEN","opening-b2","B2a-N30-TECHNICAL.payload.bin")).Length;
++   byte[] b2expected=File.ReadAllBytes(Path.Combine(root,"PROEVEN","opening-b2","B2a-N30-TECHNICAL.payload.bin"));
++   Test("actual loader B2payload byteexact",Same(b2expected,Read(A(mapped,0xd4000),b2size))&&Same(b2expected,Read(A(image,0xd4000),b2size)));
++   foreach(int rva in new int[]{0x413da,0x3625b,0xfe2d,0xfe51,0x61f0}){byte[] expected=new byte[5];Array.Copy(disk,rva-0xc00,expected,0,5);Test("actual loader B2hook exact "+rva.ToString("x"),Same(expected,Read(A(mapped,rva),5))&&Same(expected,Read(A(image,rva),5)));}
++   Setup();ProducerInputs();PolicyInputs();RX(image,labels["pass_state"]);Dependency("bind_inputs","true4");
++   byte[] ownBefore=Read(Entry("read_policy"),labels["settler_name"]-labels["read_policy"]+13);
++   IntegratedChain();
++   Test("all actual changed emitted functions byte-intact",Same(ownBefore,Read(Entry("read_policy"),ownBefore.Length)));
++   return new Dictionary<string,object>{{"native_calls",cases},{"checks",passed.ToArray()},{"mapped_base",mapped.ToInt32()},{"own_copy_base",image.ToInt32()},{"mapped_execute_slot",loadedExecute},{"copy_execute_slot",copiedExecute},{"normal_LoadLibrary_and_fullcopy_HIGHLOW_rebase",true},{"fixture_only",true},{"controlled_callbacks_not_engine",true},{"old109cases_executed",false},{"actual_changed_source_byte_intact",true},{"gameplay_measured",false},{"pass",true}};
+   }finally{foreach(IntPtr p in owned)VirtualFree(p,UIntPtr.Zero,0x8000);owned.Clear();if(mapped!=IntPtr.Zero)FreeLibrary(mapped);}
+  }
+ }

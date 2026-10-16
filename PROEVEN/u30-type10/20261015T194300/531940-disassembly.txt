@@ -1,0 +1,10 @@
+00531940 55                       push     ebp
+00531941 8bec                     mov      ebp, esp
+00531943 8b450c                   mov      eax, dword ptr [ebp + 0xc]
+00531946 8b0d18dda700             mov      ecx, dword ptr [0xa7dd18]
+0053194c 50                       push     eax
+0053194d e88e29f2ff               call     0x4542e0
+00531952 8b4030                   mov      eax, dword ptr [eax + 0x30]
+00531955 25000000ff               and      eax, 0xff000000
+0053195a 5d                       pop      ebp
+0053195b c20800                   ret      8

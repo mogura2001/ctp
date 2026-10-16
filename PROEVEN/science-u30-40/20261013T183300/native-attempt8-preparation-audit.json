@@ -1,0 +1,102 @@
+{
+  "timestamp_utc": "2026-10-14T13:54:37.955676+00:00",
+  "stage": "prepared_not_executed",
+  "candidate_unchanged": true,
+  "scope": "controlled callbacks and synthetic engine pin context only",
+  "files": [
+    {
+      "file": "prepare_native_fixtures.py",
+      "before_sha256": "df334ad6cf4e6de93f83c0d25d95c52d11725df7b949bfe499bf0c7cd3d56c90",
+      "after_sha256": "e9f97a8fa65ec87f4f4bc1cd5db8a857090d6ce68737fc78841a099dc13a9de9",
+      "unchanged": false
+    },
+    {
+      "file": "fixture-large-center-reader.bin",
+      "before_sha256": "13ec5eed57865fd0e228652e69b80998b8b001366edf1a5d85ba58b163a8d523",
+      "after_sha256": "c91f08224232e75b354bb8957d5f7dc314aad69af1d3586ae63b70bccca76dd2",
+      "unchanged": false
+    },
+    {
+      "file": "native-fixture-input-pins.json",
+      "before_sha256": "34bdfca86b71c85fdb8281fcd81d5c487f735d9499d212e63f8fda30d0ead063",
+      "after_sha256": "9bbab994add7c9b8b45dc9da8fbf2098b841cb2cb153655031096c5c20ea8c61",
+      "unchanged": false
+    },
+    {
+      "file": "native-fixtures.cs",
+      "before_sha256": "57b696168b52da76fb25b7c0c22c73c3a1fbbcc2c306ea4a9410a33ddfb41978",
+      "after_sha256": "56ca28aebcbdf1701cf6fc2bdd7d8ee89d06d7b5602d60bb983ae3d0ea1f55cb",
+      "unchanged": false
+    },
+    {
+      "file": "native-main.cs",
+      "before_sha256": "be16ef7f7e422f9ff05b20547ee1fab207b36c1a3efeeaff3e630d1cad3a3b31",
+      "after_sha256": "657e095ae7cfdcfa7f5c0b32512a4b262cc8efbc4fbc5a3996fb8b436b903ca3",
+      "unchanged": false
+    },
+    {
+      "file": "native-fixtures.exe",
+      "before_sha256": "6601b5f9778ddb0ed60a1bbb80a2eede74d1321b0f08b6455481dd5c715f6f27",
+      "after_sha256": "6601b5f9778ddb0ed60a1bbb80a2eede74d1321b0f08b6455481dd5c715f6f27",
+      "unchanged": true
+    }
+  ],
+  "large_center_exact_change": {
+    "offset": 31,
+    "inserted_hex": "8bbd14000000",
+    "meaning": "MOV EDI,[EBP+20] reload output base after REP STOSD advances EDI",
+    "old_length": 89,
+    "new_length": 95,
+    "all_other_bytes_equal": true
+  },
+  "other_fixture_pins_unchanged": true,
+  "candidate_sha256": "622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba",
+  "early_fixed_own_blocks": [
+    "0x00400000",
+    "0x00490000",
+    "0x00510000",
+    "0x00520000",
+    "0x00530000",
+    "0x00740000",
+    "0x00a70000"
+  ],
+  "finite_setup_change": "Reserve exact seven own 64KiB blocks before serializer/loader/image allocation; validate same set in Run; no ASLR retry/unmap/host patch/SCI guard bypass.",
+  "compiled_wrapper_sha256": "a72200e1a0e9917a9e398c132c492a681ea45d2887e9fac846d06a59c4da696e",
+  "byte_pins": {
+    "fixture-available.bin": "acb5a6ab6dd14a23e87ccc6252596d2030f153159a3733f99455fa2fc5e88325",
+    "fixture-convert-wrap.bin": "9fe01828c5e92afece5e4ed7495bb56dd2cd3835d4419ba2652b8802c4489a89",
+    "fixture-convert.bin": "d0a4c66efc832a545b2784b4fe590a7aff30b08124bb81376a3ec1649a4e2e96",
+    "fixture-delta.bin": "750ee5648d53b565a04490c1c01ae464a9467badf4d256cdeeefe1b1aefbfcfa",
+    "fixture-food.bin": "9a9b48efe1adb7c1f0dd7766c6ac00b6a1731ec34e51ba09e53b6be9d0b5b1b0",
+    "fixture-gate.bin": "77059a21abb145f8099cd78bbf25d4b7e3aada20f69d96fc84006e106831024e",
+    "fixture-large-center-reader.bin": "c91f08224232e75b354bb8957d5f7dc314aad69af1d3586ae63b70bccca76dd2",
+    "fixture-open.bin": "c8eaa4e991d447fc93400965f6ec5154a3afab985c5b78085d47161c29d0e7ed",
+    "fixture-position.bin": "f9358969832e496c691d236bfb112a3c3db0b4817b2626cf59572d6bb19ab14a",
+    "fixture-shim5.bin": "130707cebc1efe535d90dd924b833e6909c5c64beb5d9b32af38234d70d6da7b",
+    "fixture-spatial.bin": "b41aaad8a3def8770ad7bb4df47b8343fe5f83e13aca34a9b86b48e96e424c46",
+    "fixture-terrain.bin": "d3bb5399c57de522f03a2f1a12a0d29c7f5e6c1e6e2e853ac50fdfae9d2418ee"
+  },
+  "attempts_1_through_7_pins": {
+    "native-attempt1-stderr.txt": "69302b3568a52f90494a51f3e6be3adb00f5a7325b95d81bee5763b2708f235e",
+    "native-attempt1-stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-attempt1.json": "909910ddc449bd99603b621b3b70d5154c2c0e729f5612a53d09db41ad22bbd6",
+    "native-attempt2-stderr.txt": "82a7fc8b5498b8b88f1b7a808247225cec83f772bb1c9a5c3532a772e994355d",
+    "native-attempt2-stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-attempt2.json": "4d0f2ca995a754a9d7d7e8f5b9d5597f4c2e1275088c484ecf2b3e887d70b603",
+    "native-attempt3-stderr.txt": "847f7f5a0a40c1183d9661eb7c7b3e93f421df2b33f78fd099be80af199cec41",
+    "native-attempt3-stdout.txt": "751538fa5bb51050c0765ed2cffd42c0ff6cdc23a508316727765013000dcc4c",
+    "native-attempt3.json": "05eb7780e22137cf60311faf371d669e3a05f42500e9a08cde72bb83aa1cdb4c",
+    "native-attempt4-stderr.txt": "f24b27964482b740756c7699c503d847b4911a30fd02c3daec12ad742bdfa071",
+    "native-attempt4-stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-attempt4.json": "03e9809785a51af8988768b11badc94c45343a44ae2cfa9ee167f4aa641a46d9",
+    "native-attempt5-stderr.txt": "8709ab0eea6a4291b5bdf4ce934f95b177f8a1adf0f09cae106f6667d1aaa756",
+    "native-attempt5-stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-attempt5.json": "4fb4b2812a2d8e226fcba73389363db550d80818be371b48ba8f82a841d2707f",
+    "native-attempt6-stderr.txt": "3998b6e67b3de02fa3c97828eb95c0c049c8d8f7c82a28b58196d7da019d72ce",
+    "native-attempt6-stdout.txt": "92386d73cc60b4af687b5e8a5afe5555ef8667733a702e1c12aae691b4bc7b6d",
+    "native-attempt6.json": "3c934ca90f1eb46cf5267742f3e66eaf30df0013f1c7ab84e4dc17fc89f2bc60",
+    "native-attempt7-stderr.txt": "6650cf3fa76d62cff6b1e9784cfcf4b07598b5e2350de773aecb0e7cb8e7061c",
+    "native-attempt7-stdout.txt": "695fcdc47da9ee84421e2ea0e6cc1b4e0bca65ecd97e0cb5f5c2d262b42633fc",
+    "native-attempt7.json": "eddb096733d6a8fbf9472592779c7a7c4521a74a12249a0bba3f702f4d012733"
+  }
+}

@@ -1,0 +1,61 @@
+ static IntPtr policyOut,nativePlayer,cityContainer,completeSymbol,goal,otherGoal;
+ static void PolicyInputs(){
+  nativePlayer=new IntPtr(R(player,8));W(player,12,2);IntPtr players=Mem(32*4);W(players,8,nativePlayer.ToInt32());W(engine,0x67dd80,players.ToInt32());cityContainer=Mem(16);W(nativePlayer,0x12c0,cityContainer.ToInt32());policyOut=Mem(24);completeSymbol=new IntPtr(R(new IntPtr(R(ai,0xc4)),0));
+  W(state,608,cityContainer.ToInt32());W(state,612,Entry("normalize_dispatch").ToInt32());Dependency("ExecuteOriginal","execute");
+  goal=Mem(0x100);W(goal,0,A(image,0x8a558).ToInt32());W(goal,12,5);Jump(A(image,0x487e0),Code("arrival"));otherGoal=Mem(0x100);IntPtr otherVT=Mem(0x100);W(otherVT,0x90,Code("arrival").ToInt32());W(otherGoal,0,otherVT.ToInt32());W(otherGoal,12,4);
+  labels["normalize_caller"]=Code("normalize_caller").ToInt32()-image.ToInt32();
+  // Set original stock to2 from first selected settler class, zero later
+  // settlerclasses; retain nonsettler2 contribution. Original native Choose,
+  // Actual and Desired still execute actual mapped candidate bodies.
+  IntPtr classes=new IntPtr(R(new IntPtr(R(Aip(),0x7bc)),0));for(int i=0;i<4;i++){IntPtr entry=new IntPtr(R(new IntPtr(R(classes,16*i+12)),0));D(entry,0,i==1?2:i==0?-2:0);}
+  foreach(int off in new int[]{0x654c0,0x65cc0,0x668e0})Jump(A(image,off),Code("noop"));
+  PolicyState(1,0,0);
+ }
+ static void PolicyState(int count,int government,int completed){W(cityContainer,8,count);W(nativePlayer,0x94,government);D(completeSymbol,8,completed);W(state,404,count);}
+ static void Pipeline(int candidates,bool capture){Clear(plan,0x54800);Capture(candidates);Call("start_hook",scheduler.ToInt32(),true);if(capture)Call("capture_hook",R(ai,0x80),true,ai.ToInt32());Call("scope_hook",Aip().ToInt32(),false);}
+ static double Wanted(){return BitConverter.ToDouble(Read(A(DesiredArray(),8),8),0);}
+ static void ChangedCases(){
+  int[,] table={{29,0,0,1,1},{30,0,0,1,0},{30,3,0,1,10},{39,3,1,1,1},{40,3,1,1,0},{29,3,0,1,1},{28,3,1,1,12},{40,4,1,0,0},{41,4,1,0,0}};
+  for(int i=0;i<table.GetLength(0);i++){PolicyState(table[i,0],table[i,1],table[i,2]);int got=Call("read_policy",0,true,ai.ToInt32(),policyOut.ToInt32());Test("fresh policy C/gov/completion "+table[i,0]+"/"+table[i,1]+"/"+table[i,2],got==1&&R(policyOut,0)==table[i,3]&&R(policyOut,4)==table[i,4]&&R(policyOut,8)==table[i,0]);}
+  PolicyState(1,0,0);W(city,0x1f0,1);Pipeline(6,true);Test("new native coherent Dorig2 Gcert6 Actual2 desired6 priority6 deficit4",R(plan,184)==2&&R(plan,188)==6&&Wanted()==6&&R(Priority(1),0)==6&&R(ActualArray(),4)==2&&R(plan,64)==6);
+  Test("nonsettler original desired2 entries2",BitConverter.ToDouble(Read(A(DesiredArray(),16),8),0)==2&&R(Priority(2),0)==2);
+  Pipeline(0,true);Test("production Gcert0 incomplete union keeps Dorig2",R(plan,188)==0&&Wanted()==2&&R(Priority(1),0)==2);
+  Pipeline(6,false);Test("missing capture retains Dorig2 within current R",Wanted()==2&&R(plan,188)==0&&R(plan,4)!=0);
+  PolicyState(40,3,1);Pipeline(6,false);Test("Theo40 R0 precedes missingcapture fallback completion",Wanted()==0&&R(Priority(1),0)==0&&R(plan,56)==0);
+  PolicyState(30,0,0);Pipeline(6,false);Test("C30 nonTheo incomplete R0",Wanted()==0);
+  PolicyState(41,4,1);Pipeline(6,false);Test("completion1 later otherGov41 preserves native stock2",Wanted()==2&&R(plan,64)==0&&R(plan,192)==0);
+  PolicyState(1,0,0);ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(plan,84,127);int frees=R(state,108);Call("finalize_pass",0,false,plan.ToInt32());Test("query cutoff retains fully certified positiveprefix1 Dorig2",R(plan,188)==1&&R(plan,60)==2&&R(plan,208)==1&&R(state,108)==frees+1);
+  ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(state,316,16);W(state,320,-2);Call("finalize_pass",0,false,plan.ToInt32());Test("malformed owner after positive slot discards certificate preserves Dorig",R(plan,188)==0&&R(plan,60)==2&&R(plan,4)!=0);W(state,316,-1);
+  ResetPlan();Capture(6);Call("capture_heap",0,true,plan.ToInt32());W(plan,204,4094);frees=R(state,108);Call("finalize_pass",0,false,plan.ToInt32());Test("4096 total point bound retains prefix and frees cutoffbuffer once",R(plan,188)==1&&R(plan,204)==4096&&R(plan,208)==1&&R(state,108)==frees+2);
+  ResetPlan();IntPtr dest=Mem(8);S(dest,0,8);W(state,100,4097);frees=R(state,108);Test("path entries4097 budget suffix freeonce",Call("direct_path",0,false,plan.ToInt32(),center.ToInt32(),dest.ToInt32())==3&&R(state,108)==frees+1&&R(plan,204)==0);W(state,100,2);
+  // Endpoint sources and directland model are controlled fixture inputs.
+  //40 actual conflict-free certificates exercise lastSELECTEDindex39; ORDER
+  // is surrounded by observed guard values after it has been populated.
+  ResetPlan();W(plan,56,40);W(plan,76,1);W(plan,80,40);IntPtr source=A(plan,0x18200);W(source,0,20);W(source,4,2);W(source,8,0);W(source,12,0);W(source,16,-1);
+  for(int i=0;i<40;i++){IntPtr slot=A(plan,0x40600+i*1152);S(slot,0,(i+1)*5);for(int j=0;j<5;j++){W(slot,32+8*j,1000+i*10+j);W(slot,36+8*j,0);}W(plan,0x526a0+i*4,i);}
+  W(plan,0x527a0,0x11223344);Call("select_direct_plans",0,false,plan.ToInt32());Test("actual SELECTED40 and ORDER nonoverlap",R(plan,60)==40&&R(plan,0x52600+39*4)==39&&R(plan,0x526a0)==0&&R(plan,0x526a0+39*4)==39&&R(plan,0x527a0)==0x11223344);
+  PolicyState(40,3,1);int starts=R(state,600);Test("entry C40 returns0 no native execute",Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==0&&R(state,600)==starts);
+  PolicyState(39,3,1);Test("entry C39 calls original exactlyonce",Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==7&&R(state,600)==starts+1);
+  // Host callback simulates synchronous city registration. This proves gate
+  // reread and no marking ondenial, never actual enginecitycreation.
+  W(goal,0x1c,0);int arrivals=R(state,604);Test("arrival39 allowed callback registers40",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(cityContainer,8)==40&&R(state,604)==arrivals+1&&R(goal,0x1c)==1);W(goal,0x1c,0);
+  Test("second serialarrival40 denied before marker",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==-1&&R(cityContainer,8)==40&&R(state,604)==arrivals+1&&R(goal,0x1c)==0);
+  Test("denial sentinel normalizes0 inherited EBP+[20]",Call("normalize_caller",0,true,-1,goal.ToInt32(),ai.ToInt32(),0)==0);
+  Test("native false0 stays transport2",Call("normalize_caller",0,true,0,goal.ToInt32(),ai.ToInt32(),0)==2);
+  Test("native true1 stays3",Call("normalize_caller",0,true,1,goal.ToInt32(),ai.ToInt32(),0)==3);
+  foreach(int subtask in new int[]{1,2}){Test("other subtask sentinel uses native bool3 "+subtask,Call("normalize_caller",0,true,-1,goal.ToInt32(),ai.ToInt32(),subtask)==3);int before=R(state,604);Test("other subtask originalarrival once "+subtask,Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,subtask)==1&&R(state,604)==before+1);}
+  Test("nonsettle sentinel preserves native bool3",Call("normalize_caller",0,true,-1,otherGoal.ToInt32(),ai.ToInt32(),0)==3);int old=R(state,604);Test("nonsettle native arrival unchanged",Call("arrival_dispatch",otherGoal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(state,604)==old+1);
+  foreach(int c in new int[]{40,41}){PolicyState(c,4,1);old=R(state,600);Test("completion1 otherGov native execute C"+c,Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0)==7&&R(state,600)==old+1);old=R(state,604);Test("completion1 otherGov native arrival C"+c,Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1&&R(state,604)==old+1);}
+  PolicyState(39,3,1);Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0);PolicyState(40,3,1);W(goal,0x1c,0);Test("freshcount changed betweenentry/arrival denies",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==-1&&R(goal,0x1c)==0);
+  PolicyState(39,3,1);Call("execute_gate",goal.ToInt32(),true,ai.ToInt32(),0);PolicyState(41,4,1);Test("freshgovernment changes entry/arrival permits native",Call("arrival_dispatch",goal.ToInt32(),true,ai.ToInt32(),0,0,0)==1);
+  // One finite integrated real GotoTaskSolution -> FollowPathToTask -> own
+  // arrivaldispatch -> own normalizer path. Only FindPath/WithinRange/Army
+  // inCity/transport predicates are controlled callbacks. Native Execute
+  // aggregate and complete Scheduler frame are NOT executed by this case.
+  IntegratedChain();
+ }
+ static void IntegratedChain(){
+  W(state,616,A(image,0x44a70).ToInt32());W(state,620,ai.ToInt32());W(state,624,army.ToInt32());W(state,628,center.ToInt32());
+  labels["goto_caller"]=Code("goto_caller").ToInt32()-image.ToInt32();Jump(A(image,0x11f10),Code("false8"));Jump(A(image,0x76940),Code("true4"));Patch(A(image,0x8a558+0x84),8);W(image,0x8a558+0x84,Code("true24").ToInt32());W(image,0x8a558+0x88,Code("true12").ToInt32());W(goal,0x34,Mem(0x80).ToInt32());
+  PolicyState(40,3,1);W(goal,0x1c,0);int old=R(state,604);Test("actual Goto Follow arrivaldenial normalizer chain returns0 beforemark",Call("goto_caller",goal.ToInt32(),true)==0&&R(goal,0x1c)==0&&R(state,604)==old);
+ }

@@ -1,0 +1,29 @@
+{
+  "command": [
+    "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe",
+    "/nologo",
+    "/target:exe",
+    "/platform:x86",
+    "/baseaddress:0x10000000",
+    "/r:System.Web.Extensions.dll",
+    "/out:native-fixtures.attempt9.exe",
+    "native-main.cs",
+    "native-fixtures.cs"
+  ],
+  "cwd": "C:\\GIT\\ctp\\PROEVEN\\science-u30-40\\20261013T183300",
+  "exit_code": 0,
+  "at_utc": "2026-10-15T13:12:01.042113+00:00",
+  "helper_started": false,
+  "PE": {
+    "sha256": "935d86579ab880294a552401793ce86c982aa82f17e2781cf0b30fc211f47e81",
+    "machine": "0x14c",
+    "magic": "0x10b",
+    "imagebase": "0x10000000",
+    "size_of_image": "0xe000",
+    "dll_characteristics": "0x8540",
+    "relocations": [
+      49152,
+      12
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+native case 1 read_policy
+native case 2 read_policy
+native case 3 read_policy
+native case 4 read_policy
+native case 5 read_policy
+native case 6 read_policy
+native case 7 read_policy
+native case 8 read_policy
+native case 9 read_policy
+native case 10 start_hook
+native case 11 capture_hook
+native case 12 scope_hook
+native case 13 start_hook
+native case 14 capture_hook
+native case 15 scope_hook
+native case 16 start_hook
+native case 17 scope_hook
+native case 18 start_hook
+native case 19 scope_hook
+native case 20 start_hook
+native case 21 scope_hook
+native case 22 start_hook
+native case 23 scope_hook
+native case 24 capture_heap
+native case 25 finalize_pass
+native case 26 capture_heap
+native case 27 finalize_pass
+native case 28 capture_heap
+native case 29 finalize_pass
+native case 30 direct_path
+native case 31 select_direct_plans
+native case 32 execute_gate
+native case 33 execute_gate
+native case 34 arrival_dispatch
+native case 35 arrival_dispatch
+native case 36 normalize_caller
+native case 37 normalize_caller
+native case 38 normalize_caller
+native case 39 normalize_caller
+native case 40 arrival_dispatch
+native case 41 normalize_caller
+native case 42 arrival_dispatch
+native case 43 normalize_caller
+native case 44 arrival_dispatch
+native case 45 execute_gate
+native case 46 arrival_dispatch
+native case 47 execute_gate
+native case 48 arrival_dispatch
+native case 49 execute_gate
+native case 50 arrival_dispatch
+native case 51 execute_gate
+native case 52 arrival_dispatch
+{
+    "native_calls":  52,
+    "checks":  [
+                   "fresh policy C/gov/completion 29/0/0",
+                   "fresh policy C/gov/completion 30/0/0",
+                   "fresh policy C/gov/completion 30/3/0",
+                   "fresh policy C/gov/completion 39/3/1",
+                   "fresh policy C/gov/completion 40/3/1",
+                   "fresh policy C/gov/completion 29/3/0",
+                   "fresh policy C/gov/completion 28/3/1",
+                   "fresh policy C/gov/completion 40/4/1",
+                   "fresh policy C/gov/completion 41/4/1",
+                   "new native coherent Dorig2 Gcert6 Actual2 desired6 priority6 deficit4",
+                   "nonsettler original desired2 entries2",
+                   "production Gcert0 incomplete union keeps Dorig2",
+                   "missing capture retains Dorig2 within current R",
+                   "Theo40 R0 precedes missingcapture fallback completion",
+                   "C30 nonTheo incomplete R0",
+                   "completion1 later otherGov41 preserves native stock2",
+                   "query cutoff retains fully certified positiveprefix1 Dorig2",
+                   "malformed owner after positive slot discards certificate preserves Dorig",
+                   "4096 total point bound retains prefix and frees cutoffbuffer once",
+                   "path entries4097 budget suffix freeonce",
+                   "actual SELECTED40 and ORDER nonoverlap",
+                   "entry C40 returns0 no native execute",
+                   "entry C39 calls original exactlyonce",
+                   "arrival39 allowed callback registers40",
+                   "second serialarrival40 denied before marker",
+                   "denial sentinel normalizes0 inherited EBP+[20]",
+                   "native false0 stays transport2",
+                   "native true1 stays3",
+                   "other subtask sentinel uses native bool3 1",
+                   "other subtask originalarrival once 1",
+                   "other subtask sentinel uses native bool3 2",
+                   "other subtask originalarrival once 2",
+                   "nonsettle sentinel preserves native bool3",
+                   "nonsettle native arrival unchanged",
+                   "completion1 otherGov native execute C40",
+                   "completion1 otherGov native arrival C40",
+                   "completion1 otherGov native execute C41",
+                   "completion1 otherGov native arrival C41",
+                   "freshcount changed betweenentry/arrival denies",
+                   "freshgovernment changes entry/arrival permits native",
+                   "all actual changed emitted functions byte-intact"
+               ],
+    "fixture_only":  true,
+    "controlled_callbacks_not_engine":  true,
+    "old109cases_executed":  false,
+    "actual_changed_source_byte_intact":  true,
+    "gameplay_measured":  false,
+    "pass":  true,
+    "candidate_sha256":  "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810"
+}

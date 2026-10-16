@@ -1,0 +1,57 @@
+﻿{
+    "allowed":  false,
+    "baseline_allowed":  false,
+    "candidate_sha256":  "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+    "sources":  [
+                    {
+                        "path":  "alias-functions.ps1.fragment",
+                        "size":  2978,
+                        "sha256":  "00c916d739ea5258409cf29b2aa82ae9b6979d7f8a0d6166ea44036e5939cec9"
+                    },
+                    {
+                        "path":  "check_source.py",
+                        "size":  3714,
+                        "sha256":  "b2921f34e4e21b53a9cb8fcecc5f6a7b84dd2ef36697e5f6a2d847d47e07c57d"
+                    },
+                    {
+                        "path":  "Lees-Uitbreiding.py",
+                        "size":  19621,
+                        "sha256":  "7aac2b7039c82814bdcbbc373734ebda50ababa6a0fca19bc84d263a3a2e7033"
+                    },
+                    {
+                        "path":  "manifest.json",
+                        "size":  31633,
+                        "sha256":  "d179a8b8c7348cd5292891214e59c10c574bdc42d6cd55c40233006d35ecaba1"
+                    },
+                    {
+                        "path":  "original_core.py",
+                        "size":  11208,
+                        "sha256":  "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+                    },
+                    {
+                        "path":  "participants.json",
+                        "size":  405,
+                        "sha256":  "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+                    },
+                    {
+                        "path":  "prepare.py",
+                        "size":  4178,
+                        "sha256":  "3666ebb2f047ef768dd1a564f1429f5577698122df9a4e2026189fb52c8d85d3"
+                    },
+                    {
+                        "path":  "Uitbreiding.ps1",
+                        "size":  28036,
+                        "sha256":  "fadfc3534fe4bb9b00ff5c13cb2807f0a4dc71b1719e2e0a1dc425273b00703e"
+                    },
+                    {
+                        "path":  "UITVOERINSTRUCTIE.md",
+                        "sha256":  "cc47caeb1fa634294b5b8c25105440d977536db72f18f728bdece68d5e3441b6"
+                    }
+                ],
+    "source_manifest_sha256":  "4fa4136313a286b37ddbb3d8f6b4f79f9382c37a37b4309a4034498a01b9ef60",
+    "state":  "CONSUMED_C5_CLOSED_RESTORED_NO_T0_T1_BLACK_CAPTURES",
+    "at":  "2026-10-13T17:49:39.3027710+02:00",
+    "review":  "ANALYSE/REVIEW-UITBREIDING-30-40.md",
+    "scope":  "Single variant start; fixed T0 alias; one native T1; no baseline/T2/editor; menu ResetCursor only; work420 close470 max480; one focus recovery attempt; tested release restore and own alias cleanup",
+    "pc_shutdown_allowed":  false
+}

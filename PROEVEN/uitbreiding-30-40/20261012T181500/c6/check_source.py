@@ -1,0 +1,44 @@
+"""C6 finite offline syntax/staging/source audit; never runs controller/main."""
+from pathlib import Path
+import sys,ast,json,hashlib,importlib.util,datetime
+sys.dont_write_bytecode=True
+OUT=Path(__file__).resolve().parent;ROOT=OUT.parents[3]
+sha=lambda b:hashlib.sha256(b).hexdigest()
+for p in OUT.glob('*.py'):ast.parse(p.read_text('utf-8'),filename=str(p))
+m=json.loads((OUT/'manifest.json').read_text('utf-8'));assert not (ROOT/m['T0_alias']['path']).exists()
+assert m['T0_alias']['sha256']==m['T0_sha256'] and m['T0_alias']['existed_before'] is False
+for row in m['files']:
+ assert sha((ROOT/row['path']).read_bytes())==row['before_sha256']
+ assert sha((OUT/'backups'/row['path']).read_bytes())==row['before_sha256']
+ for arm in ['baseline','variant']:assert sha((OUT/'candidate'/arm/row['path']).read_bytes())==row[arm+'_sha256']
+for row in m['preserved_saves_before']+[m['profile_before']]:
+ assert sha((ROOT/row['path']).read_bytes())==row['sha256']
+ assert sha((OUT/'protected-backups'/row['path']).read_bytes())==row['sha256']
+for row in m['protected']+m['input_manifests']:assert sha((ROOT/row['path']).read_bytes())==row['sha256']
+for path in m['T0_paths']:assert sha((ROOT/path).read_bytes())==m['T0_sha256']
+sys.path.insert(0,str(OUT));spec=importlib.util.spec_from_file_location('c6_prepared_reader',OUT/'Lees-Uitbreiding.py');reader=importlib.util.module_from_spec(spec);spec.loader.exec_module(reader)
+bindings=[]
+for variant in ['release-v1','U30-40']:
+ b=reader.trusted_binding(variant);bindings.append(dict(variant=variant,ai_sha256=b['ai']['sha256'],sites=len(b['sites']),ranges=len(b['ranges'])))
+s=(OUT/'Uitbreiding.ps1').read_text('utf-8')
+old_s=(OUT.parent/'c5'/'Uitbreiding.ps1').read_text('utf-8')
+expected_s=old_s.replace('C5','C6').replace('20261013-C6','20261014-C6').replace('20261013-c5','20261014-c6')
+assert s==expected_s, 'C6 must preserve reviewed C5 controller logic'
+assert not (OUT/'variant'/'execution.json').exists()
+assert not (OUT/'variant'/'start-record.json').exists()
+assert not (OUT/'variant'/'T0-alias-owner.json').exists()
+assert s.index('[ExpansionWindow]::SetProcessDPIAware()')<s.index('function OwnState')
+assert 'pixel_width=$picture.Width' in s and 'physical_window=$physicalState' in s
+assert 'CreateOwnT0Alias' in s and 'RemoveOwnT0Alias' in s
+assert "Remove-Item -LiteralPath $paths.target" in s and '-Recurse' not in s
+assert s.index('RemoveOwnT0Alias\n',s.index('function RestoreOwnInstallation'))>s.index("'restore.json'",s.index('function RestoreOwnInstallation'))
+gate=json.loads((OUT/'C6-ROOT-VRIJGAVE.json').read_text('utf-8'));assert gate['allowed'] is False and gate['baseline_allowed'] is False
+source_names=['alias-functions.ps1.fragment','check_source.py','Lees-Uitbreiding.py','manifest.json','original_core.py','participants.json','prepare.py','Uitbreiding.ps1','UITVOERINSTRUCTIE.md']
+sources=[dict(path=name,size=(OUT/name).stat().st_size,sha256=sha((OUT/name).read_bytes())) for name in source_names]
+backup_pins=[]
+for row in m['files']:
+ for folder,key in [('backups','before_sha256'),('candidate/baseline','baseline_sha256'),('candidate/variant','variant_sha256')]:backup_pins.append(dict(path=folder+'/'+row['path'],sha256=row[key]))
+for row in m['preserved_saves_before']+[m['profile_before']]:backup_pins.append(dict(path='protected-backups/'+row['path'],sha256=row['sha256']))
+report=dict(stage='C6_SOURCE_ONLY_ALIAS_NOT_CREATED_NO_INSTALL_START_RPM',at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),sources=sources,backup_pins=backup_pins,bindings=bindings,game_alias_absent=True,release_files_and_backups=19,existing_saves_and_backups=9,profile_match=True,controller_execute_count=0,RPM_calls=0,game_file_mutations=0,DPI_source_before_queries=True,physical_capture_metadata_source=True,alias_cleanup_exact_literal_after_restore=True,root_gate_disabled=True)
+(OUT/'source-manifest.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')
+print(json.dumps(dict(stage=report['stage'],sources=len(sources),static_bindings=bindings,all_protected_match=True,alias_absent=True,source_manifest_sha256=sha((OUT/'source-manifest.json').read_bytes()))))

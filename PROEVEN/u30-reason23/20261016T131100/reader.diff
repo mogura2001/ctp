@@ -1,0 +1,93 @@
+--- type10/host1/Lees-Uitbreiding.py
++++ reason23/host1/Lees-Uitbreiding.py
+@@ -1,6 +1,7 @@
+ """Own goal3 reader; RPM only, no callbacks, writes, game starts or GUI input."""
+ from original_core import *
+ import time
++from h3_layout import HEADER, RESULT_SIZE, H2_RESULT_OFFSET, H2_ENTRY_OFFSET, H2_ENTRY_STRIDE, MAX_ENTRIES
+ 
+ BASE_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+ NEW_HASH='b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62'
+@@ -48,6 +49,12 @@
+         raw=cp.get_data(section.VirtualAddress,section.Misc_VirtualSize)
+         binding['ranges'].append(dict(module='ai',rva=section.VirtualAddress,length=len(raw),expected_hex=raw.hex(),kind='PIC-payload'))
+         binding['shared_plan_rva']=int(manifest['components']['state_rva'],16)
++        state_size=manifest['components']['state_size']
++        if binding['shared_plan_rva']!=0xdd000 or state_size!=0x54804:raise ValueError('Exact reason23 own-state layout changed')
++        if not 0x40600+1152<=state_size or binding['shared_plan_rva']+state_size>binding['ai']['size']:raise ValueError('Own slot outside bound AI state/module')
++        state_sections=[s for s in cp.sections if s.VirtualAddress==binding['shared_plan_rva'] and s.Misc_VirtualSize==state_size]
++        if len(state_sections)!=1:raise ValueError('Exact own state section missing')
++        binding['shared_plan_size']=state_size
+     binding['manifest_sha256']=MANIFEST_HASH;binding['package_sha256']=None
+     return binding
+ 
+@@ -90,6 +97,47 @@
+     return state
+ 
+ 
++
++
++def decode_slot0(slot,shared):
++    """Decode only own bytes using the existing H3 layout; never follow pointers."""
++    if len(slot)!=1152 or RESULT_SIZE!=1024:raise ValueError('Exact slot/H3 extent required')
++    h3=slot[128:1152]
++    formats={4:'<i',8:'<q'}
++    raw={key:(h3[off:off+size].hex() if key=='canonical_center' else struct.unpack_from('<d' if key=='actual_rations_double' else formats[size],h3,off)[0]) for key,(off,size) in HEADER.items()}
++    # Preserve double bits as rawhex too; invalid/nonfinite values never affect JSON equality.
++    raw['actual_rations_double']=h3[24:32].hex()
++    h2=dict(zip(('status','reason','count','mountains'),struct.unpack_from('<4i',h3,H2_RESULT_OFFSET)))
++    tied=shared['reason']==23 and shared['classified']==1 and shared['h3calls']==1 and shared['slots']==0
++    unknown='UNKNOWN_NOT_REACHED_OR_INCOMPLETE'
++    observed={key:unknown for key in raw}
++    observed.update(status=raw['status'],reason=raw['reason'])
++    current=raw['model_id']==1 and not (raw['status']==0 and raw['reason']==14)
++    h2_reached=current and (h2['status'] in (1,2) or 1<=h2['reason']<=7)
++    if current:observed['model_id']=1
++    if h2_reached:observed.update(h2_status=raw['h2_status'],open_count=raw['open_count'])
++    if current and (raw['status'] in (1,2) or raw['reason'] in (12,13)) and h2['status']==2:
++        for key in ('actual_stand','actual_rations_double','demand_i64'):observed[key]=raw[key]
++    if current and raw['center_conditions']==1:
++        for key in ('canonical_center','center_conditions','center_food_i64','city_bonus_i64'):observed[key]=raw[key]
++    if current and raw['reason']==13:observed['unsupported_entry_mask']=raw['unsupported_entry_mask']
++    indices=[raw[key] for key in ('mountain1_index','mountain2_index','mountain3_index','food_index')]
++    count=raw['open_count'];valid_count=0<=count<=MAX_ENTRIES and h2['count']==count
++    valid_indices=raw['status']==2 and valid_count and len(set(indices))==4 and all(0<=i<count for i in indices)
++    entries=unknown
++    if current and h2['status'] in (1,2) and 0<=h2['count']<=MAX_ENTRIES:
++        entries=[dict(index=i,position_hex=h3[H2_RESULT_OFFSET+H2_ENTRY_OFFSET+i*H2_ENTRY_STRIDE:H2_RESULT_OFFSET+H2_ENTRY_OFFSET+i*H2_ENTRY_STRIDE+8].hex(),terrain=struct.unpack_from('<i',h3,H2_RESULT_OFFSET+H2_ENTRY_OFFSET+i*H2_ENTRY_STRIDE+8)[0]) for i in range(h2['count'])]
++    if raw['status']==2 and current:
++        for key in raw:observed[key]=raw[key]
++    if not tied:
++        attribution='UNKNOWN_FIRSTCALL_PASS_PATTERN'
++    elif raw['status']==0 and raw['reason']==14:attribution='H3_HOST_FAILED_BEFORE_CURRENT_MODEL_LEAF_UNKNOWN'
++    elif raw['status']==0 and raw['reason'] in (10,11,12,13):attribution={10:'CAPACITY_CHAIN_LEAF_MAY_REMAIN_UNKNOWN',11:'WGF_PARTIAL_WRITES_ONLY',12:'CENTERFOOD_OR_ARITHMETIC_LEAF_UNKNOWN',13:'UNSUPPORTED_ENTRIES_LEAF_UNKNOWN'}[raw['reason']]
++    elif raw['status']==2 and current and valid_indices:attribution='SUPPORTED_RESULT_KEY_INVARIANT_QUESTION_REMAINS'
++    else:attribution='INCONSISTENT_OBSERVATION_NO_CERTIFICATE'
++    if not tied:
++        observed={key:unknown for key in raw};entries=unknown;valid_indices=False
++    return dict(rawhex=slot.hex(),h3_raw=raw,h2_raw=h2,h3_observed=observed,h2_observed=h2 if tied and h2_reached else unknown,h2_entries=entries,indices_valid=valid_indices,firstcall_attribution=attribution,firstcall_pattern=tied,only_last_shared_pass=True,other_civs_certified=False,raw_zero_is_not_measurement=True)
+ 
+ def native_expansion_state(read,eb,ab,participants,binding):
+     read=bounded(read)
+@@ -107,8 +155,11 @@
+     def uninitialized():return dict(loaded_settler_type='UNKNOWN_NOT_INITIALIZED',native_desired='UNKNOWN_NOT_INITIALIZED',native_actual='UNKNOWN_NOT_INITIALIZED',native_supplemental_deficit='UNKNOWN_NOT_INITIALIZED',current_front_cache='UNKNOWN_NOT_INITIALIZED',current_settler_armies='UNKNOWN_NOT_INITIALIZED',Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+     def shared_state():
+         if binding['variant']!='U30-40':return None
+-        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220)
++        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,candidates=68,slots=80,h3calls=128)
+         shared={key:i32(ptr+off) for key,off in fields.items()}
++        if binding['shared_plan_rva']!=0xdd000 or binding['shared_plan_size']!=0x54804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
++        slot=read(checked(ptr,0x40600),1152)
++        shared['slot0']=decode_slot0(slot,shared)
+         shared.update(only_last_pass_buffer=True,all_seven_telemetry_available=False,certificate_not_attributed_to_other_civs=True)
+         shared['raw_type_values_certified']=False
+         shared['raw_type_values_note']='UNCERTIFIED intermediate values; zero may be initialization, not evidence of a completed resolver write'
+@@ -176,7 +227,7 @@
+                 position=u32(army+0x64)
+                 armies.append(dict(army_id=ident,agent_state=i32(army+0x40),unit_count=amount,type_indexes=types,settler_count=types.count(t) if t is not None else 'UNKNOWN_EXACT_TOKEN_TYPE',native_Actual_state_excluded=i32(army+0x40) in (17,18),cache_position_hex=read(position,8).hex() if position else 'UNKNOWN_NATIVE_CACHE_POSITION'))
+         result[civ]=dict(selected,loaded_settler_type=t if t is not None else 'UNKNOWN_EXACT_TOKEN_TYPE',type_identity_source='native_newpass_global_resolver_context' if t is not None else 'display_name_not_token_lookup',native_stock_by_type=stock,engine_city_count=i32(u32(player+0x12c0)+8),current_front_cache=cities,current_settler_armies=armies,Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+-    return result,shared_state()
++    return result,shared
+ 
+ class ModuleInfo(C.Structure):
+     _fields_ = [('base', C.c_void_p), ('size', W.DWORD), ('entry', C.c_void_p)]

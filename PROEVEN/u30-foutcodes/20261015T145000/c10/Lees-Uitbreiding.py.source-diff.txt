@@ -1,0 +1,13 @@
+--- tested-C10/Lees-Uitbreiding.py
++++ own-C10/Lees-Uitbreiding.py
+@@ -3,8 +3,8 @@
+ import time
+ 
+ BASE_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+-NEW_HASH='f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810'
+-MANIFEST_HASH='9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341'
++NEW_HASH='8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17'
++MANIFEST_HASH='6bf3d57db8aa1f9c36ae5407292cfd597175420c22e16996a5d593737f8f3437'
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 

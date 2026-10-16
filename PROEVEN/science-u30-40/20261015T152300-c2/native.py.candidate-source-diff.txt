@@ -1,0 +1,147 @@
+--- read-only B4/native.py
++++ owned/native.py
+@@ -14,7 +14,9 @@
+          cities=52,remaining=56,desired=60,written=64,candidates=68,
+          classes=72,departures=76,slots=80,path_queries=84,position_queries=88,
+          nodes=92,hints=96,host=100,udb=104,player=108,world=112,path=116,
+-         d8=120,completion=124,h3calls=128,safetycalls=132)
++         d8=120,completion=124,h3calls=128,safetycalls=132,
++         original=184,gcert=188,policy=192,government=196,engine_count=200,
++         path_points=204,cutoff=208,context=212,source_overflow=216,classified=220)
+ CAPTURE=0x200; CAPTURE_CAP=4096
+ PREVIEW=0x8200; PREVIEW_CAP=4096; PREVIEW_STRIDE=16
+ DEPARTURES=0x18200; DEPARTURE_CAP=32; DEPARTURE_STRIDE=32
+@@ -22,10 +24,10 @@
+ STACK=0x24600; STACK_CAP=4096
+ HINTS=0x28600; HINT_CAP=4096; HINT_STRIDE=24
+ SLOTS=0x40600; SLOT_CAP=64; SLOT_STRIDE=1152
+-SELECTED=0x52600; SELECTED_CAP=30
+-ORDER=SELECTED+128
++SELECTED=0x52600; SELECTED_CAP=40
++ORDER=SELECTED+160
+ PATHCACHE=0x52800; PATHCACHE_CAP=128; PATHCACHE_STRIDE=24
+-PLAN_SIZE=0x54800
++PLAN_SIZE=0x79800
+ assert CAPTURE+CAPTURE_CAP*8==PREVIEW
+ assert PREVIEW+PREVIEW_CAP*PREVIEW_STRIDE==DEPARTURES
+ assert DEPARTURES+DEPARTURE_CAP*DEPARTURE_STRIDE==VISITED
+@@ -33,7 +35,7 @@
+ assert STACK+STACK_CAP*4==HINTS
+ assert HINTS+HINT_CAP*HINT_STRIDE==SLOTS
+ assert SLOTS+SLOT_CAP*SLOT_STRIDE==SELECTED
+-assert SELECTED+SELECTED_CAP*4<=PLAN_SIZE
++assert SELECTED+SELECTED_CAP*4<=ORDER
+ assert ORDER+SLOT_CAP*4<=PATHCACHE
+ assert PATHCACHE+PATHCACHE_CAP*PATHCACHE_STRIDE<=PLAN_SIZE
+ 
+@@ -117,7 +119,7 @@
+  r.mov('ecx','edi');original(r,'ArmyCount');r.test('eax','eax');r.j('js','departure_bad');r.alu('cmp','eax',1);r.j('jne','departure_skip');r.mov(m('ebp',-16),0);r.lea('eax',m('ebp',-16));r.push('eax');r.mov('ecx','edi');original(r,'ArmyType');checked_type(r,'eax','departure_bad');r.alu('cmp','eax',m('ebx',P['t']));r.j('jne','departure_skip');r.alu('cmp',m('edi',0x40),0);r.j('jne','departure_skip')
+  r.mov('eax',m('edi',0x60));r.test('eax','eax');r.j('jz','departure_nocargo');r.load('eax',m('eax',8),'sx16');r.test('eax','eax');r.j('js','departure_bad');r.j('jnz','departure_skip');r.label('departure_nocargo');r.load('eax',m('edi',0x88),'sx8');r.test('eax',0x18);r.j('jnz','departure_skip')
+  r.mov('eax',m('edi',0x74));r.alu('and','eax',0x7ff00000);r.alu('cmp','eax',0x7ff00000);r.j('je','departure_bad');r.fp('fld movement','dd',0,m('edi',0x70));r.mov(m('ebp',-24),0);r.mov(m('ebp',-20),0x40300000);r.fp('fcomp 16','dc',3,m('ebp',-24));r.op('fnstsw ax',b'\xdf\xe0');r.test('eax',0x0500);r.j('jnz','departure_skip');r.mov('ecx','edi');original(r,'IsWait');r.test('eax','eax');r.j('jnz','departure_skip')
+- r.alu('cmp',m('ebx',P['departures']),DEPARTURE_CAP);r.j('jae','departure_bad');r.mov('eax',m('edi',0x64));r.test('eax','eax');r.j('jz','departure_bad');r.lea('eax',m('ebp',-40));r.push('eax');r.push(m('ebx',P['owner']));r.mov('ecx','edi');original(r,'ArmyPos');r.alu('cmp','eax',1);r.j('jne','departure_bad')
++ r.alu('cmp',m('ebx',P['departures']),DEPARTURE_CAP);r.j('jae','departure_budget');r.mov('eax',m('edi',0x64));r.test('eax','eax');r.j('jz','departure_bad');r.lea('eax',m('ebp',-40));r.push('eax');r.push(m('ebx',P['owner']));r.mov('ecx','edi');original(r,'ArmyPos');r.alu('cmp','eax',1);r.j('jne','departure_bad')
+  r.mov(m('ebp',-44),-1);r.mov(m('ebp',-56),0);r.mov(m('ebp',-52),0);r.lea('eax',m('ebp',-56));r.push('eax');r.lea('eax',m('ebp',-44));r.push('eax');r.push(m('edi',12));r.mov('eax',m('ebx',P['player']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',0xc));r.unary('inc',m('ebx',P['position_queries']));r.alu('cmp','eax',1);r.j('jne','departure_bad');r.alu('cmp',m('ebp',-44),0);r.j('jne','departure_bad')
+  for source,out in ((-40,-64),(-56,-72)):
+   r.lea('eax',m('ebp',out));r.push('eax');r.lea('eax',m('ebp',source));r.push('eax');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','departure_bad')
+@@ -127,10 +129,10 @@
+  r.lea('eax',m('ebp',-72));r.push('eax');r.lea('eax',m('ebp',-56));r.push('eax');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','departure_bad')
+  r.push(m('ebx',P['owner']));r.mov('ecx','edi');original(r,'CityWhat');r.alu('cmp','eax',-1);r.j('je','departure_city_noqueue');checked_type(r,'eax','departure_bad');r.alu('cmp','eax',m('ebx',P['t']));r.j('jne','departure_city_noqueue');r.mov(m('ebp',-76),3);r.j('jmp','departure_city_build')
+  r.label('departure_city_noqueue');r.mov(m('ebp',-76),2);r.label('departure_city_build');r.push(m('ebx',P['t']));r.push(m('ebx',P['owner']));r.mov('ecx','edi');original(r,'CanBuild');r.alu('cmp','eax',1);r.j('je','departure_add');r.test('eax','eax');r.j('jnz','departure_bad');r.alu('cmp',m('ebp',-76),3);r.j('jne','departure_skip');r.mov(m('ebp',-76),4)
+- r.label('departure_add');r.mov('eax',m('ebx',P['departures']));r.alu('cmp','eax',DEPARTURE_CAP);r.j('jae','departure_bad');r.imul('eax','eax',DEPARTURE_STRIDE);r.lea('esi',m('ebx',DEPARTURES));r.alu('add','esi','eax');r.mov('eax',m('edi',12));r.mov(m('esi'),'eax');r.mov('eax',m('ebp',-76));r.mov(m('esi',4),'eax')
++ r.label('departure_add');r.mov('eax',m('ebx',P['departures']));r.alu('cmp','eax',DEPARTURE_CAP);r.j('jae','departure_budget');r.imul('eax','eax',DEPARTURE_STRIDE);r.lea('esi',m('ebx',DEPARTURES));r.alu('add','esi','eax');r.mov('eax',m('edi',12));r.mov(m('esi'),'eax');r.mov('eax',m('ebp',-76));r.mov(m('esi',4),'eax')
+  for off in (0,4):r.mov('eax',m('ebp',-56+off));r.mov(m('esi',8+off),'eax')
+  r.mov('eax',0);r.word(m('esi',14),'eax');r.mov(m('esi',16),-1);r.mov(m('esi',20),'edi');r.unary('inc',m('ebx',P['departures']))
+- r.label('departure_skip');r.mov('eax',1);r.j('jmp','departure_done');r.label('departure_bad');unknown(r,13);result(r,'departure_done',160,12)
++ r.j('jmp','departure_skip');r.label('departure_budget');r.mov(m('ebx',P['source_overflow']),1);r.mov(m('ebx',P['cutoff']),1);r.label('departure_skip');r.mov('eax',1);r.j('jmp','departure_done');r.label('departure_bad');unknown(r,13);result(r,'departure_done',160,12)
+ 
+ def safety(r):
+  # stdcall(Plan*, externalpoint*). 1 current safe, 2 not certified safe,
+@@ -163,23 +165,23 @@
+  # stdcall(Plan*, source*, destination*), exactly twenty four-byte slots.
+  # Every nonnull native returned pointer is freed once, including failures.
+  entry(r,'direct_path',128);r.mov(m('ebp',-16),0);r.mov(m('ebp',-20),0);r.mov(m('ebp',-24),0);r.mov(m('ebp',-28),0);r.mov(m('ebp',-32),0);r.mov(m('ebp',-36),0);r.mov(m('ebp',-40),0x3456ab89);r.mov(m('ebp',-12-32),0x4567bc90)
+- r.alu('cmp',m('ebx',P['path_queries']),128);r.j('jae','path_unknown');r.mov('edx',m('ebx',P['host']));r.alu('cmp',m('edx',0x6d0b94),0);r.j('jne','path_unknown');r.unary('inc',m('ebx',P['path_queries']))
++ r.alu('cmp',m('ebx',P['path_queries']),128);r.j('jae','path_budget');r.mov('edx',m('ebx',P['host']));r.alu('cmp',m('edx',0x6d0b94),0);r.j('jne','path_unknown');r.unary('inc',m('ebx',P['path_queries']))
+  # Push20..1. Slot12 is the normalized frozen d8 queryresult.
+  r.push(1);r.push(0);r.push(1);r.lea('eax',m('ebp',-32));r.push('eax');r.push(4096);r.push(0);r.push(0);r.push(1);r.push(m('ebx',P['d8']))
+  for off in (-28,-24,-20,-16):r.lea('eax',m('ebp',off));r.push('eax')
+  r.push(m('ebp',16));r.push(m('ebp',12));r.push(m('ebx',P['t']));r.push(1);r.push(0);r.push(0);r.mov('eax',m('ebx',P['path']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',12));r.mov(m('ebp',-36),'eax')
+  r.mov('edx',m('ebx',P['host']));r.alu('cmp',m('edx',0x6d0b94),0);r.j('jne','path_unknown');r.alu('cmp',m('ebp',-40),0x3456ab89);r.j('jne','path_unknown');r.alu('cmp',m('ebp',-44),0x4567bc90);r.j('jne','path_unknown')
+- r.alu('cmp',m('ebp',-36),1);r.j('jne','path_unknown');r.mov('esi',m('ebp',-20));r.test('esi','esi');r.j('jz','path_unknown');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',1);r.j('jl','path_unknown');r.alu('cmp','eax',4096);r.j('jg','path_unknown');r.alu('cmp','eax',m('ebp',-16));r.j('jg','path_unknown');r.shift('shl','eax',3);r.alu('add','eax','esi');r.j('jb','path_unknown')
++ r.alu('cmp',m('ebp',-36),1);r.j('jne','path_unknown');r.mov('esi',m('ebp',-20));r.test('esi','esi');r.j('jz','path_unknown');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',1);r.j('jl','path_unknown');r.alu('cmp','eax',4096);r.j('jg','path_budget');r.alu('cmp','eax',m('ebp',-16));r.j('jg','path_unknown');r.shift('shl','eax',3);r.alu('add','eax','esi');r.j('jb','path_unknown')
+  for off,point in ((0,12),(-8,16)):
+   if off==0:r.mov('edx','esi')
+   else:r.lea('edx',m('eax',-8))
+   r.lea('ecx',m('ebp',-64));r.push('ecx');r.push('edx');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','path_unknown');r.lea('ecx',m('ebp',-72));r.push('ecx');r.push(m('ebp',point));r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','path_unknown')
+   for part in (0,4):r.mov('eax',m('ebp',-64+part));r.alu('cmp','eax',m('ebp',-72+part));r.j('jne','path_unknown')
+   r.mov('eax',m('ebp',-24));r.shift('shl','eax',3);r.alu('add','eax','esi')
+- r.mov(m('ebp',-36),1);r.mov(m('ebp',-48),0)
+- r.label('path_points');r.mov('eax',m('ebp',-48));r.alu('cmp','eax',m('ebp',-24));r.j('jge','path_free');r.shift('shl','eax',3);r.alu('add','eax','esi');r.push('eax');r.push('ebx');original(r,'safe_point');r.alu('cmp','eax',1);r.j('je','path_next');r.alu('cmp','eax',2);r.j('jne','path_unknown');r.mov(m('ebp',-36),2);r.j('jmp','path_free')
++ r.mov('eax',m('ebx',P['path_points']));r.alu('add','eax',m('ebp',-24));r.j('jb','path_budget');r.alu('cmp','eax',4096);r.j('ja','path_budget');r.mov(m('ebp',-36),1);r.mov(m('ebp',-48),0)
++ r.label('path_points');r.mov('eax',m('ebp',-48));r.alu('cmp','eax',m('ebp',-24));r.j('jge','path_free');r.shift('shl','eax',3);r.alu('add','eax','esi');r.unary('inc',m('ebx',P['path_points']));r.push('eax');r.push('ebx');original(r,'safe_point');r.alu('cmp','eax',1);r.j('je','path_next');r.alu('cmp','eax',2);r.j('jne','path_unknown');r.mov(m('ebp',-36),2);r.j('jmp','path_free')
+  r.label('path_next');r.unary('inc',m('ebp',-48));r.j('jmp','path_points');r.label('path_unknown');unknown(r,21);r.mov(m('ebp',-36),0)
+- r.label('path_free');r.mov('eax',m('ebp',-20));r.test('eax','eax');r.j('jz','path_done');r.push('eax');engine(r,'eax',0x1866e0);r.unary('call','eax');r.alu('add','esp',4);r.mov(m('ebp',-20),0)
++ r.j('jmp','path_free');r.label('path_budget');r.mov(m('ebx',P['cutoff']),1);r.mov(m('ebp',-36),3);r.label('path_free');r.mov('eax',m('ebp',-20));r.test('eax','eax');r.j('jz','path_done');r.push('eax');engine(r,'eax',0x1866e0);r.unary('call','eax');r.alu('add','esp',4);r.mov(m('ebp',-20),0)
+  r.label('path_done');r.mov('eax',m('ebp',-36));r.epilogue(128,12)
+ 
+ def capture(r):
+@@ -191,18 +193,8 @@
+  r.label('capture_next');r.unary('inc',m('ebp',-20));r.j('jmp','capture_loop');r.label('capture_ok');r.mov(m('ebx',P['status']),2);r.mov('eax',1);r.j('jmp','capture_done');r.label('capture_bad');unknown(r,22);result(r,'capture_done',64)
+ 
+ def roles(r):
+- entry(r,'production_roles',96);r.mov(m('ebx',P['slots']),0);r.mov(m('ebp',-16),0)
+- r.label('roles_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['candidates']));r.j('jge','roles_ok');r.shift('shl','eax',3);r.lea('edi',m('ebx',CAPTURE));r.alu('add','edi','eax')
+- for off in (4,2,0):r.load('eax',m('edi',off),'sx16');r.push('eax')
+- r.mov('eax',m('ebx',P['world']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',0x168));r.op('movsx eax,ax',b'\x0f\xbf\xc0');r.test('eax','eax');r.j('jle','roles_next');r.mov(m('ebp',-20),'eax');r.alu('cmp',m('ebx',P['h3calls']),64);r.j('jae','roles_bad');r.unary('inc',m('ebx',P['h3calls']))
+- r.imul('esi',m('ebx',P['slots']),SLOT_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',SLOTS);r.lea('eax',m('esi',128));r.push('eax');r.push('edi');r.push(m('ebx',P['world']));r.push(m('ebx',P['owner']));original(r,'H3Classifier');r.test('eax','eax');r.j('jz','roles_bad');r.alu('cmp','eax',2);r.j('jne','roles_next');r.alu('cmp',m('esi',136),1);r.j('jne','roles_bad')
+- r.mov('eax',m('esi',196));r.test('eax','eax');r.j('js','roles_next');r.j('jnz','roles_now');r.alu('cmp',m('esi',192),0);r.j('je','roles_next');r.label('roles_now')
+- for off in (0,4):r.mov('eax',m('edi',off));r.mov(m('esi',off),'eax')
+- r.lea('eax',m('esi',8));r.push('eax');r.push('edi');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','roles_bad')
+- r.mov('eax',m('ebp',-20));r.alu('cmp','eax',32767);r.j('je','roles_q');r.unary('inc','eax');r.label('roles_q');r.mov(m('esi',16),'eax');r.mov(m('esi',20),-1);r.mov(m('esi',24),-1);r.mov('eax',m('esi',8));r.mov(m('esi',32),'eax');r.mov('eax',m('esi',12));r.mov(m('esi',36),'eax')
+- for i,idx in enumerate((100,104,108,112)):
+-  r.mov('eax',m('esi',128+idx));r.test('eax','eax');r.j('js','roles_bad');r.alu('cmp','eax',m('esi',224));r.j('jae','roles_bad');r.imul('eax','eax',12);r.alu('add','eax','esi');r.alu('add','eax',272);r.lea('edx',m('esi',40+8*i));r.push('edx');r.push('eax');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','roles_bad')
+- r.unary('inc',m('ebx',P['slots']));r.label('roles_next');r.unary('inc',m('ebp',-16));r.j('jmp','roles_loop');r.label('roles_ok');r.mov('eax',1);r.j('jmp','roles_done');r.label('roles_bad');unknown(r,23);result(r,'roles_done',96)
++ import union
++ union.roles(r)
+ 
+ def ordering(r):
+  # Sort indices, never heap/source data or H3 comparator inputs. Maximum64.
+@@ -216,7 +208,7 @@
+  # stdcall(Plan*, candidateSlot*, selectedSlot*): 1 iff any centre or
+  # mandatory worker key intersects; ordinary non-mandatory overlap allowed.
+  r.label('plan_conflict');r.prologue(16);r.mov('esi',m('ebp',12));r.mov('edi',m('ebp',16));r.mov('ecx',0)
+- r.label('conflict_outer');r.alu('cmp','ecx',5);r.j('jge','conflict_none');r.mov('edx',0);r.label('conflict_inner');r.alu('cmp','edx',5);r.j('jge','conflict_next_outer');r.mov('eax','ecx');r.shift('shl','eax',3);r.alu('add','eax','esi');r.mov('ebx','edx');r.shift('shl','ebx',3);r.alu('add','ebx','edi');r.mov('eax',m('eax',32));r.alu('cmp','eax',m('ebx',32));r.j('je','conflict_yes');r.unary('inc','edx');r.j('jmp','conflict_inner');r.label('conflict_next_outer');r.unary('inc','ecx');r.j('jmp','conflict_outer');r.label('conflict_none');r.mov('eax',0);r.j('jmp','conflict_done');r.label('conflict_yes');r.mov('eax',1);r.label('conflict_done');r.epilogue(16,12)
++ r.label('conflict_outer');r.alu('cmp','ecx',m('esi',28));r.j('jge','conflict_none');r.mov('edx',0);r.label('conflict_inner');r.alu('cmp','edx',m('edi',28));r.j('jge','conflict_next_outer');r.mov('eax','ecx');r.shift('shl','eax',3);r.alu('add','eax','esi');r.mov('ebx','edx');r.shift('shl','ebx',3);r.alu('add','ebx','edi');r.mov('eax',m('eax',32));r.alu('cmp','eax',m('ebx',32));r.j('je','conflict_yes');r.unary('inc','edx');r.j('jmp','conflict_inner');r.label('conflict_next_outer');r.unary('inc','ecx');r.j('jmp','conflict_outer');r.label('conflict_none');r.mov('eax',0);r.j('jmp','conflict_done');r.label('conflict_yes');r.mov('eax',1);r.label('conflict_done');r.epilogue(16,12)
+ 
+ def path_cache(r):
+  # type/source/destination identity, own result only, never native pointers.
+@@ -225,15 +217,16 @@
+  for own,cached in ((-24,0),(-20,4),(-32,8),(-28,12)):
+   r.mov('eax',m('ebp',own));r.alu('cmp','eax',m('esi',cached));r.j('jne','cached_next')
+  r.mov('eax',m('ebx',P['t']));r.alu('cmp','eax',m('esi',16));r.j('jne','cached_next');r.mov('eax',m('esi',20));r.j('jmp','cached_done');r.label('cached_next');r.unary('inc','edi');r.j('jmp','cached_lookup')
+- r.label('cached_new');r.alu('cmp','edi',PATHCACHE_CAP);r.j('jae','cached_unknown');r.push(m('ebp',16));r.push(m('ebp',12));r.push('ebx');original(r,'direct_path');r.test('eax','eax');r.j('jz','cached_done');r.mov(m('ebp',-36),'eax');r.imul('esi','edi',PATHCACHE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',PATHCACHE)
++ r.label('cached_new');r.alu('cmp','edi',PATHCACHE_CAP);r.j('jae','cached_budget');r.push(m('ebp',16));r.push(m('ebp',12));r.push('ebx');original(r,'direct_path');r.test('eax','eax');r.j('jz','cached_done');r.mov(m('ebp',-36),'eax');r.imul('esi','edi',PATHCACHE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',PATHCACHE)
+  for own,cached in ((-24,0),(-20,4),(-32,8),(-28,12)):
+   r.mov('eax',m('ebp',own));r.mov(m('esi',cached),'eax')
+- r.mov('eax',m('ebx',P['t']));r.mov(m('esi',16),'eax');r.mov('eax',m('ebp',-36));r.mov(m('esi',20),'eax');r.unary('inc',m('ebx',136));r.j('jmp','cached_done');r.label('cached_unknown');unknown(r,24);result(r,'cached_done',64,12)
++ r.mov('eax',m('ebx',P['t']));r.mov(m('esi',16),'eax');r.mov('eax',m('ebp',-36));r.mov(m('esi',20),'eax');r.unary('inc',m('ebx',136));r.j('jmp','cached_done');r.label('cached_budget');r.mov(m('ebx',P['cutoff']),1);r.mov('eax',3);r.j('jmp','cached_done');r.label('cached_unknown');unknown(r,24);result(r,'cached_done',64,12)
+ 
+ def selection(r):
+  entry(r,'select_direct_plans',96);r.mov(m('ebx',P['desired']),0);r.mov(m('ebp',-16),0)
+- r.label('select_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['slots']));r.j('jge','select_ok');r.mov('eax',m('ebx',P['desired']));r.alu('cmp','eax',m('ebx',P['remaining']));r.j('jge','select_ok');r.mov('eax',m('ebp',-16));r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.mov(m('ebp',-20),'eax');r.imul('edi','eax',SLOT_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',SLOTS);r.mov(m('ebp',-24),0)
+- r.label('select_conflicts');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',m('ebx',P['desired']));r.j('jge','select_endpoint');r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.imul('eax',m('edx'),SLOT_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',SLOTS);r.push('eax');r.push('edi');r.push('ebx');original(r,'plan_conflict');r.test('eax','eax');r.j('jnz','select_next');r.unary('inc',m('ebp',-24));r.j('jmp','select_conflicts')
++ r.label('select_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['slots']));r.j('jge','select_ok');r.mov('eax',m('ebx',P['desired']));r.alu('cmp','eax',m('ebx',P['remaining']));r.j('jge','select_ok');r.alu('cmp','eax',SELECTED_CAP);r.j('jae','select_ok');r.mov('eax',m('ebp',-16));r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.mov(m('ebp',-20),'eax');r.imul('edi','eax',SLOT_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',SLOTS);r.mov(m('ebp',-24),0)
++ r.label('select_conflicts');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',m('ebx',P['desired']));r.j('jge','select_endpoint');r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.imul('eax',m('edx'),SLOT_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',SLOTS);r.push('eax');r.push('edi');r.push('ebx');original(r,'plan_conflict');r.test('eax','eax');r.j('jnz','select_alternate');r.unary('inc',m('ebp',-24));r.j('jmp','select_conflicts')
++ r.label('select_alternate');r.alu('cmp',m('edi',72),1);r.j('jne','select_next');r.mov('eax',m('edi',76));r.alu('cmp','eax',64);r.j('jae','select_bad');r.shift('shl','eax',8);r.alu('add','eax','ebx');r.alu('add','eax',0x74800+128);r.alu('cmp',m('eax'),1);r.j('jne','select_next');r.push('eax');r.push('edi');r.push('ebx');original(r,'choose_alternative');r.mov(m('ebp',-24),0);r.j('jmp','select_conflicts')
+  r.label('select_endpoint');iface(r,P['player'],[m('ebx',P['t']),'edi'],0x34);r.test('eax','eax');r.j('jz','select_next');r.mov(m('ebp',-28),0);r.mov(m('ebp',-32),0)
+  # Three stable priorities: ordinary existing, frontproduction, newbuild.
+  # Within each priority choose lowest raw ID that certifies this destination.
+@@ -241,7 +234,7 @@
+  r.label('select_sources');r.mov('eax',m('ebp',-36));r.alu('cmp','eax',m('ebx',P['departures']));r.j('jge','select_best');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi',4));r.alu('cmp',m('ebp',-28),0);r.j('je','source_existing');r.alu('cmp',m('ebp',-28),1);r.j('je','source_front');r.alu('cmp','eax',2);r.j('je','source_path');r.alu('cmp','eax',3);r.j('je','source_path');r.j('jmp','source_next')
+  r.label('source_existing');r.alu('cmp','eax',1);r.j('jne','source_next');r.alu('cmp',m('esi',16),-1);r.j('jne','source_next');r.j('jmp','source_path')
+  r.label('source_front');r.alu('cmp','eax',3);r.j('je','source_front_match');r.alu('cmp','eax',4);r.j('jne','source_next');r.label('source_front_match');r.alu('cmp',m('esi',16),-1);r.j('jne','source_next')
+- r.label('source_path');r.lea('eax',m('esi',8));r.push('edi');r.push('eax');r.push('ebx');original(r,'cached_path');r.test('eax','eax');r.j('jz','select_bad');r.alu('cmp','eax',1);r.j('jne','source_next');r.mov('eax',m('esi'));r.alu('cmp',m('ebp',-44),-1);r.j('je','source_choose');r.alu('cmp','eax',m('ebp',-40));r.j('jae','source_next');r.label('source_choose');r.mov(m('ebp',-40),'eax');r.mov('eax',m('ebp',-36));r.mov(m('ebp',-44),'eax')
++ r.label('source_path');r.lea('eax',m('esi',8));r.push('edi');r.push('eax');r.push('ebx');original(r,'cached_path');r.alu('cmp','eax',3);r.j('je','select_ok');r.test('eax','eax');r.j('jz','select_bad');r.alu('cmp','eax',1);r.j('jne','source_next');r.mov('eax',m('esi'));r.alu('cmp',m('ebp',-44),-1);r.j('je','source_choose');r.alu('cmp','eax',m('ebp',-40));r.j('jae','source_next');r.label('source_choose');r.mov(m('ebp',-40),'eax');r.mov('eax',m('ebp',-36));r.mov(m('ebp',-44),'eax')
+  r.label('source_next');r.unary('inc',m('ebp',-36));r.j('jmp','select_sources');r.label('select_best');r.alu('cmp',m('ebp',-44),-1);r.j('jne','select_add');r.unary('inc',m('ebp',-28));r.j('jmp','select_priority')
+  r.label('select_add');r.mov('eax',m('ebp',-44));r.mov(m('edi',24),'eax');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi'));r.mov(m('edi',20),'eax');r.alu('cmp',m('ebp',-28),2);r.j('je','select_buildorigin');r.mov('eax',m('ebp',-20));r.mov(m('esi',16),'eax');r.label('select_buildorigin');r.mov('eax',m('ebx',P['desired']));r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.mov('eax',m('ebp',-20));r.mov(m('edx'),'eax');r.unary('inc',m('ebx',P['desired']))
+  r.label('select_next');r.unary('inc',m('ebp',-16));r.j('jmp','select_loop');r.label('select_ok');r.mov('eax',1);r.j('jmp','select_done');r.label('select_bad');unknown(r,25);result(r,'select_done',96)

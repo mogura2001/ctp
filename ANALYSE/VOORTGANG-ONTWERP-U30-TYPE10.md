@@ -1,0 +1,13 @@
+﻿# Voortgang ontwerp U30-type10
+
+15 oktober 2026, 19:41 Europe/Amsterdam. **Fase B afgerond; ontwerprun gestopt na overdracht.** Ownership uitsluitend dit bestand en ONTWERP/U30-TYPE10.md; PROJECTSTATUS.md bij root. Geen code/build/nativecall/RPM/installatie/spelbediening uitgevoerd.
+
+- Start19:36: oorspronkelijke A/projectafspraken/doelen/ketens/dekking/R44-2 gelezen.19:38 onderbroken vóór voorstelwrite op rootmelding van concrete parserfout; wachtstatus vastgelegd.19:40 hervat na expliciete rootacceptatie gecorrigeerde A.
+- Aantoonbaar af: ONTWERP/U30-TYPE10.md met exacte vervanging+dc/nonzero door+1c/TEST80000000h, additieve slot-/volledige30bytebodypins en readerbinding, overige guards/d8/foutcodebehoud/fallback intact. Optionele raw-readeruitbreiding als ongecertificeerde tussenwaarden apart begrensd.
+- Acceptatiestatus Doel1/1a: voorstel gereed voor rootreview/uitleg; toepassing en technisch bewijs nog niet begonnen. Geen bewezen uitbreidingseffect, geen oorspronkelijk doel afgerond. Bewijsbasis ANALYSE/U30-TYPE10.md19:40 en R44-2/PAIR-PROOF.json.
+- Controle-/proefplan af: beperkte echte531940maskercases plus bestaande ABI-/statische controles; geen leaf16-DLL/nieuwe volledige fixture. Daarna afzonderlijke nieuwe arm met vasteT0/éénn/stabielT1/normaalclose/releaseherstel, geen science-C2-integratie.
+- Open: rootreview/uitleg, eigen nieuwe C-pakketoplevering, technische acceptatie en één echte hostmeting/herstel; eventuele andere failure alleen gericht vervolgen. Geen onmisbare ontwerplancune overgebleven.
+- Laatste budget19:41:42: versebron14,5s, vijfuur30%/week73%, state ok. Pc blijft aan; geen afsluitopdracht of planning.
+- Volgende reviewbare oplevering: C-brondiff/manifest/kandidaat/statische+beperkte native-uitkomst vóór enige installatie; daarna aparte hostpaar-/herstelacceptatie. Geen werk of helper actief uit deze ontwerprun.
+
+15 oktober 2026,19:45 Europe/Amsterdam. Kleine verificatieherziening afgerond en ontwerprun opnieuw gestopt. Eigen B bevat nu expliciet addendum dat de eerdere nativefixture-eis vervangt: bestaande allocatie/stubfixture mist+1c/getterbinding; geen nieuwfixed-addressproject. Statische volledigebody/slot/ABI/uitgezondenTEST-JZ/bindpins plus aparte ene echtehostcontext1 is voldoende beperkte route, mits root drie concrete prestartpoorten controleert. Native-masker-/native-ABIcases ONGETEST, geen fakePASS; gameplay- en herstelmeetlat onverkort. Geen code/build/native/RPM/game uitgevoerd. Budget19:44:32 versebron6,2s vijf22%/week72%, stateok. Volgende oplevering rootreview technische C-delta, daarna afzonderlijk bestaand hostpaar/herstel. Pcaan.

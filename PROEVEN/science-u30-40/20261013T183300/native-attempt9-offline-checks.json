@@ -1,0 +1,24 @@
+{
+  "stage": "PREPARED_COMPILED_NO_HELPERSTART",
+  "candidate_sha256": "622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba",
+  "executable_sha256": "935d86579ab880294a552401793ce86c982aa82f17e2781cf0b30fc211f47e81",
+  "source_pins": [
+    {
+      "path": "native-main.cs",
+      "sha256": "2cd2fac10470893faaecc72237a90a5cef1f9ab180fb1570a6cc830f6fd38772"
+    },
+    {
+      "path": "native-fixtures.cs",
+      "sha256": "539234dc8d2ae9a570f37d4975d780fc4774dba7321079a526c8e763765d6174"
+    }
+  ],
+  "frozen_file_count": 91,
+  "all_frozen_files_unchanged": true,
+  "entire_existing_casebody_unchanged": true,
+  "large_center_pointerfix_preserved": true,
+  "MBI_runtime_assert_28_not_yet_executed": true,
+  "query": "full7intervals64KiB; unsigned64; base<=cursor,next>cursor,next<=2^32; cursor=min(next,end)",
+  "owned": "nonzero allocation registered before exactpointer/completecommitprivateRWchecks",
+  "cleanup": "own pointers/module/reservation only; logged bool/error; sticky CleanupOk; preserve first failure",
+  "helper_started": false
+}

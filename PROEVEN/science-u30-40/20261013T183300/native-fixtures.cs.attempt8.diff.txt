@@ -1,0 +1,38 @@
+--- native-fixtures.cs.before-attempt8
++++ native-fixtures.cs
+@@ -20,6 +20,14 @@
+  static IntPtr[] cells,envs,irr3;
+  static Shim shim;
+  static IntPtr entry;
++ // Finite own blocks, reserved before serializer/loader/large image allocation.
++ static readonly int[] earlyBlocks={0x000000,0x090000,0x110000,0x120000,0x130000,0x340000,0x670000};
++ public static void ReserveEngineBlocks(){
++  Assert(IntPtr.Size==4,"early x86 required");engine=new IntPtr(0x400000);
++  try{foreach(int off in earlyBlocks){IntPtr wanted=A(engine,off),p=VirtualAlloc(wanted,(UIntPtr)0x10000,0x3000,4);Assert(p==wanted,"early synthetic fixed engine block "+wanted.ToInt32().ToString("x8")+" error"+Marshal.GetLastWin32Error());owned.Add(p);}}
++  catch{ReleaseOwned();throw;}
++ }
++ public static void ReleaseOwned(){foreach(IntPtr p in owned)VirtualFree(p,UIntPtr.Zero,0x8000);owned.Clear();}
+  static IntPtr A(IntPtr p,int o){return new IntPtr(p.ToInt32()+o);}
+  static int R(IntPtr p,int o){return Marshal.ReadInt32(p,o);}
+  static long L(IntPtr p,int o){return Marshal.ReadInt64(p,o);}
+@@ -59,10 +67,11 @@
+  public static Dictionary<string,object> Run(string root,int[] range,int[] pinRvas,string[] pinHex,int[] fixAt,int[] fixOff){
+   Assert(IntPtr.Size==4,"x86 required");SetErrorMode(0x8003);IntPtr module=IntPtr.Zero;IntPtr reserved=IntPtr.Zero;
+   try{
++   if(engine==IntPtr.Zero)ReserveEngineBlocks(); // Preserve the existing PS launcher entry.
+    string file=Path.Combine(root,"SCIENCE-C1-CREDIT-OFF.prepared.dll");byte[] raw=File.ReadAllBytes(file);Assert(Hash(raw)=="622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba","candidate pin");
+    reserved=VirtualAlloc(new IntPtr(0x20000000),(UIntPtr)0x140000,0x2000,1);Assert(reserved==new IntPtr(0x20000000),"preferred DLLbase reserve");module=LoadLibraryExW(file,IntPtr.Zero,1);if(module==IntPtr.Zero)throw new Win32Exception();int size=R(module,R(module,0x3c)+0x50);byte[] mapped=Read(module,size);image=Mem(size);Marshal.Copy(mapped,0,image,size);
+    engine=new IntPtr(0x400000);var chunks=new HashSet<int>();chunks.Add(0);chunks.Add(0x130000);chunks.Add(0x670000);foreach(int rva in pinRvas)chunks.Add(rva&unchecked((int)0xffff0000));
+-   foreach(int off in chunks){IntPtr wanted=A(engine,off),p=VirtualAlloc(wanted,(UIntPtr)0x10000,0x3000,4);Assert(p==wanted,"synthetic fixed engine block "+wanted.ToInt32().ToString("x8")+" error"+Marshal.GetLastWin32Error());owned.Add(p);}
++   Assert(chunks.SetEquals(earlyBlocks),"early reserved exact required block set");foreach(int off in chunks)Assert(owned.Contains(A(engine,off)),"early own block binding");
+    byte[] exe=File.ReadAllBytes(Path.GetFullPath(Path.Combine(root,"..","..","..","CTP-og","ctp_program","ctp","civctp.exe")));Assert(Hash(exe)=="b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79","engine bytes pin");Marshal.Copy(exe,0,engine,0x400);
+    for(int i=0;i<pinRvas.Length;i++){byte[] b=new byte[pinHex[i].Length/2];for(int j=0;j<b.Length;j++)b[j]=Convert.ToByte(pinHex[i].Substring(j*2,2),16);Marshal.Copy(b,0,A(engine,pinRvas[i]),b.Length);}
+    // Original H3Host checks food/terrain wrapper bytes too, supplied as data.
+@@ -114,6 +123,6 @@
+    Patches.Add(new Dictionary<string,object>{{"name","temporary isolated large-center reader"},{"image_rva",centerCall},{"before",Hex(centerBefore)},{"after",Hex(centerAfter)},{"length",5},{"restored",Equal(centerBefore,Read(A(image,centerCall),5))}});
+    Assert(Equal(mapped,Read(module,size)),"mapped candidate bytes unchanged");
+    return new Dictionary<string,object>{{"pass",true},{"bitness",32},{"helper_pid",System.Diagnostics.Process.GetCurrentProcess().Id},{"native_calls",Results.Count},{"cases",Results},{"patches",Patches},{"mapped_candidate_unchanged",true},{"Hostvalidator_unchanged",true},{"original_recalculation_body_preserved_except_dispatch",true},{"controlled_callbacks",true},{"synthetic_engine_pin_context",true},{"original_engine_queries_executed",false},{"gameplay_measured",false},{"actual_engine_host_acceptance",false},{"candidate_sha256",Hash(raw)}};
+-  }finally{foreach(IntPtr p in owned)VirtualFree(p,UIntPtr.Zero,0x8000);if(module!=IntPtr.Zero)FreeLibrary(module);if(reserved!=IntPtr.Zero)VirtualFree(reserved,UIntPtr.Zero,0x8000);}
++  }finally{ReleaseOwned();if(module!=IntPtr.Zero)FreeLibrary(module);if(reserved!=IntPtr.Zero)VirtualFree(reserved,UIntPtr.Zero,0x8000);}
+  }
+ }

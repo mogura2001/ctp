@@ -1,0 +1,11 @@
+--- reviewed-basis/policy.py
++++ unreviewed-C2/policy.py
+@@ -50,7 +50,7 @@
+  for helper in ('resolve_type','preview_scope','original_demand'):
+   invoke(r,helper);r.test('eax','eax');r.j('jz','final_done')
+  r.mov(m('ebx',n.P['context']),1);r.mov(m('ebx',n.P['gcert']),0);r.alu('cmp',m('ebx',n.P['remaining']),0);r.j('je','final_combine');r.alu('cmp',m('ebp',-16),2);r.j('jne','final_fallback')
+- invoke(r,'canonical_prefix');r.test('eax','eax');r.j('jz','final_fallback');invoke(r,'production_roles');r.test('eax','eax');r.j('jz','final_fallback')
++ invoke(r,'canonical_prefix');r.test('eax','eax');r.j('jz','final_fallback');invoke(r,'location_roles');r.test('eax','eax');r.j('jz','final_fallback')
+  for kind,offset in ((2,0x8c),(1,0x90)):
+   r.mov('eax',m('ebx',n.P['owner']));r.push(kind);r.push(m('eax',offset));r.push('ebx');r.j('call','read_set');r.test('eax','eax');r.j('jz','final_fallback')
+  r.mov('eax',m('ebx',n.P['cities']));r.alu('cmp','eax',m('ebx',n.P['engine_count']));r.j('jne','final_fallback');invoke(r,'order_roles');invoke(r,'select_direct_plans');r.test('eax','eax');r.j('jz','final_fallback');r.mov('eax',m('ebx',n.P['desired']));r.mov(m('ebx',n.P['gcert']),'eax');r.j('jmp','final_combine')

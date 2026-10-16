@@ -1,0 +1,15 @@
+# C9: beperkte bronoverdracht voor expliciete herstart
+
+14 oktober 2026 16:41 Europe/Amsterdam. Sourceprep gereed, uitvoerder gestopt voor rootreview; gate allowedfalse/baselinefalse/HUMAN_ONE_N. Geen installatie/alias/controller/game/GUI/RPM/helper of CDonderzoek uitgevoerd; C7/C8 intact. Kort B-addendum6a954ca51a8df1db7fa9721ea8627c1e97e2d80840294342b45cc62f1698fd16 daadwerkelijk gelezen.
+
+Enige operationele controllerdelta tov rootgereviewde C7: eigen C9-gate/owner/labels/run-id en Start50→25 metbijpassende fouttekst. Volledige genormaliseerdeparityPASS; Work15/hard5/10/deadlines600/690/720 en430/480/525/pair/native−1→0/HUMAN_ONE_N/nulcontroller-n/cleanup/herstel identiek. Reader alleen C7→C9gate/teksten, core/participantsbytegelijk. Protocol eigen absolute c9/variant/T0.json en≥25/>25; WMI0UNKNOWN, geen concreteMediaLoadedfalse of extraCDonderzoek.
+
+**source-manifest SHA256 `c7b82f90c00749cb81f18d2a5988316b6502a8f0800dca4f94017224089ed91e`**,10bronpins/67staging-/herstelpins. Controller **`6e234d037957e16396f781b9f0cbcc2a7041aa93dbe8af8a578b10e2798941eb`**. Protocol **`a17ca6273c1db77bd94ed1b9a8bd527787747b95b557d0cc9d08967648086fc1`**. Gatebindt10sources+voorstel+manifest;10volledige C7→C9diffs. Kopie alleen3 eigen stagingbackupfolders/bronbestanden, geen oude arm-/execution-/failedpreflightrecords.
+
+PythonAST/PSparser0fouten/KeycommandAST0. Huidige19release/negen saves/profiel/truebackups/beide19stagingarmen/protected/input/T0/Bedien/sourcepins match, aliasafwezig en geenvariant/baselineexecutionmap. Geërfde3rejectcases nietherhaald; geen nieuwframework of sourcebusinessonderzoek. Statischebindings geërfd door readerbusiness/diskinputhashgelijkheid, geenloadedmeting. Een vroege kopietekstsubstitutie raakte twee lokale SHA-literals in prepare/gate/checker; oorspronkelijke kandidaat-/Bedienpins expliciet hersteld en gatecandidateassertie toegevoegd vóór deze definitieve freeze. Controller/candidate/stagingbytes waren correct en ongewijzigd; geen liveactie.
+
+U30candidatef4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810; releaseherstel eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890; vasteT0 8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26; Bedien d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74. Sciencekandidaatnietgebruikt. Geërfdecompleteherstelroute behoudt echtecount0/cleanupbudget/ownbeforecandidate/backups/autosavearchivering/release19/negen saves/profiel/eigenhashalias en onverwachte gebruikersbytes.
+
+Budget16:38:27 bron14:38:06UTC/leeftijd20,5s vijf31/week41; laatste16:39:46 bron14:38:44UTC/leeftijd62,1s vijf31/week41/stateok. Voor start verse≥25/>25/count0 volgensvastepoort. Geenhardbudgetwijziging/pcactie.
+
+Doel1/1a bron voorbereid/offlinegecontroleerd, activatie/gameplay nogopen; Doel3 actuelegetesterelease/backups/saves/profiel behouden; overige projectdoelen geen nieuwe acceptatie. Volgende concrete oplevering root beperktegenormaliseerdedelta/pinreview, daarna afzonderlijke ene C9-arm. Niets actief/geenachtergrondtimer/pcafsluiting.

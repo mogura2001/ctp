@@ -1,0 +1,19 @@
+"""One bounded hidden own x86 fixture; timeout terminates exact owned helper."""
+from pathlib import Path
+import subprocess,time,json,hashlib,datetime
+OUT=Path(__file__).resolve().parent;PACK=OUT.parent
+candidate=PACK/'U30-40.prepared.dll';pinned=hashlib.sha256(candidate.read_bytes()).hexdigest()
+assert pinned=='8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17'
+record=OUT/'policy-process-r4.json';assert not record.exists(),'Preserve earlier attempt; use separate attempt output'
+helper='C:/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe'
+start=time.monotonic();proc=subprocess.Popen([helper,'-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',str(OUT/'native-policy.ps1')],stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW)
+row=dict(started_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),pid=proc.pid,candidate_sha256=pinned,owned_process=True,hidden=True,timeout_seconds=45)
+try:
+ stdout,stderr=proc.communicate(timeout=45);row['exit_code']=proc.returncode
+except subprocess.TimeoutExpired:
+ row['timeout']=True;proc.kill();stdout,stderr=proc.communicate(timeout=10);row['exit_code_after_kill']=proc.returncode;row['result_acceptance']=False
+row['elapsed_seconds']=round(time.monotonic()-start,3);row['terminal_confirmed']=proc.poll() is not None
+(OUT/'policy-r4.stdout.log').write_bytes(stdout);(OUT/'policy-r4.stderr.log').write_bytes(stderr)
+row['candidate_unchanged']=hashlib.sha256(candidate.read_bytes()).hexdigest()==pinned
+record.write_text(json.dumps(row,indent=2)+'\n','utf-8');print(json.dumps(row),flush=True)
+if row.get('exit_code')!=0 or not row['terminal_confirmed'] or not row['candidate_unchanged']:raise SystemExit(1)

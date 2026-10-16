@@ -1,0 +1,48 @@
+native case 1 finalize_pass
+native case 2 finalize_pass
+native case 3 finalize_pass
+native case 4 bind_host
+native case 5 finalize_pass
+native case 6 finalize_pass
+native case 7 finalize_pass
+native case 8 finalize_pass
+native case 9 start_hook
+native case 10 capture_hook
+native case 11 scope_hook
+{
+    "native_calls":  11,
+    "checks":  [
+                   "actual mapped HIGHLOWslot execute bound",
+                   "own full mappedcopy relocated HIGHLOWslot execute bound",
+                   "actual loader B2payload byteexact",
+                   "actual loader B2hook exact 413da",
+                   "actual loader B2hook exact 3625b",
+                   "actual loader B2hook exact fe2d",
+                   "actual loader B2hook exact fe51",
+                   "actual loader B2hook exact 61f0",
+                   "early scope remains44",
+                   "early read_policy remains44",
+                   "host actual guard30 survives finalize",
+                   "actual bind_inputs36 survives host",
+                   "actual bind_inputs36 survives host and finalize",
+                   "resolve_type actual guard10 survives finalize",
+                   "preview actual guard11 survives finalize",
+                   "original_demand actual guard40 survives finalize",
+                   "existing success Dorig2 Gcert6 desired6 context1 status5",
+                   "changed host bytes intact",
+                   "changed finalize bytes intact",
+                   "all actual changed emitted functions byte-intact"
+               ],
+    "mapped_base":  536870912,
+    "own_copy_base":  175702016,
+    "mapped_execute_slot":  537767313,
+    "copy_execute_slot":  176598417,
+    "normal_LoadLibrary_and_fullcopy_HIGHLOW_rebase":  true,
+    "fixture_only":  true,
+    "controlled_callbacks_not_engine":  true,
+    "old109cases_executed":  false,
+    "actual_changed_source_byte_intact":  true,
+    "gameplay_measured":  false,
+    "pass":  true,
+    "candidate_sha256":  "8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17"
+}

@@ -1,0 +1,116 @@
+{
+  "stage": "C2_CORRECTIONS_F1_MANIFEST_PIN_CHECKER_SOURCE_ONLY_PENDING_ROOT_REVIEW",
+  "at_utc": "2026-10-15T17:37:19.524912+00:00",
+  "all_python_AST_parses": true,
+  "old_checkpoint_30_pins_preserved_with_original_source_copies": true,
+  "context_only_guards": 2,
+  "postscience_guard_immediate": true,
+  "end_guard_before_teardown": true,
+  "finite_layout_arithmetic_pass": true,
+  "checker_C2_layout_and_labels_prepared_not_executed": true,
+  "build_gate": false,
+  "candidate_built": false,
+  "native_calls": 0,
+  "pins": [
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/union.py",
+      "sha256": "90d9401a692dab555c6879bef3a9df4d9ae38c14c40e754d72c177d4dc0af52c",
+      "size": 8454
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/build_candidate.py",
+      "sha256": "b917c57e7289034ba63428237d397f94d51daed6fab085503d15b150d504f84a",
+      "size": 12438
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/check_candidate.py",
+      "sha256": "ae0d49106865e663c814589d42a6b49bc6adff256c89726fb74caaec5cc045a9",
+      "size": 5893
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/source-checkpoint.json",
+      "sha256": "78f0bb2bdaaa82bf2fe302f2e2fafeac86177debef8102b4cf7f2e6d8970a5e4",
+      "size": 5365
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/ROOT-BRONREVIEW.json",
+      "sha256": "ebbc5ed3d736b6ce5082c5684b2637843668b981ae98e0802dfc11d3c071a5bf",
+      "size": 140
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "size": 3318
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/candidate-manifest.json",
+      "sha256": "2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387",
+      "size": 185761
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/package-pins.json",
+      "sha256": "8c06292ac840c5db28ddc6f9d1afc66b71551f88af39e711cbc1a4244343a018",
+      "size": 3827
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/native-attempt9-preparation.json",
+      "sha256": "6f7300bb87fdc335cf11cc125ba5d19d73bd9cc63a4f78a0d1c9c3b873cee44f",
+      "size": 15224
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/native-attempt9-package.json",
+      "sha256": "9963d120df1b9dd1bfb049fedc1a50c99c6b7125bbb4954cf8a6feb93dff9e8d",
+      "size": 2767
+    },
+    {
+      "path": "ONTWERP/SCIENCE-C2-OVERDRACHT.md",
+      "sha256": "ebbf78ccee2922078b9086d8e4532f4e86732ebd202bc5806cfdbc44c6b7c877",
+      "size": 8222
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/build_candidate.py.before",
+      "sha256": "db36cbeeafb46694e9a99bf10cf15be942f42b6caf386a0217d7096f84c7a17b",
+      "size": 11443
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/build_candidate.py.correction-diff.txt",
+      "sha256": "bffd79a362514aea34ee9dbd9a45137c910d0da22249d444ee47488b7b87e94b",
+      "size": 5912
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/build_candidate.py.correction-v2-diff.txt",
+      "sha256": "0a2bcec652e6f98b845ee06b4cb3f6a2f9501a487836d1357f55f774edeb313d",
+      "size": 6091
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/check_candidate.py.before",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/check_candidate.py.correction-v2-diff.txt",
+      "sha256": "559899385037bbd0ca19244bcf7606b210b8fccab9f5262501836d4ad8f6a4dd",
+      "size": 4435
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/source-correction-checkpoint.json",
+      "sha256": "ba7b7c301e2dc03f5e9ab964ee3da9022cddddf4337c29ade6b779824f23d3c7",
+      "size": 3115
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/union.py.before",
+      "sha256": "89a19ac1bc1c6df81548b09243ecbb0630d23374dd8ff61f6e78ba368dbd6554",
+      "size": 8250
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/union.py.correction-diff.txt",
+      "sha256": "400f90e68e1c5b4439ea9ec14e27dcf0441634ae94d17a935d7e0218e321dd9a",
+      "size": 2985
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/correction-20261015T193500/union.py.correction-v2-diff.txt",
+      "sha256": "4fa95c4d0221301c46e54c1dbcb25e4f8bafd4e2fb4d09a041bd4a6f3aa4d59f",
+      "size": 3015
+    }
+  ]
+}

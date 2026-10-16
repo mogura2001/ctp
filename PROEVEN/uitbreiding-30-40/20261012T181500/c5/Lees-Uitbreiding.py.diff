@@ -1,0 +1,18 @@
+--- preserved C4/Lees-Uitbreiding.py
++++ owned C5/Lees-Uitbreiding.py
+@@ -196,11 +196,11 @@
+     p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+     p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+     p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+-    gate=json.loads((FOLDER/'C4-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
+-    if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C4 source-only; no live reader release')
+-    if args.turn not in (0,1) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C4 scope is variant T0/T1 only')
++    gate=json.loads((FOLDER/'C5-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
++    if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C5 source-only; no live reader release')
++    if args.turn not in (0,1) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C5 scope is variant T0/T1 only')
+     for pin in gate.get('sources',[]):
+-        if hashlib.sha256((FOLDER/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Released C4 source changed')
++        if hashlib.sha256((FOLDER/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Released C5 source changed')
+     handle=k.OpenProcess(0x410,False,args.pid) # QUERY_INFORMATION|VM_READ only
+     if not handle:raise OSError('Cannot open exact authorized proof process readhandle')
+     def read(address,size):

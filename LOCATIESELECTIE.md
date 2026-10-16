@@ -70,12 +70,12 @@ Gebruik voorlopig geen verzonnen numerieke gewichten. Eerst moeten we weten welk
 
 ## Dynamische prioriteit
 
-- Tijdens de race naar 25–30 steden is verdere uitbreiding een hoofdcriterium.
+- Tijdens de race naar 30 steden is verdere uitbreiding een hoofdcriterium.
 - Vroege wonderproductie en sterke monopoly-kansen kunnen voorrang krijgen op een gewone uitbreidingslocatie. Hun onderlinge rangorde is nog niet numeriek bepaald.
 - Een al geschikte wonderstad vermindert de noodzaak om een tweede locatie speciaal daarvoor vroeg te vestigen.
 - De waarde van een good hangt mede af van de voorraad in het hele rijk en de geplande bestemming. Beoordeel locaties dus niet uitsluitend afzonderlijk.
 - Houd rekening met kolonisten die al onderweg zijn naar een locatie of good, zodat meerdere plannen niet onbedoeld dezelfde behoefte proberen te vervullen, indien technisch mogelijk.
-- Na de uitbreidingsfase komen uitgestelde, waardevolle science- en productielocaties opnieuw aan bod. Of dit uitbreiding voorbij 30 steden rechtvaardigt, blijft een open strategische keuze.
+- Na de openingsfase komen uitgestelde, waardevolle science- en productielocaties opnieuw aan bod. Goede, bereikbare en veilige locaties rechtvaardigen verdere uitbreiding tot maximaal 40 steden onder actieve Theocracy, overeenkomstig de vastgelegde gebruikerskeuze.
 
 ## Doel: locatiescore aanpassen aan onze vereisten
 

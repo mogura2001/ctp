@@ -1,0 +1,142 @@
+--- preserved C7/Uitbreiding.ps1
++++ owned C8/Uitbreiding.ps1
+@@ -10,17 +10,17 @@
+ $python='C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe'
+ $manifest=Get-Content (Join-Path $package 'manifest.json') -Raw -Encoding utf8|ConvertFrom-Json
+ 
+-$gatePath=Join-Path $package 'C7-ROOT-VRIJGAVE.json'
+-if(!(Test-Path -LiteralPath $gatePath)){throw 'C7 source only: no root activation release.'}
++$gatePath=Join-Path $package 'C8-ROOT-VRIJGAVE.json'
++if(!(Test-Path -LiteralPath $gatePath)){throw 'C8 source only: no root activation release.'}
+ $gate=Get-Content -LiteralPath $gatePath -Raw -Encoding utf8|ConvertFrom-Json
+-if(!$gate.allowed -or $gate.candidate_sha256 -cne 'f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810'){throw 'C7 root release absent/disabled.'}
+-foreach($pin in $gate.sources){if((Get-FileHash -LiteralPath (Join-Path $package $pin.path) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $pin.sha256){throw 'Released C7 source changed.'}}
++if(!$gate.allowed -or $gate.candidate_sha256 -cne 'f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810'){throw 'C8 root release absent/disabled.'}
++foreach($pin in $gate.sources){if((Get-FileHash -LiteralPath (Join-Path $package $pin.path) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $pin.sha256){throw 'Released C8 source changed.'}}
+ if($Arm -eq 'baseline' -and !$gate.baseline_allowed){throw 'First activation is variant only; baseline needs later release.'}
+-if($Turn -notin @(0,1)){throw 'First C7 stage only T0/T1.'}
++if($Turn -notin @(0,1)){throw 'First C8 stage only T0/T1.'}
+ if($Action -eq 'Pass' -and $Turn -ne 1){throw 'Only the first native T1 pass is released.'}
+ 
+ $workLimit=600;$closeLimit=690;$hardLimit=720
+-if($gate.input_mode -cne 'HUMAN_ONE_N'){throw 'C7 requires HUMAN_ONE_N.'}
++if($gate.input_mode -cne 'HUMAN_ONE_N'){throw 'C8 requires HUMAN_ONE_N.'}
+ if($Action -eq 'Pass'){throw 'HUMAN_ONE_N: Pass refused before input.'}
+ $toolHash='d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74'
+ $variant=if($Arm -eq 'variant'){'U30-40'}else{'release-v1'}
+@@ -37,7 +37,7 @@
+  if($code -ne 0 -and $code -ne 25){throw 'Budget stop/unknown; checkpoint only; PC stays on.'}
+  if($budget.state -notin @('ok','warn') -or $null -eq $budget.five_hour_remaining_percent -or $null -eq $budget.weekly_remaining_percent -or $null -eq $budget.age_seconds -or $budget.age_seconds -gt 120 -or $budget.age_seconds -lt -60){throw 'Budget incomplete/stale; checkpoint only.'}
+  if($budget.five_hour_remaining_percent -le 5 -or $budget.weekly_remaining_percent -le 10){throw 'Hard budget stop; checkpoint only; PC stays on.'}
+- if($Mode -eq 'Start' -and ($budget.five_hour_remaining_percent -lt 50 -or $budget.weekly_remaining_percent -le 25)){throw 'Start reserve requires five>=50 and week>25.'}
++ if($Mode -eq 'Start' -and ($budget.five_hour_remaining_percent -lt 40 -or $budget.weekly_remaining_percent -le 25)){throw 'Start reserve requires five>=40 and week>25.'}
+  if($Mode -eq 'Work' -and $budget.five_hour_remaining_percent -le 15){throw 'Work reserve reached; separate Finish with Cleanup budget required.'}
+ }
+ Add-Type @'
+@@ -56,10 +56,10 @@
+ '@
+ [ExpansionWindow]::SetProcessDPIAware() | Out-Null
+ function Elapsed($started){([Diagnostics.Stopwatch]::GetTimestamp()-[long]$started.start_monotonic_ticks)/[double]$started.monotonic_frequency}
+-function HardTime($started){if((Elapsed $started) -ge $hardLimit){throw 'C7 hard live deadline; checkpoint, no force or late terminal acceptance.'}}
++function HardTime($started){if((Elapsed $started) -ge $hardLimit){throw 'C8 hard live deadline; checkpoint, no force or late terminal acceptance.'}}
+ function OwnState($started,[switch]$RequireFocus,[switch]$BindWindow,[switch]$ForClose){
+  $limit=if($ForClose){$closeLimit}else{$workLimit}
+- if((Elapsed $started) -ge $limit){throw 'C7 monotone work/close deadline; retain normal-close reserve.'}
++ if((Elapsed $started) -ge $limit){throw 'C8 monotone work/close deadline; retain normal-close reserve.'}
+  $rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'" -ErrorAction Stop)
+  if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $started.pid -or $rows[0].ExecutablePath -cne $exe -or ([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms){throw 'Exact own process identity/unique civctp changed.'}
+  $own=[Diagnostics.Process]::GetProcessById([int]$started.pid)
+@@ -97,7 +97,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'U30-40-N30'}else{'RELEASE-V1-N30'}
+- $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C7-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C8-'+$version+'-AUTOSAVE')
+  if(Test-Path -LiteralPath $labelPath){throw 'Owned visible autosave label already exists; do not overwrite.'}
+  $exists=Test-Path -LiteralPath $autoPath;$hash=$null
+  if($exists){$hash=Hash $autoPath;Copy-Item -LiteralPath $autoPath -Destination (Join-Path $armDir 'AUTOSAVE.before');if((Hash (Join-Path $armDir 'AUTOSAVE.before')) -ne $hash){throw 'Pre-run autosave backup mismatch.'}}
+@@ -111,7 +111,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'U30-40-N30'}else{'RELEASE-V1-N30'}
+- $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C7-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C8-'+$version+'-AUTOSAVE')
+  if($before.path -cne $autoPath -or $before.visible_label -cne $labelPath -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($autoPath)) -cne $saveDir -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($labelPath)) -cne $saveDir){throw 'Exact autosave/label targets escaped the named save directory.'}
+  $present=Test-Path -LiteralPath $autoPath;$current=if($present){Hash $autoPath}else{$null}
+  if($present -eq $before.existed -and $current -eq $before.sha256){JsonFile @{status='UNCHANGED_DEFAULT';before_sha256=$before.sha256;after_sha256=$current;named_saves_not_reverted=$true} 'autosave-archive.json';return}
+@@ -142,7 +142,7 @@
+  if(Test-Path -LiteralPath $ownerRecord){throw 'Own alias creation already attempted; no retry.'}
+  if(Test-Path -LiteralPath $paths.target){throw 'Alias existed before own creation; never overwrite.'}
+  if((Hash $paths.source) -cne $manifest.T0_alias.sha256){throw 'Pinned alias source changed.'}
+- JsonFile @{at=(Get-Date).ToString('o');owner='C7_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
++ JsonFile @{at=(Get-Date).ToString('o');owner='C8_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
+  Copy-Item -LiteralPath $paths.source -Destination $paths.target
+  if((Hash $paths.target) -cne $manifest.T0_alias.sha256){throw 'Own alias byteexact verification failed; preserve.'}
+  JsonFile @{at=(Get-Date).ToString('o');created=$true;path=$paths.target;sha256=(Hash $paths.target);source_sha256=(Hash $paths.source)} 'T0-alias-created.json'
+@@ -152,7 +152,7 @@
+  $paths=ExactAliasPaths;$ownerRecord=Join-Path $armDir 'T0-alias-owner.json'
+  if(!(Test-Path -LiteralPath $ownerRecord)){JsonFile @{status='NO_OWN_ALIAS_ATTEMPT';removed=$false} 'T0-alias-cleanup.json';return}
+  $record=Get-Content -LiteralPath $ownerRecord -Raw -Encoding utf8|ConvertFrom-Json
+- if($record.owner -cne 'C7_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
++ if($record.owner -cne 'C8_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
+  if(!(Test-Path -LiteralPath $paths.target)){JsonFile @{status='OWN_ALIAS_ALREADY_ABSENT';removed=$false} 'T0-alias-cleanup.json';return}
+  $current=Hash $paths.target
+  if($current -cne $manifest.T0_alias.sha256){JsonFile @{status='PRESERVED_UNEXPECTED_ALIAS_BYTES';removed=$false;path=$paths.target;sha256=$current} 'T0-alias-cleanup.json';throw 'Own alias unexpectedly changed; preserved for review.'}
+@@ -198,7 +198,7 @@
+  $oldErrorAction=$ErrorActionPreference
+  try{
+   $ErrorActionPreference='Continue'
+-  $result=& $python -X utf8 (Join-Path $package 'Lees-Uitbreiding.py') --pid $started.pid --variant $variant --run-id ('uitbreiding-20261014-c7-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
++  $result=& $python -X utf8 (Join-Path $package 'Lees-Uitbreiding.py') --pid $started.pid --variant $variant --run-id ('uitbreiding-20261014-c8-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
+   $readerCode=$LASTEXITCODE
+  }finally{$ErrorActionPreference=$oldErrorAction}
+  $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+@@ -213,21 +213,21 @@
+  return $value
+ }
+ function CheckSnapshot($value,$started,$turn){
+- $runId='uitbreiding-20261014-c7-'+$Arm
++ $runId='uitbreiding-20261014-c8-'+$Arm
+  $dll=Join-Path $workspace 'CTP-proef\ctp_program\ctp\dll\ai\robotcom.dll'
+  $enginePin=@($manifest.protected|Where-Object{$_.path -ceq 'CTP-proef/ctp_program/ctp/civctp.exe'})
+- if(!$value.stable_twice -or $value.variant -cne 'U30-40' -or $value.run_id -cne $runId -or $value.turn -ne $turn){throw 'C7 accepted snapshot metadata mismatch.'}
+- if($value.instance.pid -ne $started.pid -or $value.instance.executable -cne $exe -or $value.instance.ai_module -cne $dll -or [Math]::Floor(([decimal]$value.instance.creationtime_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms -or $value.instance.engine_base -ne 4194304 -or $null -eq $value.instance.ai_base -or $value.instance.ai_base -le 0){throw 'C7 exact instance/module/base mismatch.'}
+- if($enginePin.Count -ne 1 -or $value.binding.engine_sha256 -cne $enginePin[0].sha256 -or $value.binding.ai_sha256 -cne $gate.candidate_sha256 -or $value.binding.manifest_sha256 -cne '9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341' -or $null -ne $value.binding.package_sha256){throw 'C7 reader bindinghash mismatch.'}
+- foreach($check in @('headers_sections_sizes','all_three_scorecalls','payload_and_original_ranges','only_original_HIGHLOW_relocation_adjustment','all_five_B2_hooks','N30_payload_bound','new_payload_and_all_nine_windows_bound')){if($value.loaded_checks.$check -cne $true){throw 'C7 strict loaded check missing/false.'}}
++ if(!$value.stable_twice -or $value.variant -cne 'U30-40' -or $value.run_id -cne $runId -or $value.turn -ne $turn){throw 'C8 accepted snapshot metadata mismatch.'}
++ if($value.instance.pid -ne $started.pid -or $value.instance.executable -cne $exe -or $value.instance.ai_module -cne $dll -or [Math]::Floor(([decimal]$value.instance.creationtime_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms -or $value.instance.engine_base -ne 4194304 -or $null -eq $value.instance.ai_base -or $value.instance.ai_base -le 0){throw 'C8 exact instance/module/base mismatch.'}
++ if($enginePin.Count -ne 1 -or $value.binding.engine_sha256 -cne $enginePin[0].sha256 -or $value.binding.ai_sha256 -cne $gate.candidate_sha256 -or $value.binding.manifest_sha256 -cne '9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341' -or $null -ne $value.binding.package_sha256){throw 'C8 reader bindinghash mismatch.'}
++ foreach($check in @('headers_sections_sizes','all_three_scorecalls','payload_and_original_ranges','only_original_HIGHLOW_relocation_adjustment','all_five_B2_hooks','N30_payload_bound','new_payload_and_all_nine_windows_bound')){if($value.loaded_checks.$check -cne $true){throw 'C8 strict loaded check missing/false.'}}
+  $civs=@($value.state.civilizations)
+- if($civs.Count -ne 7 -or ((@($civs|ForEach-Object{$_.civ_id}|Sort-Object) -join ',') -cne '2,3,4,5,6,7,8')){throw 'C7 exact unique seven participants required.'}
++ if($civs.Count -ne 7 -or ((@($civs|ForEach-Object{$_.civ_id}|Sort-Object) -join ',') -cne '2,3,4,5,6,7,8')){throw 'C8 exact unique seven participants required.'}
+  $participants=Get-Content -LiteralPath (Join-Path $package 'participants.json') -Raw -Encoding utf8|ConvertFrom-Json
+- foreach($civ in $civs){if($null -eq $civ.processed_round -or $civ.civ_name -cne $participants.names.([string]$civ.civ_id)){throw 'C7 fixed participant/native round missing.'}}
++ foreach($civ in $civs){if($null -eq $civ.processed_round -or $civ.civ_name -cne $participants.names.([string]$civ.civ_id)){throw 'C8 fixed participant/native round missing.'}}
+ }
+ function CheckPairIdentity($before,$after){
+- foreach($key in @('pid','creationtime_filetime','executable','ai_module','engine_base','ai_base')){if($before.instance.$key -cne $after.instance.$key){throw 'C7 uninterrupted pair instance changed.'}}
+- foreach($key in @('engine_sha256','ai_sha256','manifest_sha256','package_sha256')){if($before.binding.$key -cne $after.binding.$key){throw 'C7 pair readerbinding changed.'}}
++ foreach($key in @('pid','creationtime_filetime','executable','ai_module','engine_base','ai_base')){if($before.instance.$key -cne $after.instance.$key){throw 'C8 uninterrupted pair instance changed.'}}
++ foreach($key in @('engine_sha256','ai_sha256','manifest_sha256','package_sha256')){if($before.binding.$key -cne $after.binding.$key){throw 'C8 pair readerbinding changed.'}}
+ }
+ 
+ if($Action -in @('Finish','RestoreNoStart')){Budget -Mode Cleanup}elseif($Action -eq 'InstallStart'){Budget -Mode Start}else{Budget -Mode Work}
+@@ -326,7 +326,7 @@
+   try{if($picture.Width -ne $physicalState.bounds.width -or $picture.Height -ne $physicalState.bounds.height){throw 'Captured physical PNG/window dimensions mismatch.'};JsonFile @{image=$imagePath;pixel_width=$picture.Width;pixel_height=$picture.Height;physical_window=$physicalState;coordinate_system='SetProcessDPIAware physical pixels; inspect original image or explicitly rescale';at=(Get-Date).ToString('o')} ($Label+'-physical-bounds.json')}finally{$picture.Dispose()}
+  }
+  'Read'{
+-  if($Arm -cne 'variant' -or $Label -cne ('T'+$Turn)){throw 'C7 read scope: own variant T0/T1 labels only.'}
++  if($Arm -cne 'variant' -or $Label -cne ('T'+$Turn)){throw 'C8 read scope: own variant T0/T1 labels only.'}
+   $output=Join-Path $armDir ('T'+$Turn+'.json')
+   if(Test-Path -LiteralPath $output){throw 'Accepted output already exists; no overwrite.'}
+   if($Turn -eq 0){
+@@ -342,7 +342,7 @@
+    $value|ConvertTo-Json -Depth 12
+   }else{
+    $ownT0=[IO.Path]::GetFullPath((Join-Path $armDir 'T0.json'))
+-   if(!$Previous -or [IO.Path]::GetFullPath($Previous) -cne $ownT0 -or !(Test-Path -LiteralPath $ownT0)){throw 'T1 requires exact own accepted C7 variant T0 Previous.'}
++   if(!$Previous -or [IO.Path]::GetFullPath($Previous) -cne $ownT0 -or !(Test-Path -LiteralPath $ownT0)){throw 'T1 requires exact own accepted C8 variant T0 Previous.'}
+    $acceptPath=Join-Path $armDir 'T0-acceptance.json'
+    $acceptedT0=Get-Content -LiteralPath $acceptPath -Raw -Encoding utf8|ConvertFrom-Json
+    $before=Get-Content -LiteralPath $ownT0 -Raw -Encoding utf8|ConvertFrom-Json

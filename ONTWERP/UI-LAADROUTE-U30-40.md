@@ -1,0 +1,15 @@
+# Kortere laadroute voor de vaste U30→40-proef
+
+De C3-arm eindigde normaal zonder T0 te laden. De AI-kandidaat verandert hierdoor niet: C1/C2 blijven geaccepteerd, echte activatie nog open. Dit is een beperkte verbetering van de bestaande uitvoeringsroute, geen nieuw AI-ontwerp of gameplayregel.
+
+Bewijs: de Save Game-lijst toont bestandsnamen en QUOTA-START-T0 pas na scrollen onder DOEL3-/quota-bestanden. De C3-controller rapporteert bounds1920×1080; de DPI-aware opname is2171×1080 en werd voor weergave verkleind naar2048×1019. Deze verschillende coördinatenstelsels moeten niet onuitgesproken gemengd worden. De opname bewijst op zichzelf niet dat DPI alle vertraging veroorzaakte.
+
+Nieuwe arm in een eigen map; de verbruikte C3-arm, bronnen en resultaten blijven behouden. Hergebruik de gecontroleerde controller/reader/backups. Voeg dezelfde DPI-awareness toe als Bedien-CTP.ps1 vóór windowqueries. Inspecteer afbeeldingen op originele resolutie of reken aantoonbaar terug naar oorspronkelijke pixels. Leg bij de opname werkelijke bounds en pixelafmetingen vast; geen nieuw observerframework.
+
+Maak uitsluitend een eigen alias in dezelfde Julius-map: `000-U30-40-START-T0`. Dit is een bytegelijke kopie van de gepinde QUOTA-START-T0, geen gewijzigde save. Doel: vroeg zichtbaar in de op naam gesorteerde lijst. Controleer afwezigheid vóór aanleg en bron-/doelhash; overschrijf geen bestaande alias of andere save. Bestaande negen saves blijven op hun plaats. Sourcevoorbereiding maakt de alias nog niet in het spelpad; aanleg pas bij afzonderlijk vrijgegeven installatie met all-count0.
+
+Leg voor de alias exact eigenaarschap en aanvankelijke afwezigheid vast. Na normaal sluiten/count0, archiveren van een eventuele nieuwe autosave en herstel van de geteste release: verwijder alleen deze eigen alias wanneer zij nog de originele T0-hash heeft. Behoud een onverwacht gewijzigde alias en rapporteer die afwijking. Geen recursive move/delete, geen bestaande save verplaatsen. Defaultautosave en versiearchief blijven volgens de bestaande Julius-route werken.
+
+Scope van de volgende eerste activatie blijft één variantstart, T0 en één gewone T1 met zeven deelnemers; geen baseline, T2 of editor. Binnen acht minuten, afwikkeling beginnen op420s en normale close-reserve470s. Geef geen nieuwe start vrij voordat de nieuwe bron, aliasaanleg/-herstel, echte backups en loadedbindings gereviewd zijn en verse budgetruimte volstaat. GUIroute: hoofdmenu→Single Player→Load Game→Julius→zichtbare eigen alias→OK→feitelijk geladen T0-scherm→strikte reader→één nativepass. Geen langdurige scroll-/cursorzoeklus als de alias niet zichtbaar is.
+
+Acceptatie: eerst bronreview; daarna daadwerkelijke aliasselectie, geladen T0, exacte loadedbytes en zeven native−1→0-waarnemingen. UIvoorbereiding of menu alleen is geen activatiebewijs. Alias en originele save hebben dezelfde hash; de benchmarkinhoud en overige spelinstellingen blijven gelijk. Echte uitbreidingswinst en Doel3-behoud in de combinatie volgen afzonderlijk.

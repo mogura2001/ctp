@@ -1,0 +1,77 @@
+{
+  "stage": "C3_SOURCE_ONLY_NO_INSTALL_START_RPM",
+  "at_utc": "2026-10-13T10:04:08.385714+00:00",
+  "reader_static_disk_binding": [
+    {
+      "variant": "release-v1",
+      "ai_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "sites": 8,
+      "ranges": 52,
+      "module_size": 876544,
+      "new_shared_plan_rva": null,
+      "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+    },
+    {
+      "variant": "U30-40",
+      "ai_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+      "sites": 16,
+      "ranges": 54,
+      "module_size": 1253376,
+      "new_shared_plan_rva": 905216,
+      "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+    }
+  ],
+  "all_python_AST": true,
+  "controller_execute_count": 0,
+  "process_queries": 0,
+  "RPM_calls": 0,
+  "read_handles_opened": 0,
+  "installations": 0,
+  "starts": 0,
+  "release_staged_and_backed_up": 19,
+  "protected_saves_backed_up": 9,
+  "profile_backed_up": true,
+  "root_gate_disabled": true,
+  "sources": [
+    {
+      "path": "check_source.py",
+      "size": 2834,
+      "sha256": "cce5c2d3c990438924b126b2dea5c5cc8e33e47ed9dd4e7cf4d0656c7168036e"
+    },
+    {
+      "path": "create_reader.py",
+      "size": 12893,
+      "sha256": "5697c47a3c9db263f865afcfd4a9f9bf8ed5d14868ae91b924c7c6da8ff60339"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "size": 19621,
+      "sha256": "17965a1295a8a93cd6708e4411cf9b38c5b1919c284684455811cacfb0caa6e5"
+    },
+    {
+      "path": "manifest.json",
+      "size": 30095,
+      "sha256": "d2332bcefaf0834e4d70412d616dd1744d03b07c597528be8f6ed1d0e2ca9507"
+    },
+    {
+      "path": "original_core.py",
+      "size": 11208,
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "participants.json",
+      "size": 405,
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "prepare.py",
+      "size": 8255,
+      "sha256": "082fbc70cad6f2de06601408a62b9094412cd3cec53c54152398865005fe9e89"
+    },
+    {
+      "path": "Uitbreiding.ps1",
+      "size": 23477,
+      "sha256": "1c4581a5144391a7eeda854fbceaa71eb130cf4779d0c767e60e15669d3d0823"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+--- preserved C5/Uitbreiding.ps1
++++ owned C6/Uitbreiding.ps1
+@@ -10,13 +10,13 @@
+ $python='C:\Users\Stephan\AppData\Local\Programs\Python\Python312\python.exe'
+ $manifest=Get-Content (Join-Path $package 'manifest.json') -Raw -Encoding utf8|ConvertFrom-Json
+ 
+-$gatePath=Join-Path $package 'C5-ROOT-VRIJGAVE.json'
+-if(!(Test-Path -LiteralPath $gatePath)){throw 'C5 source only: no root activation release.'}
++$gatePath=Join-Path $package 'C6-ROOT-VRIJGAVE.json'
++if(!(Test-Path -LiteralPath $gatePath)){throw 'C6 source only: no root activation release.'}
+ $gate=Get-Content -LiteralPath $gatePath -Raw -Encoding utf8|ConvertFrom-Json
+-if(!$gate.allowed -or $gate.candidate_sha256 -cne 'f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810'){throw 'C5 root release absent/disabled.'}
+-foreach($pin in $gate.sources){if((Get-FileHash -LiteralPath (Join-Path $package $pin.path) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $pin.sha256){throw 'Released C5 source changed.'}}
++if(!$gate.allowed -or $gate.candidate_sha256 -cne 'f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810'){throw 'C6 root release absent/disabled.'}
++foreach($pin in $gate.sources){if((Get-FileHash -LiteralPath (Join-Path $package $pin.path) -Algorithm SHA256).Hash.ToLowerInvariant() -cne $pin.sha256){throw 'Released C6 source changed.'}}
+ if($Arm -eq 'baseline' -and !$gate.baseline_allowed){throw 'First activation is variant only; baseline needs later release.'}
+-if($Turn -notin @(0,1)){throw 'First C5 stage only T0/T1.'}
++if($Turn -notin @(0,1)){throw 'First C6 stage only T0/T1.'}
+ if($Action -eq 'Pass' -and $Turn -ne 1){throw 'Only the first native T1 pass is released.'}
+ 
+ $toolHash='d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74'
+@@ -88,7 +88,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'U30-40-N30'}else{'RELEASE-V1-N30'}
+- $labelPath=Join-Path $saveDir ('UITBREIDING-20261013-C5-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C6-'+$version+'-AUTOSAVE')
+  if(Test-Path -LiteralPath $labelPath){throw 'Owned visible autosave label already exists; do not overwrite.'}
+  $exists=Test-Path -LiteralPath $autoPath;$hash=$null
+  if($exists){$hash=Hash $autoPath;Copy-Item -LiteralPath $autoPath -Destination (Join-Path $armDir 'AUTOSAVE.before');if((Hash (Join-Path $armDir 'AUTOSAVE.before')) -ne $hash){throw 'Pre-run autosave backup mismatch.'}}
+@@ -102,7 +102,7 @@
+  $saveDir=(Get-Item -LiteralPath (Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius')).FullName
+  $autoPath=Join-Path $saveDir 'AUTOSAVE-Julius'
+  $version=if($Arm -eq 'variant'){'U30-40-N30'}else{'RELEASE-V1-N30'}
+- $labelPath=Join-Path $saveDir ('UITBREIDING-20261013-C5-'+$version+'-AUTOSAVE')
++ $labelPath=Join-Path $saveDir ('UITBREIDING-20261014-C6-'+$version+'-AUTOSAVE')
+  if($before.path -cne $autoPath -or $before.visible_label -cne $labelPath -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($autoPath)) -cne $saveDir -or [IO.Path]::GetDirectoryName([IO.Path]::GetFullPath($labelPath)) -cne $saveDir){throw 'Exact autosave/label targets escaped the named save directory.'}
+  $present=Test-Path -LiteralPath $autoPath;$current=if($present){Hash $autoPath}else{$null}
+  if($present -eq $before.existed -and $current -eq $before.sha256){JsonFile @{status='UNCHANGED_DEFAULT';before_sha256=$before.sha256;after_sha256=$current;named_saves_not_reverted=$true} 'autosave-archive.json';return}
+@@ -133,7 +133,7 @@
+  if(Test-Path -LiteralPath $ownerRecord){throw 'Own alias creation already attempted; no retry.'}
+  if(Test-Path -LiteralPath $paths.target){throw 'Alias existed before own creation; never overwrite.'}
+  if((Hash $paths.source) -cne $manifest.T0_alias.sha256){throw 'Pinned alias source changed.'}
+- JsonFile @{at=(Get-Date).ToString('o');owner='C5_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
++ JsonFile @{at=(Get-Date).ToString('o');owner='C6_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
+  Copy-Item -LiteralPath $paths.source -Destination $paths.target
+  if((Hash $paths.target) -cne $manifest.T0_alias.sha256){throw 'Own alias byteexact verification failed; preserve.'}
+  JsonFile @{at=(Get-Date).ToString('o');created=$true;path=$paths.target;sha256=(Hash $paths.target);source_sha256=(Hash $paths.source)} 'T0-alias-created.json'
+@@ -143,7 +143,7 @@
+  $paths=ExactAliasPaths;$ownerRecord=Join-Path $armDir 'T0-alias-owner.json'
+  if(!(Test-Path -LiteralPath $ownerRecord)){JsonFile @{status='NO_OWN_ALIAS_ATTEMPT';removed=$false} 'T0-alias-cleanup.json';return}
+  $record=Get-Content -LiteralPath $ownerRecord -Raw -Encoding utf8|ConvertFrom-Json
+- if($record.owner -cne 'C5_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
++ if($record.owner -cne 'C6_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
+  if(!(Test-Path -LiteralPath $paths.target)){JsonFile @{status='OWN_ALIAS_ALREADY_ABSENT';removed=$false} 'T0-alias-cleanup.json';return}
+  $current=Hash $paths.target
+  if($current -cne $manifest.T0_alias.sha256){JsonFile @{status='PRESERVED_UNEXPECTED_ALIAS_BYTES';removed=$false;path=$paths.target;sha256=$current} 'T0-alias-cleanup.json';throw 'Own alias unexpectedly changed; preserved for review.'}
+@@ -187,7 +187,7 @@
+  $oldErrorAction=$ErrorActionPreference
+  try{
+   $ErrorActionPreference='Continue'
+-  $result=& $python -X utf8 (Join-Path $package 'Lees-Uitbreiding.py') --pid $started.pid --variant $variant --run-id ('uitbreiding-20261013-c5-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
++  $result=& $python -X utf8 (Join-Path $package 'Lees-Uitbreiding.py') --pid $started.pid --variant $variant --run-id ('uitbreiding-20261014-c6-'+$Arm) --snapshot-label $name --turn $turn --pass-label 'passive-human-native-round' --manifest (Join-Path $package 'participants.json') --output $output 2>&1
+   $readerCode=$LASTEXITCODE
+  }finally{$ErrorActionPreference=$oldErrorAction}
+  $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8

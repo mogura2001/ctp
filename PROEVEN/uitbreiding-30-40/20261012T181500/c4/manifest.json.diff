@@ -1,0 +1,36 @@
+--- preserved C3/manifest.json
++++ owned C4/manifest.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "C3_SOURCE_ONLY_NO_INSTALL_START_RPM",
++  "state": "C4_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
+   "N": 30,
+   "files": [
+     {
+@@ -628,6 +628,10 @@
+     {
+       "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/C2-package.json",
+       "sha256": "55a130d5fea489a54081df694d352b276a4898cb0d6ce73c6e9376e5b657b5bb"
++    },
++    {
++      "path": "ONTWERP/UI-LAADROUTE-U30-40.md",
++      "sha256": "35096305929f54b5ecc24786bf86e9164a75584a8ba44ece72a8aa49ad2ec029"
+     }
+   ],
+   "preserved_saves_before": [
+@@ -674,5 +678,14 @@
+   },
+   "baseline": "tested release-v1 B1+B2a-N30+B2b, never original",
+   "variant": "release-v1 plus U30-40 candidate only",
+-  "stage_limit": "variant only T0+oneT1 passive-human n, seven participants native+1; rootreview before moreturns/baseline"
++  "stage_limit": "variant only T0+oneT1 passive-human n, seven participants native+1; rootreview before moreturns/baseline",
++  "T0_alias": {
++    "path": "CTP-proef/ctp_program/ctp/save/games/Julius/000-U30-40-START-T0",
++    "source": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
++    "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
++    "existed_before": false,
++    "ownership": "C4_UI_LOAD_ALIAS_ONLY",
++    "create": "Only after future root release and fresh successful count0, record own preimage before copy",
++    "remove": "Only own original-hash alias after exit/count0/archival/release restore; otherwise preserve"
++  }
+ }

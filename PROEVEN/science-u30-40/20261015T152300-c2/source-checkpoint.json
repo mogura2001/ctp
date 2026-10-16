@@ -1,0 +1,167 @@
+{
+  "stage": "C2_SOURCE_HANDOFF_STOPPED_PENDING_ROOT_REVIEW",
+  "at_utc": "2026-10-15T13:31:55.804086+00:00",
+  "all_python_AST_parses": true,
+  "origin_pins_equal": true,
+  "build_gate": false,
+  "candidate_built": false,
+  "native_calls": 0,
+  "open_review": [
+    "complete caller ABI and serial World scratch contract",
+    "all emitter label/import bindings",
+    "all pointer/buffer/query and choice bounds",
+    "root full source review then separately candidatebuild"
+  ],
+  "pins": [
+    {
+      "path": "bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "bind_scheduler.py.source-diff.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build_candidate.py",
+      "sha256": "db36cbeeafb46694e9a99bf10cf15be942f42b6caf386a0217d7096f84c7a17b",
+      "size": 11443
+    },
+    {
+      "path": "build_candidate.py.source-diff.txt",
+      "sha256": "e65561a09abedb7283f1884d1607ece26ee31e1cbb59f68fc4b425aaef86fe3f",
+      "size": 7310
+    },
+    {
+      "path": "C2-BRONOVERDRACHT.md",
+      "sha256": "e3fcd0a38b6cc548475147891b26e331b3e8a1974419a6aa3e73a496c357f4ee",
+      "size": 7609
+    },
+    {
+      "path": "c2-source-schema.json",
+      "sha256": "ea33aa25366f74654c0829c6aebda11ea2f09343a6ec82b6ec82a87915f84707",
+      "size": 2092
+    },
+    {
+      "path": "check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "check_candidate.py.source-diff.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "input-pins.py",
+      "sha256": "19fcf72b182586b0785487486adcc31c8a330e1311765d15fdc8399804f524a2",
+      "size": 2005
+    },
+    {
+      "path": "input-pins.py.source-diff.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "integration_base.py.source-diff.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "native.py",
+      "sha256": "50af1faf3cab5b35223348920307723e3876eea2167acb8a57d2c8d6e2dafa74",
+      "size": 31836
+    },
+    {
+      "path": "native.py.source-diff.txt",
+      "sha256": "1fab2354cae9fb079578fec371660c304a1acb9c593cd7408386b33314addd95",
+      "size": 7433
+    },
+    {
+      "path": "policy.py",
+      "sha256": "c9532f5ffe9bb0aa3334f9507bda253fc617907e5fce4166afcd38665b9dba0c",
+      "size": 11819
+    },
+    {
+      "path": "policy.py.source-diff.txt",
+      "sha256": "932213dde6c4d95c323bed2075abe561f302f2893db9bc7f31052eb8655abfe6",
+      "size": 1229
+    },
+    {
+      "path": "preparation-manifest.json",
+      "sha256": "19f7472c41dd5993240eaa5fae511255e37a12df68268dcaead6abb66f40d23e",
+      "size": 8763
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "d27d9a6006a39889a0ce12d64dfb4ab9589d248087e286f86e2e933b02aad8ca",
+      "size": 2738
+    },
+    {
+      "path": "release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "ROOT-BRONREVIEW.json",
+      "sha256": "ebbc5ed3d736b6ce5082c5684b2637843668b981ae98e0802dfc11d3c071a5bf",
+      "size": 140
+    },
+    {
+      "path": "science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "science_development.py.source-diff.txt",
+      "sha256": "39cddbd7ef431e6215becb7860f2d4f6631e89ab4f771f276dab5fed0a5f4a45",
+      "size": 3647
+    },
+    {
+      "path": "science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "size": 3318
+    },
+    {
+      "path": "science_layout.py.source-diff.txt",
+      "sha256": "e0c15a9576acc01111d95f5c2d5eb784ad3fd8a980343e79e856bc009151dcaa",
+      "size": 301
+    },
+    {
+      "path": "science_model.py",
+      "sha256": "9370ed1fda84c8f51e77a664bd6bec967ed17cfdda4a6e5a6caca2ae9dafab72",
+      "size": 17733
+    },
+    {
+      "path": "science_model.py.source-diff.txt",
+      "sha256": "277573f3f362775cf1abc4a83f44479d2a28df8600137b77bd0cc88467189d85",
+      "size": 4510
+    },
+    {
+      "path": "science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+      "size": 6095
+    },
+    {
+      "path": "science_result.py.source-diff.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "union.py",
+      "sha256": "89a19ac1bc1c6df81548b09243ecbb0630d23374dd8ff61f6e78ba368dbd6554",
+      "size": 8250
+    },
+    {
+      "path": "union.py.source-diff.txt",
+      "sha256": "247ad7f5cdfc89691a4edccc169791a7a6838c83d7e2f42f3c95de07e2bc16a0",
+      "size": 8375
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# U30-type10: technische C-overdracht voor rootreview
+
+15 oktober 2026, 19:46 Europe/Amsterdam. Voorbereid en offline gecontroleerd, niet geïnstalleerd of in gameplay gemeten. Uitvoering stopt na deze overdracht. A/B inclusief verificatieaddendum19:45 gelezen; voorstelhash5c2256c673256ba77848ae9e64d8c298af380c17b42af098ed745678712d7c89 opgenomen in nieuwe preparation/manifest. Geen science-C2 geïntegreerd.
+
+Kandidaat U30-40.prepared.dll SHA256 b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62; manifest fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27. Provenance: ongewijzigde8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17 uit u30-foutcodes/20261015T145000. Originele bronpinnen worden bij bouwen opnieuw gecontroleerd; historische kandidaat en helperbronnen zijn niet gewijzigd.
+
+## Exacte delta en bewijs
+
+- `native.py`, uitsluitend resolve_type: +dc/nonzero vervangen door +1c/80000000h. `check_type10.py` bewijst tekstueel exact die ene vervanging; policy.py/integration_base.py/bind_scheduler.py zijn bytegelijk met foutcodes. Dus overige guards, d8-normalisatie, reason10/36/44-behoud, finalize/fallback blijven dezelfde bron.
+- `input-pins.py`: additief slot1c→RVA131940 en lengte1e; alle bestaande slots/volledige bodies behouden. `input-pins.json` bevat de echte30 bytes558bec8b450c8b0d18dda70050e88e29f2ff8b403025000000ff5dc20800. Bestaande recordgetterRVA542e0/lengte30h blijft gepind. Enginehashb1b5256f.../base400000/timestamp37d6f702 en slotRVA3450b4→531940 gecontroleerd.
+- De bestaande `input_guard` leest deze lijsten daadwerkelijk en vergelijkt iedere bodybyte en slotpointer vóór resolver. In de nieuwe disassembly staan bodyvergelijkingen vanaf200d9296 en slotvergelijking metRVA131940; elke mismatch naar bestaande inputs_bad/reason36/EAX0. Geen nieuwe guardroute of nativecall voor deze controle.
+- Werkelijke kandidaat `resolve-type-disassembly.txt`:200db1f9 push typeEDI;200db200 push interfaceEAX;200db207 call [edx+1c];200db20d TEST EAX,80000000h (`f7c000000080`);200db213 JE200db24f=type_bad. Zelfde proloog, type_bad status0/reason10/EAX0 en epiloog popEDI/ESI/EBX/EBP/ret4. Echte enginebody eindigt ret8 en roept4542e0. Dit is statische ABIreview, geen nieuwe native-ABIPASS.
+- `candidate-static-checks.json`: dubbel deterministisch opgebouwd; gehele candidate uit diff reproduceerbaar, geen onverklaarde originele wijzigingen, B2payload/vijfhooks exact, HIGHLOWs behouden, RX/RW/zero-init/checksum/714branches/buffers gecontroleerd. 4409 instructies gedecodeerd. Manifest beschrijft layoutverplaatsingen; geen fictief vaste binaire difflengte.
+- `reader/Lees-Uitbreiding.py`: nieuwe kandidaat/manifestpins, dezelfde echte30-bytebody plus echte4-byte slotpointer en volledige48-byte recordgetterRVA542e0 via bestaande loaded-rangevergelijking. Raw+44/+48/+120 altijd als raw_t/raw_types/raw_d8, expliciet ongecertificeerd; raw Record30/34 uitsluitend na initialisatie/geldige bestaande DBcount/index/bounded reads, anders UNKNOWN. Context1-certificering en alle stock-/per-civ-UNKNOWNregels intact. Geen reader uitgevoerd/RPM gedaan. Root moet een nieuwe arm zoals R44-2 stagen; deze reader verwacht kandidaat onder reader/candidate en manifest in eigen pakketouder zoals bestaande procedure.
+
+Diffs staan onder `diffs/`; volledige disassembly onder `extension-disassembly.txt`. `package-pins.json` legt alle overdrachtsbestanden vast. `protected-state.json` is uitsluitend een actuele hashvergelijking van de bestaande29 beschermde bestanden; echte backups vóór eventuele installatie blijven roottaak.
+
+## Acceptatie en resterend werk
+
+Doel1/1a: uitsluitend de bewezen onjuiste helperpredicate hersteld in een ongeïnstalleerde kandidaat. Statische en zes onafhankelijke integercontroles geslaagd; integergevallen80000000/90000000 doorlaten en0/10000000/landerzonderland afwijzen zijn geen machinecode-uitvoering.
+
+Nieuwe echte-bodymaskercases en native-ABI: **ONGETEST**. De bestaande c2/NativeU40.cs Setup gebruikt dynamisch engine=Mem(0x6e0000), slotdc→true8 en geen1c/getterbinding. Werkelijke531940 gebruikt absoluteA7DD18 en relcall4542e0. Daarom geen ongeldige fixturecall, geen nieuw vaste-adresframework, geen compile/run/retry en geen oude PASS heretiketteren. Het geaccepteerde B-addendum vervangt die eis door beperkte volledige statische review en daarna één echte gebonden hostronde.
+
+Volgende concrete uitkomst: rootreview van kandidaat/diffs/bind_inputs/readerpins; daarna uitsluitend root de afzonderlijke nieuwe gate/T0→éénn→T1-arm en volledig herstel. Context1 bewijst alleen laatste-pass resolver/preview/original_demand; negatieve maskercases blijven ongetest. Gameplay30/40steden, alle zeven individuele uitkomsten en sciencecombinatie blijven open. Geen game/native/helper gestart, geen actieve run na deze overdracht; pc aan.

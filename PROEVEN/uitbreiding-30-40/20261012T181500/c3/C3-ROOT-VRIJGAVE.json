@@ -1,0 +1,52 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+  "sources": [
+    {
+      "path": "check_source.py",
+      "size": 2834,
+      "sha256": "cce5c2d3c990438924b126b2dea5c5cc8e33e47ed9dd4e7cf4d0656c7168036e"
+    },
+    {
+      "path": "create_reader.py",
+      "size": 12893,
+      "sha256": "5697c47a3c9db263f865afcfd4a9f9bf8ed5d14868ae91b924c7c6da8ff60339"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "size": 19621,
+      "sha256": "17965a1295a8a93cd6708e4411cf9b38c5b1919c284684455811cacfb0caa6e5"
+    },
+    {
+      "path": "manifest.json",
+      "size": 30095,
+      "sha256": "d2332bcefaf0834e4d70412d616dd1744d03b07c597528be8f6ed1d0e2ca9507"
+    },
+    {
+      "path": "original_core.py",
+      "size": 11208,
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "participants.json",
+      "size": 405,
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "prepare.py",
+      "size": 8255,
+      "sha256": "082fbc70cad6f2de06601408a62b9094412cd3cec53c54152398865005fe9e89"
+    },
+    {
+      "path": "Uitbreiding.ps1",
+      "size": 23477,
+      "sha256": "1c4581a5144391a7eeda854fbceaa71eb130cf4779d0c767e60e15669d3d0823"
+    }
+  ],
+  "state": "CONSUMED_C3_ARM_CLOSED_RELEASE_RESTORED_NO_T0_LOAD_NO_T1",
+  "released_at_utc": "2026-10-13T10:08:21.092039+00:00",
+  "max_arm_seconds": 480,
+  "root_review": "ANALYSE/REVIEW-UITBREIDING-30-40.md",
+  "scope": "one start, T0 and one ordinary passive T1; no T2/baseline/editor/force/shutdown; fresh budget required"
+}

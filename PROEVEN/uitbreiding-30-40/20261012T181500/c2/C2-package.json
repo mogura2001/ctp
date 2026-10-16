@@ -1,0 +1,511 @@
+{
+  "stage": "C2_NATIVE_CHANGED_CASES_FIXTURE_ONLY_NO_GAMEPLAY",
+  "checked_at_utc": "2026-10-13T09:48:38.778488+00:00",
+  "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+  "candidate_source_and_19_release_pins_unchanged": true,
+  "successful_native_calls": 53,
+  "successful_checks": 51,
+  "failed_attempt": {
+    "pid": 25456,
+    "exit_code": 3221225477,
+    "terminal": true,
+    "reason": "fixture Marshal.WriteInt32 into own RX vtable before extra Goto call; fixed owned VirtualProtect; no candidate change",
+    "old_outputs_preserved": true
+  },
+  "processes": [
+    {
+      "started_at_utc": "2026-10-13T09:42:11.604522+00:00",
+      "pid": 35704,
+      "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+      "owned_process": true,
+      "hidden": true,
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "elapsed_seconds": 1.25,
+      "terminal_confirmed": true,
+      "candidate_unchanged": true
+    },
+    {
+      "started_at_utc": "2026-10-13T09:45:55.666811+00:00",
+      "pid": 25456,
+      "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+      "owned_process": true,
+      "hidden": true,
+      "timeout_seconds": 45,
+      "exit_code": 3221225477,
+      "elapsed_seconds": 1.141,
+      "terminal_confirmed": true,
+      "candidate_unchanged": true
+    },
+    {
+      "started_at_utc": "2026-10-13T09:47:10.348334+00:00",
+      "pid": 6056,
+      "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+      "owned_process": true,
+      "hidden": true,
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "elapsed_seconds": 1.109,
+      "terminal_confirmed": true,
+      "candidate_unchanged": true
+    }
+  ],
+  "fixture_sources_and_artifacts": [
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/ChangedCases.cs.fragment",
+      "size": 9016,
+      "sha256": "c80d743356b522e89fefd0f553e4b9d27b92718fb86be5d4452e4ba1cd1ceccd"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/finalize.py",
+      "size": 3902,
+      "sha256": "9932777e2bc6993e643e6e1596ac92eba64dcc8b927a565dd8ebfcc2d1e60a64"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/arrival.bin",
+      "size": 81,
+      "sha256": "11fae258d90e62f0ad502f0b22867b4f876cbaf3e6cd83647974271adc274f0f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/arrival.recipe.json",
+      "size": 2055,
+      "sha256": "8fd76a942d40f124c5947179941fc882ed7ad1e0da21bc4774a04f3424a7ac02"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/canbuild.bin",
+      "size": 36,
+      "sha256": "3c592e12cf60128c6f54d7f9c5e044a19b000e076649cfedffe992bb3d25ed04"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/canbuild.recipe.json",
+      "size": 1362,
+      "sha256": "222211fbbb963fbb3efa6689a81727c2ff20c838cb5a0315a9211d3d1ff26b06"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/category.bin",
+      "size": 70,
+      "sha256": "e7062c40917865530dc938d7b21e8b7942e98bcedf45326dcbf767e1f3dfe2df"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/category.recipe.json",
+      "size": 1985,
+      "sha256": "83eddd865e8ba0a56e6f4443ae55882e7c5142796a603afad8fadb9c7e586732"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/citycount.bin",
+      "size": 36,
+      "sha256": "b0690ecc089a1b101acf3887dc5c9f2c99e78503fc2ecbd888a59d3b8d4ddea9"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/citycount.recipe.json",
+      "size": 1362,
+      "sha256": "b0b08909722ffed7dd3b69d737f4dd130d88553d7e66caec0f527b1ecb969446"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/continent.bin",
+      "size": 71,
+      "sha256": "66c15181a2ee16ba2b5da359599a32a181e02d5f34266c273f0cc6ccb2ba4373"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/continent.recipe.json",
+      "size": 1972,
+      "sha256": "3d19e8de960bc20d2277c37cd21975c287eba9eb688628a570cb0502bc5248e1"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/convert.bin",
+      "size": 60,
+      "sha256": "27cb4c3cefa6aefc9d5d02f29fa1403ab6ed9954c4d9da019a8c6f8e3f640231"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/convert.recipe.json",
+      "size": 1772,
+      "sha256": "3611947d17887dd85dc25c5ba5dacc2a2805187a64506ca2b2415f3c1ef33898"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/currentpos.bin",
+      "size": 90,
+      "sha256": "d74e430fc0245a41a1dc0e8126ae06bb8cc2ef2e648608c834186677a23769bf"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/currentpos.recipe.json",
+      "size": 2292,
+      "sha256": "d3217cf363cef61a387cfe63c1f722f5fea86e3f2b3cddefaebd09d05b754000"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/execute.bin",
+      "size": 41,
+      "sha256": "fc4a88aedf2f92498001e1a24df09d3735d86399a21a78006b27a064ad53e765"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/execute.recipe.json",
+      "size": 1428,
+      "sha256": "7d2acfaac85321afaa35cda617b7dd2f42fa0fbe36b3dee5c32dcd86bed6753c"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/false8.bin",
+      "size": 35,
+      "sha256": "bf3cd98e07e45a5a27726b4910494b156fd3604edc183d5f97c069989cf048b5"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/false8.recipe.json",
+      "size": 1349,
+      "sha256": "43814a05b3457b165f797aee670378b3373ba5e0f90e7d4c2ab5dd06394a150f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/free.bin",
+      "size": 48,
+      "sha256": "74573a4c0800d69b677db87cb8233e4fe4183f3430c2d0fabab5223d3641cc5a"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/free.recipe.json",
+      "size": 1566,
+      "sha256": "ae359064acbdac0c4bf5db499ab6bfd964ab54377b0c3e24fe13ecb510abe1d1"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/goto_caller.bin",
+      "size": 78,
+      "sha256": "0245221c083856370628abf295acf6a6c48bd97a215edf014cc75d014c9f8b56"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/goto_caller.recipe.json",
+      "size": 2175,
+      "sha256": "a8b29b3a702fbd85f6b4537841c2327b1e29741e652e0b0c43662fcff9db580b"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/gridfood.bin",
+      "size": 77,
+      "sha256": "65cd39c6db9b6692ecfb5baf7dc8d6927b4f61cf72295e999f0b5330f26a2579"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/gridfood.recipe.json",
+      "size": 2151,
+      "sha256": "2fea0ec3112be26f0677cdff55c17efff1bef3592b0dc91ebcef78bf06e9ab60"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/gridterrain.bin",
+      "size": 77,
+      "sha256": "ea93721b9476d92c19f80360e58da8a3aec8266827a4977d2f1bbceac5489cfa"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/gridterrain.recipe.json",
+      "size": 2151,
+      "sha256": "41d9804fc682d30bc074ae8a812877e69e31612c9cd633bf62542b2a2bb0ae7c"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/ground.bin",
+      "size": 41,
+      "sha256": "bf5cc15d247a655e48630a22a9fef1b0727d5f305cf5702ab66fafa6e9ed1134"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/ground.recipe.json",
+      "size": 1458,
+      "sha256": "87e1a6f1a1c9950e5ef845ea81e49114525b659c6223db6930bbc6d4aa78f473"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/h3host.bin",
+      "size": 113,
+      "sha256": "f1ebe7f98ca204a9b76cb98ace266bcfba4c978cf0f54207e1986b8c232650e8"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/h3host.recipe.json",
+      "size": 2711,
+      "sha256": "7eb2ee2c87078eac4ac9b51ff01608db4f3560aa4d854f8e9dccc10e40583e13"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/h3open.bin",
+      "size": 267,
+      "sha256": "96f18660ef7bb9aba8c3366853fff51182b0b018cd76dceb6e011ac58b7593fc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/h3open.recipe.json",
+      "size": 4805,
+      "sha256": "15a3496bcaafb9b7366c51ed43584da25487cb2d57e7293010508a9f699d9e26"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/host.bin",
+      "size": 36,
+      "sha256": "524ec0b8fd62b9e2b85f70fca5af99825fd2bb0d377d76db158d2480b0c2d832"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/host.recipe.json",
+      "size": 1361,
+      "sha256": "d58818dd008d18185453daa1b1a2a2d2acb3ddc07ad94c8c6593a9c7f974801a"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/interfacecount.bin",
+      "size": 36,
+      "sha256": "642f56505e0aa2b3a8e33c979109a1c3155d0a99f0dd4f562760d84ff2edf1c9"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/interfacecount.recipe.json",
+      "size": 1361,
+      "sha256": "bb770fb309680ddd56f6851e8aa3c2e52870f879429d3c8e8fa8720b92ce2659"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/noop.bin",
+      "size": 35,
+      "sha256": "e9845fae129436b2d4cd9595bd5378c443dadc3a4e5e88602d2616e9a0069091"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/noop.recipe.json",
+      "size": 1349,
+      "sha256": "0ed1d4329413616e8808c9af1fc2c28e8d25a9ca692610df9e2d7f93ef780e1a"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/normalize_caller.bin",
+      "size": 92,
+      "sha256": "ac6986182437957bfc6dd5d90b60fd40715059960f026460ba1f65dece3093a0"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/normalize_caller.recipe.json",
+      "size": 2325,
+      "sha256": "4ea9dfe4bb6722dfbf77d236420244a96f19e30cd6452338cbc6a05e499adea7"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/owner.bin",
+      "size": 36,
+      "sha256": "24e0665a5fd1c26ce08c6ac17d71064d776dab19b8f2738a6561aba97031ec60"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/owner.recipe.json",
+      "size": 1360,
+      "sha256": "4b3c3d014531070b86bd2524516c8dbe793b2c28c99a71bde0a6c0e56d9e607f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/path.bin",
+      "size": 521,
+      "sha256": "aff4076473a245a89b83f4fbbbac507d2dbdb91a4d467005c3cc06f86806ef96"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/path.recipe.json",
+      "size": 9919,
+      "sha256": "23c8cbda742ebb6d9a15b3b03a7f45bf7d36011b3eecc857977d467453c5fa28"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/playerconvert.bin",
+      "size": 84,
+      "sha256": "843585a83b74265b81cf0f6b38266302bd6dfad11bfdb1dae48a5fbbcd21f68d"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/playerconvert.recipe.json",
+      "size": 2189,
+      "sha256": "ef6e942e23533e0c999e87105341388007ced094fe5b31ee8ecc503a97bf04f7"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/pointowner.bin",
+      "size": 72,
+      "sha256": "b90055755ef2237bc27cadb68eb4ba2f92bfe9ad28cb4b3aed292270b76e7042"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/pointowner.recipe.json",
+      "size": 2007,
+      "sha256": "f5c2306b006b9e88f24a97b89c97ae115ef97359ca38f05f87026d75c5d255dc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/presence.bin",
+      "size": 329,
+      "sha256": "d881c6e8e8375efb842ffc2acf3ebbfeb6cf6c14df67f2fe62ae20a2c0696377"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/presence.recipe.json",
+      "size": 5903,
+      "sha256": "23ec59d1b35b5aaa55b35955c7d7053a4fa7e562685aae4de4a6e0668f8d2ea7"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/scheduler.bin",
+      "size": 41,
+      "sha256": "e798723ac2d6e159f7dada1a623af7bc79c3843c8dbd887f227cee429868b9dd"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/scheduler.recipe.json",
+      "size": 1458,
+      "sha256": "d5884d0b15340301e57331409574468e1fe3d8785b9757e0ef19dfb1a6368dc0"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/score.bin",
+      "size": 35,
+      "sha256": "adbe8a57d71750bc6a7815534a7b218d8e442dd21cad1377b96b4d0a6b8cdac5"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/score.recipe.json",
+      "size": 1352,
+      "sha256": "355399416eb402f0913007638844655ac3d20bfe25eedc769404fe5fe34b597d"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/stringlookup.bin",
+      "size": 336,
+      "sha256": "e1efb337deef13530c030372122a4821c589384fee529a8e0127b135cc231aa0"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/stringlookup.recipe.json",
+      "size": 6029,
+      "sha256": "7f070ad31b409de47190241b197f397b73b1c69c2b6e6f83bea6979f57efe345"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/terrain.bin",
+      "size": 53,
+      "sha256": "292c081f2710ae98d7c883529d81ae04060ef6094404d449bc0cf55c048c1e5c"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/terrain.recipe.json",
+      "size": 1661,
+      "sha256": "05510f180a44d4d6ce6df7caf9f035f4d6d1e7c62e738cfc5f095422e9cc1a23"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/threat.bin",
+      "size": 36,
+      "sha256": "2a969b203cc513fdd00ebb956c158e51c86d6c329e126ed9e651f47006400885"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/threat.recipe.json",
+      "size": 1375,
+      "sha256": "04805192fe7da2e9c3d279c90418bcec2e8edfe099add1b8f672b4dff12cfd2e"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/trait.bin",
+      "size": 36,
+      "sha256": "31de406cdfe90a8235db56ebf5c77377d22bbca3e23eebbbce9ab65731d9d739"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/trait.recipe.json",
+      "size": 1361,
+      "sha256": "b950764b537d8de315da60f1894c919b0868ade4a3459e62f3c78e323090d851"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true12.bin",
+      "size": 35,
+      "sha256": "eb4e9656a1a05a12a3177eae24daca1eb0a081080a9cfc11d181ce7eaeb5ddaf"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true12.recipe.json",
+      "size": 1350,
+      "sha256": "73abe17d16d044cba41ee58e9b3e43163c637683ecfccd2927756eae05672685"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true24.bin",
+      "size": 35,
+      "sha256": "e001410074c49dc23ac44643b543013de5071334ef691449276229f85913c1d8"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true24.recipe.json",
+      "size": 1328,
+      "sha256": "18c8565bb61aabb51fb26b1590e2e29ac7bb3122c62db637ab4e9314b8b07016"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true4.bin",
+      "size": 35,
+      "sha256": "c249dfed349c4b15a7f6c99b8f89244c1e47210628b0b3d540c35a076536c86f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true4.recipe.json",
+      "size": 1349,
+      "sha256": "0b3d599a0c202d6b00217235a722332eb9c4f1b4bcc922306beedc8b05f1828b"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true8.bin",
+      "size": 35,
+      "sha256": "3cf1285ef5e0fe58e4153988db9d60ac93543cf760c28468daffb8cb71adf255"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/true8.recipe.json",
+      "size": 1349,
+      "sha256": "4a1675beffc0a488b69600b438404990eeb5538c79f589b5da4dbd2f0a13bdd7"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/typelookup.bin",
+      "size": 85,
+      "sha256": "4c557d9887d8d137d7968a69fa45522e0f92c7891a033d4659172a218bf5e3c4"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/helper/typelookup.recipe.json",
+      "size": 2183,
+      "sha256": "c9dc4b24c0f88955aa593c82a1eac2eea8e267e66c3d2577a21aef142d3a27dc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/native-policy-result-r3.json",
+      "size": 1225,
+      "sha256": "3c822b2fc48fe1dea5d41f59ac9468caf389dd78084c08a50bddfbb3659e4ea4"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/native-policy-result.json",
+      "size": 3071,
+      "sha256": "6fc2aa6a1f793f85ada4d0805e1ba5bea0d53896680d94b648dce7d22f5b26a5"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/native-policy.ps1",
+      "size": 1327,
+      "sha256": "41a8642c691f81cb407ee0072e26da818b69042f5bff4415d82265227124601a"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/NativeU40.cs",
+      "size": 25671,
+      "sha256": "383ae2aff8d78ceb90ab8ac21dfe2baabd8e0aedb6dc54905f27e057d2f163f2"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/NativeU40.r1.cs",
+      "size": 23462,
+      "sha256": "280fdabe8bf60600bb289ff2d33f30406feeda5052c62d9a91bee772a213c003"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/NativeU40.r2.cs",
+      "size": 25574,
+      "sha256": "84612d18471929efe51ddfc9fa30d6bed28485eb6d6ac236123afbfacf2036cc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/policy-process-r2.json",
+      "size": 361,
+      "sha256": "2e1e689866e9790874095450a2b58c2b0cc630824b85b98ac4c36e40a425e9bc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/policy-process-r3.json",
+      "size": 351,
+      "sha256": "efb231487ee2238edba051862215395aac23e742ba865a7a95d7afd02f472529"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/policy-process.json",
+      "size": 351,
+      "sha256": "b2c3fcf512f29ee891da6bd0c00f20a56f64ad135163d3ddc19e776244d5e7dc"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/prepare_fixtures.py",
+      "size": 4794,
+      "sha256": "55906ec029049c362b5db1c3e4e946313c2c10a1e956b5822cf6941d946bbd80"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/preserve_r1.py",
+      "size": 253,
+      "sha256": "6e743f31bd632d7ef7bd6aee94d6a2a1a2d04eb56110906ccec714d0d86a38b9"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/preserve_r2.py",
+      "size": 250,
+      "sha256": "39b8d6c4e969010a863e8c21afbb91b8243e3ec21ee7b767cb0421c398c655de"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-30-40/20261012T181500/c2/run-policy.py",
+      "size": 1735,
+      "sha256": "85d5fe35b1a89f3e8d8330a4553f346a66b76d2f266813a1731ca68aa5888deb"
+    }
+  ],
+  "scope": {
+    "native_original_Choose_Actual_Desired": true,
+    "new_policy_finalize_prefix_cap_adapters_executed": true,
+    "actual_Goto_Follow_arrival_normalizer_chain": true,
+    "normal_LoadLibrary": true,
+    "manual_full_owned_copy_HIGHLOW_rebase": true,
+    "forced_LoadLibrary_rebase": false,
+    "actual_engine_callbacks": false,
+    "actual_city_creation": false,
+    "full_native_Execute_aggregate": false,
+    "full_Scheduler_detach_runtime": false,
+    "whole_actual_game_host_allocator": false,
+    "gameplay": false
+  },
+  "remaining": [
+    "Root review these actual branch results before any live activation",
+    "Execute/Scheduler result propagation and single detach have machinecode bindings, full corresponding native frames not executed",
+    "Actual host/path allocator/safety/query cost and useful request-to-city effect require separately authorized benchmark",
+    "Native LoadLibrary preferred base + manual owned full-copy rebase proven; forced OS-loader rebase not run",
+    "30/40 city creation and Doel3 retention/save-load in actual combination unmeasured"
+  ]
+}

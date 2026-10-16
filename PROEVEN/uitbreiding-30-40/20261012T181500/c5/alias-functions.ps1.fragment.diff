@@ -1,0 +1,20 @@
+--- preserved C4/alias-functions.ps1.fragment
++++ owned C5/alias-functions.ps1.fragment
+@@ -11,7 +11,7 @@
+  if(Test-Path -LiteralPath $ownerRecord){throw 'Own alias creation already attempted; no retry.'}
+  if(Test-Path -LiteralPath $paths.target){throw 'Alias existed before own creation; never overwrite.'}
+  if((Hash $paths.source) -cne $manifest.T0_alias.sha256){throw 'Pinned alias source changed.'}
+- JsonFile @{at=(Get-Date).ToString('o');owner='C4_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
++ JsonFile @{at=(Get-Date).ToString('o');owner='C5_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
+  Copy-Item -LiteralPath $paths.source -Destination $paths.target
+  if((Hash $paths.target) -cne $manifest.T0_alias.sha256){throw 'Own alias byteexact verification failed; preserve.'}
+  JsonFile @{at=(Get-Date).ToString('o');created=$true;path=$paths.target;sha256=(Hash $paths.target);source_sha256=(Hash $paths.source)} 'T0-alias-created.json'
+@@ -21,7 +21,7 @@
+  $paths=ExactAliasPaths;$ownerRecord=Join-Path $armDir 'T0-alias-owner.json'
+  if(!(Test-Path -LiteralPath $ownerRecord)){JsonFile @{status='NO_OWN_ALIAS_ATTEMPT';removed=$false} 'T0-alias-cleanup.json';return}
+  $record=Get-Content -LiteralPath $ownerRecord -Raw -Encoding utf8|ConvertFrom-Json
+- if($record.owner -cne 'C4_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
++ if($record.owner -cne 'C5_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
+  if(!(Test-Path -LiteralPath $paths.target)){JsonFile @{status='OWN_ALIAS_ALREADY_ABSENT';removed=$false} 'T0-alias-cleanup.json';return}
+  $current=Hash $paths.target
+  if($current -cne $manifest.T0_alias.sha256){JsonFile @{status='PRESERVED_UNEXPECTED_ALIAS_BYTES';removed=$false;path=$paths.target;sha256=$current} 'T0-alias-cleanup.json';throw 'Own alias unexpectedly changed; preserved for review.'}

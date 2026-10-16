@@ -1,0 +1,11 @@
+--- prepare_native_fixtures.py.before-attempt8
++++ prepare_native_fixtures.py
+@@ -15,7 +15,7 @@
+ wrapped=bytearray((OLD/'convert.bin').read_bytes());wrapped[13:13]=b'\x25'+(0xffff001f).to_bytes(4,'little')
+ (OUT/'fixture-convert-wrap.bin').write_bytes(wrapped)
+ pins.append(dict(name='convert-wrap',sha256=sha(wrapped),controlled_callback=True,change='existing converter plus x modulo32 for alias fixtures; no real engine wrap claim'))
+-r=X86();r.prologue(0);r.zero(m('ebp',20),40);r.mov(m('edi'),1);r.mov(m('edi',4),2**31-1);r.mov(m('edi',12),2);r.mov(m('edi',24),1);r.mov('eax',1);r.epilogue(0,20)
++r=X86();r.prologue(0);r.zero(m('ebp',20),40);r.mov('edi',m('ebp',20));r.mov(m('edi'),1);r.mov(m('edi',4),2**31-1);r.mov(m('edi',12),2);r.mov(m('edi',24),1);r.mov('eax',1);r.epilogue(0,20)
+ data=r.finish();(OUT/'fixture-large-center-reader.bin').write_bytes(data)
+ pins.append(dict(name='large-center-reader',sha256=sha(data),controlled_callback=True,change='isolated SCI int64-center boundary: getter INT32MAX plus bonus1; no H3FoodReader acceptance claim',recipe=r.rows))
+ def state(r):r.mov('ecx',m('esp',4));r.mov('ecx',m('ecx',4))

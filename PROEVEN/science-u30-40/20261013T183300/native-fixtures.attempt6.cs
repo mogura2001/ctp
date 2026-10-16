@@ -1,0 +1,119 @@
+// Adaptation of the existing H3 owned32bit fixture. No CTP process or exports.
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.Security.Cryptography;
+public static class ScienceNative {
+ [DllImport("kernel32.dll",SetLastError=true,CharSet=CharSet.Unicode)] static extern IntPtr LoadLibraryExW(string s,IntPtr z,uint flags);
+ [DllImport("kernel32.dll",SetLastError=true)] static extern bool FreeLibrary(IntPtr p);
+ [DllImport("kernel32.dll",SetLastError=true)] static extern IntPtr VirtualAlloc(IntPtr a,UIntPtr n,uint t,uint p);
+ [DllImport("kernel32.dll",SetLastError=true)] static extern bool VirtualFree(IntPtr p,UIntPtr n,uint t);
+ [DllImport("kernel32.dll",SetLastError=true)] static extern bool VirtualProtect(IntPtr p,UIntPtr n,uint v,out uint old);
+ [DllImport("kernel32.dll")] static extern uint SetErrorMode(uint v);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate void Shim();
+ public static List<Dictionary<string,object>> Results=new List<Dictionary<string,object>>();
+ public static List<Dictionary<string,object>> Patches=new List<Dictionary<string,object>>();
+ static List<IntPtr> owned=new List<IntPtr>();
+ static IntPtr ai,world,state,host,wgf,db,records,center,result,engine,image,ctx,guarded,nativeGrid;
+ static IntPtr[] cells,envs,irr3;
+ static Shim shim;
+ static IntPtr entry;
+ static IntPtr A(IntPtr p,int o){return new IntPtr(p.ToInt32()+o);}
+ static int R(IntPtr p,int o){return Marshal.ReadInt32(p,o);}
+ static long L(IntPtr p,int o){return Marshal.ReadInt64(p,o);}
+ static void W(IntPtr p,int o,int n){Marshal.WriteInt32(p,o,n);}
+ static void S(IntPtr p,int o,int n){Marshal.WriteInt16(p,o,(short)n);}
+ static void D(IntPtr p,int o,double n){Marshal.Copy(BitConverter.GetBytes(n),0,A(p,o),8);}
+ static void Assert(bool ok,string s){if(!ok)throw new InvalidOperationException(s);}
+ static byte[] Read(IntPtr p,int n){byte[] b=new byte[n];Marshal.Copy(p,b,0,n);return b;}
+ static string Hex(byte[] b){return BitConverter.ToString(b).Replace("-","").ToLowerInvariant();}
+ static string Hash(byte[] b){using(var h=SHA256.Create())return Hex(h.ComputeHash(b));}
+ static bool Equal(byte[] a,byte[] b){return Hex(a)==Hex(b);}
+ static IntPtr Mem(int n){IntPtr p=VirtualAlloc(IntPtr.Zero,(UIntPtr)n,0x3000,4);if(p==IntPtr.Zero)throw new Win32Exception();owned.Add(p);return p;}
+ static IntPtr Code(byte[] b){IntPtr p=Mem(b.Length);Marshal.Copy(b,0,p,b.Length);uint v;Assert(VirtualProtect(p,(UIntPtr)b.Length,0x20,out v),"owned RX");return p;}
+ static IntPtr Code(string root,string n){return Code(File.ReadAllBytes(Path.Combine(root,"fixture-"+n+".bin")));}
+ static void Pos(IntPtr p,int o,int x){S(p,o,x);S(p,o+2,0);S(p,o+4,0);S(p,o+6,0xaabb);}
+ static void Patch(string name,int at,IntPtr target){byte[] before=Read(A(image,at),6);byte[] after=new byte[6];after[0]=0xe8;Array.Copy(BitConverter.GetBytes(target.ToInt32()-image.ToInt32()-at-5),0,after,1,4);after[5]=0x90;Marshal.Copy(after,0,A(image,at),6);Patches.Add(new Dictionary<string,object>{{"name",name},{"image_rva",at},{"before",Hex(before)},{"after",Hex(after)},{"controlled_target",target.ToInt32()}});}
+ static void Dispatch(string name,int lo,int hi,string pattern,IntPtr target,int expected){byte[] find=new byte[pattern.Length/2];for(int i=0;i<find.Length;i++)find[i]=Convert.ToByte(pattern.Substring(2*i,2),16);int count=0;for(int i=lo;i<=hi-find.Length;i++){bool match=true;for(int j=0;j<find.Length;j++)if(Marshal.ReadByte(image,i+j)!=find[j]){match=false;break;}if(match){Patch(name,i,target);count++;}}Assert(count==expected,"dispatch count "+name+" actual"+count);}
+ static void Reset(){
+  Marshal.Copy(new byte[4096],0,state,4096);Marshal.Copy(new byte[24*192],0,records,24*192);
+  W(world,0,engine.ToInt32()+0x3452e0);W(world,4,state.ToInt32());W(ai,0x30,world.ToInt32());W(db,0,24);W(db,8,records.ToInt32());S(engine,0x67df20,32);S(engine,0x67df22,1);
+  W(wgf,72,0);D(wgf,8,1);W(state,4,3);W(state,8,1);W(state,12,1);W(state,16,1);S(ctx,0x740,0x037f);Pos(center,0,0);
+  for(int i=0;i<32;i++){Marshal.Copy(new byte[32],0,cells[i],32);Marshal.WriteByte(cells[i],13,1);W(state,0x400+4*i,1);W(state,0x500+4*i,8);W(state,0x700+4*i,1);W(state,0x780+4*i,1);D(state,0x800+8*i,15);W(state,0x900+4*i,0x1234);W(state,0xa00+4*i,1);}
+  Marshal.WriteByte(cells[0],13,2);W(state,0x400,2);W(state,0x500,5);W(A(records,2*192),8,5);W(A(records,2*192),0x50,envs[0].ToInt32());W(envs[0],0,5);
+  int[] t={1,4,5,10,11};for(int i=0;i<t.Length;i++){int x=i+1;Marshal.WriteByte(cells[x],13,(byte)t[i]);W(state,0x400+4*x,t[i]);W(A(records,t[i]*192),8,8);W(A(records,t[i]*192),0x6c,envs[x].ToInt32());W(A(records,t[i]*192),0x70,irr3[x].ToInt32());W(envs[x],0,20);W(envs[x],0x20,500);W(envs[x],0x24,7);W(envs[x],0x44,123+i);W(irr3[x],0,12);Pos(state,0x200+8*i,x);}
+  W(guarded,0,0x13572468);W(guarded,2080,0x24681357);
+ }
+ static void Food(int x,int n){int t=Marshal.ReadByte(cells[x],13);W(A(records,t*192),8,n);W(state,0x500+4*x,n);}
+ static void Present(int x){W(cells[x],0,12);W(state,0x500+4*x,R(A(records,Marshal.ReadByte(cells[x],13)*192),8)+12);}
+ static void Delta(double v){for(int x=1;x<=5;x++)D(state,0x800+8*x,v);}
+ static void Invoke(string name,int expected,int summary){
+  Console.WriteLine("CASE "+name);IntPtr[] args={ai,world,center,host,result};for(int i=0;i<5;i++)W(ctx,0x700+4*i,args[i].ToInt32());W(ctx,112,entry.ToInt32());shim();
+  Assert(R(ctx,40)==R(ctx,44),"ESP "+name);Assert(R(ctx,48)==0x13579bdf&&R(ctx,52)==0x2468ace0&&R(ctx,56)==0x76543210&&R(ctx,60)==0x55aa33cc,"regs "+name);Assert(Equal(Read(A(ctx,0x300),160),Read(A(ctx,0x500),160)),"x87 "+name);Assert(R(guarded,0)==0x13572468&&R(guarded,2080)==0x24681357,"canaries "+name);
+  var row=new Dictionary<string,object>{{"name",name},{"expected_location",expected},{"actual_location",R(result,0)},{"reason",R(result,4)},{"development",R(result,60)},{"center",L(result,72)},{"current_S3",L(result,80)},{"margin3_x2",L(result,88)},{"selected",new int[]{R(result,28),R(result,32),R(result,36)}},{"spatial_calls",R(state,0x80)},{"primary_plus_development_food",R(state,0x40)},{"available_calls",R(state,0x60)},{"position_calls",R(state,0x64)},{"delta_calls",R(state,0x68)},{"caller_CW",Marshal.ReadInt16(ctx,0x740)},{"observed_CW_before",Marshal.ReadInt16(ctx,0x300)},{"observed_CW_after",Marshal.ReadInt16(ctx,0x500)},{"raw_result_base64",Convert.ToBase64String(Read(result,2048))},{"ABI_stack_regs_x87_canaries",true}};Results.Add(row);
+  Assert(R(result,0)==expected,"state "+name+" actual"+R(result,0)+" reason"+R(result,4));if(summary>=0)Assert(R(result,60)==summary,"development summary "+name);
+  Assert(R(state,0x80)<=20&&R(state,0x40)<=41&&R(state,0x60)<=20&&R(state,0x64)<=20&&R(state,0x68)<=20,"measured direct query limits "+name);
+ }
+ public static Dictionary<string,object> Run(string root,int[] range,int[] pinRvas,string[] pinHex,int[] fixAt,int[] fixOff){
+  Assert(IntPtr.Size==4,"x86 required");SetErrorMode(0x8003);IntPtr module=IntPtr.Zero;IntPtr reserved=IntPtr.Zero;
+  try{
+   string file=Path.Combine(root,"SCIENCE-C1-CREDIT-OFF.prepared.dll");byte[] raw=File.ReadAllBytes(file);Assert(Hash(raw)=="622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba","candidate pin");
+   reserved=VirtualAlloc(new IntPtr(0x20000000),(UIntPtr)0x140000,0x2000,1);Assert(reserved==new IntPtr(0x20000000),"preferred DLLbase reserve");module=LoadLibraryExW(file,IntPtr.Zero,1);if(module==IntPtr.Zero)throw new Win32Exception();int size=R(module,R(module,0x3c)+0x50);byte[] mapped=Read(module,size);image=Mem(size);Marshal.Copy(mapped,0,image,size);
+   engine=new IntPtr(0x400000);var chunks=new HashSet<int>();chunks.Add(0);chunks.Add(0x130000);chunks.Add(0x670000);foreach(int rva in pinRvas)chunks.Add(rva&unchecked((int)0xffff0000));
+   foreach(int off in chunks){IntPtr wanted=A(engine,off),p=VirtualAlloc(wanted,(UIntPtr)0x10000,0x3000,4);Assert(p==wanted,"synthetic fixed engine block "+wanted.ToInt32().ToString("x8")+" error"+Marshal.GetLastWin32Error());owned.Add(p);}
+   byte[] exe=File.ReadAllBytes(Path.GetFullPath(Path.Combine(root,"..","..","..","CTP-og","ctp_program","ctp","civctp.exe")));Assert(Hash(exe)=="b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79","engine bytes pin");Marshal.Copy(exe,0,engine,0x400);
+   for(int i=0;i<pinRvas.Length;i++){byte[] b=new byte[pinHex[i].Length/2];for(int j=0;j<b.Length;j++)b[j]=Convert.ToByte(pinHex[i].Substring(j*2,2),16);Marshal.Copy(b,0,A(engine,pinRvas[i]),b.Length);}
+   // Original H3Host checks food/terrain wrapper bytes too, supplied as data.
+   int pe=BitConverter.ToInt32(exe,0x3c);int sections=BitConverter.ToInt16(exe,pe+6);int sec=pe+24+BitConverter.ToInt16(exe,pe+20);
+   foreach(int rva in new int[]{0x1342e0,0x134340}){int off=-1;for(int s=0;s<sections;s++){int at=sec+40*s,va=BitConverter.ToInt32(exe,at+12),n=BitConverter.ToInt32(exe,at+16);if(rva>=va&&rva<va+n)off=BitConverter.ToInt32(exe,at+20)+rva-va;}Assert(off>=0,"wrapper range");Marshal.Copy(exe,off,A(engine,rva),47);}
+   world=Mem(0x200);ai=Mem(0x100);state=Mem(4096);host=Mem(24);wgf=Mem(0x50);db=Mem(12);records=Mem(24*192);center=Mem(8);guarded=Mem(2112);result=A(guarded,32);ctx=Mem(0x800);
+   nativeGrid=Mem(0x400);W(nativeGrid,0,engine.ToInt32()+0x344170);IntPtr grid=Mem(4),xs=Mem(128);W(nativeGrid,0x1c,grid.ToInt32());W(grid,0,xs.ToInt32());cells=new IntPtr[32];envs=new IntPtr[8];irr3=new IntPtr[8];for(int i=0;i<8;i++){envs[i]=Mem(0x50);irr3[i]=Mem(0x50);}for(int i=0;i<32;i++){cells[i]=Mem(32);IntPtr ys=Mem(4);W(ys,0,cells[i].ToInt32());W(xs,4*i,ys.ToInt32());}
+   IntPtr player=Mem(0x1320),pi=Mem(12),imp=Mem(12);W(pi,8,player.ToInt32());W(player,0x1318,wgf.ToInt32());W(ai,0x2c,pi.ToInt32());W(ai,0x50,imp.ToInt32());W(imp,0,engine.ToInt32()+0x3445b8);W(imp,4,state.ToInt32());W(ai,0x20,2);
+   W(engine,0x67dd70,nativeGrid.ToInt32());W(engine,0x67dd3c,db.ToInt32());W(engine,0x3452e0+0xa8,engine.ToInt32()+0x1342e0);W(engine,0x3452e0+0xb8,engine.ToInt32()+0x134340);
+   W(host,0,engine.ToInt32());W(host,4,nativeGrid.ToInt32());W(host,8,db.ToInt32());W(host,12,player.ToInt32());W(host,16,wgf.ToInt32());W(host,20,engine.ToInt32()+0x103f00);
+   var callbacks=new Dictionary<string,IntPtr>();foreach(string n in new string[]{"gate","open","terrain","food","convert","spatial","available","position","delta"})callbacks[n]=Code(root,n);callbacks["convert"]=Code(root,"convert-wrap");
+   Dispatch("SCI canonical controlled conversion",range[0],range[1],"ff9314000000",callbacks["convert"],2);Dispatch("SCI controlled spatial",range[0],range[1],"ff9134000000",callbacks["spatial"],1);
+   Dispatch("H2 controlled gate",range[2],range[3],"ff9128000000",callbacks["gate"],1);Dispatch("H2 controlled open",range[2],range[3],"ff91ac000000",callbacks["open"],1);Dispatch("H2 controlled terrain",range[2],range[3],"ff91a8000000",callbacks["terrain"],1);
+   Dispatch("Food controlled conversion",range[4],range[5],"ff9314000000",callbacks["convert"],1);Dispatch("Food controlled getter",range[4],range[5],"ff91b8000000",callbacks["food"],1);
+   Dispatch("Dev controlled availability",range[6],range[7],"ff9110000000",callbacks["available"],1);Dispatch("Dev controlled placement",range[6],range[7],"ff9120000000",callbacks["position"],1);Dispatch("Dev controlled delta",range[6],range[7],"ff9148000000",callbacks["delta"],1);
+   byte[] fixture=Read(image,size);bool[] allowed=new bool[size];foreach(var row in Patches){int at=(int)row["image_rva"];for(int i=0;i<6;i++)allowed[at+i]=true;}for(int i=0;i<size;i++)Assert(mapped[i]==fixture[i]||allowed[i],"only call-dispatch substitution");Assert(Equal(Read(A(module,range[8]),788),Read(A(image,range[8]),788)),"Hostvalidator unchanged");uint protection;Assert(VirtualProtect(image,(UIntPtr)size,0x20,out protection),"fixture image RX");
+   byte[] sh=File.ReadAllBytes(Path.Combine(root,"fixture-shim5.bin"));for(int i=0;i<fixAt.Length;i++)Array.Copy(BitConverter.GetBytes(ctx.ToInt32()+fixOff[i]),0,sh,fixAt[i],4);shim=(Shim)Marshal.GetDelegateForFunctionPointer(Code(sh),typeof(Shim));entry=A(image,range[0]);
+   Reset();Invoke("early_NOW_no_mountains",2,3);Assert(R(result,124)==1,"H2 no3mountains");
+   Reset();for(int x=1;x<=3;x++){W(state,0x700+4*x,0);W(state,0x780+4*x,0);}Invoke("early_NOW_tech_and_place_false",2,1);Assert(L(result,80)==34,"no future in current");
+   Reset();W(state,4,4);Food(1,10);Food(2,5);Food(3,4);Food(4,3);D(state,0x808,0);D(state,0x810,0);D(state,0x818,30);D(state,0x820,40);Invoke("future_positive_different_rank_current_preserved",4,3);Assert(L(result,80)==29&&L(result,88)==-2&&R(result,28)==0&&R(result,32)==1&&R(result,36)==2,"current immutable pending");
+   foreach(double bad in new double[]{Double.NaN,0.5,Int32.MaxValue,-20}){Reset();for(int x=1;x<=3;x++)Food(x,4);Delta(bad);Invoke("invalid_delta_"+bad.ToString(System.Globalization.CultureInfo.InvariantCulture),1,0);Assert(R(result,52)==7,"development unknownmask");}
+   Reset();for(int x=1;x<=3;x++)Present(x);Invoke("all_PRESENT_IRR3_no_downgrade",2,4);Assert(R(result,128+32+52)==0,"present delta0");
+   Reset();Present(1);Invoke("MIXED_PRESENT_READY",2,5);
+   Reset();Delta(Double.NaN);Invoke("NOW_development_UNKNOWN_independent",2,0);
+   Reset();W(state,4,2);Invoke("less_than_three",1,0);
+   Reset();Pos(state,0x200+8,33);W(state,0x400+33*4,1);W(state,0x500+33*4,8);Invoke("controlled_wrap_duplicate_not_third_tile",1,0);Assert(R(result,128+96+28)==3,"duplicate reason");
+   Reset();Pos(state,0x200+16,32);W(state,0x400+32*4,2);W(state,0x500+32*4,5);Invoke("controlled_wrap_center_alias_not_worker",1,0);Assert(R(result,128+192+28)==3,"center alias reason");
+   Reset();W(state,0xa08,0);Invoke("spatial_false_keeps_structural",3,0);
+   Reset();W(state,0xa08,2);Invoke("invalid_spatial_return_shared_UNKNOWN",0,0);Assert(R(result,112)==0,"coverage0");
+   Reset();W(world,0,0);Invoke("wrong_shared_World_vtable",0,0);
+   Reset();W(db,0,0);Invoke("bad_shared_DB_context",0,0);
+   Reset();S(engine,0x67df20,0);Invoke("bad_shared_dimensions",0,0);
+   Reset();W(state,4,4);Marshal.WriteByte(cells[4],13,8);W(state,0x410,8);W(A(records,8*192),8,8);Invoke("local_unsupported_does_not_retract_independent_NOW",2,3);Assert(R(result,40)==8,"localmask");
+   Reset();W(wgf,72,1);D(wgf,8,1.25);Food(1,10);Food(2,9);Food(3,9);Invoke("half_consumption_margin_positive_one",2,3);Assert(L(result,80)==38&&L(result,88)==1,"exact75 halves");
+   Reset();W(wgf,72,1);D(wgf,8,1.25);Food(1,9);Food(2,9);Food(3,9);Delta(0);Invoke("half_consumption_not_floored",1,3);Assert(L(result,88)==-1,"exact negative half");
+   Reset();W(A(records,2*192),8,0);W(state,0x500,0);W(envs[0],0,0);for(int x=1;x<=3;x++)Food(x,10);Delta(0);Invoke("maintenance_zero_is_not_growth",1,3);Assert(L(result,88)==0,"zero margin");
+   foreach(int cw in new int[]{0x007f,0x027f,0x037f}){Reset();S(ctx,0x740,cw);Invoke("precision_"+cw.ToString("x4"),2,3);}
+   Reset();S(ctx,0x740,0x017f);Invoke("reserved_precision_UNKNOWN",0,0);
+   Reset();S(ctx,0x740,0x037e);Invoke("unmasked_exceptions_UNKNOWN",0,0);
+   Reset();S(ctx,0x740,0x007f);W(wgf,72,16777213);D(wgf,8,1+16777213*0.25);Invoke("PC24_large_unproved_stand_UNKNOWN",0,0);
+   Reset();W(state,4,20);for(int i=0;i<20;i++)Pos(state,0x200+8*i,i+1);Invoke("max_twenty_call_query_bounds",2,3);Assert(R(state,0x80)==20&&R(state,0x40)==41,"peak direct calls");
+   // Isolate the reviewed signed64-center boundary. Actual H3FoodReader has
+   // a narrower int32-center check; only SCI's first center-dispatch is replaced.
+   int centerCall=-1;for(int at=range[0];at<range[1]-5;at++)if(Marshal.ReadByte(image,at)==0xe8&&at+5+R(image,at+1)==range[4]){centerCall=at;break;}Assert(centerCall>=0,"center call binding");
+   byte[] centerBefore=Read(A(image,centerCall),5),centerAfter=new byte[5];centerAfter[0]=0xe8;IntPtr centerCallback=Code(root,"large-center-reader");Array.Copy(BitConverter.GetBytes(centerCallback.ToInt32()-image.ToInt32()-centerCall-5),0,centerAfter,1,4);uint oldCenter;
+   Assert(VirtualProtect(A(image,centerCall),(UIntPtr)5,0x40,out oldCenter),"own center dispatch protection");Marshal.Copy(centerAfter,0,A(image,centerCall),5);uint ignored;Assert(VirtualProtect(A(image,centerCall),(UIntPtr)5,oldCenter,out ignored),"own center dispatch RX");
+   Reset();Invoke("isolated_SCI_center_above_int32",2,3);Assert(L(result,72)==2147483648L&&L(result,80)==2147483672L&&L(result,88)==4294967284L,"signed64 center accepted");
+   Assert(VirtualProtect(A(image,centerCall),(UIntPtr)5,0x40,out ignored),"restore center dispatch");Marshal.Copy(centerBefore,0,A(image,centerCall),5);Assert(VirtualProtect(A(image,centerCall),(UIntPtr)5,oldCenter,out ignored),"restored RX");
+   Patches.Add(new Dictionary<string,object>{{"name","temporary isolated large-center reader"},{"image_rva",centerCall},{"before",Hex(centerBefore)},{"after",Hex(centerAfter)},{"length",5},{"restored",Equal(centerBefore,Read(A(image,centerCall),5))}});
+   Assert(Equal(mapped,Read(module,size)),"mapped candidate bytes unchanged");
+   return new Dictionary<string,object>{{"pass",true},{"bitness",32},{"helper_pid",System.Diagnostics.Process.GetCurrentProcess().Id},{"native_calls",Results.Count},{"cases",Results},{"patches",Patches},{"mapped_candidate_unchanged",true},{"Hostvalidator_unchanged",true},{"original_recalculation_body_preserved_except_dispatch",true},{"controlled_callbacks",true},{"synthetic_engine_pin_context",true},{"original_engine_queries_executed",false},{"gameplay_measured",false},{"actual_engine_host_acceptance",false},{"candidate_sha256",Hash(raw)}};
+  }finally{foreach(IntPtr p in owned)VirtualFree(p,UIntPtr.Zero,0x8000);if(module!=IntPtr.Zero)FreeLibrary(module);if(reserved!=IntPtr.Zero)VirtualFree(reserved,UIntPtr.Zero,0x8000);}
+ }
+}

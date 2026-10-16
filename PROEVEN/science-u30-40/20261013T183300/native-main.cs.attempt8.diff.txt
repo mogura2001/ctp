@@ -1,0 +1,23 @@
+--- native-main.cs.before-attempt8
++++ native-main.cs
+@@ -10,15 +10,18 @@
+  public static int Main(string[] args){
+   if(args.Length!=2||!args[1].StartsWith("attempt"))return 2;
+   string root=Path.GetFullPath(args[0]),output=Path.Combine(root,"native-"+args[1]+".json");if(File.Exists(output))return 3;
+-  var serializer=new JavaScriptSerializer();serializer.MaxJsonLength=10000000;
++  JavaScriptSerializer serializer=null;
+   Console.WriteLine("helper_pid "+System.Diagnostics.Process.GetCurrentProcess().Id);
+   try{
++   ScienceNative.ReserveEngineBlocks();
++   serializer=new JavaScriptSerializer();serializer.MaxJsonLength=10000000;
+    var input=(Dictionary<string,object>)serializer.DeserializeObject(File.ReadAllText(Path.Combine(root,"native-input.json")));
+    var result=ScienceNative.Run(root,Ints(input["ranges"]),Ints(input["pin_rvas"]),Strings(input["pin_hex"]),Ints(input["fix_at"]),Ints(input["fix_off"]));
+    File.WriteAllText(output,serializer.Serialize(result));Console.WriteLine("PASS nativecalls "+result["native_calls"]);return 0;
+   }catch(Exception ex){
++   if(serializer==null){serializer=new JavaScriptSerializer();serializer.MaxJsonLength=10000000;}
+    var result=new Dictionary<string,object>{{"pass",false},{"error",ex.ToString()},{"cases",ScienceNative.Results},{"patches",ScienceNative.Patches},{"helper_pid",System.Diagnostics.Process.GetCurrentProcess().Id},{"bitness",IntPtr.Size*8},{"gameplay_measured",false}};
+    File.WriteAllText(output,serializer.Serialize(result));Console.Error.WriteLine(ex.ToString());return 1;
+-  }
++  }finally{ScienceNative.ReleaseOwned();}
+  }
+ }

@@ -1,0 +1,48 @@
+"""Adapt existing H3 controlled callbacks/shim; only owned fixture outputs."""
+from pathlib import Path
+import sys,json,hashlib
+sys.dont_write_bytecode=True
+OUT=Path(__file__).resolve().parent
+sys.path.insert(0,str(OUT))
+from x86 import X86,mem as m
+OLD=OUT.parents[1]/'production-h3/helper'
+sha=lambda data:hashlib.sha256(data).hexdigest()
+pins=[]
+for name in ('gate','open','terrain','food','convert'):
+ data=(OLD/(name+'.bin')).read_bytes()
+ (OUT/('fixture-'+name+'.bin')).write_bytes(data)
+ pins.append(dict(name=name,source=str((OLD/(name+'.bin')).relative_to(OUT.parents[2])),sha256=sha(data),unchanged=True))
+wrapped=bytearray((OLD/'convert.bin').read_bytes());wrapped[13:13]=b'\x25'+(0xffff001f).to_bytes(4,'little')
+(OUT/'fixture-convert-wrap.bin').write_bytes(wrapped)
+pins.append(dict(name='convert-wrap',sha256=sha(wrapped),controlled_callback=True,change='existing converter plus x modulo32 for alias fixtures; no real engine wrap claim'))
+r=X86();r.prologue(0);r.zero(m('ebp',20),40);r.mov(m('edi'),1);r.mov(m('edi',4),2**31-1);r.mov(m('edi',12),2);r.mov(m('edi',24),1);r.mov('eax',1);r.epilogue(0,20)
+data=r.finish();(OUT/'fixture-large-center-reader.bin').write_bytes(data)
+pins.append(dict(name='large-center-reader',sha256=sha(data),controlled_callback=True,change='isolated SCI int64-center boundary: getter INT32MAX plus bonus1; no H3FoodReader acceptance claim',recipe=r.rows))
+def state(r):r.mov('ecx',m('esp',4));r.mov('ecx',m('ecx',4))
+def position(r,arg):r.mov('edx',m('esp',arg));r.load('eax',m('edx'),'zx16')
+for name in ('spatial','available','position','delta'):
+ r=X86();state(r)
+ if name=='spatial':
+  position(r,8);r.mov(m('ecx',0x84),'eax');r.unary('inc',m('ecx',0x80));r.shift('shl','eax',2);r.alu('add','eax','ecx');r.mov('eax',m('eax',0xa00));pop=8
+ elif name=='available':
+  r.unary('inc',m('ecx',0x60));r.mov('eax',m('ecx',0x84));r.shift('shl','eax',2);r.alu('add','eax','ecx');r.mov('eax',m('eax',0x700));pop=8
+ elif name=='position':
+  r.unary('inc',m('ecx',0x64));position(r,16);r.shift('shl','eax',2);r.alu('add','eax','ecx');r.mov('edx',m('esp',20));r.mov('ecx',m('eax',0x900));r.mov(m('edx'),'ecx');r.mov('eax',m('eax',0x780));pop=20
+ else:
+  r.unary('inc',m('ecx',0x68));position(r,12);r.imul('eax','eax',8);r.alu('add','eax','ecx');r.fp('fld controlled delta','dd',0,m('eax',0x800));pop=12
+ r.op('ret',b'\xc2'+pop.to_bytes(2,'little'));data=r.finish()
+ (OUT/('fixture-'+name+'.bin')).write_bytes(data)
+ pins.append(dict(name=name,sha256=sha(data),controlled_callback=True,recipe=r.rows))
+# Existing ABI shim; only add caller-CW loading after its FNINIT.
+data=bytearray((OLD/'shim5.bin').read_bytes());recipe=json.loads((OLD/'shim5.recipe.json').read_text())
+assert data[11:13]==b'\xdb\xe3'
+data[13:13]=b'\xd9\x2d'+bytes(4)
+fix=[]
+for row in recipe['fixups']:
+ if 'at' in row and 'context_offset' in row:fix.append(dict(at=row['at']+(6 if row['at']>=13 else 0),context_offset=row['context_offset']))
+fix.append(dict(at=15,context_offset=0x740))
+(OUT/'fixture-shim5.bin').write_bytes(data)
+(OUT/'fixture-shim5-fixups.json').write_text(json.dumps(fix,indent=2)+'\n','utf-8')
+pins.append(dict(name='shim5',source_sha256=sha((OLD/'shim5.bin').read_bytes()),fixture_sha256=sha(data),change='FLDCW ctx+740 after original FNINIT; outside legacy FXSAVE areas',fixups=fix))
+(OUT/'native-fixture-input-pins.json').write_text(json.dumps(pins,indent=2)+'\n','utf-8')
+print('Prepared existing H3 callback/shim adaptation; no native execution')

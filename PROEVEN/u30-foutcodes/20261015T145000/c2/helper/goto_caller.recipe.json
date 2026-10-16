@@ -1,0 +1,126 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "owned input state",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "mov edi,ecx",
+      "bytes": "8bf9"
+    },
+    {
+      "offset": 19,
+      "asm": "push 0",
+      "bytes": "6800000000"
+    },
+    {
+      "offset": 24,
+      "asm": "push ('ebx', 628)",
+      "bytes": "ffb374020000"
+    },
+    {
+      "offset": 30,
+      "asm": "push 0",
+      "bytes": "6800000000"
+    },
+    {
+      "offset": 35,
+      "asm": "push 0",
+      "bytes": "6800000000"
+    },
+    {
+      "offset": 40,
+      "asm": "push ('ebx', 624)",
+      "bytes": "ffb370020000"
+    },
+    {
+      "offset": 46,
+      "asm": "push 0",
+      "bytes": "6800000000"
+    },
+    {
+      "offset": 51,
+      "asm": "push ('ebx', 620)",
+      "bytes": "ffb36c020000"
+    },
+    {
+      "offset": 57,
+      "asm": "mov ecx,edi",
+      "bytes": "8bcf"
+    },
+    {
+      "offset": 59,
+      "asm": "call ('ebx', 616)",
+      "bytes": "ff9368020000"
+    },
+    {
+      "offset": 65,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 71,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 72,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 73,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 74,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 75,
+      "asm": "ret 0",
+      "bytes": "c20000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {}
+}

@@ -1,0 +1,14 @@
+--- tested-U30/policy.py
++++ owned-foutcodes/policy.py
+@@ -46,9 +46,9 @@
+ def finalize(r):
+  n.entry(r,'finalize_pass',112);r.alu('cmp',m('ebx',n.P['scope']),1);r.j('jne','final_bad');r.lea('eax',m('ebp',-80));r.push('eax');r.push(m('ebx',n.P['owner']));r.j('call','read_policy');r.test('eax','eax');r.j('jz','final_bad')
+  for local,key in [(-80,'policy'),(-76,'remaining'),(-72,'engine_count'),(-68,'government'),(-64,'completion')]:r.mov('eax',m('ebp',local));r.mov(m('ebx',n.P[key]),'eax')
+- r.alu('cmp',m('ebx',n.P['policy']),0);r.j('je','final_outside');r.mov('eax',m('ebx',n.P['status']));r.mov(m('ebp',-16),'eax');invoke(r,'bind_host');r.test('eax','eax');r.j('jz','final_bad')
++ r.alu('cmp',m('ebx',n.P['policy']),0);r.j('je','final_outside');r.mov('eax',m('ebx',n.P['status']));r.mov(m('ebp',-16),'eax');invoke(r,'bind_host');r.test('eax','eax');r.j('jz','final_done')
+  for helper in ('resolve_type','preview_scope','original_demand'):
+-  invoke(r,helper);r.test('eax','eax');r.j('jz','final_bad')
++  invoke(r,helper);r.test('eax','eax');r.j('jz','final_done')
+  r.mov(m('ebx',n.P['context']),1);r.mov(m('ebx',n.P['gcert']),0);r.alu('cmp',m('ebx',n.P['remaining']),0);r.j('je','final_combine');r.alu('cmp',m('ebp',-16),2);r.j('jne','final_fallback')
+  invoke(r,'canonical_prefix');r.test('eax','eax');r.j('jz','final_fallback');invoke(r,'production_roles');r.test('eax','eax');r.j('jz','final_fallback')
+  for kind,offset in ((2,0x8c),(1,0x90)):

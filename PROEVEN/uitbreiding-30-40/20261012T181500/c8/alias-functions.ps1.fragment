@@ -1,0 +1,32 @@
+function ExactAliasPaths {
+ $saveDir=[IO.Path]::GetFullPath((Join-Path $workspace 'CTP-proef\ctp_program\ctp\save\games\Julius'))
+ $source=[IO.Path]::GetFullPath((Join-Path $workspace $manifest.T0_alias.source))
+ $target=[IO.Path]::GetFullPath((Join-Path $workspace $manifest.T0_alias.path))
+ if($source -cne (Join-Path $saveDir 'QUOTA-START-T0') -or $target -cne (Join-Path $saveDir '000-U30-40-START-T0') -or [IO.Path]::GetDirectoryName($target) -cne $saveDir){throw 'Alias exact absolute targets escaped named Julius folder.'}
+ return @{source=$source;target=$target}
+}
+function CreateOwnT0Alias {
+ CountZero
+ $paths=ExactAliasPaths;$ownerRecord=Join-Path $armDir 'T0-alias-owner.json'
+ if(Test-Path -LiteralPath $ownerRecord){throw 'Own alias creation already attempted; no retry.'}
+ if(Test-Path -LiteralPath $paths.target){throw 'Alias existed before own creation; never overwrite.'}
+ if((Hash $paths.source) -cne $manifest.T0_alias.sha256){throw 'Pinned alias source changed.'}
+ JsonFile @{at=(Get-Date).ToString('o');owner='C8_UI_LOAD_ALIAS_ONLY';path=$paths.target;source=$paths.source;initially_absent=$true;source_sha256=$manifest.T0_alias.sha256;copy_attempted=$true} 'T0-alias-owner.json'
+ Copy-Item -LiteralPath $paths.source -Destination $paths.target
+ if((Hash $paths.target) -cne $manifest.T0_alias.sha256){throw 'Own alias byteexact verification failed; preserve.'}
+ JsonFile @{at=(Get-Date).ToString('o');created=$true;path=$paths.target;sha256=(Hash $paths.target);source_sha256=(Hash $paths.source)} 'T0-alias-created.json'
+}
+function RemoveOwnT0Alias {
+ CountZero
+ $paths=ExactAliasPaths;$ownerRecord=Join-Path $armDir 'T0-alias-owner.json'
+ if(!(Test-Path -LiteralPath $ownerRecord)){JsonFile @{status='NO_OWN_ALIAS_ATTEMPT';removed=$false} 'T0-alias-cleanup.json';return}
+ $record=Get-Content -LiteralPath $ownerRecord -Raw -Encoding utf8|ConvertFrom-Json
+ if($record.owner -cne 'C8_UI_LOAD_ALIAS_ONLY' -or !$record.initially_absent -or !$record.copy_attempted -or $record.path -cne $paths.target -or $record.source -cne $paths.source -or $record.source_sha256 -cne $manifest.T0_sha256){throw 'Alias ownership/preimage mismatch; preserve.'}
+ if(!(Test-Path -LiteralPath $paths.target)){JsonFile @{status='OWN_ALIAS_ALREADY_ABSENT';removed=$false} 'T0-alias-cleanup.json';return}
+ $current=Hash $paths.target
+ if($current -cne $manifest.T0_alias.sha256){JsonFile @{status='PRESERVED_UNEXPECTED_ALIAS_BYTES';removed=$false;path=$paths.target;sha256=$current} 'T0-alias-cleanup.json';throw 'Own alias unexpectedly changed; preserved for review.'}
+ # Exact checked named target only, never recursive or another shell.
+ Remove-Item -LiteralPath $paths.target
+ if(Test-Path -LiteralPath $paths.target){throw 'Own alias removal not confirmed.'}
+ JsonFile @{at=(Get-Date).ToString('o');status='OWN_BYTEEXACT_ALIAS_REMOVED_AFTER_RELEASE_RESTORE';removed=$true;path=$paths.target;verified_sha256=$current} 'T0-alias-cleanup.json'
+}

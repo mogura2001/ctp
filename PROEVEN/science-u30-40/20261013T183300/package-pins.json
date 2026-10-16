@@ -1,0 +1,120 @@
+{
+  "stage": "SOURCE_AND_DETERMINISTIC_BUILD_READY_FOR_ROOT_REVIEW",
+  "at_utc": "2026-10-14T09:17:34.619628+00:00",
+  "science_credit_enabled": false,
+  "union_enabled": false,
+  "native_executions": 0,
+  "game_writes": 0,
+  "RPM_calls": 0,
+  "active_game_caller": false,
+  "active_plan_size": 346112,
+  "candidate_sha256": "622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba",
+  "payload_sha256": "12bb7b9ae57a7c284c929e8a8f72bb36c710c53735275a50c8806f33f1b96139",
+  "pins": [
+    {
+      "path": "science_model.py",
+      "size": 17346,
+      "sha256": "acfcf10450ea0ed32704798faddb454b0805857735964872df422c33ec05e25c"
+    },
+    {
+      "path": "science_layout.py",
+      "size": 3240,
+      "sha256": "a25bbc36c3d174f78632dfb3f158b68189eba0de9bb988f54229bc3c25536300"
+    },
+    {
+      "path": "science_result.py",
+      "size": 6095,
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f"
+    },
+    {
+      "path": "build_candidate.py",
+      "size": 11103,
+      "sha256": "32206bc00cd15a0e396ed58f6f33450a3c2783afe6192a38265297f752dc8c3a"
+    },
+    {
+      "path": "components.py",
+      "size": 8855,
+      "sha256": "6b433fa50e5723d59f98649a3013432b5b15b488ccc7aa5569f8d2bb8f50e092"
+    },
+    {
+      "path": "development.py",
+      "size": 9898,
+      "sha256": "2b0523659d8047e229e3511920c41d09dc41d7e7d89b0d6320dec1a27617eefe"
+    },
+    {
+      "path": "model.py",
+      "size": 9406,
+      "sha256": "1a98227588e528ab9024a83ae09573d28bb0a2e2f08f408a4ad5a9a0ebeabf21"
+    },
+    {
+      "path": "layout.py",
+      "size": 2265,
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "x86.py",
+      "size": 3577,
+      "sha256": "a1da614c9de3856d5bd30c2e6dcfd1dab8169c9b8c8c208f3e4504c222b12d5c"
+    },
+    {
+      "path": "SCHEMA-CONTRACT.md",
+      "size": 9780,
+      "sha256": "1d1cdd79aee0abd670296ff64b9e4e630aa07d1e883d11ab666c9527641e2d04"
+    },
+    {
+      "path": "schema.json",
+      "size": 2791,
+      "sha256": "642c69f92ed29d627598bd2f7650b4b67ebbff989d73a7733b82c5639636a1d5"
+    },
+    {
+      "path": "source-diffs.txt",
+      "size": 44063,
+      "sha256": "e0b8ac0451e95a90171d7902170a30c874e22aec246fc514f4c4291663b76c98"
+    },
+    {
+      "path": "candidate-manifest.json",
+      "size": 185761,
+      "sha256": "2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387"
+    },
+    {
+      "path": "SCIENCE-C1-CREDIT-OFF.prepared.dll",
+      "size": 1050112,
+      "sha256": "622cdd87c7b9480e9740ca5baaf37190ed632852358db0f80f6b6b936b13d6ba"
+    },
+    {
+      "path": "science.payload.bin",
+      "size": 10100,
+      "sha256": "12bb7b9ae57a7c284c929e8a8f72bb36c710c53735275a50c8806f33f1b96139"
+    },
+    {
+      "path": "science.disassembly.txt",
+      "size": 89593,
+      "sha256": "6536967ab20f0eb95d6a5e90cd6e6a9de94285f6870433d644a3202ad7970790"
+    },
+    {
+      "path": "shared-copy-pins.json",
+      "size": 664,
+      "sha256": "addb14e23baee6b99a04c29624c4759028136a5ae5a8b2af30080facd84e77a6"
+    },
+    {
+      "path": "preservation-pins.json",
+      "size": 9333,
+      "sha256": "106f9f9ac025eccb2e32f4a3a9b8262f402917ea80e67b82990e6da55b301b66"
+    },
+    {
+      "path": "C1-OVERDRACHT.md",
+      "size": 4226,
+      "sha256": "d688ac45758c0e29c126bdc157fa26f2ef8b55c5a96f7b939b2cf61c500dd4d0"
+    },
+    {
+      "path": "checkpoint-v1/archive-pins.json",
+      "size": 1851,
+      "sha256": "8ceeddd9819cca67c59d5096a28f063560104e596433e382880b7e8dcdeee9f4"
+    },
+    {
+      "path": "checkpoint-v1/own-source-pins.json",
+      "size": 1285,
+      "sha256": "9086ff22aa5e0745d527bad580018e76264595ccdcdc7482684bd0e72e5bd4e7"
+    }
+  ]
+}

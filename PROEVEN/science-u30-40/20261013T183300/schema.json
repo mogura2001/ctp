@@ -1,0 +1,201 @@
+{
+  "result_size": 2048,
+  "header": {
+    "location_state": [
+      0,
+      4
+    ],
+    "reason": [
+      4,
+      4
+    ],
+    "model": [
+      8,
+      4
+    ],
+    "conditions": [
+      12,
+      4
+    ],
+    "open_count": [
+      16,
+      4
+    ],
+    "potential_count": [
+      20,
+      4
+    ],
+    "certifiable_count": [
+      24,
+      4
+    ],
+    "selected0": [
+      28,
+      4
+    ],
+    "selected1": [
+      32,
+      4
+    ],
+    "selected2": [
+      36,
+      4
+    ],
+    "current_unknownmask": [
+      40,
+      4
+    ],
+    "spatial_unknownmask": [
+      44,
+      4
+    ],
+    "spatial_pendingmask": [
+      48,
+      4
+    ],
+    "development_unknownmask": [
+      52,
+      4
+    ],
+    "ration_stand": [
+      56,
+      4
+    ],
+    "development_state": [
+      60,
+      4
+    ],
+    "actual_R": [
+      64,
+      8
+    ],
+    "center_food_i64": [
+      72,
+      8
+    ],
+    "S3_current_i64": [
+      80,
+      8
+    ],
+    "margin3_x2_i64": [
+      88,
+      8
+    ],
+    "crime_numerator_i64": [
+      96,
+      8
+    ],
+    "crime_denominator_i64": [
+      104,
+      8
+    ],
+    "coverage": [
+      112,
+      4
+    ],
+    "center_key": [
+      116,
+      8
+    ],
+    "h2_status": [
+      124,
+      4
+    ]
+  },
+  "tile_offset": 128,
+  "tile_stride": 96,
+  "max_tiles": 20,
+  "tile": {
+    "canonical_key": [
+      0,
+      8
+    ],
+    "external_MapPoint": [
+      8,
+      8
+    ],
+    "current_food_i32": [
+      16,
+      4
+    ],
+    "structure_flags": [
+      20,
+      4
+    ],
+    "raw_spatial": [
+      24,
+      4
+    ],
+    "spatial_reason": [
+      28,
+      4
+    ],
+    "development": [
+      32,
+      64
+    ]
+  },
+  "private_stack": {
+    "x87": [
+      -144,
+      108
+    ],
+    "rawfood": [
+      -184,
+      40
+    ],
+    "host": [
+      -208,
+      24
+    ],
+    "h2": [
+      -480,
+      256
+    ],
+    "loop": [
+      -220,
+      4
+    ],
+    "dedup": [
+      -224,
+      4
+    ],
+    "scenario": [
+      -248,
+      24
+    ],
+    "terrain": [
+      -512,
+      4
+    ],
+    "target": [
+      -524,
+      12
+    ],
+    "future_selected": [
+      -560,
+      12
+    ],
+    "summary_bits": [
+      -544,
+      4
+    ],
+    "scenario_positive": [
+      -540,
+      4
+    ]
+  },
+  "kernel_frame_size": 548,
+  "query_budgets": {
+    "science_calls": 64,
+    "tiles": 1280,
+    "spatial_calls": 1280,
+    "improvement_calls": 3840,
+    "primary_food_readers": 1344,
+    "development_food_readers": 1280,
+    "total_food_readers": 2624
+  },
+  "active_plan": 346112,
+  "future_plan": 497664,
+  "future_fields_stored_in_header": false
+}

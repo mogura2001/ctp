@@ -1,0 +1,33 @@
+﻿{
+    "at":  "2026-10-16T12:59:42.1837050+02:00",
+    "budget":  {
+                   "reported_at_utc":  "2026-10-16T10:59:16.467Z",
+                   "checked_at_utc":  "2026-10-16T10:59:41.503551+00:00",
+                   "age_seconds":  25.0,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  63.0,
+                                                     "used_percent":  37.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1792159521
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  63.0,
+                                                  "used_percent":  37.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1792671348
+                                              }
+                               },
+                   "stop_reasons":  [
+
+                                    ],
+                   "weekly_remaining_percent":  63.0,
+                   "five_hour_remaining_percent":  63.0,
+                   "state":  "ok"
+               },
+    "T0_sha256":  "fff62c3c4d50f8ac8ac92444c40cb59468d61d81e47e3eed0881c2b238d45e21",
+    "pid":  31068,
+    "n_calls_intended":  1,
+    "creation_utc_ms":  1792148129071,
+    "state":  "CONSUMED_BEFORE_SINGLE_INPUT"
+}

@@ -1,0 +1,32 @@
+--- reviewed-basis/development.py
++++ unreviewed-C2/science_development.py
+@@ -5,6 +5,7 @@
+ roundtrip; no roundingmode changes or fractional truncation silently occur.
+ """
+ from x86 import mem as m
++from union import counter
+ from model import entryptr,foodptr
+ DEV_SIZE=2048
+ DEV_ENTRIES=128
+@@ -26,7 +27,7 @@
+ 
+ def tile(r):
+  r.label('development_tile');r.prologue(192);r.fp('fnsave','dd',6,m('ebp',-128));r.fp('fldcw caller','d9',5,m('ebp',-128));r.zero(m('ebp',24),64);r.mov('edi',m('ebp',24));r.mov('eax',m('ebp',28));r.mov(m('edi',8),'eax');r.mov(m('edi',4),20)
+- r.push(0);r.lea('eax',m('ebp',-172));r.push('eax');r.push(m('ebp',20));r.push(m('ebp',16));r.push(m('ebp',12));r.j('call','food_reader');r.test('eax','eax');r.j('jz','development_tile_done')
++ counter(r,['development_food','total_food'],'development_tile_done');r.push(0);r.lea('eax',m('ebp',-172));r.push('eax');r.push(m('ebp',20));r.push(m('ebp',16));r.push(m('ebp',12));r.j('call','food_reader');r.test('eax','eax');r.j('jz','development_tile_done')
+  r.mov('esi',m('ebp',-140));r.mov('eax',m('ebp',-160));r.mov(m('edi',56),'eax');r.mov('edx',m('ebp',-168));r.mov(m('edi',48),'edx')
+  r.alu('cmp',m('ebp',28),1);r.j('jne','development_mine_target')
+  # IRR2 only on already-bound1/4/5 and10/11 environments; other terrains
+@@ -37,9 +38,9 @@
+  r.label('development_mine_target');r.mov('eax',m('ebp',-152));r.alu('cmp','eax',3);r.j('jge','development_already');r.alu('cmp','eax',m('ebp',32));r.j('jge','development_already');r.mov('eax',m('ebp',32));r.unary('dec','eax');r.shift('shl','eax',2);r.alu('add','esi','eax');r.mov('esi',m('esi',0x74))
+  r.label('development_target');r.test('esi','esi');r.j('jz','development_tile_done');r.mov('eax',m('esi',0x20));r.mov(m('edi',28),'eax');r.mov('eax',m('esi',0x24));r.mov(m('edi',32),'eax');r.mov('eax',m('esi',0x44));r.mov(m('edi',36),'eax');r.alu('cmp','eax',-1);r.j('jl','development_tile_done')
+  r.mov('eax',m('ebp',8));r.mov('ebx',m('eax',0x50));r.test('ebx','ebx');r.j('jz','development_tile_done');r.mov('ecx',m('ebx'));r.test('ecx','ecx');r.j('jz','development_tile_done')
+- r.push(m('ebp',28));r.push('ebx');r.unary('call',m('ecx',0x10));r.mov(m('edi',12),'eax')
+- r.lea('eax',m('edi',20));r.push('eax');r.push(m('ebp',16));r.push(0);r.push(m('ebp',28));r.push('ebx');r.mov('ecx',m('ebx'));r.unary('call',m('ecx',0x20));r.mov(m('edi',16),'eax')
+- r.push(m('ebp',16));r.push(m('ebp',28));r.push('ebx');r.mov('ecx',m('ebx'));r.unary('call',m('ecx',0x48));r.fp('fstp actual delta','dd',3,m('edi',40))
++ counter(r,['improvement'],'development_tile_done');r.push(m('ebp',28));r.push('ebx');r.unary('call',m('ecx',0x10));r.mov(m('edi',12),'eax')
++ counter(r,['improvement'],'development_tile_done');r.lea('eax',m('edi',20));r.push('eax');r.push(m('ebp',16));r.push(0);r.push(m('ebp',28));r.push('ebx');r.mov('ecx',m('ebx'));r.unary('call',m('ecx',0x20));r.mov(m('edi',16),'eax')
++ counter(r,['improvement'],'development_tile_done');r.push(m('ebp',16));r.push(m('ebp',28));r.push('ebx');r.mov('ecx',m('ebx'));r.unary('call',m('ecx',0x48));r.fp('fstp actual delta','dd',3,m('edi',40))
+  # Reject nonfinite delta before integer roundtrip, and validate integerexact.
+  r.mov('eax',m('edi',44));r.alu('and','eax',0x7ff00000);r.alu('cmp','eax',0x7ff00000);r.j('je','development_tile_done')
+  r.fp('fld delta','dd',0,m('edi',40));r.fp('fistp exact-candidate','db',3,m('edi',52));r.fp('fild integer','db',0,m('edi',52));r.fp('fld delta','dd',0,m('edi',40));r.op('fcompp',b'\xde\xd9');r.op('fnstsw ax',b'\xdf\xe0');r.alu('and','eax',0x4500);r.alu('cmp','eax',0x4000);r.j('jne','development_tile_done')

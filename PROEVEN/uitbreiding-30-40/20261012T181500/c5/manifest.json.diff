@@ -1,0 +1,29 @@
+--- preserved C4/manifest.json
++++ owned C5/manifest.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "C4_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
++  "state": "C5_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
+   "N": 30,
+   "files": [
+     {
+@@ -632,6 +632,10 @@
+     {
+       "path": "ONTWERP/UI-LAADROUTE-U30-40.md",
+       "sha256": "35096305929f54b5ecc24786bf86e9164a75584a8ba44ece72a8aa49ad2ec029"
++    },
++    {
++      "path": "ONTWERP/UI-FOCUS-CURSOR-U30-40.md",
++      "sha256": "cef012ac5eb6b9f601bbaa998ebd0afd27d8ee6d83612e1ce451b44a7eb8add8"
+     }
+   ],
+   "preserved_saves_before": [
+@@ -684,7 +688,7 @@
+     "source": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+     "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+     "existed_before": false,
+-    "ownership": "C4_UI_LOAD_ALIAS_ONLY",
++    "ownership": "C5_UI_LOAD_ALIAS_ONLY",
+     "create": "Only after future root release and fresh successful count0, record own preimage before copy",
+     "remove": "Only own original-hash alias after exit/count0/archival/release restore; otherwise preserve"
+   }

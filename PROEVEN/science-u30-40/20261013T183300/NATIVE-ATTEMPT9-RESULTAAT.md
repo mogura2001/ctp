@@ -1,0 +1,11 @@
+# Attempt9 — setupconflict, uitvoering gestopt
+
+15 oktober 2026, 15:15 Europe/Amsterdam. Rootreview/vrijgave gevolgd door precies één helperstart. Verse budgetcheck15:13:48 vijf35/week90. PID7244, werkelijk pad eigen attempt9exe, creationFILETIME134365436474295991; start13:14:07.320UTC/einde13:14:07.540UTC, exit1/0,219s/geen timeout, terminal bevestigd en PID naderhand afwezig. Geen retry of nieuwe codeaanpassing.
+
+Werkelijke helpermapping `00780000–0078dfff` ligt buiten alle zeven fixtureintervallen. PreferredBase10000000 werd dus niet als werkelijke mapping gebruikt. RuntimeMBI28assert slaagde. Queries dekken zeven gehele intervallen; eerste zes zijn MEM_FREE. Interval `00a70000–00a7ffff` ligt in regio BaseAddress00a70000/AllocationBase00a40000/RegionSizec6000/State2000(MEM_RESERVE)/Type20000(MEM_PRIVATE)/Protect0/AllocationProtect4. De eigenaar is onbekend. AllocationBase verschilt van helperbase; dit is geen aangetoonde helperbotsing.
+
+De voorafgaande vrijcontrole stopte vóór alle VirtualAlloccalls en callbacks: **0 eigen allocations,0 nativecalls,0 volledige cases,0 patches**. Tweemaal `cleanup owned_complete=True`; er waren geen eigen blokken om vrij te geven. Geen vreemde mapping vrijgegeven. Centrum64/ABI en decoderparity zijn niet gemeten; parity is null. De bestaande29 eerdere cases blijven uitsluitend eerder deelbewijs. Adresacceptatie is niet gehaald doordat zeven eigen blokken niet verkregen zijn.
+
+Bewijs: `native-attempt9-process.json`, `native-attempt9-process-absence.json`, stdout/stderr, `native-attempt9.json`, `native-attempt9-final-checks.json`, lege decoded-results en `native-attempt9-package.json`. De91frozenpins zijn na uitvoering exact; kandidaat622c..., fixturebytes/pointerfix/modellen/30casebody en eerdere attempts blijven behouden. Gecompileerde exe935d... is onveranderd.
+
+Voorbereiding was technisch gecontroleerd, maar daadwerkelijke fixtureuitvoering is geblokkeerd door de concrete reservatie op00a70000. Terug naar gerichte analyse/ontwerp met dit regiobewijs; geen alternatieve adresstrategie zelf toegepast. Sciencecredit/union/echte host/gameplay blijven open. Geen game/UI/RPM/installatie uitgevoerd; geen helper meer actief. Pc blijft aan.

@@ -1,0 +1,2707 @@
+{
+  "stage": "29_NATIVE_CALLBACK_CASES_WITH_SAVED_BYTES_DECODER",
+  "cases": [
+    {
+      "name": "early_NOW_no_mountains",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "early_NOW_tech_and_place_false",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 1,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "PENDING",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "PENDING",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "PENDING",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "future_positive_different_rank_current_preserved",
+      "location": "PENDING_GROWTH",
+      "header": {
+        "location_state": 4,
+        "reason": 16,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 4,
+        "potential_count": 4,
+        "certifiable_count": 4,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 29,
+        "margin3_x2_i64": -2,
+        "crime_numerator_i64": -2,
+        "crime_denominator_i64": 58,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 20,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 20,
+            "crime_numerator_i64": 20,
+            "crime_denominator_i64": 40
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 25,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 10,
+            "crime_numerator_i64": 10,
+            "crime_denominator_i64": 50
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 29,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": -2,
+            "crime_numerator_i64": -2,
+            "crime_denominator_i64": 58
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -1,
+          29
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          3,
+          2,
+          0
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 53,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 86,
+            "crime_numerator_i64": 86,
+            "crime_denominator_i64": 106
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 87,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 134,
+            "crime_numerator_i64": 134,
+            "crime_denominator_i64": 174
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 97,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 134,
+            "crime_numerator_i64": 134,
+            "crime_denominator_i64": 194
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          67,
+          97
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "invalid_delta_NaN",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 7,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 22,
+        "margin3_x2_i64": -16,
+        "crime_numerator_i64": -16,
+        "crime_denominator_i64": 44,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 14,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 28
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 18,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": -4,
+            "crime_numerator_i64": -4,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 22,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": -16,
+            "crime_numerator_i64": -16,
+            "crime_denominator_i64": 44
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -4,
+          11
+        ],
+        "development_state_name": "UNKNOWN",
+        "conditional_only": true
+      },
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "invalid_delta_0.5",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 7,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 22,
+        "margin3_x2_i64": -16,
+        "crime_numerator_i64": -16,
+        "crime_denominator_i64": 44,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 14,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 28
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 18,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": -4,
+            "crime_numerator_i64": -4,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 22,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": -16,
+            "crime_numerator_i64": -16,
+            "crime_denominator_i64": 44
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -4,
+          11
+        ],
+        "development_state_name": "UNKNOWN",
+        "conditional_only": true
+      },
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "invalid_delta_2147483647",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 7,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 22,
+        "margin3_x2_i64": -16,
+        "crime_numerator_i64": -16,
+        "crime_denominator_i64": 44,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 14,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 28
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 18,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": -4,
+            "crime_numerator_i64": -4,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 22,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": -16,
+            "crime_numerator_i64": -16,
+            "crime_denominator_i64": 44
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -4,
+          11
+        ],
+        "development_state_name": "UNKNOWN",
+        "conditional_only": true
+      },
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "invalid_delta_-20",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 7,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 22,
+        "margin3_x2_i64": -16,
+        "crime_numerator_i64": -16,
+        "crime_denominator_i64": 44,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 14,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 28
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 18,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": -4,
+            "crime_numerator_i64": -4,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 22,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": -16,
+            "crime_numerator_i64": -16,
+            "crime_denominator_i64": 44
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -4,
+          11
+        ],
+        "development_state_name": "UNKNOWN",
+        "conditional_only": true
+      },
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "all_PRESENT_IRR3_no_downgrade",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 4,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 70,
+        "margin3_x2_i64": 80,
+        "crime_numerator_i64": 80,
+        "crime_denominator_i64": 140,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "ALREADY_PRESENT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 30,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 40,
+            "crime_numerator_i64": 40,
+            "crime_denominator_i64": 60
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 50,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 60,
+            "crime_numerator_i64": 60,
+            "crime_denominator_i64": 100
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 70,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 80,
+            "crime_numerator_i64": 80,
+            "crime_denominator_i64": 140
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          4,
+          7
+        ],
+        "development_state_name": "ALREADY_PRESENT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 30,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 40,
+            "crime_numerator_i64": 40,
+            "crime_denominator_i64": 60
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 50,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 60,
+            "crime_numerator_i64": 60,
+            "crime_denominator_i64": 100
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 70,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 80,
+            "crime_numerator_i64": 80,
+            "crime_denominator_i64": 140
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          4,
+          7
+        ],
+        "development_state_name": "ALREADY_PRESENT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "MIXED_PRESENT_READY",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 5,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 46,
+        "margin3_x2_i64": 32,
+        "crime_numerator_i64": 32,
+        "crime_denominator_i64": 92,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "MIXED_PRESENT_READY",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 30,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 40,
+            "crime_numerator_i64": 40,
+            "crime_denominator_i64": 60
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 38,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 36,
+            "crime_numerator_i64": 36,
+            "crime_denominator_i64": 76
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 46,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 32,
+            "crime_numerator_i64": 32,
+            "crime_denominator_i64": 92
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          8,
+          23
+        ],
+        "development_state_name": "MIXED_PRESENT_READY",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          1,
+          2,
+          0
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 76,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 92,
+            "crime_numerator_i64": 92,
+            "crime_denominator_i64": 152
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          23,
+          38
+        ],
+        "development_state_name": "MIXED_PRESENT_READY",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "NOW_development_UNKNOWN_independent",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 7,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "UNKNOWN",
+        "conditional_only": true
+      },
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "less_than_three",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 2,
+        "potential_count": 2,
+        "certifiable_count": 2,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "controlled_wrap_duplicate_not_third_tile",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 2,
+        "certifiable_count": 2,
+        "selected0": 0,
+        "selected1": 2,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "controlled_wrap_center_alias_not_worker",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 2,
+        "certifiable_count": 2,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "spatial_false_keeps_structural",
+      "location": "STRUCTURAL_POTENTIAL_SPATIAL_PENDING",
+      "header": {
+        "location_state": 3,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 2,
+        "selected0": 0,
+        "selected1": 2,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 2,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "invalid_spatial_return_shared_UNKNOWN",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 13,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 2,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 2,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "wrong_shared_World_vtable",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 10,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 0,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 0
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "bad_shared_DB_context",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 10,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 0,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 0
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "bad_shared_dimensions",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 10,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 0,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 0
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "local_unsupported_does_not_retract_independent_NOW",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 4,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 8,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "half_consumption_margin_positive_one",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 1,
+        "development_state": 3,
+        "actual_R": 1.25,
+        "center_food_i64": 10,
+        "S3_current_i64": 38,
+        "margin3_x2_i64": 1,
+        "crime_numerator_i64": 1,
+        "crime_denominator_i64": 76,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 20,
+            "demand_x2_i64": 25,
+            "margin_x2_i64": 15,
+            "crime_numerator_i64": 15,
+            "crime_denominator_i64": 40
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 29,
+            "demand_x2_i64": 50,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 58
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 38,
+            "demand_x2_i64": 75,
+            "margin_x2_i64": 1,
+            "crime_numerator_i64": 1,
+            "crime_denominator_i64": 76
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          1,
+          76
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 35,
+            "demand_x2_i64": 25,
+            "margin_x2_i64": 45,
+            "crime_numerator_i64": 45,
+            "crime_denominator_i64": 70
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 59,
+            "demand_x2_i64": 50,
+            "margin_x2_i64": 68,
+            "crime_numerator_i64": 68,
+            "crime_denominator_i64": 118
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 83,
+            "demand_x2_i64": 75,
+            "margin_x2_i64": 91,
+            "crime_numerator_i64": 91,
+            "crime_denominator_i64": 166
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          91,
+          166
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "half_consumption_not_floored",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 1,
+        "development_state": 3,
+        "actual_R": 1.25,
+        "center_food_i64": 10,
+        "S3_current_i64": 37,
+        "margin3_x2_i64": -1,
+        "crime_numerator_i64": -1,
+        "crime_denominator_i64": 74,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 19,
+            "demand_x2_i64": 25,
+            "margin_x2_i64": 13,
+            "crime_numerator_i64": 13,
+            "crime_denominator_i64": 38
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 28,
+            "demand_x2_i64": 50,
+            "margin_x2_i64": 6,
+            "crime_numerator_i64": 6,
+            "crime_denominator_i64": 56
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 37,
+            "demand_x2_i64": 75,
+            "margin_x2_i64": -1,
+            "crime_numerator_i64": -1,
+            "crime_denominator_i64": 74
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -1,
+          74
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 19,
+            "demand_x2_i64": 25,
+            "margin_x2_i64": 13,
+            "crime_numerator_i64": 13,
+            "crime_denominator_i64": 38
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 28,
+            "demand_x2_i64": 50,
+            "margin_x2_i64": 6,
+            "crime_numerator_i64": 6,
+            "crime_denominator_i64": 56
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 37,
+            "demand_x2_i64": 75,
+            "margin_x2_i64": -1,
+            "crime_numerator_i64": -1,
+            "crime_denominator_i64": 74
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          -1,
+          74
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "maintenance_zero_is_not_growth",
+      "location": "NO_CURRENT_NOW_SCENARIO",
+      "header": {
+        "location_state": 1,
+        "reason": 14,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 30,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 60,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 10,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 20
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 20,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 40
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 30,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 60
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          0,
+          1
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 10,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 20
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 20,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 40
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 30,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 60
+          }
+        ],
+        "strict_positive_n1_n2_n3": false,
+        "minimum_crime_fraction": [
+          0,
+          1
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "precision_007f",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "precision_027f",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "precision_037f",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 3,
+        "certifiable_count": 3,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    },
+    {
+      "name": "reserved_precision_UNKNOWN",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 11,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "unmasked_exceptions_UNKNOWN",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 11,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "PC24_large_unproved_stand_UNKNOWN",
+      "location": "UNKNOWN",
+      "header": {
+        "location_state": 0,
+        "reason": 11,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 3,
+        "potential_count": 0,
+        "certifiable_count": 0,
+        "selected0": -1,
+        "selected1": -1,
+        "selected2": -1,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 16777213,
+        "development_state": 0,
+        "actual_R": 0.0,
+        "center_food_i64": 0,
+        "S3_current_i64": 0,
+        "margin3_x2_i64": 0,
+        "crime_numerator_i64": 0,
+        "crime_denominator_i64": 0,
+        "coverage": 0,
+        "center_key": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "h2_status": 1
+      },
+      "development": "UNKNOWN",
+      "computed_current": null,
+      "computed_future": null,
+      "native_pending_parity": null,
+      "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE",
+      "ABI": true
+    },
+    {
+      "name": "max_twenty_call_query_bounds",
+      "location": "NOW",
+      "header": {
+        "location_state": 2,
+        "reason": 0,
+        "model": 1,
+        "conditions": 3,
+        "open_count": 20,
+        "potential_count": 20,
+        "certifiable_count": 20,
+        "selected0": 0,
+        "selected1": 1,
+        "selected2": 2,
+        "current_unknownmask": 0,
+        "spatial_unknownmask": 0,
+        "spatial_pendingmask": 0,
+        "development_unknownmask": 0,
+        "ration_stand": 0,
+        "development_state": 3,
+        "actual_R": 1.0,
+        "center_food_i64": 10,
+        "S3_current_i64": 34,
+        "margin3_x2_i64": 8,
+        "crime_numerator_i64": 8,
+        "crime_denominator_i64": 68,
+        "coverage": 1,
+        "center_key": [
+          0,
+          0,
+          0,
+          43707
+        ],
+        "h2_status": 1
+      },
+      "development": "READY_NOT_BUILT",
+      "computed_current": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 18,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 16,
+            "crime_numerator_i64": 16,
+            "crime_denominator_i64": 36
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 26,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 12,
+            "crime_numerator_i64": 12,
+            "crime_denominator_i64": 52
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 34,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 8,
+            "crime_numerator_i64": 8,
+            "crime_denominator_i64": 68
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          2,
+          17
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true
+      },
+      "computed_future": {
+        "selected_indices": [
+          0,
+          1,
+          2
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "k": 1,
+            "S_i64": 33,
+            "demand_x2_i64": 20,
+            "margin_x2_i64": 46,
+            "crime_numerator_i64": 46,
+            "crime_denominator_i64": 66
+          },
+          {
+            "n": 2,
+            "k": 2,
+            "S_i64": 56,
+            "demand_x2_i64": 40,
+            "margin_x2_i64": 72,
+            "crime_numerator_i64": 72,
+            "crime_denominator_i64": 112
+          },
+          {
+            "n": 3,
+            "k": 3,
+            "S_i64": 79,
+            "demand_x2_i64": 60,
+            "margin_x2_i64": 98,
+            "crime_numerator_i64": 98,
+            "crime_denominator_i64": 158
+          }
+        ],
+        "strict_positive_n1_n2_n3": true,
+        "minimum_crime_fraction": [
+          49,
+          79
+        ],
+        "development_state_name": "READY_NOT_BUILT",
+        "conditional_only": true,
+        "conditions": [
+          "ZERO_NEW_CITY_MODIFIERS",
+          "CONDITIONAL_CRIME",
+          "ENABLING_AND_PLACEMENT_REVALIDATED",
+          "QUERIED_IMPROVEMENTS_BUILT",
+          "UNCHANGED_CURRENT_FOOD_CONTEXT"
+        ],
+        "spatial_pending_indices": []
+      },
+      "native_pending_parity": true,
+      "native_pending_parity_status": "MATCH",
+      "ABI": true
+    }
+  ],
+  "callback_binary_decode": [
+    {
+      "path": "fixture-available.bin",
+      "sha256": "acb5a6ab6dd14a23e87ccc6252596d2030f153159a3733f99455fa2fc5e88325",
+      "bytes": 39,
+      "instructions": 8
+    },
+    {
+      "path": "fixture-convert-wrap.bin",
+      "sha256": "9fe01828c5e92afece5e4ed7495bb56dd2cd3835d4419ba2652b8802c4489a89",
+      "bytes": 39,
+      "instructions": 7
+    },
+    {
+      "path": "fixture-convert.bin",
+      "sha256": "d0a4c66efc832a545b2784b4fe590a7aff30b08124bb81376a3ec1649a4e2e96",
+      "bytes": 34,
+      "instructions": 6
+    },
+    {
+      "path": "fixture-delta.bin",
+      "sha256": "750ee5648d53b565a04490c1c01ae464a9467badf4d256cdeeefe1b1aefbfcfa",
+      "bytes": 50,
+      "instructions": 9
+    },
+    {
+      "path": "fixture-food.bin",
+      "sha256": "9a9b48efe1adb7c1f0dd7766c6ac00b6a1731ec34e51ba09e53b6be9d0b5b1b0",
+      "bytes": 72,
+      "instructions": 13
+    },
+    {
+      "path": "fixture-gate.bin",
+      "sha256": "77059a21abb145f8099cd78bbf25d4b7e3aada20f69d96fc84006e106831024e",
+      "bytes": 34,
+      "instructions": 6
+    },
+    {
+      "path": "fixture-large-center-reader.bin",
+      "sha256": "13ec5eed57865fd0e228652e69b80998b8b001366edf1a5d85ba58b163a8d523",
+      "bytes": 89,
+      "instructions": 22
+    },
+    {
+      "path": "fixture-open.bin",
+      "sha256": "c8eaa4e991d447fc93400965f6ec5154a3afab985c5b78085d47161c29d0e7ed",
+      "bytes": 92,
+      "instructions": 25
+    },
+    {
+      "path": "fixture-position.bin",
+      "sha256": "f9358969832e496c691d236bfb112a3c3db0b4817b2626cf59572d6bb19ab14a",
+      "bytes": 66,
+      "instructions": 12
+    },
+    {
+      "path": "fixture-shim5.bin",
+      "sha256": "130707cebc1efe535d90dd924b833e6909c5c64beb5d9b32af38234d70d6da7b",
+      "bytes": 146,
+      "instructions": 34
+    },
+    {
+      "path": "fixture-spatial.bin",
+      "sha256": "b41aaad8a3def8770ad7bb4df47b8343fe5f83e13aca34a9b86b48e96e424c46",
+      "bytes": 53,
+      "instructions": 10
+    },
+    {
+      "path": "fixture-terrain.bin",
+      "sha256": "d3bb5399c57de522f03a2f1a12a0d29c7f5e6c1e6e2e853ac50fdfae9d2418ee",
+      "bytes": 72,
+      "instructions": 13
+    }
+  ],
+  "center_above_int32_open": true,
+  "original_engine_query_acceptance": false,
+  "gameplay_measured": false,
+  "pass": true
+}

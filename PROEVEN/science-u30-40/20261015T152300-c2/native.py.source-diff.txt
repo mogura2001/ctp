@@ -1,0 +1,51 @@
+--- reviewed-basis/native.py
++++ unreviewed-C2/native.py
+@@ -27,7 +27,7 @@
+ SELECTED=0x52600; SELECTED_CAP=40
+ ORDER=SELECTED+160
+ PATHCACHE=0x52800; PATHCACHE_CAP=128; PATHCACHE_STRIDE=24
+-PLAN_SIZE=0x54800
++PLAN_SIZE=0x79800
+ assert CAPTURE+CAPTURE_CAP*8==PREVIEW
+ assert PREVIEW+PREVIEW_CAP*PREVIEW_STRIDE==DEPARTURES
+ assert DEPARTURES+DEPARTURE_CAP*DEPARTURE_STRIDE==VISITED
+@@ -193,18 +193,8 @@
+  r.label('capture_next');r.unary('inc',m('ebp',-20));r.j('jmp','capture_loop');r.label('capture_ok');r.mov(m('ebx',P['status']),2);r.mov('eax',1);r.j('jmp','capture_done');r.label('capture_bad');unknown(r,22);result(r,'capture_done',64)
+ 
+ def roles(r):
+- entry(r,'production_roles',96);r.mov(m('ebx',P['slots']),0);r.mov(m('ebp',-16),0)
+- r.label('roles_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['candidates']));r.j('jge','roles_ok');r.alu('cmp','eax',64);r.j('jae','roles_budget');r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.shift('shl','eax',3);r.lea('edi',m('ebx',CAPTURE));r.alu('add','edi','eax');r.unary('inc',m('ebx',P['classified']))
+- for off in (4,2,0):r.load('eax',m('edi',off),'sx16');r.push('eax')
+- r.mov('eax',m('ebx',P['world']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',0x168));r.op('movsx eax,ax',b'\x0f\xbf\xc0');r.test('eax','eax');r.j('jle','roles_next');r.mov(m('ebp',-20),'eax');r.alu('cmp',m('ebx',P['h3calls']),64);r.j('jae','roles_bad');r.unary('inc',m('ebx',P['h3calls']))
+- r.imul('esi',m('ebx',P['slots']),SLOT_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',SLOTS);r.lea('eax',m('esi',128));r.push('eax');r.push('edi');r.push(m('ebx',P['world']));r.push(m('ebx',P['owner']));original(r,'H3Classifier');r.test('eax','eax');r.j('jz','roles_bad');r.alu('cmp','eax',2);r.j('jne','roles_next');r.alu('cmp',m('esi',136),1);r.j('jne','roles_bad')
+- r.mov('eax',m('esi',196));r.test('eax','eax');r.j('js','roles_next');r.j('jnz','roles_now');r.alu('cmp',m('esi',192),0);r.j('je','roles_next');r.label('roles_now')
+- for off in (0,4):r.mov('eax',m('edi',off));r.mov(m('esi',off),'eax')
+- r.lea('eax',m('esi',8));r.push('eax');r.push('edi');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','roles_bad')
+- r.mov('eax',m('ebp',-20));r.alu('cmp','eax',32767);r.j('je','roles_q');r.unary('inc','eax');r.label('roles_q');r.mov(m('esi',16),'eax');r.mov(m('esi',20),-1);r.mov(m('esi',24),-1);r.mov('eax',m('esi',8));r.mov(m('esi',32),'eax');r.mov('eax',m('esi',12));r.mov(m('esi',36),'eax')
+- for i,idx in enumerate((100,104,108,112)):
+-  r.mov('eax',m('esi',128+idx));r.test('eax','eax');r.j('js','roles_bad');r.alu('cmp','eax',m('esi',224));r.j('jae','roles_bad');r.imul('eax','eax',12);r.alu('add','eax','esi');r.alu('add','eax',272);r.lea('edx',m('esi',40+8*i));r.push('edx');r.push('eax');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','roles_bad')
+- r.unary('inc',m('ebx',P['slots']));r.label('roles_next');r.unary('inc',m('ebp',-16));r.j('jmp','roles_loop');r.j('jmp','roles_ok');r.label('roles_budget');r.mov(m('ebx',P['cutoff']),1);r.label('roles_ok');r.mov('eax',1);r.j('jmp','roles_done');r.label('roles_bad');unknown(r,23);result(r,'roles_done',96)
++ import union
++ union.roles(r)
+ 
+ def ordering(r):
+  # Sort indices, never heap/source data or H3 comparator inputs. Maximum64.
+@@ -218,7 +208,7 @@
+  # stdcall(Plan*, candidateSlot*, selectedSlot*): 1 iff any centre or
+  # mandatory worker key intersects; ordinary non-mandatory overlap allowed.
+  r.label('plan_conflict');r.prologue(16);r.mov('esi',m('ebp',12));r.mov('edi',m('ebp',16));r.mov('ecx',0)
+- r.label('conflict_outer');r.alu('cmp','ecx',5);r.j('jge','conflict_none');r.mov('edx',0);r.label('conflict_inner');r.alu('cmp','edx',5);r.j('jge','conflict_next_outer');r.mov('eax','ecx');r.shift('shl','eax',3);r.alu('add','eax','esi');r.mov('ebx','edx');r.shift('shl','ebx',3);r.alu('add','ebx','edi');r.mov('eax',m('eax',32));r.alu('cmp','eax',m('ebx',32));r.j('je','conflict_yes');r.unary('inc','edx');r.j('jmp','conflict_inner');r.label('conflict_next_outer');r.unary('inc','ecx');r.j('jmp','conflict_outer');r.label('conflict_none');r.mov('eax',0);r.j('jmp','conflict_done');r.label('conflict_yes');r.mov('eax',1);r.label('conflict_done');r.epilogue(16,12)
++ r.label('conflict_outer');r.alu('cmp','ecx',m('esi',28));r.j('jge','conflict_none');r.mov('edx',0);r.label('conflict_inner');r.alu('cmp','edx',m('edi',28));r.j('jge','conflict_next_outer');r.mov('eax','ecx');r.shift('shl','eax',3);r.alu('add','eax','esi');r.mov('ebx','edx');r.shift('shl','ebx',3);r.alu('add','ebx','edi');r.mov('eax',m('eax',32));r.alu('cmp','eax',m('ebx',32));r.j('je','conflict_yes');r.unary('inc','edx');r.j('jmp','conflict_inner');r.label('conflict_next_outer');r.unary('inc','ecx');r.j('jmp','conflict_outer');r.label('conflict_none');r.mov('eax',0);r.j('jmp','conflict_done');r.label('conflict_yes');r.mov('eax',1);r.label('conflict_done');r.epilogue(16,12)
+ 
+ def path_cache(r):
+  # type/source/destination identity, own result only, never native pointers.
+@@ -235,7 +225,8 @@
+ def selection(r):
+  entry(r,'select_direct_plans',96);r.mov(m('ebx',P['desired']),0);r.mov(m('ebp',-16),0)
+  r.label('select_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['slots']));r.j('jge','select_ok');r.mov('eax',m('ebx',P['desired']));r.alu('cmp','eax',m('ebx',P['remaining']));r.j('jge','select_ok');r.alu('cmp','eax',SELECTED_CAP);r.j('jae','select_ok');r.mov('eax',m('ebp',-16));r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.mov(m('ebp',-20),'eax');r.imul('edi','eax',SLOT_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',SLOTS);r.mov(m('ebp',-24),0)
+- r.label('select_conflicts');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',m('ebx',P['desired']));r.j('jge','select_endpoint');r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.imul('eax',m('edx'),SLOT_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',SLOTS);r.push('eax');r.push('edi');r.push('ebx');original(r,'plan_conflict');r.test('eax','eax');r.j('jnz','select_next');r.unary('inc',m('ebp',-24));r.j('jmp','select_conflicts')
++ r.label('select_conflicts');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',m('ebx',P['desired']));r.j('jge','select_endpoint');r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.imul('eax',m('edx'),SLOT_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',SLOTS);r.push('eax');r.push('edi');r.push('ebx');original(r,'plan_conflict');r.test('eax','eax');r.j('jnz','select_alternate');r.unary('inc',m('ebp',-24));r.j('jmp','select_conflicts')
++ r.label('select_alternate');r.alu('cmp',m('edi',72),1);r.j('jne','select_next');r.mov('eax',m('edi',76));r.alu('cmp','eax',64);r.j('jae','select_bad');r.shift('shl','eax',8);r.alu('add','eax','ebx');r.alu('add','eax',0x74800+128);r.alu('cmp',m('eax'),1);r.j('jne','select_next');r.push('eax');r.push('edi');r.push('ebx');original(r,'choose_alternative');r.mov(m('ebp',-24),0);r.j('jmp','select_conflicts')
+  r.label('select_endpoint');iface(r,P['player'],[m('ebx',P['t']),'edi'],0x34);r.test('eax','eax');r.j('jz','select_next');r.mov(m('ebp',-28),0);r.mov(m('ebp',-32),0)
+  # Three stable priorities: ordinary existing, frontproduction, newbuild.
+  # Within each priority choose lowest raw ID that certifies this destination.

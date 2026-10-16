@@ -1,0 +1,9 @@
+--- reviewed-basis/science_layout.py
++++ unreviewed-C2/science_layout.py
+@@ -1,5 +1,5 @@
+ """Transient ScienceResult schema only; no game/save schema or policy writes."""
+-SCIENCE_CREDIT_ENABLED = False
++SCIENCE_CREDIT_ENABLED = True
+ RESULT_SIZE = 2048
+ HEADER_SIZE = 128
+ TILE_OFFSET = 128

@@ -1,0 +1,156 @@
+{
+  "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+  "ai_sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44",
+  "scope": "only frozen T/D analysed read-only bodies and UnitDB slots; engine fixed400000, AI declared HIGHLOWs",
+  "slots": [
+    {
+      "slot": 28,
+      "rva": 1251648
+    },
+    {
+      "slot": 12,
+      "rva": 1251184
+    },
+    {
+      "slot": 64,
+      "rva": 1251920
+    },
+    {
+      "slot": 68,
+      "rva": 1252800
+    },
+    {
+      "slot": 72,
+      "rva": 1252832
+    },
+    {
+      "slot": 216,
+      "rva": 1253408
+    },
+    {
+      "slot": 220,
+      "rva": 1253440
+    }
+  ],
+  "bodies": [
+    {
+      "kind": "engine",
+      "rva": 1251648,
+      "length": 30,
+      "bytes": "558bec8b450c8b0d18dda70050e88e29f2ff8b403025000000ff5dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 418032,
+      "length": 212,
+      "bytes": "558bec515356578bd950515233d233c08b4d088a016603d066d1c2413c0075f3668955fc5a59588b45fcb92302000025ffff000099f7f98b430881e2ffff00008b3c9085ff750b33c05f5e5b8be55dc208008b77048b45088a108aca3a16751c84c974148a50018aca3a5601750e83c00283c60284c975e033c0eb051bc083d8ff85c07d1c8b450c8b4d088b570c5051528bcbe8280100005f5e5b8be55dc208007e1c8b450c8b4d088b57105051528bcbe80a0100005f5e5b8be55dc208008b4d0c8b075f5e8901b8010000005b8be55dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 345008,
+      "length": 65,
+      "bytes": "558bec8b1133c05685d27e2e8b49088b750883c104393174124081c1c80200003bc27cf133c05e5dc208008b4d0c8901b8010000005e5dc2080033c05e5dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 344800,
+      "length": 48,
+      "bytes": "558bec8b450885c07c183b017d148d14808d14d2d1e22bd08b41088d04d05dc2040033c05dc204009090909090909090",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1251184,
+      "length": 15,
+      "bytes": "558beca118dda7008b00485dc20400",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1251920,
+      "length": 33,
+      "bytes": "558bec8b450c8b0d18dda70050e87e28f2ff8b4034240ff6d81bc0f7d85dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1252800,
+      "length": 28,
+      "bytes": "558bec8b450c8b0d18dda70050e80e25f2ff8b403483e0085dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1252832,
+      "length": 28,
+      "bytes": "558bec8b450c8b0d18dda70050e8ee24f2ff8b403483e0025dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1253408,
+      "length": 28,
+      "bytes": "558bec8b450c8b0d18dda70050e8ae22f2ff8b403483e0105dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "engine",
+      "rva": 1253440,
+      "length": 28,
+      "bytes": "558bec8b450c8b0d18dda70050e88e22f2ff8b403483e0205dc20800",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 72640,
+      "length": 32,
+      "bytes": "558bec8b49648b450c8b1189108b4904894804b8010000005dc2080090909090",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 108912,
+      "length": 16,
+      "bytes": "0fbf4148c39090909090909090909090",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 108928,
+      "length": 32,
+      "bytes": "558bec8b45088b100fbf44514a5dc20400909090909090909090909090909090",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 115584,
+      "length": 32,
+      "bytes": "558bec8b89100200008b45088b1189108b49048948045dc20400909090909090",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 118096,
+      "length": 32,
+      "bytes": "558bec8b81f001000085c07c0983b9f401000001740383c8ff5dc20400909090",
+      "relocations": []
+    },
+    {
+      "kind": "ai",
+      "rva": 76272,
+      "length": 64,
+      "bytes": "8b49408d41f383f80b771533c98a88242a0120ff248d142a0120b801000000c333c0c3900a2a01200a2a01200a2a0120102a0120000003030101010101010302",
+      "relocations": [
+        15,
+        22,
+        36,
+        40,
+        44,
+        48
+      ]
+    }
+  ]
+}

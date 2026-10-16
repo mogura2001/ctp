@@ -1,0 +1,54 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+  "sources": [
+    {
+      "path": "alias-functions.ps1.fragment",
+      "size": 2946,
+      "sha256": "5c328a06a22d73bc4543729a92cdbc8d9b78c8a3f0d56cce6ca095f29517b6cf"
+    },
+    {
+      "path": "check_source.py",
+      "size": 3204,
+      "sha256": "982ac9866e999220486699eb9908cad8e771c0304267e08e724a127e0f8b29e6"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "size": 19621,
+      "sha256": "059fc846ab0d419d47b124e225a8605bbf15a1efb0ead073c2777b3e1dc5896c"
+    },
+    {
+      "path": "manifest.json",
+      "size": 31482,
+      "sha256": "6cb238d671ba1e7f53c1e0be595d8a1ab3de43d6ec6a4d40ff6306bd7d83bb34"
+    },
+    {
+      "path": "original_core.py",
+      "size": 11208,
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "participants.json",
+      "size": 405,
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "prepare.py",
+      "size": 4275,
+      "sha256": "6e40f7dd350a231a0620987d8f0fa76fecfe71b3686f073732625018c2a106c1"
+    },
+    {
+      "path": "Uitbreiding.ps1",
+      "size": 27361,
+      "sha256": "634e527cda3ffad8371b3a3e897dda508e2206def3f9fbaa223919a4f03b7584"
+    }
+  ],
+  "state": "CONSUMED_C4_CLOSED_RESTORED_NO_T0_T1_FOCUS_REFUSAL",
+  "released_at_utc": "2026-10-13T14:55:55.482562+00:00",
+  "max_arm_seconds": 480,
+  "stop_work_seconds": 420,
+  "close_before_seconds": 470,
+  "root_review": "ANALYSE/REVIEW-UITBREIDING-30-40.md",
+  "scope": "one new C4 arm only; no T2/baseline/editor/force/shutdown; source frozen; fresh budget/count0 required"
+}

@@ -1,0 +1,101 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "own fixture inputstate, never candidate",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "mov edx,('ebp', 8)",
+      "bytes": "8b9508000000"
+    },
+    {
+      "offset": 23,
+      "asm": "mov eax,('edx', 0)",
+      "bytes": "8b8200000000"
+    },
+    {
+      "offset": 29,
+      "asm": "mov ('ecx', 0),eax",
+      "bytes": "898100000000"
+    },
+    {
+      "offset": 35,
+      "asm": "mov eax,('edx', 4)",
+      "bytes": "8b8204000000"
+    },
+    {
+      "offset": 41,
+      "asm": "mov ('ecx', 4),eax",
+      "bytes": "898104000000"
+    },
+    {
+      "offset": 47,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 53,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 54,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 55,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 56,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 57,
+      "asm": "ret 4",
+      "bytes": "c20400"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {}
+}

@@ -1,0 +1,44 @@
+--- frozen source checkpoint/check_candidate.py
++++ corrected C2 source/check_candidate.py
+@@ -23,6 +23,7 @@
+ new=cp.sections[5:];assert len(new)==2
+ assert new[0].VirtualAddress==0xd6000 and new[1].VirtualAddress>=new[0].VirtualAddress+new[0].Misc_VirtualSize
+ assert new[0].Characteristics==0x60000020 and new[1].Characteristics==0xc0000040
++assert new[1].Misc_VirtualSize==0x79804 and manifest['components']['state_size']==0x79804
+ assert not any(candidate[new[1].PointerToRawData:new[1].PointerToRawData+new[1].SizeOfRawData])
+ for i in range(5):assert p.sections[i].__pack__()==cp.sections[i].__pack__()
+ for section in p.sections:
+@@ -31,8 +32,11 @@
+  assert all(any(row['offset']<=j<row['offset']+row['length'] for row in manifest['allowed_changes'] if row['reason'].startswith('named new hook')) for j in changed)
+ assert cp.OPTIONAL_HEADER.CheckSum==cp.generate_checksum()
+ labels=manifest['labels'];base=int(manifest['components']['extension_rva'],16)
+-for name in ['start_hook','capture_hook','desired_hook','scope_hook','quota_hook','execute_gate','arrival_dispatch','normalize_dispatch']:
+- assert 0<=labels[name]<new[0].Misc_VirtualSize
++code_labels=['start_hook','capture_hook','desired_hook','scope_hook','quota_hook','execute_gate','arrival_dispatch','normalize_dispatch','location_roles','science_model','development_tile','choose_alternative','validate_alternative','roles_postscience_context','roles_final_context']
++for name in code_labels:
++ assert new[0].VirtualAddress<=base+labels[name]<new[0].VirtualAddress+new[0].Misc_VirtualSize,name
++assert base+labels['pass_state']==new[1].VirtualAddress
++assert base+labels['generation']==new[1].VirtualAddress+0x79800
+ prep=json.loads((OUT/'preparation-manifest.json').read_text('utf-8'))
+ for row in prep['windows']:
+  name=row['name'];rva=int(row['rva'],16);data=cp.get_data(rva,len(bytes.fromhex(row['preimage'])))
+@@ -57,11 +61,18 @@
+ for at,target in branches:
+  targetrva=target-0x20000000
+  if base<=targetrva<new[0].VirtualAddress+new[0].Misc_VirtualSize:assert target in allstarts,(hex(at),hex(target))
++for name in code_labels:assert 0x20000000+base+labels[name] in allstarts,name
+ (OUT/'extension-disassembly.txt').write_text('\n'.join(lines)+'\n','utf-8')
+ source=(OUT/'native.py').read_text('utf-8')
+ assert 'SELECTED_CAP=40' in source and 'ORDER=SELECTED+160' in source
+ buffers=manifest['buffers'];assert buffers['SELECTED']+40*4<=buffers['ORDER'];assert buffers['ORDER']+64*4<=buffers['PATHCACHE']
++assert buffers['PLAN_SIZE']==0x79800
++assert (buffers['SCIENCE_RESULTS'],buffers['ROLE_ALTERNATIVES'],buffers['SCIENCE_SCRATCH'])==(0x54800,0x74800,0x78800)
++assert buffers['PATHCACHE']+128*24<=buffers['SCIENCE_RESULTS']
++assert buffers['SCIENCE_RESULTS']+64*2048==buffers['ROLE_ALTERNATIVES']
++assert buffers['ROLE_ALTERNATIVES']+64*2*128==buffers['SCIENCE_SCRATCH']
++assert buffers['SCIENCE_SCRATCH']+4096==buffers['PLAN_SIZE']
+ assert 'manual' not in (OUT/'policy.py').read_text('utf-8').lower()
+-summary=dict(stage='C1_OFFLINE_STATIC_ONLY',candidate_sha256=sha(candidate),manifest_sha256=sha((OUT/'candidate-manifest.json').read_bytes()),full_diff_reconstructs_exact_candidate=True,all_original_changes_only_named_hooks_and_headers=True,original_sections_preserved=True,b2_payload_and_five_hooks_exact=True,existing_HIGHLOW_directory_unchanged=manifest['relocations_unchanged'],rx_rw_after_original_SizeOfImage=True,rw_initial_zero=True,checksum_valid=True,direct_own_branches_at_instruction_boundaries=True,buffers_nonoverlap=True,branch_count=len(branches),native_calls_executed=0,installations=0,game_starts=0,gameplay_acceptance=False)
++summary=dict(stage='C2_OFFLINE_STATIC_ONLY',candidate_sha256=sha(candidate),manifest_sha256=sha((OUT/'candidate-manifest.json').read_bytes()),full_diff_reconstructs_exact_candidate=True,all_original_changes_only_named_hooks_and_headers=True,original_sections_preserved=True,b2_payload_and_five_hooks_exact=True,existing_HIGHLOW_directory_unchanged=manifest['relocations_unchanged'],rx_rw_after_original_SizeOfImage=True,rw_initial_zero=True,checksum_valid=True,direct_own_branches_at_instruction_boundaries=True,buffers_nonoverlap=True,branch_count=len(branches),native_calls_executed=0,installations=0,game_starts=0,gameplay_acceptance=False)
+ (OUT/'candidate-static-checks.json').write_text(json.dumps(summary,indent=2)+'\n','utf-8')
+ print(json.dumps(summary))

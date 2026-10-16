@@ -1,0 +1,18 @@
+--- preserved C5/manifest.json
++++ owned C6/manifest.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "C5_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
++  "state": "C6_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM",
+   "N": 30,
+   "files": [
+     {
+@@ -688,7 +688,7 @@
+     "source": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+     "sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+     "existed_before": false,
+-    "ownership": "C5_UI_LOAD_ALIAS_ONLY",
++    "ownership": "C6_UI_LOAD_ALIAS_ONLY",
+     "create": "Only after future root release and fresh successful count0, record own preimage before copy",
+     "remove": "Only own original-hash alias after exit/count0/archival/release restore; otherwise preserve"
+   }

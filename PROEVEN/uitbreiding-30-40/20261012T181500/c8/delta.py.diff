@@ -1,0 +1,124 @@
+--- preserved C7/delta.py
++++ owned C8/delta.py
+@@ -1,116 +1,6 @@
+-"""Exact, finite C6->C7 source transformation; no controller execution."""
++"""Exact C7->C8 name isolation and Start50->40; no execution."""
+ def apply(s):
+-    s=s.replace('C6','C7').replace('20261014-c6','20261014-c7')
+-    def replace(old,new):
+-        nonlocal s
+-        assert s.count(old)==1, ('unique reviewed anchor',old)
+-        s=s.replace(old,new)
+-    replace("$toolHash='", "$workLimit=600;$closeLimit=690;$hardLimit=720\nif($gate.input_mode -cne 'HUMAN_ONE_N'){throw 'C7 requires HUMAN_ONE_N.'}\nif($Action -eq 'Pass'){throw 'HUMAN_ONE_N: Pass refused before input.'}\n$toolHash='")
+-    replace('function Budget {', "function Budget([ValidateSet('Start','Work','Cleanup')][string]$Mode='Work') {")
+-    replace(" JsonFile ($value|ConvertFrom-Json) 'latest-budget.json'", " $budget=$value|ConvertFrom-Json\n JsonFile $budget 'latest-budget.json'")
+-    replace(" if($code -ne 0 -and $code -ne 25){throw 'Budget stop/unknown; checkpoint only; PC stays on.'}", """ if($code -ne 0 -and $code -ne 25){throw 'Budget stop/unknown; checkpoint only; PC stays on.'}
+- if($budget.state -notin @('ok','warn') -or $null -eq $budget.five_hour_remaining_percent -or $null -eq $budget.weekly_remaining_percent -or $null -eq $budget.age_seconds -or $budget.age_seconds -gt 120 -or $budget.age_seconds -lt -60){throw 'Budget incomplete/stale; checkpoint only.'}
+- if($budget.five_hour_remaining_percent -le 5 -or $budget.weekly_remaining_percent -le 10){throw 'Hard budget stop; checkpoint only; PC stays on.'}
+- if($Mode -eq 'Start' -and ($budget.five_hour_remaining_percent -lt 50 -or $budget.weekly_remaining_percent -le 25)){throw 'Start reserve requires five>=50 and week>25.'}
+- if($Mode -eq 'Work' -and $budget.five_hour_remaining_percent -le 15){throw 'Work reserve reached; separate Finish with Cleanup budget required.'}""")
+-    replace(" $limit=if($ForClose){470}else{420}", " $limit=if($ForClose){$closeLimit}else{$workLimit}")
+-    replace("throw '8min activation deadline; retain normal-close reserve.'", "throw 'C7 monotone work/close deadline; retain normal-close reserve.'")
+-    replace('function OwnState', "function HardTime($started){if((Elapsed $started) -ge $hardLimit){throw 'C7 hard live deadline; checkpoint, no force or late terminal acceptance.'}}\nfunction OwnState")
+-    replace(' CountZero;Budget\n', " CountZero;Budget -Mode Cleanup\n")
+-    replace(' ArchiveAndRestoreAutosave\n CountZero\n', ' Budget -Mode Cleanup;ArchiveAndRestoreAutosave\n Budget -Mode Cleanup;CountZero\n')
+-    replace(' RemoveOwnT0Alias\n', ' Budget -Mode Cleanup;RemoveOwnT0Alias\n')
+-    replace('function ArchiveAndRestoreAutosave {\n CountZero', 'function ArchiveAndRestoreAutosave {\n Budget -Mode Cleanup;CountZero')
+-    replace(" CountZero\n if((Hash $autoPath) -ne $current)", " Budget -Mode Cleanup;CountZero\n if((Hash $autoPath) -ne $current)")
+-    replace('function RemoveOwnT0Alias {\n CountZero', 'function RemoveOwnT0Alias {\n Budget -Mode Cleanup;CountZero')
+-    replace('function ReadSnapshot($started,$name,$turn){\n OwnState', 'function ReadSnapshot($started,$name,$turn){\n Budget -Mode Work\n OwnState')
+-    replace(" $output=Join-Path $armDir $name\n $oldErrorAction", " $output=Join-Path $armDir $name\n if(Test-Path -LiteralPath $output){throw 'Snapshot output already exists; no overwrite.'}\n $oldErrorAction")
+-    replace(" $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8\n if($readerCode", " $result|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8\n Budget -Mode Work;OwnState $started -BindWindow|Out-Null\n if($readerCode")
+-    replace("Budget\nif((Hash $tool)", "if($Action -in @('Finish','RestoreNoStart')){Budget -Mode Cleanup}elseif($Action -eq 'InstallStart'){Budget -Mode Start}else{Budget -Mode Work}\nif((Hash $tool)")
+-    replace(' SaveAutosaveBefore\n', ' Budget -Mode Start;SaveAutosaveBefore\n')
+-    replace(' CheckInstalled;Budget;CountZero', ' CheckInstalled;CountZero;Budget -Mode Start')
+-    replace(" $live=@(Get-CimInstance Win32_Process -Filter \"Name='civctp.exe'\" -ErrorAction Stop)\n if($live.Count -eq 0){RestoreOwnInstallation;exit}", " HardTime $started\n $live=@(Get-CimInstance Win32_Process -Filter \"Name='civctp.exe'\" -ErrorAction Stop)\n HardTime $started\n if($live.Count -eq 0){RestoreOwnInstallation;exit}")
+-    replace("  if((Elapsed $started) -ge 470){throw 'No10s normal-close reserve.'}", "  HardTime $started\n  if((Elapsed $started) -ge $closeLimit){throw 'Normal-close request deadline reached.'}")
+-    replace("  $clock=[Diagnostics.Stopwatch]::StartNew();$ok=$own.CloseMainWindow();JsonFile @{called_at=(Get-Date).ToString('o');bool_return=$ok;call_count=1} 'close-request.json'", "  if((Elapsed $started) -ge $closeLimit){throw 'Late direct identity query; no close call.'}\n  $clock=[Diagnostics.Stopwatch]::StartNew();$ok=$own.CloseMainWindow();JsonFile @{called_at=(Get-Date).ToString('o');bool_return=$ok;call_count=1;elapsed_seconds=(Elapsed $started)} 'close-request.json'\n  HardTime $started")
+-    replace("  while($clock.Elapsed.TotalSeconds -lt 10){$own.Refresh();if($own.HasExited){break};Start-Sleep -Milliseconds 100}\n  $own.Refresh();if(!$own.HasExited){throw 'No normal exit within10s; leave original process/files.'}\n  $exitCode=$own.ExitCode;JsonFile @{at=(Get-Date).ToString('o');has_exited=$true;exit_code=$exitCode} 'exit.json';RestoreOwnInstallation", """  while($clock.Elapsed.TotalSeconds -lt 10){HardTime $started;$own.Refresh();HardTime $started;if($own.HasExited){break};Start-Sleep -Milliseconds 100}
+-  HardTime $started;$own.Refresh();HardTime $started
+-  if(!$own.HasExited -or $clock.Elapsed.TotalSeconds -ge 10){throw 'No accepted normal exit within10s; leave original process/files.'}
+-  $exitCode=$own.ExitCode;HardTime $started
+-  JsonFile @{at=(Get-Date).ToString('o');has_exited=$true;exit_code=$exitCode;elapsed_seconds=(Elapsed $started);normal_wait_seconds=$clock.Elapsed.TotalSeconds} 'exit.json'
+-  HardTime $started;CountZero;HardTime $started
+-  RestoreOwnInstallation""")
+-    start=s.index(" 'Read'{$value=ReadSnapshot")
+-    s=s[:start]+READ_BRANCH+"\n 'Pass'{throw 'HUMAN_ONE_N: Pass refused before input.'}\n}\n"
+-    insert=s.index("if($Action -in @('Finish','RestoreNoStart'))")
+-    s=s[:insert]+SNAPSHOT_CHECKS+'\n'+s[insert:]
+-    return s
+-
+-SNAPSHOT_CHECKS=r"""function CheckSnapshot($value,$started,$turn){
+- $runId='uitbreiding-20261014-c7-'+$Arm
+- $dll=Join-Path $workspace 'CTP-proef\ctp_program\ctp\dll\ai\robotcom.dll'
+- $enginePin=@($manifest.protected|Where-Object{$_.path -ceq 'CTP-proef/ctp_program/ctp/civctp.exe'})
+- if(!$value.stable_twice -or $value.variant -cne 'U30-40' -or $value.run_id -cne $runId -or $value.turn -ne $turn){throw 'C7 accepted snapshot metadata mismatch.'}
+- if($value.instance.pid -ne $started.pid -or $value.instance.executable -cne $exe -or $value.instance.ai_module -cne $dll -or [Math]::Floor(([decimal]$value.instance.creationtime_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms -or $value.instance.engine_base -ne 4194304 -or $null -eq $value.instance.ai_base -or $value.instance.ai_base -le 0){throw 'C7 exact instance/module/base mismatch.'}
+- if($enginePin.Count -ne 1 -or $value.binding.engine_sha256 -cne $enginePin[0].sha256 -or $value.binding.ai_sha256 -cne $gate.candidate_sha256 -or $value.binding.manifest_sha256 -cne '9b2146579b7ccf3a8133850c360e7b0c934565998078fa7ae140a6b10f6e5341' -or $null -ne $value.binding.package_sha256){throw 'C7 reader bindinghash mismatch.'}
+- foreach($check in @('headers_sections_sizes','all_three_scorecalls','payload_and_original_ranges','only_original_HIGHLOW_relocation_adjustment','all_five_B2_hooks','N30_payload_bound','new_payload_and_all_nine_windows_bound')){if($value.loaded_checks.$check -cne $true){throw 'C7 strict loaded check missing/false.'}}
+- $civs=@($value.state.civilizations)
+- if($civs.Count -ne 7 -or ((@($civs|ForEach-Object{$_.civ_id}|Sort-Object) -join ',') -cne '2,3,4,5,6,7,8')){throw 'C7 exact unique seven participants required.'}
+- $participants=Get-Content -LiteralPath (Join-Path $package 'participants.json') -Raw -Encoding utf8|ConvertFrom-Json
+- foreach($civ in $civs){if($null -eq $civ.processed_round -or $civ.civ_name -cne $participants.names.([string]$civ.civ_id)){throw 'C7 fixed participant/native round missing.'}}
+-}
+-function CheckPairIdentity($before,$after){
+- foreach($key in @('pid','creationtime_filetime','executable','ai_module','engine_base','ai_base')){if($before.instance.$key -cne $after.instance.$key){throw 'C7 uninterrupted pair instance changed.'}}
+- foreach($key in @('engine_sha256','ai_sha256','manifest_sha256','package_sha256')){if($before.binding.$key -cne $after.binding.$key){throw 'C7 pair readerbinding changed.'}}
+-}
+-"""
+-
+-READ_BRANCH=r""" 'Read'{
+-  if($Arm -cne 'variant' -or $Label -cne ('T'+$Turn)){throw 'C7 read scope: own variant T0/T1 labels only.'}
+-  $output=Join-Path $armDir ('T'+$Turn+'.json')
+-  if(Test-Path -LiteralPath $output){throw 'Accepted output already exists; no overwrite.'}
+-  if($Turn -eq 0){
+-   if($Previous){throw 'T0 has no Previous.'}
+-   $acceptPath=Join-Path $armDir 'T0-acceptance.json'
+-   if(Test-Path -LiteralPath $acceptPath){throw 'T0 acceptance already attempted.'}
+-   $name='T0-read-'+[Guid]::NewGuid().ToString('N')+'.json'
+-   $value=ReadSnapshot $started $name 0;CheckSnapshot $value $started 0
+-   foreach($civ in $value.state.civilizations){if($civ.processed_round -ne -1){throw 'T0 native round must be -1 for all seven; no input.'}}
+-   Budget -Mode Work;$state=OwnState $started -BindWindow -RequireFocus
+-   Copy-Item -LiteralPath (Join-Path $armDir $name) -Destination $output
+-   JsonFile @{at=(Get-Date).ToString('o');input_mode='HUMAN_ONE_N';controller_n_calls=0;path=$output;sha256=(Hash $output);start_record_sha256=(Hash (Join-Path $armDir 'start-record.json'));instance=$value.instance;handle=$state.handle;elapsed_seconds=(Elapsed $started);seven_native_minus_one=$true} 'T0-acceptance.json'
+-   $value|ConvertTo-Json -Depth 12
+-  }else{
+-   $ownT0=[IO.Path]::GetFullPath((Join-Path $armDir 'T0.json'))
+-   if(!$Previous -or [IO.Path]::GetFullPath($Previous) -cne $ownT0 -or !(Test-Path -LiteralPath $ownT0)){throw 'T1 requires exact own accepted C7 variant T0 Previous.'}
+-   $acceptPath=Join-Path $armDir 'T0-acceptance.json'
+-   $acceptedT0=Get-Content -LiteralPath $acceptPath -Raw -Encoding utf8|ConvertFrom-Json
+-   $before=Get-Content -LiteralPath $ownT0 -Raw -Encoding utf8|ConvertFrom-Json
+-   CheckSnapshot $before $started 0
+-   if($acceptedT0.path -cne $ownT0 -or $acceptedT0.sha256 -cne (Hash $ownT0) -or $acceptedT0.start_record_sha256 -cne (Hash (Join-Path $armDir 'start-record.json')) -or $acceptedT0.handle -ne $started.handle -or !$acceptedT0.seven_native_minus_one -or $acceptedT0.input_mode -cne 'HUMAN_ONE_N' -or $acceptedT0.controller_n_calls -ne 0){throw 'T0 acceptance/start/handle binding changed.'}
+-   CheckPairIdentity $before @{instance=$acceptedT0.instance;binding=$before.binding}
+-   foreach($civ in $before.state.civilizations){if($civ.processed_round -ne -1){throw 'Previous is not original native T0.'}}
+-   $poll=[Diagnostics.Stopwatch]::StartNew();$attempt=0;$accepted=$false;$rounds=@();$nonce=[Guid]::NewGuid().ToString('N')
+-   while($poll.Elapsed.TotalSeconds -lt 30){
+-    Budget -Mode Work;OwnState $started -BindWindow|Out-Null
+-    Start-Sleep -Milliseconds 400;$attempt++;$name='T1-poll-'+$nonce+'-'+$attempt+'.json'
+-    try{$after=ReadSnapshot $started $name 1}catch{if($_.Exception.Message -ceq 'UNSTABLE_DATASET_RETRY_ONLY'){continue};throw}
+-    CheckSnapshot $after $started 1;CheckPairIdentity $before $after
+-    $complete=$true;$rounds=@()
+-    foreach($old in $before.state.civilizations){
+-     $new=@($after.state.civilizations|Where-Object{$_.civ_id -eq $old.civ_id})[0]
+-     if($new.processed_round -gt $old.processed_round+1){throw 'Native round overshoot; no second n or accepted T1.'}
+-     if($new.processed_round -lt $old.processed_round){throw 'Native round regression; rejected T1.'}
+-     if($new.processed_round -ne $old.processed_round+1){$complete=$false}
+-     $rounds+=@{civ_id=$old.civ_id;before=$old.processed_round;after=$new.processed_round}
+-    }
+-    if($poll.Elapsed.TotalSeconds -ge 30){break}
+-    if($complete){
+-     Budget -Mode Work;OwnState $started -BindWindow -RequireFocus|Out-Null
+-     if($poll.Elapsed.TotalSeconds -ge 30){break}
+-     Copy-Item -LiteralPath (Join-Path $armDir $name) -Destination $output;$accepted=$true;break
+-    }
+-   }
+-   if(!$accepted){throw 'No accepted seven-AI native -1 to 0 within30s; separate Finish, no second n.'}
+-   JsonFile @{at=(Get-Date).ToString('o');previous=$ownT0;previous_sha256=(Hash $ownT0);output=$output;output_sha256=(Hash $output);poll_output=$name;polls=$attempt;poll_seconds=$poll.Elapsed.TotalSeconds;elapsed_seconds=(Elapsed $started);instance=$after.instance;handle=$started.handle;binding=$after.binding;loaded_checks=$after.loaded_checks;native_rounds=$rounds;stable_twice=$after.stable_twice;input_mode='HUMAN_ONE_N';controller_n_calls=0;native_all_round_plus_one=$true;human_key_count_proven=$false} 'T1-pair.json'
+-   $after|ConvertTo-Json -Depth 12
+-  }
+- }"""
++ s=s.replace('C7','C8').replace('20261014-c7','20261014-c8')
++ assert s.count('$budget.five_hour_remaining_percent -lt 50')==1
++ assert s.count('Start reserve requires five>=50 and week>25.')==1
++ return s.replace('$budget.five_hour_remaining_percent -lt 50','$budget.five_hour_remaining_percent -lt 40').replace('Start reserve requires five>=50 and week>25.','Start reserve requires five>=40 and week>25.')

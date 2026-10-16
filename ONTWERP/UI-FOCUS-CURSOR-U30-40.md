@@ -1,0 +1,11 @@
+# Beperkte uitvoeringscorrectie na C4
+
+C4 bereikte Load Game, selecteerde Alexan en weigerde de correctie vóór invoer wegens verloren focus. Save-load/T0/T1 zijn niet aangetoond; normale afwikkeling en behoud wel. Dit is geen harde technische onuitvoerbaarheid en geen AI-policywijziging.
+
+De bestaande `Bedien-CTP.ps1` doet vóór capture/input één `SetForegroundWindow`, wacht 350 ms en weigert de handeling als het spel niet echt foreground is. De controller RequireFocusguard blokkeerde voordat deze bestaande route aangeroepen werd. Gebruik die bestaande route; geen nieuwe focushelper of achtergrondbediening.
+
+Nieuwe C5-arm en bronpins; oude C4 blijft ongewijzigd en verbruikt. Voor Capture eerst exacte PID/executable/creation/HWND, all-process-identiteit, bron-/installatiepins, workdeadline en fysieke bounds toetsen zonder vooraf foreground te vereisen. Als focus ontbreekt: één eigen pogingrecord vóór aanroep van de ongewijzigde Bedien-CTP Capture. Maximaal één focusherstelpoging per arm; een tweede verlies stopt het werk. De tool blijft focus controleren vóór opname. Daarna opnieuw OwnState met RequireFocus; pixelafmetingen moeten met actuele fysieke bounds overeenkomen. Overige guards blijven strikt. Geen input zonder de bestaande eigen focuscontrole.
+
+Menu-klikken gebruiken de bestaande ResetCursor en kleine bewegingen vanaf de begrensde oorsprong, met targets uit de originele opname. Dit kalibreert uitsluitend in menu's, niet op de geladen kaart. De oorspronkelijke opname of een expliciete pixelschaal is verplicht; geen geschatte FromX/FromY als bewezen startpositie. Controleer daadwerkelijke Julius-selectie en unieke aliasselectie op het scherm.
+
+Overige C4-scope blijft gelijk: bytegelijke eigen T0-alias in Julius, geen bestaande saves verplaatsen/overschrijven, één variantstart/T0/één T1/zeven AI's, workgate 420 s/close 470 s/max 480 s en normale releaseherstelling/aliasopruiming. Geen T2, baselinepartij, editor, bronwijzigingen tijdens livewerk of geforceerde sluiting. Nieuwe bron/diff/pinsreview en afzonderlijke rootvrijgave vóór de volgende arm. Bij afgewezen gewone focuspoging geen lus of tweede start; normaal afwikkelen en concrete blokkade melden. Dit heropent de brede analyse niet.

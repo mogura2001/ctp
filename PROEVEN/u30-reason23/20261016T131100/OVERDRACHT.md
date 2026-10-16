@@ -1,0 +1,17 @@
+# U30-REASON23 C-overdracht
+
+2026-10-16T13:15:02+02:00. Voorbereid en offline gecontroleerd; geen installatie, RPM, nativecall/build of gameplaymeting. Werk aan dit bronpakket afgerond/gestopt. Root beheert actuele29backups, installatie, vrijgave en eventuele ene T0/n/T1-arm. Geen gameplayverbetering bewezen.
+
+Eigen reader: `host1/Lees-Uitbreiding.py`, SHA256 `60e5f1e057afde7f7fd140b773698225c0ac3dc9ee25494386e69f88198e5470`. Kleine volledige diff: `reader.diff`. Bestaande type10reader366d16... als provenance. Gekopieerde `original_core.py`/participants bytegelijk; bestaande H3layout bytegelijk als `host1/h3_layout.py`. Alle exacte bestandsnamen/hashes/omvangen staan in `package-pins.json`; gateFALSE met alle vier readerbronpins. Historische pakketten ongewijzigd.
+
+Exacte ingreep: shared candidates+68/slots+80/h3calls+128; ??n1152byte eigen slotread op state+40600/RVA11d600. State-RVA dd000/omvang54804 wordt uit gepind manifest gecontroleerd tegen exacte PE-state-section en moduleomvang; slotend40a80. Bestaande intermediate shared_state-call levert voortaan ook het eindresultaat, zodat er precies ??n slotread per snapshot is. `stable_sample` vergelijkt bestaande complete module/passbinding en alle scalar/rawslotbytes tweemaal. Geen extra pointers, ORDER, CAPTURE of enginecalls toegevoegd.
+
+H3slot[128:1152] gebruikt bestaande layout. Ruwe slothex blijft volledig bewaard, H3/H2raw apart van conditionele UNKNOWN; reason14 geeft geen nulfood/berginterpretatie. Status2-indices/counts worden begrensd zonder dereference. Firstcalltoeschrijving uitsluitend reason23/classified1/h3calls1/slots0; overige combinaties UNKNOWN; geen overige civ-certificering.
+
+`offline-checks.json`: PASS_OFFLINE_ONLY. ASTdelta uitsluitend trusted_binding/native_expansion_state plus nieuwe pure decoder; hoofdproces/main/observe/stable_sample ongewijzigd. Controleert bestaande layout, exacte PE/statebounds, zero/reason14labels, ongeldige tellingen/indices, complete rawbytesstabiliteit en gatepins. Dit zijn synthetische decoderchecks, geen echte H3data. Eerste checkerimport van pefile was niet beschikbaar in kale Python; vervangen door rechtstreeks lezen van minimale PEheader/sectietabel met struct. Reader zelf behoudt zijn bestaande pefiledependency/runtimeomgeving.
+
+Kandidaat SHA256 b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62; manifest fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27, bytegelijk gekopieerd zonder rebuild. Baseline eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890. Kandidaten onder host1/candidate, manifest/preparation in pakketparent; original_core ROOT parents4/FOLDERhost1 blijft dezelfde diepte houden.
+
+Doel1/1a: observatiebron offline gereed; acceptatie echte stabiele slotdata en reden nog open. Doel3: geen wijziging of nieuwe meting. Volgende concrete oplevering: rootdiffreview, dan met voldoende budget ??n ongewijzigde-kandidaat T0/n/T1 met nieuwe29actuelebackups en nieuwe gate; bestaande startsave/Deity/pins volgen. Laatste eigen budget13:13:38 vijf20/week56, root13:14 idem. Pc blijft aan.
+
+Rootreviewcorrectie 2026-10-16T13:16:49+02:00: buiten reason23/classified1/h3calls1/slots0 zijn ALLE h3_observed-velden, ook status/reason, UNKNOWN; h2_observed/h2_entries UNKNOWN en indices_validFalse. Ruwe hex/H3/H2 onveranderd. Pure zero/offpatterncheck PASS. Gate blijftFALSE; geen installatie/game. Dit vervangt de eerdere readerhash. Werk opnieuw afgerond/gestopt.

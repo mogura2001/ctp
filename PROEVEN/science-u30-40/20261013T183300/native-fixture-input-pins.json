@@ -1,0 +1,464 @@
+[
+  {
+    "name": "gate",
+    "source": "PROEVEN\\production-h3\\helper\\gate.bin",
+    "sha256": "77059a21abb145f8099cd78bbf25d4b7e3aada20f69d96fc84006e106831024e",
+    "unchanged": true
+  },
+  {
+    "name": "open",
+    "source": "PROEVEN\\production-h3\\helper\\open.bin",
+    "sha256": "c8eaa4e991d447fc93400965f6ec5154a3afab985c5b78085d47161c29d0e7ed",
+    "unchanged": true
+  },
+  {
+    "name": "terrain",
+    "source": "PROEVEN\\production-h3\\helper\\terrain.bin",
+    "sha256": "d3bb5399c57de522f03a2f1a12a0d29c7f5e6c1e6e2e853ac50fdfae9d2418ee",
+    "unchanged": true
+  },
+  {
+    "name": "food",
+    "source": "PROEVEN\\production-h3\\helper\\food.bin",
+    "sha256": "9a9b48efe1adb7c1f0dd7766c6ac00b6a1731ec34e51ba09e53b6be9d0b5b1b0",
+    "unchanged": true
+  },
+  {
+    "name": "convert",
+    "source": "PROEVEN\\production-h3\\helper\\convert.bin",
+    "sha256": "d0a4c66efc832a545b2784b4fe590a7aff30b08124bb81376a3ec1649a4e2e96",
+    "unchanged": true
+  },
+  {
+    "name": "convert-wrap",
+    "sha256": "9fe01828c5e92afece5e4ed7495bb56dd2cd3835d4419ba2652b8802c4489a89",
+    "controlled_callback": true,
+    "change": "existing converter plus x modulo32 for alias fixtures; no real engine wrap claim"
+  },
+  {
+    "name": "large-center-reader",
+    "sha256": "c91f08224232e75b354bb8957d5f7dc314aad69af1d3586ae63b70bccca76dd2",
+    "controlled_callback": true,
+    "change": "isolated SCI int64-center boundary: getter INT32MAX plus bonus1; no H3FoodReader acceptance claim",
+    "recipe": [
+      {
+        "offset": 0,
+        "asm": "push ebp",
+        "bytes": "55"
+      },
+      {
+        "offset": 1,
+        "asm": "mov ebp,esp",
+        "bytes": "8bec"
+      },
+      {
+        "offset": 3,
+        "asm": "push ebx",
+        "bytes": "53"
+      },
+      {
+        "offset": 4,
+        "asm": "push esi",
+        "bytes": "56"
+      },
+      {
+        "offset": 5,
+        "asm": "push edi",
+        "bytes": "57"
+      },
+      {
+        "offset": 6,
+        "asm": "sub esp,0",
+        "bytes": "81ec00000000"
+      },
+      {
+        "offset": 12,
+        "asm": "mov edi,('ebp', 20)",
+        "bytes": "8bbd14000000"
+      },
+      {
+        "offset": 18,
+        "asm": "mov eax,0",
+        "bytes": "b800000000"
+      },
+      {
+        "offset": 23,
+        "asm": "mov ecx,10",
+        "bytes": "b90a000000"
+      },
+      {
+        "offset": 28,
+        "asm": "cld",
+        "bytes": "fc"
+      },
+      {
+        "offset": 29,
+        "asm": "rep stosd",
+        "bytes": "f3ab"
+      },
+      {
+        "offset": 31,
+        "asm": "mov edi,('ebp', 20)",
+        "bytes": "8bbd14000000"
+      },
+      {
+        "offset": 37,
+        "asm": "mov ('edi', 0),1",
+        "bytes": "c7870000000001000000"
+      },
+      {
+        "offset": 47,
+        "asm": "mov ('edi', 4),2147483647",
+        "bytes": "c78704000000ffffff7f"
+      },
+      {
+        "offset": 57,
+        "asm": "mov ('edi', 12),2",
+        "bytes": "c7870c00000002000000"
+      },
+      {
+        "offset": 67,
+        "asm": "mov ('edi', 24),1",
+        "bytes": "c7871800000001000000"
+      },
+      {
+        "offset": 77,
+        "asm": "mov eax,1",
+        "bytes": "b801000000"
+      },
+      {
+        "offset": 82,
+        "asm": "add esp,0",
+        "bytes": "81c400000000"
+      },
+      {
+        "offset": 88,
+        "asm": "pop edi",
+        "bytes": "5f"
+      },
+      {
+        "offset": 89,
+        "asm": "pop esi",
+        "bytes": "5e"
+      },
+      {
+        "offset": 90,
+        "asm": "pop ebx",
+        "bytes": "5b"
+      },
+      {
+        "offset": 91,
+        "asm": "pop ebp",
+        "bytes": "5d"
+      },
+      {
+        "offset": 92,
+        "asm": "ret 20",
+        "bytes": "c21400"
+      }
+    ]
+  },
+  {
+    "name": "spatial",
+    "sha256": "b41aaad8a3def8770ad7bb4df47b8343fe5f83e13aca34a9b86b48e96e424c46",
+    "controlled_callback": true,
+    "recipe": [
+      {
+        "offset": 0,
+        "asm": "mov ecx,('esp', 4)",
+        "bytes": "8b8c2404000000"
+      },
+      {
+        "offset": 7,
+        "asm": "mov ecx,('ecx', 4)",
+        "bytes": "8b8904000000"
+      },
+      {
+        "offset": 13,
+        "asm": "mov edx,('esp', 8)",
+        "bytes": "8b942408000000"
+      },
+      {
+        "offset": 20,
+        "asm": "zx16 eax,('edx', 0)",
+        "bytes": "0fb78200000000"
+      },
+      {
+        "offset": 27,
+        "asm": "mov ('ecx', 132),eax",
+        "bytes": "898184000000"
+      },
+      {
+        "offset": 33,
+        "asm": "inc ('ecx', 128)",
+        "bytes": "ff8180000000"
+      },
+      {
+        "offset": 39,
+        "asm": "shl eax,2",
+        "bytes": "c1e002"
+      },
+      {
+        "offset": 42,
+        "asm": "add eax,ecx",
+        "bytes": "03c1"
+      },
+      {
+        "offset": 44,
+        "asm": "mov eax,('eax', 2560)",
+        "bytes": "8b80000a0000"
+      },
+      {
+        "offset": 50,
+        "asm": "ret",
+        "bytes": "c20800"
+      }
+    ]
+  },
+  {
+    "name": "available",
+    "sha256": "acb5a6ab6dd14a23e87ccc6252596d2030f153159a3733f99455fa2fc5e88325",
+    "controlled_callback": true,
+    "recipe": [
+      {
+        "offset": 0,
+        "asm": "mov ecx,('esp', 4)",
+        "bytes": "8b8c2404000000"
+      },
+      {
+        "offset": 7,
+        "asm": "mov ecx,('ecx', 4)",
+        "bytes": "8b8904000000"
+      },
+      {
+        "offset": 13,
+        "asm": "inc ('ecx', 96)",
+        "bytes": "ff8160000000"
+      },
+      {
+        "offset": 19,
+        "asm": "mov eax,('ecx', 132)",
+        "bytes": "8b8184000000"
+      },
+      {
+        "offset": 25,
+        "asm": "shl eax,2",
+        "bytes": "c1e002"
+      },
+      {
+        "offset": 28,
+        "asm": "add eax,ecx",
+        "bytes": "03c1"
+      },
+      {
+        "offset": 30,
+        "asm": "mov eax,('eax', 1792)",
+        "bytes": "8b8000070000"
+      },
+      {
+        "offset": 36,
+        "asm": "ret",
+        "bytes": "c20800"
+      }
+    ]
+  },
+  {
+    "name": "position",
+    "sha256": "f9358969832e496c691d236bfb112a3c3db0b4817b2626cf59572d6bb19ab14a",
+    "controlled_callback": true,
+    "recipe": [
+      {
+        "offset": 0,
+        "asm": "mov ecx,('esp', 4)",
+        "bytes": "8b8c2404000000"
+      },
+      {
+        "offset": 7,
+        "asm": "mov ecx,('ecx', 4)",
+        "bytes": "8b8904000000"
+      },
+      {
+        "offset": 13,
+        "asm": "inc ('ecx', 100)",
+        "bytes": "ff8164000000"
+      },
+      {
+        "offset": 19,
+        "asm": "mov edx,('esp', 16)",
+        "bytes": "8b942410000000"
+      },
+      {
+        "offset": 26,
+        "asm": "zx16 eax,('edx', 0)",
+        "bytes": "0fb78200000000"
+      },
+      {
+        "offset": 33,
+        "asm": "shl eax,2",
+        "bytes": "c1e002"
+      },
+      {
+        "offset": 36,
+        "asm": "add eax,ecx",
+        "bytes": "03c1"
+      },
+      {
+        "offset": 38,
+        "asm": "mov edx,('esp', 20)",
+        "bytes": "8b942414000000"
+      },
+      {
+        "offset": 45,
+        "asm": "mov ecx,('eax', 2304)",
+        "bytes": "8b8800090000"
+      },
+      {
+        "offset": 51,
+        "asm": "mov ('edx', 0),ecx",
+        "bytes": "898a00000000"
+      },
+      {
+        "offset": 57,
+        "asm": "mov eax,('eax', 1920)",
+        "bytes": "8b8080070000"
+      },
+      {
+        "offset": 63,
+        "asm": "ret",
+        "bytes": "c21400"
+      }
+    ]
+  },
+  {
+    "name": "delta",
+    "sha256": "750ee5648d53b565a04490c1c01ae464a9467badf4d256cdeeefe1b1aefbfcfa",
+    "controlled_callback": true,
+    "recipe": [
+      {
+        "offset": 0,
+        "asm": "mov ecx,('esp', 4)",
+        "bytes": "8b8c2404000000"
+      },
+      {
+        "offset": 7,
+        "asm": "mov ecx,('ecx', 4)",
+        "bytes": "8b8904000000"
+      },
+      {
+        "offset": 13,
+        "asm": "inc ('ecx', 104)",
+        "bytes": "ff8168000000"
+      },
+      {
+        "offset": 19,
+        "asm": "mov edx,('esp', 12)",
+        "bytes": "8b94240c000000"
+      },
+      {
+        "offset": 26,
+        "asm": "zx16 eax,('edx', 0)",
+        "bytes": "0fb78200000000"
+      },
+      {
+        "offset": 33,
+        "asm": "imul eax,eax,8",
+        "bytes": "69c008000000"
+      },
+      {
+        "offset": 39,
+        "asm": "add eax,ecx",
+        "bytes": "03c1"
+      },
+      {
+        "offset": 41,
+        "asm": "fld controlled delta ('eax', 2048)",
+        "bytes": "dd8000080000"
+      },
+      {
+        "offset": 47,
+        "asm": "ret",
+        "bytes": "c20c00"
+      }
+    ]
+  },
+  {
+    "name": "shim5",
+    "source_sha256": "216f808b8a5c7553eea5f7419aeb8978bfe61893426aa6e9cd658ea171123243",
+    "fixture_sha256": "130707cebc1efe535d90dd924b833e6909c5c64beb5d9b32af38234d70d6da7b",
+    "change": "FLDCW ctx+740 after original FNINIT; outside legacy FXSAVE areas",
+    "fixups": [
+      {
+        "at": 7,
+        "context_offset": 256
+      },
+      {
+        "at": 26,
+        "context_offset": 768
+      },
+      {
+        "at": 32,
+        "context_offset": 40
+      },
+      {
+        "at": 58,
+        "context_offset": 1808
+      },
+      {
+        "at": 64,
+        "context_offset": 1804
+      },
+      {
+        "at": 70,
+        "context_offset": 1800
+      },
+      {
+        "at": 76,
+        "context_offset": 1796
+      },
+      {
+        "at": 82,
+        "context_offset": 1792
+      },
+      {
+        "at": 88,
+        "context_offset": 112
+      },
+      {
+        "at": 93,
+        "context_offset": 36
+      },
+      {
+        "at": 99,
+        "context_offset": 44
+      },
+      {
+        "at": 105,
+        "context_offset": 48
+      },
+      {
+        "at": 111,
+        "context_offset": 52
+      },
+      {
+        "at": 117,
+        "context_offset": 56
+      },
+      {
+        "at": 123,
+        "context_offset": 60
+      },
+      {
+        "at": 130,
+        "context_offset": 1280
+      },
+      {
+        "at": 137,
+        "context_offset": 256
+      },
+      {
+        "at": 15,
+        "context_offset": 1856
+      }
+    ]
+  }
+]

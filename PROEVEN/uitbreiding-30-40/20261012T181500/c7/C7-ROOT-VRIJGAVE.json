@@ -1,0 +1,66 @@
+﻿{
+    "allowed":  false,
+    "baseline_allowed":  false,
+    "input_mode":  "HUMAN_ONE_N",
+    "candidate_sha256":  "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+    "proposal_sha256":  "46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978",
+    "sources":  [
+                    {
+                        "path":  "alias-functions.ps1.fragment",
+                        "size":  2978,
+                        "sha256":  "01f96e042da1a188f99ce5d124fb5714b048a921fb90b9acacff8c59fb9f8ae4"
+                    },
+                    {
+                        "path":  "check_source.py",
+                        "size":  5608,
+                        "sha256":  "ee89f7b1d869cd6ca316e79200888fb451811f240e8fe847062cd1dfd66031f8"
+                    },
+                    {
+                        "path":  "delta.py",
+                        "size":  13110,
+                        "sha256":  "7bb768714bcb150fdfd0ceaaacd78018b8fd669b4bbc40a829e253d79387163e"
+                    },
+                    {
+                        "path":  "Lees-Uitbreiding.py",
+                        "size":  19621,
+                        "sha256":  "9ead24ce0b82d604a6bb6dab1ea2cfef677e5df7bf02c3a54fe0390fe2c01e8b"
+                    },
+                    {
+                        "path":  "manifest.json",
+                        "size":  31911,
+                        "sha256":  "4dc049e01918a2b9f69386279f1d700132430a1612640dd7481dbf38694de71c"
+                    },
+                    {
+                        "path":  "original_core.py",
+                        "size":  11208,
+                        "sha256":  "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+                    },
+                    {
+                        "path":  "participants.json",
+                        "size":  405,
+                        "sha256":  "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+                    },
+                    {
+                        "path":  "prepare.py",
+                        "size":  1977,
+                        "sha256":  "9b72adab4a0150d0ef15926f13029e178acca5ec41d7e0dc7524d1f31df34b8d"
+                    },
+                    {
+                        "path":  "Uitbreiding.ps1",
+                        "size":  35126,
+                        "sha256":  "47b74fb9d519be51ccb75b01843df4cf26ab1a63674a2bb58518a0d6438cf31c"
+                    },
+                    {
+                        "path":  "UITVOERINSTRUCTIE.md",
+                        "size":  5913,
+                        "sha256":  "87b943b365e5bbefacf3e290b7a93676be56cce7b1c370249b19e63a3cecd027"
+                    }
+                ],
+    "state":  "CONSUMED_INTRO_TERMINAL_RELEASE_RESTORED_NO_REUSE",
+    "previous_arm":  "C6_CLOSED_CONSUMED_NO_REUSE",
+    "source_manifest_sha256":  "dd17b253b6446f189eb905b846640438261ef7b395d46a90eecc1a822c5bb7e4",
+    "at_utc":  "2026-10-14T14:17:50.120226+00:00",
+    "root_os_count0_at":  "2026-10-14T16:17:10.3422911+02:00",
+    "scope":  "One variant start, same fixed T0, human load and one n only after root signal, input-free strict native T1 pair read, normal close/restore. No heavy parallel helpers, T2, baseline, science, editor or force.",
+    "consumed_at":  "2026-10-14T16:22:04.9322015+02:00"
+}

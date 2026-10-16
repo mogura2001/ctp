@@ -1,0 +1,120 @@
+{
+  "stage": "C2_BUILT_DOUBLE_COMPOSE_AND_CHECKER_STATIC_PASS_NO_NATIVE_NO_GAME",
+  "at_utc": "2026-10-15T17:39:16.840908+00:00",
+  "builder_invocations": 1,
+  "builder_double_compose_deterministic": true,
+  "builder_exit_code": 0,
+  "checker_invocations": 1,
+  "checker_exit_code": 0,
+  "source_correction_checkpoint_sha256": "b52b6c3887f6577ff7af8aac8a00256d038c283da13ea23940449b42fddf50b2",
+  "root_gate_expected_change_only": true,
+  "other_correction_pins_equal": true,
+  "all_historical_source_diffs_unchanged": true,
+  "candidate_sha256": "18d8516bf915d137acbc679c695bf4163540d01007888d875da24183035b230d",
+  "manifest_sha256": "265b5ee53bcc5adc4216f0df2471b45b95c41d2d3e5d8121cf8fb78eea888167",
+  "payload_sha256": "7791c54f569d4e7959cb01e3e288464530055ca4450152cd4e70ccc7cc1ed0e3",
+  "original_changed_bytes": 80,
+  "appended_bytes": 540160,
+  "unexplained_bytes": 0,
+  "sections": [
+    {
+      "name": ".text",
+      "rva": 4096,
+      "virtual_size": 554149,
+      "raw_offset": 1024,
+      "raw_size": 554496,
+      "flags": 1610612768
+    },
+    {
+      "name": ".rdata",
+      "rva": 561152,
+      "virtual_size": 23459,
+      "raw_offset": 555520,
+      "raw_size": 23552,
+      "flags": 1073741888
+    },
+    {
+      "name": ".data",
+      "rva": 585728,
+      "virtual_size": 250288,
+      "raw_offset": 579072,
+      "raw_size": 53248,
+      "flags": 3221225536
+    },
+    {
+      "name": ".reloc",
+      "rva": 839680,
+      "virtual_size": 27690,
+      "raw_offset": 632320,
+      "raw_size": 28160,
+      "flags": 1107296320
+    },
+    {
+      "name": ".b2a",
+      "rva": 868352,
+      "virtual_size": 4348,
+      "raw_offset": 660480,
+      "raw_size": 4608,
+      "flags": 1610612768
+    },
+    {
+      "name": ".u40c",
+      "rva": 876544,
+      "virtual_size": 41593,
+      "raw_offset": 665088,
+      "raw_size": 41984,
+      "flags": 1610612768
+    },
+    {
+      "name": ".u40s",
+      "rva": 921600,
+      "virtual_size": 497668,
+      "raw_offset": 707072,
+      "raw_size": 498176,
+      "flags": 3221225536
+    }
+  ],
+  "components": {
+    "internal_H3_rva": "0xd6000",
+    "internal_H3_sha256": "5a0c008f3e660e30cc9011146d029dd01c514c46f0840c8c20876848e4f25c57",
+    "extension_rva": "0xd9000",
+    "extension_sha256": "5b2ac0afda55b1dc60e148d4ab01218545c4285c70ef64fc019fccda6e3d8204",
+    "state_rva": "0xe1000",
+    "state_size": 497668
+  },
+  "label_rvas": {
+    "location_roles": "0xdc328",
+    "science_model": "0xdd310",
+    "development_tile": "0xdfd04",
+    "choose_alternative": "0xdcac1",
+    "validate_alternative": "0xdcbbd",
+    "roles_postscience_context": "0xdc738",
+    "roles_final_context": "0xdc9fe",
+    "pass_state": "0xe1000",
+    "generation": "0x15a800"
+  },
+  "checks": {
+    "stage": "C2_OFFLINE_STATIC_ONLY",
+    "candidate_sha256": "18d8516bf915d137acbc679c695bf4163540d01007888d875da24183035b230d",
+    "manifest_sha256": "265b5ee53bcc5adc4216f0df2471b45b95c41d2d3e5d8121cf8fb78eea888167",
+    "full_diff_reconstructs_exact_candidate": true,
+    "all_original_changes_only_named_hooks_and_headers": true,
+    "original_sections_preserved": true,
+    "b2_payload_and_five_hooks_exact": true,
+    "existing_HIGHLOW_directory_unchanged": true,
+    "rx_rw_after_original_SizeOfImage": true,
+    "rw_initial_zero": true,
+    "checksum_valid": true,
+    "direct_own_branches_at_instruction_boundaries": true,
+    "buffers_nonoverlap": true,
+    "branch_count": 1409,
+    "native_calls_executed": 0,
+    "installations": 0,
+    "game_starts": 0,
+    "gameplay_acceptance": false
+  },
+  "known_limit": "Original resolve_type enginecount+1 guard remains in this candidate. New parser correction belongs to a separate package and is not combined here.",
+  "native_calls": 0,
+  "installations": 0,
+  "game_starts": 0
+}

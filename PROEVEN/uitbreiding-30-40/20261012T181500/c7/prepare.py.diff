@@ -1,0 +1,55 @@
+--- preserved C6/prepare.py
++++ owned C7/prepare.py
+@@ -1,28 +1,25 @@
+-"""Finite C5 to C6 source copy only; no controller/main/process query/game writes."""
++"""Finite C6->C7 source/staging copy only; no game/process/controller calls."""
+ from pathlib import Path
+-import json, hashlib, shutil, difflib, sys
+-sys.dont_write_bytecode = True
+-OUT = Path(__file__).resolve().parent
+-OLD = OUT.parent / 'c5'
+-ROOT = OUT.parents[3]
+-sha = lambda b: hashlib.sha256(b).hexdigest()
+-assert not (OUT / 'manifest.json').exists(), 'Preserve existing preparation'
+-for folder in ['backups', 'candidate', 'protected-backups']:
+-    shutil.copytree(OLD / folder, OUT / folder)
+-for filename in ['original_core.py', 'participants.json']:
+-    shutil.copyfile(OLD / filename, OUT / filename)
+-for name in ['Uitbreiding.ps1', 'Lees-Uitbreiding.py', 'alias-functions.ps1.fragment']:
+-    s = (OLD / name).read_text('utf-8')
+-    for old, new in [('C5', 'C6'), ('20261013-C6', '20261014-C6'), ('20261013-c5', '20261014-c6')]:
+-        s = s.replace(old, new)
+-    (OUT / name).write_text(s, 'utf-8')
+-m = json.loads((OLD / 'manifest.json').read_text('utf-8'))
+-m['state'] = 'C6_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM'
+-m['T0_alias']['ownership'] = 'C6_UI_LOAD_ALIAS_ONLY'
+-assert not (ROOT / m['T0_alias']['path']).exists()
+-(OUT / 'manifest.json').write_text(json.dumps(m, indent=2) + '\n', 'utf-8')
+-for name in ['Uitbreiding.ps1', 'Lees-Uitbreiding.py', 'manifest.json', 'alias-functions.ps1.fragment', 'prepare.py', 'check_source.py', 'UITVOERINSTRUCTIE.md']:
+-    if (OUT / name).exists():
+-        (OUT / (name + '.diff')).write_text(''.join(difflib.unified_diff((OLD / name).read_text('utf-8').splitlines(True), (OUT / name).read_text('utf-8').splitlines(True), fromfile='preserved C5/' + name, tofile='owned C6/' + name)), 'utf-8')
+-(OUT / 'C6-ROOT-VRIJGAVE.json').write_text(json.dumps(dict(allowed=False, baseline_allowed=False, candidate_sha256='f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810', sources=[], state='SOURCE_ONLY_NO_ALIAS_CREATE_OR_LIVE', previous_arm='C5_CLOSED_CONSUMED_NO_REUSE'), indent=2) + '\n', 'utf-8')
+-print(json.dumps(dict(stage=m['state'], game_file_mutations=0)))
++import json,hashlib,shutil,sys
++sys.dont_write_bytecode=True
++from delta import apply
++OUT=Path(__file__).resolve().parent;OLD=OUT.parent/'c6';ROOT=OUT.parents[3]
++sha=lambda b:hashlib.sha256(b).hexdigest()
++PROPOSAL='46bb147baf46782b998927db9b2f0dd321d657cdafc48448a7b3537c08430978'
++assert sha((ROOT/'ONTWERP/UI-TIJDRESERVE-U30-40-C7.md').read_bytes())==PROPOSAL
++assert not (OUT/'manifest.json').exists(),'Preserve existing preparation'
++old_sources=json.loads((OLD/'source-manifest.json').read_text('utf-8'))
++for pin in old_sources['sources']:assert sha((OLD/pin['path']).read_bytes())==pin['sha256']
++for folder in ['backups','candidate','protected-backups']:shutil.copytree(OLD/folder,OUT/folder)
++for name in ['original_core.py','participants.json']:shutil.copyfile(OLD/name,OUT/name)
++(OUT/'Uitbreiding.ps1').write_text(apply((OLD/'Uitbreiding.ps1').read_text('utf-8')),'utf-8')
++for name in ['Lees-Uitbreiding.py','alias-functions.ps1.fragment']:
++ (OUT/name).write_text((OLD/name).read_text('utf-8').replace('C6','C7'),'utf-8')
++m=json.loads((OLD/'manifest.json').read_text('utf-8'))
++m.update(state='C7_SOURCE_ONLY_NO_ALIAS_INSTALL_START_RPM',input_mode='HUMAN_ONE_N',c7_proposal_sha256=PROPOSAL)
++m['T0_alias']['ownership']='C7_UI_LOAD_ALIAS_ONLY'
++m['input_manifests'].append(dict(path='ONTWERP/UI-TIJDRESERVE-U30-40-C7.md',sha256=PROPOSAL))
++assert not (ROOT/m['T0_alias']['path']).exists()
++(OUT/'manifest.json').write_text(json.dumps(m,indent=2)+'\n','utf-8')
++(OUT/'C7-ROOT-VRIJGAVE.json').write_text(json.dumps(dict(allowed=False,baseline_allowed=False,input_mode='HUMAN_ONE_N',candidate_sha256='f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810',proposal_sha256=PROPOSAL,sources=[],state='SOURCE_ONLY_NO_ALIAS_CREATE_OR_LIVE',previous_arm='C6_CLOSED_CONSUMED_NO_REUSE'),indent=2)+'\n','utf-8')
++print(json.dumps(dict(stage=m['state'],game_file_mutations=0)))

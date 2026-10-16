@@ -1,0 +1,33 @@
+﻿{
+    "requested_at_utc":  "2026-10-14T09:55:00.9813581Z",
+    "budget":  {
+                   "reported_at_utc":  "2026-10-14T09:54:12.887Z",
+                   "checked_at_utc":  "2026-10-14T09:55:00.952175+00:00",
+                   "age_seconds":  48.1,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  2.0,
+                                                     "used_percent":  98.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1791980502
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  52.0,
+                                                  "used_percent":  48.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1792487909
+                                              }
+                               },
+                   "stop_reasons":  [
+                                        "five_hour"
+                                    ],
+                   "weekly_remaining_percent":  52.0,
+                   "five_hour_remaining_percent":  2.0,
+                   "state":  "stop"
+               },
+    "command":  "shutdown.exe /s /t 0",
+    "force_apps":  false,
+    "command_accepted":  true,
+    "limitation":  "Acceptatie van het commando bewijst geen fysieke uitschakeling; apps kunnen afsluiten blokkeren.",
+    "exit_code":  0
+}

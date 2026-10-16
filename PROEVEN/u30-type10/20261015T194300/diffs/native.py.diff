@@ -1,0 +1,11 @@
+--- frozen-foutcodes/native.py
++++ type10/native.py
+@@ -75,7 +75,7 @@
+  r.mov('edi',m('ebp',-24));checked_type(r,'edi','type_bad');r.mov(m('ebx',P['t']),'edi')
+  iface(r,P['udb'],['edi'],0x40);r.alu('cmp','eax',1);r.j('jne','type_bad')
+  for slot in (0x44,0x48):iface(r,P['udb'],['edi'],slot);r.test('eax','eax');r.j('jnz','type_bad')
+- iface(r,P['udb'],['edi'],0xdc);r.test('eax','eax');r.j('jz','type_bad')
++ iface(r,P['udb'],['edi'],0x1c);r.test('eax',0x80000000);r.j('jz','type_bad')
+  iface(r,P['udb'],['edi'],0xd8);r.test('eax','eax');r.mov('eax',0);r.j('jz','type_d8_done');r.mov('eax',1);r.label('type_d8_done');r.mov(m('ebx',P['d8']),'eax')
+  r.mov('eax',1);r.j('jmp','type_done');r.label('type_bad');unknown(r,10);result(r,'type_done',64)
+ 

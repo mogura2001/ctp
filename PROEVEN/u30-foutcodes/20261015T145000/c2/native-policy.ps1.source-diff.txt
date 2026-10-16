@@ -1,0 +1,8 @@
+--- existing-C2/native-policy.ps1
++++ own-limited-C2/native-policy.ps1
+@@ -1,4 +1,4 @@
+-param([ValidateSet('r3')][string]$Label='r3')
++param([ValidateSet('r4')][string]$Label='r4')
+ $ErrorActionPreference='Stop'
+ if ([IntPtr]::Size -ne 4) { throw '32-bit helper required' }
+ $package=$PSScriptRoot

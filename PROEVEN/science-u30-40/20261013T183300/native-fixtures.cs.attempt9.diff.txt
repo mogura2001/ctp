@@ -1,0 +1,66 @@
+--- native-fixtures.cs.before-attempt9
++++ native-fixtures.cs
+@@ -22,12 +22,48 @@
+  static IntPtr entry;
+  // Finite own blocks, reserved before serializer/loader/large image allocation.
+  static readonly int[] earlyBlocks={0x000000,0x090000,0x110000,0x120000,0x130000,0x340000,0x670000};
++ [StructLayout(LayoutKind.Sequential)]
++ struct MEMORY_BASIC_INFORMATION {
++  public IntPtr BaseAddress,AllocationBase;public uint AllocationProtect;public UIntPtr RegionSize;public uint State,Protect,Type;
++ }
++ [DllImport("kernel32.dll",SetLastError=true)] static extern UIntPtr VirtualQuery(IntPtr address,out MEMORY_BASIC_INFORMATION info,UIntPtr length);
++ static ulong mainBase,mainEnd;
++ public static bool CleanupOk=true;
++ static ulong Address(IntPtr p){return unchecked((uint)p.ToInt32());}
++ static bool Overlaps(ulong a,ulong b,ulong c,ulong d){return a<d&&c<b;}
++ public static void BindMainModule(IntPtr pointer,int size){
++  Assert(IntPtr.Size==4&&size>0,"mainmodule x86 size");mainBase=Address(pointer);mainEnd=checked(mainBase+(ulong)size);Assert(mainEnd<=0x100000000UL,"mainmodule interval overflow");
++ }
++ static void QueryRange(IntPtr pointer,bool free){
++  int mbiSize=Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));Assert(mbiSize==28,"x86 MEMORY_BASIC_INFORMATION size28");
++  ulong start=Address(pointer),end=checked(start+0x10000UL),cursor=start;Assert(end<=0x100000000UL,"query interval overflow");
++  while(cursor<end){
++   MEMORY_BASIC_INFORMATION info;UIntPtr returned=VirtualQuery(new IntPtr(unchecked((int)(uint)cursor)),out info,(UIntPtr)mbiSize);int error=returned==UIntPtr.Zero?Marshal.GetLastWin32Error():0;
++   Assert(returned.ToUInt64()==(ulong)mbiSize,"VirtualQuery bytes/error "+error);
++   ulong rb=Address(info.BaseAddress),ab=Address(info.AllocationBase),length=info.RegionSize.ToUInt64(),next=checked(rb+length);
++   Console.WriteLine("region phase="+(free?"before":"owned")+" interval="+start.ToString("x8")+" cursor="+cursor.ToString("x8")+" base="+rb.ToString("x8")+" allocation="+ab.ToString("x8")+" size="+length.ToString("x")+" state="+info.State.ToString("x")+" type="+info.Type.ToString("x")+" protect="+info.Protect.ToString("x")+" allocation_protect="+info.AllocationProtect.ToString("x"));Console.Out.Flush();
++   Assert(length>0&&rb<=cursor&&next>cursor&&next<=0x100000000UL,"VirtualQuery nonprogress/overflow");
++   if(free)Assert(info.State==0x10000,"fixture interval occupied "+start.ToString("x8")+" helper_overlap="+Overlaps(rb,next,mainBase,mainEnd)+" allocation_is_helper="+(ab==mainBase));
++   else Assert(info.State==0x1000&&info.Type==0x20000&&ab==start&&info.Protect==4,"fixture interval not exact own committed private RW "+start.ToString("x8"));
++   cursor=Math.Min(next,end);
++  }
++ }
+  public static void ReserveEngineBlocks(){
+-  Assert(IntPtr.Size==4,"early x86 required");engine=new IntPtr(0x400000);
+-  try{foreach(int off in earlyBlocks){IntPtr wanted=A(engine,off),p=VirtualAlloc(wanted,(UIntPtr)0x10000,0x3000,4);Assert(p==wanted,"early synthetic fixed engine block "+wanted.ToInt32().ToString("x8")+" error"+Marshal.GetLastWin32Error());owned.Add(p);}}
+-  catch{ReleaseOwned();throw;}
++  Assert(IntPtr.Size==4,"early x86 required");Assert(mainEnd>mainBase,"actual mainmodule bound");engine=new IntPtr(0x400000);
++  try{
++   foreach(int off in earlyBlocks){ulong start=0x400000UL+(ulong)off,end=start+0x10000UL;Assert(!Overlaps(start,end,mainBase,mainEnd),"actual helper mapping overlaps fixture block "+start.ToString("x8"));Assert(!Overlaps(start,end,0x20000000UL,0x20140000UL),"candidate reservation overlaps fixture block");QueryRange(A(engine,off),true);}
++   foreach(int off in earlyBlocks){
++    IntPtr wanted=A(engine,off),p=VirtualAlloc(wanted,(UIntPtr)0x10000,0x3000,4);int error=p==IntPtr.Zero?Marshal.GetLastWin32Error():0;
++    if(p!=IntPtr.Zero)owned.Add(p);
++    Console.WriteLine("allocation wanted="+Address(wanted).ToString("x8")+" returned="+Address(p).ToString("x8")+" error="+error+" registered="+(p!=IntPtr.Zero));Console.Out.Flush();
++    Assert(p==wanted,"early synthetic fixed engine block "+Address(wanted).ToString("x8")+" error"+error);QueryRange(p,false);
++   }
++  }catch{ReleaseOwned();throw;}
+  }
+- public static void ReleaseOwned(){foreach(IntPtr p in owned)VirtualFree(p,UIntPtr.Zero,0x8000);owned.Clear();}
++ public static void ReleaseOwned(){
++  foreach(IntPtr p in owned){bool ok=VirtualFree(p,UIntPtr.Zero,0x8000);int error=ok?0:Marshal.GetLastWin32Error();if(!ok)CleanupOk=false;Console.WriteLine("cleanup own="+Address(p).ToString("x8")+" ok="+ok+" error="+error);}
++  owned.Clear();Console.WriteLine("cleanup owned_complete="+CleanupOk);Console.Out.Flush();
++ }
+  static IntPtr A(IntPtr p,int o){return new IntPtr(p.ToInt32()+o);}
+  static int R(IntPtr p,int o){return Marshal.ReadInt32(p,o);}
+  static long L(IntPtr p,int o){return Marshal.ReadInt64(p,o);}
+@@ -123,6 +159,9 @@
+    Patches.Add(new Dictionary<string,object>{{"name","temporary isolated large-center reader"},{"image_rva",centerCall},{"before",Hex(centerBefore)},{"after",Hex(centerAfter)},{"length",5},{"restored",Equal(centerBefore,Read(A(image,centerCall),5))}});
+    Assert(Equal(mapped,Read(module,size)),"mapped candidate bytes unchanged");
+    return new Dictionary<string,object>{{"pass",true},{"bitness",32},{"helper_pid",System.Diagnostics.Process.GetCurrentProcess().Id},{"native_calls",Results.Count},{"cases",Results},{"patches",Patches},{"mapped_candidate_unchanged",true},{"Hostvalidator_unchanged",true},{"original_recalculation_body_preserved_except_dispatch",true},{"controlled_callbacks",true},{"synthetic_engine_pin_context",true},{"original_engine_queries_executed",false},{"gameplay_measured",false},{"actual_engine_host_acceptance",false},{"candidate_sha256",Hash(raw)}};
+-  }finally{ReleaseOwned();if(module!=IntPtr.Zero)FreeLibrary(module);if(reserved!=IntPtr.Zero)VirtualFree(reserved,UIntPtr.Zero,0x8000);}
++  }finally{ReleaseOwned();
++   if(module!=IntPtr.Zero){bool ok=FreeLibrary(module);int error=ok?0:Marshal.GetLastWin32Error();if(!ok)CleanupOk=false;Console.WriteLine("cleanup own_module="+Address(module).ToString("x8")+" ok="+ok+" error="+error);}
++   if(reserved!=IntPtr.Zero){bool ok=VirtualFree(reserved,UIntPtr.Zero,0x8000);int error=ok?0:Marshal.GetLastWin32Error();if(!ok)CleanupOk=false;Console.WriteLine("cleanup own_reservation="+Address(reserved).ToString("x8")+" ok="+ok+" error="+error);}Console.Out.Flush();
++  }
+  }
+ }

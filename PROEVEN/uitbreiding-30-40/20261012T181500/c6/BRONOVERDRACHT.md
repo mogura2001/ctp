@@ -1,0 +1,28 @@
+# C6 bronoverdracht
+
+14 oktober 2026, 11:35 Europe/Amsterdam. **Bronvoorbereiding en offlinecontrole afgerond; uitvoerder stopt voor rootreview.** Ownership uitsluitend deze C6-map. Geen aliasaanleg op spelpad, installatie, procesquery, spelstart, GUI, RPM of nativehelper uitgevoerd. Nieuwe `C6-ROOT-VRIJGAVE.json` heeft allowed=false en baseline_allowed=false. C5 blijft gesloten/verbruikt; geen C5-gate of uitvoeringsrecord gekopieerd of hergebruikt.
+
+Aanleiding: gebruiker bevestigt volgens root dat het scherm aan en de pc ontgrendeld zijn en zo kunnen blijven. Dit staat in het praktische bedienprotocol; het bewijst geen oorzaak of oplossing van de twee zwarte C5-captures. Geen focusvraag, scherm-/locksettings of nieuwe UI-architectuur toegevoegd. Bij een oncontroleerbare opname geen input; normale afwikkeling en bewijs bewaren.
+
+Enige controllerdelta C5→C6: nieuwe gatenaam/teksten, aliasowner `C6_UI_LOAD_ALIAS_ONLY`, run-id `uitbreiding-20261014-c6-variant` en zichtbaar autosavelabel `UITBREIDING-20261014-C6-U30-40-N30-AUTOSAVE`. Functionele C5-controllerlogica is exact behouden en door de offlinechecker tegen de mechanische omzetting getoetst. Readerdelta uitsluitend C6-gate/teksten, geen decoderwijziging. Original_core.py en participants.json zijn bytegelijke kopieën. Volledige zeven diffs staan naast controller, reader, manifest, aliasfragment, prepare/check en protocol. Prepare kopieert uitsluitend drie eigen staging-/backupmappen en bronbestanden; geen resultaten, oude gate of armrecords.
+
+Exacte bindings:
+
+- U30-kandidaat: `f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810`; sciencekandidaat niet gebruikt.
+- Geteste release/herstel-DLL: `eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890`.
+- QUOTA-START-T0: `8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26`.
+- Toekomstige alias uitsluitend `CTP-proef/ctp_program/ctp/save/games/Julius/000-U30-40-START-T0`, nu afwezig. Vóór copy: verse succesvolle count0, bronhash en eigen aanvankelijk-afwezigheidsrecord; nooit bestaande alias overschrijven. Cleanup alleen na count0/archivering/19-releaseherstel en eigen owner-/origineleT0hashcontrole; onverwachte bytes behouden.
+- Bedien-CTP.ps1 blijft ongewijzigd en gepind op `d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74`.
+- Voorstel UI-focus/cursor SHA `cef012ac5eb6b9f601bbaa998ebd0afd27d8ee6d83612e1ce451b44a7eb8add8` behouden in inputpins.
+
+`source-manifest.json` SHA256 **`c10ef408483b1e03a995815ba4b21d025727195ebd4ba12ccf04ddc0739c3832`** bindt negen bronbestanden inclusief UITVOERINSTRUCTIE.md en 67 staging-/backuppins. Controller SHA `cc43082e1c11df3c99dcbd1dbfbad0f6b87029549bf881e817e158dc98db9488`; reader SHA `e7137ba47e6deee974a072c4e142427148bf5de55d2c6bb25dc15543c388607b`; praktisch protocol SHA `1f41c1e9408bb25d1e8dcde598d39566f808a0684974251a163483f6944576f0`. Stap7 verwijst naar de eigen **c6/variant/T0.json**. Gatefalsecontrole is offline gedaan; geen controller gestart om die gate te testen.
+
+Offlinechecks: alle eigen Pythonbronnen ASTPASS; PowerShellParserPASS met nul fouten, zonder controlleruitvoering (`syntax-check.json`). Daadwerkelijke 19 actuele releasebestanden, eigen 19 truebackups en beide 19-bestandenarmen, negen bestaande saves en profiel met eigen truebackups, protected/inputmanifest/T0pins en aliasafwezigheid gecontroleerd. Statische diskbinding release8sites/52ranges, variant16sites/54ranges. Geen loadedmemory/nativecall/gameplaycontrole daarvan afgeleid.
+
+Bekende laadroute blijft hoofdmenu→Single Player→Load Game→Julius→unieke zichtbare alias→OK. Alleen oorspronkelijke PNGpixels en actuele fysieke bounds na Capture; vóór iedere menuklik eigen Guard/boundsmatch en bestaande ResetCursor. Capture gebruikt bestaande max-één focusherstelroute. Na kaartload geen ResetCursor, editor, handmatige stad of eenheid. Zichtbaar4000BC en byteexacte bron/alias plus nieuwe geladen module-/header-/payload-/negenwindow-/vtable-/B2-/vijfhookbindings moeten in de echte arm blijken. Applicatie herstart vóór gebruik van de tijdelijke DLL; save herladen alleen bewijst geen herladen van gewijzigde AI-data. Tekst-FLI/AIP's blijven de geteste release, zeven normale AI's civ2..8. Per-AI Gcert/Dorig/R blijft UNKNOWN als alleen de gedeelde laatste-passbuffer beschikbaar is.
+
+Vóór een eventuele ene arm: root leest deze overdracht, alle minimale diffs en actuele pins; nieuwe afzonderlijke vrijgave, verse succesvolle OS-allcount0 en verse voldoende budgetreserve voor maximaal480s arm plus herstel/audit. Werkstop5vijf/10week, unknown één retry. Root bewaakt reserve; geen spelstart toegestaan door deze bronoverdracht. Daarna alleen variant, vaste T0 plus één gewone T1: daadwerkelijk zeven-AI processed_round−1→0 bewijzen, niet alleen n-invoer of een snapshotlabel. Geen T2/baseline/tweede start/force.
+
+Normale afwikkeling uiterlijk420s beginnen, CloseMainWindow vóór470s, maximale arm480s. Exact eigen PID/exe/creation/HWND direct vóór één close, HasExited en succesvolle allcount0 controleren. Nieuwe autosave vóór defaultrestore in pakket en eigen zichtbaar versiearchief bewaren met kandidaat-DLLbinding. Daarna echte 19 releasebackups/defaultautosave herstellen en alle19/negen oorspronkelijke saves/profiel/pins/aliasaudit uitvoeren; onverwachte gebruikersbytes behouden. Exitcode null blijft onbekend. Geen pc-afsluithelper/commando/planning door deze uitvoerder.
+
+Budget start11:31:53 bron09:31:35UTC/leeftijd18,3s week57/vijf40/stateok; laatste11:34:24 bron09:34:20UTC/leeftijd4,1s week57/vijf36/stateok. Geen budgetstop. Geen achtergrondrun. Root beheert PROJECTSTATUS.md en eventuele vrijgave; volgende concrete oplevering is rootbronreview, geen gameplayresultaat.

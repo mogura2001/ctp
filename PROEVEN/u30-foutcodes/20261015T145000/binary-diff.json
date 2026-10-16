@@ -1,0 +1,95 @@
+{
+  "old_candidate_sha256": "f4602a5653c86506cdee97d7af0b8ad80217f1198bee16dbb2f3a8abb8174810",
+  "candidate_sha256": "8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17",
+  "changed_byte_count": 7,
+  "exact_byte_diff": [
+    {
+      "offset": "0x110",
+      "before": 74,
+      "after": 99
+    },
+    {
+      "offset": "0x111",
+      "before": 54,
+      "after": 154
+    },
+    {
+      "offset": "0xa583e",
+      "before": 10,
+      "after": 35
+    },
+    {
+      "offset": "0xa6cb1",
+      "before": 117,
+      "after": 142
+    },
+    {
+      "offset": "0xa6cbf",
+      "before": 103,
+      "after": 128
+    },
+    {
+      "offset": "0xa6ccd",
+      "before": 89,
+      "after": 114
+    },
+    {
+      "offset": "0xa6cdb",
+      "before": 75,
+      "after": 100
+    }
+  ],
+  "five_rel32_retargets": [
+    {
+      "rva": "0xd923c",
+      "file_offset": "0xa583c",
+      "before": "0f840a000000",
+      "after": "0f8423000000",
+      "old_target_rva": "0xd924c",
+      "new_target_rva": "0xd9265",
+      "epilogue": "bind_done"
+    },
+    {
+      "rva": "0xda6af",
+      "file_offset": "0xa6caf",
+      "before": "0f8475010000",
+      "after": "0f848e010000",
+      "old_target_rva": "0xda82a",
+      "new_target_rva": "0xda843",
+      "epilogue": "final_done"
+    },
+    {
+      "rva": "0xda6bd",
+      "file_offset": "0xa6cbd",
+      "before": "0f8467010000",
+      "after": "0f8480010000",
+      "old_target_rva": "0xda82a",
+      "new_target_rva": "0xda843",
+      "epilogue": "final_done"
+    },
+    {
+      "rva": "0xda6cb",
+      "file_offset": "0xa6ccb",
+      "before": "0f8459010000",
+      "after": "0f8472010000",
+      "old_target_rva": "0xda82a",
+      "new_target_rva": "0xda843",
+      "epilogue": "final_done"
+    },
+    {
+      "rva": "0xda6d9",
+      "file_offset": "0xa6cd9",
+      "before": "0f844b010000",
+      "after": "0f8464010000",
+      "old_target_rva": "0xda82a",
+      "new_target_rva": "0xda843",
+      "epilogue": "final_done"
+    }
+  ],
+  "all_labels_and_section_layout_equal": true,
+  "all_other_recipe_bytes_equal": true,
+  "all_prologues_epilogues_and_hookwrappers_equal": true,
+  "only_rel32_operands_and_checksum_changed": true,
+  "b2_and_relocations_preserved": true,
+  "native_ABI": "Existing C2 shim reused separately; flags/x87 hook snapshots byte-identical. No host validation implied."
+}

@@ -1,0 +1,42 @@
+--- frozen-r44-2/Lees-Uitbreiding.py
++++ type10/reader/Lees-Uitbreiding.py
+@@ -3,8 +3,8 @@
+ import time
+ 
+ BASE_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+-NEW_HASH='8610db83d4e424006f6c8ee3912bac11fd432dd2bb6264c7c9ed5b94fe67dc17'
+-MANIFEST_HASH='6bf3d57db8aa1f9c36ae5407292cfd597175420c22e16996a5d593737f8f3437'
++NEW_HASH='b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62'
++MANIFEST_HASH='fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27'
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+@@ -31,7 +31,7 @@
+             r['expected_hex']=current.hex()
+     for rva in (0x74b60,0xc2180,0x128f20,0xc2ee3,0xb8660,0xb8a3d):
+         raw=ep.get_data(rva,32);binding['ranges'].append(dict(module='engine',rva=rva,length=32,expected_hex=raw.hex(),kind='scalar-route-window'))
+-    for rva,length in [(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
++    for rva,length in [(0x131940,0x1e),(0x3450b4,4),(0x542e0,0x30),(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
+         raw=ep.get_data(rva,length);binding['ranges'].append(dict(module='engine',rva=rva,length=length,expected_hex=raw.hex(),kind='loaded type-read binding'))
+     for rva,length in [(0x11bc0,0x20),(0x1a970,0x10),(0x1a980,0x20),(0x1cd50,0x20),(0x655f0,0x2d0)]:
+         raw=cp.get_data(rva,length);binding['ranges'].append(dict(module='ai',rva=rva,length=length,expected_hex=raw.hex(),kind='native getter/Actual binding'))
+@@ -107,9 +107,18 @@
+     def uninitialized():return dict(loaded_settler_type='UNKNOWN_NOT_INITIALIZED',native_desired='UNKNOWN_NOT_INITIALIZED',native_actual='UNKNOWN_NOT_INITIALIZED',native_supplemental_deficit='UNKNOWN_NOT_INITIALIZED',current_front_cache='UNKNOWN_NOT_INITIALIZED',current_settler_armies='UNKNOWN_NOT_INITIALIZED',Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+     def shared_state():
+         if binding['variant']!='U30-40':return None
+-        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220)
++        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220)
+         shared={key:i32(ptr+off) for key,off in fields.items()}
+         shared.update(only_last_pass_buffer=True,all_seven_telemetry_available=False,certificate_not_attributed_to_other_civs=True)
++        shared['raw_type_values_certified']=False
++        shared['raw_type_values_note']='UNCERTIFIED intermediate values; zero may be initialization, not evidence of a completed resolver write'
++        shared['raw_record']='UNKNOWN_NOT_BOUNDED_OR_INITIALIZED'
++        if any(initialized.values()):
++            raw_db=u32(eb+0x67dd18);raw_count=i32(raw_db)
++            if 2<=raw_count<=4097 and 0<=shared['raw_t']<raw_count-1:
++                raw_records=u32(raw_db+8);record=checked(raw_records,0x2c8*shared['raw_t'])
++                raw30=u32(checked(record,0x30));raw34=u32(checked(record,0x34))
++                shared['raw_record']=dict(certified=False,record30=raw30,record34=raw34,land_bit=bool(raw30&0x80000000),space_lander_bit=bool(raw34&0x20),space_launcher_bit=bool(raw34&0x10),note='UNCERTIFIED later bounded database read; does not prove resolver write or pass-time values')
+         return shared
+     # Fixed T0 previously observed processed_round=-1. Native cache extras
+     # are optional before any native AIpass; strict loaded/identity/tech/round
