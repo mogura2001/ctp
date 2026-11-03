@@ -1,0 +1,19 @@
+{
+  "stage": "PLAN_ONLY_ALL_RUNTIME_GATES_FALSE",
+  "run_id": "pad-local4-20261026c-host",
+  "clock": "original process start_utc in immutable host/start.json; never reset at helper return or review",
+  "intro_menu_deadline_seconds": 180,
+  "loaded_T0_deadline_seconds": 300,
+  "hard_process_seconds": 4500,
+  "no_new_n_seconds": 4380,
+  "max_n": 100,
+  "root_capture_tool": "PROEVEN/Bedien-CTP.ps1 existing bound Capture",
+  "capture_owner": "root after Start-Monitored returns",
+  "start_helper_automatic_intro_captures": false,
+  "root_review_before_turns": [
+    2,
+    27
+  ],
+  "all_current_saves_fresh_backups_required": true,
+  "new_runtime": false
+}

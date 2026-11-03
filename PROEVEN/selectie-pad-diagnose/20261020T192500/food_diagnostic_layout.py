@@ -1,0 +1,75 @@
+"""One 236-byte own failure record, decimal Plan276..512; no gameplay model."""
+RECORD_OFFSET=276
+RECORD_SIZE=236
+SCHEMA_VERSION=1
+STATE_SIZE=0x79904
+FRAME_SIZE=352
+STAGING=-336
+ACTIVE=-340
+PLAN_SPILL=-344
+RETURN_SPILL=-348 # private four bytes; no overlap with stage, old locals or saved GPRs
+PRIVATE_RETURNS={0:'UNKNOWN',1:'VALID_FOOD',2:'BOUND_OCCUPIED_SCI_CENTER_SCOPE'}
+PRIVATE_CONTRACT_VERSION=2 # diagnostic record remains schema1, not a policy latch
+# Offsets are record-relative; signedness is explicit in the decoder.
+FIELDS={
+ 'schema':(0,'I',0),'valid':(4,'I',None),'branch_id':(8,'I',None),'callkind':(12,'I',0),
+ 'owner':(16,'I',0),'generation':(20,'I',0),'prefix':(24,'I',0),'ordinal':(28,'I',0),
+ 'reached_lo':(32,'I',None),'reached_hi':(36,'I',None),
+ 'external':(40,'8s',1),'internal':(48,'8s',2),'width':(56,'H',3),'height':(58,'H',4),
+ 'world':(60,'I',5),'pointer_parent':(64,'I',6),'pointer_offset':(68,'I',6),'pointer_value':(72,'I',6),
+ 'cell':(76,'I',7),'cityhandle':(80,'I',8),'armyarray':(84,'I',9),'unitcount':(88,'i',10),
+ 'terrain':(92,'i',11),'terrain_db':(96,'I',12),'terrain_count':(100,'i',13),'recordarray':(104,'I',14),
+ 'mainrecord':(108,'I',15),'chosenrecord':(112,'I',16),'cellflags':(116,'I',17),
+ 'rawgood':(120,'H',18),'chosengood':(122,'H',19),
+ 'basefood':(124,'i',20),'road':(128,'i',21),'irrigation':(132,'i',22),'mine':(136,'i',23),'river':(140,'i',24),'canal':(144,'i',25),
+ 'environment':(148,'I',26),'sum_before':(152,'q',27),'sum_after':(160,'q',28),
+ 'native_called':(168,'I',29),'native_return':(172,'i',30),'output_before':(176,'i',31),'output_after':(180,'i',32),
+ 'bonuspointer':(184,'I',33),'bonus':(188,'i',34),'center_before':(192,'q',35),'center_after':(200,'q',36),
+ 'failure_eflags':(208,'I',37),'native_vtable':(212,'I',38),'addend_stage':(216,'I',39),
+ 'outpointer':(220,'I',40),'bindingpointer':(224,'I',41),'guard_a':(228,'I',42),'guard_b':(232,'I',43)}
+BRANCHES=[
+ (1,0x653c,'internal_z_nonzero'),(2,0x6558,'x_unsigned_ge_width'),(3,0x6574,'y_unsigned_ge_height'),
+ (4,0x6588,'grid_null'),(5,0x6596,'grid_1c_null'),(6,0x65a4,'layer0_null'),(7,0x65bd,'x_column_null'),(8,0x65d6,'cell_null'),
+ (9,0x65ec,'cityhandle_nonzero'),(10,0x660a,'armycount_nonzero'),(11,0x661d,'terrain_unsigned_gt23'),
+ (12,0x6629,'terrain13'),(13,0x6635,'terrain18'),(14,0x6641,'terrain23'),
+ (15,0x665d,'center_terrain10'),(16,0x6669,'center_terrain11'),(17,0x6675,'center_terrain12'),(18,0x6681,'center_terrain14'),(19,0x668d,'center_terrain15'),(20,0x6699,'center_terrain16'),(21,0x66a5,'center_terrain17'),
+ (22,0x66b9,'terrain_db_null'),(23,0x66c5,'terrain_index_ge_count'),(24,0x66d3,'recordarray_null'),(25,0x66fc,'rawgood_gt4'),
+ (26,0x67a2,'road_add_overflow'),(27,0x67e5,'irrigation_add_overflow'),(28,0x6828,'mine_add_overflow'),(29,0x685f,'river_add_overflow'),(30,0x6896,'canal_add_overflow'),
+ (31,0x68aa,'pregetter_high_nonzero'),(32,0x68b2,'pregetter_low_negative'),(33,0x68ef,'native_return_zero'),(34,0x6901,'native_output_mismatch'),
+ (35,0x6944,'bonus_add_overflow'),(36,0x695a,'center_high_nonzero'),(37,0x6962,'center_low_negative')]
+COMMON_BITS={0,1,2,5,29,37,40,41,42,43}
+def required_bits(branch):
+ bits=set(COMMON_BITS)
+ if branch>=2:bits|={3}
+ if branch>=3:bits|={4}
+ if 4<=branch<=8:bits|={6}
+ if branch>=8:bits|={7}
+ if branch>=9:bits|={8}
+ if branch==10:bits|={9,10}
+ if branch>=11:bits|={11}
+ if branch>=22:bits|={12}
+ if branch>=23:bits|={13}
+ if branch>=24:bits|={14}
+ if branch>=25:bits|={15,17,18}
+ if branch>=26:bits|={16,19,20,27,28,39}
+ if 26<=branch<=30:bits|={26}|set(range(21,22+branch-26))
+ if branch>=31:bits|=set(range(21,26))
+ if branch>=33:bits|={30,31,32,38}
+ if branch>=35:bits|={33,34,35,36}
+ return bits
+def validate_layout():
+ import struct
+ occupied=set()
+ for name,(off,fmt,bit) in FIELDS.items():
+  extent=set(range(off,off+struct.calcsize('<'+fmt)))
+  assert 0<=off and max(extent)<RECORD_SIZE and not occupied&extent,name
+  occupied|=extent
+ assert occupied==set(range(236)) and RECORD_OFFSET+RECORD_SIZE==512
+ assert set(range(276,512)).isdisjoint(range(276))
+ assert STAGING>=-FRAME_SIZE-12 and STAGING+RECORD_SIZE<=-96 and PLAN_SPILL>=-FRAME_SIZE-12
+ assert set(range(RETURN_SPILL,RETURN_SPILL+4)).isdisjoint(range(STAGING,STAGING+RECORD_SIZE))
+ assert RETURN_SPILL+4<=PLAN_SPILL and -FRAME_SIZE-12<=RETURN_SPILL
+ assert set(i for i,_,_ in BRANCHES)==set(range(1,38))
+ assert {b for _,_,b in FIELDS.values() if b is not None}==set(range(44))
+ return True
+validate_layout()

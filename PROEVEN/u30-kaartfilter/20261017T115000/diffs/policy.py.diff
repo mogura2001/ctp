@@ -1,0 +1,27 @@
+--- frozen-type10/policy.py
++++ kaartfilter/policy.py
+@@ -35,13 +35,18 @@
+  r.label('orig_next');r.unary('inc',m('ebp',-16));r.j('jmp','orig_loop');r.label('orig_ok');r.mov('eax',1);r.j('jmp','orig_done');r.label('orig_bad');n.unknown(r,40);n.result(r,'orig_done',64)
+ 
+ def canonical_prefix(r):
+- # Reuse VISITED only before DFS begins (nodes==0). Copy every canonical
+- # key once, then pick minimum64 keys in64*4096 bounded comparisons.
+- n.entry(r,'canonical_prefix',64);r.mov(m('ebp',-16),0)
+- r.label('prefix_keys');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',n.P['candidates']));r.j('jge','prefix_choose');r.imul('edi','eax',n.NODE_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',n.VISITED);r.mov(m('edi',8),'eax');r.shift('shl','eax',3);r.lea('edx',m('ebx',n.CAPTURE));r.alu('add','edx','eax');r.push('edi');r.push('edx');r.push('ebx');r.j('call','canonical_key');r.test('eax','eax');r.j('jz','prefix_bad');r.unary('inc',m('ebp',-16));r.j('jmp','prefix_keys')
+- r.label('prefix_choose');r.mov(m('ebp',-20),0);r.label('prefix_outer');r.mov('eax',m('ebp',-20));r.alu('cmp','eax',64);r.j('jae','prefix_ok');r.alu('cmp','eax',m('ebx',n.P['candidates']));r.j('jae','prefix_ok');r.mov(m('ebp',-24),-1);r.mov(m('ebp',-28),0)
++ # Validate every copied key, but select only World+28-known centers.
++ # VISITED is scratch only before DFS. CAPTURE retains original indices.
++ n.entry(r,'canonical_prefix',64)
++ for key in ('prefix_count','known_count','gate_queries','gate_false'):r.mov(m('ebx',n.P[key]),0)
++ r.alu('cmp',m('ebx',n.P['nodes']),0);r.j('jne','prefix_bad');r.mov('eax',m('ebx',n.P['candidates']));r.test('eax','eax');r.j('js','prefix_bad');r.alu('cmp','eax',4096);r.j('jg','prefix_bad');r.mov(m('ebp',-16),0)
++ r.label('prefix_keys');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',n.P['candidates']));r.j('jge','prefix_choose');r.imul('edi','eax',n.NODE_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',n.VISITED);r.shift('shl','eax',3);r.lea('edx',m('ebx',n.CAPTURE));r.alu('add','edx','eax');r.mov(m('ebp',-32),'edx');r.push('edi');r.push('edx');r.push('ebx');r.j('call','canonical_key');r.test('eax','eax');r.j('jz','prefix_bad')
++ # EDI is callee-saved; the external pointer survives in a separate local.
++ r.mov('eax',m('ebp',-16));r.mov(m('edi',8),'eax');r.unary('inc',m('ebx',n.P['gate_queries']));n.iface(r,n.P['world'],[m('ebp',-32)],0x28);r.test('eax','eax');r.j('jz','prefix_unknown');r.unary('inc',m('ebx',n.P['known_count']));r.j('jmp','prefix_key_next')
++ r.label('prefix_unknown');r.mov(m('edi',8),-1);r.unary('inc',m('ebx',n.P['gate_false']));r.label('prefix_key_next');r.unary('inc',m('ebp',-16));r.j('jmp','prefix_keys')
++ r.label('prefix_choose');r.alu('cmp',m('ebx',n.P['known_count']),64);r.j('jle','prefix_no_cutoff');r.mov(m('ebx',n.P['cutoff']),1);r.label('prefix_no_cutoff');r.mov(m('ebp',-20),0);r.label('prefix_outer');r.mov('eax',m('ebp',-20));r.alu('cmp','eax',64);r.j('jae','prefix_ok');r.alu('cmp','eax',m('ebx',n.P['known_count']));r.j('jae','prefix_ok');r.mov(m('ebp',-24),-1);r.mov(m('ebp',-28),0)
+  r.label('prefix_scan');r.mov('eax',m('ebp',-28));r.alu('cmp','eax',m('ebx',n.P['candidates']));r.j('jae','prefix_store');r.imul('edi','eax',n.NODE_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',n.VISITED);r.alu('cmp',m('edi',8),-1);r.j('je','prefix_next');r.alu('cmp',m('ebp',-24),-1);r.j('je','prefix_best');r.imul('eax',m('ebp',-24),n.NODE_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',n.VISITED);r.push('eax');r.push('edi');r.j('call','H3PosCompare');r.test('eax','eax');r.j('jge','prefix_next');r.label('prefix_best');r.mov('eax',m('ebp',-28));r.mov(m('ebp',-24),'eax');r.label('prefix_next');r.unary('inc',m('ebp',-28));r.j('jmp','prefix_scan')
+- r.label('prefix_store');r.mov('eax',m('ebp',-24));r.test('eax','eax');r.j('js','prefix_bad');r.imul('edi','eax',n.NODE_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',n.VISITED);r.mov('eax',m('edi',8));r.mov(m('edi',8),-1);r.mov('edx',m('ebp',-20));r.shift('shl','edx',2);r.alu('add','edx','ebx');r.mov(m('edx',n.ORDER),'eax');r.unary('inc',m('ebp',-20));r.j('jmp','prefix_outer');r.label('prefix_ok');r.mov('eax',1);r.j('jmp','prefix_done');r.label('prefix_bad');n.unknown(r,41);n.result(r,'prefix_done',64)
++ r.label('prefix_store');r.mov('eax',m('ebp',-24));r.test('eax','eax');r.j('js','prefix_bad');r.imul('edi','eax',n.NODE_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',n.VISITED);r.mov('eax',m('edi',8));r.mov(m('edi',8),-1);r.mov('edx',m('ebp',-20));r.shift('shl','edx',2);r.alu('add','edx','ebx');r.mov(m('edx',n.ORDER),'eax');r.unary('inc',m('ebx',n.P['prefix_count']));r.unary('inc',m('ebp',-20));r.j('jmp','prefix_outer');r.label('prefix_ok');r.mov('eax',1);r.j('jmp','prefix_done');r.label('prefix_bad');n.unknown(r,41);n.result(r,'prefix_done',64)
+ 
+ def finalize(r):
+  n.entry(r,'finalize_pass',112);r.alu('cmp',m('ebx',n.P['scope']),1);r.j('jne','final_bad');r.lea('eax',m('ebp',-80));r.push('eax');r.push(m('ebx',n.P['owner']));r.j('call','read_policy');r.test('eax','eax');r.j('jz','final_bad')

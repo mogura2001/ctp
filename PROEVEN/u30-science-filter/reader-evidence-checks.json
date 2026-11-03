@@ -1,0 +1,357 @@
+{
+  "scope": "PURE_OWN_BYTES_NO_EMITTER_NATIVE_RPM_GAME",
+  "reader_sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+  "cases": [
+    {
+      "name": "current NOW science, three real foodkeys, positive n1/2/3",
+      "accepted": true,
+      "status": "CONSISTENT_LAST_PASS_SELECTION",
+      "reason": null,
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "prefix cutoff does not invalidate completed science evidence",
+      "accepted": true,
+      "status": "CONSISTENT_LAST_PASS_SELECTION",
+      "reason": null,
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "empty certified selection is no positive science claim",
+      "accepted": true,
+      "status": "CONSISTENT_LAST_PASS_SELECTION",
+      "reason": null,
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "selected slot outside bounded slots",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "selected index outside slots",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "result index is slot76, never alternative index80",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "role/count/prefix index",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ]
+      ]
+    },
+    {
+      "name": "alternative index must equal role minus one",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "alternative index is not role minus one",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ]
+      ]
+    },
+    {
+      "name": "duplicate mandatory key",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "mandatory keys inconsistent or conflicting",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ]
+      ]
+    },
+    {
+      "name": "coverage incomplete",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI NOW/model/conditions/coverage",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "future-only food flags cannot certify NOW",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI current foodkey/rawspatial mismatch",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "raw spatial false cannot certify foodkey",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI current foodkey/rawspatial mismatch",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "unbound model",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI NOW/model/conditions/coverage",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "current negative food",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI current foodkey/rawspatial mismatch",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "raw current summary mismatch",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI raw current summary mismatch",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "nonfinite actual rations",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "SCI current ration/center contract",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ],
+        [
+          337408,
+          4
+        ],
+        [
+          263680,
+          1152
+        ],
+        [
+          346112,
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "generation mismatch",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "owner/generation snapshot mismatch",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "callback context error",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "last-pass context not certified",
+      "bounded_reads": []
+    },
+    {
+      "name": "prefix accounting mismatch",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "prefix invariants",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "Gcert cannot exceed available slots",
+      "accepted": false,
+      "status": "UNKNOWN",
+      "reason": "Gcert exceeds slots",
+      "bounded_reads": [
+        [
+          493568,
+          8
+        ]
+      ]
+    }
+  ],
+  "count": 18,
+  "passed": true,
+  "native_cases_tested": false,
+  "gameplay_acceptance": false
+}

@@ -1,0 +1,60 @@
+--- current-filter-reader
++++ reader/Lees-Uitbreiding.py
+@@ -7,6 +7,9 @@
+ RUNTIME_PINS=json.loads((FOLDER/'runtime-pins.json').read_text('utf-8'))
+ NEW_HASH=RUNTIME_PINS['candidate_sha256']
+ MANIFEST_HASH=RUNTIME_PINS['manifest_sha256']
++sys.path.insert(0,str(FOLDER.parent))
++from plan_layout import COUNTERS,CONTEXT_ERROR,SCIENCE_BUDGET_EXHAUSTED
++from positive_reader import selected_evidence
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+@@ -36,6 +39,10 @@
+         raw=ep.get_data(rva,32);binding['ranges'].append(dict(module='engine',rva=rva,length=32,expected_hex=raw.hex(),kind='scalar-route-window'))
+     for rva,length in [(0x345308,4),(0x133580,0x25),(0xbbd50,0x1c),(0xebdf0,0x73),(0x131940,0x1e),(0x3450b4,4),(0x542e0,0x30),(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
+         raw=ep.get_data(rva,length);binding['ranges'].append(dict(module='engine',rva=rva,length=length,expected_hex=raw.hex(),kind='loaded type-read binding'))
++    for row in json.loads((FOLDER.parent/'science-spatial-pins.json').read_text('utf-8')):
++        raw=ep.get_data(row['rva'],row['length'])
++        if raw.hex()!=row['bytes']:raise ValueError('Frozen SCI spatial pin mismatch')
++        binding['ranges'].append(dict(module='engine',rva=row['rva'],length=row['length'],expected_hex=raw.hex(),kind='SCI spatial/Improvement body'))
+     for rva,length in [(0x11bc0,0x20),(0x1a970,0x10),(0x1a980,0x20),(0x1cd50,0x20),(0x655f0,0x2d0)]:
+         raw=cp.get_data(rva,length);binding['ranges'].append(dict(module='ai',rva=rva,length=length,expected_hex=raw.hex(),kind='native getter/Actual binding'))
+     payload=cp.get_data(0xd4000,4348)
+@@ -52,7 +59,7 @@
+         binding['ranges'].append(dict(module='ai',rva=section.VirtualAddress,length=len(raw),expected_hex=raw.hex(),kind='PIC-payload'))
+         binding['shared_plan_rva']=int(manifest['components']['state_rva'],16)
+         state_size=manifest['components']['state_size']
+-        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x54804:raise ValueError('Exact reason23 own-state layout changed')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x79804:raise ValueError('Exact reason23 own-state layout changed')
+         if not 0x40600+1152<=state_size or binding['shared_plan_rva']+state_size>binding['ai']['size']:raise ValueError('Own slot outside bound AI state/module')
+         state_sections=[s for s in cp.sections if s.VirtualAddress==binding['shared_plan_rva'] and s.Misc_VirtualSize==state_size]
+         if len(state_sections)!=1:raise ValueError('Exact own state section missing')
+@@ -160,10 +167,13 @@
+     def shared_state():
+         if binding['variant']!='U30-40':return None
+         ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,prefix_count=224,known_count=228,gate_queries=232,gate_false=236,candidates=68,slots=80,h3calls=128)
++        fields.update({'SCI_'+name:off for name,(off,limit) in COUNTERS.items()})
++        fields.update(context_error=CONTEXT_ERROR,science_budget_exhausted=SCIENCE_BUDGET_EXHAUSTED)
+         shared={key:i32(ptr+off) for key,off in fields.items()}
+-        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or binding['shared_plan_size']!=0x54804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or binding['shared_plan_size']!=0x79804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
+         slot=read(checked(ptr,0x40600),1152)
+-        shared['slot0']=decode_slot0(slot,shared)
++        shared['slot0_historical_reason23_diagnostic']=decode_slot0(slot,shared)
++        shared['selected_evidence']=selected_evidence(lambda off,size:read(checked(ptr,off),size),shared,participants['civ_ids'])
+         shared.update(only_last_pass_buffer=True,all_seven_telemetry_available=False,certificate_not_attributed_to_other_civs=True)
+         shared['raw_type_values_certified']=False
+         shared['raw_type_values_note']='UNCERTIFIED intermediate values; zero may be initialization, not evidence of a completed resolver write'
+@@ -260,9 +270,9 @@
+     p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+     p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+     p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+-    gate=json.loads((FOLDER/'KAARTFILTER-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
++    gate=json.loads((FOLDER/'SCIENCE-FILTER-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
+     if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C10 source-only; no live reader release')
+-    if args.turn not in (0,1) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
++    if args.turn not in (0,1,5,10) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
+     for pin in gate.get('sources',[]):
+         if hashlib.sha256((FOLDER/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Released C10 source changed')
+     handle=k.OpenProcess(0x410,False,args.pid) # QUERY_INFORMATION|VM_READ only

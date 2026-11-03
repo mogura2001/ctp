@@ -1,0 +1,136 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\fixture_sources.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\fixture_sources.py
+@@ -1,91 +1,61 @@
+-"""Future finite own fixture source. No native execution; do not call before gate.
++"""Limited changed-path own fixtures; source only until separate root gate.
+ 
+-Reuses production-h3/helper/shim5 and convert/food stubs, and the existing
+-VirtualAlloc image approach. 37 edge injections test logging/preservation,
+-NOT 37 naturally reachable world contexts. Separate normal routes are real
+-calls of the emitted clone and original shared reader on the same own stubs.
++Reuses shim5/convert/food and the parent's finite own-image mechanism. No
++37-edge loop. No engine/RPM/process/GUI APIs. Real SCI frame548 and x87 save
++-144..-37: NEVER place an out40 upper canary at -144 in these wrappers.
+ """
+ from pathlib import Path
+-import json,struct,sys
++import json,sys
+ sys.dont_write_bytecode=True
+ OUT=Path(__file__).resolve().parent;ROOT=OUT.parents[2]
+ sys.path.insert(0,str(ROOT/'PROEVEN/production-h3'))
+ from x86 import X86,mem as m
+-from food_diagnostic_layout import FIELDS,BRANCHES,FRAME_SIZE,STAGING,ACTIVE,PLAN_SPILL,required_bits
+-
+-def seed(branch):
+- raw=bytearray(236)
+- def put(name,value):off,fmt,_=FIELDS[name];struct.pack_into('<'+fmt,raw,off,value)
+- values=dict(schema=1,valid=0,branch_id=0,callkind=1,owner=123,generation=7,prefix=3,ordinal=64,external=bytes(8),internal=bytes(8),width=1,height=1,world=0x12340000,pointer_parent=0x12340000,pointer_offset=0,pointer_value=0,cell=0x12340010,cityhandle=0,armyarray=0,unitcount=0,terrain=1,terrain_db=0x12340020,terrain_count=24,recordarray=0x12340030,mainrecord=0x12340040,chosenrecord=0x12340040,cellflags=0,rawgood=0,chosengood=0,basefood=5,road=0,irrigation=0,mine=0,river=0,canal=0,environment=0x12340050,sum_before=5,sum_after=5,native_called=0,native_return=1,output_before=-1,output_after=5,bonuspointer=0x12340060,bonus=0,center_before=5,center_after=5,failure_eflags=0,native_vtable=0x12340070,addend_stage=0,outpointer=0,bindingpointer=0,guard_a=0,guard_b=0)
+- if branch==1:values.update(internal=struct.pack('<hhhH',0,0,1,0),guard_a=1)
+- if branch in (2,3):values.update(internal=struct.pack('<hhhH',1 if branch==2 else 0,1 if branch==3 else 0,0,0),guard_a=1,guard_b=1)
+- if branch==9:values.update(cityhandle=7,guard_a=7)
+- if branch==10:values.update(armyarray=0x12340080,unitcount=1,guard_a=1)
+- if branch==8:values.update(cell=0)
+- if branch==11:values.update(terrain=-1,guard_a=0xffffffff,guard_b=23)
+- terrains={12:13,13:18,14:23,15:10,16:11,17:12,18:14,19:15,20:16,21:17}
+- if branch in terrains:values.update(terrain=terrains[branch],guard_a=terrains[branch],guard_b=terrains[branch])
+- if branch==23:values.update(terrain_count=1,guard_a=1,guard_b=1)
+- if branch==22:values.update(terrain_db=0)
+- if branch==24:values.update(recordarray=0)
+- if branch==25:values.update(cellflags=5<<6,rawgood=5,guard_a=5,guard_b=4)
+- if 26<=branch<=30:
+-  values.update(addend_stage=branch-25,sum_before=0x7fffffffffffffff,sum_after=-0x8000000000000000,guard_a=0,guard_b=0x80000000)
+-  values[('road','irrigation','mine','river','canal')[branch-26]]=1
+- if branch==31:values.update(sum_after=0x100000000,guard_a=0,guard_b=1)
+- if branch==32:values.update(sum_after=0x80000000,guard_a=0x80000000,guard_b=0)
+- if branch>=33:values.update(native_called=1)
+- if branch==33:values.update(native_return=0,output_after=-1,guard_a=0)
+- if branch==34:values.update(output_after=6,guard_a=6,guard_b=5)
+- if branch==35:values.update(addend_stage=6,bonus=1,center_before=0x7fffffffffffffff,center_after=-0x8000000000000000,guard_a=0,guard_b=0x80000000)
+- if branch==36:values.update(center_after=0x100000000,guard_a=0,guard_b=1)
+- if branch==37:values.update(center_after=0x80000000,guard_a=0x80000000,guard_b=0)
+- mask=sum(1<<b for b in required_bits(branch)-{37})
+- values.update(reached_lo=mask&0xffffffff,reached_hi=mask>>32)
+- for name,value in values.items():put(name,value)
+- return bytes(raw)
++from science_layout import KERNEL_FRAME_SIZE,RESULT_SIZE
+ 
+ def recipes():
+  def start():return X86(),[]
+- def ptr(r,fix,text,op,off):r.emit(text,op+'00000000');fix.append(dict(at=len(r.code)-4,context_offset=off))
+- def finish(r,fix):return dict(code=r.finish(),recipe=r.rows,fixups=fix,labels=r.labels)
+- r,f=start();r.prologue(FRAME_SIZE)
+- ptr(r,f,'stage source','8b35',4);r.lea('edi',m('ebp',STAGING));r.mov('ecx',59);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5')
+- ptr(r,f,'own Plan','a1',0);r.mov(m('ebp',PLAN_SPILL),'eax');r.mov(m('ebp',ACTIVE),1);r.alu('add','eax',144);r.mov(m('ebp',STAGING+224),'eax')
+- r.mov('eax',m('ebp',20));r.mov(m('ebp',STAGING+220),'eax');r.mov('eax',m('ebp',8));r.mov(m('ebp',STAGING+60),'eax')
+- r.mov(m('ebp',-348),0x5aa55aa5);r.mov(m('ebp',-96),0x5aa55aa5)
+- ptr(r,f,'expected entry ESP','8925',24);ptr(r,f,'expected entry EBP','892d',28)
+- for reg,value in (('eax',0x12345678),('ecx',0x23456789),('edx',0x3456789a),('ebx',0x456789ab),('esi',0x56789abc)):r.mov(reg,value)
+- r.mov('edi',m('ebp',20));ptr(r,f,'synthetic controlled EFLAGS','ff35',20);r.op('popfd',b'\x9d');ptr(r,f,'jump emitted unique failure landing','ff25',8)
+- edge=finish(r,f)
+- r,f=start();r.op('pushfd',b'\x9c');r.op('pushad',b'\x60');r.mov('esi','esp');ptr(r,f,'observed GPR/flags own buffer','bf',0x800);r.mov('ecx',9);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5')
+- r.mov('eax',m('ebp',-348));ptr(r,f,'private lower frame canary','a3',0x824);r.mov('eax',m('ebp',-96));ptr(r,f,'private upper frame canary','a3',0x828)
+- r.op('popad',b'\x61');r.op('popfd',b'\x9d');ptr(r,f,'continue original food_bad wipe','ff25',12)
+- observer=finish(r,f)
+- r,f=start();r.prologue(560);r.mov(m('ebp',-188),0x5aa55aa5);r.mov(m('ebp',-144),0x5aa55aa5)
++ def fix(r,items,text,op,off):
++  r.emit(text,op+'00000000');items.append(dict(at=len(r.code)-4,context_offset=off))
++ def finish(r,items):return dict(code=r.finish(),recipe=r.rows,fixups=items,labels=r.labels)
++ r,f=start();r.prologue(KERNEL_FRAME_SIZE)
++ r.fp('fnsave real SCI x87 area','dd',6,m('ebp',-144));r.fp('fldcw caller','d9',5,m('ebp',-144))
+  r.push(m('ebp',24));r.lea('eax',m('ebp',-184));r.push('eax');r.push(m('ebp',16));r.push(m('ebp',12));r.push(m('ebp',8))
+- ptr(r,f,'pinned SCI return address in own image','ff35',32);ptr(r,f,'real clone or original shared reader','ff25',36)
++ fix(r,f,'pinned SCI return site in own image','ff35',32);fix(r,f,'real clone or original reader','ff25',36)
+  r.label('continuation');r.mov(m('ebp',-16),'eax')
+- r.mov('eax',m('ebp',-188));ptr(r,f,'SCI local out40 lower canary','a3',0x830);r.mov('eax',m('ebp',-144));ptr(r,f,'SCI local out40 upper canary','a3',0x834)
+- r.lea('esi',m('ebp',-184));r.mov('edi',m('ebp',20));r.mov('ecx',10);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5');r.mov('eax',m('ebp',-16));r.epilogue(560,20)
++ r.lea('esi',m('ebp',-184));r.mov('edi',m('ebp',20));r.mov('ecx',10);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5')
++ r.mov('eax',m('ebp',-16));r.fp('frstor exact caller state','dd',4,m('ebp',-144));r.epilogue(KERNEL_FRAME_SIZE,20)
+  normal=finish(r,f)
+- return dict(edge=edge,observer=observer,normal=normal)
+-
+-def edge_flags(branch):
+- # Controlled synthetic flags satisfy the taken condition; no reachability claim.
+- flags=0x202
+- if branch in list(range(4,9))+list(range(12,22))+[22,24,33]:flags|=0x40
+- if branch in (32,37):flags|=0x80
+- if branch in (26,27,28,29,30,35):flags|=0x800
+- return flags
++ # Converter first does its old eight-byte copy; optional mutation changes
++ # only an explicitly owned Plan/frame address. This tests fresh validation
++ # after valid entry admission. It does not model a naturally changing game.
++ r,f=start();r.mov('edx',m('esp',4));r.mov('eax',m('edx'));r.mov(m('ecx'),'eax');r.mov('eax',m('edx',4));r.mov(m('ecx',4),'eax')
++ r.op('pushfd',b'\x9c');r.op('pushad',b'\x60')
++ fix(r,f,'own mutation mode','a1',0x90c);r.test('eax','eax');r.j('jz','mutation_done')
++ fix(r,f,'owned absolute ptr or signed frame offset','8b15',0x900)
++ r.alu('cmp','eax',2);r.j('jne','mutation_ptr_ready');r.alu('add','edx','ecx');r.alu('add','edx',28)
++ r.label('mutation_ptr_ready');fix(r,f,'owned mutation value','a1',0x904);r.mov(m('edx'),'eax')
++ r.label('mutation_done');r.op('popad',b'\x61');r.op('popfd',b'\x9d');r.op('ret4',b'\xc2\x04\x00')
++ convert=finish(r,f)
++ # Isolated real consumer-continuation probe, not a complete SCI execution.
++ # The parent returnsite is patched only in the private mapped fixture image.
++ r,f=start();r.prologue(KERNEL_FRAME_SIZE)
++ r.fp('fnsave real SCI x87 area','dd',6,m('ebp',-144));r.fp('fldcw caller','d9',5,m('ebp',-144))
++ r.zero(m('ebp',24),RESULT_SIZE);r.mov('edi',m('ebp',24));r.mov(m('edi',8),1);r.mov(m('edi',12),3);r.mov(m('edi',4),11);r.mov(m('edi',16),1)
++ for off in (28,32,36):r.mov(m('edi',off),-1)
++ r.mov(m('ebp',-220),0);r.lea('esi',m('edi',128))
++ fix(r,f,'injected private return value','a1',0x944);fix(r,f,'actual center/tile continuation','ff25',0x940)
++ model=finish(r,f)
++ r,f=start();r.emit('record food-consumer reached in own context','c7050000000001000000');f.append(dict(at=len(r.code)-8,context_offset=0x948))
++ fix(r,f,'actual science_done includes frstor and ret20','ff25',0x94c)
++ consumer=finish(r,f)
++ return dict(normal=normal,convert_mutation=convert,model_probe=model,consumer_observer=consumer)
+ 
+ def main():
+  gate=json.loads((OUT/'ROOT-BRONREVIEW.json').read_text('utf-8'))
+- if not gate.get('fixture_emit_allowed'):raise ValueError('Separate root fixture emission release required')
++ if not gate.get('fixture_emit_allowed'):raise ValueError('Separate root fixture source release required')
+  folder=OUT/'fixture';folder.mkdir(exist_ok=True)
+  for name,data in recipes().items():
+-  (folder/(name+'.bin')).write_bytes(data['code']);(folder/(name+'.recipe.json')).write_text(json.dumps({k:v for k,v in data.items() if k!='code'},indent=2)+'\n','utf-8')
+- for branch,_,_ in BRANCHES:(folder/('edge-'+str(branch)+'.stage.bin')).write_bytes(seed(branch))
+- (folder/'edge-cases.json').write_text(json.dumps([dict(id=i,name=n,synthetic_edge_injection=True,natural_guard_reachability_proven=False,eflags=edge_flags(i),stage_file='edge-'+str(i)+'.stage.bin',expect=dict(return_EAX=0,out40_zero=True,stdcall_pop=20,instrument_GPR_EFLAGS_preserved=True,x87_unchanged=True,foreign_callbacks=0)) for i,_,n in BRANCHES],indent=2)+'\n','utf-8')
+- print('Prepared only 37 synthetic log-edge prestates plus finite normal caller; no native run')
++  (folder/(name+'.bin')).write_bytes(data['code'])
++  (folder/(name+'.recipe.json')).write_text(json.dumps({k:v for k,v in data.items() if k!='code'},indent=2)+'\n','utf-8')
++ print('Limited own fixture emission only; no native run')
+ if __name__=='__main__':main()

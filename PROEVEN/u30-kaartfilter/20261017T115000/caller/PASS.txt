@@ -1,0 +1,40 @@
+prefix success
+a empty no H3
+prefix success
+b late index64
+prefix success
+c ordered true keys and source ties
+prefix success
+d 65known cutoff64
+prefix success
+d 4096false no H3 or cutoff
+e invalid key before falsegate
+e bad candidate count -1
+e bad candidate count 4097
+e nodes guard
+prefix success
+f consumer bounds 0
+prefix success
+f consumer bounds 1
+prefix success
+f consumer bounds 2
+prefix success
+f consumer bounds 3
+prefix success
+f consumer bounds 4
+prefix success
+f consumer bounds 5
+prefix success
+f consumer bounds 6
+prefix success
+f consumer bounds 7
+prefix success
+f consumer bounds 8
+prefix success
+g H3UNKNOWN simulated reason 11
+prefix success
+g H3UNKNOWN simulated reason 10
+prefix success
+g separate H3budget
+prefix success
+h Bskips before unique H3

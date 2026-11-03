@@ -1,0 +1,173 @@
+{
+  "stage": "C1_SOURCE_COMPLETE_PENDING_ROOT_REVIEW_NO_BUILD_RELEASE",
+  "time_amsterdam": "2026-10-21T14:19:26.618704+02:00",
+  "AST_files": [
+    "bind_scheduler.py",
+    "build_candidate.py",
+    "check_sources.py",
+    "check_sources_checkpoint.py",
+    "fixture_sources.py",
+    "food_components.py",
+    "food_diagnostic.py",
+    "food_diagnostic_layout.py",
+    "input-pins.py",
+    "integration_base.py",
+    "native.py",
+    "path_diagnostic.py",
+    "path_diagnostic_layout.py",
+    "plan_layout.py",
+    "policy.py",
+    "prepare_sources.py",
+    "reader/food_failure_decoder.py",
+    "reader/h3_layout.py",
+    "reader/Lees-Uitbreiding.py",
+    "reader/original_core.py",
+    "reader/partial_diagnostic.py",
+    "reader/path_failure_decoder.py",
+    "reader/positive_reader.py",
+    "science_development.py",
+    "science_layout.py",
+    "science_model.py",
+    "science_result.py",
+    "union.py",
+    "wire_sources.py"
+  ],
+  "AST_count": 29,
+  "changed_parent_sources": [
+    "build_candidate.py",
+    "native.py",
+    "policy.py",
+    "integration_base.py",
+    "plan_layout.py",
+    "food_diagnostic_layout.py",
+    "reader/Lees-Uitbreiding.py",
+    "reader/partial_diagnostic.py",
+    "reader/food_failure_decoder.py"
+  ],
+  "unchanged_parent_sources": [
+    "input-pins.py",
+    "input-pins.json",
+    "bind_scheduler.py",
+    "union.py",
+    "science_model.py",
+    "science_layout.py",
+    "science_result.py",
+    "science_development.py",
+    "food_components.py",
+    "food_diagnostic.py",
+    "science-spatial-pins.json",
+    "preparation-manifest.json",
+    "release-v1.robotcom.backup.dll",
+    "reader/original_core.py",
+    "reader/h3_layout.py",
+    "reader/positive_reader.py",
+    "reader/participants.json"
+  ],
+  "layout": {
+    "Plan_size": 497664,
+    "generation_offset": 497664,
+    "record_offset": 497668,
+    "record_size": 256,
+    "state_size": 497924,
+    "reserved": "216..255 zero"
+  },
+  "branches": [
+    [
+      1,
+      902136,
+      "postcontext_nonzero"
+    ],
+    [
+      2,
+      902152,
+      "canary1_mismatch"
+    ],
+    [
+      3,
+      902168,
+      "canary2_mismatch"
+    ],
+    [
+      4,
+      902184,
+      "native_EAX_not1"
+    ],
+    [
+      5,
+      902198,
+      "pointer_null"
+    ],
+    [
+      6,
+      902216,
+      "count_lt1"
+    ],
+    [
+      7,
+      902240,
+      "count_gt_capacity"
+    ],
+    [
+      8,
+      902251,
+      "pointer_end_overflow"
+    ],
+    [
+      9,
+      902275,
+      "first_conversion0"
+    ],
+    [
+      10,
+      902302,
+      "source_conversion0"
+    ],
+    [
+      11,
+      902320,
+      "first_dword0_mismatch"
+    ],
+    [
+      12,
+      902338,
+      "first_dword4_mismatch"
+    ],
+    [
+      13,
+      902377,
+      "last_conversion0"
+    ],
+    [
+      14,
+      902404,
+      "destination_conversion0"
+    ],
+    [
+      15,
+      902422,
+      "last_dword0_mismatch"
+    ],
+    [
+      16,
+      902440,
+      "last_dword4_mismatch"
+    ]
+  ],
+  "native_twenty_arguments_and_free_route_source_identical": true,
+  "postcontext_existing_read_once": true,
+  "source_only": true,
+  "emitter_imported": false,
+  "compose": false,
+  "candidate": false,
+  "fixture_emitted": false,
+  "native_compiled_or_run": false,
+  "RPM": false,
+  "game": false,
+  "remaining": [
+    "independent complete root C1 review",
+    "separate C2 deterministic emission/byte/PE/callsite checks",
+    "separate limited logger native gate",
+    "separate one fixed T0/n/T1 host gate"
+  ],
+  "gameplay_goals_completed": 0
+}

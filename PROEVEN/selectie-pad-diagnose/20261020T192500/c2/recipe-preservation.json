@@ -1,0 +1,2957 @@
+{
+  "entire_historical_recipe_preserved_after_named_logger_removal": true,
+  "old_rows": 7200,
+  "new_rows": 12813,
+  "logger_blocks": 41,
+  "equivalent_postcontext_read_groups": 1,
+  "verified_relocations": [
+    {
+      "old": {
+        "offset": 6429,
+        "asm": "call canonical_key",
+        "bytes": "e8c50d0000"
+      },
+      "new": {
+        "offset": 6429,
+        "asm": "call canonical_key",
+        "bytes": "e8f80d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7026,
+        "asm": "call resolve_type",
+        "bytes": "e8f8080000"
+      },
+      "new": {
+        "offset": 7026,
+        "asm": "call resolve_type",
+        "bytes": "e82b090000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7040,
+        "asm": "call preview_scope",
+        "bytes": "e8220c0000"
+      },
+      "new": {
+        "offset": 7040,
+        "asm": "call preview_scope",
+        "bytes": "e8550c0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7134,
+        "asm": "call location_roles",
+        "bytes": "e8051c0000"
+      },
+      "new": {
+        "offset": 7134,
+        "asm": "call location_roles",
+        "bytes": "e801930000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7165,
+        "asm": "call read_set",
+        "bytes": "e82e0d0000"
+      },
+      "new": {
+        "offset": 7165,
+        "asm": "call read_set",
+        "bytes": "e8610d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7196,
+        "asm": "call read_set",
+        "bytes": "e80f0d0000"
+      },
+      "new": {
+        "offset": 7196,
+        "asm": "call read_set",
+        "bytes": "e8420d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7228,
+        "asm": "call order_roles",
+        "bytes": "e863250000"
+      },
+      "new": {
+        "offset": 7228,
+        "asm": "call order_roles",
+        "bytes": "e85f9c0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7234,
+        "asm": "call select_direct_plans",
+        "bytes": "e895280000"
+      },
+      "new": {
+        "offset": 7234,
+        "asm": "call select_direct_plans",
+        "bytes": "e8a5a20000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7499,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 7499,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 7515,
+        "asm": "jne contract_error",
+        "bytes": "0f85ea040000"
+      },
+      "new": {
+        "offset": 7515,
+        "asm": "jne contract_error",
+        "bytes": "0f851d050000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7521,
+        "asm": "lea edx,generation",
+        "bytes": "8d9600c81500"
+      },
+      "new": {
+        "offset": 7521,
+        "asm": "lea edx,generation",
+        "bytes": "8d9600481600"
+      },
+      "explanation": "same named PIC/RVA target generation"
+    },
+    {
+      "old": {
+        "offset": 7607,
+        "asm": "call bind_host",
+        "bytes": "e844e2ffff"
+      },
+      "new": {
+        "offset": 7658,
+        "asm": "call bind_host",
+        "bytes": "e811e2ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7621,
+        "asm": "call copy_hints",
+        "bytes": "e855f5ffff"
+      },
+      "new": {
+        "offset": 7672,
+        "asm": "call copy_hints",
+        "bytes": "e822f5ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7647,
+        "asm": "call SchedulerUpdate",
+        "bytes": "e81c58f9ff"
+      },
+      "new": {
+        "offset": 7698,
+        "asm": "call SchedulerUpdate",
+        "bytes": "e8e957f9ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7685,
+        "asm": "call GroundBuild",
+        "bytes": "e876f2f9ff"
+      },
+      "new": {
+        "offset": 7736,
+        "asm": "call GroundBuild",
+        "bytes": "e843f2f9ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7732,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee33ae0d00"
+      },
+      "new": {
+        "offset": 7783,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee66ae0d00"
+      },
+      "explanation": "same named PIC/RVA target capture_pc"
+    },
+    {
+      "old": {
+        "offset": 7738,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 7789,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 7797,
+        "asm": "call capture_heap",
+        "bytes": "e8c3170000"
+      },
+      "new": {
+        "offset": 7848,
+        "asm": "call capture_heap",
+        "bytes": "e88c8e0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 7910,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eee5ae0d00"
+      },
+      "new": {
+        "offset": 7961,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee18af0d00"
+      },
+      "explanation": "same named PIC/RVA target scope_pc"
+    },
+    {
+      "old": {
+        "offset": 7916,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 7967,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 8017,
+        "asm": "call AIPUpdate",
+        "bytes": "e81abcf8ff"
+      },
+      "new": {
+        "offset": 8068,
+        "asm": "call AIPUpdate",
+        "bytes": "e8e7bbf8ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 8064,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee7faf0d00"
+      },
+      "new": {
+        "offset": 8115,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eeb2af0d00"
+      },
+      "explanation": "same named PIC/RVA target scope_end_pc"
+    },
+    {
+      "old": {
+        "offset": 8070,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 8121,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 8184,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eef7af0d00"
+      },
+      "new": {
+        "offset": 8235,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee2ab00d00"
+      },
+      "explanation": "same named PIC/RVA target desired_pc"
+    },
+    {
+      "old": {
+        "offset": 8190,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 8241,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 8215,
+        "asm": "call finalize_pass",
+        "bytes": "e8b3faffff"
+      },
+      "new": {
+        "offset": 8266,
+        "asm": "call finalize_pass",
+        "bytes": "e880faffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 8271,
+        "asm": "call Desired",
+        "bytes": "e84ca9f8ff"
+      },
+      "new": {
+        "offset": 8322,
+        "asm": "call Desired",
+        "bytes": "e819a9f8ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 8315,
+        "asm": "call Choose",
+        "bytes": "e880a8f8ff"
+      },
+      "new": {
+        "offset": 8366,
+        "asm": "call Choose",
+        "bytes": "e84da8f8ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 8368,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eeafb00d00"
+      },
+      "new": {
+        "offset": 8419,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eee2b00d00"
+      },
+      "explanation": "same named PIC/RVA target quota_pc"
+    },
+    {
+      "old": {
+        "offset": 8374,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 8425,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 8845,
+        "asm": "call read_policy",
+        "bytes": "e868f2ffff"
+      },
+      "new": {
+        "offset": 8896,
+        "asm": "call read_policy",
+        "bytes": "e835f2ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 8949,
+        "asm": "call ExecuteOriginal",
+        "bytes": "e8c690f6ff"
+      },
+      "new": {
+        "offset": 9000,
+        "asm": "call ExecuteOriginal",
+        "bytes": "e89390f6ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 9055,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee5eb30d00"
+      },
+      "new": {
+        "offset": 9106,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee91b30d00"
+      },
+      "explanation": "same named PIC/RVA target arrival_pc"
+    },
+    {
+      "old": {
+        "offset": 9092,
+        "asm": "call read_policy",
+        "bytes": "e871f1ffff"
+      },
+      "new": {
+        "offset": 9143,
+        "asm": "call read_policy",
+        "bytes": "e83ef1ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 9283,
+        "asm": "sub edx,modulepc",
+        "bytes": "81ea42b40d00"
+      },
+      "new": {
+        "offset": 9334,
+        "asm": "sub edx,modulepc",
+        "bytes": "81ea75b40d00"
+      },
+      "explanation": "same named PIC/RVA target normalize_pc"
+    },
+    {
+      "old": {
+        "offset": 9351,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee86b40d00"
+      },
+      "new": {
+        "offset": 9402,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eeb9b40d00"
+      },
+      "explanation": "same named PIC/RVA target resolve_type_pc"
+    },
+    {
+      "old": {
+        "offset": 9394,
+        "asm": "lea eax,UNIT_SETTLER",
+        "bytes": "8d863dd80d00"
+      },
+      "new": {
+        "offset": 9445,
+        "asm": "lea eax,UNIT_SETTLER",
+        "bytes": "8d86a35a0e00"
+      },
+      "explanation": "same named PIC/RVA target settler_name"
+    },
+    {
+      "old": {
+        "offset": 10351,
+        "asm": "call Choose",
+        "bytes": "e88ca0f8ff"
+      },
+      "new": {
+        "offset": 10402,
+        "asm": "call Choose",
+        "bytes": "e859a0f8ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11104,
+        "asm": "call ArmyCount",
+        "bytes": "e80beef3ff"
+      },
+      "new": {
+        "offset": 11155,
+        "asm": "call ArmyCount",
+        "bytes": "e8d8edf3ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11148,
+        "asm": "call ArmyType",
+        "bytes": "e8efedf3ff"
+      },
+      "new": {
+        "offset": 11199,
+        "asm": "call ArmyType",
+        "bytes": "e8bcedf3ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11327,
+        "asm": "call IsWait",
+        "bytes": "e8ac6df3ff"
+      },
+      "new": {
+        "offset": 11378,
+        "asm": "call IsWait",
+        "bytes": "e8796df3ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11385,
+        "asm": "call ArmyPos",
+        "bytes": "e8425ff3ff"
+      },
+      "new": {
+        "offset": 11436,
+        "asm": "call ArmyPos",
+        "bytes": "e80f5ff3ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11641,
+        "asm": "call CityPos",
+        "bytes": "e80206f4ff"
+      },
+      "new": {
+        "offset": 11692,
+        "asm": "call CityPos",
+        "bytes": "e8cf05f4ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11682,
+        "asm": "call CityWhat",
+        "bytes": "e8a90ff4ff"
+      },
+      "new": {
+        "offset": 11733,
+        "asm": "call CityWhat",
+        "bytes": "e8760ff4ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 11770,
+        "asm": "call CanBuild",
+        "bytes": "e83135f4ff"
+      },
+      "new": {
+        "offset": 11821,
+        "asm": "call CanBuild",
+        "bytes": "e8fe34f4ff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 12332,
+        "asm": "call GetContinent",
+        "bytes": "e8ff1ffaff"
+      },
+      "new": {
+        "offset": 12383,
+        "asm": "call GetContinent",
+        "bytes": "e8cc1ffaff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 12736,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eebfc10d00"
+      },
+      "new": {
+        "offset": 12787,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eef2c10d00"
+      },
+      "explanation": "same named PIC/RVA target safe_pc"
+    },
+    {
+      "old": {
+        "offset": 12873,
+        "asm": "call GetThreat",
+        "bytes": "e8c278faff"
+      },
+      "new": {
+        "offset": 12924,
+        "asm": "call GetThreat",
+        "bytes": "e88f78faff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13120,
+        "asm": "jae path_budget",
+        "bytes": "0f83a3020000"
+      },
+      "new": {
+        "offset": 13171,
+        "asm": "jae path_budget",
+        "bytes": "0f8324410000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13142,
+        "asm": "jne path_unknown",
+        "bytes": "0f8565020000"
+      },
+      "new": {
+        "offset": 13193,
+        "asm": "jne path_unknown",
+        "bytes": "0f85e6400000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13304,
+        "asm": "jne path_unknown",
+        "bytes": "0f85c3010000"
+      },
+      "new": {
+        "offset": 15087,
+        "asm": "jne path_unknown",
+        "bytes": "0f85343d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13320,
+        "asm": "jne path_unknown",
+        "bytes": "0f85b3010000"
+      },
+      "new": {
+        "offset": 15942,
+        "asm": "jne path_unknown",
+        "bytes": "0f852e3d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13336,
+        "asm": "jne path_unknown",
+        "bytes": "0f85a3010000"
+      },
+      "new": {
+        "offset": 16797,
+        "asm": "jne path_unknown",
+        "bytes": "0f85283d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13352,
+        "asm": "jne path_unknown",
+        "bytes": "0f8593010000"
+      },
+      "new": {
+        "offset": 17640,
+        "asm": "jne path_unknown",
+        "bytes": "0f852e3d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13366,
+        "asm": "jz path_unknown",
+        "bytes": "0f8485010000"
+      },
+      "new": {
+        "offset": 18481,
+        "asm": "jz path_unknown",
+        "bytes": "0f84363d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13384,
+        "asm": "jl path_unknown",
+        "bytes": "0f8c73010000"
+      },
+      "new": {
+        "offset": 19326,
+        "asm": "jl path_unknown",
+        "bytes": "0f8c3a3d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13396,
+        "asm": "jg path_budget",
+        "bytes": "0f8f8f010000"
+      },
+      "new": {
+        "offset": 19338,
+        "asm": "jg path_budget",
+        "bytes": "0f8f0d290000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13408,
+        "asm": "jg path_unknown",
+        "bytes": "0f8f5b010000"
+      },
+      "new": {
+        "offset": 20177,
+        "asm": "jg path_unknown",
+        "bytes": "0f8f383d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13419,
+        "asm": "jb path_unknown",
+        "bytes": "0f8250010000"
+      },
+      "new": {
+        "offset": 21047,
+        "asm": "jb path_unknown",
+        "bytes": "0f82233d0000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13436,
+        "asm": "call canonical_key",
+        "bytes": "e866f2ffff"
+      },
+      "new": {
+        "offset": 21894,
+        "asm": "call canonical_key",
+        "bytes": "e88fd1ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13443,
+        "asm": "jz path_unknown",
+        "bytes": "0f8438010000"
+      },
+      "new": {
+        "offset": 22765,
+        "asm": "jz path_unknown",
+        "bytes": "0f84be390000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13463,
+        "asm": "call canonical_key",
+        "bytes": "e84bf2ffff"
+      },
+      "new": {
+        "offset": 22785,
+        "asm": "call canonical_key",
+        "bytes": "e814ceffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13470,
+        "asm": "jz path_unknown",
+        "bytes": "0f841d010000"
+      },
+      "new": {
+        "offset": 23656,
+        "asm": "jz path_unknown",
+        "bytes": "0f8494390000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13488,
+        "asm": "jne path_unknown",
+        "bytes": "0f850b010000"
+      },
+      "new": {
+        "offset": 24501,
+        "asm": "jne path_unknown",
+        "bytes": "0f8598390000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13506,
+        "asm": "jne path_unknown",
+        "bytes": "0f85f9000000"
+      },
+      "new": {
+        "offset": 25346,
+        "asm": "jne path_unknown",
+        "bytes": "0f859c390000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13538,
+        "asm": "call canonical_key",
+        "bytes": "e800f2ffff"
+      },
+      "new": {
+        "offset": 26208,
+        "asm": "call canonical_key",
+        "bytes": "e8b5c0ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13545,
+        "asm": "jz path_unknown",
+        "bytes": "0f84d2000000"
+      },
+      "new": {
+        "offset": 27079,
+        "asm": "jz path_unknown",
+        "bytes": "0f8428360000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13565,
+        "asm": "call canonical_key",
+        "bytes": "e8e5f1ffff"
+      },
+      "new": {
+        "offset": 27099,
+        "asm": "call canonical_key",
+        "bytes": "e83abdffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13572,
+        "asm": "jz path_unknown",
+        "bytes": "0f84b7000000"
+      },
+      "new": {
+        "offset": 27970,
+        "asm": "jz path_unknown",
+        "bytes": "0f84fe350000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13590,
+        "asm": "jne path_unknown",
+        "bytes": "0f85a5000000"
+      },
+      "new": {
+        "offset": 28815,
+        "asm": "jne path_unknown",
+        "bytes": "0f8502360000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13608,
+        "asm": "jne path_unknown",
+        "bytes": "0f8593000000"
+      },
+      "new": {
+        "offset": 29660,
+        "asm": "jne path_unknown",
+        "bytes": "0f8506360000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 13706,
+        "asm": "call safe_point",
+        "bytes": "e859f9ffff"
+      },
+      "new": {
+        "offset": 29758,
+        "asm": "call safe_point",
+        "bytes": "e8d8baffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 14083,
+        "asm": "call canonical_key",
+        "bytes": "e8dfefffff"
+      },
+      "new": {
+        "offset": 44543,
+        "asm": "call canonical_key",
+        "bytes": "e81679ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 14144,
+        "asm": "call canonical_key",
+        "bytes": "e8a2efffff"
+      },
+      "new": {
+        "offset": 44604,
+        "asm": "call canonical_key",
+        "bytes": "e8d978ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 14814,
+        "asm": "call H3Classifier",
+        "bytes": "e86697ffff"
+      },
+      "new": {
+        "offset": 45274,
+        "asm": "call H3Classifier",
+        "bytes": "e86a20ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 14938,
+        "asm": "call canonical_key",
+        "bytes": "e888ecffff"
+      },
+      "new": {
+        "offset": 45398,
+        "asm": "call canonical_key",
+        "bytes": "e8bf75ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15006,
+        "asm": "call canonical_key",
+        "bytes": "e844ecffff"
+      },
+      "new": {
+        "offset": 45466,
+        "asm": "call canonical_key",
+        "bytes": "e87b75ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15074,
+        "asm": "call canonical_key",
+        "bytes": "e800ecffff"
+      },
+      "new": {
+        "offset": 45534,
+        "asm": "call canonical_key",
+        "bytes": "e83775ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15142,
+        "asm": "call canonical_key",
+        "bytes": "e8bcebffff"
+      },
+      "new": {
+        "offset": 45602,
+        "asm": "call canonical_key",
+        "bytes": "e8f374ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15210,
+        "asm": "call canonical_key",
+        "bytes": "e878ebffff"
+      },
+      "new": {
+        "offset": 45670,
+        "asm": "call canonical_key",
+        "bytes": "e8af74ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15267,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eea2cb0d00"
+      },
+      "new": {
+        "offset": 45727,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee9e420e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_1_pc"
+    },
+    {
+      "old": {
+        "offset": 15273,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 45733,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 15449,
+        "asm": "call science_model",
+        "bytes": "e8ec0b0000"
+      },
+      "new": {
+        "offset": 45909,
+        "asm": "call science_model",
+        "bytes": "e856170000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 15462,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee65cc0d00"
+      },
+      "new": {
+        "offset": 45922,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee61430e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_2_pc"
+    },
+    {
+      "old": {
+        "offset": 15468,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 45928,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 16072,
+        "asm": "call canonical_key",
+        "bytes": "e81ae8ffff"
+      },
+      "new": {
+        "offset": 46532,
+        "asm": "call canonical_key",
+        "bytes": "e85171ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 16182,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee35cf0d00"
+      },
+      "new": {
+        "offset": 46642,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee31460e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_3_pc"
+    },
+    {
+      "old": {
+        "offset": 16188,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 46648,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 17014,
+        "asm": "call H3PosCompare",
+        "bytes": "e82697ffff"
+      },
+      "new": {
+        "offset": 47474,
+        "asm": "call H3PosCompare",
+        "bytes": "e82a20ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17250,
+        "asm": "call canonical_key",
+        "bytes": "e880e3ffff"
+      },
+      "new": {
+        "offset": 47710,
+        "asm": "call canonical_key",
+        "bytes": "e8b76cffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17257,
+        "asm": "jz cached_unknown",
+        "bytes": "0f8447010000"
+      },
+      "new": {
+        "offset": 47717,
+        "asm": "jz cached_unknown",
+        "bytes": "0f845b040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17277,
+        "asm": "call canonical_key",
+        "bytes": "e865e3ffff"
+      },
+      "new": {
+        "offset": 47737,
+        "asm": "call canonical_key",
+        "bytes": "e89c6cffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17284,
+        "asm": "jz cached_unknown",
+        "bytes": "0f842c010000"
+      },
+      "new": {
+        "offset": 47744,
+        "asm": "jz cached_unknown",
+        "bytes": "0f8440040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17417,
+        "asm": "jmp cached_done",
+        "bytes": "e9c1000000"
+      },
+      "new": {
+        "offset": 47877,
+        "asm": "jmp cached_done",
+        "bytes": "e9d5030000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17435,
+        "asm": "jae cached_budget",
+        "bytes": "0f8381000000"
+      },
+      "new": {
+        "offset": 47895,
+        "asm": "jae cached_budget",
+        "bytes": "0f8395030000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17454,
+        "asm": "call direct_path",
+        "bytes": "e8a1eeffff"
+      },
+      "new": {
+        "offset": 47914,
+        "asm": "call direct_path",
+        "bytes": "e8d877ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17678,
+        "asm": "jge select_ok",
+        "bytes": "0f8df9020000"
+      },
+      "new": {
+        "offset": 49326,
+        "asm": "jge select_ok",
+        "bytes": "0f8dce060000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17696,
+        "asm": "jge select_ok",
+        "bytes": "0f8de7020000"
+      },
+      "new": {
+        "offset": 49344,
+        "asm": "jge select_ok",
+        "bytes": "0f8dbc060000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17708,
+        "asm": "jae select_ok",
+        "bytes": "0f83db020000"
+      },
+      "new": {
+        "offset": 49356,
+        "asm": "jae select_ok",
+        "bytes": "0f83b0060000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17817,
+        "asm": "call plan_conflict",
+        "bytes": "e820fdffff"
+      },
+      "new": {
+        "offset": 49465,
+        "asm": "call plan_conflict",
+        "bytes": "e87cf8ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17851,
+        "asm": "jne select_next",
+        "bytes": "0f8541020000"
+      },
+      "new": {
+        "offset": 49499,
+        "asm": "jne select_next",
+        "bytes": "0f8516060000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17869,
+        "asm": "jae select_bad",
+        "bytes": "0f8344020000"
+      },
+      "new": {
+        "offset": 49517,
+        "asm": "jae select_bad",
+        "bytes": "0f8319060000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17896,
+        "asm": "jne select_next",
+        "bytes": "0f8514020000"
+      },
+      "new": {
+        "offset": 49544,
+        "asm": "jne select_next",
+        "bytes": "0f85e9050000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17905,
+        "asm": "call choose_alternative",
+        "bytes": "e805faffff"
+      },
+      "new": {
+        "offset": 49553,
+        "asm": "call choose_alternative",
+        "bytes": "e861f5ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17953,
+        "asm": "jz select_next",
+        "bytes": "0f84db010000"
+      },
+      "new": {
+        "offset": 49601,
+        "asm": "jz select_next",
+        "bytes": "0f84b0050000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 17989,
+        "asm": "jae select_next",
+        "bytes": "0f83b7010000"
+      },
+      "new": {
+        "offset": 49637,
+        "asm": "jae select_next",
+        "bytes": "0f838c050000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18037,
+        "asm": "jge select_best",
+        "bytes": "0f8d07010000"
+      },
+      "new": {
+        "offset": 49685,
+        "asm": "jge select_best",
+        "bytes": "0f8ddc040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18119,
+        "asm": "jmp source_next",
+        "bytes": "e9ab000000"
+      },
+      "new": {
+        "offset": 49767,
+        "asm": "jmp source_next",
+        "bytes": "e980040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18130,
+        "asm": "jne source_next",
+        "bytes": "0f859f000000"
+      },
+      "new": {
+        "offset": 49778,
+        "asm": "jne source_next",
+        "bytes": "0f8574040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18146,
+        "asm": "jne source_next",
+        "bytes": "0f858f000000"
+      },
+      "new": {
+        "offset": 49794,
+        "asm": "jne source_next",
+        "bytes": "0f8564040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18175,
+        "asm": "jne source_next",
+        "bytes": "0f8572000000"
+      },
+      "new": {
+        "offset": 49823,
+        "asm": "jne source_next",
+        "bytes": "0f8547040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18191,
+        "asm": "jne source_next",
+        "bytes": "0f8562000000"
+      },
+      "new": {
+        "offset": 49839,
+        "asm": "jne source_next",
+        "bytes": "0f8537040000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18206,
+        "asm": "call cached_path",
+        "bytes": "e81ffcffff"
+      },
+      "new": {
+        "offset": 50835,
+        "asm": "call cached_path",
+        "bytes": "e8a6f3ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18301,
+        "asm": "jmp select_sources",
+        "bytes": "e9e7feffff"
+      },
+      "new": {
+        "offset": 50930,
+        "asm": "jmp select_sources",
+        "bytes": "e912fbffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18328,
+        "asm": "jmp select_priority",
+        "bytes": "e99efeffff"
+      },
+      "new": {
+        "offset": 50957,
+        "asm": "jmp select_priority",
+        "bytes": "e9c9faffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18440,
+        "asm": "jmp select_loop",
+        "bytes": "e9f5fcffff"
+      },
+      "new": {
+        "offset": 51069,
+        "asm": "jmp select_loop",
+        "bytes": "e920f9ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18450,
+        "asm": "jmp select_done",
+        "bytes": "e919000000"
+      },
+      "new": {
+        "offset": 51079,
+        "asm": "jmp select_done",
+        "bytes": "e90a030000"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 18648,
+        "asm": "call H3Host",
+        "bytes": "e8cfa5ffff"
+      },
+      "new": {
+        "offset": 52030,
+        "asm": "call H3Host",
+        "bytes": "e86923ffff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 24406,
+        "asm": "call H3Capacity",
+        "bytes": "e87e72ffff"
+      },
+      "new": {
+        "offset": 57788,
+        "asm": "call H3Capacity",
+        "bytes": "e818f0feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 24709,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee84f00d00"
+      },
+      "new": {
+        "offset": 58091,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eeea720e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_4_pc"
+    },
+    {
+      "old": {
+        "offset": 24715,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 58097,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 25050,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eed9f10d00"
+      },
+      "new": {
+        "offset": 58432,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee3f740e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_5_pc"
+    },
+    {
+      "old": {
+        "offset": 25056,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 58438,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 25288,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eec7f20d00"
+      },
+      "new": {
+        "offset": 58670,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee2d750e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_6_pc"
+    },
+    {
+      "old": {
+        "offset": 25294,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 58676,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 25542,
+        "asm": "call H3PosCompare",
+        "bytes": "e8d675ffff"
+      },
+      "new": {
+        "offset": 58924,
+        "asm": "call H3PosCompare",
+        "bytes": "e870f3feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 25615,
+        "asm": "call H3PosCompare",
+        "bytes": "e88d75ffff"
+      },
+      "new": {
+        "offset": 58997,
+        "asm": "call H3PosCompare",
+        "bytes": "e827f3feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 25899,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee2af50d00"
+      },
+      "new": {
+        "offset": 59281,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee90770e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_7_pc"
+    },
+    {
+      "old": {
+        "offset": 25905,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 59287,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 26815,
+        "asm": "call H3PosCompare",
+        "bytes": "e8dd70ffff"
+      },
+      "new": {
+        "offset": 60197,
+        "asm": "call H3PosCompare",
+        "bytes": "e877eefeff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 26927,
+        "asm": "call H3PosCompare",
+        "bytes": "e86d70ffff"
+      },
+      "new": {
+        "offset": 60309,
+        "asm": "call H3PosCompare",
+        "bytes": "e807eefeff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 27027,
+        "asm": "call H3PosCompare",
+        "bytes": "e80970ffff"
+      },
+      "new": {
+        "offset": 60409,
+        "asm": "call H3PosCompare",
+        "bytes": "e8a3edfeff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 28412,
+        "asm": "call H3PosCompare",
+        "bytes": "e8a06affff"
+      },
+      "new": {
+        "offset": 61794,
+        "asm": "call H3PosCompare",
+        "bytes": "e83ae8feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 28524,
+        "asm": "call H3PosCompare",
+        "bytes": "e8306affff"
+      },
+      "new": {
+        "offset": 61906,
+        "asm": "call H3PosCompare",
+        "bytes": "e8cae7feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 28624,
+        "asm": "call H3PosCompare",
+        "bytes": "e8cc69ffff"
+      },
+      "new": {
+        "offset": 62006,
+        "asm": "call H3PosCompare",
+        "bytes": "e866e7feff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 29460,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee13030e00"
+      },
+      "new": {
+        "offset": 62842,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee79850e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_8_pc"
+    },
+    {
+      "old": {
+        "offset": 29466,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 62848,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 29663,
+        "asm": "call food_reader",
+        "bytes": "e81161ffff"
+      },
+      "new": {
+        "offset": 63045,
+        "asm": "call food_reader",
+        "bytes": "e8abdefeff"
+      },
+      "explanation": "verified direct rel32"
+    },
+    {
+      "old": {
+        "offset": 29982,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee1d050e00"
+      },
+      "new": {
+        "offset": 63364,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee83870e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_9_pc"
+    },
+    {
+      "old": {
+        "offset": 29988,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 63370,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 30160,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eecf050e00"
+      },
+      "new": {
+        "offset": 63542,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee35880e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_10_pc"
+    },
+    {
+      "old": {
+        "offset": 30166,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 63548,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 30362,
+        "asm": "sub esi,modulepc",
+        "bytes": "81ee99060e00"
+      },
+      "new": {
+        "offset": 63744,
+        "asm": "sub esi,modulepc",
+        "bytes": "81eeff880e00"
+      },
+      "explanation": "same named PIC/RVA target c2_count_11_pc"
+    },
+    {
+      "old": {
+        "offset": 30368,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      },
+      "new": {
+        "offset": 63750,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 30889,
+        "asm": "sub esi,own diagnostic PC",
+        "bytes": "81eea8080e00"
+      },
+      "new": {
+        "offset": 64271,
+        "asm": "sub esi,own diagnostic PC",
+        "bytes": "81ee0e8b0e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_binding_pc"
+    },
+    {
+      "old": {
+        "offset": 30895,
+        "asm": "lea edi,own Plan",
+        "bytes": "8dbe00300e00"
+      },
+      "new": {
+        "offset": 64277,
+        "asm": "lea edi,own Plan",
+        "bytes": "8dbe00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 31189,
+        "asm": "lea ebx,SCI primary return",
+        "bytes": "8d9e94f30d00"
+      },
+      "new": {
+        "offset": 64571,
+        "asm": "lea ebx,SCI primary return",
+        "bytes": "8d9efa750e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_primary_return"
+    },
+    {
+      "old": {
+        "offset": 31332,
+        "asm": "lea ebx,SCI center return",
+        "bytes": "8d9e50f10d00"
+      },
+      "new": {
+        "offset": 64714,
+        "asm": "lea ebx,SCI center return",
+        "bytes": "8d9eb6730e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_center_return"
+    },
+    {
+      "old": {
+        "offset": 37005,
+        "asm": "sub esi,own occupied PC",
+        "bytes": "81ee8c200e00"
+      },
+      "new": {
+        "offset": 70387,
+        "asm": "sub esi,own occupied PC",
+        "bytes": "81eef2a20e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_occupied_pc"
+    },
+    {
+      "old": {
+        "offset": 37011,
+        "asm": "lea edi,own Plan for occupied return",
+        "bytes": "8dbe00300e00"
+      },
+      "new": {
+        "offset": 70393,
+        "asm": "lea edi,own Plan for occupied return",
+        "bytes": "8dbe00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    },
+    {
+      "old": {
+        "offset": 37289,
+        "asm": "lea ebx,actual SCI center return",
+        "bytes": "8d9e50f10d00"
+      },
+      "new": {
+        "offset": 70671,
+        "asm": "lea ebx,actual SCI center return",
+        "bytes": "8d9eb6730e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_center_return"
+    },
+    {
+      "old": {
+        "offset": 39329,
+        "asm": "sub esi,own publish PC",
+        "bytes": "81eea0290e00"
+      },
+      "new": {
+        "offset": 72711,
+        "asm": "sub esi,own publish PC",
+        "bytes": "81ee06ac0e00"
+      },
+      "explanation": "same named PIC/RVA target sci_food_diag_publish_pc"
+    },
+    {
+      "old": {
+        "offset": 39335,
+        "asm": "lea edi,own Plan before publish",
+        "bytes": "8dbe00300e00"
+      },
+      "new": {
+        "offset": 72717,
+        "asm": "lea edi,own Plan before publish",
+        "bytes": "8dbe00b00e00"
+      },
+      "explanation": "same named PIC/RVA target pass_state"
+    }
+  ],
+  "edges": [
+    {
+      "id": 1,
+      "parent_rva": "0xdc3f8",
+      "edge_rva": "0xdcaef",
+      "landing_rva": "0xe0829",
+      "name": "postcontext_nonzero"
+    },
+    {
+      "id": 2,
+      "parent_rva": "0xdc408",
+      "edge_rva": "0xdce46",
+      "landing_rva": "0xe0b7a",
+      "name": "canary1_mismatch"
+    },
+    {
+      "id": 3,
+      "parent_rva": "0xdc418",
+      "edge_rva": "0xdd19d",
+      "landing_rva": "0xe0ecb",
+      "name": "canary2_mismatch"
+    },
+    {
+      "id": 4,
+      "parent_rva": "0xdc428",
+      "edge_rva": "0xdd4e8",
+      "landing_rva": "0xe121c",
+      "name": "native_EAX_not1"
+    },
+    {
+      "id": 5,
+      "parent_rva": "0xdc436",
+      "edge_rva": "0xdd831",
+      "landing_rva": "0xe156d",
+      "name": "pointer_null"
+    },
+    {
+      "id": 6,
+      "parent_rva": "0xdc448",
+      "edge_rva": "0xddb7e",
+      "landing_rva": "0xe18be",
+      "name": "count_lt1"
+    },
+    {
+      "id": 7,
+      "parent_rva": "0xdc460",
+      "edge_rva": "0xdded1",
+      "landing_rva": "0xe1c0f",
+      "name": "count_gt_capacity"
+    },
+    {
+      "id": 8,
+      "parent_rva": "0xdc46b",
+      "edge_rva": "0xde237",
+      "landing_rva": "0xe1f60",
+      "name": "pointer_end_overflow"
+    },
+    {
+      "id": 9,
+      "parent_rva": "0xdc483",
+      "edge_rva": "0xde8ed",
+      "landing_rva": "0xe22b1",
+      "name": "first_conversion0"
+    },
+    {
+      "id": 10,
+      "parent_rva": "0xdc49e",
+      "edge_rva": "0xdec68",
+      "landing_rva": "0xe2602",
+      "name": "source_conversion0"
+    },
+    {
+      "id": 11,
+      "parent_rva": "0xdc4b0",
+      "edge_rva": "0xdefb5",
+      "landing_rva": "0xe2953",
+      "name": "first_dword0_mismatch"
+    },
+    {
+      "id": 12,
+      "parent_rva": "0xdc4c2",
+      "edge_rva": "0xdf302",
+      "landing_rva": "0xe2ca4",
+      "name": "first_dword4_mismatch"
+    },
+    {
+      "id": 13,
+      "parent_rva": "0xdc4e9",
+      "edge_rva": "0xdf9c7",
+      "landing_rva": "0xe2ff5",
+      "name": "last_conversion0"
+    },
+    {
+      "id": 14,
+      "parent_rva": "0xdc504",
+      "edge_rva": "0xdfd42",
+      "landing_rva": "0xe3346",
+      "name": "destination_conversion0"
+    },
+    {
+      "id": 15,
+      "parent_rva": "0xdc516",
+      "edge_rva": "0xe008f",
+      "landing_rva": "0xe3697",
+      "name": "last_dword0_mismatch"
+    },
+    {
+      "id": 16,
+      "parent_rva": "0xdc528",
+      "edge_rva": "0xe03dc",
+      "landing_rva": "0xe39e8",
+      "name": "last_dword4_mismatch"
+    }
+  ],
+  "record_capture_operands": [
+    {
+      "start_rva": "0xdad88",
+      "stores": [],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xdc41b",
+      "stores": [
+        {
+          "record_offset": 112,
+          "field": "native_EAX",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 116,
+          "field": "capacity",
+          "source": "mov eax,('ebp', -16)"
+        },
+        {
+          "record_offset": 120,
+          "field": "count",
+          "source": "mov eax,('ebp', -24)"
+        },
+        {
+          "record_offset": 124,
+          "field": "pointer",
+          "source": "mov eax,('ebp', -20)"
+        },
+        {
+          "record_offset": 64,
+          "field": "query",
+          "source": "mov eax,('ebx', 84)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 14215,
+          "asm": "or ('edi', 497684),4",
+          "bytes": "818f1498070004000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdc7a0",
+      "stores": [
+        {
+          "record_offset": 144,
+          "field": "postcontext",
+          "source": "mov eax,('esp', 24)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 15068,
+          "asm": "or ('edi', 497684),8",
+          "bytes": "818f1498070008000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdcaf5",
+      "stores": [
+        {
+          "record_offset": 136,
+          "field": "canary1",
+          "source": "mov eax,('ebp', -40)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 15920,
+          "asm": "or ('edi', 497684),16",
+          "bytes": "818f1498070010000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdce4c",
+      "stores": [
+        {
+          "record_offset": 140,
+          "field": "canary2",
+          "source": "mov eax,('ebp', -44)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 16775,
+          "asm": "or ('edi', 497684),32",
+          "bytes": "818f1498070020000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdd1a3",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 17618,
+          "asm": "or ('edi', 497684),64",
+          "bytes": "818f1498070040000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdd4f4",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 18467,
+          "asm": "or ('edi', 497684),128",
+          "bytes": "818f1498070080000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdd83d",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 19308,
+          "asm": "or ('edi', 497684),256",
+          "bytes": "818f1498070000010000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xddb90",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 20159,
+          "asm": "or ('edi', 497684),512",
+          "bytes": "818f1498070000020000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xddedc",
+      "stores": [
+        {
+          "record_offset": 128,
+          "field": "pointer_end",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 132,
+          "field": "bounds",
+          "source": "and eax,1"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 21035,
+          "asm": "or ('edi', 497684),1024",
+          "bytes": "818f1498070000040000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xde23f",
+      "stores": [
+        {
+          "record_offset": 148,
+          "field": "first_entry",
+          "source": "mov eax,('esp', 20)"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xde58b",
+      "stores": [
+        {
+          "record_offset": 188,
+          "field": "first_conversion",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 156,
+          "field": "first_actual",
+          "source": "mov eax,('ebp', -64)"
+        },
+        {
+          "record_offset": 160,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('ebp', -60)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 22751,
+          "asm": "or ('edi', 497684),2048",
+          "bytes": "818f1498070000080000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xde906",
+      "stores": [
+        {
+          "record_offset": 192,
+          "field": "source_conversion",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 164,
+          "field": "source_expected",
+          "source": "mov eax,('ebp', -72)"
+        },
+        {
+          "record_offset": 168,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('ebp', -68)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 23642,
+          "asm": "or ('edi', 497684),4096",
+          "bytes": "818f1498070000100000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdec6e",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 24477,
+          "asm": "or ('edi', 497684),32768",
+          "bytes": "818f1498070000800000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdefbb",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 25322,
+          "asm": "or ('edi', 497684),32768",
+          "bytes": "818f1498070000800000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdf319",
+      "stores": [
+        {
+          "record_offset": 152,
+          "field": "last_entry",
+          "source": "mov eax,('esp', 20)"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xdf665",
+      "stores": [
+        {
+          "record_offset": 196,
+          "field": "last_conversion",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 172,
+          "field": "last_actual",
+          "source": "mov eax,('ebp', -64)"
+        },
+        {
+          "record_offset": 176,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('ebp', -60)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 27065,
+          "asm": "or ('edi', 497684),8192",
+          "bytes": "818f1498070000200000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdf9e0",
+      "stores": [
+        {
+          "record_offset": 200,
+          "field": "destination_conversion",
+          "source": "mov eax,('esp', 28)"
+        },
+        {
+          "record_offset": 180,
+          "field": "destination_expected",
+          "source": "mov eax,('ebp', -72)"
+        },
+        {
+          "record_offset": 184,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('ebp', -68)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 27956,
+          "asm": "or ('edi', 497684),16384",
+          "bytes": "818f1498070000400000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xdfd48",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 28791,
+          "asm": "or ('edi', 497684),65536",
+          "bytes": "818f1498070000000100"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xe0095",
+      "stores": [],
+      "reached_stores": [
+        {
+          "offset": 29636,
+          "asm": "or ('edi', 497684),65536",
+          "bytes": "818f1498070000000100"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xe04e4",
+      "stores": [
+        {
+          "record_offset": 204,
+          "field": "direct_return",
+          "source": "mov eax,('esp', 28)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 30736,
+          "asm": "or ('edi', 497684),131072",
+          "bytes": "818f1498070000000200"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xe0829",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,1"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe0b7a",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,2"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe0ecb",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,3"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe121c",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,4"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe156d",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,5"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe18be",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,6"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe1c0f",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,7"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe1f60",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,8"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe22b1",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,9"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe2602",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,10"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe2953",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,11"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe2ca4",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,12"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe2ff5",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,13"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe3346",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,14"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe3697",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,15"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe39e8",
+      "stores": [
+        {
+          "record_offset": 12,
+          "field": "edge",
+          "source": "mov eax,16"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe4b2f",
+      "stores": [
+        {
+          "record_offset": 208,
+          "field": "cache_return",
+          "source": "mov eax,('esp', 28)"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 48695,
+          "asm": "or ('edi', 497684),262144",
+          "bytes": "818f1498070000000400"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xe4efe",
+      "stores": [
+        {
+          "record_offset": 60,
+          "field": "invocation",
+          "source": "edx"
+        },
+        {
+          "record_offset": 4,
+          "field": "schema",
+          "source": "mov eax,1"
+        },
+        {
+          "record_offset": 8,
+          "field": "size",
+          "source": "mov eax,256"
+        },
+        {
+          "record_offset": 20,
+          "field": "owner",
+          "source": "mov eax,('edi', 8)"
+        },
+        {
+          "record_offset": 24,
+          "field": "generation",
+          "source": "mov eax,('edi', 32)"
+        },
+        {
+          "record_offset": 28,
+          "field": "civ",
+          "source": "mov eax,('edi', 12)"
+        },
+        {
+          "record_offset": 32,
+          "field": "plan_identity",
+          "source": "edi"
+        },
+        {
+          "record_offset": 36,
+          "field": "select_call",
+          "source": "mov eax,pathdiag pd_select_call"
+        },
+        {
+          "record_offset": 40,
+          "field": "select_return_site",
+          "source": "mov eax,pathdiag pd_select_return"
+        },
+        {
+          "record_offset": 44,
+          "field": "cache_call",
+          "source": "mov eax,pathdiag pd_cache_call"
+        },
+        {
+          "record_offset": 48,
+          "field": "cache_return_site",
+          "source": "mov eax,pathdiag pd_cache_return"
+        },
+        {
+          "record_offset": 52,
+          "field": "direct_call",
+          "source": "mov eax,pathdiag pd_direct_call"
+        },
+        {
+          "record_offset": 56,
+          "field": "direct_return_site",
+          "source": "mov eax,pathdiag pd_direct_return"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 49282,
+          "asm": "or ('edi', 497684),1",
+          "bytes": "818f1498070001000000"
+        }
+      ]
+    },
+    {
+      "start_rva": "0xe52b5",
+      "stores": [
+        {
+          "record_offset": 68,
+          "field": "slot",
+          "source": "mov eax,('ebp', -20)"
+        },
+        {
+          "record_offset": 72,
+          "field": "prefix",
+          "source": "mov eax,('ecx', 76)"
+        },
+        {
+          "record_offset": 76,
+          "field": "role",
+          "source": "mov eax,('ecx', 72)"
+        },
+        {
+          "record_offset": 80,
+          "field": "departure",
+          "source": "mov eax,('ebp', -36)"
+        },
+        {
+          "record_offset": 84,
+          "field": "rawID",
+          "source": "mov eax,('edx', 0)"
+        },
+        {
+          "record_offset": 88,
+          "field": "kind",
+          "source": "mov eax,('edx', 4)"
+        },
+        {
+          "record_offset": 92,
+          "field": "type",
+          "source": "mov eax,('edi', 44)"
+        },
+        {
+          "record_offset": 96,
+          "field": "source",
+          "source": "mov eax,('edx', 8)"
+        },
+        {
+          "record_offset": 104,
+          "field": "destination",
+          "source": "mov eax,('ecx', 0)"
+        },
+        {
+          "record_offset": 100,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('edx', 12)"
+        },
+        {
+          "record_offset": 108,
+          "field": "pair_high_DWORD",
+          "source": "mov eax,('ecx', 4)"
+        },
+        {
+          "record_offset": 64,
+          "field": "query",
+          "source": "0"
+        },
+        {
+          "record_offset": 112,
+          "field": "native_EAX",
+          "source": "0"
+        },
+        {
+          "record_offset": 116,
+          "field": "capacity",
+          "source": "0"
+        },
+        {
+          "record_offset": 120,
+          "field": "count",
+          "source": "0"
+        },
+        {
+          "record_offset": 124,
+          "field": "pointer",
+          "source": "0"
+        },
+        {
+          "record_offset": 128,
+          "field": "pointer_end",
+          "source": "0"
+        },
+        {
+          "record_offset": 132,
+          "field": "bounds",
+          "source": "0"
+        },
+        {
+          "record_offset": 136,
+          "field": "canary1",
+          "source": "0"
+        },
+        {
+          "record_offset": 140,
+          "field": "canary2",
+          "source": "0"
+        },
+        {
+          "record_offset": 144,
+          "field": "postcontext",
+          "source": "0"
+        },
+        {
+          "record_offset": 148,
+          "field": "first_entry",
+          "source": "0"
+        },
+        {
+          "record_offset": 152,
+          "field": "last_entry",
+          "source": "0"
+        },
+        {
+          "record_offset": 156,
+          "field": "first_actual",
+          "source": "0"
+        },
+        {
+          "record_offset": 160,
+          "field": "pair_high_DWORD",
+          "source": "0"
+        },
+        {
+          "record_offset": 164,
+          "field": "source_expected",
+          "source": "0"
+        },
+        {
+          "record_offset": 168,
+          "field": "pair_high_DWORD",
+          "source": "0"
+        },
+        {
+          "record_offset": 172,
+          "field": "last_actual",
+          "source": "0"
+        },
+        {
+          "record_offset": 176,
+          "field": "pair_high_DWORD",
+          "source": "0"
+        },
+        {
+          "record_offset": 180,
+          "field": "destination_expected",
+          "source": "0"
+        },
+        {
+          "record_offset": 184,
+          "field": "pair_high_DWORD",
+          "source": "0"
+        },
+        {
+          "record_offset": 188,
+          "field": "first_conversion",
+          "source": "0"
+        },
+        {
+          "record_offset": 192,
+          "field": "source_conversion",
+          "source": "0"
+        },
+        {
+          "record_offset": 196,
+          "field": "last_conversion",
+          "source": "0"
+        },
+        {
+          "record_offset": 200,
+          "field": "destination_conversion",
+          "source": "0"
+        },
+        {
+          "record_offset": 204,
+          "field": "direct_return",
+          "source": "0"
+        },
+        {
+          "record_offset": 208,
+          "field": "cache_return",
+          "source": "0"
+        },
+        {
+          "record_offset": 212,
+          "field": "selection_return",
+          "source": "0"
+        },
+        {
+          "record_offset": 16,
+          "field": "reached",
+          "source": "3"
+        }
+      ],
+      "reached_stores": []
+    },
+    {
+      "start_rva": "0xe57a5",
+      "stores": [
+        {
+          "record_offset": 212,
+          "field": "selection_return",
+          "source": "mov eax,0"
+        },
+        {
+          "record_offset": 0,
+          "field": "valid",
+          "source": "1"
+        }
+      ],
+      "reached_stores": [
+        {
+          "offset": 51840,
+          "asm": "or ('edi', 497684),524288",
+          "bytes": "818f1498070000000800"
+        }
+      ]
+    }
+  ]
+}

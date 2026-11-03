@@ -1,0 +1,160 @@
+{
+  "stage": "PARTIAL_C1_NOT_READY_FOR_BUILD",
+  "time_amsterdam": "2026-10-20T19:34:13.617784+02:00",
+  "parsed": [
+    "bind_scheduler.py",
+    "build_candidate.py",
+    "check_sources_checkpoint.py",
+    "food_components.py",
+    "food_diagnostic.py",
+    "food_diagnostic_layout.py",
+    "input-pins.py",
+    "integration_base.py",
+    "native.py",
+    "path_diagnostic.py",
+    "path_diagnostic_layout.py",
+    "plan_layout.py",
+    "policy.py",
+    "prepare_sources.py",
+    "reader/food_failure_decoder.py",
+    "reader/h3_layout.py",
+    "reader/Lees-Uitbreiding.py",
+    "reader/original_core.py",
+    "reader/partial_diagnostic.py",
+    "reader/positive_reader.py",
+    "science_development.py",
+    "science_layout.py",
+    "science_model.py",
+    "science_result.py",
+    "union.py",
+    "wire_sources.py"
+  ],
+  "changed": [
+    "build_candidate.py",
+    "native.py",
+    "policy.py",
+    "integration_base.py",
+    "plan_layout.py",
+    "food_diagnostic_layout.py",
+    "reader/Lees-Uitbreiding.py",
+    "reader/partial_diagnostic.py",
+    "reader/food_failure_decoder.py"
+  ],
+  "unchanged": [
+    "input-pins.py",
+    "input-pins.json",
+    "bind_scheduler.py",
+    "union.py",
+    "science_model.py",
+    "science_layout.py",
+    "science_result.py",
+    "science_development.py",
+    "food_components.py",
+    "food_diagnostic.py",
+    "science-spatial-pins.json",
+    "preparation-manifest.json",
+    "release-v1.robotcom.backup.dll",
+    "reader/original_core.py",
+    "reader/h3_layout.py",
+    "reader/positive_reader.py",
+    "reader/participants.json"
+  ],
+  "record_offset": 497668,
+  "record_size": 256,
+  "state_size": 497924,
+  "Plan_size_unchanged": 497664,
+  "generation_offset_unchanged": 497664,
+  "declared_branchIDs": [
+    [
+      1,
+      902136,
+      "postcontext_nonzero"
+    ],
+    [
+      2,
+      902152,
+      "canary1_mismatch"
+    ],
+    [
+      3,
+      902168,
+      "canary2_mismatch"
+    ],
+    [
+      4,
+      902184,
+      "native_EAX_not1"
+    ],
+    [
+      5,
+      902198,
+      "pointer_null"
+    ],
+    [
+      6,
+      902216,
+      "count_lt1"
+    ],
+    [
+      7,
+      902240,
+      "count_gt_capacity"
+    ],
+    [
+      8,
+      902251,
+      "pointer_end_overflow"
+    ],
+    [
+      9,
+      902275,
+      "first_conversion0"
+    ],
+    [
+      10,
+      902302,
+      "source_conversion0"
+    ],
+    [
+      11,
+      902320,
+      "first_dword0_mismatch"
+    ],
+    [
+      12,
+      902338,
+      "first_dword4_mismatch"
+    ],
+    [
+      13,
+      902377,
+      "last_conversion0"
+    ],
+    [
+      14,
+      902404,
+      "destination_conversion0"
+    ],
+    [
+      15,
+      902422,
+      "last_dword0_mismatch"
+    ],
+    [
+      16,
+      902440,
+      "last_dword4_mismatch"
+    ]
+  ],
+  "source_only": true,
+  "candidate": false,
+  "emitter_invoked": false,
+  "native": false,
+  "remaining": [
+    "review logger/wiring actual argument/ordinal/query/latch semantics",
+    "reader ORDER phase/record decoder and stable complete read integration",
+    "builder manifest state/layout metadata and exact current proposal provenance",
+    "small logger/ABI fixture source",
+    "final source pins and complete C1 rootreview"
+  ]
+}

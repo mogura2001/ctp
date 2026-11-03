@@ -1,0 +1,594 @@
+[
+  {
+    "id": 1,
+    "name": "internal_z_nonzero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-1.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 2,
+    "name": "x_unsigned_ge_width",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-2.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 3,
+    "name": "y_unsigned_ge_height",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-3.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 4,
+    "name": "grid_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-4.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 5,
+    "name": "grid_1c_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-5.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 6,
+    "name": "layer0_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-6.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 7,
+    "name": "x_column_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-7.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 8,
+    "name": "cell_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-8.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 9,
+    "name": "cityhandle_nonzero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-9.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 10,
+    "name": "armycount_nonzero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-10.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 11,
+    "name": "terrain_unsigned_gt23",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-11.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 12,
+    "name": "terrain13",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-12.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 13,
+    "name": "terrain18",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-13.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 14,
+    "name": "terrain23",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-14.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 15,
+    "name": "center_terrain10",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-15.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 16,
+    "name": "center_terrain11",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-16.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 17,
+    "name": "center_terrain12",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-17.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 18,
+    "name": "center_terrain14",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-18.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 19,
+    "name": "center_terrain15",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-19.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 20,
+    "name": "center_terrain16",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-20.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 21,
+    "name": "center_terrain17",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-21.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 22,
+    "name": "terrain_db_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-22.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 23,
+    "name": "terrain_index_ge_count",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-23.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 24,
+    "name": "recordarray_null",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-24.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 25,
+    "name": "rawgood_gt4",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-25.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 26,
+    "name": "road_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-26.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 27,
+    "name": "irrigation_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-27.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 28,
+    "name": "mine_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-28.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 29,
+    "name": "river_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-29.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 30,
+    "name": "canal_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-30.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 31,
+    "name": "pregetter_high_nonzero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-31.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 32,
+    "name": "pregetter_low_negative",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 642,
+    "stage_file": "edge-32.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 33,
+    "name": "native_return_zero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 578,
+    "stage_file": "edge-33.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 34,
+    "name": "native_output_mismatch",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-34.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 35,
+    "name": "bonus_add_overflow",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 2562,
+    "stage_file": "edge-35.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 36,
+    "name": "center_high_nonzero",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 514,
+    "stage_file": "edge-36.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  },
+  {
+    "id": 37,
+    "name": "center_low_negative",
+    "synthetic_edge_injection": true,
+    "natural_guard_reachability_proven": false,
+    "eflags": 642,
+    "stage_file": "edge-37.stage.bin",
+    "expect": {
+      "return_EAX": 0,
+      "out40_zero": true,
+      "stdcall_pop": 20,
+      "instrument_GPR_EFLAGS_preserved": true,
+      "x87_unchanged": true,
+      "foreign_callbacks": 0
+    }
+  }
+]

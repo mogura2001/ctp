@@ -1,0 +1,134 @@
+{
+  "stage": "C1_SOURCE_ONLY_OFFLINE_NO_LIVE",
+  "unchanged_functions": 8,
+  "import_without_main": true,
+  "bindings": {
+    "release-v1": {
+      "ai_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "manifest_sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152",
+      "shared_state": false
+    },
+    "U30-40": {
+      "ai_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+      "manifest_sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152",
+      "shared_state": true
+    }
+  },
+  "scope_cases": [
+    {
+      "arm": "release-v1",
+      "name": "T0",
+      "accepted": true
+    },
+    {
+      "arm": "release-v1",
+      "name": "T100",
+      "accepted": true
+    },
+    {
+      "arm": "release-v1",
+      "name": "negative",
+      "accepted": false
+    },
+    {
+      "arm": "release-v1",
+      "name": "beyond",
+      "accepted": false
+    },
+    {
+      "arm": "release-v1",
+      "name": "wronghash",
+      "accepted": false
+    },
+    {
+      "arm": "release-v1",
+      "name": "wrongarm",
+      "accepted": false
+    },
+    {
+      "arm": "release-v1",
+      "name": "wrongpath",
+      "accepted": false
+    },
+    {
+      "arm": "release-v1",
+      "name": "wrong100nscreation",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "T0",
+      "accepted": true
+    },
+    {
+      "arm": "U30-40",
+      "name": "T100",
+      "accepted": true
+    },
+    {
+      "arm": "U30-40",
+      "name": "negative",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "beyond",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "wronghash",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "wrongarm",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "wrongpath",
+      "accepted": false
+    },
+    {
+      "arm": "U30-40",
+      "name": "wrong100nscreation",
+      "accepted": false
+    }
+  ],
+  "saved_T0_T26": [
+    {
+      "arm": "release-v1",
+      "turn": 0,
+      "path": "PROEVEN/doel3/20261012T122000/variant/T0.json",
+      "sha256": "989b0494d55d89f45515efc2ac94e9deaa5085f3f89f620dba5d5720a62b1997",
+      "scalar_binding": true
+    },
+    {
+      "arm": "release-v1",
+      "turn": 26,
+      "path": "PROEVEN/doel3/20261012T122000/variant/T26.json",
+      "sha256": "2bd396309011952ea37ab4743527bf4c1a91f3a1099881773b575da8fab209e6",
+      "scalar_binding": true
+    },
+    {
+      "arm": "U30-40",
+      "turn": 0,
+      "path": "PROEVEN/science-duurproef/20261022T114700/variant/T0.json",
+      "sha256": "335daa93e786cfbfa24823027194bfc68fb1d7d09af4ccbab1db1f2379d76e8d",
+      "scalar_binding": true
+    },
+    {
+      "arm": "U30-40",
+      "turn": 26,
+      "path": "PROEVEN/science-duurproef/20261022T114700/variant/T26.json",
+      "sha256": "ae46eaa6abc0a15fdfaffa6d763ba8a6ccf06392a63293a061dca18c62c8badf",
+      "scalar_binding": true
+    }
+  ],
+  "release_no_native_expansion_call": true,
+  "game": false,
+  "RPM": false,
+  "native": false,
+  "build": false
+}

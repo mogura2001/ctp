@@ -1,0 +1,122 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "mov edx,('esp', 4)",
+      "bytes": "8b942404000000"
+    },
+    {
+      "offset": 7,
+      "asm": "mov eax,('edx', 0)",
+      "bytes": "8b8200000000"
+    },
+    {
+      "offset": 13,
+      "asm": "mov ('ecx', 0),eax",
+      "bytes": "898100000000"
+    },
+    {
+      "offset": 19,
+      "asm": "mov eax,('edx', 4)",
+      "bytes": "8b8204000000"
+    },
+    {
+      "offset": 25,
+      "asm": "mov ('ecx', 4),eax",
+      "bytes": "898104000000"
+    },
+    {
+      "offset": 31,
+      "asm": "pushfd",
+      "bytes": "9c"
+    },
+    {
+      "offset": 32,
+      "asm": "pushad",
+      "bytes": "60"
+    },
+    {
+      "offset": 33,
+      "asm": "own mutation mode",
+      "bytes": "a100000000"
+    },
+    {
+      "offset": 38,
+      "asm": "test eax,eax",
+      "bytes": "85c0"
+    },
+    {
+      "offset": 40,
+      "asm": "jz mutation_done",
+      "bytes": "0f8425000000"
+    },
+    {
+      "offset": 46,
+      "asm": "owned absolute ptr or signed frame offset",
+      "bytes": "8b1500000000"
+    },
+    {
+      "offset": 52,
+      "asm": "cmp eax,2",
+      "bytes": "81f802000000"
+    },
+    {
+      "offset": 58,
+      "asm": "jne mutation_ptr_ready",
+      "bytes": "0f8508000000"
+    },
+    {
+      "offset": 64,
+      "asm": "add edx,ecx",
+      "bytes": "03d1"
+    },
+    {
+      "offset": 66,
+      "asm": "add edx,28",
+      "bytes": "81c21c000000"
+    },
+    {
+      "offset": 72,
+      "asm": "owned mutation value",
+      "bytes": "a100000000"
+    },
+    {
+      "offset": 77,
+      "asm": "mov ('edx', 0),eax",
+      "bytes": "898200000000"
+    },
+    {
+      "offset": 83,
+      "asm": "popad",
+      "bytes": "61"
+    },
+    {
+      "offset": 84,
+      "asm": "popfd",
+      "bytes": "9d"
+    },
+    {
+      "offset": 85,
+      "asm": "ret4",
+      "bytes": "c20400"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 34,
+      "context_offset": 2316
+    },
+    {
+      "at": 48,
+      "context_offset": 2304
+    },
+    {
+      "at": 73,
+      "context_offset": 2308
+    }
+  ],
+  "labels": {
+    "mutation_ptr_ready": 72,
+    "mutation_done": 83
+  }
+}

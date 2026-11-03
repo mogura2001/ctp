@@ -1,0 +1,61 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,112",
+      "bytes": "81ec70000000"
+    },
+    {
+      "offset": 12,
+      "asm": "own input state",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "mov eax,('ebx', 88)",
+      "bytes": "8b8358000000"
+    },
+    {
+      "offset": 23,
+      "asm": "mov ebx,('ebx', 0)",
+      "bytes": "8b9b00000000"
+    },
+    {
+      "offset": 29,
+      "asm": "jmp eax",
+      "bytes": "ffe0"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {}
+}

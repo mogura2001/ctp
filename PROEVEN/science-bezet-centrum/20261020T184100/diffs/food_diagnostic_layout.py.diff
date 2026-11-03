@@ -1,0 +1,21 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\food_diagnostic_layout.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\food_diagnostic_layout.py
+@@ -7,6 +7,9 @@
+ STAGING=-336
+ ACTIVE=-340
+ PLAN_SPILL=-344
++RETURN_SPILL=-348 # private four bytes; no overlap with stage, old locals or saved GPRs
++PRIVATE_RETURNS={0:'UNKNOWN',1:'VALID_FOOD',2:'BOUND_OCCUPIED_SCI_CENTER_SCOPE'}
++PRIVATE_CONTRACT_VERSION=2 # diagnostic record remains schema1, not a policy latch
+ # Offsets are record-relative; signedness is explicit in the decoder.
+ FIELDS={
+  'schema':(0,'I',0),'valid':(4,'I',None),'branch_id':(8,'I',None),'callkind':(12,'I',0),
+@@ -64,6 +67,8 @@
+  assert occupied==set(range(236)) and RECORD_OFFSET+RECORD_SIZE==512
+  assert set(range(276,512)).isdisjoint(range(276))
+  assert STAGING>=-FRAME_SIZE-12 and STAGING+RECORD_SIZE<=-96 and PLAN_SPILL>=-FRAME_SIZE-12
++ assert set(range(RETURN_SPILL,RETURN_SPILL+4)).isdisjoint(range(STAGING,STAGING+RECORD_SIZE))
++ assert RETURN_SPILL+4<=PLAN_SPILL and -FRAME_SIZE-12<=RETURN_SPILL
+  assert set(i for i,_,_ in BRANCHES)==set(range(1,38))
+  assert {b for _,_,b in FIELDS.values() if b is not None}==set(range(44))
+  return True

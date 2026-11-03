@@ -1,0 +1,25 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "record food-consumer reached in own context",
+      "bytes": "c7050000000001000000"
+    },
+    {
+      "offset": 10,
+      "asm": "actual science_done includes frstor and ret20",
+      "bytes": "ff2500000000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 2,
+      "context_offset": 2376
+    },
+    {
+      "at": 12,
+      "context_offset": 2380
+    }
+  ],
+  "labels": {}
+}

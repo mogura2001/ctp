@@ -1,0 +1,7 @@
+# Normale hosthelpers 26 oktober
+
+26 oktober 2026, Europe/Amsterdam. Voorbereid, niet uitgevoerd. Clone van23okt C5 met alleen eigen26okt C4/hostpaden, run_id, alias/archiefnamen, nieuwe bronhashbinding en .NET-mediacontrole E:/CDRom/IsReady/VolumeLabel CIV_CTP. Die mediawaarden zijn26okt16:01:09 CET daadwerkelijk alleen-lezen waargenomen; root bevestigde de CIM-CDROM-lijst buiten sandbox leeg. Geen game/bypass.
+
+Start/Close/Restore uitsluitend na eigen expliciete rootgates. Alle gates beginnen FALSE. Start bewaart de bestaande19config/118effectieve/29beforechecks, inventariseert en backupt ALLE dan actuele saves/archieven/profiel, wijzigt alleen kandidaatDLL+uniekealias, maakt volledig read-only CreateNew start/n0 en houdt180intro/300load aan. Geen automatische menu/loadinvoer. Close ??n normale eigen CloseMainWindow/10s; geen kill. Restore pas count0/exitproof, intacte backups, gesloten poorten, unieke dubbeleautosave+packagecopy en behoud van gebruikerswijzigingen. Legacy hostplan is historische planning, geen verse backup.
+
+SOURCE-PINS binden werkelijke C4imports/diskinputs/eigen nieuwehelpers plus bevroren provenance. Mutable gatefiles zijn uitgesloten. C5-PINS zijn deliveryhashes; gates worden bij rootvrijgave opnieuw concreet beoordeeld. Geen runtimefolder, backup, installatie, DLLbuild, nativefaulttest, RPM, GUI of spel door deze bronfase. Rootreview volgt; Doel1/1a/5 OPEN, Doel3 bestaande releaseeb6f. Geen nieuwe gameplayclaim.

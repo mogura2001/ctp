@@ -1,0 +1,15 @@
+# Laatste afrondingsroute T85–T100: alleen bronoverdracht
+
+Eén clone Afronding-85-100.ps1 van de oorspronkelijke parentPass122400, niet van de ingetrokken atomaire helper. Volledige helper.diff en PSparse0. Geen helper, GUI, RPM, input, installatie, build of nativefixture uitgevoerd.
+
+Alleen integerTurn85..100, U30-40, vaste parentpackage/host/run/PID40488/FILETIME134371535950250712/window395504. Legacy start.json blijft volledig read-only: steeds volledigeF9B6099E…hash en n_consumed84, overige start-/processchecks behouden. Geen Set-Content, File.Replace of tellerupdate op start.json. De oude herstelpoort moet gesloten blijven. Eigen ROOT-AFRONDING.json begint allowedFalse en both_preinput_stops_confirmedFalse; rootreview en expliciet openen vereist. De behouden parentcontrolguard moet eveneens door root geldig worden gehouden.
+
+T85 vereist beide gepinde incidenten en beide opgeslagen vóór-Keyrechecks state/instancegelijk aanT84. De bestaande parentreader levert vóór de nieuwe token nog één verse T84-afronding85-immediate.json in de parentarmmap, met alle zeven native83 en exactstate/instancegelijk. Eigen log staat in dit pakket. Beide oude failedtokens/helpers/logs/temp blijven onaangeroerd; hun hashes zijn als bewijs gepind waar aanwezig. De oorspronkelijke consolefout is een roottoolwaarneming, geen apart rawlog.
+
+Nieuwe invoerregistratie bestaat uitsluitend uit eigen CreateNew AFRONDING-Tn-consumed.json, inclusief run/PID/creation/turn/voorgaande-snapshotsha/helperhash en vorige eigen pass/tokenhash. Voor86..100 zijn parentT(n−1), eigen succesvolle vorige pass en eigen token verplicht, met exacte snapshot-/token-/helperhashes en identiteit. Bestaand huidig token/pass/snapshot/n-log blokkeert herhaling. Bereik16beurten plus exclusieve tokens begrenst deze route tot maximaal16invoeracties.
+
+Alle overige oorspronkelijke sourcepins, Budget, OwnState, CheckSnapshot, exacte loadedchecks, één gewone Key n, maximaal30s-poll en zeven rondes+1 blijven. Eigen/parentpins en F9B-metadata worden vlak vóórKey opnieuw gecontroleerd. Geen inputretry of nieuwe herstelroute bij fout. Na geaccepteerde parentTn.json schrijft de helper een eigen immutable CreateNew AFRONDING-Tn-pass.json met success, exacte geaccepteerde snapshothash, token- en helperhash; de volgende beurt vereist dat succes. ParentTn-n.txt en gewone polls blijven in de parentarmmap. Er wordt geen parentTn-pass.json door deze route geschreven.
+
+Proefklok blijft vanaf16:39:55 lopen,4500s totaal/no-new-n4380s, max100. Legacyclose.n_consumed84 blijft eerlijk zichtbaar. Alleen bij volledig gemeten succes zijn84oude+16nieuwe invoerlogs en100bewezen natuurlijke stappen aanwezig;102tokens omvatten beide vóór-Keymislukkingen. Geen vlekkeloos100-token- of legacy-n100-claim.
+
+Controle beperkt tot bron/diff/pins/parser. Rootreview is de laatste poort vóór uitvoering; bij enige fout geen verdere helper en normaleclose/herstel volgens bestaand plan, laatste geldigeTlast rapporteren. Controlearm blijft slechts handmatigT0/T100; geen verzonnen tussenmetingen of gepaarde eerste30/40. Doel1/1a blijven OPEN. Uitvoerder stopt na overdracht; pc blijft aan.

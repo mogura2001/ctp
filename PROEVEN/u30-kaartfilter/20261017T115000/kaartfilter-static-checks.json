@@ -1,0 +1,25 @@
+{
+  "stage": "ACTUAL_CANDIDATE_STATIC_SEMANTICS_ONLY",
+  "candidate_sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+  "checks": {
+    "four_dword_zero_writes": true,
+    "nodes_candidates_guards_before_keys": true,
+    "key_before_original_external_ret8_gate": true,
+    "no_caller_stack_adjust_after_gate": true,
+    "false_excluded_before_minimum": true,
+    "known_count_prefix_limit_and_cutoff": true,
+    "store_minus_one_guard_and_prefix_increment": true,
+    "consumer_full_bounds_and_order_before_scale": true,
+    "prefix_count_loop_only": true,
+    "h3_budget_and_unknown_fallback_retained": true,
+    "no_duplicate_gate_or_source_count_cutoff_in_consumer": true,
+    "world_slot28_real_engine_pointer_bound_before_prefix": true,
+    "mismatch_reasons_and_ret4_nonvolatile_epilogues_no_x87_added": true,
+    "entire_internal_H3_and_B2_unchanged": true
+  },
+  "gate_call_address": "0x200da93c",
+  "key_call_address": "0x200da91d",
+  "native_calls": 0,
+  "rpm": 0,
+  "gameplay_acceptance": false
+}

@@ -1,0 +1,9 @@
+# Voortgang ontwerper SELECT25
+
+20 oktober 2026, 19:20:39+02:00 Europe/Amsterdam — gestart. Fase A SCIENCE-SELECTIE-25 is door hoofdagent geaccepteerd; fase B uitsluitend minimale eerstefoutdiagnose. Ownership dit bestand en ONTWERP/SCIENCE-SELECTIE-25-DIAGNOSE.md. Geen code-, native-, RPM-, binary- of spelwerk.
+
+19:21:26+02:00 — protocol, doelen en volledige A-overdracht gelezen; gerichte bronlezing van path/selection/cache, builder en reader afgerond. Huidige oorzaak is informatieverlies tussen direct_path0 en wholepass25; geen bewezen codefout. Expliciete kleine state-uitbreiding wordt uitgewerkt, met behoud van bestaand generationwoord en alle bestaande buffers. Nog open: compacte exacte recordindeling en uitvoerings-/acceptatiepoort. Budgetcontrole 19:20:54: vijfuur32%, week88%, vers/ok. Geen blokkade; externe raw padentrybytes krijgen geen nieuwe dereference.
+
+19:23:34+02:00 — SELECT25-B schriftelijk gereed, circa900woorden. ONTWERP/SCIENCE-SELECTIE-25-DIAGNOSE.md bevat unieke16edges, exacte256-byteindeling/binding/reachedbits, +256RW na generation zonder Planverschuiving, private reader-/builderbounds, behoud van beslissingen/ABI/free en begrensde bron→dubbelebuild→rootnative→éénvasteT0/n/T1-route. Hoofdagent accepteerde gerichte opslagkeuze en beperking tot bestaande canonicaloutputs; geen nieuwe externe pathentry-read. Layoutnagerekend en tekst gecontroleerd; geen implementatie of test uitgevoerd.
+
+Acceptatiestatus: A-overdracht AF; B gereed ter volledige rootreview/uitleg vóór C. Technisch/host OPEN. Doel1/1a en volledigeDoel5 OPEN, Doel3 AF/ongewijzigd. Volgende concrete oplevering na rootreview: nieuw C1-bronpakket op exact e45313fd/2077ac8a, geen nieuwe beleidskeuze vereist. Geen blokkade. Budget19:23:34 vers vijf27/week87; ruim boven stopgrenzen. Ontwerperwerk hier afgerond en gestopt, geen achtergrondrun/taak; pc blijft aan.

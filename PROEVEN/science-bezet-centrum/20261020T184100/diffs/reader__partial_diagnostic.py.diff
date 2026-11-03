@@ -1,0 +1,50 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\reader\partial_diagnostic.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\reader\partial_diagnostic.py
+@@ -43,6 +43,11 @@
+ def science(raw):
+  """Raw schema decode survives invalid selection; existing decoder is separate."""
+  header={name:(struct.unpack_from('<d',raw,off)[0] if name=='actual_R' else struct.unpack_from('<hhhH',raw,off) if name=='center_key' else struct.unpack_from('<q' if size==8 else '<i',raw,off)[0]) for name,(off,size) in layout.HEADER.items()}
++ scope_excluded=header['reason']==layout.REASON_OCCUPIED_CENTER_SCOPE
++ if scope_excluded:
++  raw_header=safe(dict(header))
++  for name in ('center_food_i64','S3_current_i64','margin3_x2_i64','crime_numerator_i64','crime_denominator_i64','center_key'):header[name]=None
++  return dict(header=safe(header),raw_header_initialized_fields=raw_header,tiles=[],raw_header_decode_status='DECODED',bounded_tile_decode_status='NOT_REACHED_SCOPE_EXCLUSION',attribution_status='OWN_BYTES_NOT_PHASE_PROOF',coverage_positive_calculation_allowed=False,food_analysis_completed=False,food_observation_status='NOT_MEASURED_SCOPE_EXCLUSION',scope_exclusion=scope_header(raw),existing_decoder_status='DECODED',existing_decoder=safe(science_result.decode(raw)),actual_R_rawbits_le=raw[64:72].hex(),raw_food_fields_status='INITIALIZED_BYTES_NOT_MEASUREMENTS')
+  count=header['open_count'];rows=[]
+  if 0<=count<=layout.MAX_TILES:
+   for index in range(count):
+@@ -53,6 +58,14 @@
+  try:result.update(existing_decoder_status='DECODED',existing_decoder=safe(science_result.decode(raw)))
+  except Exception as error:result.update(existing_decoder_status='ERROR',existing_decoder_error=type(error).__name__+': '+str(error))
+  return result
++
++def scope_header(raw):
++ """128 own header bytes only; no food zero/margin or selection inference."""
++ if len(raw)<128:raise ValueError('complete SCI header required')
++ reason=integer(raw,4)
++ if reason!=layout.REASON_OCCUPIED_CENTER_SCOPE:return None
++ good=(integer(raw,0),integer(raw,8),integer(raw,12),integer(raw,24),[integer(raw,o) for o in (28,32,36)],integer(raw,112))==(1,1,3,0,[-1,-1,-1],1)
++ return dict(status='SCOPE_EXCLUDED_OCCUPIED_CENTER' if good else 'INCONSISTENT_SCOPE_HEADER',consistent=good,reason=reason,reason_name='OCCUPIED_CENTER_SCOPE',coverage_meaning='FULLY_DETERMINED_CONSERVATIVE_SCOPE_EXCLUSION',food_analysis_completed=False,food=None,margins=None,canonical_center_measured=False,selected=False,certified=False,gameplay_improvement_proven=False,raw_header_hex=raw[:128].hex())
+ 
+ def prepared(slot,raw):
+  """Same current-only invariants as pinned positive_reader, with no selection."""
+@@ -111,10 +124,19 @@
+   if earlier is not None and not 0<=earlier<prefix:raise ValueError('earlier prefix index invalid')
+   last=classified-1 if 1<=classified<=prefix else None
+   results={}
+-  for index in dict.fromkeys(i for i in (earlier,last) if i is not None):
++  for index in dict.fromkeys(i for i in (earlier,last,0 if classified>0 else None) if i is not None):
+    raw,obj=table(layout.SCIENCE_RESULTS,2048,index,64,2048,'ScienceResult');obj.update(decode_status='DECODED',decode=science(raw));results[index]=raw
+   result['earlier_science_example']=prepared(slot0,results[earlier]) if earlier is not None else dict(status='NIET_OBSERVEERD')
+   result['earlier_science_result_index']=earlier;result['last_started_science_result_index']=last
++  result['first_science_result']=science(results[0]) if 0 in results else None
++  # The excluded center need not be the last started center anymore. Read at
++  # most64 own headers; no foreign pointer or unbounded tile scan is added.
++  result['scope_excluded_centers']=[]
++  for index in range(classified):
++   if index in results:raw=results[index][:128]
++   else:raw,obj=table(layout.SCIENCE_RESULTS,2048,index,64,128,'SCI_scope_header')
++   finding=scope_header(raw)
++   if finding is not None:result['scope_excluded_centers'].append(dict(prefix_index=index,**finding))
+   result['slot0_reused']=dict(index=0,offset=0x40600,length=len(slot0),rawhex=slot0.hex(),provenance=PROVENANCE,decode_status='DECODED',attribution_status='EARLIER_COMMITTED_ROLE_HEADER' if slots>0 else 'NOT_PROVEN_COMMITTED',decode=slot_header(slot0))
+   work=None
+   if slots<64:

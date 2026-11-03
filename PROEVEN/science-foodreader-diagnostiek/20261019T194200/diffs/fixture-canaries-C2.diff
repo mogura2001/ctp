@@ -1,0 +1,27 @@
+--- C1 reviewed fixture_sources.py
++++ C2 fixture_sources.py
+@@ -53,16 +53,21 @@
+  ptr(r,f,'stage source','8b35',4);r.lea('edi',m('ebp',STAGING));r.mov('ecx',59);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5')
+  ptr(r,f,'own Plan','a1',0);r.mov(m('ebp',PLAN_SPILL),'eax');r.mov(m('ebp',ACTIVE),1);r.alu('add','eax',144);r.mov(m('ebp',STAGING+224),'eax')
+  r.mov('eax',m('ebp',20));r.mov(m('ebp',STAGING+220),'eax');r.mov('eax',m('ebp',8));r.mov(m('ebp',STAGING+60),'eax')
++ r.mov(m('ebp',-348),0x5aa55aa5);r.mov(m('ebp',-96),0x5aa55aa5)
+  ptr(r,f,'expected entry ESP','8925',24);ptr(r,f,'expected entry EBP','892d',28)
+  for reg,value in (('eax',0x12345678),('ecx',0x23456789),('edx',0x3456789a),('ebx',0x456789ab),('esi',0x56789abc)):r.mov(reg,value)
+  r.mov('edi',m('ebp',20));ptr(r,f,'synthetic controlled EFLAGS','ff35',20);r.op('popfd',b'\x9d');ptr(r,f,'jump emitted unique failure landing','ff25',8)
+  edge=finish(r,f)
+- r,f=start();r.op('pushfd',b'\x9c');r.op('pushad',b'\x60');r.mov('esi','esp');ptr(r,f,'observed GPR/flags own buffer','bf',0x800);r.mov('ecx',9);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5');r.op('popad',b'\x61');r.op('popfd',b'\x9d');ptr(r,f,'continue original food_bad wipe','ff25',12)
++ r,f=start();r.op('pushfd',b'\x9c');r.op('pushad',b'\x60');r.mov('esi','esp');ptr(r,f,'observed GPR/flags own buffer','bf',0x800);r.mov('ecx',9);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5')
++ r.mov('eax',m('ebp',-348));ptr(r,f,'private lower frame canary','a3',0x824);r.mov('eax',m('ebp',-96));ptr(r,f,'private upper frame canary','a3',0x828)
++ r.op('popad',b'\x61');r.op('popfd',b'\x9d');ptr(r,f,'continue original food_bad wipe','ff25',12)
+  observer=finish(r,f)
+- r,f=start();r.prologue(560)
++ r,f=start();r.prologue(560);r.mov(m('ebp',-188),0x5aa55aa5);r.mov(m('ebp',-144),0x5aa55aa5)
+  r.push(m('ebp',24));r.lea('eax',m('ebp',-184));r.push('eax');r.push(m('ebp',16));r.push(m('ebp',12));r.push(m('ebp',8))
+  ptr(r,f,'pinned SCI return address in own image','ff35',32);ptr(r,f,'real clone or original shared reader','ff25',36)
+- r.label('continuation');r.mov(m('ebp',-16),'eax');r.lea('esi',m('ebp',-184));r.mov('edi',m('ebp',20));r.mov('ecx',10);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5');r.mov('eax',m('ebp',-16));r.epilogue(560,20)
++ r.label('continuation');r.mov(m('ebp',-16),'eax')
++ r.mov('eax',m('ebp',-188));ptr(r,f,'SCI local out40 lower canary','a3',0x830);r.mov('eax',m('ebp',-144));ptr(r,f,'SCI local out40 upper canary','a3',0x834)
++ r.lea('esi',m('ebp',-184));r.mov('edi',m('ebp',20));r.mov('ecx',10);r.op('cld',b'\xfc');r.op('rep movsd',b'\xf3\xa5');r.mov('eax',m('ebp',-16));r.epilogue(560,20)
+  normal=finish(r,f)
+  return dict(edge=edge,observer=observer,normal=normal)
+ 

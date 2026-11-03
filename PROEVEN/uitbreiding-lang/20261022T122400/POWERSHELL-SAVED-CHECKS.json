@@ -1,0 +1,33 @@
+﻿{
+    "checks":  [
+                   {
+                       "saved_scalar_fixture_accepted":  true,
+                       "arm":  "release-v1",
+                       "turn":  0
+                   },
+                   {
+                       "saved_scalar_fixture_accepted":  true,
+                       "arm":  "release-v1",
+                       "turn":  26
+                   },
+                   {
+                       "arm":  "release-v1",
+                       "required_false_rejected":  true
+                   },
+                   {
+                       "saved_scalar_fixture_accepted":  true,
+                       "arm":  "U30-40",
+                       "turn":  0
+                   },
+                   {
+                       "saved_scalar_fixture_accepted":  true,
+                       "arm":  "U30-40",
+                       "turn":  26
+                   },
+                   {
+                       "arm":  "U30-40",
+                       "required_false_rejected":  true
+                   }
+               ],
+    "scope":  "Offline extracted CheckSnapshot only; legacy release names mapped to current names and explicit candidate-only false; original snapshot metadata gate; no runtime/main/GUI/RPM"
+}

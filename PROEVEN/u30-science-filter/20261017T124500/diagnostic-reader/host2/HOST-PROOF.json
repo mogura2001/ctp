@@ -1,0 +1,224 @@
+{
+  "stage": "PREPARED_CURRENT_SCIENCE_NOW_CONSISTENT_LAST_SCI_REASON11_NO_SELECTION",
+  "at_utc": "2026-10-19T17:29:56.823862+00:00",
+  "same_instance": true,
+  "normal_ai_count": 7,
+  "n_count": 1,
+  "samples": {
+    "0": {
+      "file_sha256": "d4aafe564fb1de4be81adc8e83f433e4a7ef12c3611ade6edbdc8695c692179c",
+      "instance": {
+        "pid": 3868,
+        "creationtime_filetime": 134369040824090380,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "all_loaded_checks_true": true,
+      "rounds": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "diagnostic_attribution": "NOT_INITIALIZED",
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false
+    },
+    "1": {
+      "file_sha256": "4d0b49a61ed66c63a74e1cd342e695fd8b32505bb5a7dce675bf384d2a1bb5ae",
+      "instance": {
+        "pid": 3868,
+        "creationtime_filetime": 134369040824090380,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "all_loaded_checks_true": true,
+      "rounds": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "diagnostic_attribution": "BOUND_LAST_CIV_GENERATION",
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false
+    }
+  },
+  "menu_frame_seconds": 180.7736086,
+  "menu_visually_confirmed": true,
+  "earlier_science_example": {
+    "status": "CONSISTENT_PREPARED_CONDITIONAL_SCIENCE_NOW_EXAMPLE",
+    "selected": false,
+    "certified": false,
+    "future_food_credit": false,
+    "conditional_new_city_model": true,
+    "keys": [
+      [
+        27,
+        45,
+        0
+      ],
+      [
+        29,
+        42,
+        0
+      ],
+      [
+        27,
+        43,
+        0
+      ],
+      [
+        28,
+        42,
+        0
+      ]
+    ],
+    "current_scenario": {
+      "selected_indices": [
+        1,
+        2,
+        0
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "k": 1,
+          "S_i64": 25,
+          "demand_x2_i64": 15,
+          "margin_x2_i64": 35,
+          "crime_numerator_i64": 35,
+          "crime_denominator_i64": 50
+        },
+        {
+          "n": 2,
+          "k": 2,
+          "S_i64": 30,
+          "demand_x2_i64": 30,
+          "margin_x2_i64": 30,
+          "crime_numerator_i64": 30,
+          "crime_denominator_i64": 60
+        },
+        {
+          "n": 3,
+          "k": 3,
+          "S_i64": 35,
+          "demand_x2_i64": 45,
+          "margin_x2_i64": 25,
+          "crime_numerator_i64": 25,
+          "crime_denominator_i64": 70
+        }
+      ],
+      "strict_positive_n1_n2_n3": true,
+      "minimum_crime_fraction": [
+        5,
+        14
+      ],
+      "development_state_name": "PENDING",
+      "conditional_only": true
+    },
+    "H3_status": 1,
+    "H3_model": 1,
+    "H2_status": 1,
+    "H2_count": 20,
+    "H2_mountains": 0,
+    "three_mountains_absent": true
+  },
+  "last_SCI_guard": {
+    "header": {
+      "location_state": 0,
+      "reason": 11,
+      "model": 1,
+      "conditions": 3,
+      "open_count": 20,
+      "potential_count": 0,
+      "certifiable_count": 0,
+      "selected0": -1,
+      "selected1": -1,
+      "selected2": -1,
+      "current_unknownmask": 0,
+      "spatial_unknownmask": 0,
+      "spatial_pendingmask": 0,
+      "development_unknownmask": 0,
+      "ration_stand": -1,
+      "development_state": 0,
+      "actual_R": 0.75,
+      "center_food_i64": 0,
+      "S3_current_i64": 0,
+      "margin3_x2_i64": 0,
+      "crime_numerator_i64": 0,
+      "crime_denominator_i64": 0,
+      "coverage": 0,
+      "center_key": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "h2_status": 1
+    },
+    "SCI_calls_match_classified": true,
+    "invocation_attribution_status": "ALL_CLASSIFIED_CENTERS_ENTERED_SCI",
+    "possible_native_coverage_guard": "200dcd0d..200dcd17",
+    "exact_failure_branch_proven": false,
+    "getter_cause_proven": false
+  },
+  "next_ORDER": {
+    "prefix_index": 4,
+    "status": "VALID",
+    "branch_execution_proven": false
+  },
+  "external_attribution": {
+    "slot0_matches_CAPTURE": true,
+    "last_external_center": [
+      28,
+      73,
+      0
+    ],
+    "work_external_matches_CAPTURE": null,
+    "work_external_phase_status": "NOT_WRITTEN_UNTIL_CHOOSE_AND_CANONICAL_COMMIT",
+    "canonical_and_external_are_distinct_coordinate_systems": true
+  },
+  "Gcert": 0,
+  "desired": 5,
+  "Dorig": 5,
+  "reason": 23,
+  "extra_settler_demand_proven": false,
+  "gameplay_goal_complete": false,
+  "close": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-19T17:27:32.7927258Z",
+    "elapsed_seconds": 370.3896936,
+    "close_requested": true,
+    "exited": true,
+    "n_consumed": 1,
+    "reason": "ONE_T1_DIAGNOSIS_COMPLETE"
+  },
+  "restore": {
+    "state": "T1_DIAGNOSIS_MEASURED_RESTORED",
+    "at_utc": "2026-10-19T17:28:19.601611+00:00",
+    "restored_hashes": 29,
+    "existing_archives_preserved": true,
+    "game_count_before_restore": 0,
+    "default_autosave_changed": true,
+    "autosave_after_sha256": "e6867c6ba8603d4700e4ae932175020988f32e484d11df0c2b53cd64f0f2f7c4",
+    "autosave_archive": "CTP-proef\\ctp_program\\ctp\\save\\games\\Julius\\U30-SCIENCE-DIAGNOSTIC-HOST2-AUTOSAVE",
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "gate_allowed": false,
+    "n_consumed": 1,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+  }
+}

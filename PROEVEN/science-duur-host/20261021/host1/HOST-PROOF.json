@@ -1,0 +1,38 @@
+{
+  "status": "STOPPED_BEFORE_FIRST_TURN_NORMAL_CLOSE_RESTORED",
+  "accepted_snapshots": 1,
+  "completed_natural_turns": 0,
+  "consumed_tokens": 1,
+  "input_success_proven": false,
+  "input_rejected_before_key_action": true,
+  "error": "Capture wait parameters require Action Capture.",
+  "source_guard": "PROEVEN/Bedien-CTP.ps1:21",
+  "duration_comparison_complete": false,
+  "close": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-21T13:05:13.3867775Z",
+    "elapsed_seconds": 327.7515113,
+    "close_requested": true,
+    "n_consumed": 1,
+    "exited": true
+  },
+  "restore": {
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+    "default_autosave_changed": false,
+    "at_utc": "2026-10-21T13:05:15.4018886Z",
+    "game_count_before_restore": 0,
+    "restored_hashes": 29,
+    "state": "RESTORED",
+    "autosave_after_sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+    "autosave_archive": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-DUUR-20261021-HOST1-AUTOSAVE",
+    "gate_allowed": false,
+    "existing_archives_preserved": 6
+  },
+  "T0_sha256": "1b4849701e60fcaa4891e1e620fca78a54657e8cfd284126fc94d7c67a09d587",
+  "consumed_token_sha256": "e367aa70b8e1b64f0bb132c12e79931beca0afd1218dce1975de75acb5cd274d",
+  "source_pins_sha256": "2ecc3bbbd06567abf0e6df9016d4f8d56eba99be3a378ec2815581fc60ae4e04",
+  "screen_sha256": "3e30d15ddb6b8503934b660c9ff6891b5e29f7eddbcd405b7eefa8deb5feafad",
+  "next": "Correct only unsupported Key parameters in a new package, preserve this attempt, no automatic retry or further n."
+}

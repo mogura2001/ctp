@@ -1,0 +1,220 @@
+{
+  "stage": "CONTROL_T0_T1_T5_T10_MEASURED_REASON42_REVIEW_PENDING",
+  "at_utc": "2026-10-19T16:45:56.116309+00:00",
+  "candidate_sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+  "fixed_T0_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+  "same_instance": true,
+  "n_count": 10,
+  "normal_ai_count": 7,
+  "samples": {
+    "0": {
+      "file_sha256": "1315a7e16ddcf759509fe78da97dc5c3124b98e3c434b2468f241a48673c6079",
+      "instance": {
+        "pid": 27936,
+        "creationtime_filetime": 134369013660313247,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false,
+      "rounds": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "city_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "shared": {
+        "status": 0,
+        "reason": 0,
+        "context": 0,
+        "generation": 0,
+        "civ": 0,
+        "Dorig": 0,
+        "Gcert": 0,
+        "desired": 0,
+        "slots": 0,
+        "known_count": 0,
+        "h3calls": 0,
+        "engine_count": 0
+      }
+    },
+    "1": {
+      "file_sha256": "51a33272384ba2c0a704d34111edc9a38b0abb4701addc60c5cd1a1791061999",
+      "instance": {
+        "pid": 27936,
+        "creationtime_filetime": 134369013660313247,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false,
+      "rounds": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "city_counts": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "shared": {
+        "status": 5,
+        "reason": 0,
+        "context": 1,
+        "generation": 7,
+        "civ": 8,
+        "Dorig": 5,
+        "Gcert": 0,
+        "desired": 5,
+        "slots": 0,
+        "known_count": 8,
+        "h3calls": 8,
+        "engine_count": 0
+      }
+    },
+    "5": {
+      "file_sha256": "fcf5208d437616a0c57ab683bea798fe5cb91790a4b8af853068aaf05c4a859d",
+      "instance": {
+        "pid": 27936,
+        "creationtime_filetime": 134369013660313247,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false,
+      "rounds": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "city_counts": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "shared": {
+        "status": 5,
+        "reason": 0,
+        "context": 1,
+        "generation": 35,
+        "civ": 8,
+        "Dorig": 5,
+        "Gcert": 0,
+        "desired": 5,
+        "slots": 0,
+        "known_count": 0,
+        "h3calls": 0,
+        "engine_count": 2
+      }
+    },
+    "10": {
+      "file_sha256": "ab690b2324f1c92999e9fd05ff76686b10b09cb4b6061bea7028df72888ce422",
+      "instance": {
+        "pid": 27936,
+        "creationtime_filetime": 134369013660313247,
+        "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+        "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+        "engine_base": 4194304,
+        "ai_base": 536870912
+      },
+      "stable_twice": true,
+      "save_identity_proven": false,
+      "atomic_snapshot_proven": false,
+      "rounds": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "city_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "shared": {
+        "status": 5,
+        "reason": 42,
+        "context": 1,
+        "generation": 70,
+        "civ": 8,
+        "Dorig": 5,
+        "Gcert": 0,
+        "desired": 5,
+        "slots": 0,
+        "known_count": 0,
+        "h3calls": 0,
+        "engine_count": 2
+      }
+    }
+  },
+  "close": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-19T16:44:41.6808282Z",
+    "elapsed_seconds": 515.6577308999999,
+    "close_requested": true,
+    "n_consumed": 10,
+    "exited": true
+  },
+  "restore": {
+    "state": "T10_MEASURED_REASON42_PENDING_REVIEW_RESTORED",
+    "at_utc": "2026-10-19T16:45:19.185364+00:00",
+    "restored_hashes": 29,
+    "game_count_before_restore": 0,
+    "default_autosave_changed": true,
+    "autosave_after_sha256": "e2c7fb236a26653880cbaaf13c06c0d0ab7562efddebbd216b5bbb7065cd836f",
+    "autosave_archive": "CTP-proef\\ctp_program\\ctp\\save\\games\\Julius\\U30-SCIENCE-CONTROL-HOST3-AUTOSAVE",
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "gate_allowed": false,
+    "n_consumed": 10,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+  },
+  "only_last_shared_pass": true,
+  "all_seven_certificates_proven": false,
+  "expansion_goal_complete": false
+}

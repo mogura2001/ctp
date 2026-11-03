@@ -1,0 +1,20 @@
+{
+  "stage": "C0_OFFLINE_ONLY_NO_PROCESS",
+  "at_utc": "2026-10-29T14:23:55.764990+00:00",
+  "checks": [
+    "within buildtime limit",
+    "above buildtime limit",
+    "tie crosses threshold",
+    "tie entirely below threshold",
+    "stock exception bypasses tie",
+    "stock ratio below five",
+    "production below thirty",
+    "busy incumbent blocks now",
+    "busy incumbent leaves later production possibility",
+    "nonzero cache flag blocks now",
+    "production below one uses cost only"
+  ],
+  "runtime_chance": "NOT_MEASURED",
+  "new_queue": "NOT_MEASURED",
+  "admission": "UNKNOWN"
+}

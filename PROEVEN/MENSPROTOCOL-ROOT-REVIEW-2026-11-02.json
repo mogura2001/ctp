@@ -1,0 +1,57 @@
+{
+  "reviewed_at_utc": "2026-11-02T17:30:51.524673+00:00",
+  "status": "ACCEPTED_DEFAULT_RESEARCH_OK_AND_FIXED_QUEUE_UI",
+  "source_sha256": "522b829d517b1d9e7d0f96f13632118aaeee59c70b31655ac54c8950bd819b9e",
+  "snapshots": {
+    "mensprotocol-20261102-before.json": "379b306d75fb6eb9747b095e2999900cc3c6a2dae9fc9e574c896a2aa7bb693d",
+    "mensprotocol-20261102-after.json": "26ad1e77b0d999a1ab685c0b6a6c21efa1c8f27ab8a25d61783fa9219df5dc9f"
+  },
+  "all7_native_rounds": [
+    2,
+    3
+  ],
+  "same_instance": {
+    "pid": 20832,
+    "creationtime_filetime": 134381134104178035,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "stable_twice_both": true,
+  "N_sent": 1,
+  "N2_sent": false,
+  "research_ok_once": true,
+  "no_entry_selection": true,
+  "root_viewed_images": {
+    "research-visible.png": "46a6bad55ca2ae029126eddd9636fb66bf83ccb0716ce65e52c2d3a9c62dae55",
+    "research-ok.png": "a7ed50f6278df9a4acb7c30c7a9a12e96db46656e7e9defd65982169c266c805",
+    "screens-after.png": "48ff3a4e5387a87c43935054cea15ad683ea45f08bb533241767726cfc3dc864",
+    "city-after.png": "04e09ebe5a4017588570334e9944ab42e8cbc8877d3283a4c3f86a9df94df46b"
+  },
+  "evidence_scope": {
+    "research_before": "Domestication complete; Stone Working selected and CHANGE TO matches",
+    "research_after": "modal closed; screens-after.png shows3800BC and StoneWorking6turns",
+    "research_ok_image_alone": "partial redraw/noHUD; use screens-after.png for researchname",
+    "queue_after": "city-after.png shows Rome Warrior2turns vs3before",
+    "internal_entrench_flag": "NOT_PROVEN",
+    "T100_survival": "NOT_TESTED"
+  },
+  "restoration": {
+    "at_utc": "2026-11-02T17:25:51.4406144Z",
+    "restored_pins": 162,
+    "aidata": 118,
+    "saves": 38,
+    "alias_removed": true,
+    "archived_changes": [
+      {
+        "after_sha256": "a178a686d6182241c554527567629a79cf7bfba579cd6a3d04d0f0420c7a3abe",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius"
+      }
+    ],
+    "ctp_processes": 0,
+    "pc_left_on": true
+  },
+  "full_project_complete": false,
+  "pc_left_on": true
+}

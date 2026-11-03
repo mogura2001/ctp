@@ -1,0 +1,11 @@
+--- PROEVEN/pad-lokaal-onbekend/20261026-host/Pass-Duur.ps1
++++ PROEVEN/pad-lokaal-onbekend/20261026b-host/Pass-Duur.ps1
+@@ -23,7 +23,7 @@
+ }
+ function OwnState {
+  $media=[IO.DriveInfo]::new('E:')
+- if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CIV_CTP'){throw 'Ordinary CD media unavailable'}
++ if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CCTP'){throw 'Ordinary CD media unavailable'}
+  if((Elapsed) -ge 4500){throw 'Hard4500s deadline; no turn acceptance'}
+  $rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'")
+  if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $gate.pid -or $rows[0].ExecutablePath -cne $exe -or ([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms){throw 'Exact unique own process identity changed'}

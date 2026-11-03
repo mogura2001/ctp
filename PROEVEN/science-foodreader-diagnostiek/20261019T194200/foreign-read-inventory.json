@@ -1,0 +1,5006 @@
+[
+  {
+    "va": "0x200e084c",
+    "bytes": "81bf2400000001000000",
+    "instruction": "cmp dword ptr [edi + 0x24], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e085c",
+    "bytes": "81bf2800000001000000",
+    "instruction": "cmp dword ptr [edi + 0x28], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e086c",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e087a",
+    "bytes": "3b8700880700",
+    "instruction": "cmp eax, dword ptr [edi + 0x78800]",
+    "base": "edi",
+    "index": null,
+    "displacement": 493568,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0886",
+    "bytes": "8b9720000000",
+    "instruction": "mov edx, dword ptr [edi + 0x20]",
+    "base": "edi",
+    "index": null,
+    "displacement": 32,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0894",
+    "bytes": "3b9704880700",
+    "instruction": "cmp edx, dword ptr [edi + 0x78804]",
+    "base": "edi",
+    "index": null,
+    "displacement": 493572,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e08a0",
+    "bytes": "8b8fdc000000",
+    "instruction": "mov ecx, dword ptr [edi + 0xdc]",
+    "base": "edi",
+    "index": null,
+    "displacement": 220,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e08be",
+    "bytes": "3b8ff0000000",
+    "instruction": "cmp ecx, dword ptr [edi + 0xf0]",
+    "base": "edi",
+    "index": null,
+    "displacement": 240,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e08ca",
+    "bytes": "8b9fe0000000",
+    "instruction": "mov ebx, dword ptr [edi + 0xe0]",
+    "base": "edi",
+    "index": null,
+    "displacement": 224,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e08ec",
+    "bytes": "8b9f00010000",
+    "instruction": "mov ebx, dword ptr [edi + 0x100]",
+    "base": "edi",
+    "index": null,
+    "displacement": 256,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0916",
+    "bytes": "3b9d10000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 0x10]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 16,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0922",
+    "bytes": "8b9f70000000",
+    "instruction": "mov ebx, dword ptr [edi + 0x70]",
+    "base": "edi",
+    "index": null,
+    "displacement": 112,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0928",
+    "bytes": "3b9d08000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 8,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0934",
+    "bytes": "8b9d00000000",
+    "instruction": "mov ebx, dword ptr [ebp]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 0,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0940",
+    "bytes": "3b9d14000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e094c",
+    "bytes": "81bd1800000001000000",
+    "instruction": "cmp dword ptr [ebp + 0x18], 1",
+    "base": "ebp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e095c",
+    "bytes": "81bd1800000000000000",
+    "instruction": "cmp dword ptr [ebp + 0x18], 0",
+    "base": "ebp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0972",
+    "bytes": "3b9d04000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0996",
+    "bytes": "8b8310000000",
+    "instruction": "mov eax, dword ptr [ebx + 0x10]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 16,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e09ae",
+    "bytes": "8b850c000000",
+    "instruction": "mov eax, dword ptr [ebp + 0xc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 12,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e09ea",
+    "bytes": "3b8310000000",
+    "instruction": "cmp eax, dword ptr [ebx + 0x10]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 16,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a01",
+    "bytes": "3b9d04000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a1f",
+    "bytes": "8b9ba0260500",
+    "instruction": "mov ebx, dword ptr [ebx + 0x526a0]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 337568,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a25",
+    "bytes": "81bf4400000000100000",
+    "instruction": "cmp dword ptr [edi + 0x44], 0x1000",
+    "base": "edi",
+    "index": null,
+    "displacement": 68,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a35",
+    "bytes": "3b9f44000000",
+    "instruction": "cmp ebx, dword ptr [edi + 0x44]",
+    "base": "edi",
+    "index": null,
+    "displacement": 68,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a4f",
+    "bytes": "3b9d0c000000",
+    "instruction": "cmp ebx, dword ptr [ebp + 0xc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 12,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a5b",
+    "bytes": "8b9d0c000000",
+    "instruction": "mov ebx, dword ptr [ebp + 0xc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 12,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a61",
+    "bytes": "8b8300000000",
+    "instruction": "mov eax, dword ptr [ebx]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 0,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a6d",
+    "bytes": "8b8304000000",
+    "instruction": "mov eax, dword ptr [ebx + 4]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a79",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0a85",
+    "bytes": "8b8720000000",
+    "instruction": "mov eax, dword ptr [edi + 0x20]",
+    "base": "edi",
+    "index": null,
+    "displacement": 32,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0aab",
+    "bytes": "818dd0feffff01000000",
+    "instruction": "or dword ptr [ebp - 0x130], 1",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ab5",
+    "bytes": "818dd0feffff02000000",
+    "instruction": "or dword ptr [ebp - 0x130], 2",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ac3",
+    "bytes": "8b8508000000",
+    "instruction": "mov eax, dword ptr [ebp + 8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 8,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0acf",
+    "bytes": "818dd0feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ad9",
+    "bytes": "8b8514000000",
+    "instruction": "mov eax, dword ptr [ebp + 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ae5",
+    "bytes": "818dd4feffff00010000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x100",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0aef",
+    "bytes": "8b8510000000",
+    "instruction": "mov eax, dword ptr [ebp + 0x10]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 16,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0afb",
+    "bytes": "818dd4feffff00020000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x200",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b10",
+    "bytes": "818dd0feffff00000020",
+    "instruction": "or dword ptr [ebp - 0x130], 0x20000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b1c",
+    "bytes": "8bbd14000000",
+    "instruction": "mov edi, dword ptr [ebp + 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b2f",
+    "bytes": "8bbd14000000",
+    "instruction": "mov edi, dword ptr [ebp + 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b35",
+    "bytes": "8b9d10000000",
+    "instruction": "mov ebx, dword ptr [ebp + 0x10]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 16,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b3b",
+    "bytes": "8bb50c000000",
+    "instruction": "mov esi, dword ptr [ebp + 0xc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 12,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b48",
+    "bytes": "ff9314000000",
+    "instruction": "call dword ptr [ebx + 0x14]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b50",
+    "bytes": "8b85e4ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x1c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b5c",
+    "bytes": "818dd0feffff04000000",
+    "instruction": "or dword ptr [ebp - 0x130], 4",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b66",
+    "bytes": "8b85e8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x18]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b72",
+    "bytes": "818dd0feffff04000000",
+    "instruction": "or dword ptr [ebp - 0x130], 4",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b7e",
+    "bytes": "0fbf85e8ffffff",
+    "instruction": "movsx eax, word ptr [ebp - 0x18]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -24,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0b89",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0b96",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0bab",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0bbd",
+    "bytes": "8b9300000000",
+    "instruction": "mov edx, dword ptr [ebx]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0bc3",
+    "bytes": "0fbf85e4ffffff",
+    "instruction": "movsx eax, word ptr [ebp - 0x1c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -28,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0bca",
+    "bytes": "0fb78a20df6700",
+    "instruction": "movzx ecx, word ptr [edx + 0x67df20]",
+    "base": "edx",
+    "index": null,
+    "displacement": 6807328,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0bd3",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0be1",
+    "bytes": "818dd0feffff08000000",
+    "instruction": "or dword ptr [ebp - 0x130], 8",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0bf1",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0bfe",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c08",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c15",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c2d",
+    "bytes": "0fbf85e6ffffff",
+    "instruction": "movsx eax, word ptr [ebp - 0x1a]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -26,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0c34",
+    "bytes": "0fb78a22df6700",
+    "instruction": "movzx ecx, word ptr [edx + 0x67df22]",
+    "base": "edx",
+    "index": null,
+    "displacement": 6807330,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0c3d",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c4b",
+    "bytes": "818dd0feffff10000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c5b",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c68",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c72",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c7f",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0c99",
+    "bytes": "8b842410000000",
+    "instruction": "mov eax, dword ptr [esp + 0x10]",
+    "base": "esp",
+    "index": null,
+    "displacement": 16,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ca6",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0cbb",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0cc7",
+    "bytes": "8b8304000000",
+    "instruction": "mov eax, dword ptr [ebx + 4]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 4,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0ccf",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0cdc",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0cec",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0cf9",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d0e",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d22",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d2f",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d44",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d50",
+    "bytes": "8b801c000000",
+    "instruction": "mov eax, dword ptr [eax + 0x1c]",
+    "base": "eax",
+    "index": null,
+    "displacement": 28,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0d58",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d65",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d75",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d82",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0d97",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0dab",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0db8",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0dcd",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0dd9",
+    "bytes": "8b8000000000",
+    "instruction": "mov eax, dword ptr [eax]",
+    "base": "eax",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0de1",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0dee",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0dfe",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e0b",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e20",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e32",
+    "bytes": "8b95f0ffffff",
+    "instruction": "mov edx, dword ptr [ebp - 0x10]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -16,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0e3f",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e4c",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e61",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e6d",
+    "bytes": "8b8000000000",
+    "instruction": "mov eax, dword ptr [eax]",
+    "base": "eax",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0e75",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e82",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e92",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0e9f",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0eb4",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ec6",
+    "bytes": "8b95ecffffff",
+    "instruction": "mov edx, dword ptr [ebp - 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0ed3",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ee0",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0ef5",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f01",
+    "bytes": "8bb000000000",
+    "instruction": "mov esi, dword ptr [eax]",
+    "base": "eax",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0f09",
+    "bytes": "8b842404000000",
+    "instruction": "mov eax, dword ptr [esp + 4]",
+    "base": "esp",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f16",
+    "bytes": "818dd0feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f24",
+    "bytes": "8b842404000000",
+    "instruction": "mov eax, dword ptr [esp + 4]",
+    "base": "esp",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f31",
+    "bytes": "818dd0feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f41",
+    "bytes": "8b842404000000",
+    "instruction": "mov eax, dword ptr [esp + 4]",
+    "base": "esp",
+    "index": null,
+    "displacement": 4,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f4e",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f63",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f7c",
+    "bytes": "8b8e14000000",
+    "instruction": "mov ecx, dword ptr [esi + 0x14]",
+    "base": "esi",
+    "index": null,
+    "displacement": 20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0f84",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0f91",
+    "bytes": "818dd0feffff00010000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x100",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0fa5",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0fb2",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0fc7",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0fda",
+    "bytes": "8b8610000000",
+    "instruction": "mov eax, dword ptr [esi + 0x10]",
+    "base": "esi",
+    "index": null,
+    "displacement": 16,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e0fe2",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e0fef",
+    "bytes": "818dd0feffff00020000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x200",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1004",
+    "bytes": "8b8830000000",
+    "instruction": "mov ecx, dword ptr [eax + 0x30]",
+    "base": "eax",
+    "index": null,
+    "displacement": 48,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e100c",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1019",
+    "bytes": "818dd0feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e102d",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e103a",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e104f",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1062",
+    "bytes": "0fbe860d000000",
+    "instruction": "movsx eax, byte ptr [esi + 0xd]",
+    "base": "esi",
+    "index": null,
+    "displacement": 13,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e106b",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1078",
+    "bytes": "818dd0feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e108c",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1099",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e10ae",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e10c8",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e10d5",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e10ea",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1104",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1111",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1126",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1140",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e114d",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1162",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1174",
+    "bytes": "81bd1800000000000000",
+    "instruction": "cmp dword ptr [ebp + 0x18], 0",
+    "base": "ebp",
+    "index": null,
+    "displacement": 24,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e118c",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1199",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e11ae",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e11c8",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e11d5",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e11ea",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1204",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1211",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1226",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1240",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e124d",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1262",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e127c",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1289",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e129e",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e12b8",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e12c5",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e12da",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e12f4",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1301",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1316",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e132e",
+    "bytes": "8b9308000000",
+    "instruction": "mov edx, dword ptr [ebx + 8]",
+    "base": "ebx",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1336",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1343",
+    "bytes": "818dd0feffff00100000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x1000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1353",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1360",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1375",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1388",
+    "bytes": "8b8a00000000",
+    "instruction": "mov ecx, dword ptr [edx]",
+    "base": "edx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1390",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e139d",
+    "bytes": "818dd0feffff00200000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x2000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13ad",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13ba",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13c4",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13d1",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13e4",
+    "bytes": "8b9208000000",
+    "instruction": "mov edx, dword ptr [edx + 8]",
+    "base": "edx",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e13ec",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e13f9",
+    "bytes": "818dd0feffff00400000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1409",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1416",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e142b",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1447",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1454",
+    "bytes": "818dd0feffff00800000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1460",
+    "bytes": "8b8600000000",
+    "instruction": "mov eax, dword ptr [esi]",
+    "base": "esi",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e146e",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e147b",
+    "bytes": "818dd0feffff00000200",
+    "instruction": "or dword ptr [ebp - 0x130], 0x20000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1492",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e14a0",
+    "bytes": "818dd0feffff00000400",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e14b4",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e14c1",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e14d6",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e14ff",
+    "bytes": "8b89a0000000",
+    "instruction": "mov ecx, dword ptr [ecx + 0xa0]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 160,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e151f",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e152d",
+    "bytes": "818dd0feffff00000800",
+    "instruction": "or dword ptr [ebp - 0x130], 0x80000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1537",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1544",
+    "bytes": "818dd0feffff00000100",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1550",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1565",
+    "bytes": "8b8208000000",
+    "instruction": "mov eax, dword ptr [edx + 8]",
+    "base": "edx",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e157a",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1587",
+    "bytes": "818dd0feffff00001000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x100000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1591",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e159e",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15a8",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15b5",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15bf",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15cc",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15d6",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15e3",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e15f8",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1604",
+    "bytes": "8bb720000000",
+    "instruction": "mov esi, dword ptr [edi + 0x20]",
+    "base": "edi",
+    "index": null,
+    "displacement": 32,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e160a",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1626",
+    "bytes": "818dd0feffff00002000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x200000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e163f",
+    "bytes": "8b8858000000",
+    "instruction": "mov ecx, dword ptr [eax + 0x58]",
+    "base": "eax",
+    "index": null,
+    "displacement": 88,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1647",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1654",
+    "bytes": "818dd0feffff00000004",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1668",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1671",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e167e",
+    "bytes": "818dd0feffff00002000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x200000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1688",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1694",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e169e",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16aa",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16bf",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16cb",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e16d1",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e16d9",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16e5",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16ef",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e16fb",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1709",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1715",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e171f",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e172b",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e173d",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1759",
+    "bytes": "818dd0feffff00004000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x400000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1772",
+    "bytes": "8b8864000000",
+    "instruction": "mov ecx, dword ptr [eax + 0x64]",
+    "base": "eax",
+    "index": null,
+    "displacement": 100,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e177a",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1787",
+    "bytes": "818dd0feffff00000004",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e179b",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e17a4",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17b1",
+    "bytes": "818dd0feffff00004000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x400000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17bb",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17c7",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17d1",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17dd",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17f2",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e17fe",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1804",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e180c",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1818",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1822",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e182e",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e183c",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1848",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1852",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e185e",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1870",
+    "bytes": "8b8708000000",
+    "instruction": "mov eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e188c",
+    "bytes": "818dd0feffff00008000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x800000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18a5",
+    "bytes": "8b8870000000",
+    "instruction": "mov ecx, dword ptr [eax + 0x70]",
+    "base": "eax",
+    "index": null,
+    "displacement": 112,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e18ad",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18ba",
+    "bytes": "818dd0feffff00000004",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18ce",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e18d7",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18e4",
+    "bytes": "818dd0feffff00008000",
+    "instruction": "or dword ptr [ebp - 0x130], 0x800000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18ee",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e18fa",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1904",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1910",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1925",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1931",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1937",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e193f",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e194b",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1955",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1961",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e196f",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e197b",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1985",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1991",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e19b0",
+    "bytes": "818dd0feffff00000001",
+    "instruction": "or dword ptr [ebp - 0x130], 0x1000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e19bc",
+    "bytes": "f7870800000000080000",
+    "instruction": "test dword ptr [edi + 8], 0x800",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e19cc",
+    "bytes": "8b8e58000000",
+    "instruction": "mov ecx, dword ptr [esi + 0x58]",
+    "base": "esi",
+    "index": null,
+    "displacement": 88,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e19d4",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e19e1",
+    "bytes": "818dd0feffff00000004",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e19f5",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e19fe",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a0b",
+    "bytes": "818dd0feffff00000001",
+    "instruction": "or dword ptr [ebp - 0x130], 0x1000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a15",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a21",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a2b",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a37",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a4c",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a58",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1a5e",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1a66",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a72",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a7c",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a88",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1a96",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1aa2",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1aac",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ab8",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ad7",
+    "bytes": "818dd0feffff00000002",
+    "instruction": "or dword ptr [ebp - 0x130], 0x2000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ae3",
+    "bytes": "f7870800000000020000",
+    "instruction": "test dword ptr [edi + 8], 0x200",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1af3",
+    "bytes": "8b8e54000000",
+    "instruction": "mov ecx, dword ptr [esi + 0x54]",
+    "base": "esi",
+    "index": null,
+    "displacement": 84,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1afb",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b08",
+    "bytes": "818dd0feffff00000004",
+    "instruction": "or dword ptr [ebp - 0x130], 0x4000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b1c",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1b25",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b32",
+    "bytes": "818dd0feffff00000002",
+    "instruction": "or dword ptr [ebp - 0x130], 0x2000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b3c",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b48",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b52",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b5e",
+    "bytes": "818dd0feffff00000008",
+    "instruction": "or dword ptr [ebp - 0x130], 0x8000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b73",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b7f",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1b85",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1b8d",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1b99",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ba3",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1baf",
+    "bytes": "818dd0feffff00000010",
+    "instruction": "or dword ptr [ebp - 0x130], 0x10000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1bbd",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1bc9",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1bd3",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1bdf",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1bf1",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1bf7",
+    "bytes": "8b95dcffffff",
+    "instruction": "mov edx, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1c01",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c0e",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c18",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c25",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c3b",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c48",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c52",
+    "bytes": "8b842414000000",
+    "instruction": "mov eax, dword ptr [esp + 0x14]",
+    "base": "esp",
+    "index": null,
+    "displacement": 20,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c5f",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c83",
+    "bytes": "8b85d4ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x2c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -44,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1c8f",
+    "bytes": "818dd0feffff00000080",
+    "instruction": "or dword ptr [ebp - 0x130], 0x80000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ca2",
+    "bytes": "ffb50c000000",
+    "instruction": "push dword ptr [ebp + 0xc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 12,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1ca8",
+    "bytes": "ffb508000000",
+    "instruction": "push dword ptr [ebp + 8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1cae",
+    "bytes": "8b8508000000",
+    "instruction": "mov eax, dword ptr [ebp + 8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 8,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1cb4",
+    "bytes": "8b8800000000",
+    "instruction": "mov ecx, dword ptr [eax]",
+    "base": "eax",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1cbc",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1cc9",
+    "bytes": "818dd4feffff40000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x40",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1cde",
+    "bytes": "818dd0feffff00000020",
+    "instruction": "or dword ptr [ebp - 0x130], 0x20000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1cea",
+    "bytes": "ff91b8000000",
+    "instruction": "call dword ptr [ecx + 0xb8]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 184,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1cf2",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1cff",
+    "bytes": "818dd0feffff00000040",
+    "instruction": "or dword ptr [ebp - 0x130], 0x40000000",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d09",
+    "bytes": "8b85d4ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x2c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -44,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d15",
+    "bytes": "818dd4feffff01000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 1",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d25",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d32",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d47",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d59",
+    "bytes": "8b85d4ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x2c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -44,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1d60",
+    "bytes": "8b8f04000000",
+    "instruction": "mov ecx, dword ptr [edi + 4]",
+    "base": "edi",
+    "index": null,
+    "displacement": 4,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1d6a",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d77",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d81",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1d8e",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1da1",
+    "bytes": "81bd1800000000000000",
+    "instruction": "cmp dword ptr [ebp + 0x18], 0",
+    "base": "ebp",
+    "index": null,
+    "displacement": 24,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1db1",
+    "bytes": "8b8e50000000",
+    "instruction": "mov ecx, dword ptr [esi + 0x50]",
+    "base": "esi",
+    "index": null,
+    "displacement": 80,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1db9",
+    "bytes": "8b842418000000",
+    "instruction": "mov eax, dword ptr [esp + 0x18]",
+    "base": "esp",
+    "index": null,
+    "displacement": 24,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1dc6",
+    "bytes": "818dd4feffff02000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 2",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1dda",
+    "bytes": "8b8100000000",
+    "instruction": "mov eax, dword ptr [ecx]",
+    "base": "ecx",
+    "index": null,
+    "displacement": 0,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1def",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1dfc",
+    "bytes": "818dd4feffff04000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 4",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e06",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e12",
+    "bytes": "818dd4feffff08000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 8",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e1c",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e28",
+    "bytes": "818dd4feffff08000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 8",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e3d",
+    "bytes": "818dd4feffff80000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x80",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e49",
+    "bytes": "0185d8ffffff",
+    "instruction": "add dword ptr [ebp - 0x28], eax",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1e4f",
+    "bytes": "1195dcffffff",
+    "instruction": "adc dword ptr [ebp - 0x24], edx",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1e57",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e63",
+    "bytes": "818dd4feffff10000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x10",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e6d",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e79",
+    "bytes": "818dd4feffff10000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x10",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e87",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e93",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1e9d",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ea9",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ebb",
+    "bytes": "8b85d8ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x28]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -40,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1ec1",
+    "bytes": "81bddcffffff00000000",
+    "instruction": "cmp dword ptr [ebp - 0x24], 0",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1ecd",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1eda",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ee4",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1ef0",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1f06",
+    "bytes": "8b84241c000000",
+    "instruction": "mov eax, dword ptr [esp + 0x1c]",
+    "base": "esp",
+    "index": null,
+    "displacement": 28,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1f13",
+    "bytes": "818dd4feffff00040000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x400",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1f1d",
+    "bytes": "8b85dcffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x24]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -36,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1f29",
+    "bytes": "818dd4feffff00080000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x800",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added logging: own stack/PIC Plan/bounded own tile bytes"
+  },
+  {
+    "va": "0x200e1f4f",
+    "bytes": "8bbd14000000",
+    "instruction": "mov edi, dword ptr [ebp + 0x14]",
+    "base": "ebp",
+    "index": null,
+    "displacement": 20,
+    "category": "original reader path or declared single-load CMP split"
+  },
+  {
+    "va": "0x200e1f76",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e1f83",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e1fa5",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e1fb2",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e1fd4",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e1fe1",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2003",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2010",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2032",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e203f",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2061",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e206e",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2090",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e209d",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e20bf",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e20cc",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e20ee",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e20fb",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e211d",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e212a",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e214c",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2159",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e217b",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2188",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e21aa",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e21b7",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e21d9",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e21e6",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2208",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2215",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2237",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2244",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2266",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2273",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2295",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e22a2",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e22c4",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e22d1",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e22f3",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2300",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2322",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e232f",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2351",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e235e",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2380",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e238d",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e23af",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e23bc",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e23de",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e23eb",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e240d",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e241a",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e243c",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2449",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e246b",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2478",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e249a",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e24a7",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e24c9",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e24d6",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e24f8",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2505",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2527",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2534",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2556",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2563",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2585",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2592",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e25b4",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e25c1",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e25e3",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e25f0",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2612",
+    "bytes": "8b842420000000",
+    "instruction": "mov eax, dword ptr [esp + 0x20]",
+    "base": "esp",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e261f",
+    "bytes": "818dd4feffff20000000",
+    "instruction": "or dword ptr [ebp - 0x12c], 0x20",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e263f",
+    "bytes": "81bdacfeffff01000000",
+    "instruction": "cmp dword ptr [ebp - 0x154], 1",
+    "base": "ebp",
+    "index": null,
+    "displacement": -340,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e264f",
+    "bytes": "8bbda8feffff",
+    "instruction": "mov edi, dword ptr [ebp - 0x158]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -344,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2655",
+    "bytes": "81bf2400000001000000",
+    "instruction": "cmp dword ptr [edi + 0x24], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 36,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2665",
+    "bytes": "81bf2800000001000000",
+    "instruction": "cmp dword ptr [edi + 0x28], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 40,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2675",
+    "bytes": "8b85c0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x140]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -320,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e267b",
+    "bytes": "3b8708000000",
+    "instruction": "cmp eax, dword ptr [edi + 8]",
+    "base": "edi",
+    "index": null,
+    "displacement": 8,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2687",
+    "bytes": "8b85c4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x13c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -316,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e268d",
+    "bytes": "3b8720000000",
+    "instruction": "cmp eax, dword ptr [edi + 0x20]",
+    "base": "edi",
+    "index": null,
+    "displacement": 32,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2699",
+    "bytes": "8b85c0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x140]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -320,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e269f",
+    "bytes": "3b8700880700",
+    "instruction": "cmp eax, dword ptr [edi + 0x78800]",
+    "base": "edi",
+    "index": null,
+    "displacement": 493568,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26ab",
+    "bytes": "8b85c4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x13c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -316,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26b1",
+    "bytes": "3b8704880700",
+    "instruction": "cmp eax, dword ptr [edi + 0x78804]",
+    "base": "edi",
+    "index": null,
+    "displacement": 493572,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26bd",
+    "bytes": "8b85c8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x138]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -312,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26c3",
+    "bytes": "8b8fdc000000",
+    "instruction": "mov ecx, dword ptr [edi + 0xdc]",
+    "base": "edi",
+    "index": null,
+    "displacement": 220,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26d3",
+    "bytes": "3b87e0000000",
+    "instruction": "cmp eax, dword ptr [edi + 0xe0]",
+    "base": "edi",
+    "index": null,
+    "displacement": 224,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26df",
+    "bytes": "81bfe000000040000000",
+    "instruction": "cmp dword ptr [edi + 0xe0], 0x40",
+    "base": "edi",
+    "index": null,
+    "displacement": 224,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26ef",
+    "bytes": "8b87dc000000",
+    "instruction": "mov eax, dword ptr [edi + 0xdc]",
+    "base": "edi",
+    "index": null,
+    "displacement": 220,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e26f5",
+    "bytes": "3b87f0000000",
+    "instruction": "cmp eax, dword ptr [edi + 0xf0]",
+    "base": "edi",
+    "index": null,
+    "displacement": 240,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2707",
+    "bytes": "81bf0400000001000000",
+    "instruction": "cmp dword ptr [edi + 4], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 4,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2717",
+    "bytes": "81bf0c00000001000000",
+    "instruction": "cmp dword ptr [edi + 0xc], 1",
+    "base": "edi",
+    "index": null,
+    "displacement": 12,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2727",
+    "bytes": "8b85c0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x140]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -320,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e272d",
+    "bytes": "3b8710000000",
+    "instruction": "cmp eax, dword ptr [edi + 0x10]",
+    "base": "edi",
+    "index": null,
+    "displacement": 16,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2739",
+    "bytes": "8b85c4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x13c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -316,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e273f",
+    "bytes": "3b8714000000",
+    "instruction": "cmp eax, dword ptr [edi + 0x14]",
+    "base": "edi",
+    "index": null,
+    "displacement": 20,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e275a",
+    "bytes": "8b85b0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x150]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -336,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2766",
+    "bytes": "8b85b8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x148]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -328,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2772",
+    "bytes": "8b85bcfeffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x144]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -324,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e277e",
+    "bytes": "8b85c0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x140]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -320,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e278a",
+    "bytes": "8b85c4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x13c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -316,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2796",
+    "bytes": "8b85c8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x138]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -312,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27a2",
+    "bytes": "8b85ccfeffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x134]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -308,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27ae",
+    "bytes": "8b85d0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x130]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -304,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27ba",
+    "bytes": "8b85d4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x12c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -300,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27c6",
+    "bytes": "8b85d8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x128]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -296,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27d2",
+    "bytes": "8b85dcfeffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x124]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -292,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27de",
+    "bytes": "8b85e0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x120]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -288,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27ea",
+    "bytes": "8b85e4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x11c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -284,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e27f6",
+    "bytes": "8b85e8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x118]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -280,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2802",
+    "bytes": "8b85ecfeffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x114]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -276,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e280e",
+    "bytes": "8b85f0feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x110]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -272,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e281a",
+    "bytes": "8b85f4feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x10c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -268,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2826",
+    "bytes": "8b85f8feffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x108]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -264,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2832",
+    "bytes": "8b85fcfeffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x104]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -260,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e283e",
+    "bytes": "8b8500ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x100]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -256,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e284a",
+    "bytes": "8b8504ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xfc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -252,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2856",
+    "bytes": "8b8508ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xf8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -248,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2862",
+    "bytes": "8b850cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xf4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -244,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e286e",
+    "bytes": "8b8510ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xf0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -240,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e287a",
+    "bytes": "8b8514ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xec]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -236,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2886",
+    "bytes": "8b8518ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xe8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -232,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2892",
+    "bytes": "8b851cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xe4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -228,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e289e",
+    "bytes": "8b8520ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xe0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -224,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28aa",
+    "bytes": "8b8524ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xdc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -220,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28b6",
+    "bytes": "8b8528ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xd8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -216,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28c2",
+    "bytes": "8b852cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xd4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -212,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28ce",
+    "bytes": "8b8530ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xd0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -208,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28da",
+    "bytes": "8b8534ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xcc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -204,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28e6",
+    "bytes": "8b8538ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xc8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -200,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28f2",
+    "bytes": "8b853cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xc4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -196,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e28fe",
+    "bytes": "8b8540ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xc0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -192,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e290a",
+    "bytes": "8b8544ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xbc]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -188,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2916",
+    "bytes": "8b8548ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xb8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -184,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2922",
+    "bytes": "8b854cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xb4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -180,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e292e",
+    "bytes": "8b8550ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xb0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -176,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e293a",
+    "bytes": "8b8554ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xac]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -172,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2946",
+    "bytes": "8b8558ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xa8]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -168,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2952",
+    "bytes": "8b855cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xa4]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -164,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e295e",
+    "bytes": "8b8560ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0xa0]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -160,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e296a",
+    "bytes": "8b8564ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x9c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -156,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2976",
+    "bytes": "8b8568ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x98]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -152,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2982",
+    "bytes": "8b856cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x94]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -148,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e298e",
+    "bytes": "8b8570ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x90]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -144,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e299a",
+    "bytes": "8b8574ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x8c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -140,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29a6",
+    "bytes": "8b8578ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x88]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -136,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29b2",
+    "bytes": "8b857cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x84]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -132,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29be",
+    "bytes": "8b8580ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x80]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -128,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29ca",
+    "bytes": "8b8584ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x7c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -124,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29d6",
+    "bytes": "8b8588ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x78]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -120,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29e2",
+    "bytes": "8b858cffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x74]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -116,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29ee",
+    "bytes": "8b8590ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x70]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -112,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e29fa",
+    "bytes": "8b8594ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x6c]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -108,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  },
+  {
+    "va": "0x200e2a06",
+    "bytes": "8b8598ffffff",
+    "instruction": "mov eax, dword ptr [ebp - 0x68]",
+    "base": "ebp",
+    "index": null,
+    "displacement": -104,
+    "category": "added failure/publication: own stack and PIC Plan only"
+  }
+]

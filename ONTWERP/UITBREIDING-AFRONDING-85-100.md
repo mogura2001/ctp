@@ -1,0 +1,19 @@
+# Eenmalige afronding T85–T100 zonder gedeelde startmutatie
+22 oktober 2026,17:14 Europe/Amsterdam; beperkte B-aanvulling, geen code/RPM/invoer. Doel1/1a blijven OPEN; dit verandert uitsluitend operationele metadata.
+1. Rootbewijs: registratiehelper faalde vóórKey op File.Replace met ArgumentException; precieze API-oorzaak niet onafhankelijk vastgesteld. Verse T84-after-registration-helper-error.json is state/instancegelijk aanT84, alle zeven native83; geenT85-n.
+2. Behoud beide mislukte85tokens, oude helpers, foutlogs en tempbestand. Vorige registratieherstelroute vervalt; geen nieuwe File.Replace-/shared-metadatareparatie.
+3. Nieuwe afzonderlijke clone van oorspronkelijke parentPass122400, vaste parentpackage/host/arm/run/PID40488/FILETIME134371535950250712 en huidig exactvenster; alleen integerTurn85..100, maximaal16aanroepen.
+4. Legacyhost/start.json blijft read-only, exact de volledige door root gepinde F9B…SHA256 en n_consumed84. Vervang uitsluitend de guard n_consumed==Turn−1 door deze vastehash/84guard; behoud overige startvelden/identiteitschecks.
+5. Geen Set-Content, File.Replace of andere mutatie op start.json. Registratie gebeurt met eigen per-turnCreateNewtokens onder een nieuwe vaste prefix; geen oude85token hergebruiken/verwijderen.
+6. Eis bijT85 vóór de nieuwe exclusieve token een verse parentreaderwaarneming exactstate/instancegelijk aan geaccepteerdeT84, zeven native83, plus beide eerdere vóór-Keyfoutbewijzen en afwezigeT85-n/T85acceptatie.
+7. BijT86..100: eis exact parentT(T−1).json én de eigen nieuwe helpertoken/pass voorT−1 die die snapshotsha als succesvol accepteert. Geen sprong, dubbeleaanroep of invoer op basis van alleen een token.
+8. Nieuwe tokens/passrecords zijn opeenvolgend en immutable; exclusieve creatie, bind run/PID/creation/turn/voorgaandesnapshotsha/helperhash. Weiger bestaand huidig token/pass/snapshot; mislukte tokens blijven definitief verbruikt.
+9. Alle overige oorspronkelijke bronpins, budget-, module-, binary-, venster-, loadedcheck-, oldstate-/roundguards blijven. Ook vóórKey opnieuw controleren; tokencreatie verleent geen toestemming bij later gefaalde guard.
+10. Exact één bestaande gewone Key -Keys n per aanroep, zonderCaptureflags; dezelfde maximaal30spoll, twee gelijke complete snapshots en alle zeven ronden exact+1. Geen inputretry, extra token of alternatieve herstelhelper na enige fout.
+11. Alleen bestaande exact herkende tijdelijke snapshotinstabiliteit mag binnen dezelfde poll opnieuw gelezen worden; succesvolle acceptatie schrijft parentTn.json en eigen pass met exacte snapshotsha, pas daarna magTn+1 volgen.
+12. Bestaande max100beurten/4500s/no-new-n4380s vanaf16:39:55 blijven; geen klokreset. Versebudgetcontrole vóórinput en tijdenspoll, stop vijfuur<=5%/week<=10%, waarschuwing week<=25%; blijvend unknown/stale stopt.
+13. Nieuwehelperpoort begintFalse; rootreview van minimale clone-diff, exacte volledige pins en bewijsbinding vóórinput. Geen extra metadataframework, nieuwe nativehelpers, AI-wijziging of doelacceptatie uit broncontrole.
+14. BijT100 of enige fout: geen verdere invoer/herstelvariant; normaleclose/restore volgens bestaand plan, laatste werkelijk geaccepteerdeTlast rapporteren, autosave dubbelbewaren en bestanden pas na bewezen exit herstellen. Pc blijft aan.
+15. Legacyclose.n_consumed84 blijft zichtbaar als verouderde administratie. Alleen bij volledig succes zijn84oude+16nieuwe invoerlogs en100bewezen natuurlijke stappen aanwezig;102tokens omvatten de twee vóór-Keymislukkingen. Geen vlekkeloze100tokens-/legacy-n100claim.
+16. Controlearm heeft slechts handmatigeT0/T100-eindpunten: geen fictieve tussenbeurten of gepaarde eerste30/40. Beoordeel echte stadsuitkomsten met bestaande beperkingen, geen nieuw GOAL-afrondingsbewijs uit dit herstel.
+17. Scope/registratie/geldigheidsproef/stopuitkomst vastgelegd; root voert eventuele C uit. Voorstelagent draagt direct over en stopt; geen achtergrondwerk.

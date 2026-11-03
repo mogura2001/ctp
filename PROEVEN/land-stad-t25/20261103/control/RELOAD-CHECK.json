@@ -1,0 +1,149 @@
+{
+  "at_utc": "2026-11-03T12:52:33.572389+00:00",
+  "same_process": true,
+  "native24_stable_bound": true,
+  "aidata118_and_eb6_disk_exact": true,
+  "rows": [
+    {
+      "civ_id": 2,
+      "actor_before": "0xb9e4b78",
+      "actor_after": "0x153ec058",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 3,
+      "actor_before": "0xb9e55b8",
+      "actor_after": "0x153ed100",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 4,
+      "actor_before": "0xb9e4cc0",
+      "actor_after": "0x153ec950",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 5,
+      "actor_before": "0xb9e47a0",
+      "actor_after": "0x153ecd28",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 6,
+      "actor_before": "0xb9e4f50",
+      "actor_after": "0x153ebf10",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 7,
+      "actor_before": "0xb9e5470",
+      "actor_after": "0x153ece70",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    },
+    {
+      "civ_id": 8,
+      "actor_before": "0x14e5a9d8",
+      "actor_after": "0x153ecfb8",
+      "checks": {
+        "civ_id": true,
+        "processed_round": true,
+        "city_count": true,
+        "active_government": true,
+        "known": true,
+        "opening_symbols": true,
+        "weight_30000_expectation": true,
+        "real_queues_and_city_identity": true,
+        "effective_wonder_list_semantics": true
+      },
+      "raw_effective_list_pointer_identity": false,
+      "list_content_equal_without_container_data": true
+    }
+  ],
+  "all_compared_fields_equal": true,
+  "human_UI": "Rome size2/2750BC/default Shipbuilding; after reload happiness78 vs74 and displayed research6 vs10; no settings changed/no n",
+  "no_extra_n": true,
+  "pointer_note": "Actor/list allocation addresses expected to change at Load; raw identity recorded separately. Status/count/records/record_size/native_token_binding compared.",
+  "initial_raw_effective_wonder_list_equal": false,
+  "initial_raw_comparison_result": "DIFFERENCE: all seven allocation container/data pointers changed; false retained explicitly; list contents equal separately",
+  "human_UI_observed_difference": {
+    "happiness_before": 74,
+    "happiness_after": 78,
+    "shipbuilding_turns_before": 10,
+    "shipbuilding_turns_after": 6,
+    "cause": "UNKNOWN",
+    "settings_changed": false,
+    "extra_n": 0
+  }
+}

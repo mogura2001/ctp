@@ -1,0 +1,44 @@
+{
+  "status": "SECOND_PROVEN_PREINPUT_STOP_NO_FURTHER_ATOMIC_HELPER_RETRY",
+  "recorded_utc": "2026-10-22T15:14:55.420015+00:00",
+  "exception_type": "System.ArgumentException",
+  "exception": "The path is not of a legal form.",
+  "helper_line": 105,
+  "key_not_reached": true,
+  "state_still_exact_T84": true,
+  "native_rounds": [
+    83,
+    83,
+    83,
+    83,
+    83,
+    83,
+    83
+  ],
+  "no_T85_n_log": true,
+  "start_record_still_84": true,
+  "old_helper_gate_closed": true,
+  "parent_automatic_control_temporarily_closed": true,
+  "proofs": [
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T170400-herstel85/Herstel-T85.ps1",
+      "sha256": "e9edd92abe405dc5935c04814e942993b4b4438ef24147fc07ccb13e5a4c096c"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T170400-herstel85/T85-recovery-consumed.json",
+      "sha256": "e23f444068808c4df696fd15c108e7e0cf5ac91a754a64a1a7d86d385c294e89"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T170400-herstel85/REGISTRATION-ERRORS.jsonl",
+      "sha256": "027fb18e50659c50c9e4b084cbd82f0519518bf5c055151e3c7c246b317bfd83"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/U30-40/T84-after-registration-helper-error.json",
+      "sha256": "8e1f38c0669bb09df0be1aa55644213bffe072f516ef75f3714eac2f2d4f5020"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang-host/20261022/U30-40/start.json",
+      "sha256": "f9b6099e7ef664581a25dcf1682c01657586b7c7bd1b2b2f815dcc49be1b0aa8"
+    }
+  ]
+}

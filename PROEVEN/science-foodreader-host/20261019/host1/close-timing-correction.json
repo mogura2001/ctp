@@ -1,0 +1,7 @@
+{
+  "raw_reported_elapsed_seconds": -6853.694436,
+  "actual_elapsed_seconds": 346.305564,
+  "source": "original start_utc and close at_utc both parsed as timezone-aware UTC",
+  "reason": "Close script subtracted local parsed DateTime from UtcNow; raw file retained",
+  "within600": true
+}

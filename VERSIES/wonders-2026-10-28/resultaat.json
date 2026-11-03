@@ -1,0 +1,109 @@
+{
+  "stage": "C0_STATIC_PASS_NOT_INSTALLED",
+  "at_utc": "2026-10-28T16:28:11.163363+00:00",
+  "manifest_sha256": "878e4d000a996389ccf9fb4da09cb2ffa03afe7cc924f6c4fca27957c9fb5195",
+  "checker_sha256": "c10caec17cdce572049eca50515c20fdc4186da858f1358f9e0b83d71d634d4d",
+  "diff_sha256": "2a9f78d1e2f0f351f921c504f9771ecf8d20531121076361893f2be29f0724a4",
+  "candidate_files": 15,
+  "backups": 7,
+  "live_aidata_files": 118,
+  "unchanged_saves": 38,
+  "live_baseline_exact": true,
+  "opening_entries": 1,
+  "opening_weight": 9100,
+  "wonder_only_partials": 8,
+  "restored_categories": [
+    {
+      "personality": "default",
+      "wonder_block_sha256": "0b82d06aec6bc5d5cc047f3094f1416a78f48bd7ff9b0d876b2cd09812e2b57b",
+      "categories_pinned": 55
+    },
+    {
+      "personality": "cleric",
+      "wonder_block_sha256": "549b7aabf5cc2aaf259419a7519dd06ebd0b60681d9a2e9df9ad0e95d93307f3",
+      "categories_pinned": 53
+    },
+    {
+      "personality": "slaver",
+      "wonder_block_sha256": "09bb5c44a5ffadb4c7e80d498cbdafb878eccdb969dfbf09ef3a6549ef824bc1",
+      "categories_pinned": 53
+    },
+    {
+      "personality": "scifew",
+      "wonder_block_sha256": "f732adadbb8f21cf0cb0cd5f3b58451bbe4c2ae133e129ea5b983daed4e5307b",
+      "categories_pinned": 53
+    },
+    {
+      "personality": "scimany",
+      "wonder_block_sha256": "2998c934bd576e4e425ee776292b0f499a71ddbc31dbbdc8804a54c45e9f9e3f",
+      "categories_pinned": 53
+    },
+    {
+      "personality": "milfew",
+      "wonder_block_sha256": "388cc19addfe418f07eaee02fc4b62e1ec4fe83ce1021d34e31490ee2f99c4e4",
+      "categories_pinned": 53
+    },
+    {
+      "personality": "milmany",
+      "wonder_block_sha256": "bc86cf23f499bb95773c6fbf1bcf0478f8083aeba46abf96d96feb95971c5260",
+      "categories_pinned": 53
+    }
+  ],
+  "routes": [
+    {
+      "route": "beginturn.fli",
+      "personality": "default",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnCleric.fli",
+      "personality": "cleric",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnSlaver.fli",
+      "personality": "slaver",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnSciFew.fli",
+      "personality": "scifew",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnSciMany.fli",
+      "personality": "scimany",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnWarFew.fli",
+      "personality": "milfew",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    },
+    {
+      "route": "beginturnWarMany.fli",
+      "personality": "milmany",
+      "unchanged_prefix_and_suffix": true,
+      "active_loader_preserved": true,
+      "final_action_pair": true
+    }
+  ],
+  "header_and_token_verified": true,
+  "full_diff_verified": true,
+  "engine_parser": "NOT_TESTED",
+  "effective_list": "NOT_MEASURED",
+  "city_queue": "NOT_MEASURED",
+  "gameplay": "NOT_MEASURED"
+}

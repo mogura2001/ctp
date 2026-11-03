@@ -1,0 +1,18 @@
+{
+  "reported_at_utc": "2026-11-03T13:11:42.380Z",
+  "checked_at_utc": "2026-11-03T13:11:47.305327+00:00",
+  "state": "stop",
+  "stop_reason": "five_hour",
+  "five_hour_remaining_percent": 4,
+  "weekly_remaining_percent": 23,
+  "reset_at_unix": 1793721268,
+  "work_stopped": true,
+  "pc_left_on": true,
+  "consecutive_blocking_goal_turns": 1,
+  "current_goal_turn": "progress: T25 B/C0 accepted; complete control T25/save/reload independently accepted; candidate stopped after7 completed turns; auto-review rejected N8 at five-hour10, then fresh actual five-hour4 stop",
+  "goal_complete": false,
+  "control_root_evidence": "PROEVEN/LAND-STAD-T25-CONTROL-ROOT-2026-11-03.json",
+  "candidate_root_review": "PENDING_AFTER_RESET",
+  "candidate_restore_record": "PROEVEN/land-stad-t25/20261103/candidate/ROOT-RESTORE.json",
+  "next_step": "After fresh reset inspect candidate partial/restore and terminal agent; reuse existing B with fresh single-use candidate host from c6baT0 and generous reserve (at least70percent five-hour recommended from observed cost). Never reuse consumed markers. Complete pairedT25 before T50/T100;30/40citygoals remain."
+}

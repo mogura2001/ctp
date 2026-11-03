@@ -1,0 +1,92 @@
+{
+  "status": "ONE_FIXED_T0_N_T1_COMPLETE_RESTORED",
+  "instance": {
+    "pid": 24848,
+    "creationtime_filetime": 134370595768758551,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "candidate_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+  "fixed_T0_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+  "rounds_seven": [
+    -1,
+    0
+  ],
+  "n_consumed": 1,
+  "last_civ_pass": {
+    "status": 5,
+    "reason": 0,
+    "civ": 8,
+    "generation": 7,
+    "Dorig": 5,
+    "Gcert": 1,
+    "desired": 5,
+    "classified": 8,
+    "slots": 3,
+    "path_queries": 1,
+    "path_points": 2
+  },
+  "selected_science": {
+    "slot": 0,
+    "prefix": 0,
+    "center": [
+      27,
+      45,
+      0
+    ],
+    "margins_x2": [
+      35,
+      30,
+      25
+    ],
+    "location": "NOW"
+  },
+  "diagnostic_status": "UNPUBLISHED_STAGING_RECORD",
+  "failure_cause_proven": false,
+  "instrumentation_behavior_equivalence_runtime_proven": false,
+  "expansion_goal_complete": false,
+  "all_civs_location_certified": false,
+  "close": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-21T12:38:11.1729040Z",
+    "elapsed_seconds": 314.2970489,
+    "close_requested": true,
+    "n_consumed": 1,
+    "exited": true
+  },
+  "restore": {
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+    "default_autosave_changed": true,
+    "at_utc": "2026-10-21T12:38:13.1698788Z",
+    "game_count_before_restore": 0,
+    "restored_hashes": 29,
+    "state": "RESTORED",
+    "autosave_after_sha256": "53cdd98744c198f9289ed67ba2387f555be94b433705d3666bf45158d7d20ac8",
+    "autosave_archive": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SELECTIEPAD-20261021-HOST1-AUTOSAVE",
+    "gate_allowed": false,
+    "existing_archives_preserved": 5
+  },
+  "limitation": "Outcome differs from previous parent: successful selection, no published failure; cause of difference needs scoped analysis. Dorig=desired=5, no extra settler demand or settlement proven.",
+  "incident": "First T0 read reached output write but missing directory prevented saving; directory created, same unchanged reader repeated before sole n. No extra turn.",
+  "files": {
+    "variant/T0.json": "1272d7e552f108b20ccba179e845a908e4af889092d330d13921a2d3a47fcbff",
+    "variant/T1.json": "e290a834aed5a4e4fbfb83c6cfd801b8c242198419d48d03c191761010fafd21",
+    "n1-token.json": "c8ad5eaf4b591d27e28588378e1897ee98789b2ee59c43fdbd4a9395076e3d45",
+    "close.json": "d2e8d5cc20ab56898fc1d0143287b7a0e1a6d4199e8a3b7c7b4d5f38876f71e6",
+    "restore.json": "974bf87dc2e9e50fe9dbb38f76393d7d72911e61225293b8b9420ebe8ed705c1",
+    "intro-180.png": "b83200b1d878bd59f54e8232b4dee80c9d5b1c2c27299aa4986a4926594f85eb",
+    "loaded.png": "a1d749606e12b64c76c68d045af4c608f03f125e4fdc1ed0be433326a538d19f",
+    "T1-screen.png": "e9c6ddd769b08f583f5ada1b6211f2fe37fef192cf46e573558945740c5138d0"
+  },
+  "native_result": {
+    "fixture_sha256": "4d05d305b04a6488231877fc91e885de2d3a4fc98d59e13da2501b2394cfdfc6",
+    "gameplay_proven": false,
+    "fixture_recipe_sha256": "bc013278cf26f6715f3368bcf326b722f65684cb81ca70eb403668e49787ac84",
+    "own_logger_only": true,
+    "exit_code": 0
+  }
+}

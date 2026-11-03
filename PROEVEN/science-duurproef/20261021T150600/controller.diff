@@ -1,0 +1,20 @@
+--- immutable failed host1 controller
++++ own host2 controller
+@@ -3,7 +3,7 @@
+ $workspace='C:/GIT/ctp';$package=$PSScriptRoot;$armDir=Join-Path $package 'variant'
+ $python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+ $tool=Join-Path $workspace 'PROEVEN/Bedien-CTP.ps1'
+-$hostDir=Join-Path $workspace 'PROEVEN/science-duur-host/20261021/host1'
++$hostDir=Join-Path $workspace 'PROEVEN/science-duur-host/20261021/host2'
+ $exe=Join-Path $workspace 'CTP-proef/ctp_program/ctp/civctp.exe'
+ $gate=Get-Content (Join-Path $package 'ROOT-READER.json') -Raw|ConvertFrom-Json
+ if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne 'U30-40' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 26 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
+@@ -48,7 +48,7 @@
+ try{$bytes=[Text.Encoding]::UTF8.GetBytes(($token|ConvertTo-Json));$stream.Write($bytes,0,$bytes.Length);$stream.Flush()}finally{$stream.Dispose()}
+ $started.n_consumed=$Turn;$started|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $hostDir 'start.json') -Encoding utf8
+ Budget;OwnState;if((Elapsed) -ge 1440){throw 'Consumed token but no late input; root close'}
+-$inputResult=& $tool -Action Key -Keys n -ExpectedProcessId $gate.pid -ExpectedCreationUtcMs $started.creation_utc_ms -ExpectedWindowHandle $window.window
++$inputResult=& $tool -Action Key -Keys n
+ $inputOK=$?
+ $inputResult|Set-Content -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt')) -Encoding utf8
+ if(-not $inputOK){throw 'n input failed; consumed token remains; no retry'}

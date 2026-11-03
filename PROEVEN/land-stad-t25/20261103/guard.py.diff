@@ -1,0 +1,130 @@
+--- PROEVEN/wondervoltooiing-host/20261030/guard.py
++++ PROEVEN/land-stad-t25/20261103/guard.py
+@@ -7,7 +7,7 @@
+ HERE = Path(__file__).resolve().parent
+ ROOT = HERE.parents[2]
+ DATA = ROOT/'PROEVEN/wondergewicht/20261030'
+-RUN_ID = 'WONDERCOMPLETE-20261030'
++RUN_ID = 'LAND-STAD-T25-20261103'
+ 
+ 
+ def sha(path):
+@@ -30,8 +30,8 @@
+     own = {r['path']: r['sha256'] for r in rows}
+     if len(own) != len(rows):
+         raise ValueError('Duplicate source pin')
+-    required = {'PROEVEN/wondervoltooiing-host/20261030/'+name for name in
+-                ('README.md', 'Beheer-Proef.ps1', 'Stap-Origineel.ps1', 'Stap-Proef.ps1', 'guard.py', 'check_c0.py')}
++    required = {'PROEVEN/land-stad-t25/20261103/'+name for name in
++                ('README.md', 'Beheer-Proef.ps1', 'Stap-Proef.ps1', 'guard.py', 'check_c0.py')}
+     required.update(('PROEVEN/wondergewicht/20261030/pins.json',
+                      'PROEVEN/wondergewicht/20261030/after-n1.json',
+                      'PROEVEN/Bedien-CTP.ps1', 'PROEVEN/Controleer-Weekbudget.py'))
+@@ -40,6 +40,9 @@
+     old = read(root/'PROEVEN/wondergewicht/20261030/pins.json')['files']
+     if len(old) != 107 or any(own.get(r['path']) != r['sha256'] for r in old):
+         raise ValueError('Frozen C4 pins omitted/changed')
++    old_human = read(root/'PROEVEN/mensprotocol-ok/20261102/pins.json')['files']
++    if len(old_human) != 117 or any(own.get(r['path']) != r['sha256'] for r in old_human):
++        raise ValueError('Frozen human protocol pins omitted/changed')
+     for path, expected in own.items():
+         target = (root/path).resolve()
+         if not target.is_relative_to(root.resolve()) or sha(target) != expected:
+@@ -47,8 +50,10 @@
+ 
+ 
+ def validate(snapshot, start, index, reference, after=False):
+-    if type(index) is not int or not 1 <= index <= 21:
+-        raise ValueError('N index outside 1..21')
++    if start.get('arm') not in ('control', 'candidate'):
++        raise ValueError('Unexpected arm')
++    if type(index) is not int or not 1 <= index <= 25:
++        raise ValueError('N index outside 1..25')
+     actual = snapshot['instance']
+     if (actual['pid'], actual['creationtime_filetime'], actual['executable']) != (start['pid'], start['creation_filetime'], start['path']):
+         raise ValueError('Snapshot process binding mismatch')
+@@ -60,18 +65,24 @@
+             or snapshot['variant'] != reference['variant'] or snapshot['run_id'] != RUN_ID):
+         raise ValueError('Incomplete/unbound C4 snapshot')
+     rows = snapshot['state']['civilizations']
+-    if [r['civ_id'] for r in rows] != list(range(2, 9)) or any(type(r['processed_round']) is not int or r['processed_round'] != 25+index-1+int(after) for r in rows):
++    if [r['civ_id'] for r in rows] != list(range(2, 9)) or any(type(r['processed_round']) is not int or r['processed_round'] != -1+index-1+int(after) for r in rows):
+         raise ValueError('Snapshot native round/participants mismatch')
++    # Before the first pass AIP caches may still reflect the serialized T0.
++    # Thereafter arm-specific 30000 metadata is authoritative only during opening.
+     if index > 1 or after:
+-        expected = reference['state']['civilizations']
+-        if any(r['weight_30000_expectation'] != e['weight_30000_expectation'] or r['weight_30000_expectation']['status'] != 'PASS' for r, e in zip(rows, expected)):
+-            raise ValueError('Effective weight30000 not confirmed')
++        for row in rows:
++            status = row['weight_30000_expectation']['status']
++            active = row['opening_symbols']['opening_required']
++            expected = ('PASS' if start['arm'] == 'candidate' else 'FAIL') if active == 1 else 'NOT_APPLICABLE'
++            if active not in (0, 1) or status != expected:
++                raise ValueError('Arm/opening weight metadata mismatch')
++
+ 
+ 
+ def snapshot(path, start, index, reference, after=False, data=DATA):
+     path = path.resolve()
+-    if path.parent != data.resolve() or not path.name.startswith('completion-') or path.suffix != '.json':
+-        raise ValueError('Expected unique completion-prefixed C4 output')
++    if path.parent != data.resolve() or not path.name.startswith('land-t25-'+start['arm']+'-') or path.suffix != '.json':
++        raise ValueError('Expected unique arm-prefixed C4 output')
+     validate(read(path), start, index, reference, after)
+     return dict(path=str(path), sha256=sha(path))
+ 
+@@ -95,14 +106,14 @@
+         consumed_path = folder/f'N{i:02d}-consumed.json'
+         c = read(consumed_path)
+         before = snapshot(Path(c['before_snapshot']['path']), start, i, reference, data=data)
+-        wanted = dict(n_index=i, maximum_inputs=21, start_sha256=sha(start_path),
++        wanted = dict(n_index=i, maximum_inputs=25, start_sha256=sha(start_path),
+                       before_snapshot=before, previous_completed_sha256=previous)
+         if c != wanted or (i > 1 and before != last_after):
+             raise ValueError('Consumed marker/before snapshot chain mismatch')
+         completed_path = folder/f'N{i:02d}-completed.json'
+         d = read(completed_path)
+         last_after = snapshot(Path(d['after_snapshot']['path']), start, i, reference, after=True, data=data)
+-        if d != dict(n_index=i, native_round=25+i, consumed_sha256=sha(consumed_path), after_snapshot=last_after):
++        if d != dict(n_index=i, native_round=-1+i, consumed_sha256=sha(consumed_path), after_snapshot=last_after):
+             raise ValueError('Completed marker/snapshot chain mismatch')
+         previous = sha(completed_path)
+     return previous, last_after
+@@ -116,7 +127,7 @@
+     previous, last_after = history(folder, start_path, index-1, reference, data)
+     if index > 1 and before != last_after:
+         raise ValueError('Before snapshot is not previous completed snapshot')
+-    write_new(folder/f'N{index:02d}-consumed.json', dict(n_index=index, maximum_inputs=21,
++    write_new(folder/f'N{index:02d}-consumed.json', dict(n_index=index, maximum_inputs=25,
+               start_sha256=sha(start_path), before_snapshot=before, previous_completed_sha256=previous))
+ 
+ 
+@@ -129,12 +140,12 @@
+     token = folder/f'N{index:02d}-consumed.json'
+     c = read(token)
+     before = snapshot(Path(c['before_snapshot']['path']), start, index, reference, data=data)
+-    if c != dict(n_index=index, maximum_inputs=21, start_sha256=sha(start_path),
++    if c != dict(n_index=index, maximum_inputs=25, start_sha256=sha(start_path),
+                  before_snapshot=before, previous_completed_sha256=previous) or (index > 1 and before != last_after):
+         raise ValueError('Current consumed marker/before snapshot mismatch')
+     if after['path'] == before['path']:
+         raise ValueError('After snapshot reuses before output')
+-    write_new(folder/f'N{index:02d}-completed.json', dict(n_index=index, native_round=25+index,
++    write_new(folder/f'N{index:02d}-completed.json', dict(n_index=index, native_round=-1+index,
+               consumed_sha256=sha(token), after_snapshot=after))
+ 
+ 
+@@ -149,8 +160,10 @@
+     if args.mode != 'pins':
+         if args.start is None or args.snapshot is None or args.index is None:
+             parser.error('start, snapshot and index required')
+-        if args.start.resolve() != HERE/'candidate/start.json':
+-            raise ValueError('Expected own candidate start record')
++        if args.start.resolve() not in (HERE/'control/start.json', HERE/'candidate/start.json'):
++            raise ValueError('Expected own arm start record')
++        if read(args.start)['arm'] != args.start.parent.name:
++            raise ValueError('Start arm mismatch')
+         reference = read(DATA/'after-n1.json')
+         (consume if args.mode == 'consume' else complete)(args.start.resolve(), args.snapshot, args.index, reference)
+     print('PASS '+args.mode)

@@ -1,0 +1,84 @@
+--- PROEVEN/wondergewicht-host/20261030/Stap-Proef.ps1
++++ PROEVEN/mensprotocol-ok/20261102/Stap-Proef.ps1
+@@ -1,42 +1,57 @@
+-param(
+- [Parameter(Mandatory=$true)][ValidateSet('control','candidate')][string]$Arm,
++param([ValidateSet('control')][string]$Arm='control',
+  [Parameter(Mandatory=$true)][ValidatePattern('^[A-Za-z0-9-]+$')][string]$Name,
+- [ValidateSet('Capture','Click','Key')][string]$Action='Capture',
+- [int]$X,[int]$Y,[int]$FromX,[int]$FromY,[string]$Keys
+-)
++ [ValidateSet('Capture','Click','Key','ResearchOK')][string]$Action='Capture',
++ [int]$X,[int]$Y,[int]$FromX,[int]$FromY,[string]$Keys,
++ [switch]$ConfirmedNoModal,[switch]$ConfirmedWarriorOnRome,[switch]$ConfirmedResearchStoneWorking)
+ $ErrorActionPreference='Stop'
+ $root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../../..'))
++foreach($pin in (Get-Content (Join-Path $PSScriptRoot 'pins.json') -Raw|ConvertFrom-Json).files){if((Get-FileHash -LiteralPath (Join-Path $root $pin.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $pin.sha256){throw "Source pin mismatch: $($pin.path)"}}
+ $folder=Join-Path $PSScriptRoot $Arm
+ $s=Get-Content (Join-Path $folder 'start.json') -Raw|ConvertFrom-Json
++$exe=Join-Path $root 'CTP-proef/ctp_program/ctp/civctp.exe'
+ $g=Get-Process -Id $s.pid -ErrorAction Stop
+-if($g.Path -ne $s.path -or $g.StartTime.ToUniversalTime().ToFileTimeUtc() -ne $s.creation_filetime){throw 'Process identity changed'}
++if($s.path -cne $exe -or $g.Path -cne $exe -or $g.StartTime.ToUniversalTime().ToFileTimeUtc() -ne $s.creation_filetime){throw 'Process identity changed'}
+ $elapsed=([DateTime]::UtcNow-$g.StartTime.ToUniversalTime()).TotalSeconds
+ if($elapsed -ge 900 -or ($Action -ne 'Capture' -and $elapsed -ge 780)){throw 'Proof deadline; close normally'}
+ if(-not $s.window){
+  if($g.MainWindowHandle -eq 0){throw 'No main window; wait without input'}
+- $s | Add-Member -NotePropertyName window -NotePropertyValue $g.MainWindowHandle.ToInt64() -Force
+- $s | ConvertTo-Json | Set-Content (Join-Path $folder 'start.json') -Encoding UTF8
++ $s|Add-Member -NotePropertyName window -NotePropertyValue $g.MainWindowHandle.ToInt64() -Force
++ $s|ConvertTo-Json|Set-Content (Join-Path $folder 'start.json') -Encoding UTF8
+ }
++if($g.MainWindowHandle.ToInt64() -ne $s.window){throw 'Main window changed'}
+ $log=Join-Path $folder ($Name+'.log')
+ $png=Join-Path $folder ($Name+'.png')
+ $actionLog=Join-Path $folder ($Name+'-action.log')
+-if((Test-Path -LiteralPath $log) -or (Test-Path -LiteralPath $png) -or (Test-Path -LiteralPath $actionLog)){throw 'Step name already used; inspect prior outcome'}
++$preLog=Join-Path $folder ($Name+'-pre-focus.log')
++if(@($log,$png,$actionLog,$preLog)|Where-Object {Test-Path -LiteralPath $_}){throw 'Step name used; inspect prior outcome'}
+ $helper=Join-Path $root 'PROEVEN/Bedien-CTP.ps1'
+-if($Action -eq 'Click'){
+- & $helper -Action Click -X $X -Y $Y -FromX $FromX -FromY $FromY > $actionLog
+- if(-not $?){throw 'Click outcome unknown; do not resend'}
+-} elseif($Action -eq 'Key'){
+- if($Keys -ne 'n'){throw 'This proof allows only the registered single n'}
+- $token=Join-Path $folder 'N1-consumed.json'
+- $stream=[IO.File]::Open($token,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+- try{
+-  $bytes=[Text.Encoding]::UTF8.GetBytes(([ordered]@{pid=$s.pid;creation_filetime=$s.creation_filetime;at_utc=[DateTime]::UtcNow.ToString('o');maximum_inputs=1} | ConvertTo-Json))
+-  $stream.Write($bytes,0,$bytes.Length)
+- }finally{$stream.Dispose()}
+- & $helper -Action Key -Keys n > $actionLog
+- if(-not $?){throw 'N1 outcome unknown; never resend'}
++function Capture($dest){
++ & $helper -Action Capture -CaptureWaitForForeground -CaptureWaitTimeoutMs 3000 -ExpectedProcessId $s.pid -ExpectedCreationUtcMs $s.creation_utc_ms -ExpectedWindowHandle $s.window > $dest
++ if(-not $?){throw 'Capture binding failed; no coordinate reuse'}
+ }
+-& $helper -Action Capture -CaptureWaitForForeground -CaptureWaitTimeoutMs 3000 -ExpectedProcessId $s.pid -ExpectedCreationUtcMs $s.creation_utc_ms -ExpectedWindowHandle $s.window > $log
+-if(-not $?){throw 'Capture failed; do not reuse coordinates'}
++if($Action -ne 'Capture'){
++ & 'C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe' (Join-Path $root 'PROEVEN/Controleer-Weekbudget.py') --thread 01a0f7b4-4751-7513-b510-3835ce43f47d
++ if($LASTEXITCODE -notin @(0,25)){throw 'Budget unknown/stop; no input sent'}
++ Capture $preLog
++ $g=Get-Process -Id $s.pid -ErrorAction Stop
++ if($g.Path -cne $exe -or $g.StartTime.ToUniversalTime().ToFileTimeUtc() -ne $s.creation_filetime -or $g.MainWindowHandle.ToInt64() -ne $s.window -or ([DateTime]::UtcNow-$g.StartTime.ToUniversalTime()).TotalSeconds -ge 780){throw 'Identity/deadline changed; no input sent'}
++ $token=$null
++ if($Action -eq 'Key'){
++  if($Keys -notin @('n','{ENTER}','f')){throw 'Only registered n, observed ENTER and f allowed'}
++  if($Keys -eq 'n'){if(-not $ConfirmedNoModal){throw 'No-modal visual confirmation required'};$token='N1-consumed.json'}
++  if($Keys -eq 'f'){if(-not $ConfirmedWarriorOnRome){throw 'Warrior on Rome visual confirmation required'};$token='F1-consumed.json'}
++ }elseif($Action -eq 'ResearchOK'){
++  if(-not $ConfirmedResearchStoneWorking){throw 'Visible Stone Working selection and CHANGE TO agreement required'}
++  $token='RESEARCH-OK-consumed.json'
++ }
++ if($token){
++  $stream=[IO.File]::Open((Join-Path $folder $token),[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
++  try{$bytes=[Text.Encoding]::UTF8.GetBytes(([ordered]@{pid=$s.pid;creation_filetime=$s.creation_filetime;at_utc=[DateTime]::UtcNow.ToString('o');maximum_inputs=1;action=$Action;keys=$Keys;visual_assertion=$true}|ConvertTo-Json));$stream.Write($bytes,0,$bytes.Length)}finally{$stream.Dispose()}
++ }
++ if($Action -eq 'Key'){& $helper -Action Key -Keys $Keys > $actionLog}
++ else{& $helper -Action Click -X $X -Y $Y -FromX $FromX -FromY $FromY > $actionLog}
++ if(-not $?){throw 'Input outcome unknown; do not resend consumed action'}
++}
++Capture $log
+ Copy-Item -LiteralPath (Join-Path $root 'PROEVEN/automatisering/ctp-window.png') -Destination $png
+ Write-Output $png

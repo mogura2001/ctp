@@ -1,0 +1,13 @@
+﻿# Gewicht30000: werkelijk nieuwe Labyrinthbouw
+
+30okt2026 13:40CET. C0pakket enreader rootgeaccepteerd; eigenfreshhostPID25108/fullFILETIME134378368351978026, start12:27:15.198UTC. Vooraf E:CCTP ready/count0. Dezelfde9280c97a-archiefsave/eb6/LANDparticipants enpassievemens. Alleenopening_wonders9100→30000 tenopzichtevandebewezenC3controle;14overigekandidaatfilesbytegelijk. GeenDLL/quota/threshold/spelregelwijziging.
+
+Voor:2700BC/native25/47steden,33savedwonderentriesbijalle7. Naexact1geregistreerden:2650BC/native26/49steden,7/7effectieveéénentryLabyrinth/index2/category-1/weight30000. Beidecompleteobservatiestweemaalstabiel. Legacy9100expectationblijft7/7FAILalsbehoudenhistorischemetadata;nieuwe30000expectation7/7PASS.
+
+Drienieuweechteklasse9/type2queues,zelfdevolledigehandle/eigenaar/AI-ID,vóórnergensLabyrinthindequeue: civ2handle268435520,civ5handle268435476,civ8handle268435479. Controle9100hadhier0;beidevarianten49steden. RootheeftABbeginvergelijkingonafhankelijkgecontroleerd in PROEVEN/WONDERGEWICHT-ROOT-AB-2026-10-30.json. Eigen RESULTAAT.json bindt bronhashes enexactevoor/nanodes.
+
+Visueel: naafgeronderuntimelezingalleenobservatiemodusPlayer2Mexicans/EditCity/ScreensCITY/titelbalkdrag. citystatus-visible.png toont8steden,2650BC,Veracruzsize2,Labyrinth,resterend16. GeenBuild/MakeQueue/Rush/naam/sizeaanpassing,geenextra n. Stadsnaam→nativehandleisnietapartuitgelezen;beweergelijkeverzamelingciv+productie,geenonbewezennaambinding.
+
+Ditbewijststartvanwonderbouwdoorafzonderlijkegewichtsaanpassingindezevasteproef;geenvoltooiing,geenlangetermijnwinst,geenéénbouwergarantie,geenafgerondevolledigeDoel4. Nieuweverhogingsreeksnietnodig.
+
+Normaalgesloten12:38:56.548UTC/701.351s,CloseTRUE/ExitTRUE/count0.162pinshersteld12:38:57.584UTC;8partials/aliasweg. VerwachteautosavegearchiveerdSHA67abcaa7cfd9f185fb77dea5e1976716f81e7ee72dd8b51ca8be0dcfd2a44710. FULL-INVENTORY-RESTORE.jsonPASS118aidata/38savespaden+hashes/geenextras. Pcaan,uitvoerdergestopt. Budget12:39:06UTCfive25/week57.

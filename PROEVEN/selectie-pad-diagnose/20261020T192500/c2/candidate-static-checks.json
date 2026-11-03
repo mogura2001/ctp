@@ -1,0 +1,101 @@
+{
+  "stage": "C2_BYTES_OWN_DECODER_NOT_NATIVE_NOT_HOST",
+  "candidate_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+  "manifest_sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152",
+  "state_rva": "0xeb000",
+  "state_size": 497924,
+  "Plan_and_generation_offset": 497664,
+  "PE_checksum": true,
+  "PE_RX_RW": true,
+  "RW_zero": true,
+  "relocations_unchanged": true,
+  "B2_H3_padding_unchanged": true,
+  "entire_policy_SCI_development_recipe_preserved": true,
+  "direct_rel32_targets_checked": 3637,
+  "logger_blocks": 41,
+  "edge_landings": 16,
+  "callpairs": {
+    "finalize_selection": {
+      "call_rva": 896066,
+      "return_rva": 896071
+    },
+    "selection_cached": {
+      "call_rva": 939667,
+      "return_rva": 939672
+    },
+    "cached_direct": {
+      "call_rva": 936746,
+      "return_rva": 936751
+    }
+  },
+  "fixture_bytes": 27215,
+  "fixture_RX_page_end": "0x7000",
+  "fixture_Plan_minus16": "0x3fff0",
+  "fixture_fully_decoded": true,
+  "decoder_cases": [
+    {
+      "name": "native0",
+      "accepted": true
+    },
+    {
+      "name": "endpoint11",
+      "accepted": true
+    },
+    {
+      "name": "stalegeneration",
+      "accepted": false
+    },
+    {
+      "name": "wrongcallpair",
+      "accepted": false
+    },
+    {
+      "name": "missingreached",
+      "accepted": false
+    },
+    {
+      "name": "badsourceID",
+      "accepted": false
+    },
+    {
+      "name": "wrongpredicate",
+      "accepted": false
+    },
+    {
+      "name": "incompletepropagation",
+      "accepted": false
+    },
+    {
+      "name": "reserved",
+      "accepted": false
+    },
+    {
+      "name": "unreached_initialized_bytes",
+      "accepted": false
+    },
+    {
+      "name": "DWORD4_padding_mismatch_is_separate",
+      "accepted": true
+    },
+    {
+      "name": "complete_stable_twice",
+      "accepted": true
+    },
+    {
+      "name": "same_valid_changed_payload",
+      "accepted": false
+    }
+  ],
+  "real_saved_SCI0_margins": [
+    35,
+    30,
+    25
+  ],
+  "real_saved_scope17_food": null,
+  "actual_saved_T1_sha256": "7675ffbfcdf7e1f19966ed94f88c37e5c704286b1269687cd09eda7305bfb67c",
+  "offline_bound_reader": true,
+  "native_compiled": false,
+  "native_run": false,
+  "installed": false,
+  "gameplay_proven": false
+}

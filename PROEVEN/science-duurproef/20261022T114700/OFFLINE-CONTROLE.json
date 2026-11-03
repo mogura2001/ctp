@@ -1,0 +1,48 @@
+{
+  "at_Europe_Amsterdam": "2026-10-22T11:49:49.988852+02:00",
+  "stage": "PASS_SOURCE_ONLY_NO_LIVE",
+  "checks": {
+    "reader_byte_identical": true,
+    "scope_byte_identical": true,
+    "exact_capture_block": true,
+    "all_other_controller_bytes_equal_except_host3": true,
+    "capture_before_T1_token": true,
+    "single_original_Key_n_preserved": true,
+    "powershell_parse_zero": true,
+    "old179_exact": true,
+    "new185pins_exact": true,
+    "gate_closed_unbound": true,
+    "variant_empty": true
+  },
+  "source_count": 185,
+  "source_pins_sha256": "02a067eef32b1f7ce44186f4c17edbd3bfee31650725980b796b797258e38556",
+  "reader_sha256": "314dcc54cdb725c2c8de60f269a1d99555292f63c7f7f39a4c48669775bb7851",
+  "scope_sha256": "5c718019c1ec3fc50175fd70caf99a928c9164d871733e488f19ebfaf2775024",
+  "controller_sha256": "b82937b917b8f037b1425e9df9ce5ca04f4a6bc498e48ab6d22e6f5ab3f69be9",
+  "diff_sha256": "302dd29fc9c66d9ea78ac5a555f44a82e5aa703526ff218529931ce73114383e",
+  "old179_deviations": [],
+  "budget": {
+    "reported_at_utc": "2026-10-22T09:49:00.030Z",
+    "checked_at_utc": "2026-10-22T09:49:49.941786+00:00",
+    "age_seconds": 49.9,
+    "windows": {
+      "five_hour": {
+        "remaining_percent": 54.0,
+        "used_percent": 46.0,
+        "window_minutes": 300,
+        "reset_at_unix": 1792677389
+      },
+      "weekly": {
+        "remaining_percent": 60.0,
+        "used_percent": 40.0,
+        "window_minutes": 10080,
+        "reset_at_unix": 1793098886
+      }
+    },
+    "stop_reasons": [],
+    "weekly_remaining_percent": 60.0,
+    "five_hour_remaining_percent": 54.0,
+    "state": "ok"
+  },
+  "next": "Root review exact source delta and185pins; root alone owns fresh host3/backups/sevenarchives/livegate/measurement/restore. No live permission from this source record."
+}

@@ -1,0 +1,11 @@
+# Voortgang voorstel U30-kaartkennisfilter
+
+17 oktober 2026, 11:39 Europe/Amsterdam — gestart, fase B daadwerkelijk actief als gedelegeerde ontwerper. Root beheert PROJECTSTATUS.md; doelruntime nog blocked, geen automatische doelmodus geclaimd. Ownership uitsluitend dit bestand en U30-KAARTKENNISFILTER.md. A-overdracht U30-H2-GATE28 is afgerond en door root gelezen.
+
+17 oktober 2026, 11:45 Europe/Amsterdam — analyseoverdracht, strategie en huidige type10-native.py/policy.py gelezen. Vastgesteld: een filter alleen vóór H3 laat onbekende kandidaten de canonicalprefix64 bezetten. Ontwerp verplaatst de filter naar de keyfase, behoudt validatie van iedere key en CAPTURE, met afzonderlijke bekende telling en prefixcount. Alle-onbekend wordt een normale lege extra selectie; oorspronkelijke AIP-vraag blijft beschikbaar. Nu exacte binding/ABI, beperkte controles en hostmeetlat uitwerken. Volgende oplevering: reviewbaar klein B→C-voorstel; geen gameplay-/binary-/bronmutatie. Geen inhoudelijke blokkade voor deze lokale reparatie.
+
+Budget 11:43:18: via expliciete Python312-helper, bron30,2s oud, vijfuur92% en week37%, state ok. WindowsApps-alias werkte niet; opgelost met door root aangeleverd interpreterpad. Pc blijft aan.
+
+17 oktober 2026, 11:48 Europe/Amsterdam — B inhoudelijk afgerond en overgedragen voor rootreview/uitleg vóór C. Alle vier beslisvragen behandeld: filter vóór minimum64-selectie met prefixcount; behoud overige UNKNOWNfallback plus additieve Worldslot/bodypins/ret8; klein bronvoorstel met beperkte callercontrole en aparte echtehostmeetlat; allunknown behoudt native AIPvraag en volgende passes heroverwegen dezelfde queue. Bewijs/voorstel: U30-KAARTKENNISFILTER.md. Geen permanente beperking van het projectdoel tot verkend terrein. Eén eindige A-vraag voor eventuele later werkelijk blokkerende ungated route genoemd, geen blokkade voor deze reparatie. Geen C-werk uitgevoerd; Doel1/1a technisch/gameplay open, geen extra oorspronkelijk gameplaydoel afgerond. Volgende concrete oplevering: rootgereviewde C-brondiff/pins, daarna kandidaat en beperkte controles vóór één hostarm. Ontwerprun gestopt na overdracht; geen achtergrondwerk of doelmodus actief geclaimd.
+
+Budget 11:48:04: bron18,9s oud, vijfuur87% en week36%, state ok. Geen budgetstop; pc blijft aan.

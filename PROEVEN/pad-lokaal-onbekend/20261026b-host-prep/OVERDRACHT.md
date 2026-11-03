@@ -1,0 +1,11 @@
+# Verse uitvoerkopie26b
+
+2026-10-26T17:43:17.553986+01:00 Europe/Amsterdam. Uitsluitend voorbereid, geen backup/installatie/build/native/RPM/GUI/spelstart. Alle uitvoeringsgatesFALSE; geen hostfolder. Bestaande26okt-run is verbruikt en volledig hersteld, niet hervat. Doelruntime was bij overdracht blocked; deze bronvoorbereiding claimt geen actieve doelplanning.
+
+Minimale clone van de geaccepteerde26okt-bron: reader/scope/runtime_adapter/runtime-pins/HOST-PLAN/REFERENCE-PINS bytegelijk. Kandidaatacfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984, manifest0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d, state0xef000/497924 exact behouden. Legacyimports en alle werkelijke bronmodules blijven gepind. Geen nieuwe checker/generator/framework gekopieerd of gebouwd. Bestaande AST/diskbinding/decoder-/101referentiebewijzen uit23/26okt blijven provenance; zesdecoderfixtures en101snapshots NIET herhaald.
+
+Uitsluitend nieuwe namespace20261026b-host/20261026b-host-prep, run_idpad-local4-20261026b-host, alias000-PAD-LOCAL4-20261026B-START-T0, archievenPAD-LOCAL4-20261026B-AUTOSAVE-A/B en eigen bronhashbinding. Start en runner behouden .NETDriveInfoE:/CDRom/IsReady en verwachten nu exact labelCCTP. Root bevestigt nieuwe door gebruiker gemounte cd met die waarden; CIMCDROMblijft leeg, proces-CIMblijft behouden. Geen cdcheckomzeiling of spelconfigwijziging.
+
+Alle100n/4500hard/4380no-new/180intro/300load/T1- enT26hashreviews/immutableCreateNewstartn0-token-pass-snapshotketen zijn behouden. HOST-PLAN blijft historische planning23okt, geen huidige backup. Start vereist verse19config/118effectief/29before en ALLE huidige saves/archieven/profielbackups; normaleClose/count0/dubbeleautosavearchieven/volledigbeforeherstel blijven behouden. Nieuwe gesloten gates uit ongebruikte23okt-templates, geen vorige PID/review/T0/startbinding overgenomen.
+
+Kleine volledige diffs tegen26okt en namespace/media/pin/syntax/bytegelijkeASTcontroles staan in dit nieuwe pakket. SOURCE-PINS sluiten mutableROOT-gates uit. Runtime/backups/installatie uitsluitend na aparte rootreview en actuele budget/count0/mediahercontrole. Oude bron-/historiebestanden ongewijzigd. Oude df3T100=121 blijft referentie; Doel1/1a/5OPEN,Doel3 bestaande herstelbasis. NativeABI/faultcases NIETGETEST; geen nieuw gameplaybewijs. Pcaan.

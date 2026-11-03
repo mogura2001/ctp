@@ -1,0 +1,19 @@
+--- C1/native/NativePathLoggerCaller.cs
++++ C2/native-v2/NativePathLoggerCaller.cs
+@@ -7,6 +7,7 @@
+  [DllImport("kernel32.dll",SetLastError=true)]static extern IntPtr VirtualAlloc(IntPtr p,UIntPtr n,uint t,uint f);
+  [DllImport("kernel32.dll")]static extern bool VirtualFree(IntPtr p,UIntPtr n,uint t);
+  [DllImport("kernel32.dll")]static extern bool VirtualProtect(IntPtr p,UIntPtr n,uint f,out uint old);
++ [DllImport("kernel32.dll")]static extern bool FlushInstructionCache(IntPtr process,IntPtr address,UIntPtr size);
+  [UnmanagedFunctionPointer(CallingConvention.Cdecl)]delegate void Shim();
+  static readonly List<IntPtr> owned=new List<IntPtr>();static readonly List<string> passes=new List<string>();
+  static IntPtr image,plan,context;static Shim shim;static int stateSize=0x79904,cases;const int Canary=0x5aa55aa5;
+@@ -17,7 +18,7 @@
+  static bool Same(byte[] a,byte[] b){if(a.Length!=b.Length)return false;for(int i=0;i<a.Length;i++)if(a[i]!=b[i])return false;return true;}
+  static string Hash(byte[] b){using(var h=SHA256.Create())return BitConverter.ToString(h.ComputeHash(b)).Replace("-","").ToLowerInvariant();}
+  static IntPtr Mem(int n){IntPtr p=VirtualAlloc(IntPtr.Zero,(UIntPtr)n,0x3000,4);Check(p!=IntPtr.Zero,"own allocation");owned.Add(p);return p;}
+- static void RX(IntPtr p,int n){uint old;Check(VirtualProtect(p,(UIntPtr)n,0x20,out old),"own RX");}
++ static void RX(IntPtr p,int n){uint old;Check(VirtualProtect(p,(UIntPtr)n,0x20,out old),"own RX");Check(FlushInstructionCache(new IntPtr(-1),p,(UIntPtr)n),"flush exact own RX range");}
+  static int Number(string s,string name){var m=Regex.Match(s,"\""+name+"\"\\s*:\\s*(\\d+)");Check(m.Success,"integer "+name);return Int32.Parse(m.Groups[1].Value);}
+  static Dictionary<string,int> labels;
+  static void Setup(int mode,bool stale){

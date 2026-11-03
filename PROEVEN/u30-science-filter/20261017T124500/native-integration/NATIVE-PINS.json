@@ -1,0 +1,168 @@
+{
+  "stage": "ONE_OWN_HELPER_33_CALLS_PASS_NOT_ENGINE_NOT_GAMEPLAY",
+  "time_amsterdam": "2026-10-17T21:54:54.792502+02:00",
+  "candidate_sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9",
+  "build_files_rechecked": 62,
+  "files": [
+    {
+      "path": "BRONREVIEW.md",
+      "sha256": "33307088a8bf040b943258b0d4735956d8609bb8ab76a5be24b4eaf3eef0c36d",
+      "size": 5783
+    },
+    {
+      "path": "caller-process.json",
+      "sha256": "9ba03702c84f3cbbeba8e346cd779b4ac86f747bde426635af607ed245db761b",
+      "size": 1948
+    },
+    {
+      "path": "caller.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "caller.stdout.log",
+      "sha256": "9deb562506847e0585ab99ddbd9a8b0a6aefbd007ee6a967784f125ac1613100",
+      "size": 2048
+    },
+    {
+      "path": "compile-helper.ps1",
+      "sha256": "fdbe59d2bff533b937a29617c91667c62f877e42873ad722a6d324c92e70ca82",
+      "size": 464
+    },
+    {
+      "path": "helper/combine.bin",
+      "sha256": "aaff51d954b6dfb1bf7314a5aa1336eb655fa560f43319a463ac694813240b97",
+      "size": 31
+    },
+    {
+      "path": "helper/combine.recipe.json",
+      "sha256": "3afff7a37241493cf0ba87e2f8fba0e8f8d556131a39007ab1d247642c481958",
+      "size": 1020
+    },
+    {
+      "path": "helper/endpoint.bin",
+      "sha256": "b51918da4a75b5707a386c088292d14501f2dfd093e2ef88b96de22fa8e74214",
+      "size": 41
+    },
+    {
+      "path": "helper/endpoint.recipe.json",
+      "sha256": "a7f3f06ca7f5e3f84386a8e1a5697e51bc1c83dbe2c94e9f434fbded546592fd",
+      "size": 1426
+    },
+    {
+      "path": "helper/gate.bin",
+      "sha256": "7028e3f7b78cf3996995ae669828856a31833018b2d8ffb8482d7ff4c7b4660d",
+      "size": 142
+    },
+    {
+      "path": "helper/gate.recipe.json",
+      "sha256": "8ac549822bbb9a7300bfdedabd0f5ea6adcbdda906ccb843028f85cded34de45",
+      "size": 3378
+    },
+    {
+      "path": "helper/h3.bin",
+      "sha256": "0bf688e29b0d649d77545d8baf5d67488e4827ea72b7f1a145331a5af0a0b194",
+      "size": 219
+    },
+    {
+      "path": "helper/h3.recipe.json",
+      "sha256": "c7de9fde288ef2d72740703fbe5955d055fea6ee973c475d45a07a3546621865",
+      "size": 4442
+    },
+    {
+      "path": "helper/key.bin",
+      "sha256": "3f5dbc54c9627ea8b500c962b83f82b67d02d98da34afe2e3d2d5a8b62a98fb4",
+      "size": 119
+    },
+    {
+      "path": "helper/key.recipe.json",
+      "sha256": "b60f97e5e576a92e463ca0bc5b8024d33581e2c7c99c2df804520aa4372f7466",
+      "size": 2849
+    },
+    {
+      "path": "helper/path.bin",
+      "sha256": "dfbc990cbd8bea00f43c75a9681e643f76ccd943454ca642a9a996ca47363040",
+      "size": 41
+    },
+    {
+      "path": "helper/path.recipe.json",
+      "sha256": "6555e07857426f74cafbfef4de0b7f35eda19baadd33626d01cd9665cfadfe6e",
+      "size": 1426
+    },
+    {
+      "path": "helper/science.bin",
+      "sha256": "40e3aa75bcd2cb47228eb186e24e756ab1688f46e4b56fc1078efe49ae3d21af",
+      "size": 234
+    },
+    {
+      "path": "helper/science.recipe.json",
+      "sha256": "db9a40e1dd6ee90d1ecee38b5e5163fc4388adb16494ed2458e83df357a09be9",
+      "size": 4669
+    },
+    {
+      "path": "helper/score.bin",
+      "sha256": "1011e74f8c235f64e52a68920730073782714ca6b162151d79729aef7a1a8e61",
+      "size": 63
+    },
+    {
+      "path": "helper/score.recipe.json",
+      "sha256": "ac9b3c7806f5c0d0f1c838fdce4cec18cf7be30052afc2e8117bc2d1f1ad7289",
+      "size": 1752
+    },
+    {
+      "path": "INPUT-CHECKPOINT.json",
+      "sha256": "aafd3f1cf835b6a62f8ce98b8fad48805ffff7d6c19f8fa6dec8948453429fcc",
+      "size": 449
+    },
+    {
+      "path": "native-caller-result.json",
+      "sha256": "78b5971b79b30ed10fd3ff52d65ce2213040f48128849fe7b11f5ae187eec4e9",
+      "size": 2101
+    },
+    {
+      "path": "native-caller.ps1",
+      "sha256": "ef9d499c239798f546fe20bd2b412400de32f9fed13ebaced5fdc777c44d7850",
+      "size": 792
+    },
+    {
+      "path": "NATIVE-RUNTIME-CHECKPOINT.json",
+      "sha256": "fd687255e3a5a774af68355058a03b7a74f8d7dbd75bff6275cffc92bfae7d34",
+      "size": 4454
+    },
+    {
+      "path": "NativeCaller.cs",
+      "sha256": "7f16ba7f51685f26f6521c0332c6ed30e150e5b224f4f84a642bbc3d72792436",
+      "size": 13854
+    },
+    {
+      "path": "NativeCaller.dll",
+      "sha256": "b834b1fa5a276d81734f7c52bc670d4c55becd7da426a4bba7be9bde34e2c147",
+      "size": 18432
+    },
+    {
+      "path": "PASS.txt",
+      "sha256": "4bb342d9049680e5d82f74bc1033415cfa1e6557cc7d9681e254a032d5d4676c",
+      "size": 959
+    },
+    {
+      "path": "prepare_fixtures.py",
+      "sha256": "5636cfc0a1e1e513e5a28ce466368f0a0d9adcb15bf827ed34a235a54f6ef329",
+      "size": 3830
+    },
+    {
+      "path": "RESULTAAT.md",
+      "sha256": "f5ba6b881b4db96071094cf8b0923601126899e27e18ea0cc4c51f7e3bd5edd5",
+      "size": 2284
+    },
+    {
+      "path": "run-caller.py",
+      "sha256": "1ec6995a2e35f624705db632f39c49fa124324f40e85bf8e396864d9e8777aac",
+      "size": 3409
+    },
+    {
+      "path": "SOURCE-CHECKPOINT.json",
+      "sha256": "165369aac4b1690b8fd8a2729becdde786ac19a3016684595a3e431edeca7147",
+      "size": 2977
+    }
+  ]
+}

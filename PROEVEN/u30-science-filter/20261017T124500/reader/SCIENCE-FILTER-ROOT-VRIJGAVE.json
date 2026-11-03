@@ -1,0 +1,50 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "candidate_sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9",
+  "state": "CONSUMED_T1_WHOLEPASS_REASON23_NORMAL_CLOSE_RESTORED",
+  "scope": "ONE integration host1 max10n/0-1-5-10; stop first observed42/contextfailure;210/600/690/720seconds; restore29",
+  "at_utc": "2026-10-19T16:49:08.271286+00:00",
+  "sources": [
+    {
+      "path": "Lees-Uitbreiding.py",
+      "sha256": "bf1a054a6fb8821e19e83d02735085094c7f6d0878c9bcb06046e92e435a63c3"
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3"
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "runtime-pins.json",
+      "sha256": "ce6febf7bf6cedb36f5fabf9972eb59c8596b9dbc0547722d2f4d00c3d450c56"
+    },
+    {
+      "path": "../candidate-manifest.json",
+      "sha256": "9b518945a76cd0369a781de5b8f63be5fc7df963050cb04567a3fa6f6afa58ad"
+    },
+    {
+      "path": "../preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332"
+    },
+    {
+      "path": "../BUILD-PINS.json",
+      "sha256": "0a21986db6a808be9a90e10a9d2853ec5ccce9ad984844e4ae155bfbd5170906"
+    },
+    {
+      "path": "../native-integration/NATIVE-PINS.json",
+      "sha256": "2465e23b3877eb2f734b72d41ae58a1dbfc9ca22eec46297481ae1644c5de2cc"
+    }
+  ]
+}

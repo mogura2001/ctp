@@ -1,0 +1,102 @@
+{
+  "at_utc": "2026-10-29T13:32:51.741428+00:00",
+  "paired_runtime_list_test": "PASS_7_OF_7",
+  "common_saved_T0_state_verified": true,
+  "candidate_T0_expectation_fail_is_pre_action_saved_state": true,
+  "acceptance_boundary": "T1 after exactly one AI begin-turn per civ; stated before candidate start",
+  "all_native_rounds": "-1 to 0",
+  "before_sha256": "c6bab2909d9f5739005e5f24678cf0a5818b17821031ca171c454e2cc40f4327",
+  "same_release_dll": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+  "proofs": [
+    {
+      "path": "PROEVEN/wonderlijst-meting/20261029/control-T0.json",
+      "sha256": "e7021c80f1ed7d63d19cdc647954445edf49e90fcaeb72307a76ab8e6aaf3a8a"
+    },
+    {
+      "path": "PROEVEN/wonderlijst-meting/20261029/control-T1.json",
+      "sha256": "ba89e24d17f3bbe39dc0929418e6bda039a692b0139d47be15e4387912d917e1"
+    },
+    {
+      "path": "PROEVEN/wonderlijst-meting/20261029/candidate-T0.json",
+      "sha256": "af8014ed7f3fd60e6ea662825a783e94d5b7d9c7e65cfecde5147d642e76dfd4"
+    },
+    {
+      "path": "PROEVEN/wonderlijst-meting/20261029/candidate-T1.json",
+      "sha256": "8580ab7c7f3e6267e2c94a82e94a8baf574abf93ac9cdb0f2b38c144e9d4bbdb"
+    }
+  ],
+  "per_civ": [
+    {
+      "civ_id": 2,
+      "name": "Juana de la Cruz / Mexicans",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 3,
+      "name": "Sennacherib / Assyrians",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 4,
+      "name": "Elizabeth II / Jamaicans",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 5,
+      "name": "Isabella / Spaniards",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 6,
+      "name": "Mao Tse-Tung / Chinese",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 7,
+      "name": "Mohandas Gandhi / Indians",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    },
+    {
+      "civ_id": 8,
+      "name": "Maria II / Portuguese",
+      "T0_both": 33,
+      "T1_control": 33,
+      "T1_candidate": 1,
+      "native_index": 2,
+      "weight": 9100.0
+    }
+  ],
+  "restored_aidata_files": 118,
+  "restored_saves": 38,
+  "restored_pins_per_arm": 162,
+  "native_token_binding": "UNKNOWN",
+  "Labyrinth_enqueue": "NOT_MEASURED",
+  "unbuildable_fallback": "NOT_MEASURED",
+  "post_opening_restore": "NOT_MEASURED",
+  "Doel4_complete": false,
+  "pc_left_on": true
+}

@@ -1,0 +1,102 @@
+{
+  "stage": "C4_SOURCE_ONLY",
+  "syntax": true,
+  "import_without_main": true,
+  "live_memory": false,
+  "game": false,
+  "native_execution": false,
+  "build": false,
+  "binding": {
+    "candidate": "acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984",
+    "manifest": "0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d",
+    "state_rva": 978944,
+    "state_size": 497924
+  },
+  "unchanged_functions": [
+    "stable_sample",
+    "scalar_state",
+    "observe_goal3",
+    "decode_slot0",
+    "ModuleInfo"
+  ],
+  "scope_cases": [
+    {
+      "case": "T0",
+      "accepted": true
+    },
+    {
+      "case": "T100",
+      "accepted": true
+    },
+    {
+      "case": "negative",
+      "accepted": false
+    },
+    {
+      "case": "101",
+      "accepted": false
+    },
+    {
+      "case": "wronghash",
+      "accepted": false
+    },
+    {
+      "case": "wrongmanifest",
+      "accepted": false
+    },
+    {
+      "case": "wrongarm",
+      "accepted": false
+    },
+    {
+      "case": "wrongPID",
+      "accepted": false
+    },
+    {
+      "case": "wrongcreation",
+      "accepted": false
+    },
+    {
+      "case": "wrongrun",
+      "accepted": false
+    },
+    {
+      "case": "wrongoutput",
+      "accepted": false
+    },
+    {
+      "case": "closed",
+      "accepted": false
+    }
+  ],
+  "old_reference_snapshots": 101,
+  "hard0_decoder_contract": [
+    {
+      "turn": 70,
+      "hard0_equal": true
+    },
+    {
+      "turn": 71,
+      "hard0_equal": true
+    },
+    {
+      "turn": 81,
+      "hard0_equal": true
+    },
+    {
+      "turn": 84,
+      "hard0_equal": true
+    },
+    {
+      "turn": 85,
+      "hard0_equal": true
+    },
+    {
+      "turn": 86,
+      "hard0_equal": true
+    }
+  ],
+  "synthetic_local4_contract": true,
+  "source_count": 70,
+  "source_pins_sha256": "6b56fde8d93892e86665264851aae54b9880b525aaf3cd1b1d1fe30f773c4c27"
+}

@@ -1,0 +1,43 @@
+{
+  "stage": "C1_SOURCE_READY_FOR_ROOT_REVIEW_ONLY",
+  "at_utc": "2026-10-23T13:47:36.131160+00:00",
+  "AST": [
+    "check_sources.py",
+    "native.py",
+    "path_diagnostic.py",
+    "path_diagnostic_layout.py",
+    "policy.py",
+    "reader/path_failure_decoder.py",
+    "source_imports.py"
+  ],
+  "imports": {
+    "native": "PROEVEN/pad-lokaal-onbekend/20261022T180000/native.py",
+    "policy": "PROEVEN/pad-lokaal-onbekend/20261022T180000/policy.py",
+    "path_diagnostic": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic.py",
+    "path_diagnostic_layout": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic_layout.py",
+    "path_failure_decoder": "PROEVEN/pad-lokaal-onbekend/20261022T180000/reader/path_failure_decoder.py",
+    "integration_base": "PROEVEN/selectie-pad-diagnose/20261020T192500/integration_base.py",
+    "union": "PROEVEN/selectie-pad-diagnose/20261020T192500/union.py",
+    "plan_layout": "PROEVEN/selectie-pad-diagnose/20261020T192500/plan_layout.py"
+  },
+  "changed": [
+    "native.py",
+    "path_diagnostic.py",
+    "reader/path_failure_decoder.py"
+  ],
+  "policy_and_layout_byte_identical": true,
+  "native_twenty_args_and_cleanup_and_safety_source_identical": true,
+  "emitter_invoked": false,
+  "candidate_build": false,
+  "native": false,
+  "RPM": false,
+  "game": false,
+  "install": false,
+  "gameplay_measured": false,
+  "remaining": [
+    "root C1 source review",
+    "separate C2 emission/byte/callsite review",
+    "separate native gate and fixture adaptation",
+    "separate host gate/horizon"
+  ]
+}

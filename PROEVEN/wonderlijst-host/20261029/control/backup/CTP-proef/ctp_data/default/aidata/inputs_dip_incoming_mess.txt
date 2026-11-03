@@ -1,0 +1,56 @@
+
+
+
+
+// diplomacy_pre_incoming.fli
+input gains_cease_fire
+input gold_gained
+input projected_production
+// not using projected_food
+// not using i_gain_city
+input cease_fire_with_him
+// not using advance_cost
+// not using advance_skipped
+input i_gain_advance
+input i_will_stop_piracy
+input global_pollution_level
+input my_pollution_level
+input his_pollution_level
+// not using reduces_pollution
+input i_will_attack_third_party
+input stops_trade_with_third_party
+input third_party_regard
+// not registered input his_trade_with_third_party
+input contact_gained
+input he_gains_advance
+// not using i_lose_city
+input he_gains_city
+// not using gold_lost
+input i_gain_map
+input he_gets_map
+input end_pollution_pact
+input gains_alliance
+input i_will_leave_his_lands
+input he_gains_gold
+// not using he_attacks_enemy
+// not using his_trade_with_third_party
+input third_party_relative_strength
+input his_third_party_relative_strength
+
+input his_message_tone
+
+in foreign vars
+input alliance_with_him
+input neutral_with_him
+input war_with_him
+input longest_war
+input length_of_war_with_him
+input at_war_count
+input best_friend
+input worst_enemy
+input his_hotwar_attacked_me // How many times he's ever attacked
+input regard_towards_him
+input loyalty
+input military_incursions
+input relative_strength
+input last_got_map

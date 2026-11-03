@@ -1,0 +1,11 @@
+# Kaartcontrole van de nieuwe landstart
+
+27 oktober 2026. Doel is alleen de uitgangskaart beoordelen voor uitbreiding over land. Bron: UITBREIDING-LAND-T0, SHA256 a670867460bae5d8d9196856d5ca88163b0eff951e9a9db42a05b83ee38d2301. Exacte archiefkopie apart bewaard. De oude eilandenstart blijft behouden.
+
+Analyse-ingang: gewone Load Game en Cheat Mode > Show Map zijn eerder bewezen. Geen gevalideerde offline landconnectiviteitsdecoder beschikbaar. Daarom uitsluitend een wegwerplaadsessie in ongewijzigde CTP-proef, met bestaande Bedien-CTP.ps1 en computer-use-richtlijnen. Geen AI-DLL/configwijziging, geen n/stichting/wereldbewerking/Save. Show Map verandert alleen de geladen observatietoestand; die toestand wordt niet als benchmark opgeslagen.
+
+Root controleert vers budget, eigen executable/count0, normale cd, huidige release-DLL. Vooraf hashes/backups van huidige saves en profiel; nieuwe unieke hashgelijke laadalias voor eenvoudige selectie. Normale start, zichtbaar menu en Saveveld controleren, geladen datum4000BC vastleggen. Daarna Escape/Cheat Mode/Show Map en waar nodig bestaande zoom-/spelerselectie/Unit Status. Alleen schermen lezen; nooit bouw-, plaatsings- of verplaatsingsopdrachten.
+
+Beoordeling: zichtbare grote aaneengesloten landruimte, startposities van de normale AI's op die ruimte in plaats van afgesloten kleine eilanden, waterknelpunten en directe concurrentie noteren. Grote landmassa is geen bewijs dat iedere AI30 nuttige steden kan bereiken. Alleen visueel vastgestelde punten accepteren; exacte connectiviteit/capaciteit bij onvoldoende bewijs OPEN. Geen honderdbeurtenrun in deze kaartcontrole.
+
+Na observatie normale eigen venstersluiting; geen forcekill. Bron/archiefhash opnieuw gelijk, wijzigingen aan profiel/autosave afzonderlijk inspecteren en uitsluitend verwachte eigen veranderingen herstellen met backup. Oude saves en nieuw door gebruiker gemaakte start behouden. Alleen eigen hashgelijke alias verwijderen. Laat pc aan. Screenshots/manifest/resultaat bewaren, daarna pas benchmarkvergelijkingsplan bepalen.

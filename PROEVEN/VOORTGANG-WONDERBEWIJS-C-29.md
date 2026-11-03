@@ -1,0 +1,9 @@
+﻿# Wonderbewijs C0 — 29 oktober 2026
+
+14:48 CET Europe/Amsterdam — gestart/actief. A/B-overdracht gelezen; budgetvijfuur47/week76. Afgebakende dunne compositie rond bevroren wonderreader, exacte token/queue/eigenaarbinding en offline fixtures. Geen spel/GUI/RPM/installatie/nativecalls. Volgende oplevering: gepinde code+checks/rootreview. A7A69C-builtveld blijft raw/UNKNOWN; root bevestigt dat geen0/1semantiek bewezen is. Exactrank/bouwtijd/admission en CityAgentproductie/stock blijven UNKNOWN zonder reeds herbruikbare directe binding.
+
+14:57 CET Europe/Amsterdam — AF/gestopt voor rootreview. Afzonderlijke dunnecompositie in PROEVEN/wonderbewijs/20261029 opgeleverd: wrapper,18extra geladen vensters,LANDparticipants,README,diff,55bronpins,21geslaagde offlinechecks,final-checks. Reviewcorrectie SID: volleu32/geen ononderbouwde100000-bovengrens; fixture0xffffffff slaagt. Basisreader+vier eerdereT0/T1proofs bytegelijk bevroren; alle118aidata/38saves exact baseline. Inspectiesave191399bytes/SHA9280c97a exact. Originele verify_loaded daadwerkelijk op offlinePE-beelden metextra vensters gecontroleerd; CLIhelp geslaagd. Geen handle/RPM/nativecalls/GUI/installatie/spel.
+
+Acceptatie: C0 voorbereid/offline gecontroleerd; token2runtime/echtequeues en nieuweenqueue OPEN. Builtveld raw/UNKNOWN; enginebuiltgate,productie/stock,rank,bouwtijd en admission UNKNOWN. Doel4 blijft OPEN. Volgende concrete oplevering: rootreview/hashcontrole en afzonderlijk toegestane korte saveinspectie. Geen actief werk meer na eindmelding; pc aan. Laatste budgetcontrole13:56:10UTC/bron13:56:03: vijfuur39/week75/stateok; eindcontrole hierboven naarrootrapport.
+
+Eindbudgetcontrole13:57:36UTC/bron13:57:12: vijfuur37/week75/stateok. Finale pinsSHAf5cf27cf902cb2da4f1ebf66b518795ae19252a1241a72d6df36f7fb22a78ebb; wrapperSHA9ec0c7c4da30702306a9515d2d0f8504e6bb6d235c78b43582c30d76fb81750c.

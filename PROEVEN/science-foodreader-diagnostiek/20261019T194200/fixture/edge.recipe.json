@@ -1,0 +1,196 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,352",
+      "bytes": "81ec60010000"
+    },
+    {
+      "offset": 12,
+      "asm": "stage source",
+      "bytes": "8b3500000000"
+    },
+    {
+      "offset": 18,
+      "asm": "lea edi,('ebp', -336)",
+      "bytes": "8dbdb0feffff"
+    },
+    {
+      "offset": 24,
+      "asm": "mov ecx,59",
+      "bytes": "b93b000000"
+    },
+    {
+      "offset": 29,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 30,
+      "asm": "rep movsd",
+      "bytes": "f3a5"
+    },
+    {
+      "offset": 32,
+      "asm": "own Plan",
+      "bytes": "a100000000"
+    },
+    {
+      "offset": 37,
+      "asm": "mov ('ebp', -344),eax",
+      "bytes": "8985a8feffff"
+    },
+    {
+      "offset": 43,
+      "asm": "mov ('ebp', -340),1",
+      "bytes": "c785acfeffff01000000"
+    },
+    {
+      "offset": 53,
+      "asm": "add eax,144",
+      "bytes": "81c090000000"
+    },
+    {
+      "offset": 59,
+      "asm": "mov ('ebp', -112),eax",
+      "bytes": "898590ffffff"
+    },
+    {
+      "offset": 65,
+      "asm": "mov eax,('ebp', 20)",
+      "bytes": "8b8514000000"
+    },
+    {
+      "offset": 71,
+      "asm": "mov ('ebp', -116),eax",
+      "bytes": "89858cffffff"
+    },
+    {
+      "offset": 77,
+      "asm": "mov eax,('ebp', 8)",
+      "bytes": "8b8508000000"
+    },
+    {
+      "offset": 83,
+      "asm": "mov ('ebp', -276),eax",
+      "bytes": "8985ecfeffff"
+    },
+    {
+      "offset": 89,
+      "asm": "mov ('ebp', -348),1520786085",
+      "bytes": "c785a4feffffa55aa55a"
+    },
+    {
+      "offset": 99,
+      "asm": "mov ('ebp', -96),1520786085",
+      "bytes": "c785a0ffffffa55aa55a"
+    },
+    {
+      "offset": 109,
+      "asm": "expected entry ESP",
+      "bytes": "892500000000"
+    },
+    {
+      "offset": 115,
+      "asm": "expected entry EBP",
+      "bytes": "892d00000000"
+    },
+    {
+      "offset": 121,
+      "asm": "mov eax,305419896",
+      "bytes": "b878563412"
+    },
+    {
+      "offset": 126,
+      "asm": "mov ecx,591751049",
+      "bytes": "b989674523"
+    },
+    {
+      "offset": 131,
+      "asm": "mov edx,878082202",
+      "bytes": "ba9a785634"
+    },
+    {
+      "offset": 136,
+      "asm": "mov ebx,1164413355",
+      "bytes": "bbab896745"
+    },
+    {
+      "offset": 141,
+      "asm": "mov esi,1450744508",
+      "bytes": "bebc9a7856"
+    },
+    {
+      "offset": 146,
+      "asm": "mov edi,('ebp', 20)",
+      "bytes": "8bbd14000000"
+    },
+    {
+      "offset": 152,
+      "asm": "synthetic controlled EFLAGS",
+      "bytes": "ff3500000000"
+    },
+    {
+      "offset": 158,
+      "asm": "popfd",
+      "bytes": "9d"
+    },
+    {
+      "offset": 159,
+      "asm": "jump emitted unique failure landing",
+      "bytes": "ff2500000000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 14,
+      "context_offset": 4
+    },
+    {
+      "at": 33,
+      "context_offset": 0
+    },
+    {
+      "at": 111,
+      "context_offset": 24
+    },
+    {
+      "at": 117,
+      "context_offset": 28
+    },
+    {
+      "at": 154,
+      "context_offset": 20
+    },
+    {
+      "at": 161,
+      "context_offset": 8
+    }
+  ],
+  "labels": {}
+}

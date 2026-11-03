@@ -1,0 +1,50 @@
+--- PROEVEN/science-bezet-centrum/20261020T184100/reader/Lees-Uitbreiding.py
++++ PROEVEN/selectie-pad-diagnose/20261020T192500/reader/Lees-Uitbreiding.py
+@@ -12,6 +12,8 @@
+ from positive_reader import selected_evidence
+ from partial_diagnostic import diagnose
+ from food_failure_decoder import decode_failure
++from path_failure_decoder import stable_record,decode_path
++from path_diagnostic_layout import STATE_SIZE,RECORD_OFFSET,RECORD_SIZE
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+@@ -64,11 +66,12 @@
+         binding['ranges'].append(dict(module='ai',rva=section.VirtualAddress,length=len(raw),expected_hex=raw.hex(),kind='PIC-payload'))
+         binding['shared_plan_rva']=int(manifest['components']['state_rva'],16)
+         state_size=manifest['components']['state_size']
+-        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x79804:raise ValueError('Exact reason23 own-state layout changed')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x79904:raise ValueError('Exact reason23 own-state layout changed')
+         if not 0x40600+1152<=state_size or binding['shared_plan_rva']+state_size>binding['ai']['size']:raise ValueError('Own slot outside bound AI state/module')
+         state_sections=[s for s in cp.sections if s.VirtualAddress==binding['shared_plan_rva'] and s.Misc_VirtualSize==state_size]
+         if len(state_sections)!=1:raise ValueError('Exact own state section missing')
+         binding['shared_plan_size']=state_size
++        binding['path_manifest']=manifest
+     binding['manifest_sha256']=MANIFEST_HASH;binding['package_sha256']=None
+     return binding
+ 
+@@ -171,15 +174,22 @@
+     def uninitialized():return dict(loaded_settler_type='UNKNOWN_NOT_INITIALIZED',native_desired='UNKNOWN_NOT_INITIALIZED',native_actual='UNKNOWN_NOT_INITIALIZED',native_supplemental_deficit='UNKNOWN_NOT_INITIALIZED',current_front_cache='UNKNOWN_NOT_INITIALIZED',current_settler_armies='UNKNOWN_NOT_INITIALIZED',Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+     def shared_state():
+         if binding['variant']!='U30-40':return None
+-        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,prefix_count=224,known_count=228,gate_queries=232,gate_false=236,candidates=68,slots=80,h3calls=128)
++        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,guard=40,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,prefix_count=224,known_count=228,gate_queries=232,gate_false=236,candidates=68,departures=76,slots=80,h3calls=128)
+         fields.update({'SCI_'+name:off for name,(off,limit) in COUNTERS.items()})
+         fields.update(context_error=CONTEXT_ERROR,science_budget_exhausted=SCIENCE_BUDGET_EXHAUSTED)
+         shared={key:i32(ptr+off) for key,off in fields.items()}
+-        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or binding['shared_plan_size']!=0x79804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or binding['shared_plan_size']!=0x79904 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
+         slot=read(checked(ptr,0x40600),1152)
+         shared['slot0_historical_reason23_diagnostic']=decode_slot0(slot,shared)
+         shared['selected_evidence']=selected_evidence(lambda off,size:read(checked(ptr,off),size),shared,participants['civ_ids'])
+         shared['unselected_partial_pass_diagnostic']=diagnose(lambda off,size:read(checked(ptr,off),size),shared,slot,participants['civ_ids'],binding['ai']['size'],binding['shared_plan_rva'],decode_slot0)
++        def own_path(off,size):
++            if not (0<=off and 1<=size<=2048 and off+size<=STATE_SIZE and binding['shared_plan_size']==STATE_SIZE and binding['shared_plan_rva']+STATE_SIZE<=binding['ai']['size']):raise ValueError('bounded own SELECT25 read')
++            raw=read(checked(ptr,off),size)
++            if len(raw)!=size:raise ValueError('incomplete SELECT25 own read')
++            return raw
++        pathraw,snapshot=stable_record(own_path,shared)
++        shared['path_failure_diagnostic']=decode_path(pathraw,shared,snapshot,own_path,ptr,ab,binding['path_manifest'],MANIFEST_HASH)
+         if binding['shared_plan_rva']+276+236>binding['ai']['size']:raise ValueError('FoodReader header outside module')
+         raw_failure=read(checked(ptr,276),236)
+         shared['SCI_foodreader_failure_diagnostic']=decode_failure(raw_failure,shared,ab+binding['shared_plan_rva'],MANIFEST_HASH,shared['unselected_partial_pass_diagnostic'])

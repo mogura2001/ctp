@@ -1,0 +1,7 @@
+/// diplomacy_set_war.fli
+
+output peacefulness[0.0, 2.0] = 0.1
+	tri warlike(peacefulness, 0.1, 0.1)
+	tri opportunist(peacefulness, 0.9, 0.1)
+	tri peaceful(peacefulness, 1.9, 0.1)
+

@@ -1,0 +1,89 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "observer pushfd",
+      "bytes": "9c"
+    },
+    {
+      "offset": 1,
+      "asm": "observer pushad",
+      "bytes": "60"
+    },
+    {
+      "offset": 2,
+      "asm": "mov esi,esp",
+      "bytes": "8bf4"
+    },
+    {
+      "offset": 4,
+      "asm": "own nineword GPR/flags snapshot",
+      "bytes": "bf00000000"
+    },
+    {
+      "offset": 9,
+      "asm": "mov ecx,9",
+      "bytes": "b909000000"
+    },
+    {
+      "offset": 14,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 15,
+      "asm": "rep movsd",
+      "bytes": "f3a5"
+    },
+    {
+      "offset": 17,
+      "asm": "increment own observer count",
+      "bytes": "ff0500000000"
+    },
+    {
+      "offset": 23,
+      "asm": "observer popad",
+      "bytes": "61"
+    },
+    {
+      "offset": 24,
+      "asm": "observer popfd",
+      "bytes": "9d"
+    },
+    {
+      "offset": 25,
+      "asm": "replay diagnostic pushfd",
+      "bytes": "9c"
+    },
+    {
+      "offset": 26,
+      "asm": "replay diagnostic pushad",
+      "bytes": "60"
+    },
+    {
+      "offset": 27,
+      "asm": "replay mov ('ebp', -348),0",
+      "bytes": "c785a4feffff00000000"
+    },
+    {
+      "offset": 37,
+      "asm": "continue original validator/epilogue",
+      "bytes": "ff2500000000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 5,
+      "context_offset": 2560
+    },
+    {
+      "at": 19,
+      "context_offset": 2688
+    },
+    {
+      "at": 39,
+      "context_offset": 2696
+    }
+  ],
+  "labels": {}
+}

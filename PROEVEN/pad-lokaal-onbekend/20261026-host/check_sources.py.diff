@@ -1,0 +1,57 @@
+--- PROEVEN/pad-lokaal-onbekend/20261023-host/check_sources.py
++++ PROEVEN/pad-lokaal-onbekend/20261026-host/check_sources.py
+@@ -7,6 +7,8 @@
+ OLD=ROOT/'PROEVEN/uitbreiding-lang/20261022T122400'
+ LEGACY=ROOT/'PROEVEN/selectie-pad-diagnose/20261020T192500'
+ C1=ROOT/'PROEVEN/pad-lokaal-onbekend/20261022T180000'
++FROZEN=HERE.with_name('20261023-host')
++PREP=HERE.with_name('20261026-host-prep')
+ sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+ def save(name,value):(HERE/name).write_text(json.dumps(value,indent=2)+'\n','utf-8')
+ def load(name,path):
+@@ -19,6 +21,8 @@
+  # All actually imported project/vendor Python files, plus exact disk inputs.
+  paths={Path(m.__file__).resolve() for m in list(sys.modules.values()) if getattr(m,'__file__',None) and Path(m.__file__).is_file() and Path(m.__file__).resolve().is_relative_to(ROOT)}
+  paths.update(HERE.glob('*.py'));paths.update(HERE.glob('*.ps1'));paths.update(HERE.glob('*.md'))
++ paths.update([HERE/'HOST-PLAN.json',FROZEN/'SOURCE-PINS.json'])
++ paths.update(FROZEN/name for name in ('Lees-Duur.py','scope.py','runtime_adapter.py','runtime-pins.json','Pass-Duur.ps1','check_sources.py','HOST-PLAN.json'))
+  runtime=json.loads((HERE/'runtime-pins.json').read_text('utf-8'))
+  paths.update([HERE/'runtime-pins.json',ROOT/runtime['candidate_path'],ROOT/runtime['manifest_path'],LEGACY/'science-spatial-pins.json',ROOT/'CTP-og/ctp_program/ctp/civctp.exe',ROOT/'CTP-og/ctp_program/ctp/dll/ai/robotcom.dll',LEGACY/'reader/participants.json',ROOT/'PROEVEN/Bedien-CTP.ps1',ROOT/'PROEVEN/Controleer-Weekbudget.py',ROOT/'ONTWERP/PAD-SPELPROEF-2026-10-23.md'])
+  # pefile/capstone are used by original_core.trusted_binding: import without native/game calls.
+@@ -98,8 +102,35 @@
+     result=reader.decode_path(bytes(bad),state,snapshot,read,base+0xef000,base,newmanifest,scope.MANIFEST)
+     assert result['status']!='LOCAL_UNKNOWN_PAIR' and not result['usable_diagnostic_evidence'],field
+  # Fresh diffs against exact historical source, including post-clone root fixes.
+- for name,old in [('Lees-Duur.py',OLD/'Lees-Duur.py'),('scope.py',OLD/'scope.py'),('Pass-Duur.ps1',ROOT/'PROEVEN/uitbreiding-lang/20261022T171500-afronding/Afronding-85-100.ps1')]:
++ for name,old in [(n,FROZEN/n) for n in ('Lees-Duur.py','scope.py','runtime_adapter.py','runtime-pins.json','Pass-Duur.ps1','check_sources.py','HOST-PLAN.json')]:
+   (HERE/(name+'.diff')).write_text(''.join(difflib.unified_diff(old.read_text('utf-8').splitlines(True),(HERE/name).read_text('utf-8').splitlines(True),fromfile=old.relative_to(ROOT).as_posix(),tofile=(HERE/name).relative_to(ROOT).as_posix())),'utf-8')
+  save('OFFLINE-CHECKS.json',dict(stage='C4_SOURCE_ONLY',syntax=True,import_without_main=True,live_memory=False,game=False,native_execution=False,build=False,binding=dict(candidate=binding['ai']['sha256'],manifest=binding['manifest_sha256'],state_rva=binding['shared_plan_rva'],state_size=binding['shared_plan_size']),unchanged_functions=changed,scope_cases=cases,old_reference_snapshots=101,hard0_decoder_contract=tests,synthetic_local4_contract=True,source_count=len(rows),source_pins_sha256=sha(HERE/'SOURCE-PINS.json')))
++ # Finite operational clone binding; no runtime helper is executed here.
++ for name in ('Lees-Duur.py','scope.py','runtime_adapter.py','runtime-pins.json','HOST-PLAN.json'):
++  assert (HERE/name).read_bytes()==(FROZEN/name).read_bytes(),name
++ assert json.loads((HERE/'REFERENCE-PINS.json').read_text('utf-8'))==json.loads((FROZEN/'REFERENCE-PINS.json').read_text('utf-8'))
++ for folder,names in [(HERE,('ROOT-CONTROL.json','local4/ROOT-READER.json')),(PREP,('ROOT-HOST.json',))]:
++  for name in names:
++   gate=json.loads((folder/name).read_text('utf-8'))
++   assert not any(v is True for v in gate.values()),name
++   gate.update(run_id='pad-local4-20261026-host',source_pins_sha256=sha(HERE/'SOURCE-PINS.json'))
++   if 'output_directory' in gate:gate['output_directory']=str(HERE/'local4')
++   (folder/name).write_text(json.dumps(gate,indent=2)+'\n','utf-8')
++ start=PREP/'Start-Monitored.ps1'
++ start.write_text(start.read_text('utf-8').replace('C4_PIN_AT_FREEZE',sha(HERE/'SOURCE-PINS.json')),'utf-8')
++ paths={ROOT/r['path'] for r in rows}|{HERE/'SOURCE-PINS.json',PREP/'OVERDRACHT.md'}
++ frozen_prep=PREP.with_name('20261023-host-prep')
++ paths.add(frozen_prep/'SOURCE-PINS.json')
++ for name in ('Start-Monitored.ps1','Close-Normally.ps1','Restore.ps1'):
++  paths.update((PREP/name,frozen_prep/name))
++  (PREP/(name+'.diff')).write_text(''.join(difflib.unified_diff((frozen_prep/name).read_text('utf-8').splitlines(True),(PREP/name).read_text('utf-8').splitlines(True),fromfile=(frozen_prep/name).relative_to(ROOT).as_posix(),tofile=(PREP/name).relative_to(ROOT).as_posix())),'utf-8')
++ for path in paths:assert not path.name.startswith('ROOT-'),str(path)
++ pins=dict(stage='C5_SOURCE_ONLY_NOT_EXECUTED',sources=[dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p)) for p in sorted(paths)])
++ (PREP/'SOURCE-PINS.json').write_text(json.dumps(pins,indent=2)+'\n','utf-8')
++ gatepath=PREP/'ROOT-HOST.json';gate=json.loads(gatepath.read_text('utf-8'));gate.update(source_pins_sha256=sha(PREP/'SOURCE-PINS.json'),c4_source_pins_sha256=sha(HERE/'SOURCE-PINS.json'));gatepath.write_text(json.dumps(gate,indent=2)+'\n','utf-8')
++ (PREP/'OFFLINE-CHECKS.json').write_text(json.dumps(dict(stage='C5_SOURCE_ONLY',helpers_executed=False,source_count=len(paths),mutable_gates_excluded=True,c4_source_pins_sha256=sha(HERE/'SOURCE-PINS.json'),source_pins_sha256=sha(PREP/'SOURCE-PINS.json')),indent=2)+'\n','utf-8')
++ for folder,name in ((HERE,'C4-PINS.json'),(PREP,'C5-PINS.json')):
++  delivery=[p for p in sorted(folder.iterdir()) if p.is_file() and p.name!=name and not p.name.startswith('ROOT-')]
++  (folder/name).write_text(json.dumps(dict(stage='SOURCE_ONLY_ALL_RUNTIME_GATES_FALSE',sources=[dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p)) for p in delivery]),indent=2)+'\n','utf-8')
+  print('C4 finite checks passed; no live reader main called')
+ if __name__=='__main__':main()

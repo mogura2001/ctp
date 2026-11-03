@@ -1,0 +1,16 @@
+--- PROEVEN\uitbreiding-lang\20261022T122400\Lees-Duur.py
++++ PROEVEN\landvergelijking\20261027\Lees-Duur.py
+@@ -329,10 +329,9 @@
+         eb,es=found[EXE.resolve()];ab,az=found[DLL.resolve()]
+         checks=verify_loaded(read,binding,eb,ab,{'engine':es,'ai':az})
+         state=observe_goal3(read,eb,ab,participants)
+-        if args.variant=='U30-40':
+-            per_civ,shared=native_expansion_state(read,eb,ab,participants,binding)
+-            for row in state['civilizations']:row.update(per_civ[row['civ_id']])
+-            state['shared_last_pass']=shared
++        per_civ,shared=native_expansion_state(read,eb,ab,participants,binding)
++        for row in state['civilizations']:row.update(per_civ[row['civ_id']])
++        state['shared_last_pass']=shared
+         return {'instance':{'pid':args.pid,'creationtime_filetime':(times[0].dwHighDateTime<<32)|times[0].dwLowDateTime,'executable':str(EXE.resolve()),'ai_module':str(DLL.resolve()),'engine_base':eb,'ai_base':ab},'loaded_checks':checks,'state':state}
+     try:
+         result=stable_sample(sample)

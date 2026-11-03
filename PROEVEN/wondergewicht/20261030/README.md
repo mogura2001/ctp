@@ -1,0 +1,9 @@
+﻿# C4 gewicht30000, minimale compositie
+
+C0voorstelgeaccepteerd; noggeeninstallatie/spelstart. Bevroren C3bron geladen; alleen C3.HERE wijst naar eigenmap. C3.BASE blijftoudeC2; via C3.load_base/C2.load_base wordt alleen C1.WONDERS aan het nieuwegepinndepakket gebonden. C1volledige126bestandentekstvalidatie blijftactief; oude70bronpins plusnieuwebestanden vollediggecontroleerd. C2C3codevensters/participants exactgekopieerd. Geen nieuwe memoryvelden,hashskip,nativecalls,writes ofreaderframework. Alle bestaande VM_READ/instance/module/code/owner/handle/full-stablesamplecontroles blijvenbehouden.
+
+Binnenzelfdecomplete samples staat perAI weight_30000_expectation: éénentry,exactnativeindex2/category-1/weight30000 plus eigenmanifest/pinsSHA. Bestaande opening_list_expectation blijftde historische9100expectation; herkenbareFAIL daarbij ismetadata,geenvalidatieexceptie. Bijloadsavestate kan ooknieuweexpectationFAIL zijn; beslissendnaéénnativebeurt25→26.
+
+check_c0.py controleert14bytegelijke+1exactnumeriekdiff,7backuphashes,allepins,compositiepadbinding,drieexpectationgevallen envolledige126bestandenkandidaatinventaris ineenapart tijdelijkfixture. Eén onverwachtefixturetekstwijziging wordtgeweigerd doororigineleC1text_expectations; geenlivefilesveranderd,geenproceshandle. Oude11C3fixturesnietherhaald.
+
+Runtime na review: dezelfde9280c97aarchiefsave/eb6/LANDparticipants/freshhost/max1n. Doel7/7effectievelijst30000 enminstenséénnieuweechteLabyrinthqueue opzelfdeowner/fullhandle, stabielplusCityStatus. Nulresultaatgeenverhogingsreeks;gerichteAdoelcreatie/admission. Normaalclose15min/inputs<13min;162pins/118aidata38savesrestore;pcaan. VolledigeDoel4OPEN.

@@ -1,0 +1,105 @@
+param([Parameter(Mandatory=$true)][ValidateSet('Prepare','Restore')][string]$Mode,
+ [Parameter(Mandatory=$true)][ValidateSet('control','candidate')][string]$Arm)
+$ErrorActionPreference='Stop'
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../../..'))
+$runFolder=Join-Path $PSScriptRoot $Arm
+$python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+& $python (Join-Path $PSScriptRoot 'guard.py') --mode pins
+if($LASTEXITCODE -ne 0){throw 'Source pins rejected'}
+$pkg=Join-Path $root 'VERSIES/wondergewicht-2026-10-30'
+$manifest=Get-Content (Join-Path $pkg 'manifest.json') -Raw|ConvertFrom-Json
+$baseline=Get-Content (Join-Path $pkg 'live-baseline.json') -Raw|ConvertFrom-Json
+$pins=@($baseline.aidata)+@($baseline.saves)+@($baseline.dll)+@($baseline.extra_pins)
+$sourceRel='CTP-proef/ctp_program/ctp/save/games/Julius/UITBREIDING-LAND-STAD-T0'
+$sourceHash='c6bab2909d9f5739005e5f24678cf0a5818b17821031ca171c454e2cc40f4327'
+$aliasRel='CTP-proef/ctp_program/ctp/save/games/Julius/000-LAND-T25-20261103-'+$Arm.ToUpperInvariant()+'-T0'
+$checkpointRel='CTP-proef/ctp_program/ctp/save/games/Julius/LAND-T25-20261103-'+$Arm.ToUpperInvariant()
+$extra=@($manifest.files|Where-Object {-not $_.before_existed}|ForEach-Object {'CTP-proef/'+$_.target_rel})
+function Hash($p){(Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant()}
+function Inventory($group,$during){
+ $base=if($group -eq 'aidata'){'CTP-proef/ctp_data/default/aidata'}else{'CTP-proef/ctp_program/ctp/save'}
+ $expected=@($(if($group -eq 'aidata'){$baseline.aidata.path}else{$baseline.saves.path}))
+ if($during -and $group -eq 'aidata' -and $Arm -eq 'candidate'){$expected+=@($extra|Where-Object {Test-Path -LiteralPath (Join-Path $root $_)})}
+ if($during -and $group -eq 'saves'){$expected+=@(@($aliasRel,$checkpointRel)|Where-Object {Test-Path -LiteralPath (Join-Path $root $_)})}
+ $actual=@(Get-ChildItem -LiteralPath (Join-Path $root $base) -File -Recurse|ForEach-Object {$_.FullName.Substring($root.Length+1).Replace('\','/')})
+ if(@(Compare-Object @($expected|Sort-Object) @($actual|Sort-Object)).Count){throw "Full $group inventory mismatch"}
+}
+function Archive($rel){
+ $dst=Join-Path $runFolder ('after/'+$rel)
+ if(Test-Path -LiteralPath $dst){throw 'Archive exists; inspect before continuing'}
+ [IO.Directory]::CreateDirectory((Split-Path $dst))|Out-Null
+ Copy-Item -LiteralPath (Join-Path $root $rel) -Destination $dst
+ if((Hash $dst) -ne (Hash (Join-Path $root $rel))){throw 'Archive mismatch'}
+ return @{path=$rel;after_sha256=(Hash $dst);bytes=(Get-Item -LiteralPath $dst).Length}
+}
+function RemoveOwn($rel,$expected){
+ $target=[IO.Path]::GetFullPath((Join-Path $root $rel))
+ $saves=[IO.Path]::GetFullPath((Join-Path $root 'CTP-proef/ctp_program/ctp/save/games/Julius'))
+ if(-not $target.StartsWith($saves+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase) -or $rel -notin @($aliasRel,$checkpointRel)){throw 'Own save outside exact allowed paths'}
+ if(Test-Path -LiteralPath $target){if((Hash $target) -ne $expected){throw 'Own save changed'};Remove-Item -LiteralPath $target}
+}
+if(@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Close CTP normally before file operations'}
+if($pins.Count -ne 162 -or $baseline.aidata.Count -ne 118 -or $baseline.saves.Count -ne 38 -or $manifest.files.Count -ne 15 -or $extra.Count -ne 8){throw 'Unexpected baseline/package dimensions'}
+if($Mode -eq 'Prepare'){
+ & $python (Join-Path $root 'PROEVEN/Controleer-Weekbudget.py') --thread 01a0f7b4-4751-7513-b510-3835ce43f47d
+ if($LASTEXITCODE -notin @(0,25)){throw 'Budget unknown/stop; preparation refused'}
+ if(Test-Path (Join-Path $runFolder 'before.json')){throw 'Preparation already used'}
+ foreach($rel in @($aliasRel,$checkpointRel)){if(Test-Path (Join-Path $root $rel)){throw 'Own save name already exists'}}
+ if((Hash (Join-Path $root $sourceRel)) -ne $sourceHash -or (Get-Item (Join-Path $root $sourceRel)).Length -ne 350409){throw 'Rome T0 mismatch'}
+ Inventory 'aidata' $false
+ Inventory 'saves' $false
+ foreach($pin in $pins){if((Hash (Join-Path $root $pin.path)) -ne $pin.sha256){throw "Before pin mismatch: $($pin.path)"}}
+ foreach($f in $manifest.files){if((Hash (Join-Path $pkg $f.candidate_package_rel)) -ne $f.after_sha256){throw 'Candidate source mismatch'}}
+ foreach($pin in $pins){
+  $dst=Join-Path $runFolder ('backup/'+$pin.path)
+  [IO.Directory]::CreateDirectory((Split-Path $dst))|Out-Null
+  Copy-Item -LiteralPath (Join-Path $root $pin.path) -Destination $dst
+  if((Hash $dst) -ne $pin.sha256){throw 'Backup mismatch'}
+ }
+ [ordered]@{at_utc=[DateTime]::UtcNow.ToString('o');arm=$Arm;pins=$pins;alias=$aliasRel;checkpoint=$checkpointRel;source=$sourceRel;source_sha256=$sourceHash;max_n=25;native_init=-1;native_end=24;close_seconds=1500;maximum_seconds=1800}|ConvertTo-Json -Depth 10|Set-Content (Join-Path $runFolder 'before.json') -Encoding UTF8
+ if($Arm -eq 'candidate'){foreach($f in $manifest.files){Copy-Item -LiteralPath (Join-Path $pkg $f.candidate_package_rel) -Destination (Join-Path $root ('CTP-proef/'+$f.target_rel))}}
+ Copy-Item -LiteralPath (Join-Path $root $sourceRel) -Destination (Join-Path $root $aliasRel)
+ if((Hash (Join-Path $root $aliasRel)) -ne $sourceHash){throw 'Alias mismatch'}
+ if($Arm -eq 'candidate'){foreach($f in $manifest.files){if((Hash (Join-Path $root ('CTP-proef/'+$f.target_rel))) -ne $f.after_sha256){throw 'Installation mismatch'}}}
+ Inventory 'aidata' $true
+ Inventory 'saves' $true
+ 'Prepared exact Rome T0 alias/backups; candidate only installs the 15 frozen texts. No DLL change.'
+}else{
+ $before=Get-Content (Join-Path $runFolder 'before.json') -Raw|ConvertFrom-Json
+ if($before.arm -ne $Arm -or $before.alias -ne $aliasRel -or $before.checkpoint -ne $checkpointRel -or $before.source_sha256 -ne $sourceHash){throw 'Unexpected restore record'}
+ Inventory 'aidata' $true
+ Inventory 'saves' $true
+ foreach($pin in $pins){if((Hash (Join-Path $runFolder ('backup/'+$pin.path))) -ne $pin.sha256){throw 'Backup mismatch'}}
+ foreach($f in $manifest.files){
+  $target=Join-Path $root ('CTP-proef/'+$f.target_rel)
+  if(Test-Path -LiteralPath $target){
+   $allowed=@($f.after_sha256);if($f.before_existed){$allowed+=@($f.before_sha256)}
+   if((Hash $target) -notin $allowed){throw 'Unexpected candidate target change'}
+  }elseif($f.before_existed){throw 'Missing original target'}
+ }
+ $changed=@()
+ foreach($pin in $pins){
+  if((Hash (Join-Path $root $pin.path)) -eq $pin.sha256){continue}
+  $candidateAllowed=$Arm -eq 'candidate' -and $pin.path -in @($manifest.files|Where-Object before_existed|ForEach-Object {'CTP-proef/'+$_.target_rel})
+  if(-not $candidateAllowed -and $pin.path -notin @('CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius','CTP-proef/ctp_program/ctp/userprofile.txt')){throw "Unexpected change: $($pin.path)"}
+  $changed+=Archive $pin.path
+ }
+ if($Arm -eq 'candidate'){foreach($rel in $extra){if(Test-Path (Join-Path $root $rel)){$changed+=Archive $rel}}}
+ $checkpoint=$null
+ if(Test-Path (Join-Path $root $checkpointRel)){$checkpoint=Archive $checkpointRel}
+ # All changed material is archived before the first restoration/deletion.
+ foreach($pin in $pins){if((Hash (Join-Path $root $pin.path)) -ne $pin.sha256){Copy-Item -LiteralPath (Join-Path $runFolder ('backup/'+$pin.path)) -Destination (Join-Path $root $pin.path)}}
+ if($Arm -eq 'candidate'){foreach($rel in $extra){
+  $target=[IO.Path]::GetFullPath((Join-Path $root $rel))
+  $aidata=[IO.Path]::GetFullPath((Join-Path $root 'CTP-proef/ctp_data/default/aidata'))
+  if(-not $target.StartsWith($aidata+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Candidate removal outside aidata'}
+  if(Test-Path -LiteralPath $target){Remove-Item -LiteralPath $target}
+ }}
+ RemoveOwn $aliasRel $sourceHash
+ if($checkpoint){RemoveOwn $checkpointRel $checkpoint.after_sha256}
+ foreach($pin in $pins){if((Hash (Join-Path $root $pin.path)) -ne $pin.sha256){throw 'Restore mismatch'}}
+ Inventory 'aidata' $false
+ Inventory 'saves' $false
+ [ordered]@{at_utc=[DateTime]::UtcNow.ToString('o');arm=$Arm;restored_pins=162;aidata=118;saves=38;alias_removed=(-not(Test-Path (Join-Path $root $aliasRel)));checkpoint=$checkpoint;archived_changes=$changed;ctp_processes=0;pc_left_on=$true}|ConvertTo-Json -Depth 8|Set-Content (Join-Path $runFolder 'ROOT-RESTORE.json') -Encoding UTF8
+ 'Restore verified; PC remains on.'
+}

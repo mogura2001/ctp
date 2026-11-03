@@ -1,0 +1,79 @@
+caller 1 canonical_prefix
+PASS prefix success
+caller 2 production_roles
+PASS a empty no H3
+caller 3 canonical_prefix
+PASS prefix success
+caller 4 production_roles
+PASS b late index64
+caller 5 canonical_prefix
+PASS prefix success
+PASS c ordered true keys and source ties
+caller 6 canonical_prefix
+PASS prefix success
+caller 7 production_roles
+PASS d 65known cutoff64
+caller 8 canonical_prefix
+PASS prefix success
+caller 9 production_roles
+PASS d 4096false no H3 or cutoff
+caller 10 canonical_prefix
+PASS e invalid key before falsegate
+caller 11 canonical_prefix
+PASS e bad candidate count -1
+caller 12 canonical_prefix
+PASS e bad candidate count 4097
+caller 13 canonical_prefix
+PASS e nodes guard
+caller 14 canonical_prefix
+PASS prefix success
+caller 15 production_roles
+PASS f consumer bounds 0
+caller 16 canonical_prefix
+PASS prefix success
+caller 17 production_roles
+PASS f consumer bounds 1
+caller 18 canonical_prefix
+PASS prefix success
+caller 19 production_roles
+PASS f consumer bounds 2
+caller 20 canonical_prefix
+PASS prefix success
+caller 21 production_roles
+PASS f consumer bounds 3
+caller 22 canonical_prefix
+PASS prefix success
+caller 23 production_roles
+PASS f consumer bounds 4
+caller 24 canonical_prefix
+PASS prefix success
+caller 25 production_roles
+PASS f consumer bounds 5
+caller 26 canonical_prefix
+PASS prefix success
+caller 27 production_roles
+PASS f consumer bounds 6
+caller 28 canonical_prefix
+PASS prefix success
+caller 29 production_roles
+PASS f consumer bounds 7
+caller 30 canonical_prefix
+PASS prefix success
+caller 31 production_roles
+PASS f consumer bounds 8
+caller 32 canonical_prefix
+PASS prefix success
+caller 33 production_roles
+PASS g H3UNKNOWN simulated reason 11
+caller 34 canonical_prefix
+PASS prefix success
+caller 35 production_roles
+PASS g H3UNKNOWN simulated reason 10
+caller 36 canonical_prefix
+PASS prefix success
+caller 37 production_roles
+PASS g separate H3budget
+caller 38 canonical_prefix
+PASS prefix success
+caller 39 production_roles
+PASS h Bskips before unique H3

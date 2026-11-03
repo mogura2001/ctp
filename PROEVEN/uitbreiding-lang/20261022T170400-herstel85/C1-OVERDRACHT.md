@@ -1,0 +1,15 @@
+# T85: bronoverdracht eenmalig registratieherstel
+
+Alleen C1 volgens ONTWERP/UITBREIDING-T85-REGISTRATIEHERSTEL.md. Eén eigen kloon Herstel-T85.ps1, volledige helper.diff tegenover ongewijzigde parent Pass-Duur.ps1. Geen helper uitgevoerd; geen GUI, RPM, input, installatie, build of nativefixture door uitvoerder.
+
+Exacte scope: verplicht Turn85, ArmU30-40, bestaande PID40488/FILETIME134371535950250712/window395504/run-iduitbreiding-lang-20261022-U30-40. Packagepad is vast het ouderpakket122400; oorspronkelijke sourcepins, Budget, OwnState, CheckSnapshot, deadlines4500/4380, één Key n en oorspronkelijke30s-poll/copy blijven behouden. Nieuwe eigen ROOT-RECOVERY.json begint allowedFalse en failure_before_key_confirmedFalse; rootreview/expliciete bevestiging plus openen is noodzakelijk.
+
+De helper bindt originele T84, bewaarde preinput-recheck, mislukte T85-token, start-precopySHAf9b6099e… en roots INCIDENT-T85.json. Het incident bewaart de toolwaarneming; de oorspronkelijke consolefout bestaat niet als afzonderlijk rawlog. Geen ontbrekende n-log als enig bewijs gebruiken. Tegenstrijdige toestand stopt vóór input.
+
+Vóór de aparte exclusieve eigen token laat de helper de bestaande parentreader één verse T84-herstel85-immediate.json in de bestaande parentarmmap schrijven: noodzakelijk om de bestaande strikte readeroutputscope te behouden. Log staat in eigen herstelmap. Alle7native83 en exact gelijke state/instance aan geaccepteerdeT84 zijn vereist. Parent-T85-consumed.json wordt niet hergebruikt, overschreven of verwijderd. De eigen token bindt originele token/T84/recheck/start/incident/helper en verse readhash.
+
+Alleen startregistratie verandert: serialiseer hetzelfde startrecord met n_consumed85 naar een unieke CreateNew-sibling, flush/sluit, dan File.Replace naar het exact gecontroleerde absolute host/start.json-pad binnen C:/GIT/ctp. Maximaal vier Replace-pogingen, uitsluitend IOException met nog exact oude84-bestemmingsbytes en intacte verwachte85-tempbytes;100ms tussenruimte. Niet-IO, onverwachte inhoud, ambigu resultaat of vier fouten: fataal, geen rollback/inputretry. Temp en tokens blijven bij fout bewaard; Replace-excepties krijgen eigen REGISTRATION-ERRORS.jsonl. Exact85-readback plus REGISTRATION.json zijn vereist; daarna opnieuw budget/OwnState/eigen en parentpins/deadline, vóór één gewone Key.
+
+De gewone T85-poll/matching bewijst daarna zeven rondes83→84; succespass bevat expliciete recovery-/token-/registratie-/helper-/incidentmetadata en plain_100_token_protocolFalse. Alleen na geaccepteerdeT85 kan root86..100 via oorspronkelijke Pass uitvoeren. Een herstelrun mag niet opnieuw worden gestart na tokenconsumptie of ambiguïteit.
+
+Controle beperkt tot volledige brondiff, bestaande helperbodies/pollbehoud, bewijs-/sourcepins en PSparse0. Geen testframework, metadata-mutatieproef of runtimebewijs. Alle eigen bron-/bewijswaarden staan in SOURCE-PINS.json. Root beheert livehost en alle poorten; uitvoerder stopt na bronoverdracht. Pc blijft aan.

@@ -1,0 +1,29 @@
+--- PROEVEN/selectie-pad-diagnose/20261020T192500/reader/path_failure_decoder.py
++++ PROEVEN/pad-lokaal-onbekend/20261022T180000/reader/path_failure_decoder.py
+@@ -46,7 +46,8 @@
+   if (diag['offset'],diag['size'],diag['schema'])!=(RECORD_OFFSET,256,1):raise ValueError('manifest diagnostic layout')
+   owner,generation=struct.unpack('<2I',snapshot)
+   if not (f['owner']==owner!=0 and f['generation']==generation==shared['generation']>0 and f['civ']==shared['civ'] and 1<=f['civ']<=31 and shared['owner'] in (0,owner) and f['plan_identity']==plan_address and f['invocation']>0):raise ValueError('owner/generation/civ/invocation/Plan')
+-  if not (shared['status'] in (0,5) and shared['reason']==25 and shared['scope']==0 and shared['guard']==0 and shared['context']==1 and shared['context_error']==0):raise ValueError('completed fallback pass context')
++  local=(f['direct_return'],f['cache_return'],f['selection_return'])==(4,4,1)
++  if not (shared['status'] in ((4,5) if local else (0,5)) and shared['reason']==(0 if local else 25) and shared['scope']==0 and shared['guard']==0 and shared['context']==1 and shared['context_error']==0):raise ValueError('completed local/fallback pass context')
+   for pair,field in [('finalize_selection','select'),('selection_cached','cache'),('cached_direct','direct')]:
+    call=diag['calls'][pair]
+    if (f[field+'_call'],f[field+'_return_site'])!=(call['call_rva'],call['return_rva']) or call['return_rva']!=call['call_rva']+5:raise ValueError('actual call/return pair '+pair)
+@@ -56,7 +57,8 @@
+   if len(slot)!=1152 or len(departure)!=32 or len(order)!=shared['slots']*4:raise ValueError('incomplete bound own object')
+   if sorted(struct.unpack('<'+'I'*shared['slots'],order))!=list(range(shared['slots'])):raise ValueError('post-order slot permutation')
+   if (u(slot,76),u(slot,72),u(departure,0),u(departure,4),slot[:8],departure[8:16])!=(f['prefix'],f['role'],f['rawID'],f['kind'],f['destination'],f['source']):raise ValueError('current source/destination binding')
+-  if (f['direct_return'],f['cache_return'],f['selection_return'])!=(0,0,0):raise ValueError('direct0/cache0/select25 propagation')
++  if not local and (f['direct_return'],f['cache_return'],f['selection_return'])!=(0,0,0):raise ValueError('direct0/cache0/select25 propagation')
++  if local and not (edge==4 and f['native_EAX']==f['capacity']==f['count']==f['pointer']==f['postcontext']==0 and f['canary1']==0x3456ab89 and f['canary2']==0x4567bc90):raise ValueError('clean local4 operands')
+   predicates={1:f['postcontext']!=0,2:f['canary1']!=0x3456ab89,3:f['canary2']!=0x4567bc90,4:f['native_EAX']!=1,5:f['pointer']==0,6:signed(f['count'])<1,7:signed(f['count'])>signed(f['capacity']),8:f['pointer']+f['count']*8>0xffffffff,9:f['first_conversion']==0,10:f['source_conversion']==0,11:f['first_actual'][:4]!=f['source_expected'][:4],12:f['first_actual'][4:]!=f['source_expected'][4:],13:f['last_conversion']==0,14:f['destination_conversion']==0,15:f['last_actual'][:4]!=f['destination_expected'][:4],16:f['last_actual'][4:]!=f['destination_expected'][4:]}
+   if not predicates[edge] or any(predicates[n] for n in range(1,edge)):raise ValueError('first failed original guard does not match stored operands')
+   if edge>=7 and not 1<=f['count']<=4096:raise ValueError('precapacity querybudget bypass')
+@@ -69,5 +71,6 @@
+     if f[conversion] not in (0,1):raise ValueError('canonical conversion outside existing0/1 contract')
+     observed['canonical_key_valid']=f[conversion]==1;observed['conversion_return']=f[conversion]
+   result.update(attribution_status='BOUND_COMPLETE_GUARD_OPERANDS',usable_diagnostic_evidence=True,edge_id=edge,branch_name=BRANCHES[edge-1][2],parent_edge_rva=hex(BRANCHES[edge-1][1]),guard_attribution_proven=True,native_output_slots_are_observed_not_write_proof=True,order_phase='SLOT_ORDER_PLUS_UNATTRIBUTABLE_REMAINDER',prefix_CAPTURE_claims_allowed=False)
++  if local:result.update(status='LOCAL_UNKNOWN_PAIR',attribution_status='LOCAL_UNKNOWN_PAIR',branch_name='clean_native0_local_unknown',selected=False,certified=False,no_route_proven=False)
+  except Exception as error:result.update(attribution_status='INSUFFICIENT_EVIDENCE',error=type(error).__name__+': '+str(error))
+  return result

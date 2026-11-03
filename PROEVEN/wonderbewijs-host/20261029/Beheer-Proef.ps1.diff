@@ -1,0 +1,15 @@
+--- wonderlijst-host/Beheer-Proef.ps1
++++ wonderbewijs-host/Beheer-Proef.ps1
+@@ -7,9 +7,9 @@
+ $live=Join-Path $root 'CTP-proef'
+ $manifest=Get-Content (Join-Path $pkg 'manifest.json') -Raw | ConvertFrom-Json
+ $baseline=Get-Content (Join-Path $pkg 'live-baseline.json') -Raw | ConvertFrom-Json
+-$aliasRel='CTP-proef/ctp_program/ctp/save/games/Julius/000-WONDERLIST-'+$Arm.ToUpperInvariant()+'-T0'
+-$sourceRel='CTP-proef/ctp_program/ctp/save/games/Julius/UITBREIDING-LAND-STAD-T0'
+-$sourceHash='c6bab2909d9f5739005e5f24678cf0a5818b17821031ca171c454e2cc40f4327'
++$aliasRel='CTP-proef/ctp_program/ctp/save/games/Julius/000-WONDERPROOF-'+$Arm.ToUpperInvariant()+'-T0'
++$sourceRel='PROEVEN/landvergelijking/20261027/U30-40/host/AUTOSAVE-after'
++$sourceHash='9280c97a41e6363ca9c5339cf2eba64388b63a811089d63c6d9fb30cca13336e'
+ function Hash($p) { (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() }
+ if (@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0) {throw 'Close CTP normally before file operations'}
+ $pins=@($baseline.aidata)+@($baseline.saves)+@($baseline.dll)+@($baseline.extra_pins)

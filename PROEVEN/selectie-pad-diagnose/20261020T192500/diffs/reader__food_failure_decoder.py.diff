@@ -1,0 +1,12 @@
+--- PROEVEN/science-bezet-centrum/20261020T184100/reader/food_failure_decoder.py
++++ PROEVEN/selectie-pad-diagnose/20261020T192500/reader/food_failure_decoder.py
+@@ -25,6 +25,9 @@
+   if decoded['bindingpointer']!=plan_address+144 or decoded['world']<0x10000 or decoded['outpointer']<0x10000:raise ValueError('native reader argument binding')
+   external=struct.unpack('<hhhH',decoded['external']);internal=struct.unpack('<hhhH',decoded['internal'])
+   if decoded['callkind']==1:
++   if partial.get('order_phase')=='SLOT_ORDER_PLUS_UNATTRIBUTABLE_REMAINDER':
++    result.update(attribution_status='HISTORICAL_RAW_CENTER_RECORD_POST_ORDER_NO_CAPTURE_BINDING',usable_diagnostic_evidence=False,record_is_current_policy_input=False,prefix_CAPTURE_mismatch_claim=False)
++    return result
+    if not decoded['prefix']<shared['SCI_calls']<=shared['classified']:raise ValueError('historical center failure SCI attribution')
+    centers=[o for o in partial.get('order_attribution',[]) if o['prefix_index']==decoded['prefix'] and o['valid']]
+    if len(centers)!=1 or tuple(centers[0]['external_center'])!=external[:3]:raise ValueError('center external ORDER/CAPTURE mismatch')

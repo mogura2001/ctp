@@ -1,0 +1,34 @@
+{
+  "at_europe_amsterdam": "2026-10-26T17:43:54.652713+01:00",
+  "stage": "SOURCE_READY_ALL_GATES_FALSE_NO_RUNTIME",
+  "python_syntax_ast_equal": true,
+  "byte_identical": [
+    "Lees-Duur.py",
+    "scope.py",
+    "runtime_adapter.py",
+    "runtime-pins.json",
+    "HOST-PLAN.json",
+    "REFERENCE-PINS.json"
+  ],
+  "all_four_powershell_parser_errors": 0,
+  "exact_only_namespace_media_pin_deltas": true,
+  "preserved_all_guards": true,
+  "source_pins": {
+    "C4": "33fb04ada31c41ed69b3dea162dfe1b0cae95b1fda4658e1ac5a098761d54718",
+    "C5": "fc6ef59c00cac641be6c470138f0090060e0a3c26b3ee7d4694831674ba0c74f"
+  },
+  "mutable_gates_excluded": true,
+  "all_gates_false": true,
+  "host_directory_absent": true,
+  "six_decoder_fixtures_repeated": false,
+  "old_101_snapshots_repeated": false,
+  "new_checker_or_framework": false,
+  "provenance": "20261023-host and 20261026-host reviewed source/offline results; dependency closure pinned",
+  "backup": false,
+  "installation": false,
+  "build": false,
+  "native": false,
+  "gui": false,
+  "rpm": false,
+  "gameplay": false
+}

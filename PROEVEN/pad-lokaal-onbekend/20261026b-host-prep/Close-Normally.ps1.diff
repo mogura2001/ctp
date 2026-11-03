@@ -1,0 +1,15 @@
+--- PROEVEN/pad-lokaal-onbekend/20261026-host-prep/Close-Normally.ps1
++++ PROEVEN/pad-lokaal-onbekend/20261026b-host-prep/Close-Normally.ps1
+@@ -1,10 +1,10 @@
+ $ErrorActionPreference='Stop'
+ $workspace='C:\GIT\ctp';Set-Location -LiteralPath $workspace
+-$package=$PSScriptRoot;$hostDir=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026-host/host'
++$package=$PSScriptRoot;$hostDir=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026b-host/host'
+ function Hash($p){(Get-FileHash -LiteralPath $p).Hash.ToLowerInvariant()}
+ function NewJson($p,$value){$s=[IO.File]::Open($p,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None);try{$b=[Text.Encoding]::UTF8.GetBytes(($value|ConvertTo-Json -Depth 20));$s.Write($b,0,$b.Length);$s.Flush()}finally{$s.Dispose()}}
+ $gate=Get-Content (Join-Path $package 'ROOT-HOST.json') -Raw|ConvertFrom-Json
+-if($gate.close_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026-host' -or (Hash (Join-Path $package 'SOURCE-PINS.json')) -cne $gate.source_pins_sha256){throw 'Exact C5 close gate required'}
++if($gate.close_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026b-host' -or (Hash (Join-Path $package 'SOURCE-PINS.json')) -cne $gate.source_pins_sha256){throw 'Exact C5 close gate required'}
+ foreach($p in (Get-Content (Join-Path $package 'SOURCE-PINS.json') -Raw|ConvertFrom-Json).sources){if((Hash (Join-Path $workspace $p.path)) -cne $p.sha256){throw 'Close source changed'}}
+ $binding=Get-Content (Join-Path $hostDir 'start-binding.json') -Raw|ConvertFrom-Json
+ if((Hash (Join-Path $hostDir 'start.json')) -cne $binding.start_sha256 -or (Hash (Join-Path $hostDir 'window.json')) -cne $binding.window_sha256){throw 'Immutable own start/window changed'}

@@ -1,0 +1,560 @@
+{
+  "stage": "BUILT_OFFLINE_BYTE_STATIC_AND_OWNBYTE_DECODER_CHECKED_NOT_NATIVE",
+  "candidate_sha256": "068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f",
+  "manifest_sha256": "beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44",
+  "default_factory_byte_identity": true,
+  "default_factory_size": 1196,
+  "whole_shared_H3_and_padding_byte_equal": true,
+  "original_recipe_changes": [
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 7499,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 7499,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 7521,
+        "asm": "lea edx,generation",
+        "bytes": "8d9600a81500"
+      },
+      "after": {
+        "offset": 7521,
+        "asm": "lea edx,generation",
+        "bytes": "8d9600c81500"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 7738,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 7738,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 7916,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 7916,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 8070,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 8070,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 8190,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 8190,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 8374,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 8374,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 15273,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 15273,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 15468,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 15468,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 16188,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 16188,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 24715,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 24715,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "SCI-only call rel32",
+      "before": {
+        "offset": 24907,
+        "asm": "call H3FoodReader",
+        "bytes": "e8a573ffff"
+      },
+      "after": {
+        "offset": 24907,
+        "asm": "call sci_food_diag_reader",
+        "bytes": "e8b3160000"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 25040,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 25040,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 25278,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 25278,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "SCI-only call rel32",
+      "before": {
+        "offset": 25471,
+        "asm": "call H3FoodReader",
+        "bytes": "e87171ffff"
+      },
+      "after": {
+        "offset": 25471,
+        "asm": "call sci_food_diag_reader",
+        "bytes": "e87f140000"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 25885,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 25885,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 29371,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 29371,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 29893,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 29893,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 30071,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 30071,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    },
+    {
+      "kind": "necessary own-state/generation RVA immediate",
+      "before": {
+        "offset": 30273,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00100e00"
+      },
+      "after": {
+        "offset": 30273,
+        "asm": "lea ebx,own pass",
+        "bytes": "8d9e00300e00"
+      }
+    }
+  ],
+  "normalized_original_reader_trace_equal": true,
+  "single_foreign_load_CMP_splits": [
+    "cmp ('esi', 20),0",
+    "cmp ('eax', 48),0",
+    "cmp eax,('edx', 0)",
+    "cmp eax,('edi', 4)"
+  ],
+  "foreign_read_inventory_entries": 556,
+  "logging_adds_foreign_callbacks": false,
+  "added_logging_bases": "own EBP/ESP, PIC Plan EDI, bounds-validated own table/position EBX",
+  "all37_unique_conditional_edges": {
+    "1": {
+      "predicate": "jnz",
+      "guard_rva": 920503,
+      "landing_rva": 925556
+    },
+    "2": {
+      "predicate": "jae",
+      "guard_rva": 920609,
+      "landing_rva": 925603
+    },
+    "3": {
+      "predicate": "jae",
+      "guard_rva": 920715,
+      "landing_rva": 925650
+    },
+    "4": {
+      "predicate": "jz",
+      "guard_rva": 920858,
+      "landing_rva": 925697
+    },
+    "5": {
+      "predicate": "jz",
+      "guard_rva": 920995,
+      "landing_rva": 925744
+    },
+    "6": {
+      "predicate": "jz",
+      "guard_rva": 921132,
+      "landing_rva": 925791
+    },
+    "7": {
+      "predicate": "jz",
+      "guard_rva": 921280,
+      "landing_rva": 925838
+    },
+    "8": {
+      "predicate": "jz",
+      "guard_rva": 921455,
+      "landing_rva": 925885
+    },
+    "9": {
+      "predicate": "jne",
+      "guard_rva": 921556,
+      "landing_rva": 925932
+    },
+    "10": {
+      "predicate": "jne",
+      "guard_rva": 921692,
+      "landing_rva": 925979
+    },
+    "11": {
+      "predicate": "ja",
+      "guard_rva": 921786,
+      "landing_rva": 926026
+    },
+    "12": {
+      "predicate": "je",
+      "guard_rva": 921846,
+      "landing_rva": 926073
+    },
+    "13": {
+      "predicate": "je",
+      "guard_rva": 921906,
+      "landing_rva": 926120
+    },
+    "14": {
+      "predicate": "je",
+      "guard_rva": 921966,
+      "landing_rva": 926167
+    },
+    "15": {
+      "predicate": "je",
+      "guard_rva": 922042,
+      "landing_rva": 926214
+    },
+    "16": {
+      "predicate": "je",
+      "guard_rva": 922102,
+      "landing_rva": 926261
+    },
+    "17": {
+      "predicate": "je",
+      "guard_rva": 922162,
+      "landing_rva": 926308
+    },
+    "18": {
+      "predicate": "je",
+      "guard_rva": 922222,
+      "landing_rva": 926355
+    },
+    "19": {
+      "predicate": "je",
+      "guard_rva": 922282,
+      "landing_rva": 926402
+    },
+    "20": {
+      "predicate": "je",
+      "guard_rva": 922342,
+      "landing_rva": 926449
+    },
+    "21": {
+      "predicate": "je",
+      "guard_rva": 922402,
+      "landing_rva": 926496
+    },
+    "22": {
+      "predicate": "jz",
+      "guard_rva": 922497,
+      "landing_rva": 926543
+    },
+    "23": {
+      "predicate": "jae",
+      "guard_rva": 922590,
+      "landing_rva": 926590
+    },
+    "24": {
+      "predicate": "jz",
+      "guard_rva": 922679,
+      "landing_rva": 926637
+    },
+    "25": {
+      "predicate": "ja",
+      "guard_rva": 922850,
+      "landing_rva": 926684
+    },
+    "26": {
+      "predicate": "jo",
+      "guard_rva": 923447,
+      "landing_rva": 926731
+    },
+    "27": {
+      "predicate": "jo",
+      "guard_rva": 923754,
+      "landing_rva": 926778
+    },
+    "28": {
+      "predicate": "jo",
+      "guard_rva": 924061,
+      "landing_rva": 926825
+    },
+    "29": {
+      "predicate": "jo",
+      "guard_rva": 924356,
+      "landing_rva": 926872
+    },
+    "30": {
+      "predicate": "jo",
+      "guard_rva": 924651,
+      "landing_rva": 926919
+    },
+    "31": {
+      "predicate": "jnz",
+      "guard_rva": 924721,
+      "landing_rva": 926966
+    },
+    "32": {
+      "predicate": "js",
+      "guard_rva": 924779,
+      "landing_rva": 927013
+    },
+    "33": {
+      "predicate": "jz",
+      "guard_rva": 925011,
+      "landing_rva": 927060
+    },
+    "34": {
+      "predicate": "jne",
+      "guard_rva": 925083,
+      "landing_rva": 927107
+    },
+    "35": {
+      "predicate": "jo",
+      "guard_rva": 925365,
+      "landing_rva": 927154
+    },
+    "36": {
+      "predicate": "jne",
+      "guard_rva": 925436,
+      "landing_rva": 927201
+    },
+    "37": {
+      "predicate": "js",
+      "guard_rva": 925493,
+      "landing_rva": 927248
+    }
+  },
+  "all37_landing_flag_GPR_restore_and_complete_JMPs": true,
+  "development_original_reader_calls": 1,
+  "state_rva": "0xe3000",
+  "state_size": 497668,
+  "fixture_emitted": true,
+  "decoder_synthetic_cases": [
+    {
+      "name": "synthetic complete cityhandle9",
+      "accepted": true,
+      "attribution": "BOUND_COMPLETE_GUARD_OPERANDS",
+      "error": null
+    },
+    {
+      "name": "synthetic native return33",
+      "accepted": true,
+      "attribution": "BOUND_COMPLETE_GUARD_OPERANDS",
+      "error": null
+    },
+    {
+      "name": "synthetic getter mismatch34",
+      "accepted": true,
+      "attribution": "BOUND_COMPLETE_GUARD_OPERANDS",
+      "error": null
+    },
+    {
+      "name": "synthetic JO logedge26, no natural reachability",
+      "accepted": true,
+      "attribution": "BOUND_COMPLETE_GUARD_OPERANDS",
+      "error": null
+    },
+    {
+      "name": "missing required reached cityhandle8",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: required guard operands ONBEREIKT"
+    },
+    {
+      "name": "partial valid0 raw retained",
+      "accepted": false,
+      "attribution": "INVALID_OR_PARTIAL_RAW_RECORD",
+      "error": null
+    },
+    {
+      "name": "branch38 refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: schema/id/callkind/reserved reachedbits"
+    },
+    {
+      "name": "invalid kind3 refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: schema/id/callkind/reserved reachedbits"
+    },
+    {
+      "name": "invalid prefix64 refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: last-pass owner/generation/prefix/ordinal context"
+    },
+    {
+      "name": "generation mismatch refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: last-pass owner/generation/prefix/ordinal context"
+    },
+    {
+      "name": "reserved reached44 refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: schema/id/callkind/reserved reachedbits"
+    },
+    {
+      "name": "wrong taken branch flags refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: preserved failure EFLAGS do not take original branch"
+    },
+    {
+      "name": "wrong HostBinding refused",
+      "accepted": false,
+      "attribution": "INSUFFICIENT_EVIDENCE",
+      "error": "ValueError: native reader argument binding"
+    }
+  ],
+  "T0_NOT_INITIALIZED": true,
+  "invalid_size237_refused": true,
+  "offline_reader_binding": true,
+  "loaded_binding_ranges": 75,
+  "native_compiled": false,
+  "native_executed": false,
+  "installed": false,
+  "gameplay_improvement_proven": false
+}

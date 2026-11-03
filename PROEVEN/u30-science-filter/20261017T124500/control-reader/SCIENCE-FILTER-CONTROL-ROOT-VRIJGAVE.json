@@ -1,0 +1,43 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "candidate_sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+  "scope": "ONE control host3; same exact T0; max10n;0/1/5/10; intro210/work600/close690/end720 seconds; close/restore29",
+  "at_utc": "2026-10-19T16:35:48.365155+00:00",
+  "sources": [
+    {
+      "path": "Lees-Uitbreiding.py",
+      "sha256": "eda64c835dbb92fb06a01853707f0ce080b2c9c7e7a80f01913bb96f1385b85c"
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "runtime-pins.json",
+      "sha256": "3a250016dd29a3b356de45d3838371975667006c1a63668ed16e468438bcb91b"
+    },
+    {
+      "path": "../preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332"
+    },
+    {
+      "path": "../BUILD-PINS.json",
+      "sha256": "0a21986db6a808be9a90e10a9d2853ec5ccce9ad984844e4ae155bfbd5170906"
+    },
+    {
+      "path": "../native-integration/NATIVE-PINS.json",
+      "sha256": "2465e23b3877eb2f734b72d41ae58a1dbfc9ca22eec46297481ae1644c5de2cc"
+    }
+  ],
+  "state": "CONSUMED_T10_REASON42_NORMAL_CLOSE_RESTORED",
+  "arm": "host3"
+}

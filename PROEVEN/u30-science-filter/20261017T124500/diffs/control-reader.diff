@@ -1,0 +1,31 @@
+--- current-filter-reader
++++ control-reader/Lees-Uitbreiding.py
+@@ -15,7 +15,7 @@
+     binding=original_binding('original')
+     if variant not in ('release-v1','U30-40'):raise ValueError('Only exact tested release or reviewed U30-40')
+     import pefile
+-    mp=FOLDER.parent/'candidate-manifest.json'
++    mp=ROOT/'PROEVEN/u30-kaartfilter/20261017T115000/candidate-manifest.json'
+     if hashlib.sha256(mp.read_bytes()).hexdigest()!=MANIFEST_HASH:raise ValueError('C1 manifest changed')
+     manifest=json.loads(mp.read_text('utf-8'))
+     cpbytes=(FOLDER/'candidate'/('variant' if variant=='U30-40' else 'baseline')/'CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll').read_bytes()
+@@ -174,6 +174,7 @@
+                 raw_records=u32(raw_db+8);record=checked(raw_records,0x2c8*shared['raw_t'])
+                 raw30=u32(checked(record,0x30));raw34=u32(checked(record,0x34))
+                 shared['raw_record']=dict(certified=False,record30=raw30,record34=raw34,land_bit=bool(raw30&0x80000000),space_lander_bit=bool(raw34&0x20),space_launcher_bit=bool(raw34&0x10),note='UNCERTIFIED later bounded database read; does not prove resolver write or pass-time values')
++        shared['science']='NIET_VAN_TOEPASSING_CONTROL54804'
+         return shared
+     # Fixed T0 previously observed processed_round=-1. Native cache extras
+     # are optional before any native AIpass; strict loaded/identity/tech/round
+@@ -260,9 +261,9 @@
+     p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+     p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+     p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+-    gate=json.loads((FOLDER/'KAARTFILTER-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
++    gate=json.loads((FOLDER/'SCIENCE-FILTER-CONTROL-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
+     if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C10 source-only; no live reader release')
+-    if args.turn not in (0,1) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
++    if args.turn not in (0,1,5,10) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
+     for pin in gate.get('sources',[]):
+         if hashlib.sha256((FOLDER/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Released C10 source changed')
+     handle=k.OpenProcess(0x410,False,args.pid) # QUERY_INFORMATION|VM_READ only

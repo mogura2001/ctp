@@ -1,0 +1,99 @@
+--- frozen-type10/preparation-manifest.json
++++ kaartfilter/preparation-manifest.json
+@@ -1,6 +1,6 @@
+ {
+-  "stage": "TYPE10_PREPARATION_ONLY_NO_INSTALL_NATIVE_OR_GAME",
+-  "checked_at_utc": "2026-10-12T16:21:42.791312+00:00",
++  "stage": "KAARTFILTER_SOURCE_PREPARATION_ONLY_NO_BUILD_NATIVE_OR_GAME",
++  "checked_at_utc": "2026-10-17T09:58:24.914573+00:00",
+   "release_pins": [
+     {
+       "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+@@ -114,6 +114,16 @@
+     {
+       "path": "ONTWERP/U30-TYPE10.md",
+       "sha256": "5c2256c673256ba77848ae9e64d8c298af380c17b42af098ed745678712d7c89"
++    },
++    {
++      "path": "ANALYSE/U30-H2-GATE28.md",
++      "sha256": "44313b450dea1257953b6e4ea5f9b982274ed2cc148e9d30a75b8cf5df1f4dc2",
++      "size": 8218
++    },
++    {
++      "path": "ONTWERP/U30-KAARTKENNISFILTER.md",
++      "sha256": "0b918756d6cf923973643ea07bbeb0a7fa441201838f0c5d7f16f9bdacdfa95e",
++      "size": 18597
+     }
+   ],
+   "base_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+@@ -328,8 +338,69 @@
+       "path": "PROEVEN/u30-foutcodes/20261015T145000/release-v1.robotcom.backup.dll",
+       "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+       "size": 665088
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/build_candidate.py",
++      "sha256": "633c6f5b483162b858219924c28663bb9575736e2a5b0c0fd84e6957b6d38162",
++      "size": 10026
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/check_candidate.py",
++      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
++      "size": 4880
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/native.py",
++      "sha256": "4ba127574be9a8a8011596ab2199ca8035800d8c66456a301f98f20f7a384524",
++      "size": 33939
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/policy.py",
++      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
++      "size": 11744
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/integration_base.py",
++      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
++      "size": 12267
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/input-pins.py",
++      "sha256": "3c205ba2ad6b7885c7483455ac24084b43e6ce64dcd983bbaaf232b39673fc8e",
++      "size": 2061
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/bind_scheduler.py",
++      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
++      "size": 1333
++    },
++    {
++      "path": "PROEVEN/u30-type10/20261015T194300/release-v1.robotcom.backup.dll",
++      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
++      "size": 665088
++    },
++    {
++      "path": "PROEVEN/u30-reason23/20261016T131100/host1/Lees-Uitbreiding.py",
++      "sha256": "60e5f1e057afde7f7fd140b773698225c0ac3dc9ee25494386e69f88198e5470",
++      "size": 25237
++    },
++    {
++      "path": "PROEVEN/u30-reason23/20261016T131100/host1/original_core.py",
++      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
++      "size": 11208
++    },
++    {
++      "path": "PROEVEN/u30-reason23/20261016T131100/host1/h3_layout.py",
++      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
++      "size": 2265
++    },
++    {
++      "path": "PROEVEN/u30-reason23/20261016T131100/host1/participants.json",
++      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
++      "size": 405
+     }
+   ],
+   "recovery": "No installation. Own backup is exact tested release-v1. Any future installation/restore requires current 19 pins, closed game, protected saves/profile and separate root authorization.",
+-  "binary_diff_policy": "Only these 9 windows, PE header count/size/checksum, newly declared RX/RW section headers and appended section bytes. Preserve all five B2 hooks and complete payload byte-for-byte, existing relocation directory and all unrelated original bytes. The slot40 HIGHLOW remains at original RVA with new wrapper pointer. No H3 score hooks, packing or FLI changes."
++  "binary_diff_policy": "Only these 9 windows, PE header count/size/checksum, newly declared RX/RW section headers and appended section bytes. Preserve all five B2 hooks and complete payload byte-for-byte, existing relocation directory and all unrelated original bytes. The slot40 HIGHLOW remains at original RVA with new wrapper pointer. No H3 score hooks, packing or FLI changes.",
++  "basis_candidate_sha256": "b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62"
+ }

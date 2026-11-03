@@ -1,0 +1,26 @@
+﻿{
+    "all_gates_false":  true,
+    "stage":  "SOURCE_ONLY_NOT_EXECUTED",
+    "installation":  false,
+    "native":  false,
+    "backup":  false,
+    "game":  false,
+    "powershell_parser":  [
+                              {
+                                  "errors":  0,
+                                  "file":  "Close-Normally.ps1",
+                                  "executed":  false
+                              },
+                              {
+                                  "errors":  0,
+                                  "file":  "Restore.ps1",
+                                  "executed":  false
+                              },
+                              {
+                                  "errors":  0,
+                                  "file":  "Start-Monitored.ps1",
+                                  "executed":  false
+                              }
+                          ],
+    "RPM":  false
+}

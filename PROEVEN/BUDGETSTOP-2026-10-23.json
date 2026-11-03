@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-10-23T15:03:48.889084+00:00",
+  "reported_at_utc": "2026-10-23T15:03:42.305Z",
+  "five_hour_remaining_percent": 3,
+  "weekly_remaining_percent": 85,
+  "reset_at_unix": 1792780529,
+  "state": "BLOCKED_WAIT_FOR_CONFIRMED_BUDGET_RESET",
+  "consecutive_blocked_goal_turns": 3,
+  "previous_goal_turn_classification": "no_progress_budget_stop",
+  "this_goal_turn_classification": "no_progress_budget_stop",
+  "all_subagents_terminal": true,
+  "shutdown_authorized": false,
+  "pc_stays_on": true,
+  "resume": "Fresh confirmed reset and sufficient weekly budget; recheck C4/C5 pins/gates/media/count0, authorize own C5 host, start fixed T0/T1, root review before T2; T26 review before T27, max T100.",
+  "current_evidence": "C4/C5 sources root-accepted only. No new installation, gameplay, RPM or native test. All execution gates false. Goal3 accepted; Goal1/1a/full5 open."
+}

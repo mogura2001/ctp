@@ -1,0 +1,689 @@
+{
+  "stage": "C1_SOURCE_ONLY_OFFLINE_CHECKED_NOT_LIVE",
+  "sources": [
+    {
+      "path": "ONTWERP/SCIENCE-C2-OVERDRACHT.md",
+      "sha256": "ebbf78ccee2922078b9086d8e4532f4e86732ebd202bc5806cfdbc44c6b7c877"
+    },
+    {
+      "path": "ONTWERP/SCIENCE-DUURPROEF.md",
+      "sha256": "dbd3a453e42abb18b1325499275e41d337949fb26ff8ca73ffde34be7cd1ad56"
+    },
+    {
+      "path": "ONTWERP/SCIENCE-SELECTIE-25-DIAGNOSE.md",
+      "sha256": "2afdcb1f5e8bb97437beb885f3fb10e19021e5a32619e73fd6fa43e945a36cbe"
+    },
+    {
+      "path": "PROEVEN/Bedien-CTP.ps1",
+      "sha256": "d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74"
+    },
+    {
+      "path": "PROEVEN/Controleer-Weekbudget.py",
+      "sha256": "33d538b8f23e85cd5dc6d6f7820450f84d8e4bb439418ab5f359df959dc4c52e"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012-release-v1/Doel3.ps1",
+      "sha256": "b96c810731e879df5bc8a98cff3fc56b0891bfe716bd34d335aaa28ce27d2443"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/manifest.json",
+      "sha256": "3ee74baaa993793465975e9c996f03c699e334e24b297aa22fbbc5ba189806d4"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/ROOT-VARIANT-TRACE.json",
+      "sha256": "90c1f3da641b480f10266033e6d8b6717d2746da1762b58093bb3725c26d9ded"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T0.json",
+      "sha256": "989b0494d55d89f45515efc2ac94e9deaa5085f3f89f620dba5d5720a62b1997"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T1-pass.json",
+      "sha256": "bd13fb54666882ba033af549c9d3a014a2ba84226d2d99f6f004e00ae73c6701"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T1.json",
+      "sha256": "f0b616eaea2995d5436f7a09c4ec4a15a5f2af1079cd764b6e8f7c00f3464583"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T10-pass.json",
+      "sha256": "4061ae466a9dbacafb1670587425404f2d7520082d040328d38cb15f1f73d862"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T10.json",
+      "sha256": "9a43eaf6d9ddf818886f58dbafb3675c914d1cfe498540c8ece5a0dbed31845f"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T11-pass.json",
+      "sha256": "c45f3237e1e7002ca7e83f1eb474f75d0571e0b3d3462f9480293c59f13fc069"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T11.json",
+      "sha256": "3008ea9de63297bd5176b889bd430c8cd2f3498c0392ae29f9a6d2cd43d38da0"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T12-pass.json",
+      "sha256": "0afeb8c4f686a41c77a54235f3a6e25741d806f2cd82f6bea0a3f561a5348640"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T12.json",
+      "sha256": "851e47654e463f037d7f6e5baf2130bf9981db14836fae753dc302a33652df6d"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T13-pass.json",
+      "sha256": "14b6231bfd979cd2914d95efe76eb4e0388a1b44005faea9e62ee0cae114c9f3"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T13.json",
+      "sha256": "2f15dbd379dfb15b9f35beefbe61e91d046660ce133e905b0cce7f9ac1e584df"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T14-pass.json",
+      "sha256": "71e9cdb2460daf80ad51c6ce5d2e646f3e05973989900f9cc9561e05be915b6f"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T14.json",
+      "sha256": "5c18da6a2b9c6920e36e92acbdfeb3fa71e2ce15999e160e54503055432cde62"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T15-pass.json",
+      "sha256": "11882f71b2884f6cdba0507bc1161d7565a9858a30a90c85ca72e080ef3a63bf"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T15.json",
+      "sha256": "be14bc9e6c17c01e08bbe5288c198af6e7b1cd7b726a87b3bfd4fcba06c989f7"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T16-pass.json",
+      "sha256": "ec097b2052588a369a65100ee14b1acba2fd49cac314ba84da597e2639808b56"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T16.json",
+      "sha256": "4763c06bc40f1b4144b12f18f178f3acb53b8ab7c4b6dc9030733463f995460a"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T17-pass.json",
+      "sha256": "a6b2dc87bcdea26aad264e8c113fde95ba12ced47895e7dcb5fecd59bbc67ad3"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T17.json",
+      "sha256": "196708f41f967e9dc996f1ea24aa27f31125e4401ad840e0b9b7894a39889452"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T18-pass.json",
+      "sha256": "c754f99519aafd128d15c85420cdd7df274d5fee5c20d4aba40034744d840104"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T18.json",
+      "sha256": "81afc3976e86bc530a60a85a4d64c7176ffc06bc55f268b7db70420ef969390a"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T19-pass.json",
+      "sha256": "bd1ce8b60b5a02c0f5cb20f1648f5b458070f247ac38f6c9dc1edf82df76efd8"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T19.json",
+      "sha256": "2f6f7a433600736fea33b5ccc193016c2fe2f2980b1a4d3ed9aaa453b7c67b7e"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T2-pass.json",
+      "sha256": "8d9ecbda53c788143a4360959d1d25778953157275b76ddf045150a08c355a3f"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T2.json",
+      "sha256": "5cbb07cd78dec044e7e9b7036fe8e46c1e48145cf4820579ba99fb80c5596871"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T20-pass.json",
+      "sha256": "ff2b8ca0e30c881c81947d3d3e6c84b4c710b9ff06d0dd49db8908759b05b9c6"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T20.json",
+      "sha256": "b36f09ed7b9eb9ee7c6e6cd48becfbc3eb172019acd78eade9146b586932e9ad"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T21-pass.json",
+      "sha256": "6956d1f1ae8cf585c913f49db6161c7451266f4dd8069ab59e0bd71c74ba4097"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T21.json",
+      "sha256": "346fb24f197384a524bdf301504944fed294473cca946b752494071426c390c6"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T22-pass.json",
+      "sha256": "ca6ce9f3657eb537a5d2e27310c48b0cfc4659d40de1304e04f8911efd6e8cbe"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T22.json",
+      "sha256": "69c83aa4f83ef13b9c805e679c69167fcd13484cc76799b4cb1ff674714d8d20"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T23-pass.json",
+      "sha256": "0294c2845a38116946145a6cb9075ad232e9923e38bb08685abf380ac0c76691"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T23.json",
+      "sha256": "e018ef68d56c5898fb18e4f79c1a8cf686c26f05ed204a956c8b58d934af54c8"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T24-pass.json",
+      "sha256": "e6f95b75c3100282e427e16fdacb93b89efbb13bc7b045bc2da757493084d182"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T24.json",
+      "sha256": "f90cee78519077feb2eb0b698d3017bc9b7e279f6ea3b754c8e1095c3d5a054d"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T25-pass.json",
+      "sha256": "22e5af015d31da641095d425710c6848bb8e059e902a249e211d0bcb7c7445e7"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T25.json",
+      "sha256": "dba6d240309fbaead3188cc46370791717759628fdf0c212ef14a96df2775b34"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T26-pass.json",
+      "sha256": "e977207ebe6a19822f2befebe6a875b1ccd4ea52b27bc257987d372f92dc4f36"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T26.json",
+      "sha256": "2bd396309011952ea37ab4743527bf4c1a91f3a1099881773b575da8fab209e6"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T3-pass.json",
+      "sha256": "4382f58bb876ccff5a5c62f20a72f71595cf1dbe94a0942a6d4a1bf785552ea6"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T3.json",
+      "sha256": "61a452ab08695e9baf0d91956ce36a299408a1712b29f319e5f852167a73525d"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T4-pass.json",
+      "sha256": "71541d4ff90ce803d51eecfa36f50d22791ee2e592ebf050026f088b913de502"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T4.json",
+      "sha256": "06e1dc8fbd40a03a825bab4d849378c88e9df3890a0de82d7a82b500f6f0bc32"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T5-pass.json",
+      "sha256": "f21476cb32fb6f59a0901f375f1e034e2bcefcf35912cb14c8260cbadb4ddfd5"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T5.json",
+      "sha256": "ce1a5c7dcc506b56f306da6931ae6be7c438709d6cf39e6f4cf02092c8769527"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T6-pass.json",
+      "sha256": "160d981f4bc50bd6ad4f909f0c47ac1cbaccdf2563d42c7245f0c410844a0f58"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T6.json",
+      "sha256": "4f200b0602ceeb6017031de3a1763e1741541b80715daa72237fa12016cb8d39"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T7-pass.json",
+      "sha256": "d53883fc6a39e9fe7a4fa249a57a2f5d9dbe7a33a2b6d62851e875c0017895f1"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T7.json",
+      "sha256": "354898a8e7e99996f27a52dfc604d9af80496ce124efc83f0128985e06f47f04"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T8-pass.json",
+      "sha256": "caccf3a949a5e86b353c4cc9b599a396c2f09dd732ec5cd087aebfbbf3197b2f"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T8.json",
+      "sha256": "12dbc610a286a80153c4496d851fdaa69f1a20b13615b830421a34a3481e4904"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T9-pass.json",
+      "sha256": "f5ce1960583ce5e86305e16d273e0934ed54ca4dd5460aca9d3050393da20499"
+    },
+    {
+      "path": "PROEVEN/doel3/20261012T122000/variant/T9.json",
+      "sha256": "7103d0426898584ab9ad25b242c593a13a7d67866f5b5c3a57cb0fe10683d475"
+    },
+    {
+      "path": "PROEVEN/opening-b2/build.py",
+      "sha256": "e91792bb8da24cf67ada4da93a9a4e443f843e4bf45ea72b82f89ff85d99b56f"
+    },
+    {
+      "path": "PROEVEN/production-h3/build-current.py",
+      "sha256": "0fdb1c66e29c0ea511e435baf3cdd6cc0a3fc7be6b7769fd74e34e041c41e245"
+    },
+    {
+      "path": "PROEVEN/production-h3/components.py",
+      "sha256": "6b433fa50e5723d59f98649a3013432b5b15b488ccc7aa5569f8d2bb8f50e092"
+    },
+    {
+      "path": "PROEVEN/production-h3/development.py",
+      "sha256": "2b0523659d8047e229e3511920c41d09dc41d7e7d89b0d6320dec1a27617eefe"
+    },
+    {
+      "path": "PROEVEN/production-h3/finalize.py",
+      "sha256": "f709f7b32cdf368a5173212c6170573e7592029adc7a6bc996782b9ad67211c1"
+    },
+    {
+      "path": "PROEVEN/production-h3/fixture-recipes.py",
+      "sha256": "6dc004f1743a9764697c2e5316951d3de00f036067b777100648baddf0006e10"
+    },
+    {
+      "path": "PROEVEN/production-h3/host/validator.prepared.bin",
+      "sha256": "e6fdf2a5188f6020424af709ca642958b95ec96850ba9b7fed0cca1184c8c78b"
+    },
+    {
+      "path": "PROEVEN/production-h3/host-validator.py",
+      "sha256": "cc12a6789f81d38c8897c854fe75a52b4f8926cc764a127844b1fea3292f0df8"
+    },
+    {
+      "path": "PROEVEN/production-h3/layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "PROEVEN/production-h3/model.py",
+      "sha256": "1a98227588e528ab9024a83ae09573d28bb0a2e2f08f408a4ad5a9a0ebeabf21"
+    },
+    {
+      "path": "PROEVEN/production-h3/prepare.py",
+      "sha256": "13892653b350bb28e45d24794751392a3f3e09584631f5f955e0b918202fe68e"
+    },
+    {
+      "path": "PROEVEN/production-h3/run-native.py",
+      "sha256": "9b7a7f72470d13e96d2b53e1163dc794b8fc908eb16788fd05dfe72eb8147499"
+    },
+    {
+      "path": "PROEVEN/production-h3/verify.py",
+      "sha256": "7677eeb400abe9660e4cb07c4452a7eb55f0a1f06faef8e7697b1865cd05bf3f"
+    },
+    {
+      "path": "PROEVEN/production-h3/x86.py",
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/C1-OVERDRACHT.md",
+      "sha256": "5b6ef4e82f523c6bc300a81b3b8693fd5fd8eb60a713b284773fd6b2e2392dbc"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/check_sources.py",
+      "sha256": "c7d5c9d70c2cb9f34e68417379b0d465cd75182a54cf5a0ba9d69023e9fb221f"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/Lees-Duur.py",
+      "sha256": "314dcc54cdb725c2c8de60f269a1d99555292f63c7f7f39a4c48669775bb7851"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/OFFLINE-CHECKS.json",
+      "sha256": "920e4827a6b8a4e19358d5c608ed577ddf3a55ea830e5a24a853636ddc924621"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/Pass-Duur.ps1",
+      "sha256": "a7b684becca7e2c8c5dc2c205b21fac15de9891289538266160f0eb5d70bb57b"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/POWERSHELL-PARSE.json",
+      "sha256": "dfe7fb8bc41d548740dcc8fa224cae638a9786c9c496d634d8b9e4a14d54f267"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/prepare_entry.py",
+      "sha256": "afe2ab5d8103a1ed8a349f200c4cf88bf0089b61d42227bbe9238d742219d419"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/reader.diff",
+      "sha256": "b4677b50e4cd1edc2c02f1d89071ff7aa3bfed3019438241ac48d506c3ccecac"
+    },
+    {
+      "path": "PROEVEN/science-duurproef/20261021T145100/scope.py",
+      "sha256": "5c718019c1ec3fc50175fd70caf99a928c9164d871733e488f19ebfaf2775024"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/candidate-manifest.json",
+      "sha256": "2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/build_candidate.py",
+      "sha256": "b917c57e7289034ba63428237d397f94d51daed6fab085503d15b150d504f84a"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/candidate-manifest.json",
+      "sha256": "265b5ee53bcc5adc4216f0df2471b45b95c41d2d3e5d8121cf8fb78eea888167"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/check_candidate.py",
+      "sha256": "ae0d49106865e663c814589d42a6b49bc6adff256c89726fb74caaec5cc045a9"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_model.py",
+      "sha256": "9370ed1fda84c8f51e77a664bd6bec967ed17cfdda4a6e5a6caca2ae9dafab72"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/U30-40.prepared.dll",
+      "sha256": "18d8516bf915d137acbc679c695bf4163540d01007888d875da24183035b230d"
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/union.py",
+      "sha256": "90d9401a692dab555c6879bef3a9df4d9ae38c14c40e754d72c177d4dc0af52c"
+    },
+    {
+      "path": "PROEVEN/score-h1/build.py",
+      "sha256": "18a20c73e47319a776c2e6c338b4f06b55dc8c1e5f68d24a9de39eed78cdb2da"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/build_candidate.py",
+      "sha256": "b042c85eb551bb2178ea84f59bbd68b25c384e5f3afd961c296eb107926b1fea"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/candidate-manifest.json",
+      "sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/check_sources.py",
+      "sha256": "c3df06c7f7882dfa8c7a73de99138055760dd70272745efd39e39bb5bc07ffca"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/check_sources_checkpoint.py",
+      "sha256": "b3c8db61e1a8269b4ca95f72895aff55d9705121e9677a9a52aacb5cfa22d67c"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/fixture_sources.py",
+      "sha256": "25f1816ba72d2dd44f23c35b6ae824403c66a4ea127473bac844076ffdd2a5b4"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_components.py",
+      "sha256": "7590a7f92fb4a87f637cec15d6a5fd8680032a002915082d490175a61a6cf20c"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_diagnostic.py",
+      "sha256": "02133cde47f96eea66cf3ad5948f9380464a125f68804360cab21cd682fa3a65"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_diagnostic_layout.py",
+      "sha256": "3ab6de074116555fec32f4c1828b0938336916e0e0f86c7786b1bad75bd2555d"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/integration_base.py",
+      "sha256": "c1f336e38260aab82614107be1eebb99c9e1e1c93b1d3bc0049706e2eec4cfa0"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native.py",
+      "sha256": "cea06aacdca51e7ca73250e276d71fce89e21f5d045dad3d6c69c348abacf0d5"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic.py",
+      "sha256": "198e8d7897764ff28c25e6ee9a003eac5acfe05133071ad905809146f028a7a6"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic_layout.py",
+      "sha256": "9c483e67c15cc994d5e1b458c332684299c80df6a7304396422654a1bc2148ff"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/plan_layout.py",
+      "sha256": "fbf6993655b842450c43df093065fb96151d940909e14f1ffcaf4c801e7f4b8d"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/policy.py",
+      "sha256": "9fc8b418ea85daf87ffbc9858a42438ece2ec8748cd408b85e4b75cb901a05ad"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/prepare_sources.py",
+      "sha256": "4d47f3e6881d6600dcae913461da0b1a9806367dfa7c2980858068284adf878a"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/food_failure_decoder.py",
+      "sha256": "d9884e2ea5991ff41af54e88c461f2db54f6071638642385c1d20f6188d2943f"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/Lees-Uitbreiding.py",
+      "sha256": "db164c59641d58487cb35226da4e7485a1e3a891b912abc5b8c6c6772006810c"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/partial_diagnostic.py",
+      "sha256": "6f43aaed351ff74d4bc140de12ce017e5ca206b510dbca044f7387a34233c0bf"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/path_failure_decoder.py",
+      "sha256": "d89db84bfa2b17e3ff18b6683115e6c2b7fc2e6dba3f038f9f59ac8b2753f2f1"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/READER-PINS.json",
+      "sha256": "4ed8587c87112423f76ec007b7d8793bbbbbed6f6d611cc07832de8948570127"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/runtime-pins.json",
+      "sha256": "41e52c7f05578cc92a0f4f64693a8a22c698a2220c6c03f992c6c90641cc8e35"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_layout.py",
+      "sha256": "bb1348a01996c250be5e8ffbc5a95c2bb3b0d6606e579436bda470c79fcf6143"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_model.py",
+      "sha256": "343423980d4d25469d1e2d5cfb2acbce059d54a961073a9c55ef479f47d1ccfa"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_result.py",
+      "sha256": "4c24b3f500848f1a3194d18d88817bf2f0535bbdeea60555a374790c7231354d"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/union.py",
+      "sha256": "e16dbfbce044405acb05f66211681d5ff839cbcc4351548dc1fd11adc74ef3e8"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/wire_sources.py",
+      "sha256": "410873889958c6f5c95dcc15efa387b0be53621f3a168396391ba4aa14921510"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-host/20261021/host1/variant/T0.json",
+      "sha256": "1272d7e552f108b20ccba179e845a908e4af889092d330d13921a2d3a47fcbff"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-host/20261021/host1/variant/T1.json",
+      "sha256": "e290a834aed5a4e4fbfb83c6cfd801b8c242198419d48d03c191761010fafd21"
+    },
+    {
+      "path": "PROEVEN/settler-b4/input-pins.py",
+      "sha256": "0ec070d25605af8df63b9df0d78ab6bd928523f7527ebcb8f039a5e6fd1580e3"
+    },
+    {
+      "path": "PROEVEN/settler-b4/integration.py",
+      "sha256": "44335c3ff8825507388d138356f0305cdc7bb071065f697aea5f641754eb43aa"
+    },
+    {
+      "path": "PROEVEN/settler-b4/native.py",
+      "sha256": "a6fc3f44506d906b4e8fc6596bdc968821a95f04130fe4bc8119f169c3d38246"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/build_candidate.py",
+      "sha256": "f0d3ae391089817ab018bf9e96c41226fd941772ff29e03a5b89317147a0b08c"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/input-pins.py",
+      "sha256": "19fcf72b182586b0785487486adcc31c8a330e1311765d15fdc8399804f524a2"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/native.py",
+      "sha256": "819a675a87f5597f5117c9459747fd2953e74660dab5b9edb9eb98b14c60aade"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/preparation-manifest.json",
+      "sha256": "19f7472c41dd5993240eaa5fae511255e37a12df68268dcaead6abb66f40d23e"
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/candidate-manifest.json",
+      "sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/native.py",
+      "sha256": "c282f13be56d0a856ce86ccc670966a765c5679d4ee92ce9e00d62a71defa05c"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/policy.py",
+      "sha256": "01e1e5343f52c456849c8b7d47701f181dbca415305c2f877893628dd0c54322"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/Lees-Uitbreiding.py",
+      "sha256": "3be400671fe03492603227d07a0c3110a01afa1d67cd3ad286461c5d377a729f"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/U30-40.prepared.dll",
+      "sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66"
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/Lees-Uitbreiding.py",
+      "sha256": "60e5f1e057afde7f7fd140b773698225c0ac3dc9ee25494386e69f88198e5470"
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/build_candidate.py",
+      "sha256": "633c6f5b483162b858219924c28663bb9575736e2a5b0c0fd84e6957b6d38162"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/input-pins.py",
+      "sha256": "3c205ba2ad6b7885c7483455ac24084b43e6ce64dcd983bbaaf232b39673fc8e"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/native.py",
+      "sha256": "4ba127574be9a8a8011596ab2199ca8035800d8c66456a301f98f20f7a384524"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660"
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    }
+  ]
+}

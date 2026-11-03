@@ -1,0 +1,130 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "own fixture inputstate, never candidate",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "mov eax,('ebp', 8)",
+      "bytes": "8b8508000000"
+    },
+    {
+      "offset": 23,
+      "asm": "cmp eax,('ebx', 4)",
+      "bytes": "3b8304000000"
+    },
+    {
+      "offset": 29,
+      "asm": "jne score_bad",
+      "bytes": "0f851c000000"
+    },
+    {
+      "offset": 35,
+      "asm": "mov eax,('ebp', 12)",
+      "bytes": "8b850c000000"
+    },
+    {
+      "offset": 41,
+      "asm": "cmp eax,('ebx', 56)",
+      "bytes": "3b8338000000"
+    },
+    {
+      "offset": 47,
+      "asm": "jl score_zero",
+      "bytes": "0f8c10000000"
+    },
+    {
+      "offset": 53,
+      "asm": "mov eax,1",
+      "bytes": "b801000000"
+    },
+    {
+      "offset": 58,
+      "asm": "jmp score_done",
+      "bytes": "e90b000000"
+    },
+    {
+      "offset": 63,
+      "asm": "inc ('ebx', 40)",
+      "bytes": "ff8328000000"
+    },
+    {
+      "offset": 69,
+      "asm": "mov eax,0",
+      "bytes": "b800000000"
+    },
+    {
+      "offset": 74,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 80,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 81,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 82,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 83,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 84,
+      "asm": "ret 16",
+      "bytes": "c21000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {
+    "score_bad": 63,
+    "score_zero": 69,
+    "score_done": 74
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "stage": "REVIEWABLE_SOURCE_ONLY_NO_EMISSION_COMPILE_NATIVE",
+  "time_amsterdam": "2026-10-17T21:51:35.564411+02:00",
+  "candidate_manifest_pins_rechecked": true,
+  "build_files_rechecked": 62,
+  "python_syntax_ast_only": true,
+  "files": [
+    {
+      "path": "BRONREVIEW.md",
+      "sha256": "33307088a8bf040b943258b0d4735956d8609bb8ab76a5be24b4eaf3eef0c36d",
+      "size": 5783
+    },
+    {
+      "path": "INPUT-CHECKPOINT.json",
+      "sha256": "aafd3f1cf835b6a62f8ce98b8fad48805ffff7d6c19f8fa6dec8948453429fcc",
+      "size": 449
+    },
+    {
+      "path": "NativeCaller.cs",
+      "sha256": "7f16ba7f51685f26f6521c0332c6ed30e150e5b224f4f84a642bbc3d72792436",
+      "size": 13854
+    },
+    {
+      "path": "prepare_fixtures.py",
+      "sha256": "5636cfc0a1e1e513e5a28ce466368f0a0d9adcb15bf827ed34a235a54f6ef329",
+      "size": 3830
+    },
+    {
+      "repository_path": "PROEVEN/u30-kaartfilter/20261017T115000/caller/NativeCaller.cs",
+      "sha256": "0a50eefaae2443c04235f01570692d319034855451c513c1762ef761dd620616",
+      "size": 9530
+    },
+    {
+      "repository_path": "PROEVEN/u30-kaartfilter/20261017T115000/caller/helper/gate.bin",
+      "sha256": "7028e3f7b78cf3996995ae669828856a31833018b2d8ffb8482d7ff4c7b4660d",
+      "size": 142
+    },
+    {
+      "repository_path": "PROEVEN/u30-kaartfilter/20261017T115000/caller/helper/gate.recipe.json",
+      "sha256": "8ac549822bbb9a7300bfdedabd0f5ea6adcbdda906ccb843028f85cded34de45",
+      "size": 3378
+    },
+    {
+      "repository_path": "PROEVEN/production-h3/x86.py",
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22",
+      "size": 3577
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim1.bin",
+      "sha256": "915766ea00cb00e6f5e23b6e8374ae0deba052f0746471465f58c7e226b211c8",
+      "size": 130
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim1.recipe.json",
+      "sha256": "c117f036286548c8945cb5d35865e9ae0649625d383893b3b235aa6415e27c6c",
+      "size": 4063
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim2.bin",
+      "sha256": "13ebbbb448e26e10e5b97f25a997e692581673fa1736977fe666944665d4c686",
+      "size": 136
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim2.recipe.json",
+      "sha256": "1d5d43744465cd329d216fc01e07970cdb1665e5a8f96c72a45da2307a4078fe",
+      "size": 4221
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim3.bin",
+      "sha256": "939d2eee4ce3dac0cfd6daab7527254f873a22dc1ebc9e4ef471936634211e69",
+      "size": 142
+    },
+    {
+      "repository_path": "PROEVEN/opening-b2/helper/shim3.recipe.json",
+      "sha256": "4f60f3134002e54d0d2e62aa511ce997eb12254f621705e24f6bc6176fd4897a",
+      "size": 4379
+    }
+  ],
+  "stub_engine_science_proof": false,
+  "native_acceptance": false,
+  "gameplay_acceptance": false,
+  "remaining_cases": "BRONREVIEW.md"
+}

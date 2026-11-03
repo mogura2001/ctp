@@ -1,0 +1,140 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,548",
+      "bytes": "81ec24020000"
+    },
+    {
+      "offset": 12,
+      "asm": "fnsave real SCI x87 area ('ebp', -144)",
+      "bytes": "ddb570ffffff"
+    },
+    {
+      "offset": 18,
+      "asm": "fldcw caller ('ebp', -144)",
+      "bytes": "d9ad70ffffff"
+    },
+    {
+      "offset": 24,
+      "asm": "mov edi,('ebp', 24)",
+      "bytes": "8bbd18000000"
+    },
+    {
+      "offset": 30,
+      "asm": "mov eax,0",
+      "bytes": "b800000000"
+    },
+    {
+      "offset": 35,
+      "asm": "mov ecx,512",
+      "bytes": "b900020000"
+    },
+    {
+      "offset": 40,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 41,
+      "asm": "rep stosd",
+      "bytes": "f3ab"
+    },
+    {
+      "offset": 43,
+      "asm": "mov edi,('ebp', 24)",
+      "bytes": "8bbd18000000"
+    },
+    {
+      "offset": 49,
+      "asm": "mov ('edi', 8),1",
+      "bytes": "c7870800000001000000"
+    },
+    {
+      "offset": 59,
+      "asm": "mov ('edi', 12),3",
+      "bytes": "c7870c00000003000000"
+    },
+    {
+      "offset": 69,
+      "asm": "mov ('edi', 4),11",
+      "bytes": "c787040000000b000000"
+    },
+    {
+      "offset": 79,
+      "asm": "mov ('edi', 16),1",
+      "bytes": "c7871000000001000000"
+    },
+    {
+      "offset": 89,
+      "asm": "mov ('edi', 28),-1",
+      "bytes": "c7871c000000ffffffff"
+    },
+    {
+      "offset": 99,
+      "asm": "mov ('edi', 32),-1",
+      "bytes": "c78720000000ffffffff"
+    },
+    {
+      "offset": 109,
+      "asm": "mov ('edi', 36),-1",
+      "bytes": "c78724000000ffffffff"
+    },
+    {
+      "offset": 119,
+      "asm": "mov ('ebp', -220),0",
+      "bytes": "c78524ffffff00000000"
+    },
+    {
+      "offset": 129,
+      "asm": "lea esi,('edi', 128)",
+      "bytes": "8db780000000"
+    },
+    {
+      "offset": 135,
+      "asm": "injected private return value",
+      "bytes": "a100000000"
+    },
+    {
+      "offset": 140,
+      "asm": "actual center/tile continuation",
+      "bytes": "ff2500000000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 136,
+      "context_offset": 2372
+    },
+    {
+      "at": 142,
+      "context_offset": 2368
+    }
+  ],
+  "labels": {}
+}

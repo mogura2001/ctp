@@ -1,0 +1,47 @@
+--- PROEVEN/pad-lokaal-onbekend/20261026-host-prep/Start-Monitored.ps1
++++ PROEVEN/pad-lokaal-onbekend/20261026b-host-prep/Start-Monitored.ps1
+@@ -1,6 +1,6 @@
+ $ErrorActionPreference='Stop'
+ $workspace='C:\GIT\ctp';Set-Location -LiteralPath $workspace
+-$package=$PSScriptRoot;$c4=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026-host';$hostDir=Join-Path $c4 'host'
++$package=$PSScriptRoot;$c4=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026b-host';$hostDir=Join-Path $c4 'host'
+ $python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+ function Hash($p){(Get-FileHash -LiteralPath $p).Hash.ToLowerInvariant()}
+ function NewJson($p,$value){$s=[IO.File]::Open($p,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None);try{$b=[Text.Encoding]::UTF8.GetBytes(($value|ConvertTo-Json -Depth 30));$s.Write($b,0,$b.Length);$s.Flush()}finally{$s.Dispose()}}
+@@ -12,15 +12,15 @@
+  return ($v|ConvertFrom-Json)
+ }
+ $gate=Get-Content (Join-Path $package 'ROOT-HOST.json') -Raw|ConvertFrom-Json
+-if($gate.allowed -ne $true -or $gate.install_allowed -ne $true -or $gate.start_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026-host' -or $gate.max_n -ne 100 -or $gate.hard_seconds -ne 4500 -or $gate.no_new_n_seconds -ne 4380){throw 'Separate exact C5 root host gate required'}
++if($gate.allowed -ne $true -or $gate.install_allowed -ne $true -or $gate.start_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026b-host' -or $gate.max_n -ne 100 -or $gate.hard_seconds -ne 4500 -or $gate.no_new_n_seconds -ne 4380){throw 'Separate exact C5 root host gate required'}
+ $pinPath=Join-Path $package 'SOURCE-PINS.json'
+ if((Hash $pinPath) -cne $gate.source_pins_sha256){throw 'C5 source pins changed'}
+ foreach($p in (Get-Content $pinPath -Raw|ConvertFrom-Json).sources){if((Hash (Join-Path $workspace $p.path)) -cne $p.sha256){throw "Changed source $($p.path)"}}
+-if((Hash (Join-Path $c4 'SOURCE-PINS.json')) -cne '2f9f3ec2b96160d075820b83ac4570f75969834915d4f6543f37ce52d00107fe'){throw 'C4 frozen source manifest changed'}
++if((Hash (Join-Path $c4 'SOURCE-PINS.json')) -cne '33fb04ada31c41ed69b3dea162dfe1b0cae95b1fda4658e1ac5a098761d54718'){throw 'C4 frozen source manifest changed'}
+ $budget=Budget
+ if(@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Game already running'}
+ $media=[IO.DriveInfo]::new('E:')
+-if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CIV_CTP'){throw 'Ordinary CD unavailable; no bypass or Retry'}
++if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CCTP'){throw 'Ordinary CD unavailable; no bypass or Retry'}
+ if(Test-Path -LiteralPath $hostDir){throw 'Unique own host directory already exists; no retry'}
+ $candidate=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261023T155300-build/U30-40.prepared.dll'
+ $candidateHash='acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984'
+@@ -34,7 +34,7 @@
+ $all=@{};$savePaths=@(Get-ChildItem -LiteralPath $saveRoot -Recurse -File|ForEach-Object {$_.FullName.Substring($workspace.Length+1).Replace('\','/')})
+ foreach($path in @($manifest.release_pins.path)+@($plan.effective_protected118.path)+@($plan.before29.path)+$savePaths+@($profile)){$all[$path]=$true}
+ $rows=@(foreach($path in @($all.Keys|Sort-Object)){$full=Join-Path $workspace $path;if(-not(Test-Path -LiteralPath $full -PathType Leaf)){throw "Missing beforefile $path"};[ordered]@{path=$path;existed=$true;size=(Get-Item -LiteralPath $full).Length;sha256=(Hash $full)}})
+-$alias='CTP-proef/ctp_program/ctp/save/games/Julius/000-PAD-LOCAL4-20261026-START-T0'
++$alias='CTP-proef/ctp_program/ctp/save/games/Julius/000-PAD-LOCAL4-20261026B-START-T0'
+ $save='CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0'
+ $saveHash='8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26'
+ if((Test-Path -LiteralPath $alias) -or (Hash $save) -cne $saveHash){throw 'Unique exact start alias/source required'}
+@@ -55,7 +55,7 @@
+ NewJson (Join-Path $hostDir 'install.json') @{candidate_sha256=$candidateHash;alias=$alias;alias_sha256=$saveHash;before_sha256=(Hash (Join-Path $hostDir 'before.json'));only_dll_config_changed=$true}
+ $budget=Budget
+ $media=[IO.DriveInfo]::new('E:')
+-if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CIV_CTP' -or @(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Media/count0 changed before Start'}
++if($media.DriveType -ne [IO.DriveType]::CDRom -or -not $media.IsReady -or $media.VolumeLabel -cne 'CCTP' -or @(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Media/count0 changed before Start'}
+ & ./PROEVEN/Bedien-CTP.ps1 -Action Start
+ if(-not $?){throw 'Start failed; no retry, root inspect/normalclose/restore'}
+ $processes=@(Get-Process civctp);if($processes.Count -ne 1){throw 'Exact one process required'};$probe=$processes[0]

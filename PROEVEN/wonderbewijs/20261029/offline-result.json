@@ -1,0 +1,33 @@
+{
+  "stage": "C0_OFFLINE_ONLY_NO_RPM_OR_GAME",
+  "at_utc": "2026-10-29T13:57:12.688518+00:00",
+  "checks": [
+    "exact add-then-rol16 token hash including NUL",
+    "unchanged base pins and eb6 binding plus 18 exact loaded windows",
+    "original verify_loaded on offline PE mapped bytes",
+    "original CLI creation/read-only/output guards retained",
+    "opaque full-u32 StringId above 100000 accepted with exact unique binding",
+    "exact token SID uniquely index2 and AI-ID through slot to owned full handle/empty queue",
+    "prerequisite/obsolete bytes change interpretation while global-built stays raw UNKNOWN",
+    "one real queue node class9/type2 with consistent endpoints",
+    "reject wrong exact token name",
+    "reject StringDB search cycle",
+    "reject duplicate WonderDB SID",
+    "reject AIcity-ID identity mismatch",
+    "reject player slot map cycle",
+    "reject out-of-range player slot",
+    "reject full handle mismatch",
+    "reject pool owner mismatch",
+    "reject CityData owner mismatch",
+    "reject pool tree cycle",
+    "reject empty queue with nonnull head",
+    "reject queue count bounds",
+    "reject real queue cycle"
+  ],
+  "base_pins_sha256": "8e527855f009f595e4938fddf65b99dd1776f351e753d6d1b26305730bdeafac",
+  "extra_loaded_windows": 18,
+  "native_token_runtime": "OPEN_NOT_MEASURED",
+  "real_queue_runtime": "OPEN_NOT_MEASURED",
+  "global_built_interpretation": "UNKNOWN",
+  "city_rank_buildtime_admission": "UNKNOWN"
+}

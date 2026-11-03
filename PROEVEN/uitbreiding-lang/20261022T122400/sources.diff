@@ -1,0 +1,130 @@
+--- immutable114700/Lees-Duur.py
++++ ownlong/Lees-Duur.py
+@@ -282,7 +282,7 @@
+     parser.add_argument('--manifest',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
+     args=parser.parse_args()
+     output=args.output.resolve()
+-    gate=json.loads((OUTPUT_FOLDER/'ROOT-READER.json').read_text('utf-8-sig'))
++    gate=json.loads((OUTPUT_FOLDER/args.variant/'ROOT-READER.json').read_text('utf-8-sig'))
+     admit(args,output,gate);verify_pins(gate)
+     participants=json.loads(args.manifest.read_text(encoding='utf-8-sig'))
+     if participants['civ_ids']!=list(range(2,9)):raise ValueError('Unexpected fixed-T0 participants')
+@@ -329,9 +329,10 @@
+         eb,es=found[EXE.resolve()];ab,az=found[DLL.resolve()]
+         checks=verify_loaded(read,binding,eb,ab,{'engine':es,'ai':az})
+         state=observe_goal3(read,eb,ab,participants)
+-        per_civ,shared=native_expansion_state(read,eb,ab,participants,binding)
+-        for row in state['civilizations']:row.update(per_civ[row['civ_id']])
+-        state['shared_last_pass']=shared
++        if args.variant=='U30-40':
++            per_civ,shared=native_expansion_state(read,eb,ab,participants,binding)
++            for row in state['civilizations']:row.update(per_civ[row['civ_id']])
++            state['shared_last_pass']=shared
+         return {'instance':{'pid':args.pid,'creationtime_filetime':(times[0].dwHighDateTime<<32)|times[0].dwLowDateTime,'executable':str(EXE.resolve()),'ai_module':str(DLL.resolve()),'engine_base':eb,'ai_base':ab},'loaded_checks':checks,'state':state}
+     try:
+         result=stable_sample(sample)
+
+--- immutable114700/scope.py
++++ ownlong/scope.py
+@@ -3,14 +3,16 @@
+ import hashlib,json
+ HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[2]
+ CANDIDATE='df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e'
++RELEASE='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
++ARMS={'release-v1':RELEASE,'U30-40':CANDIDATE}
+ MANIFEST='5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152'
+ def admit(args,output,gate):
+  if gate.get('allowed') is not True:raise ValueError('Separate duration root reader gate required')
+- if args.variant!='U30-40' or gate['variant']!='U30-40' or not 0<=args.turn<=26:raise ValueError('Exact candidate T0..T26 only')
++ if args.variant not in ARMS or gate['variant']!=args.variant or type(args.turn) is not int or not 0<=args.turn<=100:raise ValueError('Exact two-arm integer T0..T100 only')
+  if (args.pid,args.creation_filetime,args.run_id)!=(gate['pid'],gate['creation_filetime'],gate['run_id']) or args.pid<=0 or args.creation_filetime<=0:raise ValueError('Exact PID/creation/run binding')
+- if gate['candidate_sha256']!=CANDIDATE or gate['manifest_sha256']!=MANIFEST or gate['turn_min']!=0 or gate['turn_max']!=26:raise ValueError('Exact duration binary/range')
++ if gate['ai_sha256']!=ARMS[args.variant] or gate['manifest_sha256']!=MANIFEST or gate['turn_min']!=0 or gate['turn_max']!=100:raise ValueError('Exact duration binary/range')
+  folder=Path(gate['output_directory']).resolve()
+- if folder!=HERE/'variant' or not folder.is_dir() or output.parent!=folder or output.suffix!='.json' or output.exists():raise ValueError('Fresh exact own duration output required')
++ if folder!=HERE/args.variant or not folder.is_dir() or output.parent!=folder or output.suffix!='.json' or output.exists():raise ValueError('Fresh exact own duration output required')
+  if not args.snapshot_label or '/' in args.snapshot_label or '\\' in args.snapshot_label or output.stem!=args.snapshot_label:raise ValueError('Output label mismatch')
+  if args.manifest.resolve()!=ROOT/'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json':raise ValueError('Pinned participants only')
+  return True
+
+--- immutable114700/Pass-Duur.ps1
++++ ownlong/Pass-Duur.ps1
+@@ -1,12 +1,13 @@
+-param([Parameter(Mandatory=$true)][ValidateRange(1,26)][int]$Turn,[Parameter(Mandatory=$true)][string]$Previous)
++param([Parameter(Mandatory=$true)][ValidateRange(1,100)][int]$Turn,[Parameter(Mandatory=$true)][string]$Previous,[Parameter(Mandatory=$true)][ValidateSet('release-v1','U30-40')][string]$Arm)
+ $ErrorActionPreference='Stop'
+-$workspace='C:/GIT/ctp';$package=$PSScriptRoot;$armDir=Join-Path $package 'variant'
++$workspace='C:/GIT/ctp';$package=$PSScriptRoot;$armDir=Join-Path $package $Arm
+ $python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+ $tool=Join-Path $workspace 'PROEVEN/Bedien-CTP.ps1'
+-$hostDir=Join-Path $workspace 'PROEVEN/science-duur-host/20261021/host3'
++$hostDir=Join-Path $workspace ('PROEVEN/uitbreiding-lang-host/20261022/'+$Arm)
++$expectedAI=@{'release-v1'='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890';'U30-40'='df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e'}[$Arm]
+ $exe=Join-Path $workspace 'CTP-proef/ctp_program/ctp/civctp.exe'
+-$gate=Get-Content (Join-Path $package 'ROOT-READER.json') -Raw|ConvertFrom-Json
+-if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne 'U30-40' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 26 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
++$gate=Get-Content (Join-Path $armDir 'ROOT-READER.json') -Raw|ConvertFrom-Json
++if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne $Arm -or $gate.ai_sha256 -cne $expectedAI -or $gate.manifest_sha256 -cne '5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 100 -or $gate.max_n -ne 100 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
+ $pinPath=Join-Path $package 'SOURCE-PINS.json'
+ if((Get-FileHash -LiteralPath $pinPath).Hash.ToLowerInvariant() -ne $gate.source_pins_sha256){throw 'Duration source pins changed'}
+ foreach($pin in (Get-Content $pinPath -Raw|ConvertFrom-Json).sources){if((Get-FileHash -LiteralPath (Join-Path $workspace $pin.path)).Hash.ToLowerInvariant() -ne $pin.sha256){throw "Duration input changed: $($pin.path)"}}
+@@ -21,29 +22,34 @@
+  if($code -eq 25){Write-Warning 'Weekbudget25%ofminder resterend'}
+ }
+ function OwnState {
+- if((Elapsed) -ge 1500){throw 'Hard1500s deadline; no turn acceptance'}
++ if((Elapsed) -ge 4500){throw 'Hard4500s deadline; no turn acceptance'}
+  $rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'")
+  if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $gate.pid -or $rows[0].ExecutablePath -cne $exe -or ([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms){throw 'Exact unique own process identity changed'}
+  $own=[Diagnostics.Process]::GetProcessById([int]$gate.pid)
+  try{$own.Refresh();if($own.Path -cne $exe -or $own.StartTime.ToUniversalTime().ToFileTimeUtc() -ne $gate.creation_filetime -or $own.MainWindowHandle.ToInt64() -ne $window.window){throw 'Exact own process/time/window changed'}}finally{$own.Dispose()}
+- if((Elapsed) -ge 1500){throw 'Late process query'}
++ if((Elapsed) -ge 4500){throw 'Late process query'}
+ }
+ function CheckSnapshot($value,$expectedTurn){
+- if(!$value.stable_twice -or $value.run_id -cne $gate.run_id -or $value.variant -cne 'U30-40' -or $value.turn -ne $expectedTurn -or $value.instance.pid -ne $gate.pid -or $value.instance.creationtime_filetime -ne $gate.creation_filetime -or $value.binding.ai_sha256 -cne $gate.candidate_sha256 -or $value.binding.manifest_sha256 -cne $gate.manifest_sha256){throw 'Own stable snapshot instance/arm/turn/binary mismatch'}
++ if(!$value.stable_twice -or $value.run_id -cne $gate.run_id -or $value.variant -cne $Arm -or $value.turn -ne $expectedTurn -or $value.instance.pid -ne $gate.pid -or $value.instance.creationtime_filetime -ne $gate.creation_filetime -or $value.binding.ai_sha256 -cne $gate.ai_sha256 -or $value.binding.manifest_sha256 -cne $gate.manifest_sha256){throw 'Own stable snapshot instance/arm/turn/binary mismatch'}
+  $civs=@($value.state.civilizations|Sort-Object civ_id)
+- if(($civs.civ_id -join ',') -cne '2,3,4,5,6,7,8' -or @($value.loaded_checks.PSObject.Properties|Where-Object{$_.Value -ne $true}).Count){throw 'Missing civ or failed loaded check'}
++ if(($civs.civ_id -join ',') -cne '2,3,4,5,6,7,8'){throw 'Missing civ'}
++ $requiredChecks=@('headers_sections_sizes','all_three_scorecalls','payload_and_original_ranges','only_original_HIGHLOW_relocation_adjustment','all_five_B2_hooks','N30_payload_bound')
++ $allChecks=$requiredChecks+@('new_payload_and_all_nine_windows_bound')
++ if((@($value.loaded_checks.PSObject.Properties.Name|Sort-Object) -join ',') -cne (@($allChecks|Sort-Object) -join ',')){throw 'Exact arm loaded check names required'}
++ foreach($name in $requiredChecks){if($value.loaded_checks.$name -ne $true){throw 'Required loaded check failed'}}
++ if($value.loaded_checks.new_payload_and_all_nine_windows_bound -ne ($Arm -ceq 'U30-40')){throw 'Exact arm-only payload check required'}
+  foreach($civ in $civs){if($civ.processed_round -ne $expectedTurn-1){throw 'Snapshot not exact native round T-1'}}
+ }
+-if($started.pid -ne $gate.pid -or $started.path -cne $exe -or $started.max_n -ne 26 -or $started.n_consumed -ne $Turn-1 -or $window.pid -ne $gate.pid -or $window.creation_utc_ms -ne $started.creation_utc_ms -or [Math]::Floor(([decimal]$gate.creation_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms){throw 'Root start/window/token count mismatch'}
++if($started.pid -ne $gate.pid -or $started.path -cne $exe -or $started.max_n -ne 100 -or $started.n_consumed -ne $Turn-1 -or $window.pid -ne $gate.pid -or $window.creation_utc_ms -ne $started.creation_utc_ms -or [Math]::Floor(([decimal]$gate.creation_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms){throw 'Root start/window/token count mismatch'}
+ $previousPath=[IO.Path]::GetFullPath($Previous)
+ if($previousPath -cne [IO.Path]::GetFullPath((Join-Path $armDir ('T'+($Turn-1)+'.json')))){throw 'Exact preceding own accepted snapshot required'}
+ $before=Get-Content -LiteralPath $previousPath -Raw|ConvertFrom-Json;CheckSnapshot $before ($Turn-1)
+ if(Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'.json'))){throw 'Never repeat accepted turn'}
+ Budget;OwnState
+-if((Elapsed) -ge 1440){throw 'No new n from1440s; root close reserve'}
++if((Elapsed) -ge 4380){throw 'No new n from4380s; root close reserve'}
+ # One bound T1 foreground capture before consuming its token; no extra key input.
+ if($Turn -eq 1){
+- $focusLog=Join-Path $package 'T1-focus-before-token.log'
++ $focusLog=Join-Path $armDir 'T1-focus-before-token.log'
+  & $tool -Action Capture -CaptureWaitForForeground -CaptureWaitTimeoutMs 3000 -ExpectedProcessId $gate.pid -ExpectedCreationUtcMs $started.creation_utc_ms -ExpectedWindowHandle $window.window > $focusLog
+  if(-not $?){throw 'T1 bound foreground unavailable before token; no input'}
+ }
+@@ -53,7 +59,7 @@
+ $stream=[IO.File]::Open($tokenPath,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+ try{$bytes=[Text.Encoding]::UTF8.GetBytes(($token|ConvertTo-Json));$stream.Write($bytes,0,$bytes.Length);$stream.Flush()}finally{$stream.Dispose()}
+ $started.n_consumed=$Turn;$started|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $hostDir 'start.json') -Encoding utf8
+-Budget;OwnState;if((Elapsed) -ge 1440){throw 'Consumed token but no late input; root close'}
++Budget;OwnState;if((Elapsed) -ge 4380){throw 'Consumed token but no late input; root close'}
+ $inputResult=& $tool -Action Key -Keys n
+ $inputOK=$?
+ $inputResult|Set-Content -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt')) -Encoding utf8
+@@ -63,7 +69,7 @@
+  Budget;OwnState;Start-Sleep -Milliseconds 400;$attempt++
+  $name='T'+$Turn+'-poll'+$attempt;$output=Join-Path $armDir ($name+'.json')
+  $oldPreference=$ErrorActionPreference
+- try{$ErrorActionPreference='Continue';$text=& $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant U30-40 --run-id $gate.run_id --snapshot-label $name --turn $Turn --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json') --output $output 2>&1;$readCode=$LASTEXITCODE}finally{$ErrorActionPreference=$oldPreference}
++ try{$ErrorActionPreference='Continue';$text=& $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant $Arm --run-id $gate.run_id --snapshot-label $name --turn $Turn --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json') --output $output 2>&1;$readCode=$LASTEXITCODE}finally{$ErrorActionPreference=$oldPreference}
+  $text|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+  if($readCode -ne 0){
+   if(Test-Path -LiteralPath $output){$failure=Get-Content $output -Raw|ConvertFrom-Json;if($failure.status -ceq 'rejected' -and $failure.error -ceq 'Unstable complete snapshot; no turn acceptance'){continue}}

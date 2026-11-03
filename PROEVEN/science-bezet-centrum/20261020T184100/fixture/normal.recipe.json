@@ -1,0 +1,167 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,548",
+      "bytes": "81ec24020000"
+    },
+    {
+      "offset": 12,
+      "asm": "fnsave real SCI x87 area ('ebp', -144)",
+      "bytes": "ddb570ffffff"
+    },
+    {
+      "offset": 18,
+      "asm": "fldcw caller ('ebp', -144)",
+      "bytes": "d9ad70ffffff"
+    },
+    {
+      "offset": 24,
+      "asm": "push ('ebp', 24)",
+      "bytes": "ffb518000000"
+    },
+    {
+      "offset": 30,
+      "asm": "lea eax,('ebp', -184)",
+      "bytes": "8d8548ffffff"
+    },
+    {
+      "offset": 36,
+      "asm": "push eax",
+      "bytes": "50"
+    },
+    {
+      "offset": 37,
+      "asm": "push ('ebp', 16)",
+      "bytes": "ffb510000000"
+    },
+    {
+      "offset": 43,
+      "asm": "push ('ebp', 12)",
+      "bytes": "ffb50c000000"
+    },
+    {
+      "offset": 49,
+      "asm": "push ('ebp', 8)",
+      "bytes": "ffb508000000"
+    },
+    {
+      "offset": 55,
+      "asm": "pinned SCI return site in own image",
+      "bytes": "ff3500000000"
+    },
+    {
+      "offset": 61,
+      "asm": "real clone or original reader",
+      "bytes": "ff2500000000"
+    },
+    {
+      "offset": 67,
+      "asm": "mov ('ebp', -16),eax",
+      "bytes": "8985f0ffffff"
+    },
+    {
+      "offset": 73,
+      "asm": "lea esi,('ebp', -184)",
+      "bytes": "8db548ffffff"
+    },
+    {
+      "offset": 79,
+      "asm": "mov edi,('ebp', 20)",
+      "bytes": "8bbd14000000"
+    },
+    {
+      "offset": 85,
+      "asm": "mov ecx,10",
+      "bytes": "b90a000000"
+    },
+    {
+      "offset": 90,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 91,
+      "asm": "rep movsd",
+      "bytes": "f3a5"
+    },
+    {
+      "offset": 93,
+      "asm": "mov eax,('ebp', -16)",
+      "bytes": "8b85f0ffffff"
+    },
+    {
+      "offset": 99,
+      "asm": "frstor exact caller state ('ebp', -144)",
+      "bytes": "dda570ffffff"
+    },
+    {
+      "offset": 105,
+      "asm": "add esp,548",
+      "bytes": "81c424020000"
+    },
+    {
+      "offset": 111,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 112,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 113,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 114,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 115,
+      "asm": "ret 20",
+      "bytes": "c21400"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 57,
+      "context_offset": 32
+    },
+    {
+      "at": 63,
+      "context_offset": 36
+    }
+  ],
+  "labels": {
+    "continuation": 67
+  }
+}

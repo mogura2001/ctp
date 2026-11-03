@@ -1,0 +1,42 @@
+{
+  "stage": "C0_OFFLINE_ONLY_NO_PROCESS",
+  "at_utc": "2026-10-29T13:19:23.317771+00:00",
+  "checks": [
+    "valid bounded list and exact opening symbols",
+    "null list",
+    "empty list",
+    "reject count 201",
+    "reject negative count",
+    "reject null storage for nonempty list",
+    "reject wrong AIP owner",
+    "reject cyclic symbol chain",
+    "reject invalid bucket count",
+    "reject duplicate exact symbol name",
+    "reject external symbol pointer",
+    "reject missing inputmask",
+    "reject invalid symbol flag",
+    "reject special symbol flag",
+    "reject fractional opening value",
+    "reject noncomplementary values",
+    "reject wrong wonder category",
+    "reject negative native index",
+    "reject nonfinite weight",
+    "reject mismatched explicit creation FILETIME",
+    "reject unstable original complete sample"
+  ],
+  "unchanged_release_functions": [
+    "trusted_binding",
+    "verify_loaded",
+    "stable_sample",
+    "observe_goal3",
+    "scalar_state"
+  ],
+  "unique_imports": true,
+  "exact_N30_binding": true,
+  "text_control_118": true,
+  "native_token_binding": "UNKNOWN",
+  "effective_runtime_list": "NOT_MEASURED",
+  "queue_production": "NOT_MEASURED",
+  "game_started": false,
+  "process_read": false
+}

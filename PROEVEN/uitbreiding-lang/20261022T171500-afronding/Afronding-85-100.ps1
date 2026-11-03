@@ -1,0 +1,138 @@
+param([Parameter(Mandatory=$true)][ValidateRange(85,100)][int]$Turn,[Parameter(Mandatory=$true)][string]$Previous,[Parameter(Mandatory=$true)][ValidateSet('U30-40')][string]$Arm)
+$ErrorActionPreference='Stop'
+$workspace='C:/GIT/ctp';$completionFolder=$PSScriptRoot;$package='C:/GIT/ctp/PROEVEN/uitbreiding-lang/20261022T122400';$armDir=Join-Path $package $Arm
+$python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+$tool=Join-Path $workspace 'PROEVEN/Bedien-CTP.ps1'
+$hostDir=Join-Path $workspace ('PROEVEN/uitbreiding-lang-host/20261022/'+$Arm)
+$expectedAI=@{'release-v1'='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890';'U30-40'='df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e'}[$Arm]
+$exe=Join-Path $workspace 'CTP-proef/ctp_program/ctp/civctp.exe'
+$gate=Get-Content (Join-Path $armDir 'ROOT-READER.json') -Raw|ConvertFrom-Json
+if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne $Arm -or $gate.ai_sha256 -cne $expectedAI -or $gate.manifest_sha256 -cne '5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 100 -or $gate.max_n -ne 100 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
+$pinPath=Join-Path $package 'SOURCE-PINS.json'
+if((Get-FileHash -LiteralPath $pinPath).Hash.ToLowerInvariant() -ne $gate.source_pins_sha256){throw 'Duration source pins changed'}
+foreach($pin in (Get-Content $pinPath -Raw|ConvertFrom-Json).sources){if((Get-FileHash -LiteralPath (Join-Path $workspace $pin.path)).Hash.ToLowerInvariant() -ne $pin.sha256){throw "Duration input changed: $($pin.path)"}}
+$started=Get-Content (Join-Path $hostDir 'start.json') -Raw|ConvertFrom-Json
+$window=Get-Content (Join-Path $hostDir 'window.json') -Raw|ConvertFrom-Json
+function Elapsed {([DateTime]::UtcNow-[DateTime]::Parse($started.start_utc).ToUniversalTime()).TotalSeconds}
+function Budget {
+ $value=& $python (Join-Path $workspace 'PROEVEN/Controleer-Weekbudget.py') --thread 01a0f7b4-4751-7513-b510-3835ce43f47d;$code=$LASTEXITCODE
+ if($code -eq 2){$value=& $python (Join-Path $workspace 'PROEVEN/Controleer-Weekbudget.py') --thread 01a0f7b4-4751-7513-b510-3835ce43f47d;$code=$LASTEXITCODE}
+ $value|Set-Content -LiteralPath (Join-Path $armDir 'latest-budget.json') -Encoding utf8
+ if($code -notin @(0,25)){throw 'Budget stop/unknown; root must close/restore; PC stays on'}
+ if($code -eq 25){Write-Warning 'Weekbudget25%ofminder resterend'}
+}
+function OwnState {
+ if((Elapsed) -ge 4500){throw 'Hard4500s deadline; no turn acceptance'}
+ $rows=@(Get-CimInstance Win32_Process -Filter "Name='civctp.exe'")
+ if($rows.Count -ne 1 -or $rows[0].ProcessId -ne $gate.pid -or $rows[0].ExecutablePath -cne $exe -or ([DateTimeOffset]$rows[0].CreationDate.ToUniversalTime()).ToUnixTimeMilliseconds() -ne $started.creation_utc_ms){throw 'Exact unique own process identity changed'}
+ $own=[Diagnostics.Process]::GetProcessById([int]$gate.pid)
+ try{$own.Refresh();if($own.Path -cne $exe -or $own.StartTime.ToUniversalTime().ToFileTimeUtc() -ne $gate.creation_filetime -or $own.MainWindowHandle.ToInt64() -ne $window.window){throw 'Exact own process/time/window changed'}}finally{$own.Dispose()}
+ if((Elapsed) -ge 4500){throw 'Late process query'}
+}
+function CheckSnapshot($value,$expectedTurn){
+ if(!$value.stable_twice -or $value.run_id -cne $gate.run_id -or $value.variant -cne $Arm -or $value.turn -ne $expectedTurn -or $value.instance.pid -ne $gate.pid -or $value.instance.creationtime_filetime -ne $gate.creation_filetime -or $value.binding.ai_sha256 -cne $gate.ai_sha256 -or $value.binding.manifest_sha256 -cne $gate.manifest_sha256){throw 'Own stable snapshot instance/arm/turn/binary mismatch'}
+ $civs=@($value.state.civilizations|Sort-Object civ_id)
+ if(($civs.civ_id -join ',') -cne '2,3,4,5,6,7,8'){throw 'Missing civ'}
+ $requiredChecks=@('headers_sections_sizes','all_three_scorecalls','payload_and_original_ranges','only_original_HIGHLOW_relocation_adjustment','all_five_B2_hooks','N30_payload_bound')
+ $allChecks=$requiredChecks+@('new_payload_and_all_nine_windows_bound')
+ if((@($value.loaded_checks.PSObject.Properties.Name|Sort-Object) -join ',') -cne (@($allChecks|Sort-Object) -join ',')){throw 'Exact arm loaded check names required'}
+ foreach($name in $requiredChecks){if($value.loaded_checks.$name -ne $true){throw 'Required loaded check failed'}}
+ if($value.loaded_checks.new_payload_and_all_nine_windows_bound -ne ($Arm -ceq 'U30-40')){throw 'Exact arm-only payload check required'}
+ foreach($civ in $civs){if($civ.processed_round -ne $expectedTurn-1){throw 'Snapshot not exact native round T-1'}}
+}
+function FileHash($path){return (Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant()}
+function CompletionAuthorization {
+ $approval=Get-Content (Join-Path $completionFolder 'ROOT-AFRONDING.json') -Raw|ConvertFrom-Json
+ if($approval.allowed -ne $true -or $approval.both_preinput_stops_confirmed -ne $true -or $approval.turn_min -ne 85 -or $approval.turn_max -ne 100 -or $approval.arm -cne 'U30-40' -or $approval.pid -ne 40488 -or $approval.creation_filetime -ne 134371535950250712 -or $approval.window -ne 395504 -or $approval.run_id -cne 'uitbreiding-lang-20261022-U30-40'){throw 'Separate exact completion root gate required'}
+ if($gate.pid -ne 40488 -or $gate.creation_filetime -ne 134371535950250712 -or $gate.run_id -cne $approval.run_id -or $window.window -ne 395504){throw 'Completion live identity mismatch'}
+ $ownPins=Join-Path $completionFolder 'SOURCE-PINS.json'
+ if((FileHash $ownPins) -cne $approval.source_pins_sha256){throw 'Completion pin manifest changed'}
+ foreach($pin in (Get-Content $ownPins -Raw|ConvertFrom-Json).sources){if((FileHash (Join-Path $workspace $pin.path)) -cne $pin.sha256){throw 'Completion source/evidence changed'}}
+ $oldGate=Get-Content 'C:/GIT/ctp/PROEVEN/uitbreiding-lang/20261022T170400-herstel85/ROOT-RECOVERY.json' -Raw|ConvertFrom-Json
+ if($oldGate.allowed -ne $false){throw 'Superseded helper must remain closed'}
+ if((FileHash (Join-Path $hostDir 'start.json')) -cne 'f9b6099e7ef664581a25dcf1682c01657586b7c7bd1b2b2f815dcc49be1b0aa8'){throw 'Read-only legacy84 start bytes changed'}
+}
+CompletionAuthorization
+$ownTokenPath=Join-Path $completionFolder ('AFRONDING-T'+$Turn+'-consumed.json')
+$ownPassPath=Join-Path $completionFolder ('AFRONDING-T'+$Turn+'-pass.json')
+if((Test-Path -LiteralPath $ownTokenPath) -or (Test-Path -LiteralPath $ownPassPath) -or (Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt')))){throw 'Current completion turn/token/pass/input already exists'}
+if($started.pid -ne $gate.pid -or $started.path -cne $exe -or $started.max_n -ne 100 -or $started.n_consumed -ne 84 -or $window.pid -ne $gate.pid -or $window.creation_utc_ms -ne $started.creation_utc_ms -or [Math]::Floor(([decimal]$gate.creation_filetime-[decimal]116444736000000000)/10000) -ne $started.creation_utc_ms){throw 'Root start/window/token count mismatch'}
+$previousPath=[IO.Path]::GetFullPath($Previous)
+if($previousPath -cne [IO.Path]::GetFullPath((Join-Path $armDir ('T'+($Turn-1)+'.json')))){throw 'Exact preceding own accepted snapshot required'}
+$before=Get-Content -LiteralPath $previousPath -Raw|ConvertFrom-Json;CheckSnapshot $before ($Turn-1)
+if(Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'.json'))){throw 'Never repeat accepted turn'}
+$previousOwnPassHash=$null;$previousOwnTokenHash=$null
+if($Turn -eq 85){
+ foreach($name in @('T84-preinput-recheck.json','T84-after-registration-helper-error.json')){
+  $proof=Get-Content (Join-Path $armDir $name) -Raw|ConvertFrom-Json;CheckSnapshot $proof 84
+  if(($proof.state|ConvertTo-Json -Depth 100 -Compress) -cne ($before.state|ConvertTo-Json -Depth 100 -Compress) -or ($proof.instance|ConvertTo-Json -Compress) -cne ($before.instance|ConvertTo-Json -Compress)){throw 'Prior pre-input proof no longer equals accepted84'}
+ }
+ $incident1=Get-Content (Join-Path $hostDir 'INCIDENT-T85.json') -Raw|ConvertFrom-Json
+ $incident2=Get-Content (Join-Path $hostDir 'INCIDENT-T85-REGISTRATION-HELPER.json') -Raw|ConvertFrom-Json
+ if($incident1.status -cne 'PROVEN_PREINPUT_METADATA_FAILURE_PENDING_REVIEWED_RECOVERY' -or $incident1.pid -ne 40488 -or $incident1.creation_filetime -ne 134371535950250712 -or $incident1.accepted_turn -ne 84 -or $incident2.status -cne 'SECOND_PROVEN_PREINPUT_STOP_NO_FURTHER_ATOMIC_HELPER_RETRY' -or $incident2.key_not_reached -ne $true -or $incident2.state_still_exact_T84 -ne $true -or $incident2.no_T85_n_log -ne $true){throw 'Both root pre-input incidents required'}
+}else{
+ $priorTokenPath=Join-Path $completionFolder ('AFRONDING-T'+($Turn-1)+'-consumed.json')
+ $priorPassPath=Join-Path $completionFolder ('AFRONDING-T'+($Turn-1)+'-pass.json')
+ $priorToken=Get-Content $priorTokenPath -Raw|ConvertFrom-Json;$priorPass=Get-Content $priorPassPath -Raw|ConvertFrom-Json
+ $helperHash=FileHash $PSCommandPath
+ if($priorPass.success -ne $true -or $priorPass.turn -ne $Turn-1 -or $priorPass.run_id -cne $gate.run_id -or $priorPass.pid -ne $gate.pid -or $priorPass.creation_filetime -ne $gate.creation_filetime -or $priorPass.accepted_snapshot_sha256 -cne (FileHash $previousPath) -or $priorPass.token_sha256 -cne (FileHash $priorTokenPath) -or $priorPass.helper_sha256 -cne $helperHash){throw 'Exact successful previous completion pass required'}
+ if($priorToken.turn -ne $Turn-1 -or $priorToken.run_id -cne $gate.run_id -or $priorToken.pid -ne $gate.pid -or $priorToken.creation_filetime -ne $gate.creation_filetime -or $priorToken.helper_sha256 -cne $helperHash -or $priorToken.previous_snapshot_sha256 -cne (FileHash (Join-Path $armDir ('T'+($Turn-2)+'.json')))){throw 'Exact previous completion token required'}
+ $previousOwnPassHash=FileHash $priorPassPath;$previousOwnTokenHash=FileHash $priorTokenPath
+}
+
+Budget;OwnState
+if((Elapsed) -ge 4380){throw 'No new n from4380s; root close reserve'}
+# One bound T1 foreground capture before consuming its token; no extra key input.
+if($Turn -eq 1){
+ $focusLog=Join-Path $armDir 'T1-focus-before-token.log'
+ & $tool -Action Capture -CaptureWaitForForeground -CaptureWaitTimeoutMs 3000 -ExpectedProcessId $gate.pid -ExpectedCreationUtcMs $started.creation_utc_ms -ExpectedWindowHandle $window.window > $focusLog
+ if(-not $?){throw 'T1 bound foreground unavailable before token; no input'}
+}
+# Completion tokens alone register input; legacy host/start.json is read-only.
+$immediateHash=$null
+if($Turn -eq 85){
+ $label='T84-afronding85-immediate';$output=Join-Path $armDir ($label+'.json')
+ if(Test-Path -LiteralPath $output){throw 'Fresh completion read already used'}
+ & $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant $Arm --run-id $gate.run_id --snapshot-label $label --turn 84 --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json') --output $output > (Join-Path $completionFolder 'T85-immediate-read.log')
+ if(-not $?){throw 'Fresh completion read rejected'}
+ $fresh=Get-Content $output -Raw|ConvertFrom-Json;CheckSnapshot $fresh 84
+ if(($fresh.state|ConvertTo-Json -Depth 100 -Compress) -cne ($before.state|ConvertTo-Json -Depth 100 -Compress) -or ($fresh.instance|ConvertTo-Json -Compress) -cne ($before.instance|ConvertTo-Json -Compress)){throw 'Fresh live state differs from accepted84'}
+ $immediateHash=FileHash $output
+}
+Budget;OwnState;CompletionAuthorization
+if((Elapsed) -ge 4380){throw 'No late completion token/input'}
+$token=[ordered]@{run_id=$gate.run_id;turn=$Turn;pid=$gate.pid;creation_filetime=$gate.creation_filetime;at_utc=[DateTime]::UtcNow.ToString('o');previous_snapshot_sha256=(FileHash $previousPath);previous_completion_pass_sha256=$previousOwnPassHash;previous_completion_token_sha256=$previousOwnTokenHash;immediate85_recheck_sha256=$immediateHash;helper_sha256=(FileHash $PSCommandPath);legacy84_start_sha256='f9b6099e7ef664581a25dcf1682c01657586b7c7bd1b2b2f815dcc49be1b0aa8'}
+$stream=[IO.File]::Open($ownTokenPath,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+try{$bytes=[Text.Encoding]::UTF8.GetBytes(($token|ConvertTo-Json));$stream.Write($bytes,0,$bytes.Length);$stream.Flush()}finally{$stream.Dispose()}
+Budget;OwnState;CompletionAuthorization
+foreach($pin in (Get-Content $pinPath -Raw|ConvertFrom-Json).sources){if((FileHash (Join-Path $workspace $pin.path)) -cne $pin.sha256){throw 'Parent source changed before completion Key'}}
+if((Elapsed) -ge 4380 -or (Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt'))) -or (Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'.json')))){throw 'Final completion guards failed; token remains consumed'}
+$inputResult=& $tool -Action Key -Keys n
+$inputOK=$?
+$inputResult|Set-Content -LiteralPath (Join-Path $armDir ('T'+$Turn+'-n.txt')) -Encoding utf8
+if(-not $inputOK){throw 'n input failed; consumed token remains; no retry'}
+$poll=[Diagnostics.Stopwatch]::StartNew();$attempt=0;$accepted=$false
+while($poll.Elapsed.TotalSeconds -lt 30){
+ Budget;OwnState;Start-Sleep -Milliseconds 400;$attempt++
+ $name='T'+$Turn+'-poll'+$attempt;$output=Join-Path $armDir ($name+'.json')
+ $oldPreference=$ErrorActionPreference
+ try{$ErrorActionPreference='Continue';$text=& $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant $Arm --run-id $gate.run_id --snapshot-label $name --turn $Turn --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json') --output $output 2>&1;$readCode=$LASTEXITCODE}finally{$ErrorActionPreference=$oldPreference}
+ $text|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+ if($readCode -ne 0){
+  if(Test-Path -LiteralPath $output){$failure=Get-Content $output -Raw|ConvertFrom-Json;if($failure.status -ceq 'rejected' -and $failure.error -ceq 'Unstable complete snapshot; no turn acceptance'){continue}}
+  throw 'Fatal snapshot rejection; no retry/additional n; root capture and normal close'
+ }
+ $after=Get-Content -LiteralPath $output -Raw|ConvertFrom-Json
+ OwnState;if($poll.Elapsed.TotalSeconds -ge 30){break}
+ $rounds=@($after.state.civilizations|Sort-Object civ_id)
+ if(($rounds.civ_id -join ',') -cne '2,3,4,5,6,7,8'){throw 'Missing/extra civ; no retry'}
+ foreach($old in $before.state.civilizations){$new=@($rounds|Where-Object{$_.civ_id -eq $old.civ_id});if($new[0].processed_round -gt $old.processed_round+1 -or $new[0].processed_round -lt $old.processed_round){throw 'Native round skipped/reversed'}}
+ if(@($rounds|Where-Object{$_.processed_round -ne $Turn-1}).Count){continue}
+ CheckSnapshot $after $Turn
+ Copy-Item -LiteralPath $output -Destination (Join-Path $armDir ('T'+$Turn+'.json'));$accepted=$true;break
+}
+$pass=[ordered]@{turn=$Turn;run_id=$gate.run_id;pid=$gate.pid;creation_filetime=$gate.creation_filetime;success=$accepted;one_n=$true;native_all_round_plus_one=$accepted;accepted_snapshot_sha256=$(if($accepted){FileHash (Join-Path $armDir ('T'+$Turn+'.json'))}else{$null});token_sha256=(FileHash $ownTokenPath);helper_sha256=(FileHash $PSCommandPath);polls=$attempt;elapsed_seconds=$poll.Elapsed.TotalSeconds;at=(Get-Date).ToString('o');operation='completion_after_two_proven_preinput_stops';legacy_n_consumed=84;plain_100_token_protocol=$false}
+$stream=[IO.File]::Open($ownPassPath,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+try{$bytes=[Text.Encoding]::UTF8.GetBytes(($pass|ConvertTo-Json));$stream.Write($bytes,0,$bytes.Length);$stream.Flush()}finally{$stream.Dispose()}
+if(!$accepted){throw 'No completed all-seven round within30s; root capture/normal close; no further n'}
+Write-Output ('Accepted native completed round T'+$Turn)

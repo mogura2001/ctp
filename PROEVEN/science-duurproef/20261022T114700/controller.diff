@@ -1,0 +1,24 @@
+--- immutable host2 controller
++++ own host3 controller
+@@ -3,7 +3,7 @@
+ $workspace='C:/GIT/ctp';$package=$PSScriptRoot;$armDir=Join-Path $package 'variant'
+ $python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+ $tool=Join-Path $workspace 'PROEVEN/Bedien-CTP.ps1'
+-$hostDir=Join-Path $workspace 'PROEVEN/science-duur-host/20261021/host2'
++$hostDir=Join-Path $workspace 'PROEVEN/science-duur-host/20261021/host3'
+ $exe=Join-Path $workspace 'CTP-proef/ctp_program/ctp/civctp.exe'
+ $gate=Get-Content (Join-Path $package 'ROOT-READER.json') -Raw|ConvertFrom-Json
+ if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne 'U30-40' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 26 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
+@@ -41,6 +41,12 @@
+ if(Test-Path -LiteralPath (Join-Path $armDir ('T'+$Turn+'.json'))){throw 'Never repeat accepted turn'}
+ Budget;OwnState
+ if((Elapsed) -ge 1440){throw 'No new n from1440s; root close reserve'}
++# One bound T1 foreground capture before consuming its token; no extra key input.
++if($Turn -eq 1){
++ $focusLog=Join-Path $package 'T1-focus-before-token.log'
++ & $tool -Action Capture -CaptureWaitForForeground -CaptureWaitTimeoutMs 3000 -ExpectedProcessId $gate.pid -ExpectedCreationUtcMs $started.creation_utc_ms -ExpectedWindowHandle $window.window > $focusLog
++ if(-not $?){throw 'T1 bound foreground unavailable before token; no input'}
++}
+ # Exclusive consumption BEFORE input; survives errors/interruption, no retry.
+ $tokenPath=Join-Path $armDir ('T'+$Turn+'-consumed.json')
+ $token=[ordered]@{run_id=$gate.run_id;turn=$Turn;pid=$gate.pid;creation_filetime=$gate.creation_filetime;at_utc=[DateTime]::UtcNow.ToString('o');previous_sha256=(Get-FileHash -LiteralPath $previousPath).Hash.ToLowerInvariant()}

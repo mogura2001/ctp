@@ -1,0 +1,46 @@
+--- PROEVEN\pad-lokaal-onbekend\20261026c-host\Pass-Duur.ps1
++++ PROEVEN\landvergelijking\20261027\Pass-Duur.ps1
+@@ -1,13 +1,13 @@
+-param([Parameter(Mandatory=$true)][ValidateRange(1,100)][int]$Turn,[Parameter(Mandatory=$true)][string]$Previous,[Parameter(Mandatory=$true)][ValidateSet('local4')][string]$Arm)
++param([Parameter(Mandatory=$true)][ValidateRange(1,100)][int]$Turn,[Parameter(Mandatory=$true)][string]$Previous,[Parameter(Mandatory=$true)][ValidateSet('release-v1','U30-40')][string]$Arm)
+ $ErrorActionPreference='Stop'
+-$workspace='C:/GIT/ctp';$completionFolder=$PSScriptRoot;$package=$PSScriptRoot;$armDir=Join-Path $package $Arm
++$workspace='C:/GIT/ctp';$package=$PSScriptRoot;$armDir=Join-Path $package $Arm;$completionFolder=$armDir
+ $python='C:/Users/Stephan/AppData/Local/Programs/Python/Python312/python.exe'
+ $tool=Join-Path $workspace 'PROEVEN/Bedien-CTP.ps1'
+-$hostDir=Join-Path $package 'host'
+-$expectedAI='acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984'
++$hostDir=Join-Path $armDir 'host'
++$expectedAI=if($Arm -ceq 'U30-40'){'df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e'}else{'eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'}
+ $exe=Join-Path $workspace 'CTP-proef/ctp_program/ctp/civctp.exe'
+ $gate=Get-Content (Join-Path $armDir 'ROOT-READER.json') -Raw|ConvertFrom-Json
+-if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne $Arm -or $gate.ai_sha256 -cne $expectedAI -or $gate.manifest_sha256 -cne '0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 100 -or $gate.max_n -ne 100 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
++if(-not $gate.allowed -or -not $gate.control_allowed -or $gate.variant -cne $Arm -or $gate.ai_sha256 -cne $expectedAI -or $gate.manifest_sha256 -cne '5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152' -or $gate.turn_min -ne 0 -or $gate.turn_max -ne 100 -or $gate.max_n -ne 100 -or [IO.Path]::GetFullPath($gate.output_directory) -cne [IO.Path]::GetFullPath($armDir)){throw 'Separate exact duration control gate required'}
+ $pinPath=Join-Path $package 'SOURCE-PINS.json'
+ if((Get-FileHash -LiteralPath $pinPath).Hash.ToLowerInvariant() -ne $gate.source_pins_sha256){throw 'Duration source pins changed'}
+ foreach($pin in (Get-Content $pinPath -Raw|ConvertFrom-Json).sources){if((Get-FileHash -LiteralPath (Join-Path $workspace $pin.path)).Hash.ToLowerInvariant() -ne $pin.sha256){throw "Duration input changed: $($pin.path)"}}
+@@ -39,13 +39,13 @@
+  $allChecks=$requiredChecks+@('new_payload_and_all_nine_windows_bound')
+  if((@($value.loaded_checks.PSObject.Properties.Name|Sort-Object) -join ',') -cne (@($allChecks|Sort-Object) -join ',')){throw 'Exact arm loaded check names required'}
+  foreach($name in $requiredChecks){if($value.loaded_checks.$name -ne $true){throw 'Required loaded check failed'}}
+- if($value.loaded_checks.new_payload_and_all_nine_windows_bound -ne ($Arm -ceq 'local4')){throw 'Exact arm-only payload check required'}
++ if($value.loaded_checks.new_payload_and_all_nine_windows_bound -ne ($Arm -ceq 'U30-40')){throw 'Exact arm-only payload check required'}
+  foreach($civ in $civs){if($civ.processed_round -ne $expectedTurn-1){throw 'Snapshot not exact native round T-1'}}
+ }
+ function FileHash($path){return (Get-FileHash -LiteralPath $path).Hash.ToLowerInvariant()}
+ function CompletionAuthorization {
+  $approval=Get-Content (Join-Path $completionFolder 'ROOT-CONTROL.json') -Raw|ConvertFrom-Json
+- if($approval.allowed -ne $true -or $approval.arm -cne 'local4' -or $approval.turn_min -ne 1 -or $approval.turn_max -ne 100 -or $approval.max_n -ne 100 -or $approval.pid -ne $gate.pid -or $approval.creation_filetime -ne $gate.creation_filetime -or $approval.window -ne $window.window -or $approval.run_id -cne $gate.run_id){throw 'Separate own root control gate required'}
++ if($approval.allowed -ne $true -or $approval.arm -cne $Arm -or $approval.turn_min -ne 1 -or $approval.turn_max -ne 100 -or $approval.max_n -ne 100 -or $approval.pid -ne $gate.pid -or $approval.creation_filetime -ne $gate.creation_filetime -or $approval.window -ne $window.window -or $approval.run_id -cne $gate.run_id){throw 'Separate own root control gate required'}
+  if($approval.source_pins_sha256 -cne (FileHash $pinPath)){throw 'Own source pins changed'}
+  if($approval.start_sha256 -cne (FileHash (Join-Path $hostDir 'start.json')) -or $approval.window_sha256 -cne (FileHash (Join-Path $hostDir 'window.json'))){throw 'Immutable complete start/window hash changed'}
+  if($Turn -ge 2 -and $approval.review_T1 -ne $true){throw 'Pause beforeT2: root T1 review required'}
+@@ -111,7 +111,7 @@
+  Budget;OwnState;Start-Sleep -Milliseconds 400;$attempt++
+  $name='T'+$Turn+'-poll'+$attempt;$output=Join-Path $armDir ($name+'.json')
+  $oldPreference=$ErrorActionPreference
+- try{$ErrorActionPreference='Continue';$text=& $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant $Arm --run-id $gate.run_id --snapshot-label $name --turn $Turn --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json') --output $output 2>&1;$readCode=$LASTEXITCODE}finally{$ErrorActionPreference=$oldPreference}
++ try{$ErrorActionPreference='Continue';$text=& $python -X utf8 (Join-Path $package 'Lees-Duur.py') --pid $gate.pid --creation-filetime $gate.creation_filetime --variant $Arm --run-id $gate.run_id --snapshot-label $name --turn $Turn --pass-label passive-human-native-round --manifest (Join-Path $workspace 'PROEVEN/landbenchmark/20261027/participants.json') --output $output 2>&1;$readCode=$LASTEXITCODE}finally{$ErrorActionPreference=$oldPreference}
+  $text|Set-Content -LiteralPath (Join-Path $armDir ($name+'.stdout.txt')) -Encoding utf8
+  if($readCode -ne 0){
+   if(Test-Path -LiteralPath $output){$failure=Get-Content $output -Raw|ConvertFrom-Json;if($failure.status -ceq 'rejected' -and $failure.error -ceq 'Unstable complete snapshot; no turn acceptance'){continue}}

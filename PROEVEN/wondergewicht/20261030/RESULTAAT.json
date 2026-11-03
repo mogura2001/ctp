@@ -1,0 +1,197 @@
+{
+  "sources": [
+    {
+      "path": "PROEVEN/wondergewicht/20261030/before.json",
+      "sha256": "36399deed92c92432369c89140778ab2f6e8f130c079fcd9c9f8f90fedbec634"
+    },
+    {
+      "path": "PROEVEN/wondergewicht/20261030/after-n1.json",
+      "sha256": "8e91fccb3ede2260526004b54eb320eeb330a51c428e6dcf506f90e13f8c7ce3"
+    }
+  ],
+  "same_instance_binding": true,
+  "stable_twice_both": true,
+  "actual_n_inputs": 1,
+  "gui_dates": [
+    "2700 BC",
+    "2650 BC"
+  ],
+  "civilizations": [
+    {
+      "civ_id": 2,
+      "city_counts": [
+        7,
+        8
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 3,
+      "city_counts": [
+        8,
+        8
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 4,
+      "city_counts": [
+        7,
+        7
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 5,
+      "city_counts": [
+        8,
+        8
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 6,
+      "city_counts": [
+        6,
+        6
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 7,
+      "city_counts": [
+        5,
+        6
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    },
+    {
+      "civ_id": 8,
+      "city_counts": [
+        6,
+        6
+      ],
+      "native_rounds": [
+        25,
+        26
+      ],
+      "weight_30000": "PASS",
+      "legacy_9100": "FAIL"
+    }
+  ],
+  "new_labyrinth_queues": [
+    {
+      "civ_id": 2,
+      "owner": 2,
+      "full_engine_handle": 268435520,
+      "ai_city_id": 3221225472,
+      "before_nodes": [
+        {
+          "node": "0xb91ab00",
+          "type": 4,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "after_nodes": [
+        {
+          "node": "0x150e46b0",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    },
+    {
+      "civ_id": 5,
+      "owner": 5,
+      "full_engine_handle": 268435476,
+      "ai_city_id": 2147483648,
+      "before_nodes": [
+        {
+          "node": "0xb91a860",
+          "type": 4,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "after_nodes": [
+        {
+          "node": "0xb5416a8",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    },
+    {
+      "civ_id": 8,
+      "owner": 8,
+      "full_engine_handle": 268435479,
+      "ai_city_id": 1073741824,
+      "before_nodes": [
+        {
+          "node": "0xb91a6a0",
+          "type": 5,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "after_nodes": [
+        {
+          "node": "0x150df0b0",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    }
+  ],
+  "visual": {
+    "path": "PROEVEN/wondergewicht-host/20261030/candidate/citystatus-visible.png",
+    "sha256": "911bb2ced741bce00fb2014cc06118b2d02106b304a781a1798e2bbe8bda1b72",
+    "civ_id": 2,
+    "city": "Veracruz",
+    "size": 2,
+    "producing": "Labyrinth",
+    "remaining_turns": 16,
+    "total_cities": 8,
+    "date": "2650 BC",
+    "native_handle_name_binding": "UNKNOWN_NOT_PROJECTED"
+  },
+  "control_comparison": "PROEVEN/WONDERGEWICHT-ROOT-AB-2026-10-30.json",
+  "new_queue_measured": true,
+  "wonder_completed": false,
+  "one_builder_guaranteed": false,
+  "full_doel4_complete": false
+}

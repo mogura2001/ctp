@@ -1,0 +1,45 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\science_result.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\science_result.py
+@@ -1,7 +1,7 @@
+ """Decode caller-owned saved ScienceResult bytes only; no RPM/GUI/process tools."""
+ import struct, math
+ from fractions import Fraction
+-from science_layout import HEADER, TILE, RESULT_SIZE, TILE_OFFSET, TILE_STRIDE, STRUCT_FUTURE_VALID
++from science_layout import HEADER, TILE, RESULT_SIZE, TILE_OFFSET, TILE_STRIDE, STRUCT_FUTURE_VALID, REASON_OCCUPIED_CENTER_SCOPE
+ from development import DEV_TILE
+ LOCATION_NAMES={0:'UNKNOWN',1:'NO_CURRENT_NOW_SCENARIO',2:'NOW',
+  3:'STRUCTURAL_POTENTIAL_SPATIAL_PENDING',4:'PENDING_GROWTH'}
+@@ -33,6 +33,7 @@
+ 
+ def scenario(header,rows,field):
+  """Computed explanation from bytes; never a native/game execution claim."""
++ if header['reason']==REASON_OCCUPIED_CENTER_SCOPE:return None
+  if len(rows)!=3:return None
+  total=header['center_food_i64'];stand=header['ration_stand'];steps=[]
+  if total<0 or stand < -3 or not math.isfinite(header['actual_R']) or header['actual_R']!=1+stand/4:return None
+@@ -67,14 +68,23 @@
+  if len({row['canonical_key'][:3] for row in current_rows})!=len(current_rows):raise ValueError('Duplicate current canonical selection')
+  # Future rank is independent of current indices and preserves every raw field.
+  future_rows=sorted((row for row in rows if row['structure_flags']&8 and valid_future(row)),key=lambda row:(-row['development']['future_food_i32'],row['canonical_key'][:3]))[:3]
+- trusted=header['coverage']==1
++ scope_excluded=header['reason']==REASON_OCCUPIED_CENTER_SCOPE
++ if scope_excluded and (header['location_state'],header['coverage'],header['certifiable_count'],current_indices)!=(1,1,0,[-1,-1,-1]):raise ValueError('Invalid occupied-center scope result')
++ trusted=header['coverage']==1 and not scope_excluded
+  current=scenario(header,current_rows,'current') if trusted else None
+  future=scenario(header,future_rows,'future') if trusted else None
+  if future is not None:
+   future['conditions']=['ZERO_NEW_CITY_MODIFIERS','CONDITIONAL_CRIME','ENABLING_AND_PLACEMENT_REVALIDATED','QUERIED_IMPROVEMENTS_BUILT','UNCHANGED_CURRENT_FOOD_CONTEXT']
+   future['spatial_pending_indices']=[] # future scenario never substitutes for spatial certification
+  parity=None if not trusted else (header['location_state']==4)==bool(header['location_state']!=2 and future and future['strict_positive_n1_n2_n3'])
+- return dict(header=header,location_name=LOCATION_NAMES.get(header['location_state'],'INVALID'),
++ if scope_excluded:
++  # Raw bytes are retained by partial_diagnostic; numeric initialized zero is
++  # not an observed food/key/margin. No scenario is authorized by coverage1.
++  for name in ('center_food_i64','S3_current_i64','margin3_x2_i64','crime_numerator_i64','crime_denominator_i64','center_key'):header[name]=None
++  rows=[]
++ return dict(header=header,location_name='SCOPE_EXCLUDED_OCCUPIED_CENTER' if scope_excluded else LOCATION_NAMES.get(header['location_state'],'INVALID'),
++  reason_name='OCCUPIED_CENTER_SCOPE' if scope_excluded else None,
++  food_analysis_completed=trusted,scope_excluded=scope_excluded,
+   development_name=SUMMARY_NAMES.get(header['development_state'],'INVALID'),
+   computed_current=current,computed_future=future,tiles=rows,science_credit_enabled=False,
+   conditional_only=True,future_growth_calculation_implemented=True,

@@ -4,6 +4,21 @@
 
 Windows-GUI-toegang moet in deze sessie buiten de sandbox worden uitgevoerd. Binnen de sandbox zijn procesgegevens zichtbaar, maar waren de interactieve vensterhandles niet beschikbaar.
 
+## Cd-controle voor iedere spelstart (30 oktober 2026)
+
+Controleer buiten de sandbox dat E: als CDRom IsReady=True heeft en label CCTP toont. Een eerdere gebruikersmelding is geen actuele controle. Op30okt veroorzaakte een lege E: tijdens Load een eigen CD-ROM Error-dialoog; capture meldde daarna een veranderde main-windowbinding. Verander daarvoor niet automatisch de vensterbeveiliging.
+
+Bestaande image: `D:\CIV Call To Power\CTP Mount for CD.bin`. De lokale PowerISO-help (`-?`) documenteert listvd en mount. Als E: leeg is, kan binnen de geautoriseerde spelproef deze bestaande image normaal worden gemount:
+
+```powershell
+& 'C:\Program Files\PowerISO\piso.exe' listvd
+& 'C:\Program Files\PowerISO\piso.exe' mount 'D:\CIV Call To Power\CTP Mount for CD.bin' E:
+[IO.DriveInfo]::GetDrives() | Where-Object DriveType -eq CDRom |
+    Select-Object Name,IsReady,@{n='Label';e={if($_.IsReady){$_.VolumeLabel}}}
+```
+
+Op30okt gaf mount `Mount successfully`, listvd wees exact naar deze image en E: werd leesbaar als CCTP. Dit bewijst beschikbaarheid; pas geslaagde Load bewijst acceptatie door CTP. Geen andere media vervangen, geen Setup starten, geen cd-controle omzeilen. Geen achtergrondtaak ingesteld.
+
 ## Gecontroleerd in het spel
 
 - Proefkopie gestart en hoofdmenu vastgelegd.
@@ -63,3 +78,12 @@ Save Game en Load Game zijn gecontroleerd: QUOTA-START-T0 op 4000 BC vóór de e
 Bedien-CTP.ps1 ondersteunt nu Drag met X/Y en ToX/ToY. Via de titelbalk is City Status van 0,0 naar circa 800,292 verschoven, waardoor alle stadsrijen leesbaar werden naast de editor. Gecontroleerde UI-verplaatsing, geen gameplaywijziging. Dezelfde focus- en boundscontroles gelden; inspecteer het resultaat. Positie blijft gedurende de partij bewaard, maar was na herstart terug op 0,0.
 
 Een menselijke b/Enter-poging in de baseline stichtte geen stad. Herhaling is door automatische goedkeuringscontrole geweigerd wegens mogelijke stadstichting; de variant hield de menselijke speler passief. Dit verschil is expliciet een proefbeperking. Oorspronkelijke AIPs na afloop hersteld; geen SLIC-queue-effect bewezen.
+
+
+## Aanvulling17 oktober — eigen laadroute kaartfilterhost1
+
+Eén volledige eigen route hoofdmenu→Single Player→Load Game→Julius→bytegelijke `000-U30-40-START-T0`→OK→T0/éénn/T1 uitgevoerd; zie [paarbewijs](u30-kaartfilter/20261017T115000/reader/host1/PAIR-PROOF.json). Intro-opnames rond74/112seconden zwart met640×480bounds; hoofdmenu uiterlijk194seconden zichtbaar. Correcte focus en CAPTURE_OK bewijzen geen zichtbaar menu. Geen blinde intro-invoer gegeven.
+
+Laadvenster2171×1080 weergegeven als2048×1019: vertaal punten naar originele resolutie. De eerste saveregelklikken werkten niet door kleine cursorafwijking. Gebruik de waargenomen vingertip als From, niet het vorige commandodoel: hier circa1033,560; klik1065,570 selecteerde de eerste regel zichtbaar (Saveveld gevuld). Dit zijn armwaarnemingen, geen algemeen kalibratiemodel. Geen OK voordat saveselectie bevestigd is.
+
+Screenshot meteen na n toonde nog verwerking/4000BC. De latere tweemaal stabiele reader bevestigde alle zeven native-ronden−1→0; geen voltooide beurt uit het screenshot afleiden. Gesloten in554,7seconden/29hashes hersteld. Defaultautosave zit in die29: archiveer de verwachte gegenereerde wijziging vóór herstel en bewaak alle andere bestanden onverminderd. Historische verbruikte gates blijven verbruikt.

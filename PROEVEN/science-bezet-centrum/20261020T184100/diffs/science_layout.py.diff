@@ -1,0 +1,11 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\science_layout.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\science_layout.py
+@@ -21,6 +21,8 @@
+ STATUS_NOW = 2
+ STATUS_STRUCTURAL_POTENTIAL = 3
+ STATUS_PENDING_GROWTH = 4
++REASON_OCCUPIED_CENTER_SCOPE = 17 # unique model-local reason, no food calculation
++SCI_PRIVATE_FOOD_CONTRACT = {0:'UNKNOWN',1:'VALID_FOOD',2:'BOUND_OCCUPIED_CENTER'}
+ ZERO_NEW_CITY_MODIFIERS = 1
+ CONDITIONAL_CRIME = 2
+ HEADER = {

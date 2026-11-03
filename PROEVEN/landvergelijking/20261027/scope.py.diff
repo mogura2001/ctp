@@ -1,0 +1,11 @@
+--- PROEVEN\uitbreiding-lang\20261022T122400\scope.py
++++ PROEVEN\landvergelijking\20261027\scope.py
+@@ -14,7 +14,7 @@
+  folder=Path(gate['output_directory']).resolve()
+  if folder!=HERE/args.variant or not folder.is_dir() or output.parent!=folder or output.suffix!='.json' or output.exists():raise ValueError('Fresh exact own duration output required')
+  if not args.snapshot_label or '/' in args.snapshot_label or '\\' in args.snapshot_label or output.stem!=args.snapshot_label:raise ValueError('Output label mismatch')
+- if args.manifest.resolve()!=ROOT/'PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json':raise ValueError('Pinned participants only')
++ if args.manifest.resolve()!=ROOT/'PROEVEN/landbenchmark/20261027/participants.json':raise ValueError('Pinned participants only')
+  return True
+ def verify_pins(gate):
+  path=HERE/'SOURCE-PINS.json'

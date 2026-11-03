@@ -1,0 +1,41 @@
+{
+  "status": "PROVEN_PREINPUT_METADATA_FAILURE_PENDING_REVIEWED_RECOVERY",
+  "recorded_utc": "2026-10-22T15:04:43.451388+00:00",
+  "observed_tool_session": 10650,
+  "original_console_error_separately_saved": false,
+  "error": "Set-Content start.json: IOException file is being used by another process; Pass-Duur.ps1 line61 before Key",
+  "accepted_turn": 84,
+  "native_round": 83,
+  "pid": 40488,
+  "creation_filetime": 134371535950250712,
+  "failed_token_retained": true,
+  "no_T85_n_log": true,
+  "original_source_unchanged": true,
+  "ai_changed_for_recovery": false,
+  "proofs": [
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/U30-40/T84.json",
+      "sha256": "a9c9cb52e23c0cc14ae4e9b75fc1b4e6ceb509658fe00cb58b861f6442d0de5a"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/U30-40/T84-preinput-recheck.json",
+      "sha256": "f649e8638bf5df625ab44a70a391b43d7b277d26cb1534e1bd35ca9182480ad1"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/U30-40/T85-consumed.json",
+      "sha256": "46770c6a31da687e164522a10cebca6c0eadbfc7d2e9fcc8eaf405fee7fb942f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang-host/20261022/U30-40/start-pre-T85-registratieherstel.json",
+      "sha256": "f9b6099e7ef664581a25dcf1682c01657586b7c7bd1b2b2f815dcc49be1b0aa8"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/Pass-Duur.ps1",
+      "sha256": "ab912e96c1c241d2dcebd83cb835e4784a8b2149c1b72fa9c999fe8b28cb1239"
+    },
+    {
+      "path": "ONTWERP/UITBREIDING-T85-REGISTRATIEHERSTEL.md",
+      "sha256": "d33b9d9351f0b30888403bb52af780cf73c96d32987d33bbfba6b7a3ed67aca7"
+    }
+  ]
+}

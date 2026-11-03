@@ -1,0 +1,21 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\reader\food_failure_decoder.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\reader\food_failure_decoder.py
+@@ -25,7 +25,7 @@
+   if decoded['bindingpointer']!=plan_address+144 or decoded['world']<0x10000 or decoded['outpointer']<0x10000:raise ValueError('native reader argument binding')
+   external=struct.unpack('<hhhH',decoded['external']);internal=struct.unpack('<hhhH',decoded['internal'])
+   if decoded['callkind']==1:
+-   if decoded['prefix']!=shared['classified']-1 or shared['SCI_calls']!=shared['classified']:raise ValueError('center failure last SCI attribution')
++   if not decoded['prefix']<shared['SCI_calls']<=shared['classified']:raise ValueError('historical center failure SCI attribution')
+    centers=[o for o in partial.get('order_attribution',[]) if o['prefix_index']==decoded['prefix'] and o['valid']]
+    if len(centers)!=1 or tuple(centers[0]['external_center'])!=external[:3]:raise ValueError('center external ORDER/CAPTURE mismatch')
+   a=decoded['guard_a'];b=decoded['guard_b'];signed=lambda n:n if n<0x80000000 else n-0x100000000
+@@ -53,6 +53,9 @@
+   if (branch==33 and decoded['native_return']!=0) or (branch==34 and (signed(a),signed(b))!=(decoded['output_after'],decoded['sum_after'])):raise ValueError('native guard operand mismatch')
+   _,parent,name=BRANCHES[branch-1]
+   result.update(attribution_status='BOUND_COMPLETE_GUARD_OPERANDS',usable_diagnostic_evidence=True,branch_name=name,parent_va_provenance=hex(0x200d0000+parent),external=external,internal=internal,callkind_name='SCI_CENTER' if decoded['callkind']==1 else 'SCI_PRIMARY_TILE',conditional_reader_scope_only=True,exact_native_guard_identified=True,gameplay_fix_proven=False)
++  result.update(historical_first_center_record=True,record_is_current_policy_input=False,typed_return2_proven_from_latch=False)
++  if decoded['callkind']==1:
++   result['same_prefix_scope_result']=[x for x in partial.get('scope_excluded_centers',[]) if x['prefix_index']==decoded['prefix']]
+   if bits&(1<<17):
+    flags=decoded['cellflags'];result['decoded_flags']=dict(road_level=flags&3,irrigation_level=(flags>>2)&3,mine_level=(flags>>4)&3,river_present=bool(flags&0x800),canal_present=bool(flags&0x200),raw_goodcode=(flags>>6)&7)
+  except Exception as error:result.update(attribution_status='INSUFFICIENT_EVIDENCE',error=type(error).__name__+': '+str(error))

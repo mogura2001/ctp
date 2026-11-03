@@ -1,0 +1,725 @@
+{
+  "stage": "C1_SOURCE_ONLY_NO_EMISSION",
+  "sources": [
+    {
+      "path": "ANALYSE/REVIEW-SCIENCE-FOODREADER-DIAGNOSTIEK.md",
+      "sha256": "acb1ee8abf8c9e85aaab5c9f75b3d22c147f18363f02fc1660683b52a8b5477a",
+      "size": 7142
+    },
+    {
+      "path": "ANALYSE/SCIENCE-BEZET-CENTRUM.md",
+      "sha256": "52704d383135f0471598f905ba0fafea6c754aa57744359bf01d72ce5827ac8a",
+      "size": 13245
+    },
+    {
+      "path": "ANALYSE/U30-H2-GATE28.md",
+      "sha256": "44313b450dea1257953b6e4ea5f9b982274ed2cc148e9d30a75b8cf5df1f4dc2",
+      "size": 8218
+    },
+    {
+      "path": "ANALYSE/U30-SCIENCE-FILTER-INTEGRATIE.md",
+      "sha256": "5e4eb33229d13de30da67685b50336cf41a3242e302e6f9bc9df1c3482ff7230",
+      "size": 13837
+    },
+    {
+      "path": "ANALYSE/U30-TYPE10.md",
+      "sha256": "d4c8aee532af8cef09c9b719792dc6818d8fa0d180a8d85d440a197686982f8d",
+      "size": 14678
+    },
+    {
+      "path": "ANALYSE/UITBREIDING-30-40.md",
+      "sha256": "9144dfa2d2946ac566ae17be1649bfab378d5fe2d5d3e5a46020c8ce054f8497",
+      "size": 12327
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+      "sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+      "size": 3655
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+      "sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+      "size": 40166
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+      "sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+      "size": 47674
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+      "sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+      "size": 39995
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+      "sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+      "size": 40057
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+      "sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+      "size": 39953
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+      "sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+      "size": 40005
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+      "sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+      "size": 40227
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturn.fli",
+      "sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+      "size": 509
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+      "sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+      "size": 707
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+      "sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+      "size": 654
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+      "sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+      "size": 662
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+      "sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+      "size": 663
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+      "sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+      "size": 656
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+      "sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+      "size": 651
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/inputs.fli",
+      "sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+      "size": 15146
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+      "sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+      "size": 4201
+    },
+    {
+      "path": "CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+      "sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+      "size": 67
+    },
+    {
+      "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "ONTWERP/SCIENCE-BEZET-CENTRUM.md",
+      "sha256": "377d913b7e857b89351d11e0498d5bda936838a433ec0d903b9c05c39e6a6e17",
+      "size": 7079
+    },
+    {
+      "path": "ONTWERP/U30-KAARTKENNISFILTER.md",
+      "sha256": "0b918756d6cf923973643ea07bbeb0a7fa441201838f0c5d7f16f9bdacdfa95e",
+      "size": 18597
+    },
+    {
+      "path": "ONTWERP/U30-SCIENCE-FILTER-INTEGRATIE.md",
+      "sha256": "6e78628100af8df292788547b18d2d838c792748c165740fe30528ab5d66e0a5",
+      "size": 19749
+    },
+    {
+      "path": "ONTWERP/U30-TYPE10.md",
+      "sha256": "5c2256c673256ba77848ae9e64d8c298af380c17b42af098ed745678712d7c89",
+      "size": 16612
+    },
+    {
+      "path": "ONTWERP/UITBREIDING-30-40.md",
+      "sha256": "accf076e715b2aeed674b989fecd52fd608afa8a0cb739c2270265ec398bf12a",
+      "size": 15040
+    },
+    {
+      "path": "PROEVEN/opening-b2/build.py",
+      "sha256": "e91792bb8da24cf67ada4da93a9a4e443f843e4bf45ea72b82f89ff85d99b56f",
+      "size": 15650
+    },
+    {
+      "path": "PROEVEN/production-h3/build-current.py",
+      "sha256": "0fdb1c66e29c0ea511e435baf3cdd6cc0a3fc7be6b7769fd74e34e041c41e245",
+      "size": 5951
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/convert.bin",
+      "sha256": "d0a4c66efc832a545b2784b4fe590a7aff30b08124bb81376a3ec1649a4e2e96",
+      "size": 34
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/convert.recipe.json",
+      "sha256": "bc8c95407bdaf303a808401c98b9af9fe5fca6863d216451f438b13d8c9766e1",
+      "size": 657
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/food.bin",
+      "sha256": "9a9b48efe1adb7c1f0dd7766c6ac00b6a1731ec34e51ba09e53b6be9d0b5b1b0",
+      "size": 72
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/food.recipe.json",
+      "sha256": "36382ec0054b670e8ad92922970c164d6ed6e98775d39ae6ead488839ddad527",
+      "size": 1356
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/shim5.bin",
+      "sha256": "216f808b8a5c7553eea5f7419aeb8978bfe61893426aa6e9cd658ea171123243",
+      "size": 140
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/shim5.recipe.json",
+      "sha256": "a88a057c4349b960b6a47f90ba26f71a2062db31a9b8928862d397581ea0da98",
+      "size": 4120
+    },
+    {
+      "path": "PROEVEN/production-h3/x86.py",
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22",
+      "size": 3577
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/BRONOVERDRACHT.md",
+      "sha256": "9d965345ecc51c2f17c5c6166a9ff9c476429e4870c94475cd616bfeffe2f9c9",
+      "size": 8190
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/build_candidate.py",
+      "sha256": "3d709c0638357dfa7695075b705ca06b186cb0dcbe2267e5c89a137ad4b39f1b",
+      "size": 17528
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/check_sources.py",
+      "sha256": "0b14035f8922fb8b7cbe4a99227889510242d9be3d4787c6caa871222da77f5d",
+      "size": 7585
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/fixture_sources.py",
+      "sha256": "81574bdd86924294fc6887e4dbe49a952d23c9920c0d1c69c8c173155486e66c",
+      "size": 3903
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_components.py",
+      "sha256": "7590a7f92fb4a87f637cec15d6a5fd8680032a002915082d490175a61a6cf20c",
+      "size": 6045
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_diagnostic.py",
+      "sha256": "02133cde47f96eea66cf3ad5948f9380464a125f68804360cab21cd682fa3a65",
+      "size": 18472
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_diagnostic_layout.py",
+      "sha256": "8e3fc7d2db9359c19b6237342ae124988494be8e736fa1f44c40714df694143b",
+      "size": 4473
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/INPUT-PROVENANCE.json",
+      "sha256": "26fdff24bd3a93c3fc71def9234203a52913c4fb116aa4d18b8bffb486596963",
+      "size": 6336
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/native/NativeFoodCaller.cs",
+      "sha256": "b1bd47bac95f23d42540fdb27bccfb3f5bbc964844702c64d3b747de3cfb6ed4",
+      "size": 16762
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/native.py",
+      "sha256": "191d67517274e3f83369be0018697999ef1e2dbd6da7e1b1b0dca6f47f2ead93",
+      "size": 31917
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/plan_layout.py",
+      "sha256": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+      "size": 427
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/policy.py",
+      "sha256": "60a391cea559b37915c4a2b0d7d70c9e619878db198679e8c4531fa32998794e",
+      "size": 12746
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332",
+      "size": 19299
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/prepare_sources.py",
+      "sha256": "e367c6d23ca85a993f8b9149d53be7b2724db55bdcfcb00a9ed4b957dd88be1c",
+      "size": 2287
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/food_failure_decoder.py",
+      "sha256": "3f4119c5516fe9cd717444ee5f41eddd9c8a6369f2fa0f99cd2f9ef1986b4cdf",
+      "size": 7051
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/Lees-Uitbreiding.py",
+      "sha256": "4c081ec93957b7c009d6986ef63ff20c1ca1627e1d97399c1e7d58e2e4f95199",
+      "size": 27867
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/partial_diagnostic.py",
+      "sha256": "5acc1f98231f1790e0ef8f97c5c42cd23f9fb4edc29d9a0566707034564fa867",
+      "size": 17100
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+      "size": 5216
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_layout.py",
+      "sha256": "bb1348a01996c250be5e8ffbc5a95c2bb3b0d6606e579436bda470c79fcf6143",
+      "size": 3486
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_model.py",
+      "sha256": "343423980d4d25469d1e2d5cfb2acbce059d54a961073a9c55ef479f47d1ccfa",
+      "size": 18225
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_result.py",
+      "sha256": "4c24b3f500848f1a3194d18d88817bf2f0535bbdeea60555a374790c7231354d",
+      "size": 6982
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/union.py",
+      "sha256": "e16dbfbce044405acb05f66211681d5ff839cbcc4351548dc1fd11adc74ef3e8",
+      "size": 8968
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/build_candidate.py",
+      "sha256": "754758b6be896d69153cad16075dd4cf5a69e2cfce71c9d9d467346ec5fea807",
+      "size": 16464
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/candidate-manifest.json",
+      "sha256": "beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44",
+      "size": 1899366
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/food_components.py",
+      "sha256": "7590a7f92fb4a87f637cec15d6a5fd8680032a002915082d490175a61a6cf20c",
+      "size": 6045
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/food_diagnostic.py",
+      "sha256": "6fc67fdfaf4d84c0188303d51d59d76afe324452b96c6f636975c43bc63bab0b",
+      "size": 14372
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/food_diagnostic_layout.py",
+      "sha256": "00a67ec1c1a21cb9443ae566401179d1e966fc2d5f8249e58735ed44e82ecf2b",
+      "size": 4058
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/native.py",
+      "sha256": "191d67517274e3f83369be0018697999ef1e2dbd6da7e1b1b0dca6f47f2ead93",
+      "size": 31917
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/plan_layout.py",
+      "sha256": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+      "size": 427
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/policy.py",
+      "sha256": "60a391cea559b37915c4a2b0d7d70c9e619878db198679e8c4531fa32998794e",
+      "size": 12746
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332",
+      "size": 19299
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/food_failure_decoder.py",
+      "sha256": "7ca27a0bda2abfbb0fa7028acc7987036665aff38ff3de7c9bd8ca23f8973a61",
+      "size": 6779
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/Lees-Uitbreiding.py",
+      "sha256": "4c081ec93957b7c009d6986ef63ff20c1ca1627e1d97399c1e7d58e2e4f95199",
+      "size": 27867
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/partial_diagnostic.py",
+      "sha256": "1ab95f958b4259c644089e0d8458f25ccfc98758b7cb033239eef1339f650323",
+      "size": 14865
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+      "size": 5216
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a",
+      "size": 4107
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "size": 3318
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/science_model.py",
+      "sha256": "9370ed1fda84c8f51e77a664bd6bec967ed17cfdda4a6e5a6caca2ae9dafab72",
+      "size": 17733
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+      "size": 6095
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/U30-40.prepared.dll",
+      "sha256": "068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f",
+      "size": 1215488
+    },
+    {
+      "path": "PROEVEN/science-foodreader-diagnostiek/20261019T194200/union.py",
+      "sha256": "e16dbfbce044405acb05f66211681d5ff839cbcc4351548dc1fd11adc74ef3e8",
+      "size": 8968
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/candidate-manifest.json",
+      "sha256": "2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387",
+      "size": 185761
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/build_candidate.py",
+      "sha256": "b917c57e7289034ba63428237d397f94d51daed6fab085503d15b150d504f84a",
+      "size": 12438
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/candidate-manifest.json",
+      "sha256": "265b5ee53bcc5adc4216f0df2471b45b95c41d2d3e5d8121cf8fb78eea888167",
+      "size": 1643480
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/check_candidate.py",
+      "sha256": "ae0d49106865e663c814589d42a6b49bc6adff256c89726fb74caaec5cc045a9",
+      "size": 5893
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "size": 3318
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_model.py",
+      "sha256": "9370ed1fda84c8f51e77a664bd6bec967ed17cfdda4a6e5a6caca2ae9dafab72",
+      "size": 17733
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+      "size": 6095
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/U30-40.prepared.dll",
+      "sha256": "18d8516bf915d137acbc679c695bf4163540d01007888d875da24183035b230d",
+      "size": 1205248
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/union.py",
+      "sha256": "90d9401a692dab555c6879bef3a9df4d9ae38c14c40e754d72c177d4dc0af52c",
+      "size": 8454
+    },
+    {
+      "path": "PROEVEN/settler-b4/input-pins.py",
+      "sha256": "0ec070d25605af8df63b9df0d78ab6bd928523f7527ebcb8f039a5e6fd1580e3",
+      "size": 2005
+    },
+    {
+      "path": "PROEVEN/settler-b4/integration.py",
+      "sha256": "44335c3ff8825507388d138356f0305cdc7bb071065f697aea5f641754eb43aa",
+      "size": 12266
+    },
+    {
+      "path": "PROEVEN/settler-b4/native.py",
+      "sha256": "a6fc3f44506d906b4e8fc6596bdc968821a95f04130fe4bc8119f169c3d38246",
+      "size": 32664
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/build_candidate.py",
+      "sha256": "f0d3ae391089817ab018bf9e96c41226fd941772ff29e03a5b89317147a0b08c",
+      "size": 9911
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/input-pins.py",
+      "sha256": "19fcf72b182586b0785487486adcc31c8a330e1311765d15fdc8399804f524a2",
+      "size": 2005
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/native.py",
+      "sha256": "819a675a87f5597f5117c9459747fd2953e74660dab5b9edb9eb98b14c60aade",
+      "size": 33934
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
+      "size": 11744
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/preparation-manifest.json",
+      "sha256": "19f7472c41dd5993240eaa5fae511255e37a12df68268dcaead6abb66f40d23e",
+      "size": 8763
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/candidate-manifest.json",
+      "sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9",
+      "size": 1095550
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/native.py",
+      "sha256": "c282f13be56d0a856ce86ccc670966a765c5679d4ee92ce9e00d62a71defa05c",
+      "size": 34462
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/policy.py",
+      "sha256": "01e1e5343f52c456849c8b7d47701f181dbca415305c2f877893628dd0c54322",
+      "size": 12748
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/Lees-Uitbreiding.py",
+      "sha256": "3be400671fe03492603227d07a0c3110a01afa1d67cd3ad286461c5d377a729f",
+      "size": 26079
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/U30-40.prepared.dll",
+      "sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+      "size": 1040896
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/Lees-Uitbreiding.py",
+      "sha256": "60e5f1e057afde7f7fd140b773698225c0ac3dc9ee25494386e69f88198e5470",
+      "size": 25237
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/build_candidate.py",
+      "sha256": "633c6f5b483162b858219924c28663bb9575736e2a5b0c0fd84e6957b6d38162",
+      "size": 10026
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/input-pins.py",
+      "sha256": "3c205ba2ad6b7885c7483455ac24084b43e6ce64dcd983bbaaf232b39673fc8e",
+      "size": 2061
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/native.py",
+      "sha256": "4ba127574be9a8a8011596ab2199ca8035800d8c66456a301f98f20f7a384524",
+      "size": 33939
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
+      "size": 11744
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    }
+  ]
+}

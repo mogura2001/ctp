@@ -1,0 +1,757 @@
+{
+  "stage": "C2_STATIC_CANDIDATE_NO_NATIVE_NO_HOST",
+  "time_amsterdam": "2026-10-21T14:28:37.859279+02:00",
+  "candidate_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+  "manifest_sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152",
+  "C1_source_pins_sha256": "75244d1e104095f12204c3b67c03ad42ecf329c088fc795391b6880cf7394c37",
+  "sources": [
+    {
+      "path": "ANALYSE/SCIENCE-SELECTIE-25.md",
+      "sha256": "b05bcccda46bf001026462a25d0429d38db631da8e0814e5da1d060335f9d761",
+      "size": 14348
+    },
+    {
+      "path": "ONTWERP/SCIENCE-SELECTIE-25-DIAGNOSE.md",
+      "sha256": "2afdcb1f5e8bb97437beb885f3fb10e19021e5a32619e73fd6fa43e945a36cbe",
+      "size": 8408
+    },
+    {
+      "path": "PROEVEN/opening-b2/build.py",
+      "sha256": "e91792bb8da24cf67ada4da93a9a4e443f843e4bf45ea72b82f89ff85d99b56f",
+      "size": 15650
+    },
+    {
+      "path": "PROEVEN/production-h3/build-current.py",
+      "sha256": "0fdb1c66e29c0ea511e435baf3cdd6cc0a3fc7be6b7769fd74e34e041c41e245",
+      "size": 5951
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/shim5.bin",
+      "sha256": "216f808b8a5c7553eea5f7419aeb8978bfe61893426aa6e9cd658ea171123243",
+      "size": 140
+    },
+    {
+      "path": "PROEVEN/production-h3/helper/shim5.recipe.json",
+      "sha256": "a88a057c4349b960b6a47f90ba26f71a2062db31a9b8928862d397581ea0da98",
+      "size": 4120
+    },
+    {
+      "path": "PROEVEN/production-h3/x86.py",
+      "sha256": "7dc2747839e6831ecc9a977e9cc16ec486e1ce88fd18b33d6a32b32e4b367a22",
+      "size": 3577
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/build_candidate.py",
+      "sha256": "3d709c0638357dfa7695075b705ca06b186cb0dcbe2267e5c89a137ad4b39f1b",
+      "size": 17528
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/candidate-manifest.json",
+      "sha256": "2077ac8a05d17f6ef7690ceb3a3a9e5555aa8d0f9a23e9e2d9db703288a5396b",
+      "size": 1916843
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_components.py",
+      "sha256": "7590a7f92fb4a87f637cec15d6a5fd8680032a002915082d490175a61a6cf20c",
+      "size": 6045
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_diagnostic.py",
+      "sha256": "02133cde47f96eea66cf3ad5948f9380464a125f68804360cab21cd682fa3a65",
+      "size": 18472
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/food_diagnostic_layout.py",
+      "sha256": "8e3fc7d2db9359c19b6237342ae124988494be8e736fa1f44c40714df694143b",
+      "size": 4473
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/native.py",
+      "sha256": "191d67517274e3f83369be0018697999ef1e2dbd6da7e1b1b0dca6f47f2ead93",
+      "size": 31917
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/plan_layout.py",
+      "sha256": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+      "size": 427
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/policy.py",
+      "sha256": "60a391cea559b37915c4a2b0d7d70c9e619878db198679e8c4531fa32998794e",
+      "size": 12746
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332",
+      "size": 19299
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/food_failure_decoder.py",
+      "sha256": "3f4119c5516fe9cd717444ee5f41eddd9c8a6369f2fa0f99cd2f9ef1986b4cdf",
+      "size": 7051
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/Lees-Uitbreiding.py",
+      "sha256": "4c081ec93957b7c009d6986ef63ff20c1ca1627e1d97399c1e7d58e2e4f95199",
+      "size": 27867
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/partial_diagnostic.py",
+      "sha256": "5acc1f98231f1790e0ef8f97c5c42cd23f9fb4edc29d9a0566707034564fa867",
+      "size": 17100
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+      "size": 5216
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a",
+      "size": 4107
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_layout.py",
+      "sha256": "bb1348a01996c250be5e8ffbc5a95c2bb3b0d6606e579436bda470c79fcf6143",
+      "size": 3486
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_model.py",
+      "sha256": "343423980d4d25469d1e2d5cfb2acbce059d54a961073a9c55ef479f47d1ccfa",
+      "size": 18225
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/science_result.py",
+      "sha256": "4c24b3f500848f1a3194d18d88817bf2f0535bbdeea60555a374790c7231354d",
+      "size": 6982
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/U30-40.prepared.dll",
+      "sha256": "e45313fde4d25a726fa2e8d26dec21c0142ac195ea5c0c40a9b380fd549b166f",
+      "size": 1216000
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum/20261020T184100/union.py",
+      "sha256": "e16dbfbce044405acb05f66211681d5ff839cbcc4351548dc1fd11adc74ef3e8",
+      "size": 8968
+    },
+    {
+      "path": "PROEVEN/science-bezet-centrum-host/20261020/host1/variant/T1.json",
+      "sha256": "7675ffbfcdf7e1f19966ed94f88c37e5c704286b1269687cd09eda7305bfb67c",
+      "size": 496382
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261013T183300/candidate-manifest.json",
+      "sha256": "2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387",
+      "size": 185761
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/build_candidate.py",
+      "sha256": "b917c57e7289034ba63428237d397f94d51daed6fab085503d15b150d504f84a",
+      "size": 12438
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/candidate-manifest.json",
+      "sha256": "265b5ee53bcc5adc4216f0df2471b45b95c41d2d3e5d8121cf8fb78eea888167",
+      "size": 1643480
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/check_candidate.py",
+      "sha256": "ae0d49106865e663c814589d42a6b49bc6adff256c89726fb74caaec5cc045a9",
+      "size": 5893
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "size": 3318
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_model.py",
+      "sha256": "9370ed1fda84c8f51e77a664bd6bec967ed17cfdda4a6e5a6caca2ae9dafab72",
+      "size": 17733
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+      "size": 6095
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/U30-40.prepared.dll",
+      "sha256": "18d8516bf915d137acbc679c695bf4163540d01007888d875da24183035b230d",
+      "size": 1205248
+    },
+    {
+      "path": "PROEVEN/science-u30-40/20261015T152300-c2/union.py",
+      "sha256": "90d9401a692dab555c6879bef3a9df4d9ae38c14c40e754d72c177d4dc0af52c",
+      "size": 8454
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/BRONOVERDRACHT.md",
+      "sha256": "ac4fbcaa4b5a414c5c008a96ec950baaa2b8cc4c236f3c5ca03f8596fe9da21f",
+      "size": 5923
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/build_candidate.py",
+      "sha256": "b042c85eb551bb2178ea84f59bbd68b25c384e5f3afd961c296eb107926b1fea",
+      "size": 19585
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/c2/candidate-static-checks.json",
+      "sha256": "e34a207508d78ae4429a8ea2f4ccba85a3e38e27f0a40189844b9a4651b8e0b4",
+      "size": 2392
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/c2/check_candidate.py",
+      "sha256": "bfe46f527d7488689fd06bc5f07dab488f3e549793269c11a0621ba1143245e6",
+      "size": 14545
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/c2/pin.py",
+      "sha256": "a7fd67ab9c023a125046c4f0127c1668ff24f876eb3449a0fea38be7a71fe6a7",
+      "size": 4021
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/c2/POWERSHELL-PARSE.json",
+      "sha256": "1af728ac0f39ebd8bf4ebf3f35656a6fccf42bc669329650826da90df0139d5e",
+      "size": 331
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/c2/recipe-preservation.json",
+      "sha256": "984a37ca8e4784b9876fb483ec0370651dc789c0100eadf172aac4067d53c0d2",
+      "size": 69147
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/C2-OVERDRACHT.md",
+      "sha256": "4b6c07ca62a01d3d91e967042aa18504318efba42d6717786e973dae976b3ad0",
+      "size": 5065
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/candidate-manifest.json",
+      "sha256": "5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152",
+      "size": 2598977
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/check_sources.py",
+      "sha256": "c3df06c7f7882dfa8c7a73de99138055760dd70272745efd39e39bb5bc07ffca",
+      "size": 6293
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/check_sources_checkpoint.py",
+      "sha256": "b3c8db61e1a8269b4ca95f72895aff55d9705121e9677a9a52aacb5cfa22d67c",
+      "size": 2981
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/build_candidate.py.diff",
+      "sha256": "9ff58d7792f7d8719c387e2666fc0241fd90c9619aca794f2d380d5736381a31",
+      "size": 13879
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/food_diagnostic_layout.py.diff",
+      "sha256": "acf91691d0bf6e199aed008eb9f0d7da970a5fee86759f036684392ba3ce14d3",
+      "size": 316
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/integration_base.py.diff",
+      "sha256": "aab2f2170c152b94eb931725c3b7f0e7e2a69098fc3b4bd02a3b5f8a5e4de00e",
+      "size": 3278
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/native-v2-C2.diff",
+      "sha256": "b7b198a34a9709c3ba5ca69fa8548af53b5cc8f94874650a18a9c78349dec047",
+      "size": 1828
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/native.py.diff",
+      "sha256": "66fdff149403e8af5a93ce8d122efbe23c7568e7618d805da3e8c0b87f6762ac",
+      "size": 13114
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/plan_layout.py.diff",
+      "sha256": "b99c77cc480ed24ae99a2220902d4f4ff1662af89be553b8ea0b8d8fe883f659",
+      "size": 262
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/policy.py.diff",
+      "sha256": "8cea5628a9e3372bc9962e0f9b500295c7044d72cf240687033618a7eda95152",
+      "size": 525
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/reader__food_failure_decoder.py.diff",
+      "sha256": "9a1d2bcac89d800ef1c4d47ac5fc26af7a434ae62207f75c3f030049f603b9df",
+      "size": 1180
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/reader__Lees-Uitbreiding.py.diff",
+      "sha256": "b1c4a4c6efdac4d149a5a7367d53bab0c4df9e425edf89235c87f704a1a5dfd4",
+      "size": 5483
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/diffs/reader__partial_diagnostic.py.diff",
+      "sha256": "cab3f547fa1c599b11f9e4bb58444448f58013d635e385ed57cb051cfac64a89",
+      "size": 5137
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/fixture/logger.bin",
+      "sha256": "4d05d305b04a6488231877fc91e885de2d3a4fc98d59e13da2501b2394cfdfc6",
+      "size": 27215
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/fixture/logger.recipe.json",
+      "sha256": "bc013278cf26f6715f3368bcf326b722f65684cb81ca70eb403668e49787ac84",
+      "size": 497431
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/fixture_sources.py",
+      "sha256": "25f1816ba72d2dd44f23c35b6ae824403c66a4ea127473bac844076ffdd2a5b4",
+      "size": 5333
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_components.py",
+      "sha256": "7590a7f92fb4a87f637cec15d6a5fd8680032a002915082d490175a61a6cf20c",
+      "size": 6045
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_diagnostic.py",
+      "sha256": "02133cde47f96eea66cf3ad5948f9380464a125f68804360cab21cd682fa3a65",
+      "size": 18472
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_diagnostic_layout.py",
+      "sha256": "3ab6de074116555fec32f4c1828b0938336916e0e0f86c7786b1bad75bd2555d",
+      "size": 4548
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/INPUT-PROVENANCE.json",
+      "sha256": "14c7c1639dc17e522e523ecb266bde107e82b7d2ff1d8ede8a1ab2953fb4c4af",
+      "size": 6102
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/integration_base.py",
+      "sha256": "c1f336e38260aab82614107be1eebb99c9e1e1c93b1d3bc0049706e2eec4cfa0",
+      "size": 12451
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native/NativePathLoggerCaller.cs",
+      "sha256": "15b8999b08036c1c3f480db9f29719fa3432533039aa98c78f3fab85978f5083",
+      "size": 7263
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native-v2/compile-helper.ps1",
+      "sha256": "5296ce1ddfce3f49af0478318861151523eb6d675943e10fe8f4856f272e87b9",
+      "size": 1389
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native-v2/native-caller.ps1",
+      "sha256": "aae75c6fb565b21d4f2b636b013000fd371f6dd45d46e75a6d9dcecf8e1a289d",
+      "size": 2099
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native-v2/NativePathLoggerCaller.cs",
+      "sha256": "6d6327354752369956ffb4b9d57675797cf978851ef3e3dd73449fea8e887577",
+      "size": 7463
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/native.py",
+      "sha256": "cea06aacdca51e7ca73250e276d71fce89e21f5d045dad3d6c69c348abacf0d5",
+      "size": 33375
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic.py",
+      "sha256": "198e8d7897764ff28c25e6ee9a003eac5acfe05133071ad905809146f028a7a6",
+      "size": 9775
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic_layout.py",
+      "sha256": "9c483e67c15cc994d5e1b458c332684299c80df6a7304396422654a1bc2148ff",
+      "size": 2715
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/plan_layout.py",
+      "sha256": "fbf6993655b842450c43df093065fb96151d940909e14f1ffcaf4c801e7f4b8d",
+      "size": 427
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/policy.py",
+      "sha256": "9fc8b418ea85daf87ffbc9858a42438ece2ec8748cd408b85e4b75cb901a05ad",
+      "size": 12871
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332",
+      "size": 19299
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/prepare_sources.py",
+      "sha256": "4d47f3e6881d6600dcae913461da0b1a9806367dfa7c2980858068284adf878a",
+      "size": 2150
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+      "size": 1249280
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/food_failure_decoder.py",
+      "sha256": "d9884e2ea5991ff41af54e88c461f2db54f6071638642385c1d20f6188d2943f",
+      "size": 7352
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/Lees-Uitbreiding.py",
+      "sha256": "db164c59641d58487cb35226da4e7485a1e3a891b912abc5b8c6c6772006810c",
+      "size": 28667
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/partial_diagnostic.py",
+      "sha256": "6f43aaed351ff74d4bc140de12ce017e5ca206b510dbca044f7387a34233c0bf",
+      "size": 20433
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/path_failure_decoder.py",
+      "sha256": "d89db84bfa2b17e3ff18b6683115e6c2b7fc2e6dba3f038f9f59ac8b2753f2f1",
+      "size": 8474
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+      "size": 5216
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/READER-PINS.json",
+      "sha256": "4ed8587c87112423f76ec007b7d8793bbbbbed6f6d611cc07832de8948570127",
+      "size": 17300
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/runtime-pins.json",
+      "sha256": "41e52c7f05578cc92a0f4f64693a8a22c698a2220c6c03f992c6c90641cc8e35",
+      "size": 285
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a",
+      "size": 4107
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "size": 10237
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_layout.py",
+      "sha256": "bb1348a01996c250be5e8ffbc5a95c2bb3b0d6606e579436bda470c79fcf6143",
+      "size": 3486
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_model.py",
+      "sha256": "343423980d4d25469d1e2d5cfb2acbce059d54a961073a9c55ef479f47d1ccfa",
+      "size": 18225
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_result.py",
+      "sha256": "4c24b3f500848f1a3194d18d88817bf2f0535bbdeea60555a374790c7231354d",
+      "size": 6982
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/SOURCE-PINS.json",
+      "sha256": "75244d1e104095f12204c3b67c03ad42ecf329c088fc795391b6880cf7394c37",
+      "size": 25784
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/SOURCE-REVIEW.json",
+      "sha256": "eae23be8aca679133ff65cbed812b0295d55095ea6029aa23052e1e466d84fb0",
+      "size": 3684
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/U30-40.payload.bin",
+      "sha256": "4574fc114251b2292036c189c5e45232fe2a0d8aa4c69fb8a14ab20b64532974",
+      "size": 85991
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/U30-40.prepared.dll",
+      "sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+      "size": 1249280
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/union.py",
+      "sha256": "e16dbfbce044405acb05f66211681d5ff839cbcc4351548dc1fd11adc74ef3e8",
+      "size": 8968
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/wire_sources.py",
+      "sha256": "410873889958c6f5c95dcc15efa387b0be53621f3a168396391ba4aa14921510",
+      "size": 5459
+    },
+    {
+      "path": "PROEVEN/settler-b4/input-pins.py",
+      "sha256": "0ec070d25605af8df63b9df0d78ab6bd928523f7527ebcb8f039a5e6fd1580e3",
+      "size": 2005
+    },
+    {
+      "path": "PROEVEN/settler-b4/integration.py",
+      "sha256": "44335c3ff8825507388d138356f0305cdc7bb071065f697aea5f641754eb43aa",
+      "size": 12266
+    },
+    {
+      "path": "PROEVEN/settler-b4/native.py",
+      "sha256": "a6fc3f44506d906b4e8fc6596bdc968821a95f04130fe4bc8119f169c3d38246",
+      "size": 32664
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/build_candidate.py",
+      "sha256": "f0d3ae391089817ab018bf9e96c41226fd941772ff29e03a5b89317147a0b08c",
+      "size": 9911
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/input-pins.py",
+      "sha256": "19fcf72b182586b0785487486adcc31c8a330e1311765d15fdc8399804f524a2",
+      "size": 2005
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/native.py",
+      "sha256": "819a675a87f5597f5117c9459747fd2953e74660dab5b9edb9eb98b14c60aade",
+      "size": 33934
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
+      "size": 11744
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/preparation-manifest.json",
+      "sha256": "19f7472c41dd5993240eaa5fae511255e37a12df68268dcaead6abb66f40d23e",
+      "size": 8763
+    },
+    {
+      "path": "PROEVEN/u30-foutcodes/20261015T145000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/candidate-manifest.json",
+      "sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9",
+      "size": 1095550
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/native.py",
+      "sha256": "c282f13be56d0a856ce86ccc670966a765c5679d4ee92ce9e00d62a71defa05c",
+      "size": 34462
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/policy.py",
+      "sha256": "01e1e5343f52c456849c8b7d47701f181dbca415305c2f877893628dd0c54322",
+      "size": 12748
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/Lees-Uitbreiding.py",
+      "sha256": "3be400671fe03492603227d07a0c3110a01afa1d67cd3ad286461c5d377a729f",
+      "size": 26079
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "PROEVEN/u30-kaartfilter/20261017T115000/U30-40.prepared.dll",
+      "sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+      "size": 1040896
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/Lees-Uitbreiding.py",
+      "sha256": "60e5f1e057afde7f7fd140b773698225c0ac3dc9ee25494386e69f88198e5470",
+      "size": 25237
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "PROEVEN/u30-reason23/20261016T131100/host1/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/build_candidate.py",
+      "sha256": "633c6f5b483162b858219924c28663bb9575736e2a5b0c0fd84e6957b6d38162",
+      "size": 10026
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/input-pins.py",
+      "sha256": "3c205ba2ad6b7885c7483455ac24084b43e6ce64dcd983bbaaf232b39673fc8e",
+      "size": 2061
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/integration_base.py",
+      "sha256": "cd9a240eee3e9249debb1c81a76289621482d1d074c4a016f2d5ec2f42cab5ac",
+      "size": 12267
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/native.py",
+      "sha256": "4ba127574be9a8a8011596ab2199ca8035800d8c66456a301f98f20f7a384524",
+      "size": 33939
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/policy.py",
+      "sha256": "be4d7d758b2881990a6b89ede878c0ec99bf19d1b8b1c1029fe763080a5a9660",
+      "size": 11744
+    },
+    {
+      "path": "PROEVEN/u30-type10/20261015T194300/release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    }
+  ],
+  "native_compiled": false,
+  "native_run": false,
+  "installed": false
+}

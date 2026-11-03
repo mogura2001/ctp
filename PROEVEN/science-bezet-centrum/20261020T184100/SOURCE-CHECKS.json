@@ -1,0 +1,90 @@
+{
+  "stage": "C1_SOURCE_AST_LAYOUT_ONLY",
+  "time_amsterdam": "2026-10-20T18:53:46.598277+02:00",
+  "parsed": [
+    "bind_scheduler.py",
+    "build_candidate.py",
+    "check_sources.py",
+    "fixture_sources.py",
+    "food_components.py",
+    "food_diagnostic.py",
+    "food_diagnostic_layout.py",
+    "input-pins.py",
+    "integration_base.py",
+    "native.py",
+    "plan_layout.py",
+    "policy.py",
+    "prepare_sources.py",
+    "reader/food_failure_decoder.py",
+    "reader/h3_layout.py",
+    "reader/Lees-Uitbreiding.py",
+    "reader/original_core.py",
+    "reader/partial_diagnostic.py",
+    "reader/positive_reader.py",
+    "science_development.py",
+    "science_layout.py",
+    "science_model.py",
+    "science_result.py",
+    "union.py"
+  ],
+  "unchanged": [
+    "native.py",
+    "policy.py",
+    "integration_base.py",
+    "input-pins.py",
+    "input-pins.json",
+    "bind_scheduler.py",
+    "union.py",
+    "science_development.py",
+    "plan_layout.py",
+    "food_components.py",
+    "science-spatial-pins.json",
+    "preparation-manifest.json",
+    "release-v1.robotcom.backup.dll",
+    "reader/Lees-Uitbreiding.py",
+    "reader/original_core.py",
+    "reader/h3_layout.py",
+    "reader/positive_reader.py",
+    "reader/participants.json"
+  ],
+  "changed": [
+    "build_candidate.py",
+    "food_diagnostic.py",
+    "food_diagnostic_layout.py",
+    "reader/food_failure_decoder.py",
+    "reader/partial_diagnostic.py",
+    "science_layout.py",
+    "science_model.py",
+    "science_result.py"
+  ],
+  "reason": 17,
+  "private_returns": {
+    "0": "UNKNOWN",
+    "1": "VALID_FOOD",
+    "2": "BOUND_OCCUPIED_SCI_CENTER_SCOPE"
+  },
+  "private_return_spill": -348,
+  "food_frame": 352,
+  "model_frame": 548,
+  "x87_range": [
+    -144,
+    -37
+  ],
+  "out40_range": [
+    -184,
+    -145
+  ],
+  "source_pins": 144,
+  "candidate_built": false,
+  "fixtures_emitted": false,
+  "native_compiled": false,
+  "native_run": false,
+  "live_read": false,
+  "gameplay_proven": false,
+  "open": [
+    "emitted bytes/full-diff/rel32/state-RVA",
+    "native ABI/flags/GPR/x87 and limited case results",
+    "reader own-byte negative cases with candidate bindings",
+    "actual fixed T0/n/T1 local scope and further classification"
+  ]
+}

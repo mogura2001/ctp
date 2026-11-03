@@ -1,0 +1,46 @@
+/////////////////////////////////////////////////////////////////////////////// // green_me.aip
+// // 
+// // green_me.aip
+// // 
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"   
+    
+    
+// PRIORITIES  
+//  
+// Although these priorities should be principally set by the fuzzy system,  
+// for testing purposes, I've put the ability specify any or all of them to  
+// be changed in a big fat wad when the AIP switches.  
+    
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Transportation_List  
+//   
+Building_Build_List_Element Transportation_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_AIRPORT", 0500.0; 
+"IMPROVE_RAIL_LAUNCHER", 7850.0; 
+#END_DATA  
+//  
+// Production_List  
+//   
+Building_Build_List_Element Production_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+ "IMPROVE_FUSION_PLANT", 10000.0;
+ "IMPROVE_POPULATION_MONITOR", 8980.0; 
+ "IMPROVE_RECYCLING_PLANT", 9000.0;
+ "IMPROVE_ZERO_EMISSION_VEHICLES", 8000.0;
+ "IMPROVE_MILL", 7990.0;
+ "IMPROVE_FACTORY", 7990.0;
+ "IMPROVE_DRUG_STORE", 8999.0;
+ "IMPROVE_NUCLEAR_PLANT", 7990.0;
+ "IMPROVE_ROBOTIC_PLANT", 7990.0;
+ "IMPROVE_ARTIFICIAL_WOMB_COMPLEX", 7990.0;
+ "IMPROVE_OIL_REFINERY", 7990.0;
+ "IMPROVE_NANITE_FACTORY", 7990.0;
+#END_DATA  

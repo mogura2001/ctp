@@ -1,0 +1,85 @@
+// set_resource_desire.fli
+// places pop on tiles
+// 
+// The basic strategy is thus:
+//	1) Food is fulfilled by setting the miniumum % of food.
+//		This is 1.5 as a default.
+//		Once this goal is met, Food is the lowest priority -- 1/10 the value of anything else.
+//	2) Gold is the second highest priority. Gold has a 1.5 multiplier as a default.
+//		So, a Banker is better than a 10 P, 5 F, no gold tile. (A Plain or a Grassland tile.)
+//	3) Production and Science alternate in importance depending on the speed of science.
+//		and on whether or not the AI is at war.
+//		When Science is important, 10 Science is better than 10 P, 5 G. A Hill w/o Mine.
+//		Normally, 10 Science is only better than 5 P, 5 G. 
+//	4) This applies to all city sizes.
+
+// low = 10
+// med = 100
+// high = 200
+
+// high production is the default behavior
+if (not yes_opening_game_strategy
+	and not yes_barbarian)
+{
+	med_pop_production_max // 101
+	low_pop_production_min // 50
+	med_pop_gold // 150
+} 
+
+if(	not yes_opening_game_strategy 
+	and not yes_barbarian)
+{
+	even_city_growth_ratio
+	growth_prod_gold_set_wgf
+}	
+
+if (low_science) 
+{ 
+	low_pop_science
+} 
+if (med_science) 
+{ 
+	med_pop_science
+}
+
+if (high_science) 
+{ 
+	high_pop_science
+} 
+
+if(	yes_i_can_build_wormhole_probe)
+{
+	very high_pop_production_max
+	very low_pop_science
+}
+
+if(	yes_focus_on_units)
+{
+	very high_pop_production_max
+	very low_pop_science
+}
+
+// barbarian rules
+if (yes_barbarian) 
+{ 
+    high_pop_production_max
+	high_pop_production_min
+	low_pop_food_max
+	low_pop_food_min
+}
+
+//if (yes_i_agreed_to_stop_polluting)
+//{
+//	very odd_pop_food_max
+//	very odd_pop_food_min
+//}		    
+
+// Get gold if we're in a crisis.
+if(dangerously_high_gold_and_wages_cost)
+{
+	very super_high_pop_gold
+	low_pop_food_min
+	very low_pop_science
+	no_growth_min_food_factor
+}
+

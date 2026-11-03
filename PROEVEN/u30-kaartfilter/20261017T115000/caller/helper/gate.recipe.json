@@ -1,0 +1,184 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "push ebp",
+      "bytes": "55"
+    },
+    {
+      "offset": 1,
+      "asm": "mov ebp,esp",
+      "bytes": "8bec"
+    },
+    {
+      "offset": 3,
+      "asm": "push ebx",
+      "bytes": "53"
+    },
+    {
+      "offset": 4,
+      "asm": "push esi",
+      "bytes": "56"
+    },
+    {
+      "offset": 5,
+      "asm": "push edi",
+      "bytes": "57"
+    },
+    {
+      "offset": 6,
+      "asm": "sub esp,0",
+      "bytes": "81ec00000000"
+    },
+    {
+      "offset": 12,
+      "asm": "own fixture inputstate, never candidate",
+      "bytes": "bb00000000"
+    },
+    {
+      "offset": 17,
+      "asm": "inc ('ebx', 36)",
+      "bytes": "ff8324000000"
+    },
+    {
+      "offset": 23,
+      "asm": "mov eax,('ebp', 8)",
+      "bytes": "8b8508000000"
+    },
+    {
+      "offset": 29,
+      "asm": "cmp eax,('ebx', 4)",
+      "bytes": "3b8304000000"
+    },
+    {
+      "offset": 35,
+      "asm": "jne gate_bad",
+      "bytes": "0f8543000000"
+    },
+    {
+      "offset": 41,
+      "asm": "mov eax,('ebp', 12)",
+      "bytes": "8b850c000000"
+    },
+    {
+      "offset": 47,
+      "asm": "cmp eax,('ebx', 8)",
+      "bytes": "3b8308000000"
+    },
+    {
+      "offset": 53,
+      "asm": "jb gate_bad",
+      "bytes": "0f8231000000"
+    },
+    {
+      "offset": 59,
+      "asm": "cmp eax,('ebx', 12)",
+      "bytes": "3b830c000000"
+    },
+    {
+      "offset": 65,
+      "asm": "jae gate_bad",
+      "bytes": "0f8325000000"
+    },
+    {
+      "offset": 71,
+      "asm": "sub eax,('ebx', 8)",
+      "bytes": "2b8308000000"
+    },
+    {
+      "offset": 77,
+      "asm": "test eax,7",
+      "bytes": "f7c007000000"
+    },
+    {
+      "offset": 83,
+      "asm": "jnz gate_bad",
+      "bytes": "0f8513000000"
+    },
+    {
+      "offset": 89,
+      "asm": "shr eax,3",
+      "bytes": "c1e803"
+    },
+    {
+      "offset": 92,
+      "asm": "shl eax,2",
+      "bytes": "c1e002"
+    },
+    {
+      "offset": 95,
+      "asm": "add eax,ebx",
+      "bytes": "03c3"
+    },
+    {
+      "offset": 97,
+      "asm": "mov eax,('eax', 4096)",
+      "bytes": "8b8000100000"
+    },
+    {
+      "offset": 103,
+      "asm": "jmp gate_done",
+      "bytes": "e90b000000"
+    },
+    {
+      "offset": 108,
+      "asm": "inc ('ebx', 40)",
+      "bytes": "ff8328000000"
+    },
+    {
+      "offset": 114,
+      "asm": "mov eax,0",
+      "bytes": "b800000000"
+    },
+    {
+      "offset": 119,
+      "asm": "mov ecx,1431660134",
+      "bytes": "b966665555"
+    },
+    {
+      "offset": 124,
+      "asm": "mov edx,2004322440",
+      "bytes": "ba88887777"
+    },
+    {
+      "offset": 129,
+      "asm": "add esp,0",
+      "bytes": "81c400000000"
+    },
+    {
+      "offset": 135,
+      "asm": "pop edi",
+      "bytes": "5f"
+    },
+    {
+      "offset": 136,
+      "asm": "pop esi",
+      "bytes": "5e"
+    },
+    {
+      "offset": 137,
+      "asm": "pop ebx",
+      "bytes": "5b"
+    },
+    {
+      "offset": 138,
+      "asm": "pop ebp",
+      "bytes": "5d"
+    },
+    {
+      "offset": 139,
+      "asm": "ret 8",
+      "bytes": "c20800"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 13,
+      "context_offset": 0
+    }
+  ],
+  "labels": {
+    "gate_bad": 108,
+    "gate_done": 119
+  }
+}

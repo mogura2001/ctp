@@ -1,0 +1,195 @@
+{
+  "reviewed_at_utc": "2026-10-30T12:34:24.712538+00:00",
+  "files": [
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/inspection-20261030-attempt2.json",
+      "sha256": "81223e1c00943197f8702d2bf0862efa140bf7177979cdd3264b8ef06f4f0a2c"
+    },
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/after-n1-20261030-attempt2.json",
+      "sha256": "59d124de3ea42c7814673a19e3cf0e8384316ffdd0de77791245e314dff42b85"
+    },
+    {
+      "path": "PROEVEN/wondergewicht/20261030/before.json",
+      "sha256": "36399deed92c92432369c89140778ab2f6e8f130c079fcd9c9f8f90fedbec634"
+    },
+    {
+      "path": "PROEVEN/wondergewicht/20261030/after-n1.json",
+      "sha256": "8e91fccb3ede2260526004b54eb320eeb330a51c428e6dcf506f90e13f8c7ce3"
+    }
+  ],
+  "paired_start_all7_selected_civ_scalars_and47_city_queues_chance_fields_match": true,
+  "both_hosts_exactly_one_native_round": true,
+  "all_four_samples_stable_twice": true,
+  "all_loaded_code_checks": true,
+  "weight_control": 9100,
+  "weight_variant": 30000,
+  "control_labyrinth_queues": 0,
+  "variant_labyrinth_queues": 3,
+  "civilizations": [
+    {
+      "civ_id": 2,
+      "control_after_cities": 8,
+      "variant_after_cities": 8,
+      "new_labyrinth_queues": 1
+    },
+    {
+      "civ_id": 3,
+      "control_after_cities": 8,
+      "variant_after_cities": 8,
+      "new_labyrinth_queues": 0
+    },
+    {
+      "civ_id": 4,
+      "control_after_cities": 7,
+      "variant_after_cities": 7,
+      "new_labyrinth_queues": 0
+    },
+    {
+      "civ_id": 5,
+      "control_after_cities": 8,
+      "variant_after_cities": 8,
+      "new_labyrinth_queues": 1
+    },
+    {
+      "civ_id": 6,
+      "control_after_cities": 6,
+      "variant_after_cities": 6,
+      "new_labyrinth_queues": 0
+    },
+    {
+      "civ_id": 7,
+      "control_after_cities": 6,
+      "variant_after_cities": 6,
+      "new_labyrinth_queues": 0
+    },
+    {
+      "civ_id": 8,
+      "control_after_cities": 6,
+      "variant_after_cities": 6,
+      "new_labyrinth_queues": 1
+    }
+  ],
+  "new_queue_identities": [
+    {
+      "civ_id": 2,
+      "full_engine_handle": 268435520,
+      "same_owner": true,
+      "same_original_ai_city_id": true,
+      "before_queue": [
+        {
+          "node": "0xb91ab00",
+          "type": 4,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "control_after_queue": [
+        {
+          "node": "0x150cfdc8",
+          "type": 5,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "variant_after_queue": [
+        {
+          "node": "0x150e46b0",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    },
+    {
+      "civ_id": 5,
+      "full_engine_handle": 268435476,
+      "same_owner": true,
+      "same_original_ai_city_id": true,
+      "before_queue": [
+        {
+          "node": "0xb91a860",
+          "type": 4,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "control_after_queue": [
+        {
+          "node": "0x9396080",
+          "type": 14,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "variant_after_queue": [
+        {
+          "node": "0xb5416a8",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    },
+    {
+      "civ_id": 8,
+      "full_engine_handle": 268435479,
+      "same_owner": true,
+      "same_original_ai_city_id": true,
+      "before_queue": [
+        {
+          "node": "0xb91a6a0",
+          "type": 5,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "control_after_queue": [
+        {
+          "node": "0xb6fc1c0",
+          "type": 8,
+          "build_class": 1,
+          "is_exact_labyrinth": false
+        }
+      ],
+      "variant_after_queue": [
+        {
+          "node": "0x150df0b0",
+          "type": 2,
+          "build_class": 9,
+          "is_exact_labyrinth": true
+        }
+      ]
+    }
+  ],
+  "city_status_corroboration": {
+    "status": "PASS_ROOT_VIEWED_IMAGE",
+    "path": "PROEVEN/wondergewicht-host/20261030/candidate/citystatus-visible.png",
+    "sha256": "911bb2ced741bce00fb2014cc06118b2d02106b304a781a1798e2bbe8bda1b72",
+    "date": "2650 BC",
+    "civ_id": 2,
+    "total_cities": 8,
+    "city": "Veracruz",
+    "size": 2,
+    "producing": "Labyrinth",
+    "displayed_turns_remaining": 16,
+    "binding": "Unique Labyrinth row in civ2; unique native Labyrinth queue in civ2 fullhandle268435520",
+    "construction_completed": false
+  },
+  "wonder_completion": "NOT_TESTED",
+  "Doel4_complete": false,
+  "normal_close_and_restore": {
+    "pid": 25108,
+    "normal_exit": true,
+    "elapsed_seconds": 701.351,
+    "ctp_processes": 0,
+    "restored_pins": 162,
+    "aidata_files_exact": 118,
+    "save_files_exact": 38,
+    "alias_removed": true,
+    "temporary_partials_removed": 8,
+    "evidence": "PROEVEN/wondergewicht-host/20261030/candidate/ROOT-RESTORE.json",
+    "full_inventory": "PROEVEN/wondergewicht-host/20261030/candidate/FULL-INVENTORY-RESTORE.json",
+    "pc_left_on": true
+  }
+}

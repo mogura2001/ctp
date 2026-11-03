@@ -1,0 +1,9 @@
+cleanup=True
+PASS native0 operands/latch/ABI
+PASS reset
+PASS endpoint11 operands/latch/ABI
+PASS reset
+PASS normal
+PASS stale binding
+PASS actual argument binding
+PASS calls=7; isolated logger only; no productionpath/gameplay claim

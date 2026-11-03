@@ -1,0 +1,39 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\build_candidate.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\build_candidate.py
+@@ -11,7 +11,7 @@
+ sys.path.insert(0,str(OUT))
+ import native,policy,union,science_model,science_layout
+ import food_components
+-from food_diagnostic_layout import BRANCHES,FIELDS,RECORD_OFFSET,RECORD_SIZE,FRAME_SIZE
++from food_diagnostic_layout import BRANCHES,FIELDS,RECORD_OFFSET,RECORD_SIZE,FRAME_SIZE,RETURN_SPILL,PRIVATE_RETURNS,PRIVATE_CONTRACT_VERSION
+ from pathlib import Path
+ SCIENCE_PROVENANCE=ROOT/'PROEVEN/science-u30-40/20261013T183300'
+ SCIENCE_MANIFEST=SCIENCE_PROVENANCE/'candidate-manifest.json'
+@@ -39,6 +39,9 @@
+  gate=json.loads((OUT/'ROOT-BRONREVIEW.json').read_text('utf-8'));assert gate.get('candidate_build_allowed') is True,'C2 source review required before candidate build'
+  for row in json.loads((OUT/'SOURCE-PINS.json').read_text('utf-8'))['sources']:
+   assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
++ parent=ROOT/'PROEVEN/science-foodreader-diagnostiek/20261019T194200'
++ assert sha((parent/'U30-40.prepared.dll').read_bytes())=='068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f'
++ assert sha((parent/'candidate-manifest.json').read_bytes())=='beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44'
+  prep=json.loads((OUT/'preparation-manifest.json').read_text('utf-8'))
+  for row in prep['release_pins']+prep['proposals']+prep['source_pins']:
+   assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
+@@ -67,8 +70,7 @@
+  pins=cm['spatial_pins'];engine=pefile.PE(data=(ROOT/'CTP-og/ctp_program/ctp/civctp.exe').read_bytes())
+  for row in pins:assert engine.get_data(row['rva'],row['length']).hex()==row['bytes']
+  policy.emit(r,b2,base)
+- # The model source is unchanged. Labels add no bytes; exactly two call rel32s
+- # now target the clone. The original shared H3FoodReader alias stays original.
++ # Only SCI clone/model contract changes. Shared H3FoodReader stays original.
+  class ScienceCalls:
+   def __init__(self,recipe):self.recipe=recipe;self.calls=[]
+   def __getattr__(self,name):return getattr(self.recipe,name)
+@@ -150,6 +152,7 @@
+  assert sha(hcode)==pm['components']['internal_H3_sha256'],'shared H3 must remain byte-identical'
+  for call in sci.calls:call['target_rva']=extension+r.labels['sci_food_diag_reader']
+  manifest.update(stage='SCI_ONLY_FOODREADER_FAILURE_DIAGNOSTIC_NO_NATIVE_OR_HOST_ACCEPTANCE',diagnostic=dict(offset=RECORD_OFFSET,size=RECORD_SIZE,schema=1,frame_size=FRAME_SIZE,staging_offset=-336,callers=sci.calls,fields=FIELDS,branches=[dict(id=i,parent_rva=hex(0xd0000+va),parent_va=hex(0x200d0000+va),name=name,landing_rva=extension+r.labels['sci_food_diag_failure_'+str(i)],restored_exit_rva=extension+r.labels['sci_food_diag_failure_'+str(i)+'_restored']) for i,va,name in BRANCHES],namespace='sci_food_diag',clone_rva=extension+r.labels['sci_food_diag_reader'],shared_reader_rva=rx+hr.labels['food_reader'],development_reader_rva=rx+hr.labels['food_reader'],shared_H3_sha256=sha(hcode),failure_latch='first center failure for same owner/generation; otherwise latest tile failure; valid last'))
++ manifest.update(stage='SCI_OCCUPIED_CENTER_SOURCE_CANDIDATE_NOT_NATIVE_NOT_HOST',occupied_center=dict(contract_version=PRIVATE_CONTRACT_VERSION,private_returns=PRIVATE_RETURNS,return_spill=RETURN_SPILL,only_typed2_path='current bound SCI_CENTER branch10 cityhandle0 signedcount>0; full fresh own-state/argument revalidation after wipe',science_reason=science_layout.REASON_OCCUPIED_CENTER_SCOPE,science_reason_name='OCCUPIED_CENTER_SCOPE',result_state=1,coverage=1,coverage_meaning='SCOPE_EXCLUSION_NOT_FOOD_ANALYSIS',food_consumers_accept_only=1,historical_latch_is_policy=False,parent_candidate_sha256='068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f',parent_manifest_sha256='beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44'))
+  for path in sorted(list(OUT.glob('food_*.py'))+list((OUT/'reader').glob('*.py'))):
+   if not any(row['path']==path.relative_to(ROOT).as_posix() for row in manifest['sources']):manifest['sources'].append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha(path.read_bytes()),size=path.stat().st_size))
+  return bytes(data),code,manifest

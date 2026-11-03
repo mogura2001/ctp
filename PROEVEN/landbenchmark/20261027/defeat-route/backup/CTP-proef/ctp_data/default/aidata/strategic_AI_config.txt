@@ -1,0 +1,42 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// strategic_AI_config.txt
+//
+// This files contains configuration data for the strategic maps
+//
+//		Threat Map.................Where are the enemy units?
+//		Empire Map.................How far are we from home?
+//		Enemy Empire Map...........How far are we from the bad guys?
+//
+//
+// By the Mad Dr. I
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+// How many tiles per threat mapgrid?
+// #define threat_map_resolution 7
+#define threat_map_resolution 3
+
+// How many tiles per death mapgrid?
+#define death_map_resolution 7
+
+// How many tiles per our empire mapgrid?
+#define empire_map_resolution 5
+
+// How many tiles per enemy empire mapgrid?
+#define enemy_empire_map_resolution 5
+
+// How many tiles per exploration cell?
+#define exploration_map_resolution 3
+
+// How many tiles per goal cell?
+#define goal_map_resolution 5
+
+// Fraction of bleedover during threat relax
+double relaxation_coefficient = 0.8;
+
+// Number of threat relax cycles. This becomes how far away a threat is felt.
+int relaxation_cycles = 2;			
+

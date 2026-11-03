@@ -1,0 +1,813 @@
+{
+  "edits": [
+    {
+      "kind": "replace",
+      "old": [
+        {
+          "offset": 24912,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 24914,
+          "asm": "jz science_bad",
+          "bytes": "0f84d7100000"
+        }
+      ],
+      "new": [
+        {
+          "offset": 24912,
+          "asm": "cmp eax,2",
+          "bytes": "81f802000000"
+        },
+        {
+          "offset": 24918,
+          "asm": "je science_center_occupied",
+          "bytes": "0f84e7100000"
+        },
+        {
+          "offset": 24924,
+          "asm": "cmp eax,1",
+          "bytes": "81f801000000"
+        },
+        {
+          "offset": 24930,
+          "asm": "jne science_bad",
+          "bytes": "0f8526110000"
+        }
+      ]
+    },
+    {
+      "kind": "replace",
+      "old": [
+        {
+          "offset": 25476,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 25478,
+          "asm": "jz science_current_unknown",
+          "bytes": "0f8427040000"
+        }
+      ],
+      "new": [
+        {
+          "offset": 25492,
+          "asm": "cmp eax,1",
+          "bytes": "81f801000000"
+        },
+        {
+          "offset": 25498,
+          "asm": "jne science_current_unknown",
+          "bytes": "0f8527040000"
+        }
+      ]
+    },
+    {
+      "kind": "insert",
+      "old": [],
+      "new": [
+        {
+          "offset": 29251,
+          "asm": "mov ('edi', 0),1",
+          "bytes": "c7870000000001000000"
+        },
+        {
+          "offset": 29261,
+          "asm": "mov ('edi', 4),17",
+          "bytes": "c7870400000011000000"
+        },
+        {
+          "offset": 29271,
+          "asm": "mov ('edi', 112),1",
+          "bytes": "c7877000000001000000"
+        },
+        {
+          "offset": 29281,
+          "asm": "mov ('edi', 24),0",
+          "bytes": "c7871800000000000000"
+        },
+        {
+          "offset": 29291,
+          "asm": "mov ('edi', 28),-1",
+          "bytes": "c7871c000000ffffffff"
+        },
+        {
+          "offset": 29301,
+          "asm": "mov ('edi', 32),-1",
+          "bytes": "c78720000000ffffffff"
+        },
+        {
+          "offset": 29311,
+          "asm": "mov ('edi', 36),-1",
+          "bytes": "c78724000000ffffffff"
+        },
+        {
+          "offset": 29321,
+          "asm": "jmp science_done",
+          "bytes": "e91e000000"
+        }
+      ]
+    },
+    {
+      "kind": "insert",
+      "old": [],
+      "new": [
+        {
+          "offset": 30852,
+          "asm": "mov ('ebp', -348),0",
+          "bytes": "c785a4feffff00000000"
+        }
+      ]
+    },
+    {
+      "kind": "replace",
+      "old": [
+        {
+          "offset": 36706,
+          "asm": "mov eax,0",
+          "bytes": "b800000000"
+        }
+      ],
+      "new": [
+        {
+          "offset": 36811,
+          "asm": "diagnostic pushfd",
+          "bytes": "9c"
+        },
+        {
+          "offset": 36812,
+          "asm": "diagnostic pushad",
+          "bytes": "60"
+        },
+        {
+          "offset": 36813,
+          "asm": "mov ('ebp', -348),0",
+          "bytes": "c785a4feffff00000000"
+        },
+        {
+          "offset": 36823,
+          "asm": "cmp ('ebp', -340),1",
+          "bytes": "81bdacfeffff01000000"
+        },
+        {
+          "offset": 36833,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85c4020000"
+        },
+        {
+          "offset": 36839,
+          "asm": "cmp ('ebp', -336),1",
+          "bytes": "81bdb0feffff01000000"
+        },
+        {
+          "offset": 36849,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85b4020000"
+        },
+        {
+          "offset": 36855,
+          "asm": "cmp ('ebp', -328),10",
+          "bytes": "81bdb8feffff0a000000"
+        },
+        {
+          "offset": 36865,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85a4020000"
+        },
+        {
+          "offset": 36871,
+          "asm": "cmp ('ebp', -324),1",
+          "bytes": "81bdbcfeffff01000000"
+        },
+        {
+          "offset": 36881,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8594020000"
+        },
+        {
+          "offset": 36887,
+          "asm": "cmp ('ebp', -256),0",
+          "bytes": "81bd00ffffff00000000"
+        },
+        {
+          "offset": 36897,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8584020000"
+        },
+        {
+          "offset": 36903,
+          "asm": "cmp ('ebp', -168),0",
+          "bytes": "81bd58ffffff00000000"
+        },
+        {
+          "offset": 36913,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8574020000"
+        },
+        {
+          "offset": 36919,
+          "asm": "cmp ('ebp', 24),1",
+          "bytes": "81bd1800000001000000"
+        },
+        {
+          "offset": 36929,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8564020000"
+        },
+        {
+          "offset": 36935,
+          "asm": "cmp ('ebp', -248),0",
+          "bytes": "81bd08ffffff00000000"
+        },
+        {
+          "offset": 36945,
+          "asm": "jle sci_food_diag_occupied_done",
+          "bytes": "0f8e54020000"
+        },
+        {
+          "offset": 36951,
+          "asm": "mov eax,('ebp', -304)",
+          "bytes": "8b85d0feffff"
+        },
+        {
+          "offset": 36957,
+          "asm": "and eax,536872835",
+          "bytes": "81e083070020"
+        },
+        {
+          "offset": 36963,
+          "asm": "cmp eax,536872835",
+          "bytes": "81f883070020"
+        },
+        {
+          "offset": 36969,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f853c020000"
+        },
+        {
+          "offset": 36975,
+          "asm": "mov eax,('ebp', -300)",
+          "bytes": "8b85d4feffff"
+        },
+        {
+          "offset": 36981,
+          "asm": "and eax,768",
+          "bytes": "81e000030000"
+        },
+        {
+          "offset": 36987,
+          "asm": "cmp eax,768",
+          "bytes": "81f800030000"
+        },
+        {
+          "offset": 36993,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8524020000"
+        },
+        {
+          "offset": 36999,
+          "asm": "call sci_food_diag_occupied_pc",
+          "bytes": "e800000000"
+        },
+        {
+          "offset": 37004,
+          "asm": "pop esi",
+          "bytes": "5e"
+        },
+        {
+          "offset": 37005,
+          "asm": "sub esi,own occupied PC",
+          "bytes": "81ee8c200e00"
+        },
+        {
+          "offset": 37011,
+          "asm": "lea edi,own Plan for occupied return",
+          "bytes": "8dbe00300e00"
+        },
+        {
+          "offset": 37017,
+          "asm": "cmp edi,('ebp', -344)",
+          "bytes": "3bbda8feffff"
+        },
+        {
+          "offset": 37023,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8506020000"
+        },
+        {
+          "offset": 37029,
+          "asm": "cmp ('edi', 36),1",
+          "bytes": "81bf2400000001000000"
+        },
+        {
+          "offset": 37039,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85f6010000"
+        },
+        {
+          "offset": 37045,
+          "asm": "cmp ('edi', 40),1",
+          "bytes": "81bf2800000001000000"
+        },
+        {
+          "offset": 37055,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85e6010000"
+        },
+        {
+          "offset": 37061,
+          "asm": "mov eax,('ebp', -320)",
+          "bytes": "8b85c0feffff"
+        },
+        {
+          "offset": 37067,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 37069,
+          "asm": "jz sci_food_diag_occupied_done",
+          "bytes": "0f84d8010000"
+        },
+        {
+          "offset": 37075,
+          "asm": "cmp eax,('edi', 8)",
+          "bytes": "3b8708000000"
+        },
+        {
+          "offset": 37081,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85cc010000"
+        },
+        {
+          "offset": 37087,
+          "asm": "mov eax,('ebp', -316)",
+          "bytes": "8b85c4feffff"
+        },
+        {
+          "offset": 37093,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 37095,
+          "asm": "jz sci_food_diag_occupied_done",
+          "bytes": "0f84be010000"
+        },
+        {
+          "offset": 37101,
+          "asm": "cmp eax,('edi', 32)",
+          "bytes": "3b8720000000"
+        },
+        {
+          "offset": 37107,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85b2010000"
+        },
+        {
+          "offset": 37113,
+          "asm": "mov eax,('ebp', -320)",
+          "bytes": "8b85c0feffff"
+        },
+        {
+          "offset": 37119,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 37121,
+          "asm": "jz sci_food_diag_occupied_done",
+          "bytes": "0f84a4010000"
+        },
+        {
+          "offset": 37127,
+          "asm": "cmp eax,('edi', 493568)",
+          "bytes": "3b8700880700"
+        },
+        {
+          "offset": 37133,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8598010000"
+        },
+        {
+          "offset": 37139,
+          "asm": "mov eax,('ebp', -316)",
+          "bytes": "8b85c4feffff"
+        },
+        {
+          "offset": 37145,
+          "asm": "test eax,eax",
+          "bytes": "85c0"
+        },
+        {
+          "offset": 37147,
+          "asm": "jz sci_food_diag_occupied_done",
+          "bytes": "0f848a010000"
+        },
+        {
+          "offset": 37153,
+          "asm": "cmp eax,('edi', 493572)",
+          "bytes": "3b8704880700"
+        },
+        {
+          "offset": 37159,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f857e010000"
+        },
+        {
+          "offset": 37165,
+          "asm": "mov ecx,('edi', 220)",
+          "bytes": "8b8fdc000000"
+        },
+        {
+          "offset": 37171,
+          "asm": "cmp ecx,1",
+          "bytes": "81f901000000"
+        },
+        {
+          "offset": 37177,
+          "asm": "jb sci_food_diag_occupied_done",
+          "bytes": "0f826c010000"
+        },
+        {
+          "offset": 37183,
+          "asm": "cmp ecx,64",
+          "bytes": "81f940000000"
+        },
+        {
+          "offset": 37189,
+          "asm": "ja sci_food_diag_occupied_done",
+          "bytes": "0f8760010000"
+        },
+        {
+          "offset": 37195,
+          "asm": "cmp ecx,('edi', 240)",
+          "bytes": "3b8ff0000000"
+        },
+        {
+          "offset": 37201,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8554010000"
+        },
+        {
+          "offset": 37207,
+          "asm": "mov ebx,('edi', 224)",
+          "bytes": "8b9fe0000000"
+        },
+        {
+          "offset": 37213,
+          "asm": "cmp ebx,64",
+          "bytes": "81fb40000000"
+        },
+        {
+          "offset": 37219,
+          "asm": "ja sci_food_diag_occupied_done",
+          "bytes": "0f8742010000"
+        },
+        {
+          "offset": 37225,
+          "asm": "cmp ecx,ebx",
+          "bytes": "3bcb"
+        },
+        {
+          "offset": 37227,
+          "asm": "ja sci_food_diag_occupied_done",
+          "bytes": "0f873a010000"
+        },
+        {
+          "offset": 37233,
+          "asm": "dec ecx",
+          "bytes": "ffc9"
+        },
+        {
+          "offset": 37235,
+          "asm": "cmp ecx,('ebp', -312)",
+          "bytes": "3b8dc8feffff"
+        },
+        {
+          "offset": 37241,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f852c010000"
+        },
+        {
+          "offset": 37247,
+          "asm": "mov eax,('edi', 256)",
+          "bytes": "8b8700010000"
+        },
+        {
+          "offset": 37253,
+          "asm": "cmp eax,1",
+          "bytes": "81f801000000"
+        },
+        {
+          "offset": 37259,
+          "asm": "jb sci_food_diag_occupied_done",
+          "bytes": "0f821a010000"
+        },
+        {
+          "offset": 37265,
+          "asm": "cmp eax,1344",
+          "bytes": "81f840050000"
+        },
+        {
+          "offset": 37271,
+          "asm": "ja sci_food_diag_occupied_done",
+          "bytes": "0f870e010000"
+        },
+        {
+          "offset": 37277,
+          "asm": "cmp eax,('ebp', -308)",
+          "bytes": "3b85ccfeffff"
+        },
+        {
+          "offset": 37283,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8502010000"
+        },
+        {
+          "offset": 37289,
+          "asm": "lea ebx,actual SCI center return",
+          "bytes": "8d9e50f10d00"
+        },
+        {
+          "offset": 37295,
+          "asm": "cmp ebx,('ebp', 4)",
+          "bytes": "3b9d04000000"
+        },
+        {
+          "offset": 37301,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85f0000000"
+        },
+        {
+          "offset": 37307,
+          "asm": "lea ebx,('edi', 144)",
+          "bytes": "8d9f90000000"
+        },
+        {
+          "offset": 37313,
+          "asm": "cmp ebx,('ebp', 16)",
+          "bytes": "3b9d10000000"
+        },
+        {
+          "offset": 37319,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85de000000"
+        },
+        {
+          "offset": 37325,
+          "asm": "cmp ebx,('ebp', -112)",
+          "bytes": "3b9d90ffffff"
+        },
+        {
+          "offset": 37331,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85d2000000"
+        },
+        {
+          "offset": 37337,
+          "asm": "mov ebx,('edi', 112)",
+          "bytes": "8b9f70000000"
+        },
+        {
+          "offset": 37343,
+          "asm": "cmp ebx,('ebp', 8)",
+          "bytes": "3b9d08000000"
+        },
+        {
+          "offset": 37349,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85c0000000"
+        },
+        {
+          "offset": 37355,
+          "asm": "cmp ebx,('ebp', -276)",
+          "bytes": "3b9decfeffff"
+        },
+        {
+          "offset": 37361,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f85b4000000"
+        },
+        {
+          "offset": 37367,
+          "asm": "mov ebx,('ebp', 0)",
+          "bytes": "8b9d00000000"
+        },
+        {
+          "offset": 37373,
+          "asm": "lea ebx,('ebx', -184)",
+          "bytes": "8d9b48ffffff"
+        },
+        {
+          "offset": 37379,
+          "asm": "cmp ebx,('ebp', 20)",
+          "bytes": "3b9d14000000"
+        },
+        {
+          "offset": 37385,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f859c000000"
+        },
+        {
+          "offset": 37391,
+          "asm": "cmp ebx,('ebp', -116)",
+          "bytes": "3b9d8cffffff"
+        },
+        {
+          "offset": 37397,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8590000000"
+        },
+        {
+          "offset": 37403,
+          "asm": "imul ebx,ecx,4",
+          "bytes": "69d904000000"
+        },
+        {
+          "offset": 37409,
+          "asm": "add ebx,edi",
+          "bytes": "03df"
+        },
+        {
+          "offset": 37411,
+          "asm": "mov ebx,('ebx', 337568)",
+          "bytes": "8b9ba0260500"
+        },
+        {
+          "offset": 37417,
+          "asm": "cmp ('edi', 68),4096",
+          "bytes": "81bf4400000000100000"
+        },
+        {
+          "offset": 37427,
+          "asm": "ja sci_food_diag_occupied_done",
+          "bytes": "0f8772000000"
+        },
+        {
+          "offset": 37433,
+          "asm": "cmp ebx,('edi', 68)",
+          "bytes": "3b9f44000000"
+        },
+        {
+          "offset": 37439,
+          "asm": "jae sci_food_diag_occupied_done",
+          "bytes": "0f8366000000"
+        },
+        {
+          "offset": 37445,
+          "asm": "imul ebx,ebx,8",
+          "bytes": "69db08000000"
+        },
+        {
+          "offset": 37451,
+          "asm": "add ebx,edi",
+          "bytes": "03df"
+        },
+        {
+          "offset": 37453,
+          "asm": "add ebx,512",
+          "bytes": "81c300020000"
+        },
+        {
+          "offset": 37459,
+          "asm": "cmp ebx,('ebp', 12)",
+          "bytes": "3b9d0c000000"
+        },
+        {
+          "offset": 37465,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f854c000000"
+        },
+        {
+          "offset": 37471,
+          "asm": "sx16 eax,('ebx', 0)",
+          "bytes": "0fbf8300000000"
+        },
+        {
+          "offset": 37478,
+          "asm": "sx16 edx,('ebp', -296)",
+          "bytes": "0fbf95d8feffff"
+        },
+        {
+          "offset": 37485,
+          "asm": "cmp eax,edx",
+          "bytes": "3bc2"
+        },
+        {
+          "offset": 37487,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8536000000"
+        },
+        {
+          "offset": 37493,
+          "asm": "sx16 eax,('ebx', 2)",
+          "bytes": "0fbf8302000000"
+        },
+        {
+          "offset": 37500,
+          "asm": "sx16 edx,('ebp', -294)",
+          "bytes": "0fbf95dafeffff"
+        },
+        {
+          "offset": 37507,
+          "asm": "cmp eax,edx",
+          "bytes": "3bc2"
+        },
+        {
+          "offset": 37509,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f8520000000"
+        },
+        {
+          "offset": 37515,
+          "asm": "sx16 eax,('ebx', 4)",
+          "bytes": "0fbf8304000000"
+        },
+        {
+          "offset": 37522,
+          "asm": "sx16 edx,('ebp', -292)",
+          "bytes": "0fbf95dcfeffff"
+        },
+        {
+          "offset": 37529,
+          "asm": "cmp eax,edx",
+          "bytes": "3bc2"
+        },
+        {
+          "offset": 37531,
+          "asm": "jne sci_food_diag_occupied_done",
+          "bytes": "0f850a000000"
+        },
+        {
+          "offset": 37537,
+          "asm": "mov ('ebp', -348),2",
+          "bytes": "c785a4feffff02000000"
+        },
+        {
+          "offset": 37547,
+          "asm": "diagnostic popad",
+          "bytes": "61"
+        },
+        {
+          "offset": 37548,
+          "asm": "diagnostic popfd",
+          "bytes": "9d"
+        },
+        {
+          "offset": 37549,
+          "asm": "mov eax,('ebp', -348)",
+          "bytes": "8b85a4feffff"
+        }
+      ]
+    },
+    {
+      "kind": "replace",
+      "old": [
+        {
+          "offset": 38479,
+          "asm": "mov edi,('ebp', -344)",
+          "bytes": "8bbda8feffff"
+        }
+      ],
+      "new": [
+        {
+          "offset": 39323,
+          "asm": "call sci_food_diag_publish_pc",
+          "bytes": "e800000000"
+        },
+        {
+          "offset": 39328,
+          "asm": "pop esi",
+          "bytes": "5e"
+        },
+        {
+          "offset": 39329,
+          "asm": "sub esi,own publish PC",
+          "bytes": "81eea0290e00"
+        },
+        {
+          "offset": 39335,
+          "asm": "lea edi,own Plan before publish",
+          "bytes": "8dbe00300e00"
+        },
+        {
+          "offset": 39341,
+          "asm": "cmp edi,('ebp', -344)",
+          "bytes": "3bbda8feffff"
+        },
+        {
+          "offset": 39347,
+          "asm": "jne sci_food_diag_publish_done",
+          "bytes": "0f85c7030000"
+        }
+      ]
+    }
+  ],
+  "equal_asm_byte_deltas_only_verified_rel32_PIC": 505,
+  "PE_checksum_valid": true,
+  "PE_RX_RW_permissions_valid": true,
+  "relocations_equal_release": true
+}

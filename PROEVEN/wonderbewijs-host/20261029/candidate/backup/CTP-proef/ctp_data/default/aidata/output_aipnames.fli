@@ -1,0 +1,77 @@
+// output_aipnames.fli
+
+output pull_units_into_city_aip[0.0, 3.0] = 0.0
+	tri yes_pull_units_into_city_aip(pull_units_into_city_aip, 1.0, 0.5)
+
+output siege_off_aip[0.0, 3.0] = 0.0
+	tri yes_siege_off_aip(siege_off_aip, 1.0, 0.5)
+
+output build_troops_off_aip[0.0, 3.0] = 0.0
+	tri yes_build_troops_off_aip(build_troops_off_aip, 1.0, 0.5)
+
+output mass_settle_aip[0.0, 3.0] = 0.0
+	tri yes_mass_settle_aip(mass_settle_aip, 1.0, 0.5)
+
+output mass_settle_sandbag_aip[0.0, 3.0] = 0.0
+	tri yes_mass_settle_sandbag_aip(mass_settle_sandbag_aip, 1.0, 0.5)
+
+output yes_settling_aip[0.0, 2.0] = 0.0
+	tri yes_yes_settling_aip(yes_settling_aip, 1.0, 0.25)
+
+output no_settling_aip[0.0, 2.0] = 0.0
+	tri yes_no_settling_aip(no_settling_aip, 1.0, 0.25)
+
+output improvement_build_normal_aip[0.0, 3.0] = 0.0
+	tri yes_improvement_build_normal_aip(improvement_build_normal_aip, 1.0, 0.5)
+
+output milfew_aip[0.0, 3.0] = 0.0
+	tri yes_milfew_aip(milfew_aip, 1.0, 0.5)
+
+output milmany_aip[0.0, 3.0] = 0.0
+	tri yes_milmany_aip(milmany_aip, 1.0, 0.5)
+
+output scifew_aip[0.0, 3.0] = 0.0
+	tri yes_scifew_aip(scifew_aip, 1.0, 0.5)
+
+output scimany_aip[0.0, 3.0] = 0.0
+	tri yes_scimany_aip(scimany_aip, 1.0, 0.5)
+
+output slaver_aip[0.0, 3.0] = 0.0
+	tri yes_slaver_aip(slaver_aip, 1.0, 0.5)
+
+output cleric_aip[0.0, 3.0] = 0.0
+	tri yes_cleric_aip(cleric_aip, 1.0, 0.5)
+
+output citywall_aip[0.0, 2.0] = 0.0
+	tri yes_citywall_aip(citywall_aip, 1.0, 0.5)
+
+output citywall_science_aip[0.0, 3.0] = 0.0
+	tri yes_citywall_science_aip(citywall_science_aip, 1.0, 0.5)
+
+output survival_mode_aip[0.0, 2.0] = 0.0
+	tri yes_survival_mode_aip(survival_mode_aip, 1.0, 0.5)
+
+output getarmy_aip[0.0, 1.5] = 0.0
+	tri yes_getarmy_aip(getarmy_aip, 1.0, 0.5)
+
+output gather_aip[0.0, 1.5] = 0.0
+	tri yes_gather_aip(gather_aip, 1.0, 0.5)
+
+output takecity_aip[0.0, 1.5] = 0.0
+	tri yes_takecity_aip(takecity_aip, 1.0, 0.5)
+
+output fallback_aip[0.0, 1.5] = 0.0
+	tri yes_fallback_aip(fallback_aip, 1.0, 0.5)
+
+output lowdist_aip[0.0, 1.5] = 0.0
+	tri yes_lowdist_aip(lowdist_aip, 1.0, 0.5)
+
+output highdist_aip[0.0, 1.5] = 0.0
+	tri yes_highdist_aip(highdist_aip, 1.0, 0.5)
+
+output pillage_high_five_aip[0.0, 1.5] = 0.0
+	tri yes_pillage_high_five_aip(pillage_high_five_aip, 1.0, 0.5)
+
+output pillage_normal_aip[0.0, 1.5] = 0.0
+	tri yes_pillage_normal_aip(pillage_normal_aip, 1.0, 0.5)
+

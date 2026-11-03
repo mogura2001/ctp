@@ -1,0 +1,681 @@
+{
+  "at_Europe_Amsterdam": "2026-10-22T16:42:16.183262+02:00",
+  "status": "ACCEPTED_MANUAL_CONTROL_ENDPOINT_NOT_FULL_AUTOMATIC_TRACE",
+  "mode": "USER_MANUAL_ENDPOINTS",
+  "instance": {
+    "pid": 5404,
+    "creationtime_filetime": 134371530391028720,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "run_id": "uitbreiding-lang-20261022-release-v1",
+  "endpoint_checks": [
+    {
+      "turn": 0,
+      "sha256": "92110a66ef905f8a10542aae31e1bd9c5c44c43f40170524f652a289fbc583ea",
+      "exact": true
+    },
+    {
+      "turn": 100,
+      "sha256": "f0c0b386cd91f93d40b4cf5bf9f64ce3acb7c6d995d15b5e1b44d3d9381fd4aa",
+      "exact": true
+    }
+  ],
+  "T0_historical_scalar_differences_excluding_two_process_pointers": [],
+  "T0_advance_count_historical_equal": true,
+  "per_civ_endpoints": [
+    {
+      "civ": 2,
+      "name": "Arawn / Welsh",
+      "T0_cities": 0,
+      "T100_cities": 14,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 13,
+      "current_research": {
+        "index": 33,
+        "name": "Mechanical Clock"
+      },
+      "last_AI_request": {
+        "index": 33,
+        "name": "Mechanical Clock"
+      }
+    },
+    {
+      "civ": 3,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 14,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 19,
+      "current_research": {
+        "index": 30,
+        "name": "Printing Press"
+      },
+      "last_AI_request": {
+        "index": 30,
+        "name": "Printing Press"
+      }
+    },
+    {
+      "civ": 4,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 15,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 25,
+      "current_research": {
+        "index": 32,
+        "name": "Cannon Making"
+      },
+      "last_AI_request": {
+        "index": 32,
+        "name": "Cannon Making"
+      }
+    },
+    {
+      "civ": 5,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 4,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 11,
+      "current_research": {
+        "index": 28,
+        "name": "Perspective"
+      },
+      "last_AI_request": {
+        "index": 28,
+        "name": "Perspective"
+      }
+    },
+    {
+      "civ": 6,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 13,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 15,
+      "current_research": {
+        "index": 36,
+        "name": "Nationalism"
+      },
+      "last_AI_request": {
+        "index": 36,
+        "name": "Nationalism"
+      }
+    },
+    {
+      "civ": 7,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 14,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 12,
+      "current_research": {
+        "index": 35,
+        "name": "Cavalry Tactics"
+      },
+      "last_AI_request": {
+        "index": 35,
+        "name": "Cavalry Tactics"
+      }
+    },
+    {
+      "civ": 8,
+      "name": "UNKNOWN",
+      "T0_cities": 0,
+      "T100_cities": 12,
+      "T0_native_round": -1,
+      "T100_native_round": 99,
+      "native_round_difference": 100,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "active_government": 3,
+      "requested_government": 3,
+      "government_deadline": 23,
+      "current_research": {
+        "index": 27,
+        "name": "Gunpowder"
+      },
+      "last_AI_request": {
+        "index": 27,
+        "name": "Gunpowder"
+      }
+    }
+  ],
+  "total_cities_T100": 86,
+  "all7_native_endpoint_round_difference100": true,
+  "all7_Religion_Theocracy_and_active3": true,
+  "start_record": {
+    "start_utc": "2026-10-22T14:30:39.1028723Z",
+    "pid": 5404,
+    "path": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "creation_utc_ms": 1792679439102,
+    "max_n": 100,
+    "n_consumed": 0
+  },
+  "automatic_n_consumed": 0,
+  "automatic_token_files": 0,
+  "snapshot_files": [
+    "T0.json",
+    "T100.json"
+  ],
+  "complete_101_snapshot_trace": false,
+  "named_save": {
+    "path": "CTP-proef/ctp_program/ctp/save/games/Julius/UITBREIDING-CONTROLE-T100",
+    "expected_sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+    "actual_sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+    "hostcopy_sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+    "followup_before_sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+    "followup_backup_sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+    "link": "User save confirmation plus same-instance live endpoint; not independent binary save-decoder binding"
+  },
+  "restoration": {
+    "close": {
+      "all_civctp_count": 0,
+      "at_utc": "2026-10-22T14:38:07.7321013Z",
+      "elapsed_seconds": 448.62922899999995,
+      "close_requested": true,
+      "n_consumed": 0,
+      "exited": true
+    },
+    "restore": {
+      "autosave_exact_turn_proven": false,
+      "alias_removed": true,
+      "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "default_autosave_changed": true,
+      "at_utc": "2026-10-22T14:38:08.1543641Z",
+      "game_count_before_restore": 0,
+      "restored_hashes": 29,
+      "state": "RESTORED",
+      "autosave_after_sha256": "67163d3d14f7532bc254478d6b8494326dc65af7e6ddd5b78ce0fd30405bc2fc",
+      "autosave_archive": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-LANG-20261022-release-v1-AUTOSAVE",
+      "gate_allowed": false,
+      "existing_archives_preserved": 12
+    },
+    "old29_and12_hashchain": [
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/default.aip",
+        "expected_sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+        "release_backup_sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+        "followup_before_sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+        "followup_backup_sha256": "d0c7e645fc3c1fad43769cb965ba11f2584e16cf29402434a1f21561bc6c5e3c",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/cleric.aip",
+        "expected_sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+        "release_backup_sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+        "followup_before_sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+        "followup_backup_sha256": "ec8b7e139a1090d19822b1282eadc5bf32ca2386ebaf30fecc4349263229a3ee",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/milmany.aip",
+        "expected_sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+        "release_backup_sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+        "followup_before_sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+        "followup_backup_sha256": "84e3a712c6436a8fd2c7ff809bcc0bc070e44cf04f6a8f6155c0031b619c96bf",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/milfew.aip",
+        "expected_sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+        "release_backup_sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+        "followup_before_sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+        "followup_backup_sha256": "f2f29f2bd28c74d27d1c3121b61b7d60eef8f564463497ab54c9c1c22509dee5",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/scimany.aip",
+        "expected_sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+        "release_backup_sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+        "followup_before_sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+        "followup_backup_sha256": "47d49a1e904cbc2b5e81ef8772edfd4607d192cb621b66721ad185142dd97c5b",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/scifew.aip",
+        "expected_sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+        "release_backup_sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+        "followup_before_sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+        "followup_backup_sha256": "17946ae93dbd99539ce8e0f1fca3cd0a240f28f0d13ea38adecb40ef4c700a3c",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/slaver.aip",
+        "expected_sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+        "release_backup_sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+        "followup_before_sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+        "followup_backup_sha256": "13cb799814a49c82c7778ee4d4cf0ac1a3657632b76bc84ba5330d72505bcbd6",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/AIPs/citywall_science.aip",
+        "expected_sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+        "release_backup_sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+        "followup_before_sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+        "followup_backup_sha256": "546c7a804bd96685d3aaf401e1ab99c6bbb6e1a5a351047ed8c8d9ecfc2db606",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/inputs.fli",
+        "expected_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+        "release_backup_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+        "followup_before_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+        "followup_backup_sha256": "0c58c6916e4c1ca9da1c0d0584a10be639721e384a414d1a00c0614a354a1e9a",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/set_govern_opening.fli",
+        "expected_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+        "release_backup_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+        "followup_before_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+        "followup_backup_sha256": "d922b5118b5657153dbd6f138be01f4063bc4212725b9c79ec3505b7836c0aa2",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/set_govern_after_opening.fli",
+        "expected_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+        "release_backup_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+        "followup_before_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+        "followup_backup_sha256": "bcf10201718243a9e783d62d9b897857116adcc06c1a545a86b7355747ce0707",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnCleric.fli",
+        "expected_sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+        "release_backup_sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+        "followup_before_sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+        "followup_backup_sha256": "c4aca8b67cd431dd4d69c43ae2704d248703a1544956aea756462e0ff2867f6e",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnSlaver.fli",
+        "expected_sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+        "release_backup_sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+        "followup_before_sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+        "followup_backup_sha256": "38abcf43699db6ee35a321d48fd91f2b09c8e7dc0b186b2917d1da6f501c5efa",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnSciFew.fli",
+        "expected_sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+        "release_backup_sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+        "followup_before_sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+        "followup_backup_sha256": "ae559effa370011f0d995caa305c8a20381b23a6d371ed72e1fa289dab8ad652",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnSciMany.fli",
+        "expected_sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+        "release_backup_sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+        "followup_before_sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+        "followup_backup_sha256": "09b47e1fb4bd72c674c790f508a052077f1e5992fa50459bb423317fe2b68c0e",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnWarFew.fli",
+        "expected_sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+        "release_backup_sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+        "followup_before_sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+        "followup_backup_sha256": "32173fd7b373074efe12fa758b10ac27bf8509ca1216b900ea364d9303313b6b",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturnWarMany.fli",
+        "expected_sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+        "release_backup_sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+        "followup_before_sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+        "followup_backup_sha256": "3fdf419769a44e63c1e53b6b15a18c6b71d4849882af85c08c2ea4ece3e2ca0a",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_data/default/aidata/beginturn.fli",
+        "expected_sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+        "release_backup_sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+        "followup_before_sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+        "followup_backup_sha256": "bdb70672cfcbd757c1e71abdffb3a30f9d15dfaaba98f8d0f8bf9fddaaf40103",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+        "expected_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+        "release_backup_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+        "followup_before_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+        "followup_backup_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Alexan/AUTOSAVE-Alexan",
+        "expected_sha256": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+        "release_backup_sha256": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+        "followup_before_sha256": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+        "followup_backup_sha256": "6bf2e65cf0ebe3149c5c481fbf7cd4a956912d9e926cb0c7762b77a74c34fb46",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+        "expected_sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+        "release_backup_sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+        "followup_before_sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+        "followup_backup_sha256": "c5c222bbe06d91e8ddab236bb6053ea08b01bc2ea9ee95d2c67f6640490c46d6",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T122000-N30-AUTOSAVE",
+        "expected_sha256": "7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558",
+        "release_backup_sha256": "7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558",
+        "followup_before_sha256": "7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558",
+        "followup_backup_sha256": "7ca3396f7d318df59d2187376024e225bfc5e2151f55597d7c125988b1ac2558",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-N30-AUTOSAVE",
+        "expected_sha256": "be5575f5933c01678ce4be9a2311a68e1271be6589a4c470deb3b987ab1fcd66",
+        "release_backup_sha256": "be5575f5933c01678ce4be9a2311a68e1271be6589a4c470deb3b987ab1fcd66",
+        "followup_before_sha256": "be5575f5933c01678ce4be9a2311a68e1271be6589a4c470deb3b987ab1fcd66",
+        "followup_backup_sha256": "be5575f5933c01678ce4be9a2311a68e1271be6589a4c470deb3b987ab1fcd66",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/DOEL3-20261012T165300-baseline2-ORIGINAL-AUTOSAVE",
+        "expected_sha256": "17a2a3ad6392d55f57bd9d3f8e7b281f887afa69aa15f73c1632973d9254d30a",
+        "release_backup_sha256": "17a2a3ad6392d55f57bd9d3f8e7b281f887afa69aa15f73c1632973d9254d30a",
+        "followup_before_sha256": "17a2a3ad6392d55f57bd9d3f8e7b281f887afa69aa15f73c1632973d9254d30a",
+        "followup_backup_sha256": "17a2a3ad6392d55f57bd9d3f8e7b281f887afa69aa15f73c1632973d9254d30a",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-+20-T60",
+        "expected_sha256": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+        "release_backup_sha256": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+        "followup_before_sha256": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+        "followup_backup_sha256": "4dd0984913d3de5376e7bdddf8fb47796f427e3fd643804efed29c302a1db7d3",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota--20-T60",
+        "expected_sha256": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+        "release_backup_sha256": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+        "followup_before_sha256": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+        "followup_backup_sha256": "3a15d526950a7abf0de3874e477f555667e34250f770415928898638ae99f547",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/quota-normal-T60",
+        "expected_sha256": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+        "release_backup_sha256": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+        "followup_before_sha256": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+        "followup_backup_sha256": "42db1f21ecb6a8a2079b8a675dff72792bb060e1cc4cfb5e3ac32f77da03a77d",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/QUOTA-START-T0",
+        "expected_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+        "release_backup_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+        "followup_before_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+        "followup_backup_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+        "exact": true
+      },
+      {
+        "group": "protected",
+        "path": "CTP-proef/ctp_program/ctp/userprofile.txt",
+        "expected_sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+        "release_backup_sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+        "followup_before_sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+        "followup_backup_sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-FOUTCODES-R44-2-AUTOSAVE",
+        "expected_sha256": "7e1c0b0dab1b890377cfcde83f0ff49514d8f9ac684d9e19ef7857bb2f56b8cd",
+        "release_backup_sha256": "7e1c0b0dab1b890377cfcde83f0ff49514d8f9ac684d9e19ef7857bb2f56b8cd",
+        "followup_before_sha256": "7e1c0b0dab1b890377cfcde83f0ff49514d8f9ac684d9e19ef7857bb2f56b8cd",
+        "followup_backup_sha256": "7e1c0b0dab1b890377cfcde83f0ff49514d8f9ac684d9e19ef7857bb2f56b8cd",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-KAARTFILTER-HOST1-AUTOSAVE",
+        "expected_sha256": "a2cd11ab2a065863cdd8808901b9f5cf12bb092d8cc094a57506950e96e793ed",
+        "release_backup_sha256": "a2cd11ab2a065863cdd8808901b9f5cf12bb092d8cc094a57506950e96e793ed",
+        "followup_before_sha256": "a2cd11ab2a065863cdd8808901b9f5cf12bb092d8cc094a57506950e96e793ed",
+        "followup_backup_sha256": "a2cd11ab2a065863cdd8808901b9f5cf12bb092d8cc094a57506950e96e793ed",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-REASON23-HOST1-AUTOSAVE",
+        "expected_sha256": "b724c2386d2d0e102487fd5b24330d368c1dc639ce9e2a3fcbcb50e1bf3afa12",
+        "release_backup_sha256": "b724c2386d2d0e102487fd5b24330d368c1dc639ce9e2a3fcbcb50e1bf3afa12",
+        "followup_before_sha256": "b724c2386d2d0e102487fd5b24330d368c1dc639ce9e2a3fcbcb50e1bf3afa12",
+        "followup_backup_sha256": "b724c2386d2d0e102487fd5b24330d368c1dc639ce9e2a3fcbcb50e1bf3afa12",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-BEZETCENTRUM-HOST1-AUTOSAVE",
+        "expected_sha256": "8c0d231447a5e88770f24d4a52733eb93bdf86e57eb297b12a0e5c173287766a",
+        "release_backup_sha256": "8c0d231447a5e88770f24d4a52733eb93bdf86e57eb297b12a0e5c173287766a",
+        "followup_before_sha256": "8c0d231447a5e88770f24d4a52733eb93bdf86e57eb297b12a0e5c173287766a",
+        "followup_backup_sha256": "8c0d231447a5e88770f24d4a52733eb93bdf86e57eb297b12a0e5c173287766a",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-CONTROL-HOST3-AUTOSAVE",
+        "expected_sha256": "e2c7fb236a26653880cbaaf13c06c0d0ab7562efddebbd216b5bbb7065cd836f",
+        "release_backup_sha256": "e2c7fb236a26653880cbaaf13c06c0d0ab7562efddebbd216b5bbb7065cd836f",
+        "followup_before_sha256": "e2c7fb236a26653880cbaaf13c06c0d0ab7562efddebbd216b5bbb7065cd836f",
+        "followup_backup_sha256": "e2c7fb236a26653880cbaaf13c06c0d0ab7562efddebbd216b5bbb7065cd836f",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-DIAGNOSTIC-HOST2-AUTOSAVE",
+        "expected_sha256": "e6867c6ba8603d4700e4ae932175020988f32e484d11df0c2b53cd64f0f2f7c4",
+        "release_backup_sha256": "e6867c6ba8603d4700e4ae932175020988f32e484d11df0c2b53cd64f0f2f7c4",
+        "followup_before_sha256": "e6867c6ba8603d4700e4ae932175020988f32e484d11df0c2b53cd64f0f2f7c4",
+        "followup_backup_sha256": "e6867c6ba8603d4700e4ae932175020988f32e484d11df0c2b53cd64f0f2f7c4",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-DUUR-20261022-HOST2-AUTOSAVE",
+        "expected_sha256": "753ffaf1367af43ec5c6c24b004b36dcb8ca30a80e23ec4201fee6170b0f9ab2",
+        "release_backup_sha256": "753ffaf1367af43ec5c6c24b004b36dcb8ca30a80e23ec4201fee6170b0f9ab2",
+        "followup_before_sha256": "753ffaf1367af43ec5c6c24b004b36dcb8ca30a80e23ec4201fee6170b0f9ab2",
+        "followup_backup_sha256": "753ffaf1367af43ec5c6c24b004b36dcb8ca30a80e23ec4201fee6170b0f9ab2",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-DUUR-20261022-HOST3-AUTOSAVE",
+        "expected_sha256": "af4888a6cbd7f356494afe624028b7673f8d6c0104ba97e22834bf88b9d04ec6",
+        "release_backup_sha256": "af4888a6cbd7f356494afe624028b7673f8d6c0104ba97e22834bf88b9d04ec6",
+        "followup_before_sha256": "af4888a6cbd7f356494afe624028b7673f8d6c0104ba97e22834bf88b9d04ec6",
+        "followup_backup_sha256": "af4888a6cbd7f356494afe624028b7673f8d6c0104ba97e22834bf88b9d04ec6",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-FOODREADER-HOST1-AUTOSAVE",
+        "expected_sha256": "34c1e63e0b31be241eccff71d9b6397cf142f2ccd2778463f0c4ccda84cbdf87",
+        "release_backup_sha256": "34c1e63e0b31be241eccff71d9b6397cf142f2ccd2778463f0c4ccda84cbdf87",
+        "followup_before_sha256": "34c1e63e0b31be241eccff71d9b6397cf142f2ccd2778463f0c4ccda84cbdf87",
+        "followup_backup_sha256": "34c1e63e0b31be241eccff71d9b6397cf142f2ccd2778463f0c4ccda84cbdf87",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-INTEGRATION-HOST1-AUTOSAVE",
+        "expected_sha256": "6d369fb603c4fa267427e9b7d0c136be96408b406c89744ef6bcf43c637725ac",
+        "release_backup_sha256": "6d369fb603c4fa267427e9b7d0c136be96408b406c89744ef6bcf43c637725ac",
+        "followup_before_sha256": "6d369fb603c4fa267427e9b7d0c136be96408b406c89744ef6bcf43c637725ac",
+        "followup_backup_sha256": "6d369fb603c4fa267427e9b7d0c136be96408b406c89744ef6bcf43c637725ac",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SELECTIEPAD-20261021-HOST1-AUTOSAVE",
+        "expected_sha256": "53cdd98744c198f9289ed67ba2387f555be94b433705d3666bf45158d7d20ac8",
+        "release_backup_sha256": "53cdd98744c198f9289ed67ba2387f555be94b433705d3666bf45158d7d20ac8",
+        "followup_before_sha256": "53cdd98744c198f9289ed67ba2387f555be94b433705d3666bf45158d7d20ac8",
+        "followup_backup_sha256": "53cdd98744c198f9289ed67ba2387f555be94b433705d3666bf45158d7d20ac8",
+        "exact": true
+      },
+      {
+        "group": "extra_preserved_files",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-TYPE10-HOST1-AUTOSAVE",
+        "expected_sha256": "dcee767cfdcb26a9c0d55485f8d917ae453aef7e6442eef1de4f8b69789e4e8d",
+        "release_backup_sha256": "dcee767cfdcb26a9c0d55485f8d917ae453aef7e6442eef1de4f8b69789e4e8d",
+        "followup_before_sha256": "dcee767cfdcb26a9c0d55485f8d917ae453aef7e6442eef1de4f8b69789e4e8d",
+        "followup_backup_sha256": "dcee767cfdcb26a9c0d55485f8d917ae453aef7e6442eef1de4f8b69789e4e8d",
+        "exact": true
+      }
+    ],
+    "release_reader_control_closed": true,
+    "release_host_gate_closed": true,
+    "new13th_autosave_archive_sha256": "67163d3d14f7532bc254478d6b8494326dc65af7e6ddd5b78ce0fd30405bc2fc",
+    "new13th_autosave_hostcopy_sha256": "67163d3d14f7532bc254478d6b8494326dc65af7e6ddd5b78ce0fd30405bc2fc",
+    "post_restore_successor_install": {
+      "installed_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+      "alias_created": true,
+      "at_utc": "2026-10-22T14:39:54.7573552Z"
+    },
+    "successor_before_sha256": "0037cc47b445fc65a51ffd551d981c1de94c8ba9d506af1da28f5630e60d7be0",
+    "current_global_DLL_sha256": "df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e",
+    "current_global_state_is_successor": "Root has since started candidate PID40488; count0/releaseDLL at16:38:08 are historical restoration claims, not current global state."
+  },
+  "HERVATCONTROLE": {
+    "release_files": 19,
+    "archives": 12,
+    "runtime_not_yet_started": true,
+    "pins": 202,
+    "cd": "E:",
+    "protected": 118,
+    "game_count": 0,
+    "checked_at": "2026-10-22T16:29:53.6904249+02:00",
+    "before_files": 29
+  },
+  "evidence_sha256": {
+    "PROEVEN\\uitbreiding-lang\\20261022T122400\\release-v1\\T0.json": "92110a66ef905f8a10542aae31e1bd9c5c44c43f40170524f652a289fbc583ea",
+    "PROEVEN\\uitbreiding-lang\\20261022T122400\\release-v1\\T100.json": "f0c0b386cd91f93d40b4cf5bf9f64ce3acb7c6d995d15b5e1b44d3d9381fd4aa",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\ENDPOINT.json": "d325e28f22c61654698a55c658bfd5476647e9d180cd40ac53ee1120260b2bb5",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\before.json": "1ddf0464fccdfb1326a7bdc0ac0a2da0281204e30152f894f45989ed56643984",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\close.json": "33b3192cb282f075a2851fb655e821aad65e33941d495d3b3d28a3264383a1fa",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\restore.json": "800db9acfa81ed59113d3951246c5d30640088e35f4f2628ad23670c2b484a57",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\HERVATCONTROLE.json": "9c3b5425c00fd3daa83e42e443193a59ff64a821dde6c471a95b3880f0087e90",
+    "PROEVEN\\uitbreiding-lang-host\\20261022\\release-v1\\intro-45.log": "a9e42f4dd5e4a5876f44e7c69e3b51d1e345c580f685a7e55cde7da6fff3fa85",
+    "ONTWERP\\UITBREIDING-LANG-MANUEEL-20261022.md": "1cea12f40d8cf1e46e44c3ce534d94313583bbdf99783bb7a34a381e2ee3e22b"
+  },
+  "comparison_allowed": [
+    "Exact same-start/same-horizon paired T100 possession, research and government after separate candidate endpoint binding.",
+    "Per-civ and total endpoint differences with manual input mode explicit."
+  ],
+  "comparison_not_supported": [
+    "No live T1..99 trace; no proof of100 individual one-round steps/100 key actions, no101-snapshot/100-token acceptance.",
+    "No splicing historical T26 into this run; no interpolated T25/T50.",
+    "No exact first25/30/40 or first activeTheocracy turn; T100 below25 does not exclude earlier crossing followed by loss.",
+    "No T26Theocracy retention measurement for this run.",
+    "Release has no settler-specific demand/stock/producer diagnostics; no useful founding/queue/laborer proof.",
+    "No winner before candidate endpoint; Doel1/1a/fullDoel5 remain OPEN."
+  ],
+  "limits": {
+    "save_identity_proven": false,
+    "atomic_snapshot_proven": false,
+    "intro": "First capture foreground failed before input; user loaded fixedT0 and fresh stable exact T0 replaces automatic load-screen evidence per manual addendum."
+  },
+  "next": "Root owns ongoing separate candidate. Evaluator stopped after evidence handoff; no GUI/RPM/new research.",
+  "budget": {
+    "reported_at_utc": "2026-10-22T14:42:13.886Z",
+    "checked_at_utc": "2026-10-22T14:42:34.199453+00:00",
+    "age_seconds": 20.3,
+    "windows": {
+      "five_hour": {
+        "remaining_percent": 91,
+        "used_percent": 9,
+        "window_minutes": 300,
+        "reset_at_unix": 1792697313
+      },
+      "weekly": {
+        "remaining_percent": 50,
+        "used_percent": 50,
+        "window_minutes": 10080,
+        "reset_at_unix": 1793098885
+      }
+    },
+    "stop_reasons": [],
+    "weekly_remaining_percent": 50,
+    "five_hour_remaining_percent": 91,
+    "state": "ok"
+  }
+}

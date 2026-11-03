@@ -1,0 +1,32 @@
+--- PROEVEN/pad-lokaal-onbekend/20261026c-host/HOST-PLAN.json
++++ PROEVEN/landvergelijking/20261027/HOST-PLAN.json
+@@ -1385,12 +1385,12 @@
+     },
+     {
+       "path": "CTP-proef/ctp_program/ctp/userprofile.txt",
+-      "sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
++      "sha256": "64ff5e641a7117715af34f8bbd114af51943aeb62bdb06910d7fab2d443a00d2",
+       "current": {
+         "path": "CTP-proef/ctp_program/ctp/userprofile.txt",
+         "existed": true,
+-        "size": 1595,
+-        "sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd"
++        "size": 1597,
++        "sha256": "64ff5e641a7117715af34f8bbd114af51943aeb62bdb06910d7fab2d443a00d2"
+       }
+     }
+   ],
+@@ -1737,5 +1737,12 @@
+     "sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd"
+   },
+   "backup_executed": false,
+-  "requires_fresh_inventory_and_backups_before_host": true
++  "requires_fresh_inventory_and_backups_before_host": true,
++  "land_profile_baseline_provenance": {
++    "accepted_by": "root operational baseline after pre-install preflight stop",
++    "sha256": "64ff5e641a7117715af34f8bbd114af51943aeb62bdb06910d7fab2d443a00d2",
++    "previous_historical_sha256": "72a99e860698508c876750d944a75d93111c56789117ee6c9480d7e341d4d1fd",
++    "evidence": "Root verified exact equality to new land-observation backup; all other117 protected files exact. User new-map settings only: OceanLand3->10 and IslandContinent3->10.",
++    "scope": "Only effective_protected118 profile pin/current metadata updated. Historical before29/profile records retained as historical planning; fresh before.json and backups remain mandatory. No userprofile or gameplay file changed."
++  }
+ }

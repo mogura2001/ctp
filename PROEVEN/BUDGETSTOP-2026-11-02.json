@@ -1,0 +1,32 @@
+{
+  "reported_at_utc": "2026-11-02T17:32:03.682Z",
+  "checked_at_utc": "2026-11-02T17:32:24.443366+00:00",
+  "state": "stop",
+  "stop_reason": "five_hour",
+  "five_hour_remaining_percent": 3,
+  "weekly_remaining_percent": 38,
+  "reset_at_unix": 1793654916,
+  "work_stopped": true,
+  "agents_terminal_confirmed": true,
+  "no_owned_live_game": true,
+  "last_full_restore": {
+    "pins": 162,
+    "aidata": 118,
+    "saves": 38
+  },
+  "pc_left_on": true,
+  "goal_complete": false,
+  "consecutive_blocking_goal_turns": 1,
+  "current_goal_turn": "progress: completion C0 finished; actual AI Labyrinth completion proven; human defaultResearchOK gate proven; next T25 proposal delivered but not rootreviewed; ended at fresh five-hour stop",
+  "next_step": "After fresh confirmed reset read/review/explain ONTWERP/LAND-STAD-T25-2026-11-02.md; only then C0 for paired c6ba T25 control/candidate, keeping future T50/T100 and30/40goals.",
+  "resolution": {
+    "at_utc": "2026-11-03T12:20:17.240337+00:00",
+    "reported_at_utc": "2026-11-03T12:20:07.758Z",
+    "state": "ok",
+    "five_hour_remaining_percent": 94,
+    "weekly_remaining_percent": 37,
+    "fresh_reset_confirmed": true,
+    "work_resumed": true,
+    "pc_left_on": true
+  }
+}

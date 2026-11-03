@@ -1,0 +1,33 @@
+--- frozen-type10/native.py
++++ kaartfilter/native.py
+@@ -16,7 +16,8 @@
+          nodes=92,hints=96,host=100,udb=104,player=108,world=112,path=116,
+          d8=120,completion=124,h3calls=128,safetycalls=132,
+          original=184,gcert=188,policy=192,government=196,engine_count=200,
+-         path_points=204,cutoff=208,context=212,source_overflow=216,classified=220)
++         path_points=204,cutoff=208,context=212,source_overflow=216,classified=220,
++         prefix_count=224,known_count=228,gate_queries=232,gate_false=236)
+ CAPTURE=0x200; CAPTURE_CAP=4096
+ PREVIEW=0x8200; PREVIEW_CAP=4096; PREVIEW_STRIDE=16
+ DEPARTURES=0x18200; DEPARTURE_CAP=32; DEPARTURE_STRIDE=32
+@@ -194,7 +195,10 @@
+ 
+ def roles(r):
+  entry(r,'production_roles',96);r.mov(m('ebx',P['slots']),0);r.mov(m('ebp',-16),0)
+- r.label('roles_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['candidates']));r.j('jge','roles_ok');r.alu('cmp','eax',64);r.j('jae','roles_budget');r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.shift('shl','eax',3);r.lea('edi',m('ebx',CAPTURE));r.alu('add','edi','eax');r.unary('inc',m('ebx',P['classified']))
++ # Validate the complete producer/consumer contract before ORDER access.
++ r.mov('eax',m('ebx',P['prefix_count']));r.test('eax','eax');r.j('js','roles_bad');r.alu('cmp','eax',64);r.j('ja','roles_bad');r.alu('cmp','eax',m('ebx',P['known_count']));r.j('jg','roles_bad')
++ r.mov('eax',m('ebx',P['known_count']));r.alu('cmp','eax',m('ebx',P['candidates']));r.j('jg','roles_bad');r.mov('eax',m('ebx',P['candidates']));r.alu('cmp','eax',4096);r.j('jg','roles_bad')
++ r.label('roles_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['prefix_count']));r.j('jge','roles_ok');r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.test('eax','eax');r.j('js','roles_bad');r.alu('cmp','eax',m('ebx',P['candidates']));r.j('jae','roles_bad');r.shift('shl','eax',3);r.lea('edi',m('ebx',CAPTURE));r.alu('add','edi','eax');r.unary('inc',m('ebx',P['classified']))
+  for off in (4,2,0):r.load('eax',m('edi',off),'sx16');r.push('eax')
+  r.mov('eax',m('ebx',P['world']));r.push('eax');r.mov('edx',m('eax'));r.unary('call',m('edx',0x168));r.op('movsx eax,ax',b'\x0f\xbf\xc0');r.test('eax','eax');r.j('jle','roles_next');r.mov(m('ebp',-20),'eax');r.alu('cmp',m('ebx',P['h3calls']),64);r.j('jae','roles_bad');r.unary('inc',m('ebx',P['h3calls']))
+  r.imul('esi',m('ebx',P['slots']),SLOT_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',SLOTS);r.lea('eax',m('esi',128));r.push('eax');r.push('edi');r.push(m('ebx',P['world']));r.push(m('ebx',P['owner']));original(r,'H3Classifier');r.test('eax','eax');r.j('jz','roles_bad');r.alu('cmp','eax',2);r.j('jne','roles_next');r.alu('cmp',m('esi',136),1);r.j('jne','roles_bad')
+@@ -204,7 +208,7 @@
+  r.mov('eax',m('ebp',-20));r.alu('cmp','eax',32767);r.j('je','roles_q');r.unary('inc','eax');r.label('roles_q');r.mov(m('esi',16),'eax');r.mov(m('esi',20),-1);r.mov(m('esi',24),-1);r.mov('eax',m('esi',8));r.mov(m('esi',32),'eax');r.mov('eax',m('esi',12));r.mov(m('esi',36),'eax')
+  for i,idx in enumerate((100,104,108,112)):
+   r.mov('eax',m('esi',128+idx));r.test('eax','eax');r.j('js','roles_bad');r.alu('cmp','eax',m('esi',224));r.j('jae','roles_bad');r.imul('eax','eax',12);r.alu('add','eax','esi');r.alu('add','eax',272);r.lea('edx',m('esi',40+8*i));r.push('edx');r.push('eax');r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','roles_bad')
+- r.unary('inc',m('ebx',P['slots']));r.label('roles_next');r.unary('inc',m('ebp',-16));r.j('jmp','roles_loop');r.j('jmp','roles_ok');r.label('roles_budget');r.mov(m('ebx',P['cutoff']),1);r.label('roles_ok');r.mov('eax',1);r.j('jmp','roles_done');r.label('roles_bad');unknown(r,23);result(r,'roles_done',96)
++ r.unary('inc',m('ebx',P['slots']));r.label('roles_next');r.unary('inc',m('ebp',-16));r.j('jmp','roles_loop');r.label('roles_ok');r.mov('eax',1);r.j('jmp','roles_done');r.label('roles_bad');unknown(r,23);result(r,'roles_done',96)
+ 
+ def ordering(r):
+  # Sort indices, never heap/source data or H3 comparator inputs. Maximum64.

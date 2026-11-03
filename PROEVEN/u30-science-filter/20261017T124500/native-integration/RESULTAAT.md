@@ -1,0 +1,11 @@
+# Gerichte native-integratie: beperkte technische acceptatie
+
+17 oktober2026,21:54 Europe/Amsterdam. E?n eigen verborgen x86-helperproces PID23268, gestart19:54:19.237055UTC, ge?indigd19:54:20.016428UTC, gemeten0,766s. Exit0, terminal bevestigd, cleanup=True. Geen timeout/retry/tweede run. Compilatie vooraf via bestaande x86 WindowsPowerShell/Add-Type-route; helperassembly en alle gegenereerde recipes/bytes v??r uitvoering gepind in NATIVE-RUNTIME-CHECKPOINT.json (fd687255e3a5a774af68355058a03b7a74f8d7dbd75bff6275cffc92bfae7d34).
+
+33nativeaanroepen en33PASSlabels, inclusief9prefixchecks. De volledige labels staan als gewone strings in caller-process.json en native-caller-result.json, zonder PowerShellExtendedStringmetadata. Stack/nonvolatile/x87/grenzen worden na iedere directe call gecontroleerd. Candidate0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9 bleef exact; alle62BUILD-PINS na uitvoering opnieuw gelijk.
+
+Aangetoond onder de vooraf gereviewde stubs: ??n centrum/tweerollen/??nslot; volledige4/5mandatorykeyconflicten en duplicaat; footprint-only overlap; productconflict?sciencealt of afwijzing zonder tweedeexistingclaim; ordinaryexisting1/front4 eenmaal en nieuwbouw2 herbruikbaar; tweeproductie+driescience?G5/echtefinal_combine D5. Filterfalse/nul/index65, prefixcutoff1 met64completecommits, echteSCIcalls63?64?blokkering v??r tweedeSCI met behoud eerstecompletecentrum. Ownercontextfout metcutoff0/1 en v??rbudget trok de directe call in. Echt gekoppeld counterfragment blokkeert bij zowelprimary256- als total264-limiet beideincrements ?n de synthetische continuationwrite; succes houdt gate232/236 intact.
+
+De bewijsgrenzen en resterende ONGETEST-gevallen uit BRONREVIEW.md blijven integraal gelden. Geen echte engineSCI/food/spatial/padmeting, geen Actual2?deficit3, geen volledigefinalizeGcertrollback/laatsteeindguardcallback, geen overigequerycounter/cap/nativebodyacceptatie. Die ontbrekende resultaten worden niet alsPASS geteld. Bestaande configuratiepreservatie is statischbewijs. Deze fixture bewijst geen gameplayverbetering of extra vraag in de echtegame.
+
+Werk gestopt na deze oplevering voor rootbeoordeling. Geen RPM/install/game of andere projectbestanden gewijzigd; proefrelease/saves bleven ongemoeid. Pcaan.

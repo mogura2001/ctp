@@ -1,0 +1,30 @@
+{
+    "budget":  {
+                   "reported_at_utc":  "2026-10-26T16:44:28.172Z",
+                   "checked_at_utc":  "2026-10-26T16:45:16.455250+00:00",
+                   "age_seconds":  48.3,
+                   "windows":  {
+                                   "five_hour":  {
+                                                     "remaining_percent":  55.0,
+                                                     "used_percent":  45.0,
+                                                     "window_minutes":  300,
+                                                     "reset_at_unix":  1793044678
+                                                 },
+                                   "weekly":  {
+                                                  "remaining_percent":  93.0,
+                                                  "used_percent":  7.0,
+                                                  "window_minutes":  10080,
+                                                  "reset_at_unix":  1793631478
+                                              }
+                               },
+                   "stop_reasons":  [
+
+                                    ],
+                   "weekly_remaining_percent":  93.0,
+                   "five_hour_remaining_percent":  55.0,
+                   "state":  "ok"
+               },
+    "at_utc":  "2026-10-26T16:45:16.6697270Z",
+    "files":  149,
+    "before_sha256":  "94619951ea57c995a3a1bfb94c2a1062f8d53168f79486e867bf24ac0d299631"
+}

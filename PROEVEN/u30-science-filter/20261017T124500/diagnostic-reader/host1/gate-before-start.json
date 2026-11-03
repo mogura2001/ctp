@@ -1,0 +1,155 @@
+{
+  "allowed": true,
+  "baseline_allowed": false,
+  "candidate_sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9",
+  "manifest_sha256": "9b518945a76cd0369a781de5b8f63be5fc7df963050cb04567a3fa6f6afa58ad",
+  "state": "ROOT_REVIEWED_SEPARATE_DIAGNOSTIC_HOST1_APPROVED",
+  "scope": "ONE separate diagnosis host: same T0, seven normal Deity AIs, T0/T1, max1 preconsumed n, 210/600/690/720s; normal close and restore29; preserve control/integration autosaves",
+  "sources": [
+    {
+      "path": "../../../doel3/20261012-release-v1/manifest.json",
+      "sha256": "3ee74baaa993793465975e9c996f03c699e334e24b297aa22fbbc5ba189806d4"
+    },
+    {
+      "path": "../../../doel3/20261012-release-v1/release-final.json",
+      "sha256": "8b7f3e37a40ce4ae18a2d10c6b94fc408079e8c2dc00656a9352fa77631262bb"
+    },
+    {
+      "path": "../../../doel3/20261012-release-v1/source-pins.json",
+      "sha256": "30ebe6d610b17df96585156beed736b71722e1de8ec77bd8499a1736c05f730a"
+    },
+    {
+      "path": "../../../science-u30-40/20261013T183300/development.py",
+      "sha256": "2b0523659d8047e229e3511920c41d09dc41d7e7d89b0d6320dec1a27617eefe"
+    },
+    {
+      "path": "../../../science-u30-40/20261015T152300-c2/science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0"
+    },
+    {
+      "path": "../BUILD-PINS.json",
+      "sha256": "0a21986db6a808be9a90e10a9d2853ec5ccce9ad984844e4ae155bfbd5170906"
+    },
+    {
+      "path": "../candidate-manifest.json",
+      "sha256": "9b518945a76cd0369a781de5b8f63be5fc7df963050cb04567a3fa6f6afa58ad"
+    },
+    {
+      "path": "check_offline.py",
+      "sha256": "7a49f28c82dd0bc37fc03d3acbdcc1d4487a7c051971a2920942e802e266ad86"
+    },
+    {
+      "path": "h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "Lees-Uitbreiding.py",
+      "sha256": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1"
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "partial_diagnostic.py",
+      "sha256": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589"
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3"
+    },
+    {
+      "path": "runtime-pins.json",
+      "sha256": "ce6febf7bf6cedb36f5fabf9972eb59c8596b9dbc0547722d2f4d00c3d450c56"
+    },
+    {
+      "path": "../native-integration/NATIVE-PINS.json",
+      "sha256": "2465e23b3877eb2f734b72d41ae58a1dbfc9ca22eec46297481ae1644c5de2cc"
+    },
+    {
+      "path": "../plan_layout.py",
+      "sha256": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5"
+    },
+    {
+      "path": "../preparation-manifest.json",
+      "sha256": "d21617181eb9427214ffe037ae9f96f47bc0b12bbe1a479085fb6615b18c5332"
+    },
+    {
+      "path": "../reader/candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "../reader/candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9"
+    },
+    {
+      "path": "../reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "../reader/Lees-Uitbreiding.py",
+      "sha256": "bf1a054a6fb8821e19e83d02735085094c7f6d0878c9bcb06046e92e435a63c3"
+    },
+    {
+      "path": "../reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "../reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "../reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3"
+    },
+    {
+      "path": "../reader/runtime-pins.json",
+      "sha256": "ce6febf7bf6cedb36f5fabf9972eb59c8596b9dbc0547722d2f4d00c3d450c56"
+    },
+    {
+      "path": "../release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890"
+    },
+    {
+      "path": "../science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a"
+    },
+    {
+      "path": "../science_development.py",
+      "sha256": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0"
+    },
+    {
+      "path": "../science_layout.py",
+      "sha256": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7"
+    },
+    {
+      "path": "../science_result.py",
+      "sha256": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f"
+    },
+    {
+      "path": "../U30-40.prepared.dll",
+      "sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9"
+    },
+    {
+      "path": "DIAGNOSTIC-PINS.json",
+      "sha256": "84949c60ac198a5726283b84a26291c10423e1b18637ad2fe761d39a32361701"
+    },
+    {
+      "path": "reader.diff",
+      "sha256": "6dd354d5105ab6d15e484fe07d2872ca3f4812d012be62e469e18ea2453123f0"
+    },
+    {
+      "path": "offline-checks.json",
+      "sha256": "ab7a0c844167a8b263ac7c581e7fc1a05803f454b57fdd9ff0fcfadea64ebdf2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5edbc5a6c91edd760ccd4aba3c1c3d8a0cd348227cfbb7062ca8cc3747d235b4"
+    }
+  ],
+  "at_utc": "2026-10-19T17:11:18.292303+00:00"
+}

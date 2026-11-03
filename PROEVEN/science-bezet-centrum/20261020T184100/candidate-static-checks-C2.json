@@ -1,0 +1,90 @@
+{
+  "stage": "C2_BYTES_AND_OWN_SAVED_DECODER_ONLY",
+  "candidate_sha256": "e45313fde4d25a726fa2e8d26dec21c0142ac195ea5c0c40a9b380fd549b166f",
+  "manifest_sha256": "2077ac8a05d17f6ef7690ceb3a3a9e5555aa8d0f9a23e9e2d9db703288a5396b",
+  "whole_diff_explained": true,
+  "original_changed_bytes": 80,
+  "appended_bytes": 550912,
+  "shared_H3_and_padding_equal": true,
+  "default_factory_equal": true,
+  "default_factory_bytes": 1196,
+  "prefix_before_SCI_equal": true,
+  "development_asm_equal": true,
+  "development_relocated_rows": 5,
+  "original_development_reader_target": "0xd64f5",
+  "direct_rel32_checked": 1702,
+  "state_rva": "0xe3000",
+  "state_size": 497668,
+  "RW_zero": true,
+  "recipe_edit_groups": 6,
+  "strict_center_tile_contract": true,
+  "handler_frstor_exit": true,
+  "validator_pushad_pushfd_balanced_bytes": true,
+  "validator_observer_binding": {
+    "validator_entry_rva": 925643,
+    "entry_overwrite_size": 12,
+    "entry_original_hex": "9c60c785a4feffff00000000",
+    "entry_continue_rva": 925655,
+    "validator_exit_rva": 926381,
+    "exit_overwrite_size": 6,
+    "exit_original_hex": "8b85a4feffff",
+    "exit_continue_rva": 926387
+  },
+  "fixtures": [
+    "consumer_observer.bin",
+    "convert_mutation.bin",
+    "model_probe.bin",
+    "normal.bin",
+    "validator_entry.bin",
+    "validator_exit.bin"
+  ],
+  "decoder_cases": [
+    {
+      "name": "valid scope",
+      "accepted": true
+    },
+    {
+      "name": "scope with NOW",
+      "accepted": false
+    },
+    {
+      "name": "scope coverage0",
+      "accepted": false
+    },
+    {
+      "name": "scope credit1",
+      "accepted": false
+    },
+    {
+      "name": "scope selected0",
+      "accepted": false
+    },
+    {
+      "name": "historical occupied prefix3 while class6",
+      "accepted": true
+    },
+    {
+      "name": "stale generation",
+      "accepted": false
+    },
+    {
+      "name": "unstarted prefix6",
+      "accepted": false
+    },
+    {
+      "name": "wrong unit operand",
+      "accepted": false
+    }
+  ],
+  "actual_saved_SCI0_margins": [
+    35,
+    30,
+    25
+  ],
+  "actual_saved_SCI0_sha256": "012de2a7982a71386ffcaa0c2227abfd1c8d38515c6a17f0ecb4b5affdc80b11",
+  "offline_reader_binding": true,
+  "native_compiled": false,
+  "native_run": false,
+  "installed": false,
+  "gameplay_proven": false
+}

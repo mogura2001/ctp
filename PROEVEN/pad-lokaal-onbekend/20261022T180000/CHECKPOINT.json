@@ -1,0 +1,79 @@
+{
+  "at_Europe_Amsterdam": "2026-10-22T18:02:34.995313+02:00",
+  "stage": "PARTIAL_C1_COPY_ONLY_NOT_READY_FOR_REVIEW_OR_BUILD",
+  "budget": {
+    "reported_at_utc": "2026-10-22T16:01:37.685Z",
+    "checked_at_utc": "2026-10-22T16:02:34.951315+00:00",
+    "age_seconds": 57.3,
+    "windows": {
+      "five_hour": {
+        "remaining_percent": 6.0,
+        "used_percent": 94.0,
+        "window_minutes": 300,
+        "reset_at_unix": 1792697313
+      },
+      "weekly": {
+        "remaining_percent": 37.0,
+        "used_percent": 63.0,
+        "window_minutes": 10080,
+        "reset_at_unix": 1793098885
+      }
+    },
+    "stop_reasons": [],
+    "weekly_remaining_percent": 37.0,
+    "five_hour_remaining_percent": 6.0,
+    "state": "ok"
+  },
+  "copied": [
+    {
+      "source": "PROEVEN/selectie-pad-diagnose/20261020T192500/native.py",
+      "target": "PROEVEN/pad-lokaal-onbekend/20261022T180000/native.py",
+      "sha256": "cea06aacdca51e7ca73250e276d71fce89e21f5d045dad3d6c69c348abacf0d5",
+      "byte_identical": true,
+      "syntax_only": true
+    },
+    {
+      "source": "PROEVEN/selectie-pad-diagnose/20261020T192500/policy.py",
+      "target": "PROEVEN/pad-lokaal-onbekend/20261022T180000/policy.py",
+      "sha256": "9fc8b418ea85daf87ffbc9858a42438ece2ec8748cd408b85e4b75cb901a05ad",
+      "byte_identical": true,
+      "syntax_only": true
+    },
+    {
+      "source": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic.py",
+      "target": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic.py",
+      "sha256": "198e8d7897764ff28c25e6ee9a003eac5acfe05133071ad905809146f028a7a6",
+      "byte_identical": true,
+      "syntax_only": true
+    },
+    {
+      "source": "PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic_layout.py",
+      "target": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic_layout.py",
+      "sha256": "9c483e67c15cc994d5e1b458c332684299c80df6a7304396422654a1bc2148ff",
+      "byte_identical": true,
+      "syntax_only": true
+    },
+    {
+      "source": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/path_failure_decoder.py",
+      "target": "PROEVEN/pad-lokaal-onbekend/20261022T180000/reader/path_failure_decoder.py",
+      "sha256": "d89db84bfa2b17e3ff18b6683115e6c2b7fc2e6dba3f038f9f59ac8b2753f2f1",
+      "byte_identical": true,
+      "syntax_only": true
+    }
+  ],
+  "semantic_changes": false,
+  "import_check": false,
+  "emission": false,
+  "build": false,
+  "native": false,
+  "RPM": false,
+  "game": false,
+  "remaining": [
+    "Implement independent Plan/owner/civ/generation and preserved call-input comparisons without Trace dependencies.",
+    "Implement clean native0 local4 via existing cleanup; bounded pass-local cache4 and explicit source_next dispatch; preserve hard0/2/3 and all policy.",
+    "Only necessary existing diagnostic local4 compatibility; old branch retained, ambiguous propagation UNKNOWN.",
+    "Finish exact diff/full necessary import pins and syntax/import without emission; root source review before any build."
+  ],
+  "stop_reason": "Finite checkpoint within narrow account budget; no safe full guard/dispatch/decoder implementation attempted.",
+  "next": "Resume only after fresh adequate budget/reset; original copied code still behaves exactly as old hard0. No candidate or semantic patch built."
+}

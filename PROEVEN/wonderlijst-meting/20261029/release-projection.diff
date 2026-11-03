@@ -1,0 +1,26 @@
+--- release/Lees-Doel3.py
++++ in-memory/Lees-Doel3.py
+@@ -1,5 +1,5 @@
+ """Own goal3 reader; RPM only, no callbacks, writes, game starts or GUI input."""
+-from original_core import *
++from _ctp_wonder_20261029_release_core import *
+ import time
+ 
+ N30_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+@@ -94,6 +94,8 @@
+ def main():
+     parser=argparse.ArgumentParser(description='Read-only fixed-T0 goal3 snapshots; no game starts/writes/callbacks')
+     parser.add_argument('--pid',type=int,required=True)
++    parser.add_argument('--creation-filetime',type=int,required=True)
++    parser.add_argument('--wonder-arm',choices=('control','candidate'),required=True)
+     parser.add_argument('--variant',choices=('original','B2a-N30-TECHNICAL'),required=True)
+     parser.add_argument('--run-id',required=True);parser.add_argument('--snapshot-label',required=True)
+     parser.add_argument('--turn',type=int,required=True);parser.add_argument('--pass-label',required=True)
+@@ -130,6 +132,7 @@
+         times=[W.FILETIME() for _ in range(4)]
+         if not k.GetProcessTimes(handle,*[C.byref(t) for t in times]):raise OSError('Cannot bind process creationtime')
+         if times[1].dwLowDateTime or times[1].dwHighDateTime:raise ValueError('Process exited during snapshot')
++        wonder_creationtime(times,args.creation_filetime)
+         modules,needed=(W.HMODULE*1024)(),W.DWORD()
+         if not p.EnumProcessModulesEx(handle,modules,C.sizeof(modules),C.byref(needed),3) or needed.value>C.sizeof(modules) or needed.value%C.sizeof(W.HMODULE):raise OSError('Incomplete module enumeration')
+         found={}

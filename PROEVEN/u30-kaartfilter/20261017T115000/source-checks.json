@@ -1,0 +1,67 @@
+{
+  "stage": "SOURCE_AST_LAYOUT_PIN_ONLY_NOT_CANDIDATE_OR_RUNTIME",
+  "checked_at_utc": "2026-10-17T09:58:27.924841+00:00",
+  "ast_valid": true,
+  "old_functions_ast_unchanged": {
+    "native.py": [
+      "capture",
+      "checked_type",
+      "conflicts",
+      "departures",
+      "dfs",
+      "engine",
+      "entry",
+      "iface",
+      "key",
+      "ordering",
+      "original",
+      "owner_gate",
+      "path",
+      "path_cache",
+      "pc",
+      "preview",
+      "resolve_type",
+      "result",
+      "safety",
+      "selection",
+      "unknown"
+    ],
+    "policy.py": [
+      "cap_adapters",
+      "emit",
+      "finalize",
+      "invoke",
+      "original_demand",
+      "read_policy"
+    ],
+    "integration_base.py": [
+      "emit",
+      "finalize",
+      "hints",
+      "input_guard",
+      "invoke",
+      "plan",
+      "quota",
+      "wrappers"
+    ]
+  },
+  "old_header_offsets_and_arrays_unchanged": true,
+  "new_fields": {
+    "prefix_count": 224,
+    "known_count": 228,
+    "gate_queries": 232,
+    "gate_false": 236
+  },
+  "new_header_disjoint": true,
+  "new_engine_bodies": 3,
+  "all_old_body_and_unitdb_slot_pins_retained": true,
+  "all_preparation_pins_match": true,
+  "reader_runtime_pins_unset_fail_closed": true,
+  "builds": 0,
+  "native_compiles": 0,
+  "native_calls": 0,
+  "rpm": 0,
+  "installations": 0,
+  "game_starts": 0,
+  "gameplay_acceptance": false
+}

@@ -1,0 +1,86 @@
+--- frozen-reason23-host1/Lees-Uitbreiding.py
++++ kaartfilter/reader/Lees-Uitbreiding.py
+@@ -4,12 +4,14 @@
+ from h3_layout import HEADER, RESULT_SIZE, H2_RESULT_OFFSET, H2_ENTRY_OFFSET, H2_ENTRY_STRIDE, MAX_ENTRIES
+ 
+ BASE_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+-NEW_HASH='b6f272d2503edf5f1cf03f927ebd40ff5dd82b1a2c9d9c948beb4e7215baed62'
+-MANIFEST_HASH='fa5392c650bc2647d072a9e828256b2a07c43d40d7893dee1efd2276ef431e27'
++RUNTIME_PINS=json.loads((FOLDER/'runtime-pins.json').read_text('utf-8'))
++NEW_HASH=RUNTIME_PINS['candidate_sha256']
++MANIFEST_HASH=RUNTIME_PINS['manifest_sha256']
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+ def trusted_binding(variant):
++    if not NEW_HASH or not MANIFEST_HASH or RUNTIME_PINS['state_rva'] is None:raise ValueError('Source-only reader has no reviewed candidate pins')
+     binding=original_binding('original')
+     if variant not in ('release-v1','U30-40'):raise ValueError('Only exact tested release or reviewed U30-40')
+     import pefile
+@@ -32,7 +34,7 @@
+             r['expected_hex']=current.hex()
+     for rva in (0x74b60,0xc2180,0x128f20,0xc2ee3,0xb8660,0xb8a3d):
+         raw=ep.get_data(rva,32);binding['ranges'].append(dict(module='engine',rva=rva,length=32,expected_hex=raw.hex(),kind='scalar-route-window'))
+-    for rva,length in [(0x131940,0x1e),(0x3450b4,4),(0x542e0,0x30),(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
++    for rva,length in [(0x345308,4),(0x133580,0x25),(0xbbd50,0x1c),(0xebdf0,0x73),(0x131940,0x1e),(0x3450b4,4),(0x542e0,0x30),(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
+         raw=ep.get_data(rva,length);binding['ranges'].append(dict(module='engine',rva=rva,length=length,expected_hex=raw.hex(),kind='loaded type-read binding'))
+     for rva,length in [(0x11bc0,0x20),(0x1a970,0x10),(0x1a980,0x20),(0x1cd50,0x20),(0x655f0,0x2d0)]:
+         raw=cp.get_data(rva,length);binding['ranges'].append(dict(module='ai',rva=rva,length=length,expected_hex=raw.hex(),kind='native getter/Actual binding'))
+@@ -50,7 +52,7 @@
+         binding['ranges'].append(dict(module='ai',rva=section.VirtualAddress,length=len(raw),expected_hex=raw.hex(),kind='PIC-payload'))
+         binding['shared_plan_rva']=int(manifest['components']['state_rva'],16)
+         state_size=manifest['components']['state_size']
+-        if binding['shared_plan_rva']!=0xdd000 or state_size!=0x54804:raise ValueError('Exact reason23 own-state layout changed')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x54804:raise ValueError('Exact reason23 own-state layout changed')
+         if not 0x40600+1152<=state_size or binding['shared_plan_rva']+state_size>binding['ai']['size']:raise ValueError('Own slot outside bound AI state/module')
+         state_sections=[s for s in cp.sections if s.VirtualAddress==binding['shared_plan_rva'] and s.Misc_VirtualSize==state_size]
+         if len(state_sections)!=1:raise ValueError('Exact own state section missing')
+@@ -108,7 +110,9 @@
+     # Preserve double bits as rawhex too; invalid/nonfinite values never affect JSON equality.
+     raw['actual_rations_double']=h3[24:32].hex()
+     h2=dict(zip(('status','reason','count','mountains'),struct.unpack_from('<4i',h3,H2_RESULT_OFFSET)))
+-    tied=shared['reason']==23 and shared['classified']==1 and shared['h3calls']==1 and shared['slots']==0
++    # Score-B skips can precede the unique H3 call after the new filter.
++    prefix_valid=(0<=shared['prefix_count']<=64 and shared['prefix_count']==min(64,shared['known_count']) and 0<=shared['known_count']<=shared['candidates']<=4096 and shared['gate_queries']==shared['candidates']==shared['known_count']+shared['gate_false'] and shared['gate_false']>=0)
++    tied=(prefix_valid and shared['context']==1 and shared['reason']==23 and 1<=shared['classified']<=shared['prefix_count'] and shared['h3calls']==1 and shared['slots']==0)
+     unknown='UNKNOWN_NOT_REACHED_OR_INCOMPLETE'
+     observed={key:unknown for key in raw}
+     observed.update(status=raw['status'],reason=raw['reason'])
+@@ -130,14 +134,14 @@
+     if raw['status']==2 and current:
+         for key in raw:observed[key]=raw[key]
+     if not tied:
+-        attribution='UNKNOWN_FIRSTCALL_PASS_PATTERN'
++        attribution='UNKNOWN_UNIQUE_H3_CALL_ATTRIBUTION'
+     elif raw['status']==0 and raw['reason']==14:attribution='H3_HOST_FAILED_BEFORE_CURRENT_MODEL_LEAF_UNKNOWN'
+     elif raw['status']==0 and raw['reason'] in (10,11,12,13):attribution={10:'CAPACITY_CHAIN_LEAF_MAY_REMAIN_UNKNOWN',11:'WGF_PARTIAL_WRITES_ONLY',12:'CENTERFOOD_OR_ARITHMETIC_LEAF_UNKNOWN',13:'UNSUPPORTED_ENTRIES_LEAF_UNKNOWN'}[raw['reason']]
+     elif raw['status']==2 and current and valid_indices:attribution='SUPPORTED_RESULT_KEY_INVARIANT_QUESTION_REMAINS'
+     else:attribution='INCONSISTENT_OBSERVATION_NO_CERTIFICATE'
+     if not tied:
+         observed={key:unknown for key in raw};entries=unknown;valid_indices=False
+-    return dict(rawhex=slot.hex(),h3_raw=raw,h2_raw=h2,h3_observed=observed,h2_observed=h2 if tied and h2_reached else unknown,h2_entries=entries,indices_valid=valid_indices,firstcall_attribution=attribution,firstcall_pattern=tied,only_last_shared_pass=True,other_civs_certified=False,raw_zero_is_not_measurement=True)
++    return dict(rawhex=slot.hex(),h3_raw=raw,h2_raw=h2,h3_observed=observed,h2_observed=h2 if tied and h2_reached else unknown,h2_entries=entries,indices_valid=valid_indices,unique_h3_call_attribution=attribution,unique_h3_call_pattern=tied,first_classification_required=False,only_last_shared_pass=True,other_civs_certified=False,raw_zero_is_not_measurement=True)
+ 
+ def native_expansion_state(read,eb,ab,participants,binding):
+     read=bounded(read)
+@@ -155,9 +159,9 @@
+     def uninitialized():return dict(loaded_settler_type='UNKNOWN_NOT_INITIALIZED',native_desired='UNKNOWN_NOT_INITIALIZED',native_actual='UNKNOWN_NOT_INITIALIZED',native_supplemental_deficit='UNKNOWN_NOT_INITIALIZED',current_front_cache='UNKNOWN_NOT_INITIALIZED',current_settler_armies='UNKNOWN_NOT_INITIALIZED',Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+     def shared_state():
+         if binding['variant']!='U30-40':return None
+-        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,candidates=68,slots=80,h3calls=128)
++        ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,prefix_count=224,known_count=228,gate_queries=232,gate_false=236,candidates=68,slots=80,h3calls=128)
+         shared={key:i32(ptr+off) for key,off in fields.items()}
+-        if binding['shared_plan_rva']!=0xdd000 or binding['shared_plan_size']!=0x54804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
++        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or binding['shared_plan_size']!=0x54804 or 0x40600+1152>binding['shared_plan_size'] or binding['shared_plan_rva']+0x40600+1152>binding['ai']['size']:raise ValueError('Own slot read outside exact bound state/module')
+         slot=read(checked(ptr,0x40600),1152)
+         shared['slot0']=decode_slot0(slot,shared)
+         shared.update(only_last_pass_buffer=True,all_seven_telemetry_available=False,certificate_not_attributed_to_other_civs=True)
+@@ -256,7 +260,7 @@
+     p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+     p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+     p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+-    gate=json.loads((FOLDER/'C10-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
++    gate=json.loads((FOLDER/'KAARTFILTER-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
+     if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C10 source-only; no live reader release')
+     if args.turn not in (0,1) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
+     for pin in gate.get('sources',[]):

@@ -1,0 +1,79 @@
+caller 1
+PASS bound center positive2
+caller 2
+PASS second occupied current invocation independent of first latch
+caller 3
+PASS subsequent city failure remains unknown despite first branch10 latch
+caller 4
+PASS occupied tile remains unknown
+caller 5
+PASS wrong center callsite remains unknown
+caller 6
+PASS negative count remains unknown
+caller 7
+PASS zero count ordinary success
+caller 8
+PASS city branch9 unchanged
+caller 9
+PASS other guard pregetter unchanged
+caller 10
+PASS shared normal return1 unchanged
+caller 11
+PASS shared occupied return0 unchanged
+caller 12
+PASS fresh Plan mutation rejected offset8
+caller 13
+PASS fresh Plan mutation rejected offset32
+caller 14
+PASS fresh Plan mutation rejected offset36
+caller 15
+PASS fresh Plan mutation rejected offset40
+caller 16
+PASS fresh Plan mutation rejected offset220
+caller 17
+PASS fresh Plan mutation rejected offset224
+caller 18
+PASS fresh Plan mutation rejected offset240
+caller 19
+PASS fresh Plan mutation rejected offset256
+caller 20
+PASS fresh Plan mutation rejected offset493568
+caller 21
+PASS fresh Plan mutation rejected offset493572
+caller 22
+PASS fresh Plan mutation rejected offset68
+caller 23
+PASS fresh Plan mutation rejected offset337580
+caller 24
+PASS fresh invocation staging mutation rejected offset-340
+caller 25
+PASS fresh invocation staging mutation rejected offset-344
+caller 26
+PASS fresh invocation staging mutation rejected offset-336
+caller 27
+PASS fresh invocation staging mutation rejected offset-324
+caller 28
+PASS fresh invocation staging mutation rejected offset-320
+caller 29
+PASS fresh invocation staging mutation rejected offset-316
+caller 30
+PASS fresh invocation staging mutation rejected offset-312
+caller 31
+PASS fresh invocation staging mutation rejected offset-308
+caller 32
+PASS fresh invocation staging mutation rejected offset-296
+caller 33
+PASS fresh invocation staging mutation rejected offset-276
+caller 34
+PASS fresh invocation staging mutation rejected offset-116
+caller 35
+PASS fresh invocation staging mutation rejected offset-112
+PASS injected actual model continuation kind1 return0
+PASS injected actual model continuation kind1 return1
+PASS injected actual model continuation kind1 return2
+PASS injected actual model continuation kind1 return3
+PASS injected actual model continuation kind2 return0
+PASS injected actual model continuation kind2 return1
+PASS injected actual model continuation kind2 return2
+PASS injected actual model continuation kind2 return3
+cleanup=True

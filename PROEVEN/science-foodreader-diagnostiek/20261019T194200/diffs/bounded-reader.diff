@@ -1,0 +1,11 @@
+--- PROEVEN\u30-science-filter\20261017T124500\diagnostic-reader\partial_diagnostic.py
++++ PROEVEN\science-foodreader-diagnostiek\20261019T194200\reader\partial_diagnostic.py
+@@ -87,7 +87,7 @@
+ def diagnose(read,shared,slot0,civ_ids,module_size,state_rva,decode_h3):
+  result=dict(status='UNSELECTED_PARTIAL_PASS_DIAGNOSTIC',selected=False,certified=False,only_last_bound_civ_pass=True,other_civs_certified=False,gameplay_improvement_proven=False,provenance=PROVENANCE,objects=[],attribution_status='NOT_VALIDATED',usable_diagnostic_evidence=False,original_indices_reproduced=False)
+  def own(off,size,index=None,kind=None):
+-  if not (isinstance(off,int) and 0<=off and 1<=size<=2048 and off+size<=STATE_SIZE and state_rva==0xe1000 and state_rva+off+size<=module_size):raise ValueError('diagnostic own-state/module bounds')
++  if not (isinstance(off,int) and 0<=off and 1<=size<=2048 and off+size<=STATE_SIZE and state_rva>=0x1000 and state_rva%0x1000==0 and state_rva+STATE_SIZE<=module_size and state_rva+off+size<=module_size):raise ValueError('diagnostic own-state/module bounds')
+   raw=read(off,size)
+   if len(raw)!=size:raise ValueError('incomplete diagnostic read')
+   obj=dict(kind=kind,index=index,offset=off,length=size,rawhex=raw.hex(),provenance=PROVENANCE,decode_status='RAW_PRESERVED',attribution_status='OWN_BYTES_NOT_PHASE_PROOF')

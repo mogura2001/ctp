@@ -1,0 +1,147 @@
+--- PROEVEN/selectie-pad-diagnose/20261020T192500/native.py
++++ PROEVEN/pad-lokaal-onbekend/20261022T180000/native.py
+@@ -70,6 +70,75 @@
+ def checked_type(r,reg,bad):
+  r.test(reg,reg);r.j('js',bad);r.alu('cmp',reg,m('ebx',P['types']));r.j('jae',bad)
+ 
++# Selection-frame snapshots only. No Trace field is read by these guards.
++# -64..-124: immutable pass inputs; -144..-164: departure identity/claim;
++# -176..-196: destination/role/prefix; -208..-220: canonical endpoints.
++PAIR_PLAN=('owner','civ','generation','host','path','world','player','t','d8',
++           'planner','scheduler','udb','map','aip','types','slots','departures')
++PAIR_WORDS=(-144,-148,-152,-156,-160,-164,-176,-180,-184,-188,-192,-196,-208,-204,-216,-212)
++
++def remember_best(r):
++ # A later local4 must not overwrite the positive pair's own certificate.
++ for i,off in enumerate(PAIR_WORDS):r.mov('eax',m('ebp',off));r.mov(m('ebp',-240-i*4),'eax')
++
++def restore_best(r):
++ for i,off in enumerate(PAIR_WORDS):r.mov('eax',m('ebp',-240-i*4));r.mov(m('ebp',off),'eax')
++ r.mov('eax',m('ebp',-44));r.mov(m('ebp',-36),'eax');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES)
++ pair_compare(r,'selection_credit','select_bad',0)
++
++def pass_compare(r,label,bad):
++ # Inline comparison, preserving the caller's registers. Never rebind identity.
++ r.op('pairguard pushad',b'\x60');pc(r,label+'_pc')
++ r.rva('lea edi,executing pass','8dbe','pass_state');r.alu('cmp','edi','ebx');r.j('jne',label+'_bad')
++ for off,value in ((P['scope'],1),(P['guard'],0),(P['context'],1),(268,0)):
++  r.alu('cmp',m('ebx',off),value);r.j('jne',label+'_bad')
++ r.alu('cmp',m('ebx',P['status']),2);r.j('jne',label+'_bad');r.alu('cmp',m('ebx',P['reason']),0);r.j('jne',label+'_bad')
++ for off,snap in ((P['owner'],0x78800),(P['generation'],0x78804)):
++  r.mov('eax',m('ebx',off));r.test('eax','eax');r.j('jz',label+'_bad');r.alu('cmp','eax',m('ebx',snap));r.j('jne',label+'_bad')
++ r.mov('eax',m('ebx',P['generation']));r.test('eax','eax');r.j('jle',label+'_bad');r.rva('lea edi,current generation','8dbe','generation');r.alu('cmp','eax',m('edi'));r.j('jne',label+'_bad')
++ r.mov('edx',m('ebx',P['owner']));r.mov('eax',m('ebx',P['civ']));r.alu('cmp','eax',1);r.j('jl',label+'_bad');r.alu('cmp','eax',31);r.j('jg',label+'_bad');r.alu('cmp','eax',m('edx',0x20));r.j('jne',label+'_bad')
++ for owneroff,key in ((0x34,'path'),(0x30,'world'),(0x2c,'player'),(0x94,'planner'),(0x38,'udb'),(0x80,'map')):
++  r.mov('eax',m('ebx',P[key]));r.test('eax','eax');r.j('jz',label+'_bad');r.alu('cmp','eax',m('edx',owneroff));r.j('jne',label+'_bad')
++ r.mov('eax',m('ebx',P['t']));checked_type(r,'eax',label+'_bad');r.alu('cmp',m('ebx',P['d8']),1);r.j('ja',label+'_bad')
++ for key,cap in (('slots',SLOT_CAP),('departures',DEPARTURE_CAP),('prefix_count',64),('desired',SELECTED_CAP),('path_queries',128),('path_points',4096)):
++  r.alu('cmp',m('ebx',P[key]),cap);r.j('ja',label+'_bad')
++ r.alu('cmp',m('ebx',136),PATHCACHE_CAP);r.j('ja',label+'_bad')
++ r.op('pairguard popad',b'\x61');r.j('jmp',label+'_done');r.label(label+'_bad');r.op('pairguard failed popad',b'\x61');r.j('jmp',bad);r.label(label+'_done')
++
++def pass_snapshot(r):
++ for i,key in enumerate(PAIR_PLAN):r.mov('eax',m('ebx',P[key]));r.mov(m('ebp',-64-i*4),'eax')
++
++def pair_snapshot(r,bad):
++ for src,out,offsets in (('esi',-144,(0,4,8,12,16,20)),('edi',-176,(0,4,72,76,28,80))):
++  for i,off in enumerate(offsets):r.mov('eax',m(src,off));r.mov(m('ebp',out-i*4),'eax')
++ for src,extra,out in (('esi',8,-208),('edi',0,-216)):
++  r.lea('eax',m('ebp',out));r.push('eax');r.lea('eax',m(src,extra));r.push('eax');r.push('ebx');original(r,'canonical_key');r.alu('cmp','eax',1);r.j('jne',bad)
++
++def pair_compare(r,label,bad,depth):
++ # depth: selection=0, cache=1, direct=2. The production call chain is bound
++ # by actual return labels; the original direct/cache stdcall ABI stays ret12.
++ pass_compare(r,label+'_pass',bad)
++ r.op('pair inputs pushad',b'\x60');r.alu('sub','esp',8);r.mov('edx','ebp')
++ for i in range(depth):
++  expected=('pd_direct_return' if depth==2 and i==0 else 'pd_cache_return')
++  pc(r,label+'_caller'+str(i));r.rva('lea eax,current caller','8d86',expected);r.alu('cmp','eax',m('edx',4));r.j('jne',label+'_bad');r.mov('edx',m('edx'))
++ r.alu('cmp','ebx',m('edx',8));r.j('jne',label+'_bad')
++ for i,key in enumerate(PAIR_PLAN):r.mov('eax',m('ebx',P[key]));r.alu('cmp','eax',m('edx',-64-i*4));r.j('jne',label+'_bad')
++ for index,count,base,stride,extra,reg in ((-20,'slots',SLOTS,SLOT_STRIDE,0,'edi'),(-36,'departures',DEPARTURES,DEPARTURE_STRIDE,8,'esi')):
++  r.mov('eax',m('edx',index));r.alu('cmp','eax',m('ebx',P[count]));r.j('jae',label+'_bad');r.imul(reg,'eax',stride);r.alu('add',reg,'ebx');r.alu('add',reg,base)
++  if depth:r.lea('eax',m(reg,extra));r.alu('cmp','eax',m('ebp',16 if reg=='edi' else 12));r.j('jne',label+'_bad')
++  else:r.alu('cmp',reg,m('esp',8 if reg=='edi' else 12));r.j('jne',label+'_bad')
++ for src,out,offsets in (('esi',-144,(0,4,8,12,16,20)),('edi',-176,(0,4,72,76,28,80))):
++  for i,off in enumerate(offsets):r.mov('eax',m(src,off));r.alu('cmp','eax',m('edx',out-i*4));r.j('jne',label+'_bad')
++ r.alu('cmp',m('edi',72),1);r.j('jl',label+'_bad');r.alu('cmp',m('edi',72),2);r.j('jg',label+'_bad');r.mov('eax',m('edi',76));r.alu('cmp','eax',m('ebx',P['prefix_count']));r.j('jae',label+'_bad');r.alu('cmp','eax',m('ebx',P['classified']));r.j('jae',label+'_bad')
++ # Recheck the existing three source-priority admission rules, including claims.
++ r.mov('eax',m('esi',4));r.alu('cmp',m('edx',-28),2);r.j('je',label+'_build');r.alu('cmp',m('esi',16),-1);r.j('jne',label+'_bad');r.alu('cmp',m('edx',-28),0);r.j('jne',label+'_front');r.alu('cmp','eax',1);r.j('jne',label+'_bad');r.j('jmp',label+'_kindok')
++ r.label(label+'_front');r.alu('cmp','eax',3);r.j('je',label+'_kindok');r.alu('cmp','eax',4);r.j('jne',label+'_bad');r.j('jmp',label+'_kindok');r.label(label+'_build');r.alu('cmp','eax',2);r.j('je',label+'_kindok');r.alu('cmp','eax',3);r.j('jne',label+'_bad');r.label(label+'_kindok')
++ for src,extra,out in (('esi',8,-208),('edi',0,-216)):
++  r.mov('eax','esp');r.push('edx');r.push('eax');r.lea('eax',m(src,extra));r.push('eax');r.push('ebx');original(r,'canonical_key');r.pop('edx');r.alu('cmp','eax',1);r.j('jne',label+'_bad')
++  for part in (0,4):r.mov('eax',m('esp',part));r.alu('cmp','eax',m('edx',out+part));r.j('jne',label+'_bad')
++ r.alu('add','esp',8);r.op('pair inputs popad',b'\x61');r.j('jmp',label+'_done');r.label(label+'_bad');r.alu('add','esp',8);r.op('pair inputs failed popad',b'\x61');r.j('jmp',bad);r.label(label+'_done')
++
+ def resolve_type(r):
+  entry(r,'resolve_type',64);pc(r,'resolve_type_pc')
+  r.mov('edi',m('ebx',P['host']));r.mov('ecx',m('edi',0x67dcfc));r.test('ecx','ecx');r.j('jz','type_bad')
+@@ -172,6 +241,7 @@
+  # Every nonnull native returned pointer is freed once, including failures.
+  d=Trace(r,'path')
+  entry(r,'direct_path',128);r.mov(m('ebp',-16),0);r.mov(m('ebp',-20),0);r.mov(m('ebp',-24),0);r.mov(m('ebp',-28),0);r.mov(m('ebp',-32),0);r.mov(m('ebp',-36),0);r.mov(m('ebp',-40),0x3456ab89);r.mov(m('ebp',-12-32),0x4567bc90)
++ pair_compare(r,'direct_pre','path_unknown',2)
+  r.alu('cmp',m('ebx',P['path_queries']),128);r.j('jae','path_budget');r.mov('edx',m('ebx',P['host']));r.alu('cmp',m('edx',0x6d0b94),0);r.j('jne','path_unknown');r.unary('inc',m('ebx',P['path_queries']))
+  # Push20..1. Slot12 is the normalized frozen d8 queryresult.
+  r.push(1);r.push(0);r.push(1);r.lea('eax',m('ebp',-32));r.push('eax');r.push(4096);r.push(0);r.push(0);r.push(1);r.push(m('ebx',P['d8']))
+@@ -180,7 +250,8 @@
+  d.capture([('native_EAX','eax'),('capacity',m('ebp',-16)),('count',m('ebp',-24)),('pointer',m('ebp',-20)),('query',m('ebx',P['path_queries']))],['native_return'])
+  r.mov('edx',m('ebx',P['host']));r.push('ecx');r.mov('ecx',m('edx',0x6d0b94));d.capture([('postcontext','ecx')],['postcontext']);r.alu('cmp','ecx',0);r.pop('ecx');d.edge('jne',1)
+  d.capture([('canary1',m('ebp',-40))],['canary1']);r.alu('cmp',m('ebp',-40),0x3456ab89);d.edge('jne',2);d.capture([('canary2',m('ebp',-44))],['canary2']);r.alu('cmp',m('ebp',-44),0x4567bc90);d.edge('jne',3)
+- d.capture(bits=['raw_return_guard']);r.alu('cmp',m('ebp',-36),1);d.edge('jne',4);r.mov('esi',m('ebp',-20));d.capture(bits=['pointer']);r.test('esi','esi');d.edge('jz',5);r.mov('eax',m('ebp',-24));d.capture(bits=['count_min']);r.alu('cmp','eax',1);d.edge('jl',6);r.alu('cmp','eax',4096);r.j('jg','path_budget');d.capture(bits=['capacity']);r.alu('cmp','eax',m('ebp',-16));d.edge('jg',7);r.shift('shl','eax',3);r.alu('add','eax','esi');d.capture([('pointer_end','eax'),('bounds',('saved_flags',1))],['overflow']);d.edge('jb',8)
++ pair_compare(r,'direct_post','path_unknown',2)
++ d.capture(bits=['raw_return_guard']);r.alu('cmp',m('ebp',-36),0);r.j('je','path_local_candidate');r.alu('cmp',m('ebp',-36),1);d.edge('jne',4);r.mov('esi',m('ebp',-20));d.capture(bits=['pointer']);r.test('esi','esi');d.edge('jz',5);r.mov('eax',m('ebp',-24));d.capture(bits=['count_min']);r.alu('cmp','eax',1);d.edge('jl',6);r.alu('cmp','eax',4096);r.j('jg','path_budget');d.capture(bits=['capacity']);r.alu('cmp','eax',m('ebp',-16));d.edge('jg',7);r.shift('shl','eax',3);r.alu('add','eax','esi');d.capture([('pointer_end','eax'),('bounds',('saved_flags',1))],['overflow']);d.edge('jb',8)
+  for off,point in ((0,12),(-8,16)):
+   first=off==0;base=9 if first else 13;actual='first_actual' if first else 'last_actual';expected='source_expected' if first else 'destination_expected';ar='first_conversion' if first else 'last_conversion';er='source_conversion' if first else 'destination_conversion'
+   if off==0:r.mov('edx','esi')
+@@ -191,6 +262,9 @@
+   r.mov('eax',m('ebp',-24));r.shift('shl','eax',3);r.alu('add','eax','esi')
+  r.mov('eax',m('ebx',P['path_points']));r.alu('add','eax',m('ebp',-24));r.j('jb','path_budget');r.alu('cmp','eax',4096);r.j('ja','path_budget');r.mov(m('ebp',-36),1);r.mov(m('ebp',-48),0)
+  r.label('path_points');r.mov('eax',m('ebp',-48));r.alu('cmp','eax',m('ebp',-24));r.j('jge','path_free');r.shift('shl','eax',3);r.alu('add','eax','esi');r.unary('inc',m('ebx',P['path_points']));r.push('eax');r.push('ebx');original(r,'safe_point');r.alu('cmp','eax',1);r.j('je','path_next');r.alu('cmp','eax',2);r.j('jne','path_unknown');r.mov(m('ebp',-36),2);r.j('jmp','path_free')
++ r.label('path_local_candidate')
++ for off in (-16,-24,-20):r.alu('cmp',m('ebp',off),0);d.edge('jne',4)
++ d.local_unknown();r.mov(m('ebp',-36),4);r.j('jmp','path_free')
+  r.label('path_next');r.unary('inc',m('ebp',-48));r.j('jmp','path_points');r.label('path_unknown');unknown(r,21);r.mov(m('ebp',-36),0)
+  r.j('jmp','path_free');r.label('path_budget');r.mov(m('ebx',P['cutoff']),1);r.mov(m('ebp',-36),3);r.label('path_free');r.mov('eax',m('ebp',-20));r.test('eax','eax');r.j('jz','path_done');r.push('eax');engine(r,'eax',0x1866e0);r.unary('call','eax');r.alu('add','esp',4);r.mov(m('ebp',-20),0)
+  r.label('path_done');r.mov('eax',m('ebp',-36));d.capture([('direct_return','eax')],['direct_return'],propagate=True);r.epilogue(128,12)
+@@ -224,19 +298,19 @@
+ 
+ def path_cache(r):
+  # type/source/destination identity, own result only, never native pointers.
+- entry(r,'cached_path',64);r.lea('eax',m('ebp',-24));r.push('eax');r.push(m('ebp',12));r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','cached_unknown');r.lea('eax',m('ebp',-32));r.push('eax');r.push(m('ebp',16));r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','cached_unknown');r.mov('edi',0)
++ entry(r,'cached_path',64);pair_compare(r,'cache_pre','cached_unknown',1);r.lea('eax',m('ebp',-24));r.push('eax');r.push(m('ebp',12));r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','cached_unknown');r.lea('eax',m('ebp',-32));r.push('eax');r.push(m('ebp',16));r.push('ebx');original(r,'canonical_key');r.test('eax','eax');r.j('jz','cached_unknown');r.mov('edi',0)
+  r.label('cached_lookup');r.alu('cmp','edi',m('ebx',136));r.j('jge','cached_new');r.imul('esi','edi',PATHCACHE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',PATHCACHE)
+  for own,cached in ((-24,0),(-20,4),(-32,8),(-28,12)):
+   r.mov('eax',m('ebp',own));r.alu('cmp','eax',m('esi',cached));r.j('jne','cached_next')
+- r.mov('eax',m('ebx',P['t']));r.alu('cmp','eax',m('esi',16));r.j('jne','cached_next');r.mov('eax',m('esi',20));r.j('jmp','cached_done');r.label('cached_next');r.unary('inc','edi');r.j('jmp','cached_lookup')
+- r.label('cached_new');r.alu('cmp','edi',PATHCACHE_CAP);r.j('jae','cached_budget');r.push(m('ebp',16));r.push(m('ebp',12));r.push('ebx');original(r,'direct_path');Trace(r,'cache').capture([('cache_return','eax')],['cache_return'],propagate=True);r.test('eax','eax');r.j('jz','cached_done');r.mov(m('ebp',-36),'eax');r.imul('esi','edi',PATHCACHE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',PATHCACHE)
++ r.mov('eax',m('ebx',P['t']));r.alu('cmp','eax',m('esi',16));r.j('jne','cached_next');r.mov('eax',m('esi',20));r.alu('cmp','eax',1);r.j('jb','cached_unknown');r.alu('cmp','eax',4);r.j('ja','cached_unknown');r.j('jmp','cached_done');r.label('cached_next');r.unary('inc','edi');r.j('jmp','cached_lookup')
++ r.label('cached_new');r.alu('cmp','edi',PATHCACHE_CAP);r.j('jae','cached_budget');r.push(m('ebp',16));r.push(m('ebp',12));r.push('ebx');original(r,'direct_path');Trace(r,'cache').capture([('cache_return','eax')],['cache_return'],propagate=True);pair_compare(r,'cache_post','cached_unknown',1);r.test('eax','eax');r.j('jz','cached_done');r.alu('cmp','eax',1);r.j('jb','cached_unknown');r.alu('cmp','eax',4);r.j('ja','cached_unknown');r.mov(m('ebp',-36),'eax');r.imul('esi','edi',PATHCACHE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',PATHCACHE)
+  for own,cached in ((-24,0),(-20,4),(-32,8),(-28,12)):
+   r.mov('eax',m('ebp',own));r.mov(m('esi',cached),'eax')
+  r.mov('eax',m('ebx',P['t']));r.mov(m('esi',16),'eax');r.mov('eax',m('ebp',-36));r.mov(m('esi',20),'eax');r.unary('inc',m('ebx',136));r.j('jmp','cached_done');r.label('cached_budget');r.mov(m('ebx',P['cutoff']),1);r.mov('eax',3);r.j('jmp','cached_done');r.label('cached_unknown');unknown(r,24);result(r,'cached_done',64,12)
+ 
+ def selection(r):
+  d=Trace(r,'selection')
+- entry(r,'select_direct_plans',96);d.invocation();r.mov(m('ebx',P['desired']),0);r.mov(m('ebp',-16),0)
++ entry(r,'select_direct_plans',320);pass_compare(r,'selection_pre','select_bad');pass_snapshot(r);d.invocation();r.mov(m('ebx',P['desired']),0);r.mov(m('ebp',-16),0)
+  r.label('select_loop');r.mov('eax',m('ebp',-16));r.alu('cmp','eax',m('ebx',P['slots']));r.j('jge','select_ok');r.mov('eax',m('ebx',P['desired']));r.alu('cmp','eax',m('ebx',P['remaining']));r.j('jge','select_ok');r.alu('cmp','eax',SELECTED_CAP);r.j('jae','select_ok');r.mov('eax',m('ebp',-16));r.shift('shl','eax',2);r.lea('edx',m('ebx',ORDER));r.alu('add','edx','eax');r.mov('eax',m('edx'));r.mov(m('ebp',-20),'eax');r.imul('edi','eax',SLOT_STRIDE);r.alu('add','edi','ebx');r.alu('add','edi',SLOTS);r.mov(m('ebp',-24),0)
+  r.label('select_conflicts');r.mov('eax',m('ebp',-24));r.alu('cmp','eax',m('ebx',P['desired']));r.j('jge','select_endpoint');r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.imul('eax',m('edx'),SLOT_STRIDE);r.alu('add','eax','ebx');r.alu('add','eax',SLOTS);r.push('eax');r.push('edi');r.push('ebx');original(r,'plan_conflict');r.test('eax','eax');r.j('jnz','select_alternate');r.unary('inc',m('ebp',-24));r.j('jmp','select_conflicts')
+  r.label('select_alternate');r.alu('cmp',m('edi',72),1);r.j('jne','select_next');r.mov('eax',m('edi',76));r.alu('cmp','eax',64);r.j('jae','select_bad');r.shift('shl','eax',8);r.alu('add','eax','ebx');r.alu('add','eax',0x74800+128);r.alu('cmp',m('eax'),1);r.j('jne','select_next');r.push('eax');r.push('edi');r.push('ebx');original(r,'choose_alternative');r.mov(m('ebp',-24),0);r.j('jmp','select_conflicts')
+@@ -244,10 +318,11 @@
+  # Three stable priorities: ordinary existing, frontproduction, newbuild.
+  # Within each priority choose lowest raw ID that certifies this destination.
+  r.label('select_priority');r.alu('cmp',m('ebp',-28),3);r.j('jae','select_next');r.mov(m('ebp',-36),0);r.mov(m('ebp',-40),-1);r.mov(m('ebp',-44),-1)
+- r.label('select_sources');r.mov('eax',m('ebp',-36));r.alu('cmp','eax',m('ebx',P['departures']));r.j('jge','select_best');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi',4));r.alu('cmp',m('ebp',-28),0);r.j('je','source_existing');r.alu('cmp',m('ebp',-28),1);r.j('je','source_front');r.alu('cmp','eax',2);r.j('je','source_path');r.alu('cmp','eax',3);r.j('je','source_path');r.j('jmp','source_next')
++ r.label('select_sources');pass_compare(r,'selection_sources','select_bad');r.mov('eax',m('ebp',-36));r.alu('cmp','eax',m('ebx',P['departures']));r.j('jge','select_best');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi',4));r.alu('cmp',m('ebp',-28),0);r.j('je','source_existing');r.alu('cmp',m('ebp',-28),1);r.j('je','source_front');r.alu('cmp','eax',2);r.j('je','source_path');r.alu('cmp','eax',3);r.j('je','source_path');r.j('jmp','source_next')
+  r.label('source_existing');r.alu('cmp','eax',1);r.j('jne','source_next');r.alu('cmp',m('esi',16),-1);r.j('jne','source_next');r.j('jmp','source_path')
+  r.label('source_front');r.alu('cmp','eax',3);r.j('je','source_front_match');r.alu('cmp','eax',4);r.j('jne','source_next');r.label('source_front_match');r.alu('cmp',m('esi',16),-1);r.j('jne','source_next')
+- r.label('source_path');d.source();r.lea('eax',m('esi',8));r.push('edi');r.push('eax');r.push('ebx');original(r,'cached_path');r.alu('cmp','eax',3);r.j('je','select_ok');r.test('eax','eax');r.j('jz','select_bad');r.alu('cmp','eax',1);r.j('jne','source_next');r.mov('eax',m('esi'));r.alu('cmp',m('ebp',-44),-1);r.j('je','source_choose');r.alu('cmp','eax',m('ebp',-40));r.j('jae','source_next');r.label('source_choose');r.mov(m('ebp',-40),'eax');r.mov('eax',m('ebp',-36));r.mov(m('ebp',-44),'eax')
+- r.label('source_next');r.unary('inc',m('ebp',-36));r.j('jmp','select_sources');r.label('select_best');r.alu('cmp',m('ebp',-44),-1);r.j('jne','select_add');r.unary('inc',m('ebp',-28));r.j('jmp','select_priority')
+- r.label('select_add');r.mov('eax',m('ebp',-44));r.mov(m('edi',24),'eax');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi'));r.mov(m('edi',20),'eax');r.alu('cmp',m('ebp',-28),2);r.j('je','select_buildorigin');r.mov('eax',m('ebp',-20));r.mov(m('esi',16),'eax');r.label('select_buildorigin');r.mov('eax',m('ebx',P['desired']));r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.mov('eax',m('ebp',-20));r.mov(m('edx'),'eax');r.unary('inc',m('ebx',P['desired']))
+- r.label('select_next');r.unary('inc',m('ebp',-16));r.j('jmp','select_loop');r.label('select_ok');r.mov('eax',1);r.j('jmp','select_done');r.label('select_bad');unknown(r,25);d.publish();result(r,'select_done',96)
++ r.label('source_path');pair_snapshot(r,'select_bad');pair_compare(r,'source_pre','select_bad',0);d.source();r.lea('eax',m('esi',8));r.push('edi');r.push('eax');r.push('ebx');original(r,'cached_path');pair_compare(r,'source_post','select_bad',0);r.alu('cmp','eax',3);r.j('je','select_ok');r.alu('cmp','eax',2);r.j('je','source_next');r.alu('cmp','eax',4);r.j('je','source_next');r.alu('cmp','eax',1);r.j('jne','select_bad');r.mov('eax',m('esi'));r.alu('cmp',m('ebp',-44),-1);r.j('je','source_choose');r.alu('cmp','eax',m('ebp',-40));r.j('jae','source_next');r.label('source_choose');r.mov(m('ebp',-40),'eax');r.mov('eax',m('ebp',-36));r.mov(m('ebp',-44),'eax');remember_best(r)
++ r.label('source_next');r.unary('inc',m('ebp',-36));r.j('jmp','select_sources');r.label('select_best');pass_compare(r,'selection_best','select_bad');r.alu('cmp',m('ebp',-44),-1);r.j('jne','select_add');r.unary('inc',m('ebp',-28));r.j('jmp','select_priority')
++ r.label('select_add');restore_best(r);r.mov('eax',m('ebp',-44));r.mov(m('edi',24),'eax');r.imul('esi','eax',DEPARTURE_STRIDE);r.alu('add','esi','ebx');r.alu('add','esi',DEPARTURES);r.mov('eax',m('esi'));r.mov(m('edi',20),'eax');r.alu('cmp',m('ebp',-28),2);r.j('je','select_buildorigin');r.mov('eax',m('ebp',-20));r.mov(m('esi',16),'eax');r.label('select_buildorigin');r.mov('eax',m('ebx',P['desired']));r.shift('shl','eax',2);r.lea('edx',m('ebx',SELECTED));r.alu('add','edx','eax');r.mov('eax',m('ebp',-20));r.mov(m('edx'),'eax');r.unary('inc',m('ebx',P['desired']))
++ r.label('select_next');r.unary('inc',m('ebp',-16));r.j('jmp','select_loop');r.label('select_ok');pass_compare(r,'selection_finish','select_bad');r.mov('eax',1);d.publish_local();r.j('jmp','select_done');r.label('select_bad');unknown(r,25);d.publish();result(r,'select_done',320)
++

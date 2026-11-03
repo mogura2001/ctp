@@ -1,0 +1,16 @@
+# Voortgang wonderbewijs
+
+Momentopname 29 oktober 2026, 14:39 CET (Europe/Amsterdam). Analistwerk afgerond en gestopt; geen spel, helper of achtergrondrun actief vanuit deze opdracht.
+
+- Opdracht Doel4: V1 onafhankelijke nativeindex-tokenbinding, V2 echte queue/techvelden, V3 geschikte bestaande save. Drie van drie vragen als ontwerpinvoer beantwoord; savegeschiktheid blijft expliciet UNKNOWN.
+- Afgerond: bestaande afspraken/analyses hergebruikt; engine opnieuw gepind, parserbytes origineel/release gelijk; gerichte disassemblage van interface/tokenresolver/recordlayout, queue/poollookup en techgetters. Geen algemene binaryscan, emulatie, nativecall of processread.
+- Oplevering: [WONDERBEWIJS-VERVOLG-2026-10-29.md](WONDERBEWIJS-VERVOLG-2026-10-29.md), dekkingsmatrix en concrete adressen/byteankers. Alleen beide toegewezen Markdownbestanden gewijzigd; PROJECTSTATUS blijft rootownership.
+- Acceptatie: effectieve lijstmeting behouden; technische routes voldoende voor B. Onafhankelijke index2=Labyrinth-runtimebinding, nieuwe echte queue, onbouwbaar-geval en herstel na opening blijven OPEN. Geen gameplaywinst of volledig Doel4 AF geclaimd.
+- Volgende reviewbare oplevering/hervatpunt: B formuleert kleine exacte-token/SID-projectie eenmaal per compleet stabiel sample plus begrensde echte queue/techvelden. Daarna C inspecteert bestaande U30-40-archiefsave; lege queue, technologie, beschikbaarheid, rang/opslag en ≤50bouwtijd moeten eerst blijken. Geen verdere A-reconstructie nodig.
+- Budgetcontrole 14:38:08 CET: bron13:37:55UTC, vijfuur63%, week79%, stateok. Pc aan; geen afsluitactie of planning.
+
+Dit bestand registreert afgerond werk, geen procesmonitor. Hoofdagent direct geïnformeerd bij start en overdracht.
+
+Momentopname 29 oktober 2026, 15:14 CET: nieuwe gerichte WONDERBOUW-opdracht V1–V3 afgerond/gestopt. [Overdracht](WONDERBOUW-VERVOLG-2026-10-29.md) levert queuevoor/naproof bij bezette T0, actuele prioriteitsformules/kleinste gewichtsroute en de noodzakelijke productie-/stock-/kosten-/rangvelden. Belangrijke beperking: IAmBuilding-state3 remt nieuwe goalcreatie, maar CanBuild laat3 toe; daarmee geen absolute éénbouwerclaim. Geen gameplaywijziging, spelstart, runtime, emulatie of nieuwe frameworkcode. Volgende oplevering B: beperkte bestaande-readerprojectie en maximaal1n-vergelijking, zonder nog algemene A te openen. Native token/indexidentiteit en 47 owner/handlequeueprojecties zijn inmiddels in C2 bewezen; nieuwe wonderbouw, geschikte stad en Doel4 blijven OPEN. Laatste budget 15:14:26 CET: bron14:13:45UTC, vijfuur20%, week72%, stateok. Pc aan.
+
+Aanvulling 29 oktober 2026, 14:46 CET: uitsluitend de gerichte V2-eigenaarterugvraag beantwoord. Poolnode+18=civ via4da960/4da970 en queuekosten-Playerlookup; CityData+4=civ via498cc4/4745a0. Volledige handlevergelijking node+c, directe CityData-pointer node+58 en de bestaande Player+12c8 AIcity-ID→slot→Player+12c0-handleketen expliciet vastgelegd. Geen verzonnen CityData-IDveld, geen spel/runtime/code of saveonderzoek. Eigenaars-/stadpoort voldoende voor B/C0; native token-/queuewaarnemingen blijven OPEN. Werk direct gestopt na overdracht. Budget14:44:59 CET: verse bron13:44:55UTC, vijfuur52%, week77%, stateok; pc aan.

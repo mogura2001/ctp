@@ -1,0 +1,167 @@
+{
+  "at_utc": "2026-11-03T12:54:11.206487+00:00",
+  "status": "CONTROL_T25_MEASURED_SAVE_RELOAD_RESTORED_ROOT_REVIEW_PENDING",
+  "arm": "control",
+  "source_T0_sha256": "c6bab2909d9f5739005e5f24678cf0a5818b17821031ca171c454e2cc40f4327",
+  "n_inputs": 25,
+  "completed_markers": 25,
+  "pending_n": false,
+  "native_init": -1,
+  "native_end": 24,
+  "all_stable_twice": true,
+  "same_instance": true,
+  "rows": [
+    {
+      "civ_id": 2,
+      "civ_name": "Juana de la Cruz / Mexicans",
+      "processed_round": 24,
+      "cities": 3,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 3,
+      "civ_name": "Sennacherib / Assyrians",
+      "processed_round": 24,
+      "cities": 4,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 4,
+      "civ_name": "Elizabeth II / Jamaicans",
+      "processed_round": 24,
+      "cities": 3,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 5,
+      "civ_name": "Isabella / Spaniards",
+      "processed_round": 24,
+      "cities": 5,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 6,
+      "civ_name": "Mao Tse-Tung / Chinese",
+      "processed_round": 24,
+      "cities": 4,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 7,
+      "civ_name": "Mohandas Gandhi / Indians",
+      "processed_round": 24,
+      "cities": 4,
+      "active_government": 1,
+      "Religion_known": true,
+      "Theocracy_known": false,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    },
+    {
+      "civ_id": 8,
+      "civ_name": "Maria II / Portuguese",
+      "processed_round": 24,
+      "cities": 5,
+      "active_government": 3,
+      "Religion_known": true,
+      "Theocracy_known": true,
+      "labyrinth_queued_cities": 0,
+      "weight30000status": "FAIL"
+    }
+  ],
+  "cities_total": 28,
+  "Theocracy_active_civs": 6,
+  "labyrinth_queued_cities_total": 0,
+  "new_wonder_completion_UI_proven": false,
+  "human_city_count": 1,
+  "human_Rome_size": 2,
+  "human_research_default_OK": [
+    "Stone Working",
+    "Bronze Working",
+    "Shipbuilding"
+  ],
+  "fortify_commands": 9,
+  "units_manually_placed": 0,
+  "movements": 0,
+  "production_mutations": 0,
+  "settings_changes": 0,
+  "named_checkpoint": {
+    "bytes": 400380,
+    "sha256": "241e31a2b9b8ef5707aedc1866ee57b8c6d9a963d830804e28801d954cfb5d87",
+    "archive": "PROEVEN/land-stad-t25/20261103/control/checkpoint.sav",
+    "reload_semantics_pass": true
+  },
+  "human_reload_UI_difference": {
+    "happiness": "74 to78",
+    "Shipbuilding_turns": "10 to6",
+    "cause": "UNKNOWN",
+    "no_extra_n": true
+  },
+  "allowed_inline_correction": {
+    "root_authorized": true,
+    "keys": "{END}{BACKSPACE}",
+    "once": true,
+    "before": "LAND-T25-20261103-CONTROLC",
+    "after": "LAND-T25-20261103-CONTROL",
+    "before_SaveOK": true,
+    "marker": "SAVE-CORRECT-consumed.json",
+    "pinned_scripts_unchanged": true
+  },
+  "close": {
+    "at_utc": "2026-11-03T12:53:20.7233847Z",
+    "pid": 29080,
+    "creation_filetime": 134381825847460432,
+    "close_sent": true,
+    "exited_after_5seconds": true,
+    "elapsed_seconds": 1415.9773415,
+    "ctp_processes": 0,
+    "forced_kill": false
+  },
+  "restore": {
+    "at_utc": "2026-11-03T12:53:32.2043927Z",
+    "arm": "control",
+    "restored_pins": 162,
+    "aidata": 118,
+    "saves": 38,
+    "alias_removed": true,
+    "checkpoint": {
+      "after_sha256": "241e31a2b9b8ef5707aedc1866ee57b8c6d9a963d830804e28801d954cfb5d87",
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/LAND-T25-20261103-CONTROL",
+      "bytes": 400380
+    },
+    "archived_changes": [
+      {
+        "after_sha256": "5489116f5b742669b8b9efd3e7dff2e4d0817c733d90b131d727c0951a22d204",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+        "bytes": 196453
+      }
+    ],
+    "ctp_processes": 0,
+    "pc_left_on": true
+  },
+  "candidate_run": false,
+  "paired_gameplay_improvement": "NOT_MEASURED",
+  "T50_T100_and_city30_40": "OPEN",
+  "work_stopped": true,
+  "pc_left_on": true
+}

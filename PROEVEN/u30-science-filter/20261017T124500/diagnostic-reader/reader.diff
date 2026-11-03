@@ -1,0 +1,46 @@
+--- immutable reader/Lees-Uitbreiding.py
++++ diagnostic-reader/Lees-Uitbreiding.py
+@@ -10,10 +10,14 @@
+ sys.path.insert(0,str(FOLDER.parent))
+ from plan_layout import COUNTERS,CONTEXT_ERROR,SCIENCE_BUDGET_EXHAUSTED
+ from positive_reader import selected_evidence
++from partial_diagnostic import diagnose
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+ def trusted_binding(variant):
++    pins=json.loads((FOLDER/'DIAGNOSTIC-PINS.json').read_text('utf-8'))
++    for pin in pins['sources']:
++        if hashlib.sha256((ROOT/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Pinned diagnostic/provenance source changed: '+pin['path'])
+     if not NEW_HASH or not MANIFEST_HASH or RUNTIME_PINS['state_rva'] is None:raise ValueError('Source-only reader has no reviewed candidate pins')
+     binding=original_binding('original')
+     if variant not in ('release-v1','U30-40'):raise ValueError('Only exact tested release or reviewed U30-40')
+@@ -21,7 +25,7 @@
+     mp=FOLDER.parent/'candidate-manifest.json'
+     if hashlib.sha256(mp.read_bytes()).hexdigest()!=MANIFEST_HASH:raise ValueError('C1 manifest changed')
+     manifest=json.loads(mp.read_text('utf-8'))
+-    cpbytes=(FOLDER/'candidate'/('variant' if variant=='U30-40' else 'baseline')/'CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll').read_bytes()
++    cpbytes=(FOLDER.parent/'reader/candidate'/('variant' if variant=='U30-40' else 'baseline')/'CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll').read_bytes()
+     expected=NEW_HASH if variant=='U30-40' else BASE_HASH
+     if hashlib.sha256(cpbytes).hexdigest()!=expected:raise ValueError('Exact staged AI changed')
+     cp=pefile.PE(data=cpbytes);ep=pefile.PE(data=(ROOT/'CTP-og/ctp_program/ctp/civctp.exe').read_bytes())
+@@ -174,6 +178,7 @@
+         slot=read(checked(ptr,0x40600),1152)
+         shared['slot0_historical_reason23_diagnostic']=decode_slot0(slot,shared)
+         shared['selected_evidence']=selected_evidence(lambda off,size:read(checked(ptr,off),size),shared,participants['civ_ids'])
++        shared['unselected_partial_pass_diagnostic']=diagnose(lambda off,size:read(checked(ptr,off),size),shared,slot,participants['civ_ids'],binding['ai']['size'],binding['shared_plan_rva'],decode_slot0)
+         shared.update(only_last_pass_buffer=True,all_seven_telemetry_available=False,certificate_not_attributed_to_other_civs=True)
+         shared['raw_type_values_certified']=False
+         shared['raw_type_values_note']='UNCERTIFIED intermediate values; zero may be initialization, not evidence of a completed resolver write'
+@@ -270,9 +275,9 @@
+     p.EnumProcessModulesEx.argtypes=[W.HANDLE,C.POINTER(W.HMODULE),W.DWORD,C.POINTER(W.DWORD),W.DWORD]
+     p.GetModuleFileNameExW.argtypes=[W.HANDLE,W.HMODULE,W.LPWSTR,W.DWORD]
+     p.GetModuleInformation.argtypes=[W.HANDLE,W.HMODULE,C.POINTER(ModuleInfo),W.DWORD]
+-    gate=json.loads((FOLDER/'SCIENCE-FILTER-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
++    gate=json.loads((FOLDER/'SCIENCE-DIAGNOSTIC-ROOT-VRIJGAVE.json').read_text('utf-8-sig'))
+     if not gate.get('allowed') or gate.get('candidate_sha256')!=NEW_HASH:raise ValueError('C10 source-only; no live reader release')
+-    if args.turn not in (0,1,5,10) or args.variant=='release-v1' and not gate.get('baseline_allowed'):raise ValueError('First C10 scope is variant T0/T1 only')
++    if args.turn not in (0,1) or args.variant!='U30-40':raise ValueError('Diagnostic scope is exact candidate T0/T1 only')
+     for pin in gate.get('sources',[]):
+         if hashlib.sha256((FOLDER/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Released C10 source changed')
+     handle=k.OpenProcess(0x410,False,args.pid) # QUERY_INFORMATION|VM_READ only

@@ -1,0 +1,1175 @@
+{
+  "status": "UNSELECTED_PARTIAL_PASS_DIAGNOSTIC",
+  "selected": false,
+  "certified": false,
+  "only_last_bound_civ_pass": true,
+  "other_civs_certified": false,
+  "gameplay_improvement_proven": false,
+  "provenance": {
+    "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+    "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+  },
+  "objects": [
+    {
+      "kind": "owner_generation_snapshot",
+      "index": null,
+      "offset": 493568,
+      "length": 8,
+      "rawhex": "3412000007000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "owner": 4660,
+      "generation": 7
+    },
+    {
+      "kind": "ScienceResult",
+      "index": 0,
+      "offset": 346112,
+      "length": 2048,
+      "rawhex": "02000000000000000100000003000000030000000000000000000000000000000100000002000000000000000000000000000000000000000000000000000000000000000000f03f14000000000000003200000000000000280000000000000028000000000000006400000000000000010000001b002d0000000000000000001d002a000000000000000000000000000a000000180000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001b002b000000000000000000000000000a000000180000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001c002a000000000000000000000000000a00000018000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "decode": {
+        "header": {
+          "location_state": 2,
+          "reason": 0,
+          "model": 1,
+          "conditions": 3,
+          "open_count": 3,
+          "potential_count": 0,
+          "certifiable_count": 0,
+          "selected0": 0,
+          "selected1": 1,
+          "selected2": 2,
+          "current_unknownmask": 0,
+          "spatial_unknownmask": 0,
+          "spatial_pendingmask": 0,
+          "development_unknownmask": 0,
+          "ration_stand": 0,
+          "development_state": 0,
+          "actual_R": 1.0,
+          "center_food_i64": 20,
+          "S3_current_i64": 50,
+          "margin3_x2_i64": 40,
+          "crime_numerator_i64": 40,
+          "crime_denominator_i64": 100,
+          "coverage": 1,
+          "center_key": [
+            27,
+            45,
+            0,
+            0
+          ],
+          "h2_status": 0
+        },
+        "tiles": [
+          {
+            "index": 0,
+            "canonical_key": [
+              29,
+              42,
+              0,
+              0
+            ],
+            "external_MapPoint": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "current_food_i32": 10,
+            "structure_flags": 24,
+            "raw_spatial": 1,
+            "spatial_reason": 0,
+            "development": {
+              "status": 0,
+              "reason": 0,
+              "selector": 0,
+              "availability_raw": 0,
+              "position_predicate_raw": 0,
+              "position_state_raw": 0,
+              "already_present": 0,
+              "target_materials": 0,
+              "target_time": 0,
+              "required_advance_id": 0,
+              "food_delta_double": 0.0,
+              "future_food_i32": 0,
+              "delta_i32": 0,
+              "terrain": 0,
+              "conditions": 0
+            }
+          },
+          {
+            "index": 1,
+            "canonical_key": [
+              27,
+              43,
+              0,
+              0
+            ],
+            "external_MapPoint": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "current_food_i32": 10,
+            "structure_flags": 24,
+            "raw_spatial": 1,
+            "spatial_reason": 0,
+            "development": {
+              "status": 0,
+              "reason": 0,
+              "selector": 0,
+              "availability_raw": 0,
+              "position_predicate_raw": 0,
+              "position_state_raw": 0,
+              "already_present": 0,
+              "target_materials": 0,
+              "target_time": 0,
+              "required_advance_id": 0,
+              "food_delta_double": 0.0,
+              "future_food_i32": 0,
+              "delta_i32": 0,
+              "terrain": 0,
+              "conditions": 0
+            }
+          },
+          {
+            "index": 2,
+            "canonical_key": [
+              28,
+              42,
+              0,
+              0
+            ],
+            "external_MapPoint": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "current_food_i32": 10,
+            "structure_flags": 24,
+            "raw_spatial": 1,
+            "spatial_reason": 0,
+            "development": {
+              "status": 0,
+              "reason": 0,
+              "selector": 0,
+              "availability_raw": 0,
+              "position_predicate_raw": 0,
+              "position_state_raw": 0,
+              "already_present": 0,
+              "target_materials": 0,
+              "target_time": 0,
+              "required_advance_id": 0,
+              "food_delta_double": 0.0,
+              "future_food_i32": 0,
+              "delta_i32": 0,
+              "terrain": 0,
+              "conditions": 0
+            }
+          }
+        ],
+        "raw_header_decode_status": "DECODED",
+        "bounded_tile_decode_status": "DECODED",
+        "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+        "coverage_positive_calculation_allowed": true,
+        "actual_R_rawbits_le": "000000000000f03f",
+        "existing_decoder_status": "DECODED",
+        "existing_decoder": {
+          "header": {
+            "location_state": 2,
+            "reason": 0,
+            "model": 1,
+            "conditions": 3,
+            "open_count": 3,
+            "potential_count": 0,
+            "certifiable_count": 0,
+            "selected0": 0,
+            "selected1": 1,
+            "selected2": 2,
+            "current_unknownmask": 0,
+            "spatial_unknownmask": 0,
+            "spatial_pendingmask": 0,
+            "development_unknownmask": 0,
+            "ration_stand": 0,
+            "development_state": 0,
+            "actual_R": 1.0,
+            "center_food_i64": 20,
+            "S3_current_i64": 50,
+            "margin3_x2_i64": 40,
+            "crime_numerator_i64": 40,
+            "crime_denominator_i64": 100,
+            "coverage": 1,
+            "center_key": [
+              27,
+              45,
+              0,
+              0
+            ],
+            "h2_status": 0
+          },
+          "location_name": "NOW",
+          "development_name": "UNKNOWN",
+          "computed_current": {
+            "selected_indices": [
+              0,
+              1,
+              2
+            ],
+            "steps": [
+              {
+                "n": 1,
+                "k": 1,
+                "S_i64": 30,
+                "demand_x2_i64": 20,
+                "margin_x2_i64": 40,
+                "crime_numerator_i64": 40,
+                "crime_denominator_i64": 60
+              },
+              {
+                "n": 2,
+                "k": 2,
+                "S_i64": 40,
+                "demand_x2_i64": 40,
+                "margin_x2_i64": 40,
+                "crime_numerator_i64": 40,
+                "crime_denominator_i64": 80
+              },
+              {
+                "n": 3,
+                "k": 3,
+                "S_i64": 50,
+                "demand_x2_i64": 60,
+                "margin_x2_i64": 40,
+                "crime_numerator_i64": 40,
+                "crime_denominator_i64": 100
+              }
+            ],
+            "strict_positive_n1_n2_n3": true,
+            "minimum_crime_fraction": [
+              2,
+              5
+            ],
+            "development_state_name": "UNKNOWN",
+            "conditional_only": true
+          },
+          "computed_future": null,
+          "tiles": [
+            {
+              "index": 0,
+              "canonical_key": [
+                29,
+                42,
+                0,
+                0
+              ],
+              "external_MapPoint": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "current_food_i32": 10,
+              "structure_flags": 24,
+              "raw_spatial": 1,
+              "spatial_reason": 0,
+              "development": {
+                "status": 0,
+                "reason": 0,
+                "selector": 0,
+                "availability_raw": 0,
+                "position_predicate_raw": 0,
+                "position_state_raw": 0,
+                "already_present": 0,
+                "target_materials": 0,
+                "target_time": 0,
+                "required_advance_id": 0,
+                "food_delta_double": 0.0,
+                "future_food_i32": 0,
+                "delta_i32": 0,
+                "terrain": 0,
+                "conditions": 0,
+                "state_name": "UNKNOWN"
+              }
+            },
+            {
+              "index": 1,
+              "canonical_key": [
+                27,
+                43,
+                0,
+                0
+              ],
+              "external_MapPoint": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "current_food_i32": 10,
+              "structure_flags": 24,
+              "raw_spatial": 1,
+              "spatial_reason": 0,
+              "development": {
+                "status": 0,
+                "reason": 0,
+                "selector": 0,
+                "availability_raw": 0,
+                "position_predicate_raw": 0,
+                "position_state_raw": 0,
+                "already_present": 0,
+                "target_materials": 0,
+                "target_time": 0,
+                "required_advance_id": 0,
+                "food_delta_double": 0.0,
+                "future_food_i32": 0,
+                "delta_i32": 0,
+                "terrain": 0,
+                "conditions": 0,
+                "state_name": "UNKNOWN"
+              }
+            },
+            {
+              "index": 2,
+              "canonical_key": [
+                28,
+                42,
+                0,
+                0
+              ],
+              "external_MapPoint": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "current_food_i32": 10,
+              "structure_flags": 24,
+              "raw_spatial": 1,
+              "spatial_reason": 0,
+              "development": {
+                "status": 0,
+                "reason": 0,
+                "selector": 0,
+                "availability_raw": 0,
+                "position_predicate_raw": 0,
+                "position_state_raw": 0,
+                "already_present": 0,
+                "target_materials": 0,
+                "target_time": 0,
+                "required_advance_id": 0,
+                "food_delta_double": 0.0,
+                "future_food_i32": 0,
+                "delta_i32": 0,
+                "terrain": 0,
+                "conditions": 0,
+                "state_name": "UNKNOWN"
+              }
+            }
+          ],
+          "science_credit_enabled": false,
+          "conditional_only": true,
+          "future_growth_calculation_implemented": true,
+          "diagnostic_origin": "arithmetic from caller-owned saved bytes; future indices were native-private stack data",
+          "summary_selection": "selected CURRENT indices only",
+          "native_pending_parity": true,
+          "native_pending_parity_status": "MATCH"
+        }
+      }
+    },
+    {
+      "kind": "ScienceResult",
+      "index": 3,
+      "offset": 352256,
+      "length": 2048,
+      "rawhex": "000000000c0000000100000000000000000000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "decode": {
+        "header": {
+          "location_state": 0,
+          "reason": 12,
+          "model": 1,
+          "conditions": 0,
+          "open_count": 0,
+          "potential_count": 0,
+          "certifiable_count": 0,
+          "selected0": -1,
+          "selected1": -1,
+          "selected2": -1,
+          "current_unknownmask": 0,
+          "spatial_unknownmask": 0,
+          "spatial_pendingmask": 0,
+          "development_unknownmask": 0,
+          "ration_stand": 0,
+          "development_state": 0,
+          "actual_R": 0.0,
+          "center_food_i64": 0,
+          "S3_current_i64": 0,
+          "margin3_x2_i64": 0,
+          "crime_numerator_i64": 0,
+          "crime_denominator_i64": 0,
+          "coverage": 0,
+          "center_key": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "h2_status": 0
+        },
+        "tiles": [],
+        "raw_header_decode_status": "DECODED",
+        "bounded_tile_decode_status": "DECODED",
+        "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+        "coverage_positive_calculation_allowed": false,
+        "actual_R_rawbits_le": "0000000000000000",
+        "existing_decoder_status": "DECODED",
+        "existing_decoder": {
+          "header": {
+            "location_state": 0,
+            "reason": 12,
+            "model": 1,
+            "conditions": 0,
+            "open_count": 0,
+            "potential_count": 0,
+            "certifiable_count": 0,
+            "selected0": -1,
+            "selected1": -1,
+            "selected2": -1,
+            "current_unknownmask": 0,
+            "spatial_unknownmask": 0,
+            "spatial_pendingmask": 0,
+            "development_unknownmask": 0,
+            "ration_stand": 0,
+            "development_state": 0,
+            "actual_R": 0.0,
+            "center_food_i64": 0,
+            "S3_current_i64": 0,
+            "margin3_x2_i64": 0,
+            "crime_numerator_i64": 0,
+            "crime_denominator_i64": 0,
+            "coverage": 0,
+            "center_key": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "h2_status": 0
+          },
+          "location_name": "UNKNOWN",
+          "development_name": "UNKNOWN",
+          "computed_current": null,
+          "computed_future": null,
+          "tiles": [],
+          "science_credit_enabled": false,
+          "conditional_only": true,
+          "future_growth_calculation_implemented": true,
+          "diagnostic_origin": "arithmetic from caller-owned saved bytes; future indices were native-private stack data",
+          "summary_selection": "selected CURRENT indices only",
+          "native_pending_parity": null,
+          "native_pending_parity_status": "NOT_APPLICABLE_UNTRUSTED_COVERAGE"
+        }
+      }
+    },
+    {
+      "kind": "uncommitted_work_slot",
+      "index": 2,
+      "offset": 265984,
+      "length": 1152,
+      "rawhex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "header": {
+        "source_id": 0,
+        "source_index": 0,
+        "mandatory_count": 0,
+        "role": 0,
+        "prefix": 0,
+        "alternative": 0,
+        "conditions": 0,
+        "SCIreason": 0,
+        "prepared": 0,
+        "external_center": [
+          0,
+          0,
+          0
+        ],
+        "canonical_center": [
+          0,
+          0,
+          0
+        ],
+        "keys": [],
+        "phase_status": "RAW_UNCOMMITTED_NOT_PHASE_PROOF"
+      },
+      "existing_H3": {
+        "rawhex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "h3_raw": {
+          "status": 0,
+          "reason": 0,
+          "model_id": 0,
+          "mode": 0,
+          "actual_stand": 0,
+          "actual_rations_double": "0000000000000000",
+          "demand_i64": 0,
+          "center_food_i64": 0,
+          "city_bonus_i64": 0,
+          "S0_i64": 0,
+          "margin0_i64": 0,
+          "crime_numerator_i64": 0,
+          "crime_denominator_i64": 0,
+          "unsupported_entry_mask": 0,
+          "h2_status": 0,
+          "open_count": 0,
+          "mountain1_index": 0,
+          "mountain2_index": 0,
+          "mountain3_index": 0,
+          "food_index": 0,
+          "canonical_center": "0000000000000000",
+          "center_conditions": 0
+        },
+        "h2_raw": {
+          "status": 0,
+          "reason": 0,
+          "count": 0,
+          "mountains": 0
+        },
+        "h3_observed": {
+          "status": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "reason": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "model_id": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "mode": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "actual_stand": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "actual_rations_double": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "demand_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "center_food_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "city_bonus_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "S0_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "margin0_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "crime_numerator_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "crime_denominator_i64": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "unsupported_entry_mask": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "h2_status": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "open_count": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "mountain1_index": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "mountain2_index": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "mountain3_index": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "food_index": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "canonical_center": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+          "center_conditions": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE"
+        },
+        "h2_observed": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+        "h2_entries": "UNKNOWN_NOT_REACHED_OR_INCOMPLETE",
+        "indices_valid": false,
+        "unique_h3_call_attribution": "UNKNOWN_UNIQUE_H3_CALL_ATTRIBUTION",
+        "unique_h3_call_pattern": false,
+        "first_classification_required": false,
+        "only_last_shared_pass": true,
+        "other_civs_certified": false,
+        "raw_zero_is_not_measurement": true
+      }
+    },
+    {
+      "kind": "ORDER",
+      "index": null,
+      "offset": 337568,
+      "length": 32,
+      "rawhex": "0000000001000000020000000300000004000000050000000600000007000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 0,
+      "offset": 512,
+      "length": 8,
+      "rawhex": "1b00480000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        27,
+        72,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 1,
+      "offset": 520,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 2,
+      "offset": 528,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 3,
+      "offset": 536,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 4,
+      "offset": 544,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 5,
+      "offset": 552,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 6,
+      "offset": 560,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "CAPTURE_center",
+      "index": 7,
+      "offset": 568,
+      "length": 8,
+      "rawhex": "0000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "last_ALT_pair",
+      "index": 3,
+      "offset": 477952,
+      "length": 256,
+      "rawhex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "provenance": {
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+        "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+      },
+      "decode_status": "DECODED",
+      "attribution_status": "OWN_BYTES_NOT_PHASE_PROOF",
+      "alternatives": [
+        {
+          "alternative": 0,
+          "ready": 0,
+          "role": 0,
+          "count": 0,
+          "prefix": 0,
+          "SCIreason": 0,
+          "conditions": 0,
+          "phase_status": "NOT_PROVEN_REACHED"
+        },
+        {
+          "alternative": 1,
+          "ready": 0,
+          "role": 0,
+          "count": 0,
+          "prefix": 0,
+          "SCIreason": 0,
+          "conditions": 0,
+          "phase_status": "NOT_PROVEN_REACHED"
+        }
+      ]
+    }
+  ],
+  "attribution_status": "BOUND_LAST_CIV_GENERATION",
+  "usable_diagnostic_evidence": true,
+  "original_indices_reproduced": true,
+  "civ": 8,
+  "generation": 7,
+  "phase_claim": "PARTIAL_PASS_RAW_FIELDS_DO_NOT_PROVE_EVERY_STAGE",
+  "earlier_science_example": {
+    "status": "CONSISTENT_PREPARED_CONDITIONAL_SCIENCE_NOW_EXAMPLE",
+    "selected": false,
+    "certified": false,
+    "future_food_credit": false,
+    "conditional_new_city_model": true,
+    "keys": [
+      [
+        27,
+        45,
+        0
+      ],
+      [
+        29,
+        42,
+        0
+      ],
+      [
+        27,
+        43,
+        0
+      ],
+      [
+        28,
+        42,
+        0
+      ]
+    ],
+    "current_scenario": {
+      "selected_indices": [
+        0,
+        1,
+        2
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "k": 1,
+          "S_i64": 30,
+          "demand_x2_i64": 20,
+          "margin_x2_i64": 40,
+          "crime_numerator_i64": 40,
+          "crime_denominator_i64": 60
+        },
+        {
+          "n": 2,
+          "k": 2,
+          "S_i64": 40,
+          "demand_x2_i64": 40,
+          "margin_x2_i64": 40,
+          "crime_numerator_i64": 40,
+          "crime_denominator_i64": 80
+        },
+        {
+          "n": 3,
+          "k": 3,
+          "S_i64": 50,
+          "demand_x2_i64": 60,
+          "margin_x2_i64": 40,
+          "crime_numerator_i64": 40,
+          "crime_denominator_i64": 100
+        }
+      ],
+      "strict_positive_n1_n2_n3": true,
+      "minimum_crime_fraction": [
+        2,
+        5
+      ],
+      "development_state_name": "UNKNOWN",
+      "conditional_only": true
+    },
+    "H3_status": 1,
+    "H3_model": 1,
+    "H2_status": 1,
+    "H2_count": 20,
+    "H2_mountains": 0,
+    "three_mountains_absent": true
+  },
+  "earlier_science_result_index": 0,
+  "last_started_science_result_index": 3,
+  "slot0_reused": {
+    "index": 0,
+    "offset": 263680,
+    "length": 1152,
+    "rawhex": "1b004800000000001b002d000000000093000000ffffffffffffffff040000001b002d00000000001d002a00000000001b002b00000000001c002a00000000000000000000000000020000000000000001000000030000000000000001000000000000000000000000000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000014000000ffffffffffffffffffffffffffffffff1b0048000000000000000000010000000000000014000000000000001c00460000000000010000001d00470000000000040000001b00460000000000010000001c00470000000000010000001d00480000000000010000001a00460000000000010000001b00470000000000010000001c00480000000000010000001d00490000000000070000001a00470000000000010000001c00490000000000070000001900470000000000040000001a00480000000000000000001b00490000000000070000001c004a0000000000070000001900480000000000070000001a00490000000000000000001b004a00000000000e0000001900490000000000000000001a004a00000000000e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "provenance": {
+      "PROEVEN\\u30-science-filter\\20261017T124500\\science_layout.py": "2a03dfe68f296c7a5a49dc6aaab9ba8dfd05da90a0302243db6a8bdaa13ef3a7",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\science_result.py": "d93ee7b44bac9cc4d0f20f54002b5012ef4b4f6887c06cd02292ede14df8617f",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\positive_reader.py": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\plan_layout.py": "a0f35f76efaaacebac68a1222fa265e053f65ec85938bffa6ebc05c8a4680ee5",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\science_development.py": "b0d4a0a04883dd240b2b603be0fca5f0186393e255b190d4159707d13223a1b0",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\partial_diagnostic.py": "61198c310a58857268d94f2eb86d4eb508ea93398a4df7a67a83c128f3ee7589",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\Lees-Uitbreiding.py": "4336d039342c54164b752016b2862a9cb82f1e246acac8a96500f540d988f1c1",
+      "PROEVEN\\u30-science-filter\\20261017T124500\\diagnostic-reader\\h3_layout.py": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    "decode_status": "DECODED",
+    "attribution_status": "EARLIER_COMMITTED_ROLE_HEADER",
+    "decode": {
+      "source_id": -1,
+      "source_index": -1,
+      "mandatory_count": 4,
+      "role": 2,
+      "prefix": 0,
+      "alternative": 1,
+      "conditions": 3,
+      "SCIreason": 0,
+      "prepared": 1,
+      "external_center": [
+        27,
+        72,
+        0
+      ],
+      "canonical_center": [
+        27,
+        45,
+        0
+      ],
+      "keys": [
+        [
+          27,
+          45,
+          0
+        ],
+        [
+          29,
+          42,
+          0
+        ],
+        [
+          27,
+          43,
+          0
+        ],
+        [
+          28,
+          42,
+          0
+        ]
+      ],
+      "phase_status": "RAW_UNCOMMITTED_NOT_PHASE_PROOF"
+    }
+  },
+  "order_attribution": [
+    {
+      "prefix_index": 0,
+      "capture_index": 0,
+      "valid": true,
+      "external_center": [
+        27,
+        72,
+        0
+      ]
+    },
+    {
+      "prefix_index": 1,
+      "capture_index": 1,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 2,
+      "capture_index": 2,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 3,
+      "capture_index": 3,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 4,
+      "capture_index": 4,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 5,
+      "capture_index": 5,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 6,
+      "capture_index": 6,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "prefix_index": 7,
+      "capture_index": 7,
+      "valid": true,
+      "external_center": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "external_attribution": {
+    "slot0_matches_CAPTURE": true,
+    "last_external_center": [
+      0,
+      0,
+      0
+    ],
+    "work_external_matches_CAPTURE": null,
+    "work_external_phase_status": "NOT_WRITTEN_UNTIL_CHOOSE_AND_CANONICAL_COMMIT",
+    "canonical_and_external_are_distinct_coordinate_systems": true
+  },
+  "next_ORDER_guard": {
+    "prefix_index": 4,
+    "status": "VALID",
+    "branch_execution_proven": false
+  },
+  "last_SCI_guard": {
+    "header": {
+      "location_state": 0,
+      "reason": 12,
+      "model": 1,
+      "conditions": 0,
+      "open_count": 0,
+      "potential_count": 0,
+      "certifiable_count": 0,
+      "selected0": -1,
+      "selected1": -1,
+      "selected2": -1,
+      "current_unknownmask": 0,
+      "spatial_unknownmask": 0,
+      "spatial_pendingmask": 0,
+      "development_unknownmask": 0,
+      "ration_stand": 0,
+      "development_state": 0,
+      "actual_R": 0.0,
+      "center_food_i64": 0,
+      "S3_current_i64": 0,
+      "margin3_x2_i64": 0,
+      "crime_numerator_i64": 0,
+      "crime_denominator_i64": 0,
+      "coverage": 0,
+      "center_key": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "h2_status": 0
+    },
+    "SCI_calls_match_classified": true,
+    "invocation_attribution_status": "ALL_CLASSIFIED_CENTERS_ENTERED_SCI",
+    "possible_native_coverage_guard": "200dcd0d..200dcd17",
+    "exact_failure_branch_proven": false,
+    "getter_cause_proven": false
+  },
+  "main_questions": {
+    "earlier_current_food": "CONSISTENT_PREPARED_CONDITIONAL_SCIENCE_NOW_EXAMPLE",
+    "failure_branch": "RAW_ATTRIBUTION_ONLY_EXACT_BRANCH_NOT_PROVEN"
+  }
+}

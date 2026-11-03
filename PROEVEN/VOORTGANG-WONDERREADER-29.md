@@ -1,0 +1,9 @@
+﻿# Wonderreader C0 — 29 oktober 2026
+
+14:14 CET Europe/Amsterdam — gestart. A/B-overdracht en release-reader gelezen; exact Python312-pad bruikbaar. Alleen eigen read-only projectie/offline controles; geen GUI, installatie of procesread.
+
+14:18 CET Europe/Amsterdam — AF/gestopt. Opgeleverd: PROEVEN/wonderlijst-meting/20261029 met wrapper, originele-bronprojectiediff,31bronpins,README,21geslaagde offline fixturechecks en final-checks. Oorspronkelijke trusted_binding/verify_loaded/stable_sample/observe_goal3/scalar_state AST-gelijk; unieke imports laten original_core en doel3original_core ongemoeid. Exacte eb6/payloadbinding offline gecontroleerd. Creationtime wordt verplicht vóór module-/actorlezing exact vergeleken; alleen read-only0x410rechten. Alle118aidata en38saves exact gelijk aan bestaande baseline; geen originele bestanden gewijzigd.
+
+Acceptatie: voorbereid en offline gecontroleerd. Geen proceshandle/RPM/spelstart, effectieve lijst/gameplay NIET GEMETEN; native index-tokenbinding UNKNOWN. Doel4 OPEN. Volgende oplevering: rootreview/pinsreview en afzonderlijke toegestane controle/kandidaat-hostproef met gelijke c6ba-T0/max1n. Geen actieve taak na dit eindcheckpoint; pc aan. Budgetbron/controle13:18:09UTC: vijfuur89/week83/stateok. Geen blokkade.
+
+14:19 CET Europe/Amsterdam — rootreviewcorrectie uitgevoerd/AF/gestopt: c6ba gebruikt eigen bytegelijke kopie van PROEVEN/landbenchmark/20261027/participants.json, beide gepind. Oude releasecivnamen worden niet gebruikt. README/CLI en manifestvergelijking aangepast. Eerdere resultaten bewaard als pre-participants-correction-*; finale21controles en LANDmanifestgelijkheid PASS,33bronpins exact,118aidata/38saves exact. Finale pinsSHA8e527855f009f595e4938fddf65b99dd1776f351e753d6d1b26305730bdeafac. Budgetbron13:19:14UTC/controle13:19:23UTC: vijfuur88/week83/stateok. Geen runtime, volgende poort rootreview/afzonderlijkehostproef.

@@ -1,0 +1,33 @@
+{
+  "at_utc": "2026-11-02T17:14:43.651977+00:00",
+  "stage": "C0_PREPARED_OFFLINE_ONLY",
+  "checks": {
+    "baseline162_exact": true,
+    "source_exact": true,
+    "aidata_full_inventory": true,
+    "saves_full_inventory": true,
+    "pins_all_exact": true,
+    "old107_preserved": true,
+    "syntax2": true,
+    "no_prepare": true,
+    "no_snapshot_outputs": true,
+    "own_alias_absent": true,
+    "c6ba_unchanged": true
+  },
+  "pass_all": true,
+  "source": {
+    "path": "PROEVEN/land-stad-defensie/20261028/AUTOSAVE-after",
+    "size": 159906,
+    "sha256": "522b829d517b1d9e7d0f96f13632118aaeee59c70b31655ac54c8950bd819b9e"
+  },
+  "baseline_dimensions": {
+    "pins": 162,
+    "aidata": 118,
+    "saves": 38
+  },
+  "source_pin_count": 117,
+  "max_n": 1,
+  "arm": "control",
+  "no_start": true,
+  "no_gameplay_measurement": true
+}

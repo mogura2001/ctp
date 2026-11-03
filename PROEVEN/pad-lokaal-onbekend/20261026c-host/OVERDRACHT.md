@@ -1,0 +1,13 @@
+# Verse uitvoerkopie26c
+
+2026-10-26T19:59:10.814693+01:00 Europe/Amsterdam. Alleen bron voorbereid: geen backup/install/build/native/RPM/UI/spelstart. Alle gatesFALSE, geen hostmap/PID. Gebruiker bevestigde scherm aan/ontgrendeld; root neemt gewone Capture/menu/load over na review. Geen actieve automatische planning geclaimd.
+
+Minimale clone van geaccepteerde26b: reader/scope/runtime_adapter/runtime-pins/HOST-PLAN/REFERENCE-PINS exact bytegelijk; acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984 en manifest0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d/state0xef000/497924 ongewijzigd. Media.NETE:/CDRom/IsReady/CCTP en proces-CIM blijven exact. Eigen namespace20261026c-host, runpad-local4-20261026c-host, alias000-PAD-LOCAL4-20261026C-START-T0, archivesPAD-LOCAL4-20261026C-AUTOSAVE-A/B.
+
+Exacte functionele diff in Start-Monitored: uitsluitend vaste45/90/135/175s-intro-wacht-/capturelus en eindmelding verwijderd. Alle code tot en met NewJson start-binding.json is na namespace/bronhashvervanging exact gelijk. De helper keert direct na volledige immutableCreateNew/read-onlystartn0+window+hashbinding terug met een informatieve melding. De bestaande maximale15s-wacht op een eerste venster blijft behouden. Geen automatische menu-/loadinvoer toegevoegd.
+
+RUN-PLAN.json bindt de overdracht: root gebruikt direct de bestaande gebonden Capture-helper, beoordeelt zichtbaar menu uiterlijk180s en geladen vasteT0 uiterlijk300s vanaf OORSPRONKELIJKE processtart_utc. Niet wachten tot175s als menu eerder zichtbaar is. Helperreturn, rootreview en laadactie resetten geen klok. Hard4500s/no-new4380s/max100n blijven; runner bewaakt deze grenzen ongewijzigd. Na verwijderen lus zijn180/300s expliciete rootbedieningspoorten, geen door de starthelper uitgevoerde monitor. Bij onzichtbaar/incoherent beeld geen blindeinvoer; veilig stoppen volgens bestaande normale close/restore.
+
+Immutable startn0/token/pass/snapshotketen, T1/T26snapshot+passhashreviews en alle19config/118effective/29before+ALLE actuele saves/profielbackups/herstel blijven behouden. HOST-PLAN is historische planning23okt; geen versebackup. Gates zijn verse gesloten23okt-templates, geen consumed26bidentiteiten. SOURCE-PINS binden huidige eigen helpers/dependencyprovenance; mutablegates uitgesloten. Kleine.diffbestanden tonen volledige deltas. Alleen noodzakelijke byte/AST/syntax/pin/diffchecks; geen101snapshot-/zesdecoderfixtureherhaling, nieuwe checker of observer.
+
+Volgende rootoplevering: bronreview, verse budget/count0/media/backups/gates en normale GUI/T0/T1, daarnaT26/maxT100. Geen runtimevrijgave door dit document. Oude bewijzen ongewijzigd; nativeABI/faultcasesNIETGETEST. Doel1/1a/5OPEN; Doel3bestaandeherstelbasis; pcaan.

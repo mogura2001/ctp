@@ -1,0 +1,11 @@
+--- PROEVEN\selectie-pad-host\20261021\host1\Restore.ps1
++++ PROEVEN\science-duur-host\20261021\host1\Restore.ps1
+@@ -10,7 +10,7 @@
+ $dll='CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll'
+ $auto='CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius'
+ $alias='CTP-proef/ctp_program/ctp/save/games/Julius/000-U30-40-START-T0'
+-$archive='CTP-proef/ctp_program/ctp/save/games/Julius/U30-SELECTIEPAD-20261021-HOST1-AUTOSAVE'
++$archive='CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-DUUR-20261021-HOST1-AUTOSAVE'
+ $sha={param($path) (Get-FileHash -LiteralPath $path).Hash.ToLower()}
+ foreach($row in @($before.protected)+@($before.extra_preserved_files)){
+  if((& $sha (Join-Path "$armDir/backup" $row.path)) -ne $row.sha256){throw "Changed backup $($row.path)"}

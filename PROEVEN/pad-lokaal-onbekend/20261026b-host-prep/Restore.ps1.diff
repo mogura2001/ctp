@@ -1,0 +1,25 @@
+--- PROEVEN/pad-lokaal-onbekend/20261026-host-prep/Restore.ps1
++++ PROEVEN/pad-lokaal-onbekend/20261026b-host-prep/Restore.ps1
+@@ -1,11 +1,11 @@
+ $ErrorActionPreference='Stop'
+ $workspace='C:\GIT\ctp';Set-Location -LiteralPath $workspace
+-$package=$PSScriptRoot;$c4=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026-host';$hostDir=Join-Path $c4 'host'
++$package=$PSScriptRoot;$c4=Join-Path $workspace 'PROEVEN/pad-lokaal-onbekend/20261026b-host';$hostDir=Join-Path $c4 'host'
+ function Hash($p){(Get-FileHash -LiteralPath $p).Hash.ToLowerInvariant()}
+ function NewJson($p,$value){$s=[IO.File]::Open($p,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None);try{$b=[Text.Encoding]::UTF8.GetBytes(($value|ConvertTo-Json -Depth 30));$s.Write($b,0,$b.Length);$s.Flush()}finally{$s.Dispose()}}
+ if(@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Game running; no restore'}
+ $gate=Get-Content (Join-Path $package 'ROOT-HOST.json') -Raw|ConvertFrom-Json
+-if($gate.restore_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026-host' -or (Hash (Join-Path $package 'SOURCE-PINS.json')) -cne $gate.source_pins_sha256){throw 'Exact own C5 restore gate required'}
++if($gate.restore_allowed -ne $true -or $gate.arm -cne 'local4' -or $gate.run_id -cne 'pad-local4-20261026b-host' -or (Hash (Join-Path $package 'SOURCE-PINS.json')) -cne $gate.source_pins_sha256){throw 'Exact own C5 restore gate required'}
+ foreach($p in (Get-Content (Join-Path $package 'SOURCE-PINS.json') -Raw|ConvertFrom-Json).sources){if((Hash (Join-Path $workspace $p.path)) -cne $p.sha256){throw 'Restore source changed'}}
+ foreach($p in @((Join-Path $c4 'local4/ROOT-READER.json'),(Join-Path $c4 'ROOT-CONTROL.json'))){$g=Get-Content $p -Raw|ConvertFrom-Json;if($g.allowed -ne $false -or ($g.PSObject.Properties.Name -contains 'control_allowed' -and $g.control_allowed -ne $false)){throw 'Close C4 input/read gates before restore'}}
+ if($gate.allowed -ne $false -or $gate.install_allowed -ne $false -or $gate.start_allowed -ne $false -or $gate.close_allowed -ne $false){throw 'Close C5 start/close gates before restore'}
+@@ -28,7 +28,7 @@
+ $saveRoot=Join-Path $workspace 'CTP-proef/ctp_program/ctp/save'
+ $current=@(Get-ChildItem -LiteralPath $saveRoot -Recurse -File|ForEach-Object {$_.FullName.Substring($workspace.Length+1).Replace('\','/')})
+ foreach($path in $current){if($path -notin @($before.save_paths)+@($before.alias)+@($newSaves.path)){throw "Unexpected new save/archive; preserve and root inspect $path"}}
+-$archiveA='CTP-proef/ctp_program/ctp/save/games/Julius/PAD-LOCAL4-20261026-AUTOSAVE-A';$archiveB='CTP-proef/ctp_program/ctp/save/games/Julius/PAD-LOCAL4-20261026-AUTOSAVE-B';$packageAuto=Join-Path $hostDir 'AUTOSAVE-after'
++$archiveA='CTP-proef/ctp_program/ctp/save/games/Julius/PAD-LOCAL4-20261026B-AUTOSAVE-A';$archiveB='CTP-proef/ctp_program/ctp/save/games/Julius/PAD-LOCAL4-20261026B-AUTOSAVE-B';$packageAuto=Join-Path $hostDir 'AUTOSAVE-after'
+ foreach($p in @($archiveA,$archiveB,$packageAuto)){if(Test-Path -LiteralPath $p){throw 'Fresh unique archive destination required'}}
+ if(@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Game appeared before restore'}
+ NewJson (Join-Path $hostDir 'restore-attempt.json') @{before_sha256=(Hash $beforePath);at_utc=[DateTime]::UtcNow.ToString('o');count0=$true}

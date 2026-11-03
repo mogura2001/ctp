@@ -1,0 +1,238 @@
+{
+  "stage": "LOCAL_OCCUPIED_CENTER_FIX_PROVEN_NEXT_SELECTION_GUARD25_OPEN_RESTORED",
+  "at_utc": "2026-10-20T17:14:49.752438+00:00",
+  "instance": {
+    "pid": 944,
+    "creationtime_filetime": 134369896481601301,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "bindings": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "e45313fde4d25a726fa2e8d26dec21c0142ac195ea5c0c40a9b380fd549b166f",
+    "manifest_sha256": "2077ac8a05d17f6ef7690ceb3a3a9e5555aa8d0f9a23e9e2d9db703288a5396b",
+    "package_sha256": null
+  },
+  "snapshots": {
+    "T0": {
+      "sha256": "d45939dbf8381761e840fac44ae52fd7c20de910cc35d019d8bb19a2a8637c41",
+      "stable_twice": true,
+      "processed_rounds": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "cities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_loaded_checks": true
+    },
+    "T1": {
+      "sha256": "7675ffbfcdf7e1f19966ed94f88c37e5c704286b1269687cd09eda7305bfb67c",
+      "stable_twice": true,
+      "processed_rounds": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cities": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "all_loaded_checks": true
+    }
+  },
+  "visible_menu_by_seconds": 180.7996934,
+  "visible_save": "000-U30-40-START-T0, byte-equal QUOTA-START-T0",
+  "T0_sha256": "8c34364200e539870e0dea0790c98d7441925f52267d24cf0e0adb152141ad26",
+  "n_consumed": 1,
+  "shared_last_pass": {
+    "reason": 25,
+    "civ": 8,
+    "generation": 7,
+    "context": 1,
+    "Dorig": 5,
+    "Gcert": 0,
+    "desired": 5,
+    "slots": 3,
+    "classified": 8,
+    "prefix_count": 8,
+    "known_count": 8,
+    "SCI_calls": 8,
+    "SCI_tiles": 140,
+    "SCI_primary_food": 148,
+    "context_error": 0,
+    "science_budget_exhausted": 0
+  },
+  "comparison": {
+    "previous_proof_sha256": "5e0c489d4c8af759333359d00b0391da5c32354ea3e17368f1db3de8ae21dbaa",
+    "previous_classified": 4,
+    "current_classified": 8,
+    "previous_reason": 23,
+    "current_reason": 25,
+    "previous_slots": 2,
+    "current_slots": 3,
+    "local_occupied_center_scope_fix_proven": true,
+    "all_eight_prefix_centers_classified": true
+  },
+  "occupied_scope": {
+    "prefix_index": 3,
+    "status": "SCOPE_EXCLUDED_OCCUPIED_CENTER",
+    "consistent": true,
+    "reason": 17,
+    "reason_name": "OCCUPIED_CENTER_SCOPE",
+    "coverage_meaning": "FULLY_DETERMINED_CONSERVATIVE_SCOPE_EXCLUSION",
+    "food_analysis_completed": false,
+    "food": null,
+    "margins": null,
+    "canonical_center_measured": false,
+    "selected": false,
+    "certified": false,
+    "gameplay_improvement_proven": false,
+    "raw_header_hex": "01000000110000000100000003000000140000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000ffffffff00000000000000000000e83f0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000"
+  },
+  "earlier_science_example": {
+    "status": "CONSISTENT_PREPARED_CONDITIONAL_SCIENCE_NOW_EXAMPLE",
+    "selected": false,
+    "certified": false,
+    "future_food_credit": false,
+    "conditional_new_city_model": true,
+    "keys": [
+      [
+        27,
+        45,
+        0
+      ],
+      [
+        29,
+        42,
+        0
+      ],
+      [
+        27,
+        43,
+        0
+      ],
+      [
+        28,
+        42,
+        0
+      ]
+    ],
+    "current_scenario": {
+      "selected_indices": [
+        1,
+        2,
+        0
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "k": 1,
+          "S_i64": 25,
+          "demand_x2_i64": 15,
+          "margin_x2_i64": 35,
+          "crime_numerator_i64": 35,
+          "crime_denominator_i64": 50
+        },
+        {
+          "n": 2,
+          "k": 2,
+          "S_i64": 30,
+          "demand_x2_i64": 30,
+          "margin_x2_i64": 30,
+          "crime_numerator_i64": 30,
+          "crime_denominator_i64": 60
+        },
+        {
+          "n": 3,
+          "k": 3,
+          "S_i64": 35,
+          "demand_x2_i64": 45,
+          "margin_x2_i64": 25,
+          "crime_numerator_i64": 25,
+          "crime_denominator_i64": 70
+        }
+      ],
+      "strict_positive_n1_n2_n3": true,
+      "minimum_crime_fraction": [
+        5,
+        14
+      ],
+      "development_state_name": "PENDING",
+      "conditional_only": true
+    },
+    "H3_status": 1,
+    "H3_model": 1,
+    "H2_status": 1,
+    "H2_count": 20,
+    "H2_mountains": 0,
+    "three_mountains_absent": true
+  },
+  "native": {
+    "calls": 43,
+    "validator_return2": 2,
+    "validator_return0": 30,
+    "own_RX_restored": true,
+    "scope": "OWN_FIXTURE_ONLY"
+  },
+  "normal_exit": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-20T17:13:19.6243526Z",
+    "elapsed_seconds": 351.4642225,
+    "close_requested": true,
+    "n_consumed": 1,
+    "exited": true
+  },
+  "restore": {
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+    "default_autosave_changed": true,
+    "at_utc": "2026-10-20T17:13:21.4272922Z",
+    "game_count_before_restore": 0,
+    "restored_hashes": 29,
+    "state": "RESTORED",
+    "autosave_after_sha256": "8c0d231447a5e88770f24d4a52733eb93bdf86e57eb297b12a0e5c173287766a",
+    "autosave_archive": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-SCIENCE-BEZETCENTRUM-HOST1-AUTOSAVE",
+    "gate_allowed": false,
+    "existing_archives_preserved": 4
+  },
+  "limits": {
+    "gameplay_goal_completed": false,
+    "extra_settler_demand_proven": false,
+    "selected_certificate_proven": false,
+    "unit_owner_type_proven": false,
+    "occupied_center_food_measured": false,
+    "save_identity_proven": false,
+    "atomic_snapshot_proven": false,
+    "autosave_exact_turn_proven": false,
+    "only_last_bound_civ_pass_telemetry": true
+  },
+  "operational_corrections": [
+    "Gate preparation read UTF16 process record with wrong encoding before any mutation; corrected encoding",
+    "First T0 reader gate expected release DLL after candidate installation; refused before OpenProcess; exact candidate pin substituted and same reader reused; no n before accepted T0"
+  ],
+  "pc_left_on": true
+}

@@ -1,0 +1,93 @@
+{
+  "recipe": [
+    {
+      "offset": 0,
+      "asm": "pushfd",
+      "bytes": "9c"
+    },
+    {
+      "offset": 1,
+      "asm": "pushad",
+      "bytes": "60"
+    },
+    {
+      "offset": 2,
+      "asm": "mov esi,esp",
+      "bytes": "8bf4"
+    },
+    {
+      "offset": 4,
+      "asm": "observed GPR/flags own buffer",
+      "bytes": "bf00000000"
+    },
+    {
+      "offset": 9,
+      "asm": "mov ecx,9",
+      "bytes": "b909000000"
+    },
+    {
+      "offset": 14,
+      "asm": "cld",
+      "bytes": "fc"
+    },
+    {
+      "offset": 15,
+      "asm": "rep movsd",
+      "bytes": "f3a5"
+    },
+    {
+      "offset": 17,
+      "asm": "mov eax,('ebp', -348)",
+      "bytes": "8b85a4feffff"
+    },
+    {
+      "offset": 23,
+      "asm": "private lower frame canary",
+      "bytes": "a300000000"
+    },
+    {
+      "offset": 28,
+      "asm": "mov eax,('ebp', -96)",
+      "bytes": "8b85a0ffffff"
+    },
+    {
+      "offset": 34,
+      "asm": "private upper frame canary",
+      "bytes": "a300000000"
+    },
+    {
+      "offset": 39,
+      "asm": "popad",
+      "bytes": "61"
+    },
+    {
+      "offset": 40,
+      "asm": "popfd",
+      "bytes": "9d"
+    },
+    {
+      "offset": 41,
+      "asm": "continue original food_bad wipe",
+      "bytes": "ff2500000000"
+    }
+  ],
+  "fixups": [
+    {
+      "at": 5,
+      "context_offset": 2048
+    },
+    {
+      "at": 24,
+      "context_offset": 2084
+    },
+    {
+      "at": 35,
+      "context_offset": 2088
+    },
+    {
+      "at": 43,
+      "context_offset": 12
+    }
+  ],
+  "labels": {}
+}

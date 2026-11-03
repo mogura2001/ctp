@@ -1,0 +1,6386 @@
+{
+  "instance": {
+    "pid": 21128,
+    "creationtime_filetime": 134378357204056720,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "loaded_checks": {
+    "headers_sections_sizes": true,
+    "all_three_scorecalls": true,
+    "payload_and_original_ranges": true,
+    "only_original_HIGHLOW_relocation_adjustment": true,
+    "all_five_B2_or_original_hookwindows": true,
+    "N30_bound": true
+  },
+  "state": {
+    "advance_count": 138,
+    "civilizations": [
+      {
+        "civ_id": 2,
+        "ai_actor": "0xb9cdb28",
+        "effective_aip": "0x1471a848",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 20,
+          "name": "Stirrup"
+        },
+        "engine_current": {
+          "index": 20,
+          "name": "Stirrup"
+        },
+        "civ_name": "Juana de la Cruz / Mexicans",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 13,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 8,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x147adaa0",
+              "player_slot": 0,
+              "full_engine_handle": 268435475,
+              "pool_node": "0xb9d78e8",
+              "city_data": "0xba99c28",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9a078",
+                "count": 1,
+                "head": "0xb9294a0",
+                "tail": "0xb9294a0",
+                "nodes": [
+                  {
+                    "node": "0xb9294a0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 94,
+                "stock": 133,
+                "key": 150,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 21,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x1470a008",
+              "player_slot": 2,
+              "full_engine_handle": 268435520,
+              "pool_node": "0xb9d8ae8",
+              "city_data": "0xba80c80",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba810d0",
+                "count": 1,
+                "head": "0x150cfdc8",
+                "tail": "0x150cfdc8",
+                "nodes": [
+                  {
+                    "node": "0x150cfdc8",
+                    "type": 5,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 93,
+                "stock": 0,
+                "key": 150,
+                "incumbent": 5,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 23,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3758096384,
+              "ai_city_agent": "0x1470c630",
+              "player_slot": 6,
+              "full_engine_handle": 268435588,
+              "pool_node": "0xbae4a40",
+              "city_data": "0xbaea608",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaeaa58",
+                "count": 1,
+                "head": "0xb92a100",
+                "tail": "0xb92a100",
+                "nodes": [
+                  {
+                    "node": "0xb92a100",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 175,
+                "key": 93,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 4,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 47,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x1470a268",
+              "player_slot": 4,
+              "full_engine_handle": 268435555,
+              "pool_node": "0xbae4640",
+              "city_data": "0xba82ca0",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba830f0",
+                "count": 1,
+                "head": "0xb929be0",
+                "tail": "0xb929be0",
+                "nodes": [
+                  {
+                    "node": "0xb929be0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 17,
+                "stock": 301,
+                "key": 65,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 1,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 109,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x14781cf8",
+              "player_slot": 1,
+              "full_engine_handle": 268435488,
+              "pool_node": "0xb9d7b68",
+              "city_data": "0xbaa7750",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaa7ba0",
+                "count": 1,
+                "head": "0x150d00c8",
+                "tail": "0x150d00c8",
+                "nodes": [
+                  {
+                    "node": "0x150d00c8",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 69,
+                "stock": 0,
+                "key": 121,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 5,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 31,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x14872040",
+              "player_slot": 5,
+              "full_engine_handle": 268435587,
+              "pool_node": "0xbae49c0",
+              "city_data": "0xbae5dc0",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae6210",
+                "count": 1,
+                "head": "0xb929fc0",
+                "tail": "0xb929fc0",
+                "nodes": [
+                  {
+                    "node": "0xb929fc0",
+                    "type": 10,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 44,
+                "stock": 167,
+                "key": 93,
+                "incumbent": 10,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 4,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 45,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x14871c80",
+              "player_slot": 3,
+              "full_engine_handle": 268435522,
+              "pool_node": "0xb9d85e8",
+              "city_data": "0xba80478",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba808c8",
+                "count": 1,
+                "head": "0x150cff68",
+                "tail": "0x150cff68",
+                "nodes": [
+                  {
+                    "node": "0x150cff68",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 25,
+                "stock": 0,
+                "key": 75,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 2,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 86,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 268435456,
+              "ai_city_agent": "0x14f08df0",
+              "player_slot": 7,
+              "full_engine_handle": 268435613,
+              "pool_node": "0xb667858",
+              "city_data": "0xbaede40",
+              "owner": 2,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaee290",
+                "count": 1,
+                "head": "0x150d0408",
+                "tail": "0x150d0408",
+                "nodes": [
+                  {
+                    "node": "0x150d0408",
+                    "type": 12,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 93,
+                "stock": 0,
+                "key": 0,
+                "incumbent": 12,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 23,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14717ecc",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 3,
+        "ai_actor": "0xb9cce58",
+        "effective_aip": "0x1495a038",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 20,
+          "name": "Stirrup"
+        },
+        "engine_current": {
+          "index": 20,
+          "name": "Stirrup"
+        },
+        "civ_name": "Sennacherib / Assyrians",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 13,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 8,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x1473bb38",
+              "player_slot": 0,
+              "full_engine_handle": 268435471,
+              "pool_node": "0xb9d7d68",
+              "city_data": "0xba873f0",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba87840",
+                "count": 1,
+                "head": "0xb9292a0",
+                "tail": "0xb9292a0",
+                "nodes": [
+                  {
+                    "node": "0xb9292a0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 94,
+                "stock": 131,
+                "key": 150,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 21,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x14885ff8",
+              "player_slot": 2,
+              "full_engine_handle": 268435514,
+              "pool_node": "0xb9d8868",
+              "city_data": "0xbabbcf0",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbabc140",
+                "count": 1,
+                "head": "0xb593770",
+                "tail": "0xb593770",
+                "nodes": [
+                  {
+                    "node": "0xb593770",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 43,
+                "stock": 0,
+                "key": 93,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 50,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3758096384,
+              "ai_city_agent": "0x14886778",
+              "player_slot": 6,
+              "full_engine_handle": 268435579,
+              "pool_node": "0xbae4140",
+              "city_data": "0xbae75d8",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae7a28",
+                "count": 1,
+                "head": "0xb593bb0",
+                "tail": "0xb593bb0",
+                "nodes": [
+                  {
+                    "node": "0xb593bb0",
+                    "type": 0,
+                    "build_class": 3,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 76,
+                "stock": 0,
+                "key": 83,
+                "incumbent": 0,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 28,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x148863b8",
+              "player_slot": 4,
+              "full_engine_handle": 268435529,
+              "pool_node": "0xb9d8668",
+              "city_data": "0xba7fc70",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba800c0",
+                "count": 1,
+                "head": "0xb593970",
+                "tail": "0xb593970",
+                "nodes": [
+                  {
+                    "node": "0xb593970",
+                    "type": 0,
+                    "build_class": 3,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 60,
+                "stock": 0,
+                "key": 65,
+                "incumbent": 0,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 36,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x148c9040",
+              "player_slot": 1,
+              "full_engine_handle": 268435482,
+              "pool_node": "0xb9d7668",
+              "city_data": "0xba9f5f8",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9fa48",
+                "count": 1,
+                "head": "0xb9295a0",
+                "tail": "0xb9295a0",
+                "nodes": [
+                  {
+                    "node": "0xb9295a0",
+                    "type": 12,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 94,
+                "stock": 131,
+                "key": 150,
+                "incumbent": 12,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 21,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x148cbb88",
+              "player_slot": 5,
+              "full_engine_handle": 268435557,
+              "pool_node": "0xbae4940",
+              "city_data": "0xba834a8",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba838f8",
+                "count": 1,
+                "head": "0xb929d40",
+                "tail": "0xb929d40",
+                "nodes": [
+                  {
+                    "node": "0xb929d40",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 417,
+                "key": 93,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 41,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x148c9400",
+              "player_slot": 3,
+              "full_engine_handle": 268435528,
+              "pool_node": "0xb9d87e8",
+              "city_data": "0xba7e458",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7e8a8",
+                "count": 1,
+                "head": "0xb593d50",
+                "tail": "0xb593d50",
+                "nodes": [
+                  {
+                    "node": "0xb593d50",
+                    "type": 10,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 0,
+                "key": 93,
+                "incumbent": 10,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 51,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 268435456,
+              "ai_city_agent": "0x148cb7c8",
+              "player_slot": 7,
+              "full_engine_handle": 268435600,
+              "pool_node": "0xbae58c0",
+              "city_data": "0xbaebe20",
+              "owner": 3,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaec270",
+                "count": 1,
+                "head": "0xb929fe0",
+                "tail": "0xb929fe0",
+                "nodes": [
+                  {
+                    "node": "0xb929fe0",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 75,
+                "key": 83,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 49,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x1488758c",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 4,
+        "ai_actor": "0xb9cd378",
+        "effective_aip": "0x14abcc38",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 10,
+          "name": "Monarchy"
+        },
+        "engine_current": {
+          "index": 10,
+          "name": "Monarchy"
+        },
+        "civ_name": "Elizabeth II / Jamaicans",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 15,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 7,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x14aaf1f0",
+              "player_slot": 0,
+              "full_engine_handle": 268435472,
+              "pool_node": "0xb9d7568",
+              "city_data": "0xba94b90",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba94fe0",
+                "count": 1,
+                "head": "0xb9292c0",
+                "tail": "0xb9292c0",
+                "nodes": [
+                  {
+                    "node": "0xb9292c0",
+                    "type": 68,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 123,
+                "key": 140,
+                "incumbent": 68,
+                "flag": 0,
+                "rank_min": 5,
+                "rank_max": 6,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 23,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x147e7848",
+              "player_slot": 2,
+              "full_engine_handle": 268435515,
+              "pool_node": "0xb9d88e8",
+              "city_data": "0xba7cc40",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7d090",
+                "count": 1,
+                "head": "0xb9297c0",
+                "tail": "0xb9297c0",
+                "nodes": [
+                  {
+                    "node": "0xb9297c0",
+                    "type": 68,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 82,
+                "key": 93,
+                "incumbent": 68,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 24,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3758096384,
+              "ai_city_agent": "0x14ab48a0",
+              "player_slot": 6,
+              "full_engine_handle": 268435590,
+              "pool_node": "0xbae4cc0",
+              "city_data": "0xbae7de0",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae8230",
+                "count": 1,
+                "head": "0xb929fa0",
+                "tail": "0xb929fa0",
+                "nodes": [
+                  {
+                    "node": "0xb929fa0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 174,
+                "key": 93,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 47,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x147e7ab0",
+              "player_slot": 4,
+              "full_engine_handle": 268435560,
+              "pool_node": "0xbae3dc0",
+              "city_data": "0xba83cb0",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba84100",
+                "count": 1,
+                "head": "0xb929d60",
+                "tail": "0xb929d60",
+                "nodes": [
+                  {
+                    "node": "0xb929d60",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 52,
+                "stock": 438,
+                "key": 102,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 4,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 33,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x147ea130",
+              "player_slot": 1,
+              "full_engine_handle": 268435484,
+              "pool_node": "0xb9d7ce8",
+              "city_data": "0xbaa5c78",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaa60c8",
+                "count": 1,
+                "head": "0xb929600",
+                "tail": "0xb929600",
+                "nodes": [
+                  {
+                    "node": "0xb929600",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 123,
+                "key": 140,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 5,
+                "rank_max": 6,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 23,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x147e6c40",
+              "player_slot": 5,
+              "full_engine_handle": 268435561,
+              "pool_node": "0xbae4040",
+              "city_data": "0xbae85e8",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae8a38",
+                "count": 1,
+                "head": "0xb929da0",
+                "tail": "0xb929da0",
+                "nodes": [
+                  {
+                    "node": "0xb929da0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 59,
+                "stock": 304,
+                "key": 65,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 31,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x147ea868",
+              "player_slot": 3,
+              "full_engine_handle": 268435537,
+              "pool_node": "0xb9d9168",
+              "city_data": "0xba81c90",
+              "owner": 4,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba820e0",
+                "count": 1,
+                "head": "0xb929a80",
+                "tail": "0xb929a80",
+                "nodes": [
+                  {
+                    "node": "0xb929a80",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 43,
+                "stock": 437,
+                "key": 83,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 1,
+                "own_city_count": 7,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 40,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14aba2bc",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 5,
+        "ai_actor": "0xb9cbdb0",
+        "effective_aip": "0x14b55fa0",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 6,
+          "name": "Jurisprudence"
+        },
+        "engine_current": {
+          "index": 6,
+          "name": "Jurisprudence"
+        },
+        "civ_name": "Isabella / Spaniards",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 15,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 8,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x14ab1d50",
+              "player_slot": 0,
+              "full_engine_handle": 268435476,
+              "pool_node": "0xb9d79e8",
+              "city_data": "0xba9a428",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9a878",
+                "count": 1,
+                "head": "0x9396080",
+                "tail": "0x9396080",
+                "nodes": [
+                  {
+                    "node": "0x9396080",
+                    "type": 14,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 94,
+                "stock": 0,
+                "key": 150,
+                "incumbent": 14,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 22,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x14ab3560",
+              "player_slot": 2,
+              "full_engine_handle": 268435508,
+              "pool_node": "0xb9d8e68",
+              "city_data": "0xbab1e68",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbab22b8",
+                "count": 1,
+                "head": "0xb9296e0",
+                "tail": "0xb9296e0",
+                "nodes": [
+                  {
+                    "node": "0xb9296e0",
+                    "type": 14,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 124,
+                "key": 140,
+                "incumbent": 14,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 23,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3758096384,
+              "ai_city_agent": "0x14ab4168",
+              "player_slot": 6,
+              "full_engine_handle": 268435592,
+              "pool_node": "0xbae5140",
+              "city_data": "0xbaeae10",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaeb260",
+                "count": 1,
+                "head": "0xb92a000",
+                "tail": "0xb92a000",
+                "nodes": [
+                  {
+                    "node": "0xb92a000",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 34,
+                "stock": 91,
+                "key": 56,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 60,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x14ab3f00",
+              "player_slot": 4,
+              "full_engine_handle": 268435551,
+              "pool_node": "0xb9d8d68",
+              "city_data": "0xba82498",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba828e8",
+                "count": 1,
+                "head": "0xb929e20",
+                "tail": "0xb929e20",
+                "nodes": [
+                  {
+                    "node": "0xb929e20",
+                    "type": 14,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 83,
+                "key": 93,
+                "incumbent": 14,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 3,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 24,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x14ab37c8",
+              "player_slot": 1,
+              "full_engine_handle": 268435477,
+              "pool_node": "0xb9d7c68",
+              "city_data": "0xba9ad90",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9b1e0",
+                "count": 1,
+                "head": "0xb5914d0",
+                "tail": "0xb5914d0",
+                "nodes": [
+                  {
+                    "node": "0xb5914d0",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 0,
+                "key": 140,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 5,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 25,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x14ab3c98",
+              "player_slot": 5,
+              "full_engine_handle": 268435565,
+              "pool_node": "0xbae4d40",
+              "city_data": "0xbae65c8",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae6a18",
+                "count": 1,
+                "head": "0x93960a0",
+                "tail": "0x93960a0",
+                "nodes": [
+                  {
+                    "node": "0x93960a0",
+                    "type": 0,
+                    "build_class": 3,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 25,
+                "stock": 0,
+                "key": 75,
+                "incumbent": 0,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 86,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x14ab32f8",
+              "player_slot": 3,
+              "full_engine_handle": 268435521,
+              "pool_node": "0xb9d90e8",
+              "city_data": "0xba7ec60",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7f0b0",
+                "count": 1,
+                "head": "0xb929920",
+                "tail": "0xb929920",
+                "nodes": [
+                  {
+                    "node": "0xb929920",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 94,
+                "stock": 299,
+                "key": 150,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 6,
+                "rank_max": 7,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 19,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 268435456,
+              "ai_city_agent": "0x14ab3a30",
+              "player_slot": 7,
+              "full_engine_handle": 268435593,
+              "pool_node": "0xbae5ac0",
+              "city_data": "0xbae95f8",
+              "owner": 5,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae9a48",
+                "count": 1,
+                "head": "0xb929ec0",
+                "tail": "0xb929ec0",
+                "nodes": [
+                  {
+                    "node": "0xb929ec0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 25,
+                "stock": 130,
+                "key": 75,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 8,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 81,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14b5562c",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 6,
+        "ai_actor": "0xb9ccfa0",
+        "effective_aip": "0x14d3e060",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 15,
+          "name": "Trade"
+        },
+        "engine_current": {
+          "index": 15,
+          "name": "Trade"
+        },
+        "civ_name": "Mao Tse-Tung / Chinese",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 18,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 6,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x14ab43d0",
+              "player_slot": 0,
+              "full_engine_handle": 268435473,
+              "pool_node": "0xb9d8368",
+              "city_data": "0xba96d80",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba971d0",
+                "count": 1,
+                "head": "0xb9293e0",
+                "tail": "0xb9293e0",
+                "nodes": [
+                  {
+                    "node": "0xb9293e0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 34,
+                "stock": 300,
+                "key": 93,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 5,
+                "rank_max": 5,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": true,
+                "stored_production_exception": false,
+                "ai_build_rounds": 54,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x14ab26f0",
+              "player_slot": 2,
+              "full_engine_handle": 268435509,
+              "pool_node": "0xb9d9268",
+              "city_data": "0xbab2668",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbab2ab8",
+                "count": 1,
+                "head": "0xb929700",
+                "tail": "0xb929700",
+                "nodes": [
+                  {
+                    "node": "0xb929700",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 458,
+                "key": 38,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 40,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x14ab1880",
+              "player_slot": 4,
+              "full_engine_handle": 268435595,
+              "pool_node": "0xbae51c0",
+              "city_data": "0xbaeb618",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaeba68",
+                "count": 1,
+                "head": "0xb929f20",
+                "tail": "0xb929f20",
+                "nodes": [
+                  {
+                    "node": "0xb929f20",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 25,
+                "stock": 92,
+                "key": 46,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 82,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x14ab1ae8",
+              "player_slot": 1,
+              "full_engine_handle": 268435495,
+              "pool_node": "0xb9d8268",
+              "city_data": "0xbaa8b00",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaa8f50",
+                "count": 1,
+                "head": "0xb929780",
+                "tail": "0xb929780",
+                "nodes": [
+                  {
+                    "node": "0xb929780",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 34,
+                "stock": 119,
+                "key": 62,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 3,
+                "rank_max": 3,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 60,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x14ab4638",
+              "player_slot": 5,
+              "full_engine_handle": 268435605,
+              "pool_node": "0xbae4f40",
+              "city_data": "0xbae9e00",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaea250",
+                "count": 1,
+                "head": "0xb92a140",
+                "tail": "0xb92a140",
+                "nodes": [
+                  {
+                    "node": "0xb92a140",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 52,
+                "stock": 71,
+                "key": 77,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 4,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 40,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x14ab2488",
+              "player_slot": 3,
+              "full_engine_handle": 268435538,
+              "pool_node": "0xb9d9068",
+              "city_data": "0xba844b8",
+              "owner": 6,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba84908",
+                "count": 1,
+                "head": "0xb929aa0",
+                "tail": "0xb929aa0",
+                "nodes": [
+                  {
+                    "node": "0xb929aa0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 17,
+                "stock": 405,
+                "key": 46,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 2,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 103,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14cd50c4",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 7,
+        "ai_actor": "0xb9cc7f0",
+        "effective_aip": "0x14e8e3d0",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 8,
+          "name": "Writing"
+        },
+        "engine_current": {
+          "index": 8,
+          "name": "Writing"
+        },
+        "civ_name": "Mohandas Gandhi / Indians",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 21,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 6,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x14ab4b08",
+              "player_slot": 0,
+              "full_engine_handle": 268435474,
+              "pool_node": "0xb9d76e8",
+              "city_data": "0xba97950",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba97da0",
+                "count": 1,
+                "head": "0xb929460",
+                "tail": "0xb929460",
+                "nodes": [
+                  {
+                    "node": "0xb929460",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 119,
+                "key": 131,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 5,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 24,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x14ab54a8",
+              "player_slot": 2,
+              "full_engine_handle": 268435523,
+              "pool_node": "0xb9d8ee8",
+              "city_data": "0xba7d448",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7d898",
+                "count": 1,
+                "head": "0xb6f7100",
+                "tail": "0xb6f7100",
+                "nodes": [
+                  {
+                    "node": "0xb6f7100",
+                    "type": 0,
+                    "build_class": 3,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 43,
+                "stock": 0,
+                "key": 56,
+                "incumbent": 0,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 1,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 50,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x14ab2958",
+              "player_slot": 4,
+              "full_engine_handle": 268435607,
+              "pool_node": "0xbae56c0",
+              "city_data": "0xbaec628",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaeca78",
+                "count": 1,
+                "head": "0xb929f80",
+                "tail": "0xb929f80",
+                "nodes": [
+                  {
+                    "node": "0xb929f80",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 76,
+                "key": 83,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 49,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x14ab2220",
+              "player_slot": 1,
+              "full_engine_handle": 268435489,
+              "pool_node": "0xb9d81e8",
+              "city_data": "0xbaa8128",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaa8578",
+                "count": 1,
+                "head": "0xb6f7140",
+                "tail": "0xb6f7140",
+                "nodes": [
+                  {
+                    "node": "0xb6f7140",
+                    "type": 2,
+                    "build_class": 3,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 85,
+                "stock": 0,
+                "key": 131,
+                "incumbent": 2,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 5,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+                "stored_production_exception": false,
+                "ai_build_rounds": 25,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x14f07378",
+              "player_slot": 5,
+              "full_engine_handle": 268435622,
+              "pool_node": "0xb667558",
+              "city_data": "0xbaf1e80",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbaf22d0",
+                "count": 1,
+                "head": "0xb6f74a0",
+                "tail": "0xb6f74a0",
+                "nodes": [
+                  {
+                    "node": "0xb6f74a0",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 34,
+                "stock": 0,
+                "key": 0,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 63,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x14ab4d70",
+              "player_slot": 3,
+              "full_engine_handle": 268435539,
+              "pool_node": "0xb9d8968",
+              "city_data": "0xba81488",
+              "owner": 7,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba818d8",
+                "count": 1,
+                "head": "0xb929cc0",
+                "tail": "0xb929cc0",
+                "nodes": [
+                  {
+                    "node": "0xb929cc0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 43,
+                "stock": 512,
+                "key": 83,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": true,
+                "ai_build_rounds": 38,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": true,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14e8ba54",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      },
+      {
+        "civ_id": 8,
+        "ai_actor": "0xb9cc6a8",
+        "effective_aip": "0x14ff7b38",
+        "research_list": [
+          {
+            "index": 12,
+            "name": "Religion"
+          },
+          {
+            "index": 18,
+            "name": "Theocracy"
+          },
+          {
+            "index": 0,
+            "name": "Agriculture"
+          },
+          {
+            "index": 1,
+            "name": "Toolmaking"
+          },
+          {
+            "index": 2,
+            "name": "Mining"
+          },
+          {
+            "index": 7,
+            "name": "Shipbuilding"
+          },
+          {
+            "index": 3,
+            "name": "Domestication"
+          },
+          {
+            "index": 4,
+            "name": "Bronze Working"
+          },
+          {
+            "index": 5,
+            "name": "Stone Working"
+          },
+          {
+            "index": 6,
+            "name": "Jurisprudence"
+          },
+          {
+            "index": 8,
+            "name": "Writing"
+          },
+          {
+            "index": 9,
+            "name": "Geometry"
+          },
+          {
+            "index": 10,
+            "name": "Monarchy"
+          },
+          {
+            "index": 11,
+            "name": "Iron Working"
+          },
+          {
+            "index": 13,
+            "name": "Republic"
+          },
+          {
+            "index": 14,
+            "name": "Philosophy"
+          },
+          {
+            "index": 15,
+            "name": "Trade"
+          },
+          {
+            "index": 16,
+            "name": "Bureaucracy"
+          },
+          {
+            "index": 17,
+            "name": "Astronomy"
+          },
+          {
+            "index": 19,
+            "name": "Banking"
+          },
+          {
+            "index": 20,
+            "name": "Stirrup"
+          },
+          {
+            "index": 21,
+            "name": "Engineering"
+          },
+          {
+            "index": 22,
+            "name": "Alchemy"
+          },
+          {
+            "index": 23,
+            "name": "Classical Education"
+          },
+          {
+            "index": 24,
+            "name": "Hullmaking"
+          },
+          {
+            "index": 25,
+            "name": "Medicine"
+          },
+          {
+            "index": 26,
+            "name": "Agricultural Revolution"
+          },
+          {
+            "index": 27,
+            "name": "Gunpowder"
+          },
+          {
+            "index": 28,
+            "name": "Perspective"
+          },
+          {
+            "index": 29,
+            "name": "Ocean Faring"
+          },
+          {
+            "index": 30,
+            "name": "Printing Press"
+          },
+          {
+            "index": 31,
+            "name": "Machine Tools"
+          },
+          {
+            "index": 32,
+            "name": "Cannon Making"
+          },
+          {
+            "index": 33,
+            "name": "Mechanical Clock"
+          },
+          {
+            "index": 34,
+            "name": "Optics"
+          },
+          {
+            "index": 35,
+            "name": "Cavalry Tactics"
+          },
+          {
+            "index": 36,
+            "name": "Nationalism"
+          },
+          {
+            "index": 37,
+            "name": "Chemistry"
+          },
+          {
+            "index": 38,
+            "name": "Physics"
+          },
+          {
+            "index": 39,
+            "name": "Age of Reason"
+          },
+          {
+            "index": 40,
+            "name": "Democracy"
+          },
+          {
+            "index": 41,
+            "name": "Economics"
+          },
+          {
+            "index": 42,
+            "name": "Electricity"
+          },
+          {
+            "index": 43,
+            "name": "Railroad"
+          },
+          {
+            "index": 44,
+            "name": "Industrial Revolution"
+          },
+          {
+            "index": 45,
+            "name": "Steel"
+          },
+          {
+            "index": 46,
+            "name": "Corporation"
+          },
+          {
+            "index": 47,
+            "name": "Oil Refining"
+          },
+          {
+            "index": 48,
+            "name": "Explosives"
+          },
+          {
+            "index": 49,
+            "name": "Communism"
+          },
+          {
+            "index": 50,
+            "name": "Fascism"
+          },
+          {
+            "index": 51,
+            "name": "Electrification"
+          },
+          {
+            "index": 52,
+            "name": "Pharmaceuticals"
+          },
+          {
+            "index": 53,
+            "name": "Aerodynamics"
+          },
+          {
+            "index": 54,
+            "name": "Rocketry"
+          },
+          {
+            "index": 55,
+            "name": "Tank Warfare"
+          },
+          {
+            "index": 56,
+            "name": "Quantum Physics"
+          },
+          {
+            "index": 57,
+            "name": "Global Defense"
+          },
+          {
+            "index": 58,
+            "name": "Jet Propulsion"
+          },
+          {
+            "index": 59,
+            "name": "Mass Production"
+          },
+          {
+            "index": 60,
+            "name": "Mass Media"
+          },
+          {
+            "index": 61,
+            "name": "Genetics"
+          },
+          {
+            "index": 62,
+            "name": "Computer"
+          },
+          {
+            "index": 63,
+            "name": "Space Flight"
+          },
+          {
+            "index": 64,
+            "name": "Conservation"
+          },
+          {
+            "index": 65,
+            "name": "GlobeNet"
+          },
+          {
+            "index": 66,
+            "name": "Advanced Composites"
+          },
+          {
+            "index": 67,
+            "name": "Corporate Republic"
+          },
+          {
+            "index": 68,
+            "name": "Robotics"
+          },
+          {
+            "index": 74,
+            "name": "Wormholes"
+          },
+          {
+            "index": 87,
+            "name": "Unified Physics"
+          },
+          {
+            "index": 96,
+            "name": "Life Extension"
+          },
+          {
+            "index": 69,
+            "name": "AI Surveillance"
+          },
+          {
+            "index": 78,
+            "name": "Arcologies"
+          },
+          {
+            "index": 79,
+            "name": "Sea Colonies"
+          },
+          {
+            "index": 80,
+            "name": "Space Colonies"
+          },
+          {
+            "index": 71,
+            "name": "Smart Materials"
+          },
+          {
+            "index": 94,
+            "name": "Fusion"
+          },
+          {
+            "index": 72,
+            "name": "Fuel Cells"
+          },
+          {
+            "index": 95,
+            "name": "Neural Interface"
+          },
+          {
+            "index": 73,
+            "name": "Digital Encryption"
+          },
+          {
+            "index": 75,
+            "name": "Technocracy"
+          },
+          {
+            "index": 76,
+            "name": "Superconductor"
+          },
+          {
+            "index": 77,
+            "name": "Human Cloning"
+          },
+          {
+            "index": 81,
+            "name": "Genetic Tailoring"
+          },
+          {
+            "index": 82,
+            "name": "Zero-G Industry"
+          },
+          {
+            "index": 83,
+            "name": "Cryonics"
+          },
+          {
+            "index": 84,
+            "name": "Ecotopia"
+          },
+          {
+            "index": 85,
+            "name": "Mind Control"
+          },
+          {
+            "index": 86,
+            "name": "Ultra-Pressure Machinery"
+          },
+          {
+            "index": 70,
+            "name": "Subneural Ad"
+          },
+          {
+            "index": 88,
+            "name": "Asteroid Mining"
+          },
+          {
+            "index": 89,
+            "name": "Nano-Assembly"
+          },
+          {
+            "index": 90,
+            "name": "Eden Project"
+          },
+          {
+            "index": 91,
+            "name": "Gaia Theory"
+          },
+          {
+            "index": 92,
+            "name": "Virtual Democracy"
+          },
+          {
+            "index": 93,
+            "name": "Alien Archaeology"
+          },
+          {
+            "index": 97,
+            "name": "Cloaking"
+          }
+        ],
+        "rechoose": 0,
+        "last_ai_request": {
+          "index": 8,
+          "name": "Writing"
+        },
+        "engine_current": {
+          "index": 8,
+          "name": "Writing"
+        },
+        "civ_name": "Maria II / Portuguese",
+        "known": {
+          "Religion": {
+            "index": 12,
+            "raw_byte": 1,
+            "known": true
+          },
+          "Theocracy": {
+            "index": 18,
+            "raw_byte": 1,
+            "known": true
+          }
+        },
+        "active_government": 3,
+        "government_requested": 3,
+        "government_deadline": 20,
+        "processed_round": 26,
+        "round_flag": 0,
+        "city_count": 6,
+        "wonder_build_evidence": {
+          "prerequisite": {
+            "index": 7,
+            "raw_byte": 1,
+            "known": true
+          },
+          "threshold": 0.800000011920929,
+          "native_identity": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID",
+          "cities": [
+            {
+              "ai_city_id": 2147483648,
+              "ai_city_agent": "0x14ab3090",
+              "player_slot": 0,
+              "full_engine_handle": 268435478,
+              "pool_node": "0xb9d7768",
+              "city_data": "0xba9b8d0",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9bd20",
+                "count": 1,
+                "head": "0xb929280",
+                "tail": "0xb929280",
+                "nodes": [
+                  {
+                    "node": "0xb929280",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 60,
+                "stock": 399,
+                "key": 112,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 4,
+                "rank_max": 4,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 29,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 3221225472,
+              "ai_city_agent": "0x14f08b88",
+              "player_slot": 2,
+              "full_engine_handle": 268435519,
+              "pool_node": "0xb9d8a68",
+              "city_data": "0xba7f468",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7f8b8",
+                "count": 1,
+                "head": "0xb9296a0",
+                "tail": "0xb9296a0",
+                "nodes": [
+                  {
+                    "node": "0xb9296a0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 17,
+                "stock": 510,
+                "key": 56,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 0,
+                "rank_max": 0,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 97,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 2684354560,
+              "ai_city_agent": "0x14f07848",
+              "player_slot": 4,
+              "full_engine_handle": 268435568,
+              "pool_node": "0xbae40c0",
+              "city_data": "0xbae6dd0",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae7220",
+                "count": 1,
+                "head": "0xb929ca0",
+                "tail": "0xb929ca0",
+                "nodes": [
+                  {
+                    "node": "0xb929ca0",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 378,
+                "key": 83,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 42,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1073741824,
+              "ai_city_agent": "0x14ab2e28",
+              "player_slot": 1,
+              "full_engine_handle": 268435479,
+              "pool_node": "0xb9d7be8",
+              "city_data": "0xba9e418",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba9e868",
+                "count": 1,
+                "head": "0xb6fc1c0",
+                "tail": "0xb6fc1c0",
+                "nodes": [
+                  {
+                    "node": "0xb6fc1c0",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 52,
+                "stock": 0,
+                "key": 150,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 5,
+                "rank_max": 5,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": true,
+                "stored_production_exception": false,
+                "ai_build_rounds": 41,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": true,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 1610612736,
+              "ai_city_agent": "0x14f07f80",
+              "player_slot": 5,
+              "full_engine_handle": 268435609,
+              "pool_node": "0xbae52c0",
+              "city_data": "0xbae8df0",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xbae9240",
+                "count": 1,
+                "head": "0xb92a020",
+                "tail": "0xb92a020",
+                "nodes": [
+                  {
+                    "node": "0xb92a020",
+                    "type": 4,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 42,
+                "stock": 78,
+                "key": 83,
+                "incumbent": 4,
+                "flag": 0,
+                "rank_min": 2,
+                "rank_max": 3,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 49,
+                "build_rounds_pass": true,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            },
+            {
+              "ai_city_id": 536870912,
+              "ai_city_agent": "0x14f08920",
+              "player_slot": 3,
+              "full_engine_handle": 268435533,
+              "pool_node": "0xb9d8be8",
+              "city_data": "0xba7dc50",
+              "owner": 8,
+              "identity": "AI_CITY_ID_TO_PLAYER_SLOT_TO_FULL_HANDLE_TO_OWNED_CITYDATA",
+              "real_queue": {
+                "queue": "0xba7e0a0",
+                "count": 1,
+                "head": "0xb929c40",
+                "tail": "0xb929c40",
+                "nodes": [
+                  {
+                    "node": "0xb929c40",
+                    "type": 8,
+                    "build_class": 1,
+                    "is_exact_labyrinth": false
+                  }
+                ],
+                "new_enqueue_proven": false
+              },
+              "production": "UNKNOWN_NOT_PROJECTED",
+              "stored_production": "UNKNOWN_NOT_PROJECTED",
+              "exact_rank": "UNKNOWN",
+              "build_time": "UNKNOWN",
+              "admission": "UNKNOWN",
+              "storage_exception": "UNKNOWN",
+              "wonder_build_chance": {
+                "production": 25,
+                "stock": 58,
+                "key": 65,
+                "incumbent": 8,
+                "flag": 0,
+                "rank_min": 1,
+                "rank_max": 1,
+                "own_city_count": 6,
+                "rank_denominator": "N",
+                "rank_threshold_pass": false,
+                "stored_production_exception": false,
+                "ai_build_rounds": 84,
+                "build_rounds_pass": false,
+                "cache_free_now": false,
+                "ai_predicates_now": false,
+                "production_rank_buildtime_possible_after_normal_queue": false,
+                "future_cache_release": "UNKNOWN",
+                "engine_admission": "UNKNOWN",
+                "real_queue_empty_now": false,
+                "native_owner_handle_reused": true
+              }
+            }
+          ],
+          "engine_admission": "UNKNOWN"
+        },
+        "wonder_build_chance": {
+          "ai_cost_double": 2160.0,
+          "ai_wonder_state": 1,
+          "ai_wonder_record": "0x14ff51bc",
+          "threshold": 0.800000011920929,
+          "maxrounds": 50,
+          "engine_wonder_record_cost_raw": 2160,
+          "deity_queue_cost": "UNKNOWN",
+          "admission": "UNKNOWN",
+          "one_builder_guaranteed": false
+        },
+        "effective_wonder_list": {
+          "status": "PRESENT",
+          "container": "0x14805a60",
+          "data": "0xb5cc160",
+          "count": 1,
+          "records": [
+            {
+              "weight": 9100.0,
+              "native_index": 2,
+              "category": -1
+            }
+          ],
+          "record_size": 32,
+          "native_token_binding": "UNKNOWN"
+        },
+        "opening_symbols": {
+          "opening_required": 1.0,
+          "opening_completed": 0.0
+        },
+        "symbol_scan": {
+          "buckets": 512,
+          "visited_nodes": 771
+        },
+        "opening_list_expectation": {
+          "status": "PASS",
+          "expected": "one entry, weight 9100, category -1",
+          "native_token_binding": "UNKNOWN"
+        },
+        "source_weight_sequence_matches": []
+      }
+    ],
+    "wonder_native_identity": {
+      "token": "WONDER_LABRYINTH_OF_THE_MINOTAUR",
+      "hash16": 37859,
+      "bucket": 116,
+      "string_sid": 1450,
+      "unique_native_index": 2,
+      "wonder_count": 35,
+      "wonder_record": "0xb552934",
+      "binding": "EXACT_STRINGDB_TOKEN_AND_UNIQUE_WONDERDB_SID"
+    },
+    "wonder_global_evidence": {
+      "global_built_raw": 0,
+      "global_built": "UNKNOWN_RAW_FIELD_SEMANTICS_NOT_PROVEN",
+      "raw_source": "u32(u32(u32(A7A69C)+0x14)+4*index)",
+      "engine_built_gate": "UNKNOWN_A7AB08_TO_4F0330_NOT_PROJECTED",
+      "obsolete_advances": [
+        39
+      ],
+      "existing_player_obsolete": [
+        {
+          "civ_id": 0,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 1,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 2,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 3,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 4,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 5,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 6,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 7,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        },
+        {
+          "civ_id": 8,
+          "advances": [
+            {
+              "index": 39,
+              "raw_byte": 0,
+              "known": false
+            }
+          ]
+        }
+      ],
+      "obsolete_at_any_existing_player": false,
+      "engine_admission": "UNKNOWN"
+    },
+    "wonder_projection": {
+      "package_pins_sha256": "8e527855f009f595e4938fddf65b99dd1776f351e753d6d1b26305730bdeafac",
+      "text": {
+        "arm": "candidate",
+        "aidata_files": 126,
+        "candidate_files": 15,
+        "source_categories": {
+          "default": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              5000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "0b82d06aec6bc5d5cc047f3094f1416a78f48bd7ff9b0d876b2cd09812e2b57b"
+          },
+          "cleric": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              9250.0,
+              9100.0,
+              9250.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              5000.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "549b7aabf5cc2aaf259419a7519dd06ebd0b60681d9a2e9df9ad0e95d93307f3"
+          },
+          "slaver": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              9250.0,
+              9250.0,
+              9250.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              5000.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "09bb5c44a5ffadb4c7e80d498cbdafb878eccdb969dfbf09ef3a6549ef824bc1"
+          },
+          "scifew": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              10000.0,
+              4000.0,
+              10000.0,
+              10000.0,
+              9100.0,
+              4000.0,
+              10000.0,
+              5000.0,
+              0.0,
+              9100.0,
+              10000.0,
+              10000.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              10000.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "f732adadbb8f21cf0cb0cd5f3b58451bbe4c2ae133e129ea5b983daed4e5307b"
+          },
+          "scimany": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              9000.0,
+              4000.0,
+              10000.0,
+              10000.0,
+              9125.0,
+              9100.0,
+              10000.0,
+              5000.0,
+              0.0,
+              9100.0,
+              9250.0,
+              9250.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "2998c934bd576e4e425ee776292b0f499a71ddbc31dbbdc8804a54c45e9f9e3f"
+          },
+          "milfew": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              9250.0,
+              10000.0,
+              9250.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              5000.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9300.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "388cc19addfe418f07eaee02fc4b62e1ec4fe83ce1021d34e31490ee2f99c4e4"
+          },
+          "milmany": {
+            "count": 33,
+            "weights": [
+              20000.0,
+              9250.0,
+              9250.0,
+              9250.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9250.0,
+              5000.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9250.0,
+              9100.0,
+              9250.0,
+              9100.0,
+              9100.0,
+              10000.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0,
+              9100.0
+            ],
+            "category_sha256": "bc86cf23f499bb95773c6fbf1bcf0478f8083aeba46abf96d96feb95971c5260"
+          }
+        },
+        "text_manifest_sha256": "878e4d000a996389ccf9fb4da09cb2ffa03afe7cc924f6c4fca27957c9fb5195"
+      },
+      "native_token_binding": "UNKNOWN",
+      "queue_production_proven": false
+    }
+  },
+  "run_id": "WONDERCHANCE-20261030-ATTEMPT2",
+  "snapshot_label": "AFTER-N1",
+  "turn": 27,
+  "pass_label": "quiet",
+  "variant": "B2a-N30-TECHNICAL",
+  "binding": {
+    "engine_sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79",
+    "ai_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+    "manifest_sha256": "34562e21a9539cccae059a4746ed246039266b6ac8238ff4968c591307fe96ef",
+    "package_sha256": null
+  },
+  "stable_twice": true,
+  "save_identity_proven": false,
+  "atomic_snapshot_proven": false
+}

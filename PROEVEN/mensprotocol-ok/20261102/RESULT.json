@@ -1,0 +1,172 @@
+{
+  "at_utc": "2026-11-02T17:26:20.736233+00:00",
+  "status": "COMPLETE_FOR_ROOT_REVIEW_GAME_STOPPED",
+  "source_sha256": "522b829d517b1d9e7d0f96f13632118aaeee59c70b31655ac54c8950bd819b9e",
+  "source_bytes": 159906,
+  "arm": "control",
+  "ai_files_installed": 0,
+  "dll_changed": false,
+  "gui": {
+    "before_date": "3850 BC",
+    "after_date": "3800 BC",
+    "warrior_on_Rome_seen": true,
+    "enter_once": true,
+    "fortify_once": true,
+    "fortify_response": "deselected; ready indicator black",
+    "entrench_internal_flag_proven": false,
+    "next_turn_entrench_persistence_proven": false,
+    "queue_before": "Warrior; 3 turns",
+    "queue_after": "Warrior; 2 turns",
+    "queue_mutation": false,
+    "n_sent": 1,
+    "research_discovery": "Domestication",
+    "visible_selected": "Stone Working",
+    "change_to": "Stone Working",
+    "entry_selection_sent": false,
+    "research_ok_sent": 1,
+    "research_modal_closed": true,
+    "active_research_after": "Stone Working",
+    "active_research_evidence": [
+      "screens-after.png",
+      "city-after.png"
+    ],
+    "unexpected_modal": false
+  },
+  "native": {
+    "before_stable": true,
+    "after_stable": true,
+    "same_instance": true,
+    "rows": [
+      {
+        "civ_id": 2,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 3,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 4,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 5,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 6,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 7,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      },
+      {
+        "civ_id": 8,
+        "before_native": 2,
+        "after_native": 3,
+        "native_plus_one": true,
+        "before_wonder_count": 33,
+        "after_wonder_count": 33,
+        "weight30000_after": "FAIL"
+      }
+    ],
+    "all_plus_one": true,
+    "turn_cli_metadata_not_native": true
+  },
+  "acceptance": {
+    "research_ok": "PASS_RUNTIME",
+    "existing_Warrior_queue_continuation": "PASS_RUNTIME",
+    "Warrior_repeat_after_new_completion": "PREVIOUS_PROOF_PRESERVED_NOT_NEW_COMPLETION_THIS_RUN",
+    "fortify_command_UI": "PASS_RUNTIME",
+    "full_defense_persistence": "NOT_MEASURED",
+    "T100_survival": "NOT_MEASURED",
+    "AI_gameplay_improvement": "NOT_CLAIMED"
+  },
+  "proof_images": [
+    "loaded.png",
+    "warrior-visible.png",
+    "fortify.png",
+    "city-before.png",
+    "research-visible.png",
+    "research-ok.png",
+    "screens-after.png",
+    "city-after.png"
+  ],
+  "markers": {
+    "N1-consumed.json": "3a4b3f1276c5c678fcff6638d69d4cdca0a68206748ebd1592bbd5425441a1f5",
+    "F1-consumed.json": "57eee3e45e4191a8ac075be3375f9e3b8ff6e301ec99e781d4a2752b6ede702c",
+    "RESEARCH-OK-consumed.json": "3b2523ab9e5e82c508a77aa497cd1d4e35d483d2962450034cce08d25e6a0478"
+  },
+  "snapshots": {
+    "mensprotocol-20261102-before.json": "379b306d75fb6eb9747b095e2999900cc3c6a2dae9fc9e574c896a2aa7bb693d",
+    "mensprotocol-20261102-after.json": "26ad1e77b0d999a1ab685c0b6a6c21efa1c8f27ab8a25d61783fa9219df5dc9f"
+  },
+  "close": {
+    "at_utc": "2026-11-02T17:25:25.6495048Z",
+    "pid": 20832,
+    "creation_filetime": 134381134104178035,
+    "close_main_window_return": true,
+    "exited": true,
+    "elapsed_seconds": 515.2317012999999,
+    "ctp_count": 0,
+    "forcekill": false,
+    "pc_left_on": true
+  },
+  "restore": {
+    "at_utc": "2026-11-02T17:25:51.4406144Z",
+    "restored_pins": 162,
+    "aidata": 118,
+    "saves": 38,
+    "alias_removed": true,
+    "archived_changes": [
+      {
+        "after_sha256": "a178a686d6182241c554527567629a79cf7bfba579cd6a3d04d0f0420c7a3abe",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius"
+      }
+    ],
+    "ctp_processes": 0,
+    "pc_left_on": true
+  },
+  "final_checks": {
+    "pins117_exact": true,
+    "baseline162_exact": true,
+    "c6ba_unchanged": true
+  },
+  "budget": {
+    "checked_utc": "2026-11-02T17:25:51Z",
+    "five_hour": 12,
+    "weekly": 40
+  },
+  "pc_left_on": true
+}

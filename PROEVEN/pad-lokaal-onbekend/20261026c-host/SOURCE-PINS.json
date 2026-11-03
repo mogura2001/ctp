@@ -1,0 +1,405 @@
+{
+  "stage": "SOURCE_ONLY_ALL_RUNTIME_GATES_FALSE",
+  "sources": [
+    {
+      "path": "CTP-og/ctp_program/ctp/civctp.exe",
+      "sha256": "b1b5256fb0fb1a844548eb62e7b13d79a8b4f81b4499cfbe93e614bd5268ac79"
+    },
+    {
+      "path": "CTP-og/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "3025070d66fba516e4cdd70ae332055e1e4ef5162bf1b14c163b9bd128a35d44"
+    },
+    {
+      "path": "ONTWERP/PAD-SPELPROEF-2026-10-23.md",
+      "sha256": "06aff0ac59d76e46a8650c0d9b84a4861db57754b264cf0cc704bdf7cd940ef7"
+    },
+    {
+      "path": "PROEVEN/Bedien-CTP.ps1",
+      "sha256": "d2dbbfcad3d9d8bec8e6a99a399d59561d8f9c4e9a48576a2aefc32e5997bc74"
+    },
+    {
+      "path": "PROEVEN/Controleer-Weekbudget.py",
+      "sha256": "33d538b8f23e85cd5dc6d6f7820450f84d8e4bb439418ab5f359df959dc4c52e"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/__init__.py",
+      "sha256": "94571d1314355e261aff0ddfc94985fe8761232ddff6874181fd21efa9fab47f"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/arm.py",
+      "sha256": "00ea7442a1496d84aca469bfa3542290eafe22898b5be0dece9294865b9508ba"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/arm64.py",
+      "sha256": "834979e887315fae9a447698502f6866c246cb99b65c84b8b6fdef8087181284"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/arm64_const.py",
+      "sha256": "f358d461b1f45a8d91d8e308ca82e5b35c5d2e5c135d8ed07d8cdc86456a5418"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/arm_const.py",
+      "sha256": "1b00d7b48be4b72b730272486d4fd2057cb8019e67f1bd145bcabb1b988d1c67"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/bpf.py",
+      "sha256": "f879595fbc413bfa74600b4cbaa7a2cdd7200b2f92e718ad31fb36844e7c0f9d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/bpf_const.py",
+      "sha256": "070717e28a68ee7e1e8b29cb9a299f5e462be81d9ad6c83dccce5f771fe22e7e"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/evm.py",
+      "sha256": "29f35d3953b2eeb976e02af3cdbf3a78066d4d5a750588da0672e48bc5aa0385"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/evm_const.py",
+      "sha256": "b3a60498c0ac455098d884574829875deb83a4176a052480249a9d3e93f42b6d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/m680x.py",
+      "sha256": "24d56b8f6e9c12d73f830f26de36d02461e4d73a3091943e6c90884181efe41d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/m680x_const.py",
+      "sha256": "a8ceebe6e6213da834406e7a56c1f808fad554c5ed85a986b0ef8647db3718da"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/m68k.py",
+      "sha256": "0567bf26e32a274b086d296fdcc078dcbda2c66280f941e5986b30eecc647bc8"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/m68k_const.py",
+      "sha256": "79de0ea42977ad2875fd73a34ddb55fc2ace58dac45b0ee8aff0ae138c7a8faa"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/mips.py",
+      "sha256": "c23b6e5d5df2be6f728dda2da2a8f805d4d1500e383aebf555da1fa9650639e8"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/mips_const.py",
+      "sha256": "80a325c59a8a88918d1ebc55268e07461841ddde50d034a545d31cdf44668324"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/mos65xx.py",
+      "sha256": "f9b525569fcae4768ac4b2230a46468a571e934717f14d52910e243d0b279e9a"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/mos65xx_const.py",
+      "sha256": "22762e23dec6d011f75068cac995f4c05f6cf5c93c207502eeb11d0cd4a136f3"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/ppc.py",
+      "sha256": "1ee21161d21902744379624d87048138272a99c6bd98623256baa065038bf03d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/ppc_const.py",
+      "sha256": "4284db74b7db3a0e3eda043970096c047df81d9b0a81c13b3b5b70ca623d4b0b"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/riscv.py",
+      "sha256": "c40beee7bd99d3f1cc329203020def06140a786d17e2ec963feefb12e0c8e872"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/riscv_const.py",
+      "sha256": "6ac81243404207d74b3190c37180b6353a001191c7df5d04fd25f89b624abdd1"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/sh.py",
+      "sha256": "d50212075a918e94b41f1e67f838a3b70bc44d19941f33b6d502e5359c967592"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/sh_const.py",
+      "sha256": "a19a1837892a0eaa9bc3e5cd3638625471d705a35b08aa26994ad108928125be"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/sparc.py",
+      "sha256": "389867d194a7bef779466a5283953cb2b30d2e84368e80112677cfaa0334097c"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/sparc_const.py",
+      "sha256": "aef73803efe9a2e0e109fe05e0b791f33e62d41c54ed32cd2773837960d1ddae"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/systemz.py",
+      "sha256": "9e75611fb8930ef665b04a80e14ca0735953f69d2f0fdb608f96ea172cef7f2d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/sysz_const.py",
+      "sha256": "98ad76240b48eff060f96fc0986933c904cbdfd654866eb49e7ee5879db2908e"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/tms320c64x.py",
+      "sha256": "597bf661d25e283c007c9ee76defb422f41e4279aae5bbd8b5736400109cf6b3"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/tms320c64x_const.py",
+      "sha256": "643aeb59e96e2eb10f6ca4e9d27db9c00d83195cf442dea453418ac2df0cb94b"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/tricore.py",
+      "sha256": "6716ed4579dadec5c476a0a704c35421860cdaaf20796c7d9c5ebfceb5c4e3cb"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/tricore_const.py",
+      "sha256": "95d640cfc8d698f162edc68646c4829cd25289ee47d2869815b33b7839d32bae"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/wasm.py",
+      "sha256": "8fb19dfb59cd7175ab0e55b8b7c2d37e150c237ed6060862be6ec3e98bf21d6d"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/wasm_const.py",
+      "sha256": "e03e231892153456070055f39a53ed3205feeb24e7d768a2b193adcbe26cffc5"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/x86.py",
+      "sha256": "08cbb0a02ff152bcf1fbd7c4f8850b3ade38c25b9f0a6a9b900a55ee75e87c67"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/x86_const.py",
+      "sha256": "83cf4550d9256f5f9b8e218b9b732e46d83ef602b463a01d6eeb778deb28e040"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/xcore.py",
+      "sha256": "67a3bab5ec77998bf88f320b61be7110318454be2252ff2a02f42ca4aab56a8c"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/capstone/xcore_const.py",
+      "sha256": "34367710ee0501621fb8b325890cae740ff38075d3ef66b36de9b8b4dcec227f"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/ordlookup/__init__.py",
+      "sha256": "fe7e3869702abb571846d74bc34ea4966e8f75a6603530fe3f9e03c982d736a7"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/ordlookup/oleaut32.py",
+      "sha256": "d3199a7ea2f1ef42a93cb8b20acc752de67789671cb4248584e2b43f441e5aaf"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/ordlookup/ws2_32.py",
+      "sha256": "0879ce2fee63d738838f61332e69a149d463c177649c78935295d7f335604810"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/ordlookup/wsock32.py",
+      "sha256": "f029bc58669eae582a7087c630fd8be8f9f5aa2df6f7cecaa13f8f1e1199ed17"
+    },
+    {
+      "path": "PROEVEN/hulpmiddelen/python/pefile.py",
+      "sha256": "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic_layout.py",
+      "sha256": "9c483e67c15cc994d5e1b458c332684299c80df6a7304396422654a1bc2148ff"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261022T180000/reader/path_failure_decoder.py",
+      "sha256": "1ee2d16a6472a7596f22e8e20f20d6654a8e36950a23865132eec1754d29fdfe"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/check_sources.py",
+      "sha256": "537808fdeea0c94b96bfbec246a623b2e013e4671f75a6e3149b5775c133e352"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/HOST-PLAN.json",
+      "sha256": "61ac08d50bad534af62b7a93070d462a5551ef54ddbb6144509c64b10f050037"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/Lees-Duur.py",
+      "sha256": "694a00bb762df050236c685a55c5ca75f7821ded997f1912ae0c48eafa7f4e97"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/Pass-Duur.ps1",
+      "sha256": "fe3ba041ff897cc2b3d34273239874ba7fa8b9caf8f98c12d7f3259a460539f8"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/runtime-pins.json",
+      "sha256": "24b67f9c058bb2f70bda43fab8765eb9d8cdedb65025d46956e8d8bd2c09a305"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/runtime_adapter.py",
+      "sha256": "9aecdfe18080a855e09eb7148de66dcd5c2864cb126596701ee5d0c37c383739"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/scope.py",
+      "sha256": "d9b5114032ea60baad6c2cb33d8e04b7787dccb321852afe8075ca602e09c0e2"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023-host/SOURCE-PINS.json",
+      "sha256": "6b56fde8d93892e86665264851aae54b9880b525aaf3cd1b1d1fe30f773c4c27"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023T155300-build/candidate-manifest.json",
+      "sha256": "0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261023T155300-build/U30-40.prepared.dll",
+      "sha256": "acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/check_sources.py",
+      "sha256": "c4e76959fc8fdf01239b207c3e3cba5106cb110d2c415dc92dfea078d8a4b041"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/FINAL-CHECKS.json",
+      "sha256": "3d5c2597616e0a2f90d1c2e2ec226b784cc5c243745de9d8c5d881d75fe1382d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/HOST-PLAN.json",
+      "sha256": "61ac08d50bad534af62b7a93070d462a5551ef54ddbb6144509c64b10f050037"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/Lees-Duur.py",
+      "sha256": "694a00bb762df050236c685a55c5ca75f7821ded997f1912ae0c48eafa7f4e97"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/OFFLINE-CHECKS.json",
+      "sha256": "070bd7f7ba7940709ccfb55ecca67fc53ff451f09eb57ce69e580eeeb9041b16"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/OVERDRACHT.md",
+      "sha256": "1d033b077dc270be2d51f55918ab4dde0c88f739e906b89ab05726796f3357d0"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/Pass-Duur.ps1",
+      "sha256": "b90a8359d529c0a7c76f489509987c308b53c8941a40b1140cdfc8beb2f2b3f0"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/REFERENCE-PINS.json",
+      "sha256": "842a2531d573b776fa8b1d2d74463c14801abc363131374aaf962581412f887d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/runtime-pins.json",
+      "sha256": "24b67f9c058bb2f70bda43fab8765eb9d8cdedb65025d46956e8d8bd2c09a305"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/runtime_adapter.py",
+      "sha256": "9aecdfe18080a855e09eb7148de66dcd5c2864cb126596701ee5d0c37c383739"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/scope.py",
+      "sha256": "d9b5114032ea60baad6c2cb33d8e04b7787dccb321852afe8075ca602e09c0e2"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026-host/SOURCE-PINS.json",
+      "sha256": "2f9f3ec2b96160d075820b83ac4570f75969834915d4f6543f37ce52d00107fe"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/HOST-PLAN.json",
+      "sha256": "61ac08d50bad534af62b7a93070d462a5551ef54ddbb6144509c64b10f050037"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/Lees-Duur.py",
+      "sha256": "694a00bb762df050236c685a55c5ca75f7821ded997f1912ae0c48eafa7f4e97"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/OFFLINE-CHECKS.json",
+      "sha256": "7abff2c533839ea736e4bb53e115823f6b5b5cf79cddf35baf5606d075280830"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/OVERDRACHT.md",
+      "sha256": "ff0bf65f4f3565222bb66faf6ba580143addecc868ba98bc5b1f315dcafac94d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/Pass-Duur.ps1",
+      "sha256": "46e25bd31eae9ce406f0fc28f5131fa264c4eec7c9172d93264efc4e23af01d2"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/REFERENCE-PINS.json",
+      "sha256": "842a2531d573b776fa8b1d2d74463c14801abc363131374aaf962581412f887d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/runtime-pins.json",
+      "sha256": "24b67f9c058bb2f70bda43fab8765eb9d8cdedb65025d46956e8d8bd2c09a305"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/runtime_adapter.py",
+      "sha256": "9aecdfe18080a855e09eb7148de66dcd5c2864cb126596701ee5d0c37c383739"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/scope.py",
+      "sha256": "d9b5114032ea60baad6c2cb33d8e04b7787dccb321852afe8075ca602e09c0e2"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026b-host/SOURCE-PINS.json",
+      "sha256": "33fb04ada31c41ed69b3dea162dfe1b0cae95b1fda4658e1ac5a098761d54718"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/HOST-PLAN.json",
+      "sha256": "61ac08d50bad534af62b7a93070d462a5551ef54ddbb6144509c64b10f050037"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/Lees-Duur.py",
+      "sha256": "694a00bb762df050236c685a55c5ca75f7821ded997f1912ae0c48eafa7f4e97"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/OVERDRACHT.md",
+      "sha256": "145282bc81acfe4eb85f2871fe1bd86473134fd642c470d212c5781754f95242"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/Pass-Duur.ps1",
+      "sha256": "46e25bd31eae9ce406f0fc28f5131fa264c4eec7c9172d93264efc4e23af01d2"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/REFERENCE-PINS.json",
+      "sha256": "842a2531d573b776fa8b1d2d74463c14801abc363131374aaf962581412f887d"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/RUN-PLAN.json",
+      "sha256": "5a28bf99ea0dc860e13208dba088fd368a02ba79a5f899e3223d6b397c4f3538"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/runtime-pins.json",
+      "sha256": "24b67f9c058bb2f70bda43fab8765eb9d8cdedb65025d46956e8d8bd2c09a305"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/runtime_adapter.py",
+      "sha256": "9aecdfe18080a855e09eb7148de66dcd5c2864cb126596701ee5d0c37c383739"
+    },
+    {
+      "path": "PROEVEN/pad-lokaal-onbekend/20261026c-host/scope.py",
+      "sha256": "d9b5114032ea60baad6c2cb33d8e04b7787dccb321852afe8075ca602e09c0e2"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/food_diagnostic_layout.py",
+      "sha256": "3ab6de074116555fec32f4c1828b0938336916e0e0f86c7786b1bad75bd2555d"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/plan_layout.py",
+      "sha256": "fbf6993655b842450c43df093065fb96151d940909e14f1ffcaf4c801e7f4b8d"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/food_failure_decoder.py",
+      "sha256": "d9884e2ea5991ff41af54e88c461f2db54f6071638642385c1d20f6188d2943f"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/partial_diagnostic.py",
+      "sha256": "6f43aaed351ff74d4bc140de12ce017e5ca206b510dbca044f7387a34233c0bf"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/reader/positive_reader.py",
+      "sha256": "8c1a733734f4b2f8bd0c69109ff2eb919f62ca6705afad3e39cb7cd732e5c4c3"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science-spatial-pins.json",
+      "sha256": "e5221c469d9a9605a141821f0f54c085494aefe89558b6ca5f4e87577f550c8a"
+    },
+    {
+      "path": "PROEVEN/selectie-pad-diagnose/20261020T192500/science_layout.py",
+      "sha256": "bb1348a01996c250be5e8ffbc5a95c2bb3b0d6606e579436bda470c79fcf6143"
+    }
+  ]
+}

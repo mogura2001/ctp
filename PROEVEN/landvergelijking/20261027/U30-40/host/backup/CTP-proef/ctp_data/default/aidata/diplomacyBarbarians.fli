@@ -1,0 +1,1328 @@
+//////////////////////////////////////////////
+//// BEGIN TURN DIPLOMACY FOR BARBARIANS//////
+//////////////////////////////////////////////	
+
+fuzzy_begin_diplomacy {
+// begin turn processing once for each foreign player
+input military_incursions
+left no_incursions(military_incursions, 0, 0.5)
+tri few_incursions(military_incursions, 1, 0.1)
+tri many_incursions(military_incursions, 3, 0.5)
+right floods_incursions(military_incursions, 4, 0.5)
+
+input his_hotwar_attacked_me // How many times he's ever attacked
+left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.2)
+tri once_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+right often_attacked_me(his_hotwar_attacked_me, 2, 0.5)
+
+output his_hotwar_attacked_me_decay [0, 1.0] = 0.6
+
+input last_attacked_me // the number of turns since he last attacked
+tri attacked_recently(last_attacked_me, 2, 2)
+tri attacked_not_long_ago(last_attacked_me, 4, 2)
+right attacked_long_ago(last_attacked_me, 8, 4)
+
+input diplomatic_regard_towards_him
+left hate_him(diplomatic_regard_towards_him, 10, 10)
+tri dislike_him(diplomatic_regard_towards_him, 30, 10)
+tri neutral_towards_him(diplomatic_regard_towards_him, 50, 10)
+tri neutral_or_better_towards_him(diplomatic_regard_towards_him, 60, 10)
+tri like_him(diplomatic_regard_towards_him, 70, 10)
+right love_him(diplomatic_regard_towards_him, 90, 10)
+
+output diplomatic_regard_delta[-20, 20] = -20 
+tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+output unit_regard_delta[-100, 100] = -100.0
+tri go_to_hot_war(unit_regard_delta,10, 40.0)
+tri go_to_hot_war_prep(unit_regard_delta,25, 10.0)
+tri go_to_cold_war(unit_regard_delta, 35, 10.0)
+tri go_to_cold_war_prep(unit_regard_delta, 50, 5.0)
+tri go_to_peace_partial(unit_regard_delta, 60, 5.0)
+tri go_to_peace_full(unit_regard_delta, 80, 10.0)
+//official relations rules
+
+}
+//end fuzzy_begin_diplomacy
+
+
+//////////////////////////////////////////////
+//////// PRE INCOMING DIPLOMACY //////////////
+//////////////////////////////////////////////	
+
+fuzzy_pre_incoming_diplomacy diplomacy_label { 
+
+// this determines whether or not AI accepts messages
+
+input his_message_tone
+left hostile_message(his_message_tone, 1, 1)
+tri neutral_message(his_message_tone,  2, 1)
+right friendly_mesnsage(his_message_tone, 3, 1)
+
+input his_hotwar_attacked_me // How many times he's ever attacked
+left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.5)
+tri once_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+right often_attacked_me(his_hotwar_attacked_me, 2, 0.5)
+
+output accept_threshold[0, 1000] = 1000
+left always_accept_message (accept_threshold, 0, 200);
+tri definitely_accept_message(accept_threshold, 250, 100);
+tri possibly_accept_message(accept_threshold, 500, 100);
+tri rarely_accept_message(accept_threshold, 750, 100);
+right never_accept_message(accept_threshold, 1000, 200);
+
+input diplomatic_regard_towards_him
+left hate_him(diplomatic_regard_towards_him, 10, 10)
+tri dislike_him(diplomatic_regard_towards_him, 30, 10)
+tri neutral_towards_him(diplomatic_regard_towards_him, 50, 10)
+tri neutral_or_better_towards_him(diplomatic_regard_towards_him, 60, 10)
+tri like_him(diplomatic_regard_towards_him, 70, 10)
+right love_him(diplomatic_regard_towards_him, 90, 10)
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = -20.0
+tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+right worship_him_more(diplomatic_regard_delta, 8, 4)
+	
+output gold_utility[0,10] = 10
+
+input military_incursions
+left no_incursions(military_incursions, 0, 0.2)
+tri few_incursions(military_incursions, 2, 1.5)
+right many_incursions(military_incursions, 3, 1)
+
+output give_advance [0, 2] = 1.0
+right yes_give_adv(give_advance, 0, 0.5)
+tri maybe_give_adv(give_advance, 0.5, 0.25)
+left no_way_give_adv(give_advance, 1.0, 0.5) 
+
+// Production produced by the city we're considering asking for
+input projected_production
+right gains_production(projected_production, 20, 15)
+
+input he_gains_advance
+right his_advance(he_gains_advance, 1, .5)
+
+input he_gains_city
+right gives_him_city(he_gains_city, 1, .5)
+	
+input relative_strength
+left terrified_of_him(relative_strength, 0.1, 0.2) 
+tri afraid_of_him(relative_strength, 0.5, 0.25)
+tri equal_to_him(relative_strength, 1, 0.2)
+right stronger_than_him(relative_strength, 2.5, 0.25)
+ 
+		if(once_attacked_me or often_attacked_me) 
+		{
+			very rarely_accept_message;
+		}
+
+//love at first sight
+input contact_gained
+right gives_contact_gained(contact_gained, 1.0, 0.5)
+
+		if(gives_contact_gained and not hate_him) 
+		{
+			definitely_accept_message
+			like_him_more
+		}
+
+//demand advances 
+input he_gains_advance
+right yes_he_gains_advance(he_gains_advance, 1.0, 0.5)
+	
+		if(yes_he_gains_advance and terrified_of_him) 
+		{
+			possibly_accept_message
+			wary_of_him_more
+			maybe_give_adv
+		} 
+
+//demand gold
+input he_gains_gold
+right gives_him_gold(he_gains_gold, 1, .5)
+
+		if(gives_him_gold and (love_him or terrified_of_him)) 
+		{
+			possibly_accept_message
+			dislike_him_more
+		}
+//demand map
+input he_gets_map
+right gives_him_map(he_gets_map, 1, .5)
+
+		if(gives_him_map and terrified_of_him) 
+		{
+			possibly_accept_message
+			dislike_him_more
+		}
+
+//demand leave lands
+input i_will_leave_his_lands
+right im_leaving(i_will_leave_his_lands, 1, 0.5)
+
+		if(im_leaving and love_him and afraid_of_him)
+		{
+			possibly_accept_message
+			hate_him_more
+		}
+
+
+		if(im_leaving and terrified_of_him)
+		{
+			definitely_accept_message
+			dislike_him_more
+		} 
+
+//demand reduce pollution
+input his_pollution_level
+left low_his_pollution(his_pollution_level, 50.0, 5.0)
+tri average_his_pollution(his_pollution_level, 100.0, 50.0)
+right high_his_pollution(his_pollution_level, 200.0, 75.0)
+
+input my_pollution_level
+left low_my_pollution(my_pollution_level, 50.0, 5.0)
+tri average_my_pollution(my_pollution_level, 100.0, 50.0)
+right high_my_pollution(my_pollution_level, 200.0, 75.0)
+
+input global_pollution_level
+left low_global_pollution(global_pollution_level, 500.0, 5.0)
+tri average_global_pollution(global_pollution_level, 1000.0, 500.0)
+right high_global_pollution(global_pollution_level, 2000.0, 1000.0)
+
+output reduce_pollution_utility[0,1.0]=0  
+left cant_reduce_pollution(reduce_pollution_utility, 0.1, 0.05)
+tri maybe_reduce_pollution(reduce_pollution_utility, 0.5, 0.25)
+right yes_reduce_pollution(reduce_pollution_utility, 1.0, 0.25)
+
+//determine extent of global pollution
+	if(low_global_pollution)
+	{
+		cant_reduce_pollution
+	}
+	
+	if(average_global_pollution)
+	{
+		maybe_reduce_pollution
+	}
+	if(high_global_pollution)
+	{
+		yes_reduce_pollution
+	}
+
+		if(high_my_pollution and love_him and afraid_of_him)
+		{
+			possibly_accept_message
+			dislike_him_more
+		}
+
+		if(high_my_pollution and terrified_of_him)
+		{
+			definitely_accept_message
+			hate_him_more
+		}
+
+//demand stop piracy
+//this won't work yet
+input i_will_stop_piracy
+right stop_piracy (i_will_stop_piracy, 1.0, 0.5)
+
+		if(stop_piracy and love_him and afraid_of_him)
+		{
+			possibly_accept_message
+			dislike_him_more
+		}
+
+// demand stop trade 
+input his_trade_with_third_party
+left no_trade_with_third(his_trade_with_third_party, 0, 0.1)
+tri some_trade_with_third_party(his_trade_with_third_party, 2, 1)
+right much_trade_with_third_party(his_trade_with_third_party, 5, 2)
+
+input third_party_regard
+left low_third_party_regard(third_party_regard, 20, 10)
+right high_third_party_regard(third_party_regard, 80, 10)
+tri neutral_third_party_regard(third_party_regard, 50, 25)
+
+input stops_trade_with_third_party
+right does_stop_third_party_trade(stops_trade_with_third_party, 1, .5)
+
+output trade_utility [0, 1000] = 1000
+left ok_i_stop (trade_utility, 0, 100)
+tri maybe_i_stop (trade_utility, 500, 250)
+right no_way_jose (trade_utility, 1000, 250)
+
+	if(love_him)
+	{
+		ok_i_stop
+	}
+		
+	if(like_him or neutral_or_better_towards_him or neutral_towards_him)
+	{
+		maybe_i_stop	
+	}
+		
+	if(dislike_him or hate_him)
+	{
+		no_way_jose
+	}
+
+		if(does_stop_third_party_trade and love_him and afraid_of_him and low_third_party_regard and 		some_trade_with_third_party)
+		{
+			possibly_accept_message
+			hate_him_more
+		}
+
+		if(does_stop_third_party_trade and no_trade_with_third)
+		{		
+			definitely_accept_message
+			dislike_him_more
+		}
+			
+//demand attack enemy
+input i_will_attack_third_party
+right i_attack_enemy (i_will_attack_third_party, 1.0, 0.5)
+
+// = his_strength / third_party_strength 
+input his_third_party_relative_strength
+left he_is_weaker_than_3rd(his_third_party_relative_strength, 0.5, 0.25)
+tri he_is_same_as_3rd(his_third_party_relative_strength, 1.0, 0.2)
+right he_is_stronger_than_3rd(his_third_party_relative_strength, 4.0, 3.0)
+
+// = my_strength / third_party_strength
+input third_party_relative_strength
+left i_am_weaker_than_3rd(third_party_relative_strength, 0.5, 0.25)
+tri i_am_same_as_3rd(third_party_relative_strength, 1.0, 0.2)
+right i_am_stronger_than_3rd(third_party_relative_strength, 4.0, 3.0)
+
+		if(i_attack_enemy and i_am_weaker_than_3rd)
+		{
+			definitely_accept_message
+		}
+
+		if(i_attack_enemy and love_him and he_is_weaker_than_3rd)
+		{
+			possibly_accept_message
+		}
+
+		if(i_attack_enemy and love_him and he_is_stronger_than_3rd and i_am_stronger_than_3rd)
+		{
+			definitely_accept_message
+			dislike_him_more
+		}
+
+// exchange advance begin
+input i_gain_advance
+right yes_i_gain_advance(i_gain_advance, 1.0, .5)
+
+		if(yes_he_gains_advance and yes_i_gain_advance and (like_him or love_him))
+		{
+			possibly_accept_message
+		}
+
+//exchange map	
+input last_got_map
+right got_map_centuries_ago(last_got_map, 30, 10)
+
+input i_gain_map
+right yes_i_gain_map(i_gain_map, 1.0, 0.5)
+
+
+		if((gives_him_map and yes_i_gain_map) and (like_him or love_him) and afraid_of_him)
+		{
+			possibly_accept_message
+		}
+
+		if((gives_him_map and yes_i_gain_map) and got_map_centuries_ago and not(hate_him or dislike_him))
+		{
+			definitely_accept_message
+			like_him_more
+		}
+
+//offer advance
+
+		if(yes_i_gain_advance and not hate_him)
+		{
+			definitely_accept_message
+			like_him_more
+		}
+	
+//offer gold
+input gold_gained
+tri gains_gold(gold_gained, 0.2, 0.05)
+tri gains_much_gold(gold_gained, 1.0, 0.5)
+tri gains_a_whole_lotta_gold(gold_gained, 2.0, 0.5)
+right gains_incredible_gold(gold_gained, 5.0, 2.0)
+
+		if(gains_gold) 
+		{
+			possibly_accept_message
+			love_him_more
+		} 
+
+		if(gains_much_gold) 	
+		{
+			possibly_accept_message
+			love_him_more 
+		}
+	
+		if(gains_a_whole_lotta_gold)
+		{
+			definitely_accept_message
+			love_him_more
+		}
+
+		if(gains_incredible_gold) 
+		{
+			definitely_accept_message
+			worship_him_more
+		}
+
+//offer map
+
+		if(yes_i_gain_map and not hate_him) 
+		{
+			definitely_accept_message
+			like_him_more
+		}
+
+//offer cease fire
+input gains_cease_fire
+right does_gain_cease_fire(gains_cease_fire, 1, .5)
+
+		if(does_gain_cease_fire and not afraid_of_him) 
+		{
+			possibly_accept_message
+		}
+
+		if(does_gain_cease_fire and afraid_of_him) 
+		{
+			definitely_accept_message
+			like_him_more
+		}
+
+//offer permanent alliance
+input gains_alliance
+right does_gain_alliance(gains_alliance, 1, .5)
+
+output alliance[0,1] = 0
+right no_alliance(alliance, 0, 0.2)
+tri perchance_alliance(alliance, 0.5, 0.25)
+left married(alliance, 1.0, 0.25)
+
+	if(hate_him or dislike_him)
+	{
+		no_alliance
+	}
+
+	if(neutral_towards_him or neutral_or_better_towards_him)
+	{
+		perchance_alliance
+	}
+
+	if(like_him or love_him)
+	{
+		married
+	}
+
+
+		if(does_gain_alliance and terrified_of_him) 
+		{
+			definitely_accept_message
+		}
+
+		if(does_gain_alliance and afraid_of_him)
+		{
+			possibly_accept_message
+		}
+
+		if(does_gain_alliance and equal_to_him) 
+		{
+			rarely_accept_message
+		}
+
+// offer ecopact 
+input end_pollution_pact
+right yes_end_pollution_pact(end_pollution_pact, 1.0, 0.5)
+
+		if(yes_end_pollution_pact and (like_him or love_him) and high_my_pollution and high_his_pollution)
+		{
+			possibly_accept_message
+		}
+
+}
+//end fuzzy_pre_incoming_diplomacy diplomacy_label
+
+//////////////////////////////////////
+//BEGIN FUZZY_PRE_OUTGOING_DIPLOMACY//
+//////////////////////////////////////
+
+fuzzy_pre_outgoing_diplomacy {
+output send_threshold[0, 1000] = 1000 
+left almost_always_send(send_threshold, 50, 50)
+tri often_send(send_threshold, 200, 150)
+tri sometimes_send(send_threshold, 600, 100)
+tri occasionally_send(send_threshold, 750, 100)
+right rarely_send(send_threshold, 1000, 200)
+
+input diplomatic_regard_towards_him
+left hate_him(diplomatic_regard_towards_him, 10, 10)
+tri dislike_him(diplomatic_regard_towards_him, 30, 10)
+tri neutral_towards_him(diplomatic_regard_towards_him, 40, 10)
+tri neutral_or_better_towards_him(diplomatic_regard_towards_him, 50, 10)
+tri like_him(diplomatic_regard_towards_him, 60, 15)
+right love_him(diplomatic_regard_towards_him, 90, 10)
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = -20.0
+tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+output send_tone[0, 5] = 2.5
+left hostile_tone(send_tone, 0, 2.5)
+tri neutral_tone(send_tone, 2.5, 1)
+right friendly_tone(send_tone, 5, 2.5)
+
+input his_hotwar_attacked_me
+left hasnt_attacked_me(his_hotwar_attacked_me, 0, 0.5)
+right has_attacked_me(his_hotwar_attacked_me, 1, 0.5)
+
+input contact_gained // 0 - 100
+right gains_contact(contact_gained, 100, 100)
+	
+output gold_utility[0,10] = 10
+
+input gold_gained
+tri gains_gold(gold_gained, 50, 49)
+tri gains_much_gold(gold_gained, 100, 50)
+right gains_incredible_gold(gold_gained, 200, 100)
+
+input military_incursions
+left no_incursions(military_incursions, 0, 0.2)
+tri few_incursions(military_incursions, 2, 1.5)
+right many_incursions(military_incursions, 3, 1)
+
+input reduces_incursions
+left doesnt_reduce_incursions(reduces_incursions, 0, 0.5)
+right does_reduce_incursions(reduces_incursions, 1, 0.25)
+
+output found_message_i[0,2] = 0
+left didnt_find(found_message_i, 0, 1)
+right found(found_message_i, 1, 0.5)
+
+input advances_skipped
+left no_advances_skipped(advances_skipped, 0, 0.5)
+tri few_advances_skipped(advances_skipped, 2, 1.2)
+tri some_advances_skipped(advances_skipped, 4, 1.2)
+right many_advances_skipped(advances_skipped, 6, 2)
+
+input last_got_map
+right got_map_centuries_ago(last_got_map, 0, 10)
+
+input his_trade_with_third_party
+//tri some_trade_with_third_party(his_trade_with_third_party, 2, 1)
+right much_trade_with_third_party(his_trade_with_third_party, 2, 2)
+
+input third_party_regard
+left low_third_party_regard(third_party_regard, 20, 10)
+right high_third_party_regard(third_party_regard, 80, 10)
+tri neutral_third_party_regard(third_party_regard, 50, 25)
+
+input he_attacks_enemy
+right attacks_enemy(he_attacks_enemy, 1, .5)
+
+input he_gains_advance
+right his_advance(he_gains_advance, 1, .5)
+
+input i_gain_advance
+right my_advance(i_gain_advance, 1, .5)
+
+input relative_strength
+left afraid_of_him(relative_strength, 0.5, 0.25)
+tri equal_to_him(relative_strength, 1, 0.2)
+right stronger_than_him(relative_strength, 2.5, 0.25)
+
+//how much does the AI wanna give away an advance
+output advance_give [0, 1] = 0
+left no_way_jose(advance_give, 0, 0.2)
+tri maybe_i_will(advance_give, 0.5, 0.25)
+right ok_here(advance_give, 1.0, 0.25)
+
+//does the AI wanna give away gold
+output gold_need [0, 2] = 0
+left crack_ho(gold_need, 0, 0.2)
+tri middle_class(gold_need, 0.5, 0.25)
+right im_rich(gold_need, 1.0, 0.25)
+
+//set when AI will give away gold or advances
+	if(stronger_than_him or hate_him)
+	{
+		no_way_jose
+		crack_ho
+	}
+
+	if(like_him or afraid_of_him)
+	{
+		maybe_i_will
+		middle_class	
+	}
+
+	if(love_him)
+	{
+		ok_here
+		im_rich
+	}	
+ 
+// Set tone
+	if(hate_him or dislike_him){
+		hostile_tone
+	}
+
+	if(neutral_towards_him or neutral_or_better_towards_him){
+		neutral_tone
+	}
+
+	if(like_him or love_him){
+		friendly_tone
+	} 
+
+ 
+// set threshold
+// each message should set found, so that the rarely_send clause doesn't
+// take effect
+
+//love at first sight send
+		if(gains_contact) 
+		{
+			often_send
+			found
+		} 
+
+//demand advance send
+output demand_advance [0, 1] = 0
+left wont_demand_adv(demand_advance, 0, 0.1)
+tri thinkin_bout_demandin_adv(demand_advance, 0.5, 0.25)
+right gimmee_adv(demand_advance, 1.0, 0.25)
+
+//set fz_demand_advance
+	if(like_him or love_him)
+	{
+		wont_demand_adv
+	}
+	if(neutral_towards_him or neutral_or_better_towards_him)
+	{
+		thinkin_bout_demandin_adv
+	}
+	if((dislike_him or hate_him) and stronger_than_him)
+	{
+		gimmee_adv
+	}
+
+
+		if(my_advance and dislike_him and stronger_than_him)
+		{
+			occasionally_send
+			found
+		}
+
+		if(my_advance and hate_him and stronger_than_him)	
+		{
+			often_send
+			found
+		}
+
+
+//demand gold send
+		if(gains_gold and (dislike_him or hate_him)) 
+		{
+			occasionally_send
+			found
+		} 
+
+		if(gains_much_gold and (dislike_him or hate_him)) 
+		{
+			sometimes_send
+			found
+		}
+
+		if(gains_incredible_gold and hate_him) 
+		{
+			often_send
+			found
+		}
+
+//demand map send
+input map_area_gained 
+right ai_gets_map(map_area_gained, 1, 0.5) 
+
+		if(ai_gets_map and (dislike_him or hate_him) and stronger_than_him)
+		{
+			occasionally_send
+			found
+		}
+
+//demand leave our lands send
+		if(dislike_him and many_incursions) 
+		{
+			often_send
+			found
+		}
+
+		if(hate_him and stronger_than_him and (few_incursions or many_incursions)) 
+		{
+			often_send
+			found
+		} 
+		
+		if(stronger_than_him and dislike_him and many_incursions) 
+		{
+			often_send
+			found
+		}
+
+//demand reduce pollution send
+output stop_polluting_others [0, 1000] = 0
+left sierra_club(stop_polluting_others, 100, 100)
+tri average_consumer(stop_polluting_others, 500, 250)
+right dupont_chemical(stop_polluting_others, 1000, 250)
+
+input his_pollution_level
+left low_his_pollution(his_pollution_level, 50.0, 5.0)
+tri average_his_pollution(his_pollution_level, 100.0, 50.0)
+right high_his_pollution(his_pollution_level, 200.0, 75.0)
+
+input my_pollution_level
+left low_my_pollution(my_pollution_level, 50.0, 5.0)
+tri average_my_pollution(my_pollution_level, 100.0, 50.0)
+right high_my_pollution(my_pollution_level, 200.0, 75.0)
+
+input global_pollution_level
+left low_global_pollution(global_pollution_level, 500.0, 5.0)
+tri average_global_pollution(global_pollution_level, 1000.0, 500.0)
+right high_global_pollution(global_pollution_level, 2000.0, 1000.0)
+
+//determine extent of global pollution
+	if(low_global_pollution)
+	{
+		sierra_club
+	}
+	
+	if(average_global_pollution)
+	{
+		average_consumer
+	}
+	if(high_global_pollution)
+	{
+		dupont_chemical
+	}
+	
+
+		if(stronger_than_him and (dislike_him or hate_him) and average_his_pollution)
+		{
+			sometimes_send
+			found
+		}
+
+		if(stronger_than_him and high_his_pollution)
+		{
+			 occasionally_send
+			 found
+		}	
+
+//demand stop piracy send
+input his_pirated_me
+left hasnt_pirated_me(his_pirated_me, 0, 0.2)
+tri pirated_a_little(his_pirated_me, 2, 1)
+right blue_beard(his_pirated_me, 5, 2)
+
+output piracy_decay [0, 1] = 0.8
+ 
+
+		if(pirated_a_little)
+		{
+			occasionally_send
+			found
+		}	
+		 
+		if(blue_beard)
+		{
+			sometimes_send
+			found
+		}	
+
+//demand stop trade send		
+output stop_trade [0, 1] = 0
+left dont_stop (stop_trade, 0, 0.2)
+tri think_about_it (stop_trade, 0.5, 0.25)
+right stop_trading_you_bastard (stop_trade, 1.0, 0.25)
+
+	if(love_him)
+	{
+		dont_stop
+	}
+	
+	if(like_him or neutral_or_better_towards_him or neutral_towards_him)
+	{
+		think_about_it
+	}
+		
+	if(dislike_him or hate_him)
+	{
+		stop_trading_you_bastard
+	}
+		
+		if(much_trade_with_third_party and (hate_him or low_third_party_regard) and stronger_than_him) 
+		{
+			often_send
+			found
+		}
+
+//demand attack enemy send
+// = his_strength / third_party_strength 
+input his_third_party_relative_strength
+left he_is_weaker_than_3rd(his_third_party_relative_strength, 0.5, 0.25)
+tri he_is_same_as_3rd(his_third_party_relative_strength, 1.0, 0.2)
+right he_is_stronger_than_3rd(his_third_party_relative_strength, 4.0, 3.0)
+
+// = my_strength / third_party_strength
+input third_party_relative_strength
+left i_am_weaker_than_3rd(third_party_relative_strength, 0.5, 0.25)
+tri i_am_same_as_3rd(third_party_relative_strength, 1.0, 0.25)
+right i_am_stronger_than_3rd(third_party_relative_strength, 4.0, 3.0)
+
+// num_his_trade_routes_with_third
+input his_trade_with_third_party
+left hes_not_trading_with_3rd(his_trade_with_third_party, 0, 0.5)
+right hes_trading_with_3rd(his_trade_with_third_party, 10, 9 )
+
+
+		if(hes_not_trading_with_3rd and he_is_stronger_than_3rd and i_am_weaker_than_3rd and love_him)
+		{
+			often_send
+			found
+		}
+
+
+// exchange advance send 
+		if(my_advance and his_advance and love_him)
+		{
+			sometimes_send
+			found
+		}
+
+//exchange map send
+output map_exchange [0, 100] = 0
+left no_map_xd(map_exchange, 0, 20)
+tri maybe_map_xd(map_exchange, 50, 25)
+right hell_yeah_map_xd(map_exchange, 100, 25)
+//set fz_map_exchange	
+
+	if(dislike_him or hate_him)
+	{
+		no_map_xd
+	}
+	if(neutral_towards_him or neutral_or_better_towards_him or like_him)
+	{
+		maybe_map_xd
+	}
+	if(love_him)
+	{
+		hell_yeah_map_xd
+	}
+
+input map_area_gained 
+right ai_gets_map(map_area_gained, 1, 0.5) 
+
+input he_gets_map
+right gives_him_map(he_gets_map, 1, .5)
+
+		if(gives_him_map and ai_gets_map and love_him and afraid_of_him)
+		{
+			sometimes_send
+			found
+		}
+
+//offer advance send 
+		if(many_advances_skipped and his_advance and love_him) 
+		{
+			sometimes_send
+			found
+		} 
+		if(his_advance and some_advances_skipped and love_him) 
+		{
+			occasionally_send
+			found
+		}
+
+//offer gold send
+input he_gains_gold
+right gives_him_gold(he_gains_gold, 1, .5)
+
+		if(gives_him_gold and love_him and afraid_of_him) 
+		{
+			occasionally_send
+			found
+		}
+
+//offer map send
+
+		if(gives_him_map and love_him and afraid_of_him) 
+		{
+			occasionally_send
+			found
+		}
+
+//offer map alt send
+		if(gives_him_map and got_map_centuries_ago and love_him) 
+		{
+			occasionally_send
+			found
+		}
+
+//offer cease fire send
+input gains_cease_fire
+right does_gain_cease_fire(gains_cease_fire, 1, .5)
+
+input war_with_him
+right warring(war_with_him, 1, 0.5)
+
+input length_of_war_with_him 
+left no_recent_war(length_of_war_with_him, 0, 0.2)
+tri skirmish(length_of_war_with_him, 2, 1)
+tri battle(length_of_war_with_him, 5, 2)
+tri war(length_Of_war_with_him, 10, 4)
+right hatfields_n_mccoys(length_of_war_with_him, 15, 5)
+
+		if(does_gain_cease_fire and equal_to_him and warring and war and not(hate_him or dislike_him))
+		{
+			occasionally_send
+			found
+		}
+
+		if(does_gain_cease_fire and warring and afraid_of_him and hatfields_n_mccoys) 
+		{
+			often_send
+			found
+		}
+
+//offer permanent alliance send
+input gains_alliance
+right does_gain_alliance(gains_alliance, 1, .5)
+
+input num_he_is_at_war
+left ghandi(num_he_is_at_war, 0, 0.2)
+tri grudge(num_he_is_at_war, 2, 1)
+tri schoolyard_bully(num_he_is_at_war, 4, 2)
+right postal(num_he_is_at_war, 8, 3)
+
+output alliance [0,1] = 0
+right no_alliance(alliance, 0, 0.2)
+tri perchance_alliance(alliance, 0.5, 0.25)
+left married(alliance, 1.0, 0.25)
+
+//loyalty ain't in yet, so this is the hack	
+output perceived_loyalty [0,5] = 2.5
+left traitor(perceived_loyalty, 0, 1)
+tri den_of_thieves (perceived_loyalty, 2.5, 1)
+right bushido (perceived_loyalty, 5, 2)
+
+	if(schoolyard_bully or postal)
+	{
+		no_alliance
+		traitor
+	}
+
+	if(grudge)
+	{
+		perchance_alliance
+		den_of_thieves
+	}
+
+	if(ghandi)
+	{
+		married
+		bushido
+	}
+
+		if(does_gain_alliance and afraid_of_him and warring and (war or hatfields_n_mccoys)) 
+		{
+			sometimes_send
+			found
+		}
+
+//offer ecopact send
+output pact_end_pollution [0, 1000]= 0
+left toxic_wastrel(pact_end_pollution, 0, 100)
+tri joe_lunchpail(pact_end_pollution, 500, 250)
+right pollution_sucks(pact_end_pollution, 1000, 250)
+
+input end_pollution_pact
+right stinky_pants(end_pollution_pact, 1.0, 0.5)
+
+	if(high_his_pollution or high_my_pollution)
+	{
+		pollution_sucks
+	}
+	
+	if(average_his_pollution or average_my_pollution)
+	{
+		joe_lunchpail
+	}
+
+	if(low_his_pollution or low_my_pollution)	
+	{
+		toxic_wastrel
+	}
+
+		if(stinky_pants and love_him and high_global_pollution)
+		{
+			often_send
+			found
+		}
+
+//message type not found send
+		if(didnt_find) 
+		{
+			rarely_send
+		}
+}
+//end fuzzy_pre_outgoing_diplomacy
+
+
+////////////////////////////////
+//BEGIN FUZZY_REJECTED_MESSAGE//
+////////////////////////////////
+
+fuzzy_rejected_message {
+
+input diplomatic_regard_towards_him
+left hate_him(diplomatic_regard_towards_him, 10, 10)
+tri dislike_him(diplomatic_regard_towards_him, 30, 10)
+tri neutral_towards_him(diplomatic_regard_towards_him, 50, 10)
+tri neutral_or_better_towards_him(diplomatic_regard_towards_him, 70, 10)
+tri like_him(diplomatic_regard_towards_him, 80, 10)
+right love_him(diplomatic_regard_towards_him, 90, 10)
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = -20.0
+tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+input he_rejected_greetings
+right yes_he_rejected_greetings(he_rejected_greetings, 1.0, .5)
+
+input relative_strength
+left afraid_of_him(relative_strength, 0.5, 0.25)
+tri equal_to_him(relative_strength, 1, 0.2)
+right stronger_than_him(relative_strength, 2.5, 0.25)
+
+//rejected greetings
+	if(yes_he_rejected_greetings)
+	{
+		wary_of_him_more
+	}
+
+//rejected advance demand
+input he_rejected_demand_advance
+right yes_he_rejected_demand_advance(he_rejected_demand_advance, 1.0, .5)
+
+
+//rejected gold demand
+input he_rejected_gold_demand
+right yes_he_rejected_gold_demand(he_rejected_gold_demand, 1.0, .5)
+
+//rejected map demand
+input he_rejected_demand_map
+right yes_he_rejected_demand_map(he_rejected_demand_map, 1.0, .5)
+
+//rejected leave our lands demand
+input he_rejected_demand_leave_our_lands
+right yes_he_rejected_demand_leave_our_lands(he_rejected_demand_leave_our_lands, 1.0, .5)
+
+//rejected reduce pollution demand
+input he_rejected_demand_reduce_pollution
+right yes_he_rejected_demand_reduce_pollution(he_rejected_demand_reduce_pollution, 1.0, .5)
+
+//rejected stop piracy
+input he_rejected_demand_no_piracy
+right yes_he_rejected_demand_no_piracy(he_rejected_demand_no_piracy, 1.0, .5)
+
+//rejected stop trade 
+input he_rejected_demand_stop_trade
+right yes_he_rejected_demand_stop_trade(he_rejected_demand_stop_trade, 1.0, .5)
+
+//rejected attack enemy
+input he_rejected_demand_attack_enemy
+right rejected_attack(he_rejected_demand_attack_enemy, 1.0, 0.5)
+
+//rejected exchange advance
+input he_rejected_exchange_advance
+right yes_he_rejected_exchange_advance(he_rejected_exchange_advance, 1.0, .5)
+
+//rejected exchange map
+input he_rejected_exchange_map
+right yes_he_rejected_exchange_map(he_rejected_exchange_map, 1.0, .5)
+
+	if(yes_he_rejected_exchange_map)
+	{
+		dislike_him_more
+	}
+
+//rejected advance offer
+input he_rejected_offer_advance
+right yes_he_rejected_offer_advance(he_rejected_offer_advance, 1.0, .5)
+
+	if(yes_he_rejected_offer_advance)
+	{
+		dislike_him_more
+	}
+
+//rejected gold offer
+input he_rejected_offer_gold
+right yes_he_rejected_offer_gold(he_rejected_offer_gold, 1.0, .5)
+
+	if(yes_he_rejected_offer_gold)
+	{
+		dislike_him_more
+	}
+
+//rejected map offer
+input he_rejected_offer_map
+right yes_he_rejected_offer_map(he_rejected_offer_map, 1.0, .5)
+
+	if(yes_he_rejected_offer_map)
+	{
+		dislike_him_more
+	}
+
+//rejected cease fire
+input he_rejected_offer_cease_fire
+right yes_he_rejected_offer_cease_fire(he_rejected_offer_cease_fire, 1.0, .5)
+
+	if(yes_he_rejected_offer_cease_fire)
+	{
+		dislike_him_more
+	}
+
+//rejected permanent alliance
+input he_rejected_offer_alliance
+right yes_he_rejected_offer_alliance(he_rejected_offer_alliance, 1.0, .5)
+
+	if(yes_he_rejected_offer_alliance)
+	{
+		dislike_him_more
+	}
+
+//reject ecopact
+input he_rejected_offer_pact_end_pollution
+right he_rejected_ecopact (he_rejected_offer_pact_end_pollution, 1.0, 0.5)
+
+	if(he_rejected_ecopact)
+	{
+		dislike_him_more
+	}
+
+}
+//end fuzzy rejected message
+
+
+////////////////////////////////
+//BEGIN FUZZY_ACCEPTED_MESSAGE//
+////////////////////////////////
+
+fuzzy_accepted_message {
+
+//new regard modifier
+output diplomatic_regard_delta[-20, 20] = 0.0
+tri loath_him_more(diplomatic_regard_delta, -10, 10.0)
+tri hate_him_more(diplomatic_regard_delta, -8, 4.0)
+tri dislike_him_more(diplomatic_regard_delta, -5, 2.0)
+tri wary_of_him_more(diplomatic_regard_delta, -3, 1.0)
+tri same_like_him(diplomatic_regard_delta, 0, 1.0)
+tri like_him_more(diplomatic_regard_delta, 2, 1.0)
+tri love_him_more(diplomatic_regard_delta, 5, 2.0)
+right worship_him_more(diplomatic_regard_delta, 8, 4)
+
+input he_accepted_greetings
+right yes_he_accepted_greetings(he_accepted_greetings, 1.0, .5)
+
+
+//accepted greetings
+	if(yes_he_accepted_greetings)
+	{
+		love_him_more
+	}
+
+//accepted advance demand
+input he_accepted_demand_advance
+right yes_he_accepted_demand_advance(he_accepted_demand_advance, 1.0, .5)
+
+	if(yes_he_accepted_demand_advance)
+	{
+		like_him_more
+	}
+
+//accepted gold demand
+input he_accepted_gold_demand
+right yes_he_accepted_gold_demand(he_accepted_gold_demand, 1.0, .5)
+
+	if(yes_he_accepted_gold_demand)
+	{
+		like_him_more
+	}
+
+//accepted map demand
+input he_accepted_demand_map
+right yes_he_accepted_demand_map(he_accepted_demand_map, 1.0, .5)
+
+	if(yes_he_accepted_demand_map)
+	{
+		like_him_more
+	}
+
+//accepted leave our lands demand
+input he_accepted_demand_leave_our_lands
+right yes_he_accepted_demand_leave_our_lands(he_accepted_demand_leave_our_lands, 1.0, .5)
+
+	if(yes_he_accepted_demand_leave_our_lands)
+	{
+		like_him_more
+	}
+
+//accepted reduce pollution demand
+input he_accepted_demand_reduce_pollution
+right yes_he_accepted_demand_reduce_pollution(he_accepted_demand_reduce_pollution, 1.0, .5)
+
+	if(yes_he_accepted_demand_reduce_pollution)
+	{
+		like_him_more
+	}
+
+//accepted stop piracy demand
+input he_accepted_demand_no_piracy
+right yes_he_accepted_demand_no_piracy(he_accepted_demand_no_piracy, 1.0, .5)
+
+	if(yes_he_accepted_demand_no_piracy)
+	{
+		love_him_more
+	}
+
+//accepted stop trade demand
+input he_accepted_demand_stop_trade
+right yes_he_accepted_demand_stop_trade(he_accepted_demand_stop_trade, 1.0, .5)
+
+	if(yes_he_accepted_demand_stop_trade)
+	{
+		like_him_more
+	}
+
+//accepted attack enemy
+input he_accepted_demand_attack_enemy
+right accepted_attack(he_accepted_demand_attack_enemy, 1.0, 0.5)
+
+	if(accepted_attack)	
+	{
+		like_him_more
+	}
+
+//accepted exchange advance 
+input he_accepted_exchange_advance
+right yes_he_accepted_exchange_advance(he_accepted_exchange_advance, 1.0, .5)
+
+	if(yes_he_accepted_exchange_advance)
+	{
+		love_him_more
+	}
+
+//accepted exchange map
+input he_accepted_exchange_map
+right yes_he_accepted_exchange_map(he_accepted_exchange_map, 1.0, .5)
+
+	if(yes_he_accepted_exchange_map)
+	{
+		love_him_more
+	}
+
+//accepted advance offer
+input he_accepted_offer_advance
+right yes_he_accepted_offer_advance(he_accepted_offer_advance, 1.0, .5)
+
+	if(yes_he_accepted_offer_advance)
+	{
+		love_him_more
+	}
+
+//accepted gold offer
+input he_accepted_offer_gold
+right yes_he_accepted_offer_gold(he_accepted_offer_gold, 1.0, .5)
+
+	if(yes_he_accepted_offer_gold)
+	{
+		love_him_more
+	}
+
+//accepted map offer
+input he_accepted_offer_map
+right yes_he_accepted_offer_map(he_accepted_offer_map, 1.0, .5)
+
+	if(yes_he_accepted_offer_map)
+	{
+		love_him_more
+	}
+
+
+//accepted cease fire
+input he_accepted_offer_cease_fire
+right yes_he_accepted_offer_cease_fire(he_accepted_offer_cease_fire, 1.0, .5)
+
+	if(yes_he_accepted_offer_cease_fire)
+	{
+		love_him_more
+	}
+
+//accepted permanent alliance
+input he_accepted_offer_alliance
+right yes_he_accepted_offer_alliance(he_accepted_offer_alliance, 1.0, .5)
+
+	if(yes_he_accepted_offer_alliance)
+	{
+		love_him_more
+	}
+
+//accepted ecopact
+input he_accepted_offer_pact_end_pollution 
+right he_accepted_ecopact(he_accepted_offer_pact_end_pollution, 1.0, 0.5)
+
+	if(he_accepted_ecopact)
+	{
+		love_him_more
+	}
+}
+//end fuzzy_accepted_message
+
+//END DIPLOMACY.FLI

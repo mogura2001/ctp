@@ -1,0 +1,66 @@
+{
+  "python_ast": "PASS: scope, reader, finite source preparer",
+  "all_nonmain_functions_byte_equal": true,
+  "unchanged_functions": [
+    "trusted_binding",
+    "verify_loaded",
+    "stable_sample",
+    "scalar_state",
+    "observe_goal3",
+    "decode_slot0",
+    "native_expansion_state"
+  ],
+  "legacy_folder_imports_runtimepins_preserved": true,
+  "pure_scopes": [
+    {
+      "arm": "release-v1",
+      "synthetic_new_scope": true,
+      "false_gate_rejected": true,
+      "old_participants_rejected": true,
+      "no_file_created": true
+    },
+    {
+      "arm": "U30-40",
+      "synthetic_new_scope": true,
+      "false_gate_rejected": true,
+      "old_participants_rejected": true,
+      "no_file_created": true
+    }
+  ],
+  "20261027_source_pins": {
+    "rows": 235,
+    "sha256": "3213a919b4b8d3fcd1036b37065d8ea4fe25d06e992d2600be11450fe4f4a088",
+    "all_exact": true,
+    "mutable_root_gates_excluded": true
+  },
+  "20261027-prep_source_pins": {
+    "rows": 236,
+    "sha256": "50d4a8daa1e3834305ed923ed990923c1bdf64a06a5e3da146cddf73480a4d88",
+    "all_exact": true,
+    "mutable_root_gates_excluded": true
+  },
+  "all_runtime_gates_false": true,
+  "package19_and_non_dll18_exact": true,
+  "source_save_sha256": "a670867460bae5d8d9196856d5ca88163b0eff951e9a9db42a05b83ee38d2301",
+  "at_amsterdam": "2026-10-27T16:39:01.367250+01:00",
+  "stage": "SOURCE_PREPARED_OFFLINE_CHECKED_ONLY",
+  "reader_main_imported": false,
+  "native_executed": false,
+  "game_started": false,
+  "gameplay_measured": false,
+  "final_B_pin_refresh": {
+    "at_amsterdam": "2026-10-27T16:45:35.179756+01:00",
+    "proposal_sha256": "41dc56f992c378edae9ea9849e2f9b6539b86e5db0d0fc49790ed3959668edb3",
+    "source_pins_and_false_gate_hashes_only": true,
+    "all_pins_exact": true,
+    "runtime_or_fixtures_repeated": false
+  },
+  "operational_profile_pin_refresh": {
+    "at_amsterdam": "2026-10-27T16:50:09.259728+01:00",
+    "accepted_profile_sha256": "64ff5e641a7117715af34f8bbd114af51943aeb62bdb06910d7fab2d443a00d2",
+    "host_plan_sha256": "7bc2f000e8bef1b5a1b40dd7ab5bb3377f6b97a947f0d6bb7212f1423061d1e4",
+    "all_source_pins_exact": true,
+    "all_gates_false": true,
+    "no_runtime_or_fixtures": true
+  }
+}

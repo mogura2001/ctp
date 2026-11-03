@@ -1,0 +1,42 @@
+{
+  "allowed": false,
+  "baseline_allowed": false,
+  "candidate_sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+  "state": "CONSUMED_REASON0_FILTER_OBSERVED_RELEASE_RESTORED",
+  "scope": "One exact new host arm; no retry or T2; normal close and restore mandatory",
+  "sources": [
+    {
+      "path": "Lees-Uitbreiding.py",
+      "sha256": "3be400671fe03492603227d07a0c3110a01afa1d67cd3ad286461c5d377a729f"
+    },
+    {
+      "path": "original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378"
+    },
+    {
+      "path": "h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4"
+    },
+    {
+      "path": "participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc"
+    },
+    {
+      "path": "runtime-pins.json",
+      "sha256": "3a250016dd29a3b356de45d3838371975667006c1a63668ed16e468438bcb91b"
+    },
+    {
+      "path": "../candidate-manifest.json",
+      "sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9"
+    },
+    {
+      "path": "../BUILD-PINS.json",
+      "sha256": "476d6dbb6df8469023c1cd8297f70dcf085e7c87f23541ded0aa3edbe7cf68aa"
+    },
+    {
+      "path": "../NATIVE-PINS.json",
+      "sha256": "5e372de00fb67e3250444a15656f22a051d85087a11e9fabe84e80153b32db72"
+    }
+  ],
+  "at_utc": "2026-10-17T10:24:47.050208+00:00"
+}

@@ -1,0 +1,40 @@
+/////////////////////////////////////////////////////////////////////////////// // citywall.aip
+// // 
+// // citywall.aip
+// // 
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"   
+double build_buildings_priority = 19999800.0; 
+double Wonders_List_Threshhold =  0.6; 
+double Transportation_List_Threshhold =  0.7; 
+double Growth_List_Threshhold =  0.3; 
+double Happiness_List_Threshhold =  0.5; 
+double Production_List_Threshhold = 0.4; 
+double Gold_List_Threshhold =  0.3; 
+double Science_List_Threshhold =  0.2; 
+double Defense_List_Threshhold =  0.0; 
+double Miscellaneous_List_Threshhold =  0.0; 
+///////////////////////////////////////////////////////////////////////////////  
+//  
+// Growth_List  
+//   
+Building_Build_List_Element Growth_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_SILO", 7500.0; 
+"IMPROVE_AQUEDUCT", 7500.0; 
+"IMPROVE_BEEF_VAT", 7500.0; 
+#END_DATA  
+// Defense_List  
+//   
+Building_Build_List_Element Defense_List[MAX_ELEMENTS];  
+#DATA  
+//  
+//--------------------------------------------------------------------  
+"IMPROVE_CITY_WALLS", 14950.0; 
+"IMPROVE_SDI", 7950.0; 
+"IMPROVE_BIO_WARFARE_FILTERS", 7950.0; 
+"IMPROVE_FORCEFIELD", 7950.0; 
+#END_DATA  

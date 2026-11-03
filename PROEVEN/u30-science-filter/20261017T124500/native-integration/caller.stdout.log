@@ -1,0 +1,67 @@
+caller 1 canonical_prefix
+PASS prefix success
+caller 2 location_roles
+PASS B6 false gates no SCI
+caller 3 canonical_prefix
+PASS prefix success
+caller 4 location_roles
+PASS B6 source index65 survives
+caller 5 canonical_prefix
+PASS prefix success
+caller 6 location_roles
+PASS B6 zero prefix no SCI
+caller 7 canonical_prefix
+PASS prefix success
+caller 8 location_roles
+PASS B4 one center two roles one slot
+caller 9 canonical_prefix
+PASS prefix success
+caller 10 location_roles
+PASS B7 prefix cutoff preserves all64 complete
+caller 11 canonical_prefix
+PASS prefix success
+caller 12 location_roles
+PASS B7 genuine SCIcall exhaustion after complete center
+caller 13 canonical_prefix
+PASS prefix success
+caller 14 location_roles
+PASS B7 postcallback context mismatch cutoff0
+caller 15 canonical_prefix
+PASS prefix success
+caller 16 location_roles
+PASS B7 postcallback context mismatch cutoff1
+caller 17 canonical_prefix
+PASS prefix success
+caller 18 location_roles
+PASS B7 scorecallback context mismatch before budget
+caller 19 coupled_counter
+PASS B7 coupled limit 256
+caller 20 coupled_counter
+PASS B7 coupled limit 264
+caller 21 coupled_counter
+PASS B7 coupled success independent gate counters
+caller 22 plan_conflict
+PASS B4 disjoint5by4
+caller 23 plan_conflict
+PASS B4 fifth vs fourth physical key collision
+caller 24 plan_conflict
+PASS B4 footprint-only overlap permitted
+caller 25 validate_alternative
+PASS B4 four unique alternate valid
+caller 26 validate_alternative
+PASS B4 duplicated actual key rejected
+caller 27 select_direct_plans
+PASS B4 alternate selection success=True
+caller 28 select_direct_plans
+PASS B4 alternate selection success=False
+caller 29 select_direct_plans
+PASS B5 sharedsource kind1
+caller 30 select_direct_plans
+PASS B5 sharedsource kind4
+caller 31 select_direct_plans
+PASS B5 sharedsource kind2
+caller 32 select_direct_plans
+PASS B5 combined production2 science3 unique selection
+caller 33 combine_adapter
+PASS B5 real final_combine G5 D5
+cleanup=True

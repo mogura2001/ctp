@@ -1,0 +1,157 @@
+{
+  "stage": "C2B_STATIC_BYTES_COMPLETE_PENDING_ROOT_REVIEW",
+  "at_utc": "2026-10-23T14:09:21.306462+00:00",
+  "candidate_sha256": "acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984",
+  "manifest_sha256": "0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d",
+  "payload_sha256": "71280d651293a26477af2b7a0e463f72267afa738c25ae8e0581a6588cf326f4",
+  "determinism": {
+    "original_checks": {
+      "candidate": true,
+      "payload": true,
+      "manifest_object": false,
+      "manifest_serialized": false
+    },
+    "second_compose_LF_sha256": "90ee277d8008f4072aaf8ddc0b806b6d57f3be047ff0f3dd3de4750ebd238ab3",
+    "saved_universal_newlines_sha256": "90ee277d8008f4072aaf8ddc0b806b6d57f3be047ff0f3dd3de4750ebd238ab3",
+    "raw_saved_sha256": "0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d",
+    "CRLF": 81002,
+    "raw_LF": 81002,
+    "tuple_example": "historical compose execute_slot_HIGHLOW tuple becomes saved JSON list",
+    "second_compose_calls": 1,
+    "third_compose": false,
+    "normalized_manifest_equal": true
+  },
+  "PE_checksum": true,
+  "RX_RW_and_zero_state": true,
+  "relocations_exact": true,
+  "all_original_byte_changes": 82,
+  "unexplained_bytes": 0,
+  "full_diff_exact": true,
+  "B2_H3_and_padding_exact": true,
+  "recipe_rows": 15607,
+  "extension_instructions_decoded": 15609,
+  "direct_targets_checked": 4622,
+  "unchanged_instruction_rows": 6807,
+  "unchanged_relocated_rows_explained": 66,
+  "calls": {
+    "finalize_selection": {
+      "call_rva": 896066,
+      "return_rva": 896071
+    },
+    "selection_cached": {
+      "call_rva": 950240,
+      "return_rva": 950245
+    },
+    "cached_direct": {
+      "call_rva": 942571,
+      "return_rva": 942576
+    }
+  },
+  "materialized_RVAs": {
+    "pass_state": 74,
+    "generation": 12,
+    "pd_cache_return": 84,
+    "pd_direct_return": 81
+  },
+  "landings": [
+    {
+      "id": 1,
+      "incoming": 1,
+      "landing_rva": 923792
+    },
+    {
+      "id": 2,
+      "incoming": 1,
+      "landing_rva": 924641
+    },
+    {
+      "id": 3,
+      "incoming": 1,
+      "landing_rva": 925490
+    },
+    {
+      "id": 4,
+      "incoming": 4,
+      "landing_rva": 926339
+    },
+    {
+      "id": 5,
+      "incoming": 1,
+      "landing_rva": 927188
+    },
+    {
+      "id": 6,
+      "incoming": 1,
+      "landing_rva": 928037
+    },
+    {
+      "id": 7,
+      "incoming": 1,
+      "landing_rva": 928886
+    },
+    {
+      "id": 8,
+      "incoming": 1,
+      "landing_rva": 929735
+    },
+    {
+      "id": 9,
+      "incoming": 1,
+      "landing_rva": 930584
+    },
+    {
+      "id": 10,
+      "incoming": 1,
+      "landing_rva": 931433
+    },
+    {
+      "id": 11,
+      "incoming": 1,
+      "landing_rva": 932282
+    },
+    {
+      "id": 12,
+      "incoming": 1,
+      "landing_rva": 933131
+    },
+    {
+      "id": 13,
+      "incoming": 1,
+      "landing_rva": 933980
+    },
+    {
+      "id": 14,
+      "incoming": 1,
+      "landing_rva": 934829
+    },
+    {
+      "id": 15,
+      "incoming": 1,
+      "landing_rva": 935678
+    },
+    {
+      "id": 16,
+      "incoming": 1,
+      "landing_rva": 936527
+    }
+  ],
+  "twenty_args_and_cleanup_bytes_exact": true,
+  "strict_dispatch_and_bestsnapshot": true,
+  "guard_families": {
+    "pass_compare": 11,
+    "pair_compare": 7
+  },
+  "state_rva": 978944,
+  "state_size": 497924,
+  "local4_returnmask": 917631,
+  "compose_calls_in_bytecheck": 0,
+  "native": false,
+  "RPM": false,
+  "game": false,
+  "install": false,
+  "gameplay_proven": false,
+  "remaining": [
+    "independent root C2b review",
+    "separate native source/fixture gate and ABI/runtime verification"
+  ]
+}

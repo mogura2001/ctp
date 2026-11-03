@@ -1,0 +1,85 @@
+--- PROEVEN/science-bezet-centrum/20261020T184100/build_candidate.py
++++ PROEVEN/selectie-pad-diagnose/20261020T192500/build_candidate.py
+@@ -11,6 +11,7 @@
+ sys.path.insert(0,str(OUT))
+ import native,policy,union,science_model,science_layout
+ import food_components
++import path_diagnostic_layout as path_layout
+ from food_diagnostic_layout import BRANCHES,FIELDS,RECORD_OFFSET,RECORD_SIZE,FRAME_SIZE,RETURN_SPILL,PRIVATE_RETURNS,PRIVATE_CONTRACT_VERSION
+ from pathlib import Path
+ SCIENCE_PROVENANCE=ROOT/'PROEVEN/science-u30-40/20261013T183300'
+@@ -19,6 +20,7 @@
+ SCIENCE_MANIFEST_SHA256='2d63697a79a69b63c844da6f1ee8d2130f9c8b64e6e03152b18ee1df490d0387'
+ C2_PROPOSAL=ROOT/'ONTWERP/SCIENCE-C2-OVERDRACHT.md'
+ C2_PROPOSAL_SHA256='ebbf78ccee2922078b9086d8e4532f4e86732ebd202bc5806cfdbc44c6b7c877'
++SELECT25_PROPOSAL=ROOT/'ONTWERP/SCIENCE-SELECTIE-25-DIAGNOSE.md'
+ sha=lambda b:hashlib.sha256(b).hexdigest()
+ align=lambda n,a:(n+a-1)//a*a
+ 
+@@ -39,9 +41,11 @@
+  gate=json.loads((OUT/'ROOT-BRONREVIEW.json').read_text('utf-8'));assert gate.get('candidate_build_allowed') is True,'C2 source review required before candidate build'
+  for row in json.loads((OUT/'SOURCE-PINS.json').read_text('utf-8'))['sources']:
+   assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
+- parent=ROOT/'PROEVEN/science-foodreader-diagnostiek/20261019T194200'
+- assert sha((parent/'U30-40.prepared.dll').read_bytes())=='068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f'
+- assert sha((parent/'candidate-manifest.json').read_bytes())=='beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44'
++ assert path_layout.STATE_SIZE==0x79904 and path_layout.PLAN_SIZE==native.PLAN_SIZE==0x79800
++ assert path_layout.GENERATION_OFFSET==0x79800 and path_layout.RECORD_OFFSET==0x79804
++ parent=ROOT/'PROEVEN/science-bezet-centrum/20261020T184100'
++ assert sha((parent/'U30-40.prepared.dll').read_bytes())=='e45313fde4d25a726fa2e8d26dec21c0142ac195ea5c0c40a9b380fd549b166f'
++ assert sha((parent/'candidate-manifest.json').read_bytes())=='2077ac8a05d17f6ef7690ceb3a3a9e5555aa8d0f9a23e9e2d9db703288a5396b'
+  prep=json.loads((OUT/'preparation-manifest.json').read_text('utf-8'))
+  for row in prep['release_pins']+prep['proposals']+prep['source_pins']:
+   assert sha((ROOT/row['path']).read_bytes())==row['sha256'],row['path']
+@@ -89,7 +93,7 @@
+  r.labels['H3DevelopmentTile']=r.labels['development_tile']
+  food_components.reader(r,namespace='sci_food_diag',diagnostic=dict(plan='pass_state',center_return='sci_food_diag_center_return',tile_return='sci_food_diag_primary_return'))
+  rw=align(extension+len(r.code),0x1000);r.labels['pass_state']=rw-extension;r.labels['generation']=rw+native.PLAN_SIZE-extension
+- ecode=r.finish();code=hcode+bytes(extension-rx-len(hcode))+ecode;rxraw=align(len(code),0x200);rwraw=align(native.PLAN_SIZE+4,0x200)
++ ecode=r.finish();code=hcode+bytes(extension-rx-len(hcode))+ecode;rxraw=align(len(code),0x200);rwraw=align(0x79904,0x200)
+  data=bytearray(original);allowed=[]
+  def change(at,value,why):
+   before=bytes(data[at:at+len(value)]);data[at:at+len(value)]=value;allowed.append(dict(offset=at,length=len(value),before=before.hex(),after=value.hex(),reason=why))
+@@ -105,9 +109,9 @@
+  assert p.sections[-1].get_file_offset()+40==0x278 and not any(original[0x278:0x2c8])
+  section=lambda name,size,rva,raw,offset,flags:struct.pack('<8sIIIIIIHHI',name,size,rva,raw,offset,0,0,0,0,flags)
+  change(0x278,section(b'.u40c',len(code),rx,rxraw,len(original),0x60000020),'new RX internal classifier/policy/adapters')
+- change(0x2a0,section(b'.u40s',native.PLAN_SIZE+4,rw,rwraw,len(original)+rxraw,0xc0000040),'new RW nonserialized generation/pass')
++ change(0x2a0,section(b'.u40s',0x79904,rw,rwraw,len(original)+rxraw,0xc0000040),'new RW nonserialized generation/pass')
+  change(p.FILE_HEADER.get_field_absolute_offset('NumberOfSections'),struct.pack('<H',7),'PE NumberOfSections')
+- for field,value in [('SizeOfImage',align(rw+native.PLAN_SIZE+4,0x1000)),('SizeOfCode',p.OPTIONAL_HEADER.SizeOfCode+rxraw),('SizeOfInitializedData',p.OPTIONAL_HEADER.SizeOfInitializedData+rwraw)]:change(p.OPTIONAL_HEADER.get_field_absolute_offset(field),struct.pack('<I',value),'PE '+field)
++ for field,value in [('SizeOfImage',align(rw+0x79904,0x1000)),('SizeOfCode',p.OPTIONAL_HEADER.SizeOfCode+rxraw),('SizeOfInitializedData',p.OPTIONAL_HEADER.SizeOfInitializedData+rwraw)]:change(p.OPTIONAL_HEADER.get_field_absolute_offset(field),struct.pack('<I',value),'PE '+field)
+  data.extend(code+bytes(rxraw-len(code))+bytes(rwraw));change(p.OPTIONAL_HEADER.get_field_absolute_offset('CheckSum'),struct.pack('<I',pefile.PE(data=data).generate_checksum()),'PE CheckSum')
+  cp=pefile.PE(data=data);assert cp.get_data(0xd4000,len(bcode))==bcode
+  for row in prep['b2_hooks']:assert cp.get_data(int(row['rva'],16),5).hex()==row['bytes']
+@@ -138,11 +142,12 @@
+    instructions+=len(decoded)
+  deps=[]
+  paths=[OUT/f for f in ['build_candidate.py','native.py','policy.py','integration_base.py','input-pins.py','bind_scheduler.py','union.py','science_model.py','science_layout.py','science_result.py','science_development.py','plan_layout.py']]
++ paths += [OUT/'path_diagnostic.py',OUT/'path_diagnostic_layout.py']
+  paths+=list((ROOT/'PROEVEN/production-h3').glob('*.py'))+[ROOT/'PROEVEN/score-h1/build.py',ROOT/'PROEVEN/opening-b2/build.py',ROOT/'PROEVEN/production-h3/host/validator.prepared.bin']
+  paths += [SCIENCE_MANIFEST,C2_PROPOSAL,OUT/'science-spatial-pins.json']
+  paths += list((OUT/'reader').glob('*.py'))+list((OUT/'control-reader').glob('*.py'))
+  for path in sorted(set(paths)):deps.append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha(path.read_bytes()),size=path.stat().st_size))
+- manifest=dict(stage='SCIENCE_FILTER_UNION_SOURCE_CANDIDATE_ONLY_NOT_INSTALLED_NOT_NATIVE_NOT_GAMEPLAY',base_sha256=sha(original),candidate_sha256=sha(data),proposal_sha256=prep['proposals'][-1]['sha256'],sources=deps,source_dependency_pins=prep['source_pins'],release_pins=prep['release_pins'],allowed_changes=allowed,full_diff=full,original_changed_byte_count=len(changed),appended_byte_count=len(data)-len(original),unexplained_byte_count=0,components=dict(internal_H3_rva=hex(rx),internal_H3_sha256=sha(hcode),extension_rva=hex(extension),extension_sha256=sha(ecode),state_rva=hex(rw),state_size=native.PLAN_SIZE+4),sections=[dict(name=s.Name.rstrip(b'\0').decode(),rva=s.VirtualAddress,virtual_size=s.Misc_VirtualSize,raw_offset=s.PointerToRawData,raw_size=s.SizeOfRawData,flags=s.Characteristics) for s in cp.sections],b2_preserved=dict(payload_rva='0xd4000',payload_size=len(bcode),payload_sha256=sha(bcode),all_five_hooks_unchanged=True,record_length=36,record_version=1,N=30),relocations_unchanged=True,execute_slot_HIGHLOW=(0x8a598,3),labels=r.labels,recipe=r.rows,h3_labels=hr.labels,instructions_decoded=instructions,policy='D=min(R,max(Dorig,Gcert)); incomplete union preserves native demand within managed R; completion1 other gov native; no native detachment duplication',buffers=dict(SELECTED=native.SELECTED,SELECTED_CAP=native.SELECTED_CAP,ORDER=native.ORDER,PATHCACHE=native.PATHCACHE,PLAN_SIZE=native.PLAN_SIZE),budgets=dict(candidate_copy=4096,canonical_prefix=64,departure_sources=32,path_queries=128,query_search=4096,path_entries=4096,total_path_points=4096,selected_slots=40))
++ manifest=dict(stage='SCIENCE_FILTER_UNION_SOURCE_CANDIDATE_ONLY_NOT_INSTALLED_NOT_NATIVE_NOT_GAMEPLAY',base_sha256=sha(original),candidate_sha256=sha(data),proposal_sha256=prep['proposals'][-1]['sha256'],sources=deps,source_dependency_pins=prep['source_pins'],release_pins=prep['release_pins'],allowed_changes=allowed,full_diff=full,original_changed_byte_count=len(changed),appended_byte_count=len(data)-len(original),unexplained_byte_count=0,components=dict(internal_H3_rva=hex(rx),internal_H3_sha256=sha(hcode),extension_rva=hex(extension),extension_sha256=sha(ecode),state_rva=hex(rw),state_size=0x79904),sections=[dict(name=s.Name.rstrip(b'\0').decode(),rva=s.VirtualAddress,virtual_size=s.Misc_VirtualSize,raw_offset=s.PointerToRawData,raw_size=s.SizeOfRawData,flags=s.Characteristics) for s in cp.sections],b2_preserved=dict(payload_rva='0xd4000',payload_size=len(bcode),payload_sha256=sha(bcode),all_five_hooks_unchanged=True,record_length=36,record_version=1,N=30),relocations_unchanged=True,execute_slot_HIGHLOW=(0x8a598,3),labels=r.labels,recipe=r.rows,h3_labels=hr.labels,instructions_decoded=instructions,policy='D=min(R,max(Dorig,Gcert)); incomplete union preserves native demand within managed R; completion1 other gov native; no native detachment duplication',buffers=dict(SELECTED=native.SELECTED,SELECTED_CAP=native.SELECTED_CAP,ORDER=native.ORDER,PATHCACHE=native.PATHCACHE,PLAN_SIZE=native.PLAN_SIZE),budgets=dict(candidate_copy=4096,canonical_prefix=64,departure_sources=32,path_queries=128,query_search=4096,path_entries=4096,total_path_points=4096,selected_slots=40))
+  manifest['c2_proposal_sha256']=C2_PROPOSAL_SHA256
+  manifest['science_manifest_sha256']=SCIENCE_MANIFEST_SHA256
+  manifest['source_dependency_pins']=prep['source_pins']+[dict(path=SCIENCE_MANIFEST.relative_to(ROOT).as_posix(),sha256=SCIENCE_MANIFEST_SHA256)]
+@@ -152,7 +157,15 @@
+  assert sha(hcode)==pm['components']['internal_H3_sha256'],'shared H3 must remain byte-identical'
+  for call in sci.calls:call['target_rva']=extension+r.labels['sci_food_diag_reader']
+  manifest.update(stage='SCI_ONLY_FOODREADER_FAILURE_DIAGNOSTIC_NO_NATIVE_OR_HOST_ACCEPTANCE',diagnostic=dict(offset=RECORD_OFFSET,size=RECORD_SIZE,schema=1,frame_size=FRAME_SIZE,staging_offset=-336,callers=sci.calls,fields=FIELDS,branches=[dict(id=i,parent_rva=hex(0xd0000+va),parent_va=hex(0x200d0000+va),name=name,landing_rva=extension+r.labels['sci_food_diag_failure_'+str(i)],restored_exit_rva=extension+r.labels['sci_food_diag_failure_'+str(i)+'_restored']) for i,va,name in BRANCHES],namespace='sci_food_diag',clone_rva=extension+r.labels['sci_food_diag_reader'],shared_reader_rva=rx+hr.labels['food_reader'],development_reader_rva=rx+hr.labels['food_reader'],shared_H3_sha256=sha(hcode),failure_latch='first center failure for same owner/generation; otherwise latest tile failure; valid last'))
+- manifest.update(stage='SCI_OCCUPIED_CENTER_SOURCE_CANDIDATE_NOT_NATIVE_NOT_HOST',occupied_center=dict(contract_version=PRIVATE_CONTRACT_VERSION,private_returns=PRIVATE_RETURNS,return_spill=RETURN_SPILL,only_typed2_path='current bound SCI_CENTER branch10 cityhandle0 signedcount>0; full fresh own-state/argument revalidation after wipe',science_reason=science_layout.REASON_OCCUPIED_CENTER_SCOPE,science_reason_name='OCCUPIED_CENTER_SCOPE',result_state=1,coverage=1,coverage_meaning='SCOPE_EXCLUSION_NOT_FOOD_ANALYSIS',food_consumers_accept_only=1,historical_latch_is_policy=False,parent_candidate_sha256='068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f',parent_manifest_sha256='beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44'))
++ manifest.update(occupied_center=dict(contract_version=PRIVATE_CONTRACT_VERSION,private_returns=PRIVATE_RETURNS,return_spill=RETURN_SPILL,only_typed2_path='current bound SCI_CENTER branch10 cityhandle0 signedcount>0; full fresh own-state/argument revalidation after wipe',science_reason=science_layout.REASON_OCCUPIED_CENTER_SCOPE,science_reason_name='OCCUPIED_CENTER_SCOPE',result_state=1,coverage=1,coverage_meaning='SCOPE_EXCLUSION_NOT_FOOD_ANALYSIS',food_consumers_accept_only=1,historical_latch_is_policy=False,parent_candidate_sha256='068ff459a19125fdd08db060450110210ad992698d27b920894f4502ac4aae4f',parent_manifest_sha256='beebdb07abeb5bf111869e53f1c15dbb6466ece17808022276241d6ee4e28e44'))
++ calls={}
++ for pair,prefix in [('finalize_selection','select'),('selection_cached','cache'),('cached_direct','direct')]:
++  call=extension+r.labels['pd_'+prefix+'_call'];ret=extension+r.labels['pd_'+prefix+'_return'];assert ret==call+5
++  calls[pair]=dict(call_rva=call,return_rva=ret)
++ manifest.update(stage='SELECT25_PATH_FIRST_FAILURE_CANDIDATE_NOT_NATIVE_NOT_HOST',proposal_sha256=sha(SELECT25_PROPOSAL.read_bytes()),C1_source_pins_sha256=sha((OUT/'SOURCE-PINS.json').read_bytes()),path_diagnostic=dict(schema=1,offset=path_layout.RECORD_OFFSET,size=path_layout.RECORD_SIZE,state_size=path_layout.STATE_SIZE,Plan_size=path_layout.PLAN_SIZE,generation_offset=path_layout.GENERATION_OFFSET,fields=path_layout.FIELDS,reached=path_layout.REACHED,calls=calls,branches=[dict(id=i,parent_rva=hex(va),name=name,landing_rva=extension+r.labels['pd_failure_'+str(i)],required_reachedmask=path_layout.required_mask(i)) for i,va,name in path_layout.BRANCHES],parent_candidate_sha256='e45313fde4d25a726fa2e8d26dec21c0142ac195ea5c0c40a9b380fd549b166f',parent_manifest_sha256='2077ac8a05d17f6ef7690ceb3a3a9e5555aa8d0f9a23e9e2d9db703288a5396b',failure_latch='first admitted edge per owner/generation/finalization; valid last after direct0/cache0/select25',foreign_path_reads_added=0,postcontext_read_count=1,reserved_bytes='216..255 zero',native_arguments_and_free_policy='unchanged',record_is_policy_input=False))
++ manifest['source_dependency_pins'].append(dict(path=SELECT25_PROPOSAL.relative_to(ROOT).as_posix(),sha256=sha(SELECT25_PROPOSAL.read_bytes())))
++ for path in sorted(OUT.glob('*.py')):
++  if not any(row['path']==path.relative_to(ROOT).as_posix() for row in manifest['sources']):manifest['sources'].append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha(path.read_bytes()),size=path.stat().st_size))
+  for path in sorted(list(OUT.glob('food_*.py'))+list((OUT/'reader').glob('*.py'))):
+   if not any(row['path']==path.relative_to(ROOT).as_posix() for row in manifest['sources']):manifest['sources'].append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha(path.read_bytes()),size=path.stat().st_size))
+  return bytes(data),code,manifest

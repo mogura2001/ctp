@@ -1,0 +1,28 @@
+{
+  "reported_at_utc": "2026-10-29T14:30:24.698Z",
+  "checked_at_utc": "2026-10-29T14:30:41.708373+00:00",
+  "five_hour_remaining_percent": 2,
+  "weekly_remaining_percent": 69,
+  "reset_at_unix": 1793297491,
+  "state": "stop",
+  "stop_reason": "five_hour",
+  "work_stopped": true,
+  "ctp_processes": 0,
+  "agents_terminal_confirmed": true,
+  "pc_left_on": true,
+  "goal_complete": false,
+  "consecutive_blocking_goal_turns": 2,
+  "previous_goal_turn": "no progress: first budget/runtime stop audit",
+  "current_goal_turn": "no progress: same budget blocker confirmed second consecutive goal turn",
+  "next_step": "After fresh confirmed reset, use accepted wonderbouw-kans reader with same 9280c97a archive in a fresh host; inspect chance, at most one turn if useful.",
+  "resolution": {
+    "state": "RESUMED_AFTER_FRESH_RESET",
+    "reported_at_utc": "2026-10-30T11:03:07.929Z",
+    "checked_at_utc": "2026-10-30T11:03:15.843844+00:00",
+    "five_hour_remaining_percent": 97,
+    "weekly_remaining_percent": 68,
+    "new_reset_at_unix": 1793376180,
+    "blocking_audit_closed": true,
+    "pc_left_on": true
+  }
+}

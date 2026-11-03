@@ -1,0 +1,106 @@
+{
+  "at_utc": "2026-11-03T12:54:49.440726+00:00",
+  "status": "ACCEPTED_CONTROL_T25_SAVE_RELOAD_RESTORED",
+  "source_pins": 138,
+  "pins_sha256": "2b3f7c2734f36057a294043693073ba4d35032410be94f525a3460ee5770e0ec",
+  "N_consumed_completed": 25,
+  "pending": false,
+  "native_rounds": [
+    -1,
+    24
+  ],
+  "all_stable_bound": true,
+  "instance": {
+    "pid": 29080,
+    "creationtime_filetime": 134381825847460432,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "rows": [
+    {
+      "civ_id": 2,
+      "cities": 3,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 3,
+      "cities": 4,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 4,
+      "cities": 3,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 5,
+      "cities": 5,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 6,
+      "cities": 4,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 7,
+      "cities": 4,
+      "active_government": 1,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    },
+    {
+      "civ_id": 8,
+      "cities": 5,
+      "active_government": 3,
+      "Labyrinth_queues": 0,
+      "reload_list_content_and_queues_equal": true
+    }
+  ],
+  "AI_cities": 28,
+  "Theocracy_count": 6,
+  "checkpoint_bytes": 400380,
+  "checkpoint_sha256": "241e31a2b9b8ef5707aedc1866ee57b8c6d9a963d830804e28801d954cfb5d87",
+  "baseline_exact": 162,
+  "full_aidata": 118,
+  "full_saves": 38,
+  "normal_close_restore_record": {
+    "at_utc": "2026-11-03T12:53:32.2043927Z",
+    "arm": "control",
+    "restored_pins": 162,
+    "aidata": 118,
+    "saves": 38,
+    "alias_removed": true,
+    "checkpoint": {
+      "after_sha256": "241e31a2b9b8ef5707aedc1866ee57b8c6d9a963d830804e28801d954cfb5d87",
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/LAND-T25-20261103-CONTROL",
+      "bytes": 400380
+    },
+    "archived_changes": [
+      {
+        "after_sha256": "5489116f5b742669b8b9efd3e7dff2e4d0817c733d90b131d727c0951a22d204",
+        "path": "CTP-proef/ctp_program/ctp/save/games/Julius/AUTOSAVE-Julius",
+        "bytes": 196453
+      }
+    ],
+    "ctp_processes": 0,
+    "pc_left_on": true
+  },
+  "UI_name_correction": "Root viewed trailing C; one END/BACKSPACE routine field correction before SaveOK; no source change",
+  "UI_after_reload": "Happiness74to78 and research10to6 observed; causeUNKNOWN; both future continuation arms require same reload protocol",
+  "paired_effect": "NOT_YET_MEASURED",
+  "full_project_complete": false,
+  "pc_left_on": true
+}

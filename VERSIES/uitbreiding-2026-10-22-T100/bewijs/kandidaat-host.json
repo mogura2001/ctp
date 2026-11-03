@@ -1,0 +1,108 @@
+{
+  "status": "T100_CANDIDATE_COMPLETE_TWO_PREINPUT_STOPS_CLOSED_RESTORED",
+  "comparison_path": "PROEVEN/uitbreiding-lang-host/20261022/VERGELIJKING.json",
+  "comparison_sha256": "ae12b15b02f8c82043efc9517a4960992a0975c292bbb84f3e65c5df7ea30aa6",
+  "at_Europe_Amsterdam": "2026-10-22T17:41:26.127740+02:00",
+  "instance": {
+    "pid": 40488,
+    "creationtime_filetime": 134371535950250712,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "snapshots": 101,
+  "postsave_full_state_equal": true,
+  "natural_steps": 100,
+  "actual_successful_n_logs": 100,
+  "original_successful_tokens_passes": 84,
+  "completion_tokens_passes": 16,
+  "failed_preinput_tokens": [
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T122400/U30-40/T85-consumed.json",
+      "sha256": "46770c6a31da687e164522a10cebca6c0eadbfc7d2e9fcc8eaf405fee7fb942f"
+    },
+    {
+      "path": "PROEVEN/uitbreiding-lang/20261022T170400-herstel85/T85-recovery-consumed.json",
+      "sha256": "e23f444068808c4df696fd15c108e7e0cf5ac91a754a64a1a7d86d385c294e89"
+    }
+  ],
+  "markers": 102,
+  "plain100_token_protocol": false,
+  "legacy_counter84": true,
+  "legacy_hash": "f9b6099e7ef664581a25dcf1682c01657586b7c7bd1b2b2f815dcc49be1b0aa8",
+  "all_four_T84_rechecks_exact": true,
+  "old_nonIO_failure_beforeKey": true,
+  "completion_source217_exact": true,
+  "helper_hash": "8490f93842d4117222f5d850c6467799591c478482d32d2490c248f919957e47",
+  "candidate_cities": [
+    17,
+    20,
+    17,
+    12,
+    20,
+    21,
+    14
+  ],
+  "control_cities": [
+    14,
+    14,
+    15,
+    4,
+    13,
+    14,
+    12
+  ],
+  "candidate_total": 121,
+  "control_total": 86,
+  "delta": 35,
+  "percent_delta": 40.69767441860465,
+  "all7_Theocracy": true,
+  "named_saves": [
+    {
+      "label": "CONTROLE",
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/UITBREIDING-CONTROLE-T100",
+      "hostcopy": "PROEVEN/uitbreiding-lang-host/20261022/release-v1/UITBREIDING-CONTROLE-T100",
+      "sha256": "daf39c45af52e20f933da9a2f243110803d4662fd18594438141cea0cc176ea7",
+      "both_exact": true
+    },
+    {
+      "label": "KANDIDAAT",
+      "path": "CTP-proef/ctp_program/ctp/save/games/Julius/UITBREIDING-KANDIDAAT-T100",
+      "hostcopy": "PROEVEN/uitbreiding-lang-host/20261022/U30-40/UITBREIDING-KANDIDAAT-T100",
+      "sha256": "39e03b31e238d3ac9ad9e3b4463e3e8564583ba3f35d6871005a75f0ae04da61",
+      "both_exact": true
+    }
+  ],
+  "postsave_sha256": "afada5f27d76640dea41bc3eb3f77dafa5c45233d3895668ec0fefd4ae08a10d",
+  "save_dialog_sha256": "776d0919e4d4f317618f4ffd8d5b69f17182d08ecce62f83d5c8b9c99e71d279",
+  "close": {
+    "all_civctp_count": 0,
+    "at_utc": "2026-10-22T15:31:33.1661611Z",
+    "elapsed_seconds": 3098.1410898999998,
+    "close_requested": true,
+    "n_consumed": 84,
+    "exited": true
+  },
+  "restore": {
+    "autosave_exact_turn_proven": false,
+    "alias_removed": true,
+    "release_dll_sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+    "default_autosave_changed": true,
+    "at_utc": "2026-10-22T15:31:34.0002554Z",
+    "game_count_before_restore": 0,
+    "restored_hashes": 29,
+    "state": "RESTORED",
+    "autosave_after_sha256": "35837f6542aa144ce05d5d46433f84e722bda72a6824c4d0f31f35eebf306cd0",
+    "autosave_archive": "CTP-proef/ctp_program/ctp/save/games/Julius/U30-LANG-20261022-U30-40-AUTOSAVE",
+    "gate_allowed": false,
+    "existing_archives_preserved": 14
+  },
+  "restored29_and14extra_exact": true,
+  "new14th_autosave_double_exact": true,
+  "relevant_gates_closed": true,
+  "alias_removed": true,
+  "current_release_DLL": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+  "goal1_1a_full5_complete": false,
+  "pc_shutdown": false
+}

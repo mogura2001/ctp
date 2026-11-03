@@ -1,0 +1,5 @@
+# Rootreview uitvoerkopie26c
+
+26 oktober2026,20:00CET. Gebruiker bevestigt scherm aan/ontgrendeld. Root controleerde onafhankelijk100C4bronpins/18delivery en109C5bronpins/9delivery, vier PSparsers0fouten en bytegelijkheid reader/scope/adapter/runtimepins/HOSTPLAN/REFERENCE. Runner bytegelijk26b. Volledige Start/Close/Restore-diffs gelezen: alleen eigen namespace/pinbinding/alias/archieven, plus verwijdering vaste intro-wachtlus. Startprefix inclusief immutable start/windowbinding blijft exact. Root neemt bestaande gebonden Capture over en laadt onmiddellijk zodra menu zichtbaar is, uiterlijk180/300s vanaf originele processtart. Alle overige100n/4500/4380/T1/T26/backup/herstelgrenzen behouden.
+
+Vrijgave voor één normale eigen vaste-startproef met kandidaatacfe, CCTP-media, verse volledige backups en normale GUI. Geen nieuwe gameplaywijziging/nativefaultproef. C4reader/control blijftFALSE tot actuele binding/load/T0controle. Alleen root bedient. Runtime doelblocked blijft onderscheiden van dit gebruikersgestuurde werk. Doel3AF,Doel1/1a/5OPEN;pcaan.

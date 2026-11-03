@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-11-03T12:29:10.827353+00:00",
+  "stage": "C0_PREPARED_OFFLINE_CHECKED_ONLY",
+  "status": "PASS",
+  "offline_checks": 38,
+  "source_pins": 138,
+  "pins_sha256": "2b3f7c2734f36057a294043693073ba4d35032410be94f525a3460ee5770e0ec",
+  "powershell_syntax": [
+    {
+      "pass": true,
+      "errors": [],
+      "file": "Stap-Proef.ps1"
+    },
+    {
+      "pass": true,
+      "errors": [],
+      "file": "Beheer-Proef.ps1"
+    }
+  ],
+  "baseline_dimensions": {
+    "pins": 162,
+    "aidata": 118,
+    "saves": 38
+  },
+  "max_n": 25,
+  "native_init": -1,
+  "native_end": 24,
+  "maximum_input_seconds": 1500,
+  "maximum_host_seconds": 1800,
+  "no_prepare": true,
+  "no_install": true,
+  "no_start": true,
+  "ctp_processes": 0,
+  "no_gameplay_measurement": true,
+  "frozen_old117_and107_unchanged": true,
+  "next": "Root C0 accepted; separate rootGO for control received13:29CET",
+  "pc_left_on": true
+}

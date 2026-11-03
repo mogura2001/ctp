@@ -1,0 +1,263 @@
+{
+  "stage": "BUILT_STATIC_READER_BOUND_CALLER_SOURCE_ONLY_BEFORE_NATIVE",
+  "checked_at_utc": "2026-10-17T10:21:04.708891+00:00",
+  "candidate_sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+  "manifest_sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9",
+  "files": [
+    {
+      "path": "bind_host-disassembly.txt",
+      "sha256": "9e3606c4b9749c83f7d44c5c12d8491d023cb4dd8ca4daf966110d18bf01e390",
+      "size": 7794
+    },
+    {
+      "path": "bind_scheduler.py",
+      "sha256": "22d49eaeb0c40c5e1b9c5dd79bee0166ec9d9b202707c7c205dbae1e820b73d7",
+      "size": 1333
+    },
+    {
+      "path": "BOUWOVERDRACHT.md",
+      "sha256": "dc2b7e13f5a9e32f49764948a4e01d90c6cfedf18fd11ec87bd9f31658667eaa",
+      "size": 2970
+    },
+    {
+      "path": "BRONOVERDRACHT.md",
+      "sha256": "db348e522f7cbdf0a98228029495b35fe0da4e54e004d877406744b6e00117d1",
+      "size": 5599
+    },
+    {
+      "path": "build_candidate.py",
+      "sha256": "ace8e4c718368e54b715bb9fc0db51b3ef96a5774edc125e65f343b0492d3079",
+      "size": 10098
+    },
+    {
+      "path": "caller/fixture-recipes.py",
+      "sha256": "c579df624ad2e0ca5b355852c67fe771c2d1f39364645e4df7ac6053d61f96dd",
+      "size": 2637
+    },
+    {
+      "path": "caller/native-caller.ps1",
+      "sha256": "63d737871e014ec9c9b83a4d38817e22059fed22782d9576dc9557634d8a9721",
+      "size": 1114
+    },
+    {
+      "path": "caller/NativeCaller.cs",
+      "sha256": "0a50eefaae2443c04235f01570692d319034855451c513c1762ef761dd620616",
+      "size": 9530
+    },
+    {
+      "path": "caller/run-caller.py",
+      "sha256": "54d6847d12baf2524c1a7ee0b81fbaaf2a55fcac5b4cbd69e1ef8264e8030ec7",
+      "size": 2173
+    },
+    {
+      "path": "CALLER-CONTROLES.md",
+      "sha256": "66a5f80f02d05d1b7b68ef36d7dd2bc4dc6df09460b23b88b76407e3a27e45b6",
+      "size": 3535
+    },
+    {
+      "path": "candidate-manifest.json",
+      "sha256": "d48b63b2363f0bfce2fe4b7d44a83b90951a524ecf3f300bf9661b50080be2a9",
+      "size": 1095550
+    },
+    {
+      "path": "candidate-static-checks.json",
+      "sha256": "04c0e7c7cc51531bd3575abc8b64be2433cc883d5d77fb3ace36aa8a1acebcd3",
+      "size": 791
+    },
+    {
+      "path": "canonical_prefix-disassembly.txt",
+      "sha256": "71dd071454b332d22ff944b7e4b5b05f318a41e7976db6fff2cb8c6e21f70a2b",
+      "size": 6653
+    },
+    {
+      "path": "check_candidate.py",
+      "sha256": "b1ce1168806ca79ccd24294e16819d8633982eb8b6c8a8dc036dd8abced575a8",
+      "size": 4880
+    },
+    {
+      "path": "check_kaartfilter.py",
+      "sha256": "14849ac0fa535490092cabc1e9d65e02ed0b9637fa75817e272f134ebabd1243",
+      "size": 5017
+    },
+    {
+      "path": "check_sources.py",
+      "sha256": "2c5d251022bb88d243305ca3bb875f5804c07c27477923988b333f82fbd9c5df",
+      "size": 4871
+    },
+    {
+      "path": "diffs/build_candidate.py.diff",
+      "sha256": "1ffa3700d086384644523c7efa99534174d0cbb9378d69590f18c6e99fad945a",
+      "size": 3908
+    },
+    {
+      "path": "diffs/input-pins.py.diff",
+      "sha256": "187aa4f492514666d2a4ddd01484788e6e4be94f88f86d5f863dbb350d47d47b",
+      "size": 1795
+    },
+    {
+      "path": "diffs/integration_base.py.diff",
+      "sha256": "44d670a2cd9d6e74f24d3cd2b06d47200c527b512d6c33faba1f4a8337a034aa",
+      "size": 1026
+    },
+    {
+      "path": "diffs/Lees-Uitbreiding.py.diff",
+      "sha256": "a31d1e259e59c41927c9d35b425c35a324bee6c7a9d47804f70d131f88760461",
+      "size": 8979
+    },
+    {
+      "path": "diffs/native.py.diff",
+      "sha256": "771240283733473a8c557cf1acb72cc224957042610c2397971eefa2754d9a2a",
+      "size": 4187
+    },
+    {
+      "path": "diffs/policy.py.diff",
+      "sha256": "2d9fe07bd30ca065d5628453ff15762d62462d5ed9bf8fc7a140df08df6663e3",
+      "size": 5072
+    },
+    {
+      "path": "diffs/preparation-manifest.json.diff",
+      "sha256": "454ade8fedf32352e15be6f89e8875a7eaa224b0724a697729c8f7d590c02455",
+      "size": 4763
+    },
+    {
+      "path": "extension-disassembly.txt",
+      "sha256": "2f51b7b4b0e225a86375c44906097d08756599468f4ff6c9c025764a1bfefb1e",
+      "size": 185117
+    },
+    {
+      "path": "gate-body-pins.json",
+      "sha256": "b50abd576b9688cd0f1aeaa1c5d804edae93d24f4a60a2d323e8faca6b02da10",
+      "size": 4060
+    },
+    {
+      "path": "input-pins.json",
+      "sha256": "53915274d543a56cf824999d9ccd61326c34a34f65645d87707f1b1094a75fcf",
+      "size": 5052
+    },
+    {
+      "path": "input-pins.py",
+      "sha256": "5fb101fe401b0a78ba3b1e6df750683bb52a01e76bb8562b41e8ab3aa59f5ca2",
+      "size": 2120
+    },
+    {
+      "path": "input-pins.py.source-diff.txt",
+      "sha256": "c45f4c6fea3a83b18a899d6b2f6bd9d846793372f4172b8cb2b796aaf3090832",
+      "size": 2173
+    },
+    {
+      "path": "integration_base.py",
+      "sha256": "b958f09096e8018baa946571eb85a0368bcbd4cb6615fe7fbe248348fbc19edb",
+      "size": 12396
+    },
+    {
+      "path": "integration_base.py.source-diff.txt",
+      "sha256": "d171ee0cd449b2fc2b8f8cec1690f9fa8dad702f476de469d19709873a8ce0e0",
+      "size": 1107
+    },
+    {
+      "path": "kaartfilter-static-checks.json",
+      "sha256": "547ca96d2e42d8a4857b42f23fb65fbe8c49bb2617aeaa52cb4ce12a9e76b737",
+      "size": 1060
+    },
+    {
+      "path": "native.py",
+      "sha256": "c282f13be56d0a856ce86ccc670966a765c5679d4ee92ce9e00d62a71defa05c",
+      "size": 34462
+    },
+    {
+      "path": "native.py.source-diff.txt",
+      "sha256": "7eb901829fb3c70d1e866a75a71939ad72fdd01b54ce948d8ac1b23d652700af",
+      "size": 19641
+    },
+    {
+      "path": "offline-reader-binding.json",
+      "sha256": "f59a6d427ca5b664e302090b1a4b50d363294ced54e86c568bbca8f0e7ac6c5e",
+      "size": 533
+    },
+    {
+      "path": "policy.py",
+      "sha256": "01e1e5343f52c456849c8b7d47701f181dbca415305c2f877893628dd0c54322",
+      "size": 12748
+    },
+    {
+      "path": "preparation-manifest.json",
+      "sha256": "7475334ca2f8828f7f1e724d78b955e23cdfeac80d80d8d13e0a66003f7bb561",
+      "size": 13547
+    },
+    {
+      "path": "prepare_kaartfilter.py",
+      "sha256": "af6bf82d191144aa9c5ad5e5094cf933b40bdd37b8d7263f8b8db7f9b18ba9e2",
+      "size": 10747
+    },
+    {
+      "path": "production_roles-disassembly.txt",
+      "sha256": "cb73a21392b8b8f200eca97193c33d1900511a6f85091aca9192ecb86ec5a914",
+      "size": 9982
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "efb6f8ddae7ba1f62d8dbd8eeb6e19bda3feb60077d0a6e05e312cd55824dbba",
+      "size": 2628
+    },
+    {
+      "path": "reader/candidate/baseline/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "reader/candidate/variant/CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll",
+      "sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+      "size": 1040896
+    },
+    {
+      "path": "reader/h3_layout.py",
+      "sha256": "03e1d681a9fd4195f8e1b3baac2ea40580a8ac3086949cd6842c1a14177b5cb4",
+      "size": 2265
+    },
+    {
+      "path": "reader/Lees-Uitbreiding.py",
+      "sha256": "3be400671fe03492603227d07a0c3110a01afa1d67cd3ad286461c5d377a729f",
+      "size": 26079
+    },
+    {
+      "path": "reader/original_core.py",
+      "sha256": "50cc3674366d5357fbc5494d87b2079a5b9c16e86884dd1e5b65e89b4e7db378",
+      "size": 11208
+    },
+    {
+      "path": "reader/participants.json",
+      "sha256": "a1cbed61f3f2a623b24f2357a4a81ab788c10ec04931f9f516e883e01af3d3dc",
+      "size": 405
+    },
+    {
+      "path": "reader/runtime-pins.json",
+      "sha256": "3a250016dd29a3b356de45d3838371975667006c1a63668ed16e468438bcb91b",
+      "size": 303
+    },
+    {
+      "path": "release-v1.robotcom.backup.dll",
+      "sha256": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+      "size": 665088
+    },
+    {
+      "path": "source-checks.json",
+      "sha256": "e85c61332a9568f6ea7fb526eb824e30cc87cd6897019f72404df3d9f5fecc38",
+      "size": 1457
+    },
+    {
+      "path": "SOURCE-PINS.json",
+      "sha256": "69632b90d6d5fcc79533f4917bf706196185e6bcae99ea1747ffbf60dbc99b79",
+      "size": 4778
+    },
+    {
+      "path": "U30-40.payload.bin",
+      "sha256": "95432afa60d89d5346ef898ca447181461b22e874fab5f4903aa2ec3262912a1",
+      "size": 29028
+    },
+    {
+      "path": "U30-40.prepared.dll",
+      "sha256": "738be4098dadc6657b121519213e794ce3ec095025fdc940f6c30a5d89661d66",
+      "size": 1040896
+    }
+  ]
+}

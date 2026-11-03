@@ -1,0 +1,32 @@
+{
+  "state": "WAITING_FOR_VISIBLE_UNLOCKED_SCREEN_CONFIRMATION",
+  "consecutive_blocked_goal_turns": 1,
+  "goal_turn_classification": "progress_fresh_CCTP_host_attempt_and_verified_full_restore",
+  "media_changed_by_user": "E: CDRom readyTrue label CCTP, matching historical label",
+  "engine_CD_acceptance": "UNVERIFIED_LOAD_NOT_ATTEMPTED",
+  "evidence": "26b host intro135 shows menu; intro175 and fresh bound capture are black despite matching own process/window/foreground",
+  "lock_or_display_power_cause": "UNKNOWN_NOT_PROVEN",
+  "no_blind_input": true,
+  "accepted_T0": false,
+  "n_sent": 0,
+  "own_process_normally_closed": true,
+  "before_files_restored_verified": 149,
+  "save_inventory_verified": 30,
+  "release_dll_restored": "eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890",
+  "all_gates_false": true,
+  "all_subagents_terminal": true,
+  "user_screen_question_pending": true,
+  "pc_stays_on": true,
+  "resume": "Confirm visible unlocked screen before another ordinary bound fixed-T0/T1 attempt. Same AI candidate; do not blindly reuse consumed26b host.",
+  "resolution": {
+    "at_utc": "2026-10-26T19:15:38.986245+00:00",
+    "state": "RESOLVED_FOR_26C_COMPLETED_RUN",
+    "user_screen_confirmed": true,
+    "CCTP_engine_load_succeeded": true,
+    "accepted_T0": true,
+    "natural_steps_completed": 100,
+    "normal_exit_and_full_restore_verified": true,
+    "question_still_pending": false,
+    "evidence": "pad-lokaal-onbekend/20261026c-host/host/ROOT-END-REVIEW.json"
+  }
+}

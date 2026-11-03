@@ -1,0 +1,47 @@
+{
+  "at_europe_amsterdam": "2026-10-26T16:04:10.581623+01:00",
+  "stage": "SOURCE_PREPARED_OFFLINE_CHECKED_NO_RUNTIME",
+  "powershell_parser_errors": {
+    "Pass-Duur.ps1": 0,
+    "Start-Monitored.ps1": 0,
+    "Close-Normally.ps1": 0,
+    "Restore.ps1": 0
+  },
+  "exact_old_c4_c5_pins_verified": true,
+  "all_new_source_pins_verified": true,
+  "small_diffs_regenerated_equal": true,
+  "reader_scope_adapter_runtimepins_hostplan_byte_identical": true,
+  "mutable_gates_excluded_from_source_pins": true,
+  "all_gates_false": true,
+  "host_directory_absent": true,
+  "build": false,
+  "backup": false,
+  "installation": false,
+  "rpm": false,
+  "gameplay": false,
+  "native_faultcases": "NOT_TESTED",
+  "source_pins": {
+    "C4": "2f9f3ec2b96160d075820b83ac4570f75969834915d4f6543f37ce52d00107fe",
+    "C5": "e3885de1b2aeb6d18c8938778eb1834a33bf31fe2e59563c9e7bd9eee54978e8"
+  },
+  "media_read_only_observation": {
+    "at_europe_amsterdam": "2026-10-26T16:01:09+01:00",
+    "method": ".NET System.IO.DriveInfo",
+    "name": "E:\\",
+    "DriveType": "CDRom",
+    "IsReady": true,
+    "VolumeLabel": "CIV_CTP",
+    "CIM_in_sandbox": "AccessDenied",
+    "root_CIM_outside_sandbox": "successful_empty_CDROM_list; processquery_functional"
+  },
+  "reference_df3_T100_cities": [
+    17,
+    20,
+    17,
+    12,
+    20,
+    21,
+    14
+  ],
+  "reference_total": 121
+}

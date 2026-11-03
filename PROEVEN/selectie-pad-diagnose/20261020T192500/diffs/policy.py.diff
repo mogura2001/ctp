@@ -1,0 +1,15 @@
+--- PROEVEN/science-bezet-centrum/20261020T184100/policy.py
++++ PROEVEN/selectie-pad-diagnose/20261020T192500/policy.py
+@@ -2,7 +2,11 @@
+ import native as n
+ from x86 import mem as m
+ 
+-def invoke(r,name):r.push('ebx');r.j('call',name)
++def invoke(r,name):
++ r.push('ebx')
++ if name=='select_direct_plans':r.label('pd_select_call')
++ r.j('call',name)
++ if name=='select_direct_plans':r.label('pd_select_return')
+ 
+ def read_policy(r):
+  # stdcall(AiMain*, output[6]). Fresh native count, no pass/global state.

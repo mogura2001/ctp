@@ -1,0 +1,330 @@
+{
+  "reviewed_at_utc": "2026-10-30T12:17:23.528319+00:00",
+  "files": [
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/inspection-20261030-attempt2.json",
+      "sha256": "81223e1c00943197f8702d2bf0862efa140bf7177979cdd3264b8ef06f4f0a2c"
+    },
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/after-n1-20261030-attempt2.json",
+      "sha256": "59d124de3ea42c7814673a19e3cf0e8384316ffdd0de77791245e314dff42b85"
+    }
+  ],
+  "instance": {
+    "pid": 21128,
+    "creationtime_filetime": 134378357204056720,
+    "executable": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\civctp.exe",
+    "ai_module": "C:\\GIT\\ctp\\CTP-proef\\ctp_program\\ctp\\dll\\ai\\robotcom.dll",
+    "engine_base": 4194304,
+    "ai_base": 536870912
+  },
+  "stable_twice_both": true,
+  "all_loaded_checks": true,
+  "civilizations": [
+    {
+      "civ_id": 2,
+      "before_cities": 7,
+      "after_cities": 8,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 3,
+      "before_cities": 8,
+      "after_cities": 8,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 4,
+      "before_cities": 7,
+      "after_cities": 7,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 5,
+      "before_cities": 8,
+      "after_cities": 8,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 6,
+      "before_cities": 6,
+      "after_cities": 6,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 7,
+      "before_cities": 5,
+      "after_cities": 6,
+      "native_rounds": [
+        25,
+        26
+      ]
+    },
+    {
+      "civ_id": 8,
+      "before_cities": 6,
+      "after_cities": 6,
+      "native_rounds": [
+        25,
+        26
+      ]
+    }
+  ],
+  "candidate_cities": [
+    {
+      "civ_id": 5,
+      "full_engine_handle": 268435476,
+      "before_chance": {
+        "production": 94,
+        "stock": 512,
+        "key": 125,
+        "incumbent": 4,
+        "flag": 0,
+        "rank_min": 7,
+        "rank_max": 7,
+        "own_city_count": 8,
+        "rank_denominator": "N",
+        "rank_threshold_pass": true,
+        "stored_production_exception": true,
+        "ai_build_rounds": 17,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": true,
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "after_chance": {
+        "production": 94,
+        "stock": 0,
+        "key": 150,
+        "incumbent": 14,
+        "flag": 0,
+        "rank_min": 6,
+        "rank_max": 7,
+        "own_city_count": 8,
+        "rank_denominator": "N",
+        "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+        "stored_production_exception": false,
+        "ai_build_rounds": 22,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "before_queue": {
+        "queue": "0xba9a878",
+        "count": 1,
+        "head": "0xb929380",
+        "tail": "0xb929380",
+        "nodes": [
+          {
+            "node": "0xb929380",
+            "type": 4,
+            "build_class": 1,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      },
+      "after_queue": {
+        "queue": "0xba9a878",
+        "count": 1,
+        "head": "0x9396080",
+        "tail": "0x9396080",
+        "nodes": [
+          {
+            "node": "0x9396080",
+            "type": 14,
+            "build_class": 1,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      }
+    },
+    {
+      "civ_id": 7,
+      "full_engine_handle": 268435523,
+      "before_chance": {
+        "production": 43,
+        "stock": 500,
+        "key": 93,
+        "incumbent": 4,
+        "flag": 0,
+        "rank_min": 2,
+        "rank_max": 2,
+        "own_city_count": 5,
+        "rank_denominator": "N",
+        "rank_threshold_pass": false,
+        "stored_production_exception": true,
+        "ai_build_rounds": 38,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": true,
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "after_chance": {
+        "production": 43,
+        "stock": 0,
+        "key": 56,
+        "incumbent": 0,
+        "flag": 0,
+        "rank_min": 1,
+        "rank_max": 1,
+        "own_city_count": 6,
+        "rank_denominator": "N",
+        "rank_threshold_pass": false,
+        "stored_production_exception": false,
+        "ai_build_rounds": 50,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": false,
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "before_queue": {
+        "queue": "0xba7d898",
+        "count": 1,
+        "head": "0xb929940",
+        "tail": "0xb929940",
+        "nodes": [
+          {
+            "node": "0xb929940",
+            "type": 4,
+            "build_class": 1,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      },
+      "after_queue": {
+        "queue": "0xba7d898",
+        "count": 1,
+        "head": "0xb6f7100",
+        "tail": "0xb6f7100",
+        "nodes": [
+          {
+            "node": "0xb6f7100",
+            "type": 0,
+            "build_class": 3,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      }
+    },
+    {
+      "civ_id": 8,
+      "full_engine_handle": 268435479,
+      "before_chance": {
+        "production": 93,
+        "stock": 133,
+        "key": 150,
+        "incumbent": 5,
+        "flag": 0,
+        "rank_min": 5,
+        "rank_max": 5,
+        "own_city_count": 6,
+        "rank_denominator": "N",
+        "rank_threshold_pass": true,
+        "stored_production_exception": false,
+        "ai_build_rounds": 21,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": true,
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "after_chance": {
+        "production": 52,
+        "stock": 0,
+        "key": 150,
+        "incumbent": 8,
+        "flag": 0,
+        "rank_min": 5,
+        "rank_max": 5,
+        "own_city_count": 6,
+        "rank_denominator": "N",
+        "rank_threshold_pass": true,
+        "stored_production_exception": false,
+        "ai_build_rounds": 41,
+        "build_rounds_pass": true,
+        "cache_free_now": false,
+        "ai_predicates_now": false,
+        "production_rank_buildtime_possible_after_normal_queue": true,
+        "future_cache_release": "UNKNOWN",
+        "engine_admission": "UNKNOWN",
+        "real_queue_empty_now": false,
+        "native_owner_handle_reused": true
+      },
+      "before_queue": {
+        "queue": "0xba9e868",
+        "count": 1,
+        "head": "0xb929340",
+        "tail": "0xb929340",
+        "nodes": [
+          {
+            "node": "0xb929340",
+            "type": 5,
+            "build_class": 1,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      },
+      "after_queue": {
+        "queue": "0xba9e868",
+        "count": 1,
+        "head": "0xb6fc1c0",
+        "tail": "0xb6fc1c0",
+        "nodes": [
+          {
+            "node": "0xb6fc1c0",
+            "type": 8,
+            "build_class": 1,
+            "is_exact_labyrinth": false
+          }
+        ],
+        "new_enqueue_proven": false
+      }
+    }
+  ],
+  "new_labyrinth_queues": 0,
+  "effective_opening_lists_only_labyrinth_7_of_7": true,
+  "wonder_state_all_1_before_after": true,
+  "old_queue_completion": "NOT_PROVEN",
+  "reason_no_wonder": "NOT_DISTINGUISHED_GOAL_CREATION_PRIORITY_ADMISSION",
+  "Doel4_complete": false
+}

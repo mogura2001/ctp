@@ -1,0 +1,13 @@
+# Vast menselijk controleprotocol
+
+B, 28 oktober. Root legt dit vóór toepassing uit. Doel1/1a/5: langere vergelijkingen met dezelfde menselijke bediening. [Vervolg-C](../PROEVEN/land-stad-defensie/20261028-vervolg/ROOT-RESTORE-REVIEW.json) bevestigt normale herhaalproductie Warrior; GUI-respons op `f` is bewezen, interne entrenchflag/volgende-beurtbehoud niet.
+
+**Aanvulling:** uitsluitend OK op de door het spel reeds voorgeselecteerde technologie is routinebediening binnen de gekozen éénstad/verdedigingsbenchmark. Geen aanvullende strategische gebruikerskeuze ontbreekt. De eerdere onderzoeksstopregel wordt hiermee vooraf begrensd aangevuld; de OK-uitkomst is nog onbeproefd. FLI/AIP blijft ongewijzigd; aanvullende logica is niet nodig.
+
+1. Beide armen starten exact van herlaadbare c6ba-T0 (350409bytes/SHA256 `c6bab2909d9f5739005e5f24678cf0a5818b17821031ca171c454e2cc40f4327`), Rome1/4000BC/Warrior. Zelfde horizon/meetpunten en conditionele bediening; versiemanifest per arm. Deity via bewezen bronherkomst, verse GUI-Deity UNKNOWN. Verse budgetcontrole/backups/inventaris/aliascontrole zoals eerdere B.
+2. Warrior herhaalt nu aantoonbaar normaal. Controleer queue; uitsluitend indien leeg normaal Warrior aanvullen. Selecteer iedere aantoonbaar nieuwe actieve Warrior op Rome via ENTER/NEXT_ITEM; controleer unit/positie, daarna eenmaal `f`, log GUI-respons. Geen blinde selectie/herhaald f; onduidelijke identiteit/status stopt. Eenheden blijven op stadsvak; geen RushBuy/verplaatsing/andere productie.
+3. RESEARCH-modal: leg ontdekkingsbericht, zichtbare voorselectie en CHANGE TO-veld vast. Alleen bij eenduidige overeenkomst eenmaal zichtbare OK bedienen, zonder lijstentry te kiezen; controleer modalsluiting en onderzoeksnaam. Huidig bewijs: Domestication ontdekt, Stone Working voorgeselecteerd. Ontbrekende/tegenstrijdige voorselectie of onverwacht resultaat: stoppen/terug B. Onderzoekslijsten, wetenschapinstellingen en regering ongemoeid; registreer default per arm.
+4. Geen `n` bij modal. Per grens maximaal2 informatiemeldingen elk eenmaal sluiten/heropnemen. Geen ongevraagde diplomatieactie; verplichte strategische reactie stopt. Ieder toegestaan `n`: verse consumedregistratie, beeld en datum-/beurtbewijs.
+5. Latere eerste OK-proef: uitsluitend522b-autosave, maximaal1n, maximaal15min; vanaf13min alleen normale sluiting. Nu geen uitvoering. Normaal sluiten/count0, wijzigingen archiveren vóór exact herstel; beforehashes/save-inventaris exact, eigen alias weg, pc aan.
+
+Succes apart: queue/OK-afhandeling/fortifyopdracht. Geen100beurtenoverlevingsgarantie; combinatie-effect vraagt gepaarde vergelijking. Stoppen blijft alternatief.

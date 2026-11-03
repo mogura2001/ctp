@@ -1,0 +1,173 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\native\NativeFoodCaller.cs
++++ PROEVEN\science-bezet-centrum\20261020T184100\native\NativeFoodCaller.cs
+@@ -6,10 +6,12 @@
+  [DllImport("kernel32.dll",SetLastError=true)]static extern IntPtr VirtualAlloc(IntPtr p,UIntPtr n,uint t,uint f);
+  [DllImport("kernel32.dll")]static extern bool VirtualFree(IntPtr p,UIntPtr n,uint t);
+  [DllImport("kernel32.dll")]static extern bool VirtualProtect(IntPtr p,UIntPtr n,uint f,out uint old);
++ [DllImport("kernel32.dll")]static extern bool FlushInstructionCache(IntPtr process,IntPtr address,UIntPtr size);
+  [UnmanagedFunctionPointer(CallingConvention.Cdecl)]delegate void Shim();
+  static readonly List<IntPtr> owned=new List<IntPtr>();static readonly List<string> passes=new List<string>();
+- static Dictionary<string,int> labels;static string root,pack;static IntPtr image,plan,ctx,shimctx,stage,world,stubstate,engine,grid,zarray,xarray,yarray,cell,db,records,good,bonus,output,edge,observer,normal;
+- static int extension,stateRva,stateSize,imageSize,normalContinuation,cases;static Shim shim;
++ static Dictionary<string,int> labels;static string root,pack;static IntPtr image,plan,ctx,shimctx,stage,world,stubstate,engine,grid,zarray,xarray,yarray,cell,db,records,good,bonus,output,normal,army,modelOutput,modelProbe,consumerObserver;
++ static byte[] centerContinuation,tileContinuation;
++ static int extension,stateRva,stateSize,imageSize,imageRX,imageRXSize,normalContinuation,cases;static Shim shim;
+  const int Canary=0x5aa55aa5;
+  static IntPtr A(IntPtr p,int off){return new IntPtr(unchecked(p.ToInt32()+off));}
+  static int R(IntPtr p,int off){return Marshal.ReadInt32(p,off);}static void W(IntPtr p,int off,int value){Marshal.WriteInt32(p,off,value);}
+@@ -31,6 +33,7 @@
+  static int HexNumber(string text,string name){Match m=Regex.Match(text,"\""+name+"\"\\s*:\\s*\"0x([0-9a-f]+)\"");Check(m.Success,"manifest RVA "+name);return Convert.ToInt32(m.Groups[1].Value,16);}
+  static IntPtr Entry(string name){return A(image,extension+labels[name]);}
+  static void Jump(IntPtr at,IntPtr target){Marshal.WriteByte(at,0xe9);W(at,1,unchecked(target.ToInt32()-at.ToInt32()-5));}
++ static void JumpSix(IntPtr at,IntPtr target){Check((Marshal.ReadByte(at)==0x81&&Marshal.ReadByte(at,1)==0xf8)||(Marshal.ReadByte(at)==0x8b&&Marshal.ReadByte(at,1)==0x85),"whole known six-byte cmp/load boundary");Jump(at,target);Marshal.WriteByte(at,5,0x90);}
+  static Shim MakeShim(){
+   string h=Path.Combine(root,"PROEVEN","production-h3","helper");byte[] b=File.ReadAllBytes(Path.Combine(h,"shim5.bin"));string json=File.ReadAllText(Path.Combine(h,"shim5.recipe.json"));
+   foreach(Match m in Regex.Matches(json,"\"at\"\\s*:\\s*(\\d+)\\s*,\\s*\"context_offset\"\\s*:\\s*(\\d+)"))Array.Copy(BitConverter.GetBytes(A(shimctx,Int32.Parse(m.Groups[2].Value)).ToInt32()),0,b,Int32.Parse(m.Groups[1].Value),4);
+@@ -55,71 +58,84 @@
+   imageSize=BitConverter.ToInt32(bytes,optional+56);image=Mem(imageSize+16);extension=HexNumber(manifest,"extension_rva");stateRva=HexNumber(manifest,"state_rva");stateSize=Number(manifest,"state_size");Check(stateSize==497668,"exact own state");
+   int rx=0,rxSize=0;bool found=false;
+   for(int i=0;i<count;i++){int at=section+40*i;if(Encoding.ASCII.GetString(bytes,at,8).TrimEnd('\0')!=".u40c")continue;Check(!found,"single own RX section");found=true;rx=BitConverter.ToInt32(bytes,at+12);rxSize=BitConverter.ToInt32(bytes,at+16);Marshal.Copy(bytes,BitConverter.ToInt32(bytes,at+20),A(image,rx),rxSize);}
+-  Check(found,"own code mapped");plan=A(image,stateRva);labels=new Dictionary<string,int>();Match table=Regex.Match(manifest,"\"labels\"\\s*:\\s*\\{([^}]+)\\}");Check(table.Success,"label table");
++  Check(found,"own code mapped");imageRX=rx;imageRXSize=rxSize;plan=A(image,stateRva);labels=new Dictionary<string,int>();Match table=Regex.Match(manifest,"\"labels\"\\s*:\\s*\\{([^}]+)\\}");Check(table.Success,"label table");
+   foreach(Match m in Regex.Matches(table.Groups[1].Value,"\"([^\"]+)\"\\s*:\\s*(-?\\d+)"))labels[m.Groups[1].Value]=Int32.Parse(m.Groups[2].Value);
+   Check(Entry("pass_state")==plan&&Entry("generation")==A(plan,0x79800),"PIC own Plan, not external scratch");
+   // Independent allocations: shim5 owns its ABI/x87 context; fixture wrappers
+   // own ctx0..32 and observer0x800. Neither can overwrite the other's slots.
+-  ctx=Mem(0x1000);shimctx=Mem(0x1000);stage=Mem(236);world=Mem(16);stubstate=Mem(4096);engine=Mem(0x680000);grid=Mem(32);zarray=Mem(4);xarray=Mem(4);yarray=Mem(4);cell=Mem(32);db=Mem(12);records=Mem(24*192);good=Mem(192);bonus=Mem(80);IntPtr guarded=Mem(48);output=A(guarded,4);W(guarded,0,Canary);W(output,40,Canary);
++  ctx=Mem(0x1000);shimctx=Mem(0x1000);stage=Mem(236);army=Mem(64);modelOutput=Mem(2048);world=Mem(16);stubstate=Mem(4096);engine=Mem(0x680000);grid=Mem(32);zarray=Mem(4);xarray=Mem(4);yarray=Mem(4);cell=Mem(32);db=Mem(12);records=Mem(24*192);good=Mem(192);bonus=Mem(80);IntPtr guarded=Mem(48);output=A(guarded,4);W(guarded,0,Canary);W(output,40,Canary);
+   W(ctx,0,plan.ToInt32());W(ctx,4,stage.ToInt32());W(ctx,12,Entry("sci_food_diag_bad").ToInt32());
+-  edge=FixtureCode("edge");observer=FixtureCode("observer");normal=FixtureCode("normal");
++  normal=FixtureCode("normal");modelProbe=FixtureCode("model_probe");consumerObserver=FixtureCode("consumer_observer");
+   string normalRecipe=File.ReadAllText(Path.Combine(pack,"fixture","normal.recipe.json"));normalContinuation=Number(normalRecipe,"continuation");
+-  // ONLY a private image: hook whole emitted JMPs after POPAD/POPFD; never
+-  // overwrite the variable-length first instruction of production food_bad.
+-  for(int i=1;i<=37;i++){
+-   IntPtr at=Entry("sci_food_diag_failure_"+i+"_restored");Check(Marshal.ReadByte(at)==0xe9&&Marshal.ReadByte(at,-2)==0x61&&Marshal.ReadByte(at,-1)==0x9d,"complete restored-exit JMP boundary");Jump(at,observer);
+-  }
+-  // Only the copied SCI return sites point to fixture continuation. The DLL
+-  // on disk and shared reader bytes are never altered.
+-  Jump(Entry("sci_food_diag_center_return"),A(normal,normalContinuation));Jump(Entry("sci_food_diag_primary_return"),A(normal,normalContinuation));
++  // Save whole continuation windows before private-image-only routing.
++  centerContinuation=Read(Entry("sci_food_diag_center_return"),16);tileContinuation=Read(Entry("sci_food_diag_primary_return"),16);
++  JumpSix(Entry("sci_food_diag_center_return"),A(normal,normalContinuation));JumpSix(Entry("sci_food_diag_primary_return"),A(normal,normalContinuation));
+   string old=Path.Combine(root,"PROEVEN","production-h3","helper");IntPtr vt=Mem(0x200);W(world,0,vt.ToInt32());W(world,4,stubstate.ToInt32());W(vt,0xb8,Code(File.ReadAllBytes(Path.Combine(old,"food.bin"))).ToInt32());
+-  W(plan,144+20,Code(File.ReadAllBytes(Path.Combine(old,"convert.bin"))).ToInt32());
+-  Check(rx+rxSize<=stateRva-16,"prestate padding");for(int i=0;i<16;i+=4){W(plan,-16+i,Canary);W(plan,stateSize+i,Canary);}RX(A(image,rx),rxSize);shim=MakeShim();
++  W(plan,144+20,FixtureCode("convert_mutation").ToInt32());
++  Check(rx+rxSize<=stateRva-16,"prestate padding");for(int i=0;i<16;i+=4){W(plan,-16+i,Canary);W(plan,stateSize+i,Canary);}shim=MakeShim();
+  }
+  static void Reset(bool record){
+-  if(record)Clear(A(plan,276),236);Clear(stubstate,4096);Clear(cell,32);Clear(records,24*192);Clear(good,192);Clear(bonus,80);Clear(output,40);
++  if(record)Clear(A(plan,276),236);Clear(stubstate,4096);Clear(cell,32);Clear(records,24*192);Clear(good,192);Clear(bonus,80);Clear(output,40);Clear(army,64);W(ctx,0x90c,0);
+   W(plan,8,123);W(plan,32,7);W(plan,36,1);W(plan,40,1);W(plan,112,world.ToInt32());W(plan,68,1);W(plan,220,4);W(plan,224,4);W(plan,240,4);W(plan,256,64);W(plan,0x78800,123);W(plan,0x78804,7);W(plan,0x526a0+3*4,0);
+   // Keep the converter pointer created once in Load; HostBinding uses Plan144.
+   W(plan,144,engine.ToInt32());W(plan,148,grid.ToInt32());W(plan,152,db.ToInt32());H(engine,0x67df20,1);H(engine,0x67df22,1);W(grid,0x1c,zarray.ToInt32());W(zarray,0,xarray.ToInt32());W(xarray,0,yarray.ToInt32());W(yarray,0,cell.ToInt32());
+   H(plan,0x200,0);H(plan,0x202,0);H(plan,0x204,0);H(plan,0x206,0xaabb);int sci=0x54800+3*2048;W(plan,sci+16,1);for(int i=0;i<8;i++)Marshal.WriteByte(plan,sci+136+i,Marshal.ReadByte(plan,0x200+i));
+   Marshal.WriteByte(cell,13,1);W(db,0,24);W(db,8,records.ToInt32());W(records,192+8,5);W(stubstate,0x500,5);W(stubstate,16,1);W(ctx,0x830,0);W(ctx,0x834,0);
+  }
+- static int EdgeFlags(int id){int flags=0x202;if((id>=4&&id<=8)||(id>=12&&id<=22)||id==24||id==33)flags|=0x40;if(id==32||id==37)flags|=0x80;if((id>=26&&id<=30)||id==35)flags|=0x800;return flags;}
+- static void Edge(int id,int kind,bool keep,int expectedLatched){
+-  Reset(!keep);byte[] pre=File.ReadAllBytes(Path.Combine(pack,"fixture","edge-"+id+".stage.bin"));Check(pre.Length==236,"exact prestate");Array.Copy(BitConverter.GetBytes(kind),0,pre,12,4);Marshal.Copy(pre,0,stage,236);
+-  W(ctx,8,Entry("sci_food_diag_failure_"+id).ToInt32());W(ctx,20,EdgeFlags(id));Clear(A(ctx,0x800),64);
+-  int result=Invoke(edge,A(plan,0x200),kind==1?1:0);
+-  Check(result==0&&Same(Read(output,40),new byte[40]),"original bad out40/EAX0");
+-  // Saved pushad order: EDI,ESI,EBP,ESP-before-pushad,EBX,EDX,ECX,EAX,flags.
+-  Check(R(ctx,0x800)==output.ToInt32()&&R(ctx,0x804)==0x56789abc&&R(ctx,0x808)==R(ctx,28)&&R(ctx,0x80c)+4==R(ctx,24),"instrument EDI/ESI/EBP/ESP");
+-  Check(R(ctx,0x810)==0x456789ab&&R(ctx,0x814)==0x3456789a&&R(ctx,0x818)==0x23456789&&R(ctx,0x81c)==0x12345678,"instrument EBX/EDX/ECX/EAX");
+-  Check((R(ctx,0x820)&0xcd5)==(EdgeFlags(id)&0xcd5),"instrument arithmetic+DF flags");
+-  Check(R(ctx,0x824)==Canary&&R(ctx,0x828)==Canary,"private frame staging guards");
+-  Check(R(plan,280)==1&&R(plan,284)==expectedLatched,"published failure/latch ID");
+-  if(expectedLatched==id){
+-   byte[] expected=(byte[])pre.Clone();Array.Copy(BitConverter.GetBytes(1),0,expected,4,4);Array.Copy(BitConverter.GetBytes(id),0,expected,8,4);Array.Copy(BitConverter.GetBytes(R(ctx,0x820)),0,expected,208,4);Array.Copy(BitConverter.GetBytes(BitConverter.ToInt32(pre,36)|(1<<5)),0,expected,36,4);Array.Copy(BitConverter.GetBytes(output.ToInt32()),0,expected,220,4);Array.Copy(BitConverter.GetBytes(A(plan,144).ToInt32()),0,expected,224,4);Array.Copy(BitConverter.GetBytes(world.ToInt32()),0,expected,60,4);
+-   Check(Same(expected,Read(A(plan,276),236)),"exact reached payload/operands including original EFLAGS");
+-  }
+-  Check(R(stubstate,20)==0,"injected log edge has no callbacks");Test("SYNTHETIC log edge "+id+" kind"+kind+" (not natural reachability)",true);
+- }
+- static byte[] Normal(bool clone,int kind){
+-  W(ctx,32,Entry(kind==1?"sci_food_diag_center_return":"sci_food_diag_primary_return").ToInt32());W(ctx,36,Entry(clone?"sci_food_diag_reader":"food_reader").ToInt32());Clear(output,40);
+-  int result=Invoke(normal,kind==1?A(plan,0x200):A(plan,0x54800+3*2048+136),kind==1?1:0);Check(R(ctx,0x830)==Canary&&R(ctx,0x834)==Canary,"SCI local out40 frame canaries");
++ static byte[] Normal(bool clone,int kind,int returnKind=0){
++  if(returnKind==0)returnKind=kind;
++  W(ctx,32,Entry(returnKind==1?"sci_food_diag_center_return":"sci_food_diag_primary_return").ToInt32());W(ctx,36,Entry(clone?"sci_food_diag_reader":"food_reader").ToInt32());Clear(output,40);
++  int result=Invoke(normal,kind==1?A(plan,0x200):A(plan,0x54800+3*2048+136),kind==1?1:0);
+   byte[] value=new byte[48];Array.Copy(BitConverter.GetBytes(result),0,value,0,4);Array.Copy(Read(output,40),0,value,4,40);Array.Copy(BitConverter.GetBytes(R(stubstate,20)),0,value,44,4);return value;
+  }
+- static void Setting(string name){
+-  if(name=="zero"){W(records,192+8,0);W(stubstate,0x500,0);}
+-  if(name=="bonus"){W(records,192+0x50,bonus.ToInt32());W(bonus,0,7);}
+-  if(name=="goodfallback"){W(cell,0,2<<6);W(records,192+0xa0,good.ToInt32());W(good,8,9);W(good,0x50,bonus.ToInt32());W(bonus,0,11);W(stubstate,0x500,9);}
+-  if(name=="pregetter"){W(records,192+8,-1);}
+-  if(name=="nativefalse")W(stubstate,16,0);if(name=="mismatch")W(stubstate,0x500,6);if(name=="city")W(cell,20,7);
+-  if(name=="scope0")W(plan,36,0);if(name=="owner0")W(plan,8,0);if(name=="generation_mismatch")W(plan,0x78804,8);if(name=="SCI_count_mismatch")W(plan,240,3);
++ static void Occupied(int count){W(cell,16,army.ToInt32());W(army,48,count);}
++ static void Result(byte[] result,int expected,int callbacks,string why){
++  Check(BitConverter.ToInt32(result,0)==expected,"typed return "+why);
++  if(expected!=1){byte[] food=new byte[40];Array.Copy(result,4,food,0,40);Check(Same(food,new byte[40]),"out40 wiped "+why);}
++  Check(BitConverter.ToInt32(result,44)==callbacks,"callback count "+why);Test(why,true);
+  }
+- static void Compare(string name,int kind,int expectedID){
+-  Reset(true);Setting(name);byte[] original=Normal(false,kind);Reset(true);Setting(name);byte[] clone=Normal(true,kind);
+-  Check(Same(original,clone),"same out40/EAX/native callback count "+name);
+-  if(expectedID==0)Check(R(plan,280)==0,"no success/invalid-binding publication "+name);else Check(R(plan,280)==1&&R(plan,284)==expectedID,"real taken reader guard "+name);
+-  Test("normal original/clone "+name+" kind"+kind,true);
++ static void ReaderCases(){
++  Reset(true);Occupied(2);Result(Normal(true,1),2,0,"bound center positive2");
++  // Same owner/gen, different prefix and ordinal; first latch remains prefix3.
++  Reset(false);W(plan,220,5);W(plan,224,5);W(plan,240,5);W(plan,256,65);W(plan,0x526a0+4*4,0);Occupied(1);Result(Normal(true,1),2,0,"second occupied current invocation independent of first latch");Check(R(plan,276+24)==3,"first historical latch retained");
++  Reset(false);W(plan,220,6);W(plan,224,6);W(plan,240,6);W(plan,256,66);W(plan,0x526a0+5*4,0);W(cell,20,7);Result(Normal(true,1),0,0,"subsequent city failure remains unknown despite first branch10 latch");
++  Reset(true);Occupied(2);Result(Normal(true,2),0,0,"occupied tile remains unknown");
++  Reset(true);Occupied(2);Result(Normal(true,1,2),0,0,"wrong center callsite remains unknown");
++  Reset(true);Occupied(-1);Result(Normal(true,1),0,0,"negative count remains unknown");
++  Reset(true);Occupied(0);Result(Normal(true,1),1,1,"zero count ordinary success");
++  Reset(true);W(cell,20,7);Result(Normal(true,1),0,0,"city branch9 unchanged");
++  Reset(true);W(records,192+8,-1);Result(Normal(true,1),0,0,"other guard pregetter unchanged");
++  Reset(true);Result(Normal(false,1),1,1,"shared normal return1 unchanged");
++  Reset(true);Occupied(2);Result(Normal(false,1),0,0,"shared occupied return0 unchanged");
++  foreach(int offset in new int[]{8,32,36,40,220,224,240,256,0x78800,0x78804,68,0x526a0+12}){
++   Reset(true);Occupied(2);W(ctx,0x900,A(plan,offset).ToInt32());W(ctx,0x904,offset==68?4097:offset==0x526a0+12?1:0);W(ctx,0x90c,1);
++   Result(Normal(true,1),0,0,"fresh Plan mutation rejected offset"+offset);
++  }
++  // Mutations occur AFTER valid entry, in the converter, before failure.
++  foreach(int offset in new int[]{-340,-344,-336,-336+12,-336+16,-336+20,-336+24,-336+28,-336+40,-336+60,-336+220,-336+224}){
++   Reset(true);Occupied(2);W(ctx,0x900,offset);W(ctx,0x904,offset==-336+12?2:999);W(ctx,0x90c,2);
++   Result(Normal(true,1),0,0,"fresh invocation staging mutation rejected offset"+offset);
++  }
++ }
++ // Own image protection changes are finite, bound to mapped candidate bytes.
++ static void Writable(bool write){uint old;Check(VirtualProtect(A(image,imageRX),(UIntPtr)imageRXSize,write?4u:0x20u,out old),"own fixture RX protection; Plan remains RW");if(!write)Check(FlushInstructionCache(new IntPtr(-1),A(image,imageRX),(UIntPtr)imageRXSize),"own fixture instruction cache");}
++ static void ModelCases(){
++  Writable(true);Marshal.Copy(centerContinuation,0,Entry("sci_food_diag_center_return"),16);Marshal.Copy(tileContinuation,0,Entry("sci_food_diag_primary_return"),16);
++  JumpSix(Entry("science_center_food_consumer"),consumerObserver);JumpSix(Entry("science_tile_food_consumer"),consumerObserver);
++  // This label is a complete five-byte JMP after actual tile UNKNOWN marking.
++  Check(Marshal.ReadByte(Entry("science_current_unknown_exit"))==0xe9,"whole unknown-exit JMP");Jump(Entry("science_current_unknown_exit"),Entry("science_done"));
++  W(ctx,0x94c,Entry("science_done").ToInt32());Writable(false);
++  foreach(int kind in new int[]{1,2})foreach(int returned in new int[]{0,1,2,3}){
++   Clear(modelOutput,2048);W(ctx,0x948,0);W(ctx,0x944,returned);W(ctx,0x940,Entry(kind==1?"sci_food_diag_center_return":"sci_food_diag_primary_return").ToInt32());
++   W(shimctx,112,modelProbe.ToInt32());W(shimctx,0x700,0);W(shimctx,0x704,0);W(shimctx,0x708,0);W(shimctx,0x70c,0);W(shimctx,0x710,modelOutput.ToInt32());shim();cases++;
++   Check(R(shimctx,40)==R(shimctx,44),"model ret20/ESP");Check(Same(Read(A(shimctx,0x300),160),Read(A(shimctx,0x500),160)),"real model frstor/x87");
++   Check(R(shimctx,48)==0x13579bdf&&R(shimctx,52)==0x2468ace0&&R(shimctx,56)==0x76543210&&R(shimctx,60)==0x55aa33cc,"model nonvolatile ABI");
++   Check((R(ctx,0x948)==1)==(returned==1),"food consumers accept only1");
++   if(kind==1&&returned==2){Check(R(modelOutput,0)==1&&R(modelOutput,4)==17&&R(modelOutput,112)==1&&R(modelOutput,24)==0,"actual occupied handler state/reason/coverage/no credit");for(int i=28;i<=36;i+=4)Check(R(modelOutput,i)==-1,"no selected indices");Check(Same(Read(A(modelOutput,72),40),new byte[40]),"food/margins untouched initialization");}
++   if(kind==2&&returned!=1)Check(R(modelOutput,40)==1&&R(modelOutput,128+28)==2,"actual tile UNKNOWN flag/reason");
++   if(kind==1&&returned!=1&&returned!=2)Check(R(modelOutput,0)==0&&R(modelOutput,112)==0,"other center returns UNKNOWN");
++   Test("injected actual model continuation kind"+kind+" return"+returned,true);
++  }
+  }
+  public static Dictionary<string,object> Run(string repository,string package,string candidateHash,string manifestHash){
+   Check(IntPtr.Size==4,"x86 only");root=repository;pack=package;string gate=File.ReadAllText(Path.Combine(pack,"native","NATIVE-ROOT-REVIEW.json"));
+@@ -127,13 +143,9 @@
+   owned.Clear();passes.Clear();cases=0;
+   try{
+    Load(candidateHash,manifestHash);
+-   for(int i=1;i<=37;i++)Edge(i,1,false,i);
+-   Compare("zero",1,0);Compare("positive",1,0);Compare("bonus",1,0);Compare("goodfallback",1,0);Compare("pregetter",1,31);Compare("nativefalse",1,33);Compare("mismatch",1,34);Compare("city",1,9);Compare("positive",2,0);
+-   foreach(string name in new string[]{"scope0","owner0","generation_mismatch","SCI_count_mismatch"})Compare(name,1,0);
+-   Edge(9,2,false,9);Edge(10,2,true,10);Edge(33,1,true,33);Edge(9,2,true,33);Edge(34,1,true,33);
+-   byte[] latch=Read(A(plan,276),236);Reset(false);Normal(true,1);Check(Same(latch,Read(A(plan,276),236)),"success preserves center failure latch");Test("first center retained across tiles/centers/success; prior tiles replaceable",true);
++   Writable(false);ReaderCases();ModelCases();
+    Check(Hash(File.ReadAllBytes(Path.Combine(pack,"U30-40.prepared.dll")))==candidateHash,"candidate disk unchanged");
+-   return new Dictionary<string,object>{{"scope","OWN_FIXTURE_ONLY_NOT_ENGINE_OR_GAMEPLAY"},{"calls",cases},{"passed",passes.ToArray()},{"synthetic_log_edges",37},{"natural_all37_guard_reachability_proven",false},{"gameplay_proven",false}};
++   return new Dictionary<string,object>{{"scope","OWN_FIXTURE_ONLY_NOT_ENGINE_OR_GAMEPLAY"},{"calls",cases},{"passed",passes.ToArray()},{"synthetic_log_edges",0},{"natural_all37_guard_reachability_proven",false},{"gameplay_proven",false}};
+   }finally{
+    bool all=true;for(int i=owned.Count-1;i>=0;i--)all=VirtualFree(owned[i],UIntPtr.Zero,0x8000)&&all;owned.Clear();Console.WriteLine("cleanup="+all);Console.Out.Flush();Check(all,"all own allocations released");
+   }

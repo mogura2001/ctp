@@ -1,0 +1,1284 @@
+{
+  "sources": [
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/inspection-20261030-attempt2.json",
+      "sha256": "81223e1c00943197f8702d2bf0862efa140bf7177979cdd3264b8ef06f4f0a2c"
+    },
+    {
+      "path": "PROEVEN/wonderbouw-kans/20261029/after-n1-20261030-attempt2.json",
+      "sha256": "59d124de3ea42c7814673a19e3cf0e8384316ffdd0de77791245e314dff42b85"
+    }
+  ],
+  "instance_equal": true,
+  "binding_equal": true,
+  "stable_twice_both": true,
+  "native_plus_one_all": true,
+  "actual_input_count": 1,
+  "gui_dates": [
+    "2700 BC",
+    "2650 BC"
+  ],
+  "civilizations": [
+    {
+      "civ_id": 2,
+      "civ_name": "Juana de la Cruz / Mexicans",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        7,
+        8
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14717ecc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14717ecc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [],
+      "changed_queue_types": [
+        {
+          "handle": 268435520,
+          "ai_city_id": 3221225472,
+          "owner": 2,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              5
+            ]
+          ],
+          "before": {
+            "production": 93,
+            "stock": 406,
+            "key": 150,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 6,
+            "own_city_count": 7,
+            "rank_denominator": "N",
+            "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+            "stored_production_exception": false,
+            "ai_build_rounds": 18,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 93,
+            "stock": 0,
+            "key": 150,
+            "incumbent": 5,
+            "flag": 0,
+            "rank_min": 6,
+            "rank_max": 7,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+            "stored_production_exception": false,
+            "ai_build_rounds": 23,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435488,
+          "ai_city_id": 1073741824,
+          "owner": 2,
+          "before_queue": [
+            [
+              1,
+              12
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 69,
+            "stock": 214,
+            "key": 121,
+            "incumbent": 12,
+            "flag": 0,
+            "rank_min": 4,
+            "rank_max": 4,
+            "own_city_count": 7,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 28,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 69,
+            "stock": 0,
+            "key": 121,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 31,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435522,
+          "ai_city_id": 536870912,
+          "owner": 2,
+          "before_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 25,
+            "stock": 67,
+            "key": 75,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 1,
+            "own_city_count": 7,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 83,
+            "build_rounds_pass": false,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 25,
+            "stock": 0,
+            "key": 75,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 2,
+            "rank_max": 2,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 86,
+            "build_rounds_pass": false,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ]
+    },
+    {
+      "civ_id": 3,
+      "civ_name": "Sennacherib / Assyrians",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        8,
+        8
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x1488758c",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x1488758c",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [],
+      "changed_queue_types": [
+        {
+          "handle": 268435514,
+          "ai_city_id": 3221225472,
+          "owner": 3,
+          "before_queue": [
+            [
+              1,
+              10
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 42,
+            "stock": 164,
+            "key": 93,
+            "incumbent": 10,
+            "flag": 0,
+            "rank_min": 3,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 47,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 43,
+            "stock": 0,
+            "key": 93,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 3,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 50,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435579,
+          "ai_city_id": 3758096384,
+          "owner": 3,
+          "before_queue": [
+            [
+              1,
+              10
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "before": {
+            "production": 42,
+            "stock": 152,
+            "key": 83,
+            "incumbent": 10,
+            "flag": 0,
+            "rank_min": 2,
+            "rank_max": 2,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 47,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 76,
+            "stock": 0,
+            "key": 83,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 2,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 28,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435529,
+          "ai_city_id": 2684354560,
+          "owner": 3,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "before": {
+            "production": 60,
+            "stock": 484,
+            "key": 65,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 1,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 27,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 60,
+            "stock": 0,
+            "key": 65,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 0,
+            "rank_max": 0,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 36,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435528,
+          "ai_city_id": 536870912,
+          "owner": 3,
+          "before_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              10
+            ]
+          ],
+          "before": {
+            "production": 42,
+            "stock": 82,
+            "key": 93,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 3,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 49,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 42,
+            "stock": 0,
+            "key": 93,
+            "incumbent": 10,
+            "flag": 0,
+            "rank_min": 3,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 51,
+            "build_rounds_pass": false,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ]
+    },
+    {
+      "civ_id": 4,
+      "civ_name": "Elizabeth II / Jamaicans",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        7,
+        7
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14aba2bc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14aba2bc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [],
+      "changed_queue_types": []
+    },
+    {
+      "civ_id": 5,
+      "civ_name": "Isabella / Spaniards",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        8,
+        8
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14b5562c",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14b5562c",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [
+        {
+          "handle": 268435476,
+          "ai_city_id": 2147483648,
+          "owner": 5,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              14
+            ]
+          ],
+          "before": {
+            "production": 94,
+            "stock": 512,
+            "key": 125,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 7,
+            "rank_max": 7,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": true,
+            "ai_build_rounds": 17,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 94,
+            "stock": 0,
+            "key": 150,
+            "incumbent": 14,
+            "flag": 0,
+            "rank_min": 6,
+            "rank_max": 7,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+            "stored_production_exception": false,
+            "ai_build_rounds": 22,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ],
+      "changed_queue_types": [
+        {
+          "handle": 268435476,
+          "ai_city_id": 2147483648,
+          "owner": 5,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              14
+            ]
+          ],
+          "before": {
+            "production": 94,
+            "stock": 512,
+            "key": 125,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 7,
+            "rank_max": 7,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": true,
+            "ai_build_rounds": 17,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 94,
+            "stock": 0,
+            "key": 150,
+            "incumbent": 14,
+            "flag": 0,
+            "rank_min": 6,
+            "rank_max": 7,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+            "stored_production_exception": false,
+            "ai_build_rounds": 22,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435477,
+          "ai_city_id": 1073741824,
+          "owner": 5,
+          "before_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 85,
+            "stock": 103,
+            "key": 116,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 6,
+            "rank_max": 6,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 24,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 85,
+            "stock": 0,
+            "key": 140,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 4,
+            "rank_max": 5,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 25,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435565,
+          "ai_city_id": 1610612736,
+          "owner": 5,
+          "before_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "before": {
+            "production": 25,
+            "stock": 125,
+            "key": 62,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 2,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 81,
+            "build_rounds_pass": false,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 25,
+            "stock": 0,
+            "key": 75,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 2,
+            "own_city_count": 8,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 86,
+            "build_rounds_pass": false,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ]
+    },
+    {
+      "civ_id": 6,
+      "civ_name": "Mao Tse-Tung / Chinese",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        6,
+        6
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14cd50c4",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14cd50c4",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [],
+      "changed_queue_types": []
+    },
+    {
+      "civ_id": 7,
+      "civ_name": "Mohandas Gandhi / Indians",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        5,
+        6
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14e8ba54",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14e8ba54",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [
+        {
+          "handle": 268435523,
+          "ai_city_id": 3221225472,
+          "owner": 7,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "before": {
+            "production": 43,
+            "stock": 500,
+            "key": 93,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 2,
+            "rank_max": 2,
+            "own_city_count": 5,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": true,
+            "ai_build_rounds": 38,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 43,
+            "stock": 0,
+            "key": 56,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 1,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 50,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ],
+      "changed_queue_types": [
+        {
+          "handle": 268435523,
+          "ai_city_id": 3221225472,
+          "owner": 7,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              0
+            ]
+          ],
+          "before": {
+            "production": 43,
+            "stock": 500,
+            "key": 93,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 2,
+            "rank_max": 2,
+            "own_city_count": 5,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": true,
+            "ai_build_rounds": 38,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 43,
+            "stock": 0,
+            "key": 56,
+            "incumbent": 0,
+            "flag": 0,
+            "rank_min": 1,
+            "rank_max": 1,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 50,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        },
+        {
+          "handle": 268435489,
+          "ai_city_id": 1073741824,
+          "owner": 7,
+          "before_queue": [
+            [
+              1,
+              4
+            ]
+          ],
+          "after_queue": [
+            [
+              3,
+              2
+            ]
+          ],
+          "before": {
+            "production": 85,
+            "stock": 432,
+            "key": 131,
+            "incumbent": 4,
+            "flag": 0,
+            "rank_min": 3,
+            "rank_max": 3,
+            "own_city_count": 5,
+            "rank_denominator": "N",
+            "rank_threshold_pass": false,
+            "stored_production_exception": false,
+            "ai_build_rounds": 20,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": false,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 85,
+            "stock": 0,
+            "key": 131,
+            "incumbent": 2,
+            "flag": 0,
+            "rank_min": 4,
+            "rank_max": 5,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": "UNKNOWN_TIE_AT_THRESHOLD",
+            "stored_production_exception": false,
+            "ai_build_rounds": 25,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": "UNKNOWN_TIE_AT_THRESHOLD",
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ]
+    },
+    {
+      "civ_id": 8,
+      "civ_name": "Maria II / Portuguese",
+      "native_rounds": [
+        25,
+        26
+      ],
+      "city_counts": [
+        6,
+        6
+      ],
+      "before_labyrinth": 0,
+      "after_labyrinth": 0,
+      "all_old_handles_preserved": true,
+      "chance_before": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14ff51bc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "chance_after": {
+        "ai_cost_double": 2160.0,
+        "ai_wonder_state": 1,
+        "ai_wonder_record": "0x14ff51bc",
+        "threshold": 0.800000011920929,
+        "maxrounds": 50,
+        "engine_wonder_record_cost_raw": 2160,
+        "deity_queue_cost": "UNKNOWN",
+        "admission": "UNKNOWN",
+        "one_builder_guaranteed": false
+      },
+      "future_candidates": [
+        {
+          "handle": 268435479,
+          "ai_city_id": 1073741824,
+          "owner": 8,
+          "before_queue": [
+            [
+              1,
+              5
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 93,
+            "stock": 133,
+            "key": 150,
+            "incumbent": 5,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 5,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": false,
+            "ai_build_rounds": 21,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 52,
+            "stock": 0,
+            "key": 150,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 5,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": false,
+            "ai_build_rounds": 41,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ],
+      "changed_queue_types": [
+        {
+          "handle": 268435479,
+          "ai_city_id": 1073741824,
+          "owner": 8,
+          "before_queue": [
+            [
+              1,
+              5
+            ]
+          ],
+          "after_queue": [
+            [
+              1,
+              8
+            ]
+          ],
+          "before": {
+            "production": 93,
+            "stock": 133,
+            "key": 150,
+            "incumbent": 5,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 5,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": false,
+            "ai_build_rounds": 21,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          },
+          "after": {
+            "production": 52,
+            "stock": 0,
+            "key": 150,
+            "incumbent": 8,
+            "flag": 0,
+            "rank_min": 5,
+            "rank_max": 5,
+            "own_city_count": 6,
+            "rank_denominator": "N",
+            "rank_threshold_pass": true,
+            "stored_production_exception": false,
+            "ai_build_rounds": 41,
+            "build_rounds_pass": true,
+            "cache_free_now": false,
+            "ai_predicates_now": false,
+            "production_rank_buildtime_possible_after_normal_queue": true,
+            "future_cache_release": "UNKNOWN",
+            "engine_admission": "UNKNOWN",
+            "real_queue_empty_now": false,
+            "native_owner_handle_reused": true
+          }
+        }
+      ]
+    }
+  ],
+  "new_labyrinth_queue_proven": false,
+  "city_status_corroboration": "NOT_APPLICABLE_NO_NEW_LABYRINTH",
+  "scheduler_timing_competition_admission_distinguished": false,
+  "full_doel4_complete": false
+}

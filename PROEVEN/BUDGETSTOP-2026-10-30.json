@@ -1,0 +1,29 @@
+{
+  "reported_at_utc": "2026-10-30T12:53:33.230Z",
+  "checked_at_utc": "2026-10-30T12:53:40.995809+00:00",
+  "state": "stop",
+  "stop_reason": "five_hour",
+  "five_hour_remaining_percent": 2,
+  "weekly_remaining_percent": 54,
+  "reset_at_unix": 1793376180,
+  "work_stopped": true,
+  "agents_terminal_confirmed": true,
+  "pc_left_on": true,
+  "goal_complete": false,
+  "consecutive_blocking_goal_turns": 3,
+  "current_goal_turn": "no progress: third consecutive goal turn with fresh same five-hour stop; goal marked blocked",
+  "next_step": "After fresh confirmed reset: finish/review finite completion helper, after-N validation inclN21, compact offline checks; then adequately budgeted same-save maximum21n completion proof. No new weights or reader fields.",
+  "previous_goal_turn": "no progress: same five-hour budget stop freshly confirmed, second consecutive blocking goal turn; no project work",
+  "goal_status": "blocked",
+  "resolution": {
+    "state": "RESUMED_AFTER_FRESH_RESET",
+    "reported_at_utc": "2026-11-02T16:28:28.470Z",
+    "checked_at_utc": "2026-11-02T16:28:33.235727+00:00",
+    "five_hour_remaining_percent": 100,
+    "weekly_remaining_percent": 53,
+    "new_reset_at_unix": 1793654907,
+    "blocking_audit_closed": true,
+    "goal_status_confirmed": "active",
+    "pc_left_on": true
+  }
+}

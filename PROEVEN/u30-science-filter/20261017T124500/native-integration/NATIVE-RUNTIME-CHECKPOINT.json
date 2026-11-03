@@ -1,0 +1,136 @@
+{
+  "stage": "COMPILED_NOT_EXECUTED",
+  "checked_at_utc": "2026-10-17T19:54:19.233022+00:00",
+  "source_checkpoint_sha256": "165369aac4b1690b8fd8a2729becdde786ac19a3016684595a3e431edeca7147",
+  "candidate_sha256": "0ebafb11e08bc7dca74291dd8a8e9ea94441af09602ae2d94710217f19eabad9",
+  "manifest_sha256": "9b518945a76cd0369a781de5b8f63be5fc7df963050cb04567a3fa6f6afa58ad",
+  "compiled_assembly_sha256": "b834b1fa5a276d81734f7c52bc670d4c55becd7da426a4bba7be9bde34e2c147",
+  "helper_bins": 8,
+  "files": [
+    {
+      "path": "BRONREVIEW.md",
+      "size": 5783,
+      "sha256": "33307088a8bf040b943258b0d4735956d8609bb8ab76a5be24b4eaf3eef0c36d"
+    },
+    {
+      "path": "compile-helper.ps1",
+      "size": 464,
+      "sha256": "fdbe59d2bff533b937a29617c91667c62f877e42873ad722a6d324c92e70ca82"
+    },
+    {
+      "path": "helper/combine.bin",
+      "size": 31,
+      "sha256": "aaff51d954b6dfb1bf7314a5aa1336eb655fa560f43319a463ac694813240b97"
+    },
+    {
+      "path": "helper/combine.recipe.json",
+      "size": 1020,
+      "sha256": "3afff7a37241493cf0ba87e2f8fba0e8f8d556131a39007ab1d247642c481958"
+    },
+    {
+      "path": "helper/endpoint.bin",
+      "size": 41,
+      "sha256": "b51918da4a75b5707a386c088292d14501f2dfd093e2ef88b96de22fa8e74214"
+    },
+    {
+      "path": "helper/endpoint.recipe.json",
+      "size": 1426,
+      "sha256": "a7f3f06ca7f5e3f84386a8e1a5697e51bc1c83dbe2c94e9f434fbded546592fd"
+    },
+    {
+      "path": "helper/gate.bin",
+      "size": 142,
+      "sha256": "7028e3f7b78cf3996995ae669828856a31833018b2d8ffb8482d7ff4c7b4660d"
+    },
+    {
+      "path": "helper/gate.recipe.json",
+      "size": 3378,
+      "sha256": "8ac549822bbb9a7300bfdedabd0f5ea6adcbdda906ccb843028f85cded34de45"
+    },
+    {
+      "path": "helper/h3.bin",
+      "size": 219,
+      "sha256": "0bf688e29b0d649d77545d8baf5d67488e4827ea72b7f1a145331a5af0a0b194"
+    },
+    {
+      "path": "helper/h3.recipe.json",
+      "size": 4442,
+      "sha256": "c7de9fde288ef2d72740703fbe5955d055fea6ee973c475d45a07a3546621865"
+    },
+    {
+      "path": "helper/key.bin",
+      "size": 119,
+      "sha256": "3f5dbc54c9627ea8b500c962b83f82b67d02d98da34afe2e3d2d5a8b62a98fb4"
+    },
+    {
+      "path": "helper/key.recipe.json",
+      "size": 2849,
+      "sha256": "b60f97e5e576a92e463ca0bc5b8024d33581e2c7c99c2df804520aa4372f7466"
+    },
+    {
+      "path": "helper/path.bin",
+      "size": 41,
+      "sha256": "dfbc990cbd8bea00f43c75a9681e643f76ccd943454ca642a9a996ca47363040"
+    },
+    {
+      "path": "helper/path.recipe.json",
+      "size": 1426,
+      "sha256": "6555e07857426f74cafbfef4de0b7f35eda19baadd33626d01cd9665cfadfe6e"
+    },
+    {
+      "path": "helper/science.bin",
+      "size": 234,
+      "sha256": "40e3aa75bcd2cb47228eb186e24e756ab1688f46e4b56fc1078efe49ae3d21af"
+    },
+    {
+      "path": "helper/science.recipe.json",
+      "size": 4669,
+      "sha256": "db9a40e1dd6ee90d1ecee38b5e5163fc4388adb16494ed2458e83df357a09be9"
+    },
+    {
+      "path": "helper/score.bin",
+      "size": 63,
+      "sha256": "1011e74f8c235f64e52a68920730073782714ca6b162151d79729aef7a1a8e61"
+    },
+    {
+      "path": "helper/score.recipe.json",
+      "size": 1752,
+      "sha256": "ac9b3c7806f5c0d0f1c838fdce4cec18cf7be30052afc2e8117bc2d1f1ad7289"
+    },
+    {
+      "path": "INPUT-CHECKPOINT.json",
+      "size": 449,
+      "sha256": "aafd3f1cf835b6a62f8ce98b8fad48805ffff7d6c19f8fa6dec8948453429fcc"
+    },
+    {
+      "path": "native-caller.ps1",
+      "size": 792,
+      "sha256": "ef9d499c239798f546fe20bd2b412400de32f9fed13ebaced5fdc777c44d7850"
+    },
+    {
+      "path": "NativeCaller.cs",
+      "size": 13854,
+      "sha256": "7f16ba7f51685f26f6521c0332c6ed30e150e5b224f4f84a642bbc3d72792436"
+    },
+    {
+      "path": "NativeCaller.dll",
+      "size": 18432,
+      "sha256": "b834b1fa5a276d81734f7c52bc670d4c55becd7da426a4bba7be9bde34e2c147"
+    },
+    {
+      "path": "prepare_fixtures.py",
+      "size": 3830,
+      "sha256": "5636cfc0a1e1e513e5a28ce466368f0a0d9adcb15bf827ed34a235a54f6ef329"
+    },
+    {
+      "path": "run-caller.py",
+      "size": 3409,
+      "sha256": "1ec6995a2e35f624705db632f39c49fa124324f40e85bf8e396864d9e8777aac"
+    },
+    {
+      "path": "SOURCE-CHECKPOINT.json",
+      "size": 2977,
+      "sha256": "165369aac4b1690b8fd8a2729becdde786ac19a3016684595a3e431edeca7147"
+    }
+  ]
+}

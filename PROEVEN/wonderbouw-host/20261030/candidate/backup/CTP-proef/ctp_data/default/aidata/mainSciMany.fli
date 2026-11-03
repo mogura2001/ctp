@@ -1,0 +1,29 @@
+
+// aha! you discovered the secret, secret AI rules.  The rules are all in text.
+ 
+// The rules are loaded by the standard AI dll at runtime.  This AI works by 
+// calculating the cost and benifit of the various actions it can take.   Then it
+// does the action that it thinks costs the least and gets the most benifit.
+// The fli rules set coefficients in the cost/benifit calculations
+// changing what the AI thinks is 'good'.
+
+// Activsion is not resposible for anything that results from
+// altering these or any other files, data or system, or from using
+// non-standard non-Activision issued files.
+
+// Not even if your computer explodes into a smoking pile of scorched plastic
+
+//														tweaker 7/15/98
+
+//run once at load time
+#include "init.fli" 
+
+// run at the begining of a turn
+#include "beginturnSciMany.fli"
+
+// run per diplomatic message
+#include "diplomacypeaceloyal.fli"
+
+//run at the end of a turn 
+#include "endturn.fli"
+

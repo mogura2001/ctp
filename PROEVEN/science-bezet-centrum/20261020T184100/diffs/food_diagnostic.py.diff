@@ -1,0 +1,88 @@
+--- PROEVEN\science-foodreader-diagnostiek\20261019T194200\food_diagnostic.py
++++ PROEVEN\science-bezet-centrum\20261020T184100\food_diagnostic.py
+@@ -4,7 +4,7 @@
+ logging load, callback, host allocation or policy change is introduced.
+ """
+ from x86 import mem as m
+-from food_diagnostic_layout import FIELDS,BRANCHES,FRAME_SIZE,STAGING,ACTIVE,PLAN_SPILL,RECORD_OFFSET,RECORD_SIZE
++from food_diagnostic_layout import FIELDS,BRANCHES,FRAME_SIZE,STAGING,ACTIVE,PLAN_SPILL,RETURN_SPILL,RECORD_OFFSET,RECORD_SIZE
+ 
+ class FoodStage:
+  """Finite stores for this one record; source operands are regs/own locals."""
+@@ -35,7 +35,7 @@
+  def pointer_before(self,parent,offset):self.capture(('pointer_parent',parent),('pointer_offset',offset))
+  def pointer_after(self,value):self.capture(('pointer_value',value))
+  def initialize(self):
+-  r=self.r;self.begin();r.mov(m('ebp',ACTIVE),0);r.mov(m('ebp',PLAN_SPILL),0)
++  r=self.r;self.begin();r.mov(m('ebp',ACTIVE),0);r.mov(m('ebp',PLAN_SPILL),0);r.mov(m('ebp',RETURN_SPILL),0)
+   r.lea('edi',m('ebp',STAGING));r.zero('edi',RECORD_SIZE)
+   r.j('call','food_binding_pc');r.label('food_binding_pc');r.pop('esi');r.rva('sub esi,own diagnostic PC','81ee',r.name('food_binding_pc'))
+   r.rva('lea edi,own Plan','8dbe',self.context['plan'])
+@@ -70,6 +70,45 @@
+   self.bit(0);self.bit(1)
+   r.label('food_binding_done');self.end()
+   self.capture(('world',m('ebp',8)),('outpointer',m('ebp',20)),('bindingpointer',m('ebp',16)),('native_called',0))
++ def occupied_return(self):
++  """Fresh per-call validation AFTER out40 wipe; historical latch never read.
++
++  Only Plan-owned addresses/staged operands and this invocation's arguments
++  are read. No new foreign cell/unit/engine load, callback or x87 instruction.
++  PUSHFD/PUSHAD protects the original failure epilogue flags/GPR state.
++  """
++  r=self.r;self.begin();r.mov(m('ebp',RETURN_SPILL),0)
++  for off,value in ((ACTIVE,1),(STAGING,1),(STAGING+8,10),(STAGING+12,1),(STAGING+80,0),(STAGING+168,0),(24,1)):
++   r.alu('cmp',m('ebp',off),value);r.j('jne','food_occupied_done')
++  r.alu('cmp',m('ebp',STAGING+88),0);r.j('jle','food_occupied_done')
++  # Require already reached identity/position, city/army/count and arguments.
++  mask=sum(1<<i for i in (0,1,7,8,9,10,29))
++  r.mov('eax',m('ebp',STAGING+32));r.alu('and','eax',mask);r.alu('cmp','eax',mask);r.j('jne','food_occupied_done')
++  r.mov('eax',m('ebp',STAGING+36));r.alu('and','eax',(1<<8)|(1<<9));r.alu('cmp','eax',(1<<8)|(1<<9));r.j('jne','food_occupied_done')
++  # Independently derive the image-relative Plan, not a staged arbitrary ptr.
++  r.j('call','food_occupied_pc');r.label('food_occupied_pc');r.pop('esi');r.rva('sub esi,own occupied PC','81ee',r.name('food_occupied_pc'))
++  r.rva('lea edi,own Plan for occupied return','8dbe',self.context['plan'])
++  r.alu('cmp','edi',m('ebp',PLAN_SPILL));r.j('jne','food_occupied_done')
++  for off in (36,40):r.alu('cmp',m('edi',off),1);r.j('jne','food_occupied_done')
++  for state,stage in ((8,16),(32,20),(0x78800,16),(0x78804,20)):
++   r.mov('eax',m('ebp',STAGING+stage));r.test('eax','eax');r.j('jz','food_occupied_done');r.alu('cmp','eax',m('edi',state));r.j('jne','food_occupied_done')
++  r.mov('ecx',m('edi',220));r.alu('cmp','ecx',1);r.j('jb','food_occupied_done');r.alu('cmp','ecx',64);r.j('ja','food_occupied_done')
++  r.alu('cmp','ecx',m('edi',240));r.j('jne','food_occupied_done')
++  r.mov('ebx',m('edi',224));r.alu('cmp','ebx',64);r.j('ja','food_occupied_done');r.alu('cmp','ecx','ebx');r.j('ja','food_occupied_done')
++  r.unary('dec','ecx');r.alu('cmp','ecx',m('ebp',STAGING+24));r.j('jne','food_occupied_done')
++  r.mov('eax',m('edi',256));r.alu('cmp','eax',1);r.j('jb','food_occupied_done');r.alu('cmp','eax',1344);r.j('ja','food_occupied_done');r.alu('cmp','eax',m('ebp',STAGING+28));r.j('jne','food_occupied_done')
++  r.rva('lea ebx,actual SCI center return','8d9e',self.context['center_return']);r.alu('cmp','ebx',m('ebp',4));r.j('jne','food_occupied_done')
++  r.lea('ebx',m('edi',144));r.alu('cmp','ebx',m('ebp',16));r.j('jne','food_occupied_done');r.alu('cmp','ebx',m('ebp',STAGING+224));r.j('jne','food_occupied_done')
++  r.mov('ebx',m('edi',112));r.alu('cmp','ebx',m('ebp',8));r.j('jne','food_occupied_done');r.alu('cmp','ebx',m('ebp',STAGING+60));r.j('jne','food_occupied_done')
++  r.mov('ebx',m('ebp'));r.lea('ebx',m('ebx',-184));r.alu('cmp','ebx',m('ebp',20));r.j('jne','food_occupied_done');r.alu('cmp','ebx',m('ebp',STAGING+220));r.j('jne','food_occupied_done')
++  r.imul('ebx','ecx',4);r.alu('add','ebx','edi');r.mov('ebx',m('ebx',0x526a0))
++  r.alu('cmp',m('edi',68),4096);r.j('ja','food_occupied_done');r.alu('cmp','ebx',m('edi',68));r.j('jae','food_occupied_done')
++  r.imul('ebx','ebx',8);r.alu('add','ebx','edi');r.alu('add','ebx',0x200);r.alu('cmp','ebx',m('ebp',12));r.j('jne','food_occupied_done')
++  # Three signed16 coordinates; fourth word is intentionally NOT a key.
++  for off in (0,2,4):
++   r.load('eax',m('ebx',off),'sx16');r.load('edx',m('ebp',STAGING+40+off),'sx16');r.alu('cmp','eax','edx');r.j('jne','food_occupied_done')
++  r.mov(m('ebp',RETURN_SPILL),2)
++  r.label('food_occupied_done');self.end()
+  def failures_and_publish(self):
+   r=self.r
+   assert sorted(self.ids)==list(range(1,38)),self.ids
+@@ -77,7 +116,11 @@
+    r.label('food_failure_'+str(branch));self.begin()
+    r.mov('eax',m('esp',32));r.mov(m('ebp',STAGING+208),'eax');self.bit(37);r.mov(m('ebp',STAGING+8),branch)
+    r.j('call','food_publish');self.end();r.label('food_failure_'+str(branch)+'_restored');r.j('jmp','food_bad')
+-  r.label('food_publish');r.alu('cmp',m('ebp',ACTIVE),1);r.j('jne','food_publish_done');r.mov('edi',m('ebp',PLAN_SPILL))
++  r.label('food_publish');r.alu('cmp',m('ebp',ACTIVE),1);r.j('jne','food_publish_done')
++  # Do not dereference a corrupted local Plan spill, even for diagnostics.
++  # Caller already saved GPR/EFLAGS around this publication subroutine.
++  r.j('call','food_publish_pc');r.label('food_publish_pc');r.pop('esi');r.rva('sub esi,own publish PC','81ee',r.name('food_publish_pc'))
++  r.rva('lea edi,own Plan before publish','8dbe',self.context['plan']);r.alu('cmp','edi',m('ebp',PLAN_SPILL));r.j('jne','food_publish_done')
+   r.alu('cmp',m('edi',36),1);r.j('jne','food_publish_done');r.alu('cmp',m('edi',40),1);r.j('jne','food_publish_done')
+   for state,stage in ((8,16),(32,20),(0x78800,16),(0x78804,20)):
+    r.mov('eax',m('ebp',STAGING+stage));r.alu('cmp','eax',m('edi',state));r.j('jne','food_publish_done')
+@@ -134,7 +177,7 @@
+  r.mov('eax',m('ecx'));r.op('cdq',b'\x99');r.mov(m('edi',24),'eax');r.mov(m('edi',28),'edx');d.capture(('bonus','eax'),*d.pair('center_before'),('addend_stage',6));r.alu('add',m('ebp',-40),'eax');r.alu('adc',m('ebp',-36),'edx');d.capture(*d.pair('center_after'));d.edge('jo',35,m('ebp',-40),m('ebp',-36))
+  r.mov('eax',m('ebp',-40));r.alu('cmp',m('ebp',-36),0);d.edge('jne',36,'eax',m('ebp',-36));r.test('eax','eax');d.edge('js',37,'eax',m('ebp',-36))
+  r.label('food_success');r.mov(m('edi'),1);r.mov('eax',1);r.j('jmp','food_done')
+- r.label('food_bad');r.zero(m('ebp',20),40);r.mov('eax',0)
++ r.label('food_bad');r.zero(m('ebp',20),40);d.occupied_return();r.mov('eax',m('ebp',RETURN_SPILL))
+  r.label('food_done');r.epilogue(FRAME_SIZE,20)
+  d.failures_and_publish()
+ 

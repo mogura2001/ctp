@@ -1,0 +1,28 @@
+--- PROEVEN\selectie-pad-host\20261021\host1\Start-Monitored.ps1
++++ PROEVEN\science-duur-host\20261021\host1\Start-Monitored.ps1
+@@ -9,7 +9,7 @@
+ if(@(Get-Process civctp -ErrorAction SilentlyContinue).Count -ne 0){throw 'Game already running'}
+ if(@(Get-CimInstance Win32_LogicalDisk|Where-Object {$_.DriveType -eq 5 -and $_.VolumeName -eq 'CCTP'}).Count -ne 1){throw 'CD unavailable'}
+ $gate=Get-Content "$armDir/gate.json" -Raw|ConvertFrom-Json
+-if(-not $gate.allowed -or $gate.arm -ne 'host1' -or $gate.max_n -ne 1){throw 'Wrong host gate'}
++if(-not $gate.allowed -or $gate.arm -ne 'host1' -or $gate.max_n -ne 26){throw 'Wrong host gate'}
+ foreach($pin in $gate.sources){if((Get-FileHash -LiteralPath (Join-Path $workspace $pin.path)).Hash.ToLower() -ne $pin.sha256){throw "Changed source $($pin.path)"}}
+ $before=Get-Content "$armDir/before.json" -Raw|ConvertFrom-Json
+ foreach($file in @($before.protected)+@($before.extra_preserved_files)){if((Get-FileHash -LiteralPath $file.path).Hash.ToLower() -ne $file.sha256){throw "Changed $($file.path)"}}
+@@ -29,14 +29,14 @@
+ $probePid=$probeProcess.Id
+ $exe=$probeProcess.Path
+ if($exe -cne 'C:\GIT\ctp\CTP-proef\ctp_program\ctp\civctp.exe'){throw 'Wrong executable'}
+-@{pid=$probePid;creation_utc_ms=$creationMs;path=$exe;start_utc=$startedUtc.ToString('o');max_n=1;n_consumed=0}|ConvertTo-Json|Set-Content "$armDir/start.json"
++@{pid=$probePid;creation_utc_ms=$creationMs;path=$exe;start_utc=$startedUtc.ToString('o');max_n=26;n_consumed=0}|ConvertTo-Json|Set-Content "$armDir/start.json"
+ while($probeProcess.MainWindowHandle -eq 0){
+  if(([DateTime]::UtcNow-$startedUtc).TotalSeconds -ge 15){throw 'No initial window'}
+  Start-Sleep -Milliseconds 250
+  $probeProcess.Refresh()
+ }
+ $window=[long]$probeProcess.MainWindowHandle
+-@{pid=$probePid;creation_utc_ms=$creationMs;path=$exe;start_utc=$startedUtc.ToString('o');max_n=1;n_consumed=0}|ConvertTo-Json|Set-Content "$armDir/start.json"
++@{pid=$probePid;creation_utc_ms=$creationMs;path=$exe;start_utc=$startedUtc.ToString('o');max_n=26;n_consumed=0}|ConvertTo-Json|Set-Content "$armDir/start.json"
+ @{pid=$probePid;creation_utc_ms=$creationMs;window=$window}|ConvertTo-Json|Set-Content "$armDir/window.json"
+ Write-Output "INTRO_MONITOR_STARTED pid=$probePid creation=$creationMs window=$window"
+ foreach($target in @(45,90,135,180)){

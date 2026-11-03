@@ -1,0 +1,12 @@
+/////////////////////////////////////////////////////////////////////////////// // cleric_on.aip
+//  
+//  cleric_on.aip
+//  
+// Specifies the behavior of the Strategic Combat system for Civ  
+///////////////////////////////////////////////////////////////////////////////  
+#include "aipdef.h"
+#define MAX_EVAL_CONVERT_CITY_GOALS -35 
+#define MAX_EVAL_CAUSE_UNHAPPINESS_GOALS -35 
+   
+#define MAX_EXEC_CONVERT_CITY_GOALS -5 
+#define MAX_EXEC_CAUSE_UNHAPPINESS_GOALS -5 

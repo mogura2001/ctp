@@ -1,0 +1,87 @@
+--- PROEVEN/science-bezet-centrum/20261020T184100/native/NativeFoodCaller.cs
++++ PROEVEN/science-bezet-centrum/20261020T184100/native-v2/NativeFoodCaller.cs
+@@ -11,6 +11,8 @@
+  static readonly List<IntPtr> owned=new List<IntPtr>();static readonly List<string> passes=new List<string>();
+  static Dictionary<string,int> labels;static string root,pack;static IntPtr image,plan,ctx,shimctx,stage,world,stubstate,engine,grid,zarray,xarray,yarray,cell,db,records,good,bonus,output,normal,army,modelOutput,modelProbe,consumerObserver;
+  static byte[] centerContinuation,tileContinuation;
++ static byte[] originalRX;static bool restoredImage;
++ static int validator2,validator0;
+  static int extension,stateRva,stateSize,imageSize,imageRX,imageRXSize,normalContinuation,cases;static Shim shim;
+  const int Canary=0x5aa55aa5;
+  static IntPtr A(IntPtr p,int off){return new IntPtr(unchecked(p.ToInt32()+off));}
+@@ -34,6 +36,16 @@
+  static IntPtr Entry(string name){return A(image,extension+labels[name]);}
+  static void Jump(IntPtr at,IntPtr target){Marshal.WriteByte(at,0xe9);W(at,1,unchecked(target.ToInt32()-at.ToInt32()-5));}
+  static void JumpSix(IntPtr at,IntPtr target){Check((Marshal.ReadByte(at)==0x81&&Marshal.ReadByte(at,1)==0xf8)||(Marshal.ReadByte(at)==0x8b&&Marshal.ReadByte(at,1)==0x85),"whole known six-byte cmp/load boundary");Jump(at,target);Marshal.WriteByte(at,5,0x90);}
++ static byte[] HexBytes(string text,string field){Match m=Regex.Match(text,"\""+field+"\"\\s*:\\s*\"([0-9a-f]+)\"");Check(m.Success,"bound observer hex "+field);string s=m.Groups[1].Value;byte[] b=new byte[s.Length/2];for(int i=0;i<b.Length;i++)b[i]=Convert.ToByte(s.Substring(i*2,2),16);return b;}
++ static void ValidatorObservers(){
++  string binding=File.ReadAllText(Path.Combine(pack,"fixture","validator-observer-binding.json"));
++  IntPtr begin=A(image,Number(binding,"validator_entry_rva")),end=A(image,Number(binding,"validator_exit_rva"));
++  int before=Number(binding,"entry_overwrite_size"),after=Number(binding,"exit_overwrite_size");Check(before==12&&after==6,"whole validator overwrite extents");
++  Check(Same(Read(begin,before),HexBytes(binding,"entry_original_hex"))&&Same(Read(end,after),HexBytes(binding,"exit_original_hex")),"exact untouched validator preimages");
++  W(ctx,0xa88,A(image,Number(binding,"entry_continue_rva")).ToInt32());W(ctx,0xa8c,A(image,Number(binding,"exit_continue_rva")).ToInt32());
++  Jump(begin,FixtureCode("validator_entry"));for(int i=5;i<before;i++)Marshal.WriteByte(begin,i,0x90);
++  Jump(end,FixtureCode("validator_exit"));Marshal.WriteByte(end,5,0x90);
++ }
+  static Shim MakeShim(){
+   string h=Path.Combine(root,"PROEVEN","production-h3","helper");byte[] b=File.ReadAllBytes(Path.Combine(h,"shim5.bin"));string json=File.ReadAllText(Path.Combine(h,"shim5.recipe.json"));
+   foreach(Match m in Regex.Matches(json,"\"at\"\\s*:\\s*(\\d+)\\s*,\\s*\"context_offset\"\\s*:\\s*(\\d+)"))Array.Copy(BitConverter.GetBytes(A(shimctx,Int32.Parse(m.Groups[2].Value)).ToInt32()),0,b,Int32.Parse(m.Groups[1].Value),4);
+@@ -58,7 +70,7 @@
+   imageSize=BitConverter.ToInt32(bytes,optional+56);image=Mem(imageSize+16);extension=HexNumber(manifest,"extension_rva");stateRva=HexNumber(manifest,"state_rva");stateSize=Number(manifest,"state_size");Check(stateSize==497668,"exact own state");
+   int rx=0,rxSize=0;bool found=false;
+   for(int i=0;i<count;i++){int at=section+40*i;if(Encoding.ASCII.GetString(bytes,at,8).TrimEnd('\0')!=".u40c")continue;Check(!found,"single own RX section");found=true;rx=BitConverter.ToInt32(bytes,at+12);rxSize=BitConverter.ToInt32(bytes,at+16);Marshal.Copy(bytes,BitConverter.ToInt32(bytes,at+20),A(image,rx),rxSize);}
+-  Check(found,"own code mapped");imageRX=rx;imageRXSize=rxSize;plan=A(image,stateRva);labels=new Dictionary<string,int>();Match table=Regex.Match(manifest,"\"labels\"\\s*:\\s*\\{([^}]+)\\}");Check(table.Success,"label table");
++  Check(found,"own code mapped");imageRX=rx;imageRXSize=rxSize;originalRX=Read(A(image,rx),rxSize);plan=A(image,stateRva);labels=new Dictionary<string,int>();Match table=Regex.Match(manifest,"\"labels\"\\s*:\\s*\\{([^}]+)\\}");Check(table.Success,"label table");
+   foreach(Match m in Regex.Matches(table.Groups[1].Value,"\"([^\"]+)\"\\s*:\\s*(-?\\d+)"))labels[m.Groups[1].Value]=Int32.Parse(m.Groups[2].Value);
+   Check(Entry("pass_state")==plan&&Entry("generation")==A(plan,0x79800),"PIC own Plan, not external scratch");
+   // Independent allocations: shim5 owns its ABI/x87 context; fixture wrappers
+@@ -72,6 +84,7 @@
+   JumpSix(Entry("sci_food_diag_center_return"),A(normal,normalContinuation));JumpSix(Entry("sci_food_diag_primary_return"),A(normal,normalContinuation));
+   string old=Path.Combine(root,"PROEVEN","production-h3","helper");IntPtr vt=Mem(0x200);W(world,0,vt.ToInt32());W(world,4,stubstate.ToInt32());W(vt,0xb8,Code(File.ReadAllBytes(Path.Combine(old,"food.bin"))).ToInt32());
+   W(plan,144+20,FixtureCode("convert_mutation").ToInt32());
++  ValidatorObservers();
+   Check(rx+rxSize<=stateRva-16,"prestate padding");for(int i=0;i<16;i+=4){W(plan,-16+i,Canary);W(plan,stateSize+i,Canary);}shim=MakeShim();
+  }
+  static void Reset(bool record){
+@@ -85,7 +98,10 @@
+  static byte[] Normal(bool clone,int kind,int returnKind=0){
+   if(returnKind==0)returnKind=kind;
+   W(ctx,32,Entry(returnKind==1?"sci_food_diag_center_return":"sci_food_diag_primary_return").ToInt32());W(ctx,36,Entry(clone?"sci_food_diag_reader":"food_reader").ToInt32());Clear(output,40);
++  Clear(A(ctx,0xa00),0x88);W(ctx,0xa90,-1);
+   int result=Invoke(normal,kind==1?A(plan,0x200):A(plan,0x54800+3*2048+136),kind==1?1:0);
++  if(clone&&result!=1){Check(R(ctx,0xa80)==1&&R(ctx,0xa84)==1,"one entry/exit of actual occupied validator");Check(Same(Read(A(ctx,0xa00),36),Read(A(ctx,0xa40),36)),"all volatile/nonvolatile GPR/ESP/EBP and complete PUSHFD flags preserved by validator");Check(R(ctx,0xa90)==result,"typed spill matches observed validator result");if(result==2)validator2++;else if(result==0)validator0++;else Check(false,"unexpected private return");}
++  else Check(R(ctx,0xa80)==0&&R(ctx,0xa84)==0,"success/shared skips private failure validator");
+   byte[] value=new byte[48];Array.Copy(BitConverter.GetBytes(result),0,value,0,4);Array.Copy(Read(output,40),0,value,4,40);Array.Copy(BitConverter.GetBytes(R(stubstate,20)),0,value,44,4);return value;
+  }
+  static void Occupied(int count){W(cell,16,army.ToInt32());W(army,48,count);}
+@@ -119,6 +135,7 @@
+  }
+  // Own image protection changes are finite, bound to mapped candidate bytes.
+  static void Writable(bool write){uint old;Check(VirtualProtect(A(image,imageRX),(UIntPtr)imageRXSize,write?4u:0x20u,out old),"own fixture RX protection; Plan remains RW");if(!write)Check(FlushInstructionCache(new IntPtr(-1),A(image,imageRX),(UIntPtr)imageRXSize),"own fixture instruction cache");}
++ static void RestoreImage(){if(originalRX==null||restoredImage)return;Writable(true);Marshal.Copy(originalRX,0,A(image,imageRX),originalRX.Length);Check(Same(Read(A(image,imageRX),imageRXSize),originalRX),"all original own-image RX windows restored exactly");Writable(false);restoredImage=true;}
+  static void ModelCases(){
+   Writable(true);Marshal.Copy(centerContinuation,0,Entry("sci_food_diag_center_return"),16);Marshal.Copy(tileContinuation,0,Entry("sci_food_diag_primary_return"),16);
+   JumpSix(Entry("science_center_food_consumer"),consumerObserver);JumpSix(Entry("science_tile_food_consumer"),consumerObserver);
+@@ -138,16 +155,17 @@
+   }
+  }
+  public static Dictionary<string,object> Run(string repository,string package,string candidateHash,string manifestHash){
+-  Check(IntPtr.Size==4,"x86 only");root=repository;pack=package;string gate=File.ReadAllText(Path.Combine(pack,"native","NATIVE-ROOT-REVIEW.json"));
++  Check(IntPtr.Size==4,"x86 only");root=repository;pack=package;string gate=File.ReadAllText(Path.Combine(pack,"native-v2","NATIVE-ROOT-REVIEW.json"));
+   Check(Regex.IsMatch(gate,"\"native_allowed\"\\s*:\\s*true")&&gate.Contains(candidateHash)&&gate.Contains(manifestHash),"new separate reviewed native release required");
+-  owned.Clear();passes.Clear();cases=0;
++  owned.Clear();passes.Clear();cases=0;validator2=0;validator0=0;originalRX=null;restoredImage=false;
+   try{
+    Load(candidateHash,manifestHash);
+-   Writable(false);ReaderCases();ModelCases();
++   Writable(false);ReaderCases();ModelCases();RestoreImage();
++   Check(cases==43&&validator2==2&&validator0==30,"finite43 calls and actual validator healthy2/failed0 observer coverage");
+    Check(Hash(File.ReadAllBytes(Path.Combine(pack,"U30-40.prepared.dll")))==candidateHash,"candidate disk unchanged");
+-   return new Dictionary<string,object>{{"scope","OWN_FIXTURE_ONLY_NOT_ENGINE_OR_GAMEPLAY"},{"calls",cases},{"passed",passes.ToArray()},{"synthetic_log_edges",0},{"natural_all37_guard_reachability_proven",false},{"gameplay_proven",false}};
++   return new Dictionary<string,object>{{"scope","OWN_FIXTURE_ONLY_NOT_ENGINE_OR_GAMEPLAY"},{"calls",cases},{"validator_return2_observed",validator2},{"validator_return0_observed",validator0},{"own_image_all_windows_restored",restoredImage},{"passed",passes.ToArray()},{"synthetic_log_edges",0},{"natural_all37_guard_reachability_proven",false},{"gameplay_proven",false}};
+   }finally{
+-   bool all=true;for(int i=owned.Count-1;i>=0;i--)all=VirtualFree(owned[i],UIntPtr.Zero,0x8000)&&all;owned.Clear();Console.WriteLine("cleanup="+all);Console.Out.Flush();Check(all,"all own allocations released");
++   RestoreImage();bool all=true;for(int i=owned.Count-1;i>=0;i--)all=VirtualFree(owned[i],UIntPtr.Zero,0x8000)&&all;owned.Clear();Console.WriteLine("cleanup="+all);Console.Out.Flush();Check(all,"all own allocations released");
+   }
+  }
+ }

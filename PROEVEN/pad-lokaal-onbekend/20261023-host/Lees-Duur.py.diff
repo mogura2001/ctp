@@ -1,0 +1,127 @@
+--- PROEVEN/uitbreiding-lang/20261022T122400/Lees-Duur.py
++++ PROEVEN/pad-lokaal-onbekend/20261023-host/Lees-Duur.py
+@@ -3,88 +3,35 @@
+ import sys
+ sys.dont_write_bytecode=True
+ OUTPUT_FOLDER=Path(__file__).resolve().parent
+-OLD_READER=OUTPUT_FOLDER.parents[1]/'selectie-pad-diagnose/20261020T192500/reader'
+-sys.path[:0]=[str(OUTPUT_FOLDER),str(OLD_READER)]
++ROOT=OUTPUT_FOLDER.parents[2]
++OLD_READER=ROOT/'PROEVEN/selectie-pad-diagnose/20261020T192500/reader'
++C1=ROOT/'PROEVEN/pad-lokaal-onbekend/20261022T180000'
++sys.path[:0]=[str(OUTPUT_FOLDER),str(C1/'reader'),str(C1),str(OLD_READER)]
+ from scope import admit,verify_pins
+ from original_core import *
+ import time
+ from h3_layout import HEADER, RESULT_SIZE, H2_RESULT_OFFSET, H2_ENTRY_OFFSET, H2_ENTRY_STRIDE, MAX_ENTRIES
+ 
+ BASE_HASH='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+-RUNTIME_PINS=json.loads((FOLDER/'runtime-pins.json').read_text('utf-8'))
++RUNTIME_PINS=json.loads((OUTPUT_FOLDER/'runtime-pins.json').read_text('utf-8'))
+ NEW_HASH=RUNTIME_PINS['candidate_sha256']
+ MANIFEST_HASH=RUNTIME_PINS['manifest_sha256']
+-sys.path.insert(0,str(FOLDER.parent))
++sys.path.append(str(FOLDER.parent)) # legacy scalar/food/selected layouts only
+ from plan_layout import COUNTERS,CONTEXT_ERROR,SCIENCE_BUDGET_EXHAUSTED
+ from positive_reader import selected_evidence
+ from partial_diagnostic import diagnose
+ from food_failure_decoder import decode_failure
++sys.path[:0]=[str(C1/'reader'),str(C1)] # legacy partial import prepends PACK
+ from path_failure_decoder import stable_record,decode_path
+ from path_diagnostic_layout import STATE_SIZE,RECORD_OFFSET,RECORD_SIZE
+ original_binding=trusted_binding
+ original_verify=verify_loaded
+ 
+-def trusted_binding(variant):
+-    pins=json.loads((FOLDER/'READER-PINS.json').read_text('utf-8'))
+-    for pin in pins['sources']:
+-        if hashlib.sha256((ROOT/pin['path']).read_bytes()).hexdigest()!=pin['sha256']:raise ValueError('Pinned diagnostic/provenance source changed: '+pin['path'])
+-    if not NEW_HASH or not MANIFEST_HASH or RUNTIME_PINS['state_rva'] is None:raise ValueError('Source-only reader has no reviewed candidate pins')
+-    binding=original_binding('original')
+-    if variant not in ('release-v1','U30-40'):raise ValueError('Only exact tested release or reviewed U30-40')
+-    import pefile
+-    mp=FOLDER.parent/'candidate-manifest.json'
+-    if hashlib.sha256(mp.read_bytes()).hexdigest()!=MANIFEST_HASH:raise ValueError('C1 manifest changed')
+-    manifest=json.loads(mp.read_text('utf-8'))
+-    cpbytes=(FOLDER.parent/'reader/candidate'/('variant' if variant=='U30-40' else 'baseline')/'CTP-proef/ctp_program/ctp/dll/ai/robotcom.dll').read_bytes()
+-    expected=NEW_HASH if variant=='U30-40' else BASE_HASH
+-    if hashlib.sha256(cpbytes).hexdigest()!=expected:raise ValueError('Exact staged AI changed')
+-    cp=pefile.PE(data=cpbytes);ep=pefile.PE(data=(ROOT/'CTP-og/ctp_program/ctp/civctp.exe').read_bytes())
+-    binding['variant']=variant
+-    binding['ai'].update(sha256=expected,size=cp.OPTIONAL_HEADER.SizeOfImage,header=cpbytes[:cp.OPTIONAL_HEADER.SizeOfHeaders].hex(),sections=[(s.VirtualAddress,s.Misc_VirtualSize,s.SizeOfRawData,s.Characteristics) for s in cp.sections])
+-    known=[(0xfe51,5)]
+-    if variant=='U30-40':known += [(int(r['rva'],16),len(bytes.fromhex(r['preimage']))) for r in json.loads((FOLDER.parent/'preparation-manifest.json').read_text())['windows']]
+-    for r in binding['ranges']:
+-        if r['module']=='ai':
+-            current=cp.get_data(r['rva'],r['length']);old=bytes.fromhex(r['expected_hex'])
+-            for i,(x,y) in enumerate(zip(current,old)):
+-                if x!=y and not any(start<=r['rva']+i<start+size for start,size in known):raise ValueError('Unexpected changed decoder byte')
+-            r['expected_hex']=current.hex()
+-    for rva in (0x74b60,0xc2180,0x128f20,0xc2ee3,0xb8660,0xb8a3d):
+-        raw=ep.get_data(rva,32);binding['ranges'].append(dict(module='engine',rva=rva,length=32,expected_hex=raw.hex(),kind='scalar-route-window'))
+-    for rva,length in [(0x345308,4),(0x133580,0x25),(0xbbd50,0x1c),(0xebdf0,0x73),(0x131940,0x1e),(0x3450b4,4),(0x542e0,0x30),(0x543b0,0x41),(0x660f0,0xd4),(0x131a50,0x21),(0x131770,0xf),(0x131dc0,0x1c),(0x131de0,0x1c),(0x132020,0x1c),(0x132040,0x1c)]:
+-        raw=ep.get_data(rva,length);binding['ranges'].append(dict(module='engine',rva=rva,length=length,expected_hex=raw.hex(),kind='loaded type-read binding'))
+-    for row in json.loads((FOLDER.parent/'science-spatial-pins.json').read_text('utf-8')):
+-        raw=ep.get_data(row['rva'],row['length'])
+-        if raw.hex()!=row['bytes']:raise ValueError('Frozen SCI spatial pin mismatch')
+-        binding['ranges'].append(dict(module='engine',rva=row['rva'],length=row['length'],expected_hex=raw.hex(),kind='SCI spatial/Improvement body'))
+-    for rva,length in [(0x11bc0,0x20),(0x1a970,0x10),(0x1a980,0x20),(0x1cd50,0x20),(0x655f0,0x2d0)]:
+-        raw=cp.get_data(rva,length);binding['ranges'].append(dict(module='ai',rva=rva,length=length,expected_hex=raw.hex(),kind='native getter/Actual binding'))
+-    payload=cp.get_data(0xd4000,4348)
+-    if hashlib.sha256(payload).hexdigest()!=manifest['b2_preserved']['payload_sha256']:raise ValueError('N30 payload differs')
+-    binding['ranges'].append(dict(module='ai',rva=0xd4000,length=4348,expected_hex=payload.hex(),kind='PIC-payload'))
+-    for rva in (0x413da,0x3625b,0xfe2d,0xfe51,0x61f0):binding['sites'].append(dict(rva=rva,expected_hex=cp.get_data(rva,5).hex()))
+-    if variant=='U30-40':
+-        for row in json.loads((FOLDER.parent/'preparation-manifest.json').read_text())['windows']:
+-            rva=int(row['rva'],16);raw=cp.get_data(rva,len(bytes.fromhex(row['preimage'])))
+-            if row['name']=='execute_slot':binding['ranges'].append(dict(module='ai',rva=rva,length=4,expected_hex=raw.hex(),kind='vtable'))
+-            else:binding['sites'].append(dict(rva=rva,expected_hex=raw.hex()))
+-        section=cp.sections[-2]
+-        raw=cp.get_data(section.VirtualAddress,section.Misc_VirtualSize)
+-        binding['ranges'].append(dict(module='ai',rva=section.VirtualAddress,length=len(raw),expected_hex=raw.hex(),kind='PIC-payload'))
+-        binding['shared_plan_rva']=int(manifest['components']['state_rva'],16)
+-        state_size=manifest['components']['state_size']
+-        if binding['shared_plan_rva']!=RUNTIME_PINS['state_rva'] or state_size!=RUNTIME_PINS['state_size'] or state_size!=0x79904:raise ValueError('Exact reason23 own-state layout changed')
+-        if not 0x40600+1152<=state_size or binding['shared_plan_rva']+state_size>binding['ai']['size']:raise ValueError('Own slot outside bound AI state/module')
+-        state_sections=[s for s in cp.sections if s.VirtualAddress==binding['shared_plan_rva'] and s.Misc_VirtualSize==state_size]
+-        if len(state_sections)!=1:raise ValueError('Exact own state section missing')
+-        binding['shared_plan_size']=state_size
+-        binding['path_manifest']=manifest
+-    binding['manifest_sha256']=MANIFEST_HASH;binding['package_sha256']=None
+-    return binding
++from runtime_adapter import trusted_binding
+ 
+ def verify_loaded(*args):
+     result=original_verify(*args)
+-    result.update(all_five_B2_hooks=True,N30_payload_bound=True,new_payload_and_all_nine_windows_bound=args[1]['variant']=='U30-40')
++    result.update(all_five_B2_hooks=True,N30_payload_bound=True,new_payload_and_all_nine_windows_bound=args[1]['variant']=='local4')
+     return result
+ 
+ def stable_sample(sample):
+@@ -180,7 +127,7 @@
+     initialized={civ:i32(u32(players+4*civ)+0x11ac)>=0 for civ in participants['civ_ids']}
+     def uninitialized():return dict(loaded_settler_type='UNKNOWN_NOT_INITIALIZED',native_desired='UNKNOWN_NOT_INITIALIZED',native_actual='UNKNOWN_NOT_INITIALIZED',native_supplemental_deficit='UNKNOWN_NOT_INITIALIZED',current_front_cache='UNKNOWN_NOT_INITIALIZED',current_settler_armies='UNKNOWN_NOT_INITIALIZED',Gcert='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',Dorig='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',R='UNKNOWN_PER_CIV_SHARED_BUFFER_OVERWRITTEN',complete_queue_and_free_mission_status='UNKNOWN_NOT_DECODED')
+     def shared_state():
+-        if binding['variant']!='U30-40':return None
++        if binding['variant']!='local4':return None
+         ptr=ab+binding['shared_plan_rva'];fields=dict(status=0,reason=4,owner=8,civ=12,generation=32,scope=36,guard=40,raw_t=44,raw_types=48,raw_d8=120,remaining=56,desired=60,path_queries=84,Dorig=184,Gcert=188,policy=192,government=196,engine_count=200,path_points=204,cutoff=208,context=212,classified=220,prefix_count=224,known_count=228,gate_queries=232,gate_false=236,candidates=68,departures=76,slots=80,h3calls=128)
+         fields.update({'SCI_'+name:off for name,(off,limit) in COUNTERS.items()})
+         fields.update(context_error=CONTEXT_ERROR,science_budget_exhausted=SCIENCE_BUDGET_EXHAUSTED)
+@@ -276,7 +223,7 @@
+     parser=argparse.ArgumentParser(description='Read-only fixed-T0 goal3 snapshots; no game starts/writes/callbacks')
+     parser.add_argument('--pid',type=int,required=True)
+     parser.add_argument('--creation-filetime',type=int,required=True)
+-    parser.add_argument('--variant',choices=('release-v1','U30-40'),required=True)
++    parser.add_argument('--variant',choices=('local4',),required=True)
+     parser.add_argument('--run-id',required=True);parser.add_argument('--snapshot-label',required=True)
+     parser.add_argument('--turn',type=int,required=True);parser.add_argument('--pass-label',required=True)
+     parser.add_argument('--manifest',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
+@@ -329,7 +276,7 @@
+         eb,es=found[EXE.resolve()];ab,az=found[DLL.resolve()]
+         checks=verify_loaded(read,binding,eb,ab,{'engine':es,'ai':az})
+         state=observe_goal3(read,eb,ab,participants)
+-        if args.variant=='U30-40':
++        if args.variant=='local4':
+             per_civ,shared=native_expansion_state(read,eb,ab,participants,binding)
+             for row in state['civilizations']:row.update(per_civ[row['civ_id']])
+             state['shared_last_pass']=shared

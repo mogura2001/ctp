@@ -1,0 +1,35 @@
+{
+  "stage": "C2A_BUILDER_SOURCE_ONLY_PENDING_ROOT_REVIEW",
+  "at_utc": "2026-10-23T13:57:39.738959+00:00",
+  "AST": [
+    "build_candidate.py",
+    "check_sources.py"
+  ],
+  "closed_gate_rejected": true,
+  "C1_pins_verified": 152,
+  "imports": {
+    "native": "PROEVEN/pad-lokaal-onbekend/20261022T180000/native.py",
+    "policy": "PROEVEN/pad-lokaal-onbekend/20261022T180000/policy.py",
+    "path_diagnostic": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic.py",
+    "path_diagnostic_layout": "PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic_layout.py",
+    "path_failure_decoder": "PROEVEN/pad-lokaal-onbekend/20261022T180000/reader/path_failure_decoder.py",
+    "integration_base": "PROEVEN/selectie-pad-diagnose/20261020T192500/integration_base.py",
+    "union": "PROEVEN/selectie-pad-diagnose/20261020T192500/union.py",
+    "plan_layout": "PROEVEN/selectie-pad-diagnose/20261020T192500/plan_layout.py"
+  },
+  "historical_builder_imported_only": true,
+  "historical_verify_base_replaced": true,
+  "historical_main_called": false,
+  "compose_called": false,
+  "emission": false,
+  "native": false,
+  "RPM": false,
+  "game": false,
+  "install": false,
+  "remaining": [
+    "root adapter source review",
+    "separate exact-source C2 build gate",
+    "emitted byte/callsite/state/guard checks",
+    "separate native gate"
+  ]
+}

@@ -1,0 +1,16 @@
+--- PROEVEN/uitbreiding-lang/20261022T122400/scope.py
++++ PROEVEN/pad-lokaal-onbekend/20261023-host/scope.py
+@@ -2,10 +2,10 @@
+ from pathlib import Path
+ import hashlib,json
+ HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[2]
+-CANDIDATE='df3ac89dd2a9a26e8ddeda58a4285cc010ec69d0b3d2bf8637f239c2b31a4b1e'
++CANDIDATE='acfeec096ea39e1ff38435214769f4d24074e640b856e08d1c82cc09ea7a4984'
+ RELEASE='eb6f58a7350f6fafd63336d0c335baa2d7d09db8ef62bc80f73db99395874890'
+-ARMS={'release-v1':RELEASE,'U30-40':CANDIDATE}
+-MANIFEST='5b05daf368ae3779f89c7234be45b29e1503b70afb62e710c5a450bd58a3a152'
++ARMS={'local4':CANDIDATE}
++MANIFEST='0a10a7c7f1af1ecd0d71e549296a4e31ea850f100812515d519fa4055e497d4d'
+ def admit(args,output,gate):
+  if gate.get('allowed') is not True:raise ValueError('Separate duration root reader gate required')
+  if args.variant not in ARMS or gate['variant']!=args.variant or type(args.turn) is not int or not 0<=args.turn<=100:raise ValueError('Exact two-arm integer T0..T100 only')

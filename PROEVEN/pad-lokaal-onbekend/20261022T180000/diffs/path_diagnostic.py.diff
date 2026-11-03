@@ -1,0 +1,33 @@
+--- PROEVEN/selectie-pad-diagnose/20261020T192500/path_diagnostic.py
++++ PROEVEN/pad-lokaal-onbekend/20261022T180000/path_diagnostic.py
+@@ -102,6 +102,30 @@
+    for row in values:self.store(*row)
+    for bit in bits:self.bit(bit)
+  def edge(self,predicate,number):self.r.j(predicate,'pd_failure_'+str(number))
++ def local_unknown(self):
++  # Same fixed edge4 operand record, held unpublished until full 4/4/1
++  # propagation. If any later query changes the one-record binding it stays
++  # UNKNOWN; no diagnostic value participates in the executing guard.
++  r=self.r
++  with self.block() as done:
++   r.alu('cmp',m('edi',R+F['reached']),required_mask(4,False));r.j('jne',done);self.store('edge',4)
++ def publish_local(self):
++  r=self.r
++  with self.block(propagate=True) as done:
++   r.alu('cmp',m('esp',self.SAVED['eax']),1);r.j('jne',done)
++   r.alu('cmp',m('edi',R+F['edge']),4);r.j('jne',done)
++   for field,value in [('native_EAX',0),('capacity',0),('count',0),('pointer',0),('postcontext',0),('canary1',0x3456ab89),('canary2',0x4567bc90),('direct_return',4),('cache_return',4)]:
++    r.alu('cmp',m('edi',R+F[field]),value);r.j('jne',done)
++   r.alu('cmp',m('edi',R+F['reached']),required_mask(4)&~(1<<B['selection_return']));r.j('jne',done)
++   # Bind the recorded objects themselves. Current loop indices can already
++   # be exhausted, so they cannot honestly describe the earlier pair.
++   for field,cap,count,base,stride,extra in [('slot',64,80,0x40600,1152,0),('departure',32,76,0x18200,32,8)]:
++    r.mov('ecx',m('edi',R+F[field]));r.alu('cmp','ecx',cap);r.j('jae',done);r.alu('cmp','ecx',m('edi',count));r.j('jae',done);r.imul('ecx','ecx',stride);r.alu('add','ecx','edi');r.alu('add','ecx',base+extra)
++    for part in (0,4):
++     r.mov('eax',m('ecx',part));r.alu('cmp','eax',m('edi',R+F['destination' if field=='slot' else 'source']+part));r.j('jne',done)
++    for record,off in ([('prefix',76),('role',72)] if field=='slot' else [('rawID',-8),('kind',-4)]):
++     r.mov('eax',m('ecx',off));r.alu('cmp','eax',m('edi',R+F[record]));r.j('jne',done)
++   self.store('selection_return',1);self.bit('selection_return');r.mov(m('edi',R),1)
+  def failures(self):
+   r=self.r
+   for number in range(1,17):

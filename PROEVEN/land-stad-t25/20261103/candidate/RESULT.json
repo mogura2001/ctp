@@ -1,0 +1,62 @@
+{
+  "at_utc": "2026-11-03T13:12:55.015298+00:00",
+  "status": "PARTIAL_T7_STOPPED_AUTO_REVIEW_THEN_CONFIRMED_BUDGETSTOP",
+  "arm": "candidate",
+  "n_inputs": 7,
+  "completed_markers": 7,
+  "last_native_round": 6,
+  "pending_n": false,
+  "T25_accepted": false,
+  "natural_T25_save_and_reload": "NOT_REACHED",
+  "last_snapshot": "PROEVEN/wondergewicht/20261030/land-t25-candidate-n07-after-N07.json",
+  "full_original_screenshots_preserved": true,
+  "inspection_crops": "System.Drawing copies only; attempted PIL unavailable, no install or source modification",
+  "human": {
+    "city": "Rome",
+    "city_count": 1,
+    "fortify_commands": 2,
+    "research_OK": [
+      "Stone Working"
+    ],
+    "movements": 0,
+    "production_changes": 0,
+    "strategic_settings_changes": 0
+  },
+  "rejected_action": {
+    "step": "n08",
+    "action": "Stap-Proef.ps1 -Arm candidate -Name n08 -Action Key -Keys n -NIndex 8 -BeforeSnapshot land-t25-candidate-n07-after-N07.json -ConfirmedNoModal",
+    "executed": false,
+    "consumed_marker_created": false,
+    "tool_error": "exec_command failed: CreateProcess Rejected",
+    "reason": "This action was rejected due to unacceptable risk. Reason: The candidate turn is locally bounded, but the five-hour budget is now exactly 10% remaining, triggering the user-mandated stop for project work; only normal close/archive/restore should proceed. Do not bypass this rejection through a workaround or indirect execution.",
+    "policy_difference": "Project five-hour stop is <=5, weekly <=10; no bypass attempted. Later actual five-hour4 confirmed by root."
+  },
+  "close_record": "CLOSE.json",
+  "normal_close_utc": "2026-11-03T13:11:18.3925707Z",
+  "host_elapsed_seconds": 843.0898509,
+  "restore_record": "ROOT-RESTORE.json",
+  "restored_utc": "2026-11-03T13:11:39.5086959Z",
+  "restored_pins": 162,
+  "full_aidata": 118,
+  "full_saves": 38,
+  "ctp_processes": 0,
+  "own_alias_removed": true,
+  "candidate15_files_archived_before_restore": true,
+  "AUTOSAVE_archived": {
+    "bytes": 160642,
+    "sha256": "58913f2c71b096583bd03110ccf09963db5eaca0a8adcf7dc2e194ebbee5d406"
+  },
+  "frozen_source_pins": 138,
+  "pins_sha256": "2b3f7c2734f36057a294043693073ba4d35032410be94f525a3460ee5770e0ec",
+  "final_budget_root_verified": {
+    "reported_at_utc": "2026-11-03T13:11:42.380Z",
+    "checked_at_utc": "2026-11-03T13:11:47Z",
+    "five_hour_remaining": 4,
+    "weekly_remaining": 23,
+    "reset_at_unix": 1793721268
+  },
+  "root_partial_comparison_and_review": "DEFERRED_NEXT_PERIOD",
+  "paired_T25_gameplay_improvement": "NOT_PROVEN",
+  "work_stopped": true,
+  "pc_left_on": true
+}
